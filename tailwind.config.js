@@ -13,6 +13,7 @@ module.exports = {
         'light-gray': '#787878',
       },
       fontSize: { xxs: '0.7rem' },
+      padding: { layout: '10vw' },
       typography: {
         DEFAULT: {
           // Tell the plugin to not add any classes to anchor tags

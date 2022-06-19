@@ -19,7 +19,7 @@ export const FoldOut: React.FC<Props> = ({
   switch (previewMode) {
     case 'blend':
       preview = (
-        <div className="relative h-52 overflow-hidden">
+        <div className="relative h-40 overflow-hidden">
           {children}
           <div className="absolute bottom-0 z-10 h-28 w-full translate-y-1 bg-gradient-to-b from-transparent to-white" />
         </div>
@@ -36,7 +36,7 @@ export const FoldOut: React.FC<Props> = ({
       {folded ? preview : children}
       <button
         type="submit"
-        className="flex flex-row items-center py-8 font-bold hover:cursor-pointer"
+        className="flex flex-row items-center py-8 text-lg font-bold hover:cursor-pointer"
         onClick={() => setFolded(!folded)}
       >
         <div className="mr-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary">

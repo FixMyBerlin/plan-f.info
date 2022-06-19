@@ -1,23 +1,15 @@
-import classNames from 'classnames';
 import React from 'react';
 import { Footer } from './Footer';
 
 type Props = {
-  className?: string;
-  /** @description to access the current location; see links in readme. */
-  location?: any; // TODO: define type
   children?: React.ReactNode;
 };
 
 // TODO: Maybe we need to prevent the layout from unmounting, see https://www.gatsbyjs.com/docs/how-to/routing/layout-components/#how-to-prevent-layout-components-from-unmounting
-export const Layout: React.FC<Props> = ({
-  className,
-  location: _location, // TODO later… or remove
-  children,
-}) => {
+export const Layout: React.FC<Props> = ({ children }) => {
   return (
-    <div className="relative flex h-full flex-col">
-      <main className={classNames(className, 'z-0 flex-grow')}>{children}</main>
+    <div className="relative flex h-full flex-col text-xl">
+      <main>{children}</main>
       <Footer />
     </div>
   );
