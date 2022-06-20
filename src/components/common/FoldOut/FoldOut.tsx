@@ -35,7 +35,7 @@ export const FoldOut: React.FC<Props> = ({
     <div>
       {folded ? preview : children}
       <button
-        type="submit"
+        type="button"
         className="flex flex-row items-center py-8 text-lg font-bold hover:cursor-pointer"
         onClick={() => setFolded(!folded)}
       >
