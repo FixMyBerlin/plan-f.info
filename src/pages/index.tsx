@@ -29,7 +29,8 @@ const IndexPage: React.FC = () => {
           </p>
         </FoldOut>
       </Hero>
-      <div className="px-layout py-12">
+
+      <section className="px-layout py-12">
         <h1 className="text-4xl font-medium">
           Jetzt mit ihrem Praxisbeispiel bewerben für den Plan F Award
         </h1>
@@ -143,8 +144,9 @@ const IndexPage: React.FC = () => {
             <ProfileGrid profiles={jury} />
           </FoldOut>
         </div>
-      </div>
-      <div className="bg-pastel-purple px-layout py-12">
+      </section>
+
+      <section className="bg-pastel-purple px-layout py-12">
         <H1>Das sind die Preise</H1>
         <ul className="my-6 list-inside list-square">
           <li>
@@ -216,8 +218,9 @@ const IndexPage: React.FC = () => {
             nrvp.de/22122
           </p>
         </FoldOut>
-      </div>
-      <div className="px-layout py-12">
+      </section>
+
+      <section className="px-layout py-12">
         <H1>Orientierung und Vorbild für andere Kommunen</H1>
         <p className="mt-6">
           Die besten Praxisbeispiele in den unterschiedlichen Handlungsfeldern
@@ -235,7 +238,7 @@ const IndexPage: React.FC = () => {
             Hier gehts zum Bewerbungsformular
           </ButtonLink>
         </div>
-      </div>
+      </section>
     </Layout>
   );
 };
