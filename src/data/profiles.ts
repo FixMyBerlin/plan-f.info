@@ -22,6 +22,7 @@ export const jury: ProfileData[] = [
     },
   },
 ];
+
 export const CEO: ProfileData = {
   name: 'Rebecca Peters',
   description: 'Bundesvorsitzende des ADFC e. V.',

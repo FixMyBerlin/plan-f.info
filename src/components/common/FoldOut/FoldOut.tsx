@@ -15,6 +15,7 @@ export const FoldOut: React.FC<Props> = ({
   unfoldedText = 'Weniger Details',
 }) => {
   const [folded, setFolded] = useState<boolean>(true);
+
   let preview;
   switch (previewMode) {
     case 'blend':
@@ -31,6 +32,7 @@ export const FoldOut: React.FC<Props> = ({
     default:
       break;
   }
+
   return (
     <div>
       {folded ? preview : children}
