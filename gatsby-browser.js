@@ -7,4 +7,3 @@ import '@fontsource/barlow/700.css'; // .font-bold
 
 import './src/styles/global.css'
 
-export { wrapPageElement } from './src/components/Layout/use-query-params/wrapPageElement'
