@@ -12,7 +12,6 @@ module.exports = {
         'dark-gray': '#353535',
         'light-gray': '#787878',
       },
-      fontSize: { xxs: '0.7rem' },
       padding: { layout: '10vw' },
       typography: {
         DEFAULT: {
