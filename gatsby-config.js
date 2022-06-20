@@ -18,7 +18,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     // TailwindCSS needs PostCSS, https://tailwindcss.com/docs/guides/gatsby
     'gatsby-plugin-postcss',
-    'gatsby-transformer-json',
     'gatsby-transformer-sharp',
     {
       // Docs https://www.gatsbyjs.com/plugins/gatsby-plugin-sitemap/
