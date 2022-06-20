@@ -1,1 +1,1 @@
-export * from './FoldOut'
+export * from './FoldOut';

@@ -5,7 +5,7 @@ import { QuoteBox } from '~/components/StartPage/QuoteBox';
 import { Layout, Hero } from '~/components/Layout';
 import { CEO, jury } from '~/data/profiles';
 import { ButtonLink } from '~/components/Link';
-import { H1, H2 } from '~/components/Text';
+import { H1 } from '~/components/Text';
 
 const IndexPage: React.FC = () => {
   return (
