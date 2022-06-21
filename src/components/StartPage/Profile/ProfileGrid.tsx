@@ -9,11 +9,11 @@ type Props = {
 
 export const ProfileGrid: React.FC<Props> = ({ profiles }) => {
   return (
-    <div className="grid grid-cols-2">
+    <div className="grid grid-cols-2 gap-24">
       {profiles.map((profile: ProfileData, index) => {
         const isEven = index % 2 === 0;
         return (
-          <div className={isEven ? 'mr-12' : 'ml-12'}>
+          <div>
             <Profile profile={profile} mirror={isEven} />
             <QuoteBox mirror={isEven}>{profile.quote}</QuoteBox>
           </div>

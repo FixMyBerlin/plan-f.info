@@ -15,6 +15,7 @@ export const FoldOut: React.FC<Props> = ({
   unfoldedText = 'Weniger Details',
 }) => {
   const [folded, setFolded] = useState<boolean>(true);
+
   let preview;
   switch (previewMode) {
     case 'blend':
@@ -31,11 +32,12 @@ export const FoldOut: React.FC<Props> = ({
     default:
       break;
   }
+
   return (
     <div>
       {folded ? preview : children}
       <button
-        type="submit"
+        type="button"
         className="flex flex-row items-center py-8 text-lg font-bold hover:cursor-pointer"
         onClick={() => setFolded(!folded)}
       >
