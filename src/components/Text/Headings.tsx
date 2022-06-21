@@ -12,7 +12,7 @@ export const H1: React.FC<Props> = ({ children }) => {
 
 export const H2: React.FC<Props> = ({ children }) => {
   return (
-    <h1 className="font-apercu text-[32px] font-bold text-[#353535]">
+    <h1 className="font-apercu text-[32px] font-bold text-dark-gray">
       {children}
     </h1>
   );
