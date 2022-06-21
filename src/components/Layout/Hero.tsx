@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import { Logo } from '~/components/Layout/Logo';
+import { H1 } from '~/components/Text';
 
 type Props = {
   title: string;
@@ -11,8 +12,10 @@ export const Hero: React.FC<Props> = ({ title, children }) => {
   return (
     <div className="bg-gradient-to-b from-lemon-yellow to-lime-green px-layout pt-20">
       <Logo />
-      <h1 className="py-8 text-2xl font-medium">{title}</h1>
-      <div className="mt-6">{children}</div>
+      <div className="mt-10 w-1/2">
+        <H1>{title}</H1>
+      </div>
+      <div className="mt-12">{children}</div>
     </div>
   );
 };

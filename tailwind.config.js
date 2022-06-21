@@ -12,7 +12,6 @@ module.exports = {
         'dark-gray': '#353535',
         'light-gray': '#787878',
       },
-      fontSize: { xxs: '0.7rem' },
       padding: { layout: '10vw' },
       typography: {
         DEFAULT: {
@@ -23,9 +22,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: ['Barlow', 'Segoe UI', 'Tahoma', 'sans-serif'],
-      condensed: ['Barlow Condensed', 'sans-serif'],
-      semi: ['Barlow Semi Condensed', 'sans-serif'],
+      apercu: ['ApercuPro'],
+      apercuMono: ['ApercuMonoPro'],
     },
     listStyleType: {
       square: 'square',
