@@ -5,7 +5,7 @@ import { QuoteBox } from '~/components/StartPage/QuoteBox';
 import { Layout, Hero } from '~/components/Layout';
 import { CEO, jury } from '~/data/profiles';
 import { ButtonLink } from '~/components/Link';
-import { H1 } from '~/components/Text';
+import { H1, H2 } from '~/components/Text';
 
 const IndexPage: React.FC = () => {
   return (
@@ -31,9 +31,7 @@ const IndexPage: React.FC = () => {
       </Hero>
 
       <section className="px-layout py-12">
-        <h1 className="text-4xl font-medium">
-          Jetzt mit ihrem Praxisbeispiel bewerben für den Plan F Award
-        </h1>
+        <H1>Jetzt mit ihrem Praxisbeispiel bewerben für den Plan F Award</H1>
         <div className="mt-6">
           <p>
             Sie haben in Ihrer Kommune aktuell eine Maßnahme oder ein Projekt
@@ -41,8 +39,8 @@ const IndexPage: React.FC = () => {
             oder Umsetzung? Dann nehmen Sie mit Ihrem guten Beispiel am
             Wettbewerb von Plan F teil.
           </p>
-          <div className="mx-20 mt-8 rounded-br-[4rem] rounded-tl-[4rem] rounded-bl-sm rounded-tr-sm bg-dark-gray text-white">
-            <p className="p-8">
+          <div className="mx-20 mt-8 rounded-br-[4rem] rounded-tl-[4rem] rounded-bl-sm rounded-tr-sm bg-dark-gray">
+            <p className="p-8 font-apercuMono text-lg text-white">
               Gute Praxisbeispiele der kommunalen Radverkehrsförderung bis zum
               31.8.2022 einreichen. Siegerehrung auf der
               Fahrradkommunalkonferenz 2022 in Aachen.
@@ -58,7 +56,7 @@ const IndexPage: React.FC = () => {
           <div className="mt-6">
             <FoldOut foldedText="Welche Themen kann ich einreichen ?">
               <div>
-                <H1>Themen</H1>
+                <H2>Themen</H2>
                 <p className="mt-6">
                   Wir haben insgesamt neun Handlungsfelder für Ihre Ideen und
                   Maßnahmen definiert, zu denen Sie weitere Informationen auf
@@ -119,14 +117,14 @@ const IndexPage: React.FC = () => {
             Fahrradkommunalkonferenz in Aachen am 22. November 2022 geehrt.
           </p>
         </div>
-        <H1>Unsere Schirmfrau</H1>
+        <H2>Unsere Schirmfrau</H2>
         <div className="mt-6">
           <Profile profile={CEO} />
           <div className="mr-20">
             <QuoteBox>{CEO.quote}</QuoteBox>
           </div>
         </div>
-        <H1>Unsere Jury</H1>
+        <H2>Unsere Jury</H2>
         <div className="mt-6">
           <p>
             Die Jury besteht aus Expert*innen aus Kommunen, von
@@ -147,7 +145,7 @@ const IndexPage: React.FC = () => {
       </section>
 
       <section className="bg-pastel-purple px-layout py-12">
-        <H1>Das sind die Preise</H1>
+        <H2>Das sind die Preise</H2>
         <ul className="my-6 list-inside list-square">
           <li>
             Das erstplatzierte Projekt gewinnt ein Plan F Audit mit
@@ -175,7 +173,7 @@ const IndexPage: React.FC = () => {
             Handlungsfeld geehrt. Auch hier gibt es tolle Preise, wie zum
             Beispiel coole Plan F Sachpreise oder ein Veloplan-Abo zu gewinnen.
           </p>
-          <H1>Ablauf Plan F Audit mit Maßnahmenempfehlung</H1>
+          <H2>Ablauf Plan F Audit mit Maßnahmenempfehlung</H2>
           <p className="mt-6">
             Die Studierenden sind eine Woche zu Gast in Ihrer Kommune und
             entwickeln in fachlicher Begleitung durch Plan F neue Ideen zur
@@ -221,7 +219,7 @@ const IndexPage: React.FC = () => {
       </section>
 
       <section className="px-layout py-12">
-        <H1>Orientierung und Vorbild für andere Kommunen</H1>
+        <H2>Orientierung und Vorbild für andere Kommunen</H2>
         <p className="mt-6">
           Die besten Praxisbeispiele in den unterschiedlichen Handlungsfeldern
           der kommunalen Radverkehrsförderung werden zudem in unserem
