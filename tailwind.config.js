@@ -23,9 +23,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: ['Barlow', 'Segoe UI', 'Tahoma', 'sans-serif'],
-      condensed: ['Barlow Condensed', 'sans-serif'],
-      semi: ['Barlow Semi Condensed', 'sans-serif'],
+      apercu: ['ApercuPro'],
+      apercuMono: ['ApercuMonoPro'],
     },
     listStyleType: {
       square: 'square',
