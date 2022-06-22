@@ -36,7 +36,10 @@ const DatenschutzPage = () => {
             EU-Datenschutzgrundverordnung (DSGVO), ist:
           </p>
           <p className="font-bold">AEM Accesible Equitable Mobility GmbH</p>
-          <p className="mt-2">Impressum: https://www.aem-institute.de/agb/</p>
+          <p className="mt-2">
+            Impressum:&nbsp;
+            <a href="https://www.aem-institute.de/agb/">www.aem-institute.de</a>
+          </p>
         </div>
         <div className="mt-8">
           <H2>Ihre Betroffenenrechte</H2>
@@ -77,8 +80,10 @@ const DatenschutzPage = () => {
           </p>
           <p className="mt-2">
             Eine Liste der Aufsichtsbehörden (für den nichtöffentlichen Bereich)
-            mit Anschrift finden Sie unter:
-            https://www.bfdi.bund.de/DE/Service/Anschriften/Laender/Laender-node.html.
+            mit Anschrift finden Sie unter:&nbsp;
+            <a href="https://www.bfdi.bund.de/DE/Service/Anschriften/Laender/Laender-node.html">
+              bfdi.bund.de
+            </a>
           </p>
         </div>
         <div className="mt-8">
@@ -435,8 +440,9 @@ const DatenschutzPage = () => {
               EU gehostet.
             </p>
             <p className="mt-2">
-              Näheres zur Datenverarbeitung mittels Heyflow findet sich auf
-              https://heyflow.app/de/datenschutz?
+              Näheres zur Datenverarbeitung mittels Heyflow findet sich
+              auf:&nbsp;
+              <a href="https://heyflow.app/de/datenschutz?">heyflow.app</a>
             </p>
           </div>
           <div className="mt-8">
