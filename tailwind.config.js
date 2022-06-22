@@ -30,6 +30,7 @@ module.exports = {
       none: 'none',
       square: 'square',
       decimal: 'decimal',
+      disc: 'disc',
     },
   },
   plugins: [

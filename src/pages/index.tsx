@@ -11,7 +11,7 @@ import {
 import { Layout, Hero, Content } from '~/components/Layout';
 import { CEO, jury } from '~/data/profiles';
 import { ButtonLink } from '~/components/Link';
-import { H1, H2 } from '~/components/Text';
+import { H1, H2, H3 } from '~/components/Text';
 
 const IndexPage: React.FC = () => {
   return (
@@ -247,29 +247,31 @@ const IndexPage: React.FC = () => {
                 Politik, Verbänden oder weitere beteiligte Akteur*innen)
                 präsentiert.
               </p>
-              <h2 className="mt-12 text-[24px] font-bold">
-                Mehrwert für alle Beteiligten
-              </h2>
-              <p className="mt-6">
-                Durch das Plan F Audit entsteht ein deutlicher Mehrwert für alle
-                Beteiligten – Ihre Kommune erhält innovative und fachliche
-                Unterstützung und wird so in kurzer Zeit (noch)
-                fahrradfreundlicher. Die Studierenden wiederum lernen aus der
-                kommunalen Praxis und erproben gleichzeitig die Anwendung der
-                Systematisierung von Plan F – die besten Voraussetzungen also
-                für einen gemeinsamen neuen Weg der kommunalen
-                Radverkehrsförderung,
-              </p>
-              <p>
-                Das Plan F Audit ist angelehnt an das NRPV-Projekt FreshBrains.
-                Studierende aus Deutschland und den Niederlanden haben im Rahmen
-                dieses Projekts bereits in Kassel, Chemnitz, Mönchengladbach,
-                Wuppertal, Bonn, und Dortmund ein Fahrradaudit durchgeführt.
-                <a href="http://nrvp.de/22122">
-                  {' '}
-                  Weiterführende Informationen zu dem Projekt.
-                </a>
-              </p>
+              <div className="mt-12">
+                <H3>Mehrwert für alle Beteiligten</H3>
+
+                <p className="mt-6">
+                  Durch das Plan F Audit entsteht ein deutlicher Mehrwert für
+                  alle Beteiligten – Ihre Kommune erhält innovative und
+                  fachliche Unterstützung und wird so in kurzer Zeit (noch)
+                  fahrradfreundlicher. Die Studierenden wiederum lernen aus der
+                  kommunalen Praxis und erproben gleichzeitig die Anwendung der
+                  Systematisierung von Plan F – die besten Voraussetzungen also
+                  für einen gemeinsamen neuen Weg der kommunalen
+                  Radverkehrsförderung,
+                </p>
+                <p>
+                  Das Plan F Audit ist angelehnt an das NRPV-Projekt
+                  FreshBrains. Studierende aus Deutschland und den Niederlanden
+                  haben im Rahmen dieses Projekts bereits in Kassel, Chemnitz,
+                  Mönchengladbach, Wuppertal, Bonn, und Dortmund ein
+                  Fahrradaudit durchgeführt.
+                  <a href="http://nrvp.de/22122">
+                    {' '}
+                    Weiterführende Informationen zu dem Projekt.
+                  </a>
+                </p>
+              </div>
             </FoldOut>
           </div>
         </Content>

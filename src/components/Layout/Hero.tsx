@@ -4,7 +4,7 @@ import { Content } from './Content';
 
 type Props = {
   title: string;
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 // TODO: Maybe we need to prevent the layout from unmounting, see https://www.gatsbyjs.com/docs/how-to/routing/layout-components/#how-to-prevent-layout-components-from-unmounting
