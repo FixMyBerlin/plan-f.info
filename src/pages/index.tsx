@@ -151,8 +151,8 @@ const IndexPage: React.FC = () => {
           </p>
           <p className="mt-6">
             Um Ihnen die Bewerbung zu erleichtern, haben wir in einem PDF
-            Dokument alle notwendigen Schritte und Fragen festgehalten. Das
-            PDFieses können Sie hier herunterladen.
+            Dokument alle notwendigen Schritte und Fragen festgehalten. Das PDF
+            können Sie hier herunterladen.
           </p>
           <div className="mt-6">
             <ButtonLink large to="">
@@ -265,9 +265,8 @@ const IndexPage: React.FC = () => {
                   FreshBrains. Studierende aus Deutschland und den Niederlanden
                   haben im Rahmen dieses Projekts bereits in Kassel, Chemnitz,
                   Mönchengladbach, Wuppertal, Bonn, und Dortmund ein
-                  Fahrradaudit durchgeführt.
-                  <a href="http://nrvp.de/22122">
-                    {' '}
+                  Fahrradaudit durchgeführt.{' '}
+                  <a href="http://nrvp.de/22122" className="text-black">
                     Weiterführende Informationen zu dem Projekt.
                   </a>
                 </p>
