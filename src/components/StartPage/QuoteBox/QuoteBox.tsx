@@ -14,7 +14,7 @@ export const QuoteBox: React.FC<Props> = ({ children, mirror = false }) => {
     <div
       className={classNames(
         style,
-        `mt-8 rounded-b-[10rem] text-center font-apercuMono text-lg`
+        `mt-8 min-w-min rounded-b-[10rem] font-apercuMono text-[16px]`
       )}
     >
       <p className="p-16">{children}</p>

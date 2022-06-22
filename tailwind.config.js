@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#6bdc93',
+        'dark-green': '#6bdc93',
         'lemon-yellow': '#e8ff99',
         'lime-green': '#bdfa78',
         'pastel-purple': '#b082f7',
@@ -24,9 +24,12 @@ module.exports = {
     fontFamily: {
       apercu: ['ApercuPro'],
       apercuMono: ['ApercuMonoPro'],
+      barlow: ['Barlow'],
     },
     listStyleType: {
+      none: 'none',
       square: 'square',
+      decimal: 'decimal',
     },
   },
   plugins: [

@@ -9,7 +9,7 @@ type Props = {
 
 export const ProfileGrid: React.FC<Props> = ({ profiles }) => {
   return (
-    <div className="grid grid-cols-2 gap-24">
+    <div className="grid gap-24 lg:grid-cols-2">
       {profiles.map((profile: ProfileData, index) => {
         const isEven = index % 2 === 0;
         return (

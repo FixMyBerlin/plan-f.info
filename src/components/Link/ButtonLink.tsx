@@ -11,7 +11,7 @@ type Props = {
 };
 
 const buttonStyle =
-  'inline-flex items-center justify-center rounded-full py-2 px-4 text-[16px] focus:ring-2 focus:ring-offset-2 bg-primary font-bold';
+  'inline-flex items-center justify-center rounded-full py-2 px-4 text-[16px] bg-dark-green font-bold';
 
 // TODO: Refactor all those link components to share more logic
 export const ButtonLink: React.FC<Props> = ({

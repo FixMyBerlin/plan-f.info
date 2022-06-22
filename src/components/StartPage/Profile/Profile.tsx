@@ -22,7 +22,7 @@ export const Profile: React.FC<Props> = ({
       <img
         src={src}
         alt={`profilfoto ${name}`}
-        className="h-52 w-52 rounded-full"
+        className="h-28 w-28 rounded-full lg:h-52 lg:w-52"
       />
       <div
         className={classNames(

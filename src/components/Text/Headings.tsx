@@ -6,7 +6,7 @@ type Props = {
 
 export const H1: React.FC<Props> = ({ children }) => {
   return (
-    <h1 className="font-apercuMono text-[34px] leading-[44px]">{children}</h1>
+    <h1 className="font-apercuMono text-[32px] leading-[44px]">{children}</h1>
   );
 };
 

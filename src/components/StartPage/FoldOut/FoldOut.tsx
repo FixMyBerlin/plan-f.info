@@ -1,5 +1,6 @@
 import React, { ReactNode, useState } from 'react';
-import { PlusIcon, MinusIcon } from './assets';
+import PlusIcon from './assets/PlusIcon.svg';
+import MinusIcon from './assets/MinusIcon.svg';
 
 type Props = {
   children: ReactNode;
@@ -22,12 +23,16 @@ export const FoldOut: React.FC<Props> = ({
       preview = (
         <div className="relative h-40 overflow-hidden">
           {children}
-          <div className="absolute bottom-0 z-10 h-28 w-full translate-y-1 bg-gradient-to-b from-transparent to-white" />
+          <div className="absolute bottom-0 z-10 h-40 w-full translate-y-1 bg-gradient-to-b from-transparent to-white" />
         </div>
       );
       break;
     case 'clamp':
-      preview = <div className="line-clamp-3">{children}</div>;
+      preview = (
+        <div className="line-clamp-3">
+          <div>{children}</div>
+        </div>
+      );
       break;
     default:
       break;
@@ -35,13 +40,13 @@ export const FoldOut: React.FC<Props> = ({
 
   return (
     <div>
-      {folded ? preview : children}
+      <div className="pb-4">{folded ? preview : children}</div>
       <button
         type="button"
-        className="flex flex-row items-center py-8 text-lg font-bold hover:cursor-pointer"
+        className="flex flex-row items-center font-apercu text-[16px] font-bold hover:cursor-pointer"
         onClick={() => setFolded(!folded)}
       >
-        <div className="mr-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary">
+        <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-dark-green">
           {folded ? <PlusIcon /> : <MinusIcon />}
         </div>
         {folded ? foldedText : unfoldedText}

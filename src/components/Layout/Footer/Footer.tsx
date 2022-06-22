@@ -1,13 +1,13 @@
 import React from 'react';
-import { LogoNegative } from '~/components/Layout/Logo';
 import { footerLinks } from './const';
 import { FooterLinkList } from './FooterLinks/FooterLinkList';
+import LogoNegative from '../assets/LogoNegative.svg';
 
 export const Footer: React.FC = () => {
   const { pages, legal } = footerLinks;
   return (
     <footer
-      className="z-0 bg-dark-gray pt-6 pb-12"
+      className="z-0 bg-dark-gray pb-20 pt-14"
       aria-labelledby="footer-heading"
     >
       <div className="flex flex-row">
