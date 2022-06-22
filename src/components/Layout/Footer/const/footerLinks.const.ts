@@ -14,7 +14,11 @@ const legal: FooterMenuItem[] = [
     to: 'https://21c51c7f.sibforms.com/serve/MUIEAMjW98vg7w0GP1kG2ZA2DFSP7395kHdbQWUiz9-np8R5ByL1lcmg41MT_tU9NfTH-40qsRO_EAV6llscH-xmR7Na56wzNBJqGqjQRHjJ-QQfCLJa9jrwJkbGTGVKfTqKBrRtALCidg1rzZTeSlja_f8PC6cmhk9JcppFYr3wMmJkjsMsau9090eKeAzr_HAgP-Hm5pp-GvRz',
     external: true,
   },
-  { name: 'Kontakt', to: 'mailto:kontakt@plan-f.de', external: true },
+  {
+    name: 'Kontakt',
+    to: 'kontakt@plan-f.de',
+    external: true,
+  },
   { name: 'Impressum', to: '/impressum/', external: false },
   { name: 'Datenschutz', to: '/datenschutz/', external: false },
 ];
