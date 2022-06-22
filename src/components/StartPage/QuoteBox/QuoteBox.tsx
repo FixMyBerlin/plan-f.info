@@ -8,8 +8,8 @@ type Props = {
 
 export const QuoteBox: React.FC<Props> = ({ children, mirror = false }) => {
   const style = mirror
-    ? 'rounded-tl-[10rem] rounded-tr-sm bg-pastel-purple'
-    : 'rounded-tr-[10rem] rounded-tl-sm bg-lime-green';
+    ? 'rounded-tl-[10rem] rounded-tr-sm bg-pastel-purple text-right'
+    : 'rounded-tr-[10rem] rounded-tl-sm bg-lime-green text-left';
   return (
     <div
       className={classNames(
