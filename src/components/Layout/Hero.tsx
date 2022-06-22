@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import { Link } from 'gatsby';
 import Logo from './assets/Logo.svg';
 import { Content } from './Content';
 
@@ -12,7 +13,9 @@ export const Hero: React.FC<Props> = ({ title, children }) => {
   return (
     <div className="bg-gradient-to-b from-lemon-yellow to-lime-green pt-20 pb-12">
       <Content>
-        <Logo />
+        <Link to="/">
+          <Logo />
+        </Link>
         <div className="mt-6 lg:w-1/2">
           <h1 className="font-apercuMono text-[24px] leading-[33px]">
             {title}

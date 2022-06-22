@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import { footerLinks } from './const';
 import { FooterLinkList } from './FooterLinks/FooterLinkList';
 import LogoNegative from '../assets/LogoNegative.svg';
@@ -11,9 +12,9 @@ export const Footer: React.FC = () => {
       aria-labelledby="footer-heading"
     >
       <div className="flex flex-row">
-        <div className="px-[3vw]">
+        <Link className="px-[3vw]" to="/">
           <LogoNegative />
-        </div>
+        </Link>
         <FooterLinkList linkList={pages} className="flex-grow px-[3vw]" />
         <FooterLinkList
           linkList={legal}
