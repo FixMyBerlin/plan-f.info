@@ -88,7 +88,7 @@ const DatenschutzPage = () => {
             und die Zwecke ihrer Verarbeitung zusammen und verweist auf die
             betroffenen Personen.
           </p>
-          <div className="mt-8">
+          <div className="mt-6">
             <H3>Arten der verarbeiteten Daten</H3>
             <ul className="mt-2 list-disc pl-4">
               <li>Bestandsdaten.</li>
@@ -98,14 +98,14 @@ const DatenschutzPage = () => {
               <li>Meta-/Kommunikationsdaten.</li>
             </ul>
           </div>
-          <div className="mt-8">
+          <div className="mt-6">
             <H3>Kategorien betroffener Personen</H3>
             <ul className="mt-2 list-disc pl-4">
               <li>Kommunikationspartner*innen.</li>
               <li>Nutzer*innen.</li>
             </ul>
           </div>
-          <div className="mt-8">
+          <div className="mt-6">
             <H3>Zwecke der Verarbeitung</H3>
             <ul className="mt-2 list-disc pl-4">
               <li>Erbringung vertraglicher Leistungen und Kundenservice.</li>
@@ -119,7 +119,7 @@ const DatenschutzPage = () => {
             </ul>
           </div>
         </div>
-        <div className="mt-8">
+        <div className="mt-6">
           <H3>Maßgebliche Rechtsgrundlagen</H3>
           <p className="mt-2">
             Im Folgenden erhalten Sie eine Übersicht der Rechtsgrundlagen der
@@ -341,14 +341,14 @@ const DatenschutzPage = () => {
         </div>
         <div className="mt-8">
           <H2>Newsletter</H2>
-          <div>
+          <div className="mt-6">
             <H3>Art und Zweck der Verarbeitung:</H3>
-            <p>
+            <p className="mt-2">
               Für die Zustellung unseres Newsletters erheben wir
               personenbezogene Daten, die über eine Eingabemaske an uns
               übermittelt werden.
             </p>
-            <p>
+            <p className="mt-2">
               Für eine wirksame Registrierung benötigen wir eine valide
               E-Mail-Adresse. Um zu überprüfen, dass eine Anmeldung tatsächlich
               durch den Inhaber*in einer E-Mail-Adresse erfolgt, setzen wir das
@@ -358,15 +358,15 @@ const DatenschutzPage = () => {
               werden nicht erhoben.
             </p>
           </div>
-          <div>
+          <div className="mt-6">
             <H3>Rechtsgrundlage:</H3>
-            <p>
+            <p className="mt-2">
               Auf Grundlage Ihrer ausdrücklich erteilten Einwilligung (Art. 6
               Abs. 1 lit. a DSGVO), übersenden wir Ihnen regelmäßig unseren
               Newsletter bzw. vergleichbare Informationen per E-Mail an Ihre
               angegebene E-Mail-Adresse.
             </p>
-            <p>
+            <p className="mt-2">
               Die Einwilligung zur Speicherung Ihrer persönlichen Daten und
               ihrer Nutzung für den Newsletterversand können Sie jederzeit mit
               Wirkung für die Zukunft widerrufen. In jedem Newsletter findet
@@ -376,32 +376,32 @@ const DatenschutzPage = () => {
               Kontaktmöglichkeit mitteilen.
             </p>
           </div>
-          <div>
+          <div className="mt-6">
             <H3>Empfänger*in:</H3>
-            <p>
+            <p className="mt-2">
               Empfänger*innen der Daten sind ggf. Auftragsverarbeiter*innen.
             </p>
           </div>
-          <div>
+          <div className="mt-6">
             <H3>Speicherdauer:</H3>
-            <p>
+            <p className="mt-2">
               Die Daten werden in diesem Zusammenhang nur verarbeitet, solange
               die entsprechende Einwilligung vorliegt. Danach werden sie
               gelöscht.
             </p>
           </div>
-          <div>
+          <div className="mt-6">
             <H3>Bereitstellung vorgeschrieben oder erforderlich:</H3>
-            <p>
+            <p className="mt-2">
               Die Bereitstellung Ihrer personenbezogenen Daten erfolgt
               freiwillig, allein auf Basis Ihrer Einwilligung. Ohne bestehende
               Einwilligung können wir Ihnen unseren Newsletter leider nicht
               zusenden.
             </p>
           </div>
-          <div>
+          <div className="mt-6">
             <H3>Widerruf der Einwilligung:</H3>
-            <p>
+            <p className="mt-2">
               Die Einwilligung zur Speicherung Ihrer persönlichen Daten und
               ihrer Nutzung für den Newsletterversand können Sie jederzeit mit
               Wirkung für die Zukunft widerrufen. Die Abmeldung kann über den in
@@ -410,9 +410,9 @@ const DatenschutzPage = () => {
               Person beantragt werden.
             </p>
           </div>
-          <div>
+          <div className="mt-8">
             <H2>Heyflow.</H2>
-            <p>
+            <p className="mt-2">
               Wir verwenden interaktive Anfrageformulare, sogenannte „Flows“, um
               gute Maßnahmen für die kommunale Radverkehrsförderung von Kommunen
               zu erhalten. Wir verarbeiten hierbei personenbezogene Daten, die
@@ -422,7 +422,7 @@ const DatenschutzPage = () => {
               Person) oder Art. 6 Abs. 1 UAbs. 1 Buchst. f (Wahrung der
               berechtigten Interessen des Verantwortlichen)]
             </p>
-            <p>
+            <p className="mt-2">
               Für das Erstellen und den Einsatz von Flows nutzen wir die Dienste
               der Heyflow GmbH, Jungfernstieg 49, 20354 Hamburg, Deutschland
               („Heyflow“). Heyflow verarbeitet über Flows erhobene
@@ -434,14 +434,14 @@ const DatenschutzPage = () => {
               personenbezogenen Daten werden ausschließlich auf Servern in der
               EU gehostet.
             </p>
-            <p>
+            <p className="mt-2">
               Näheres zur Datenverarbeitung mittels Heyflow findet sich auf
               https://heyflow.app/de/datenschutz?
             </p>
           </div>
-          <div>
+          <div className="mt-8">
             <H2>Webanalyse, Monitoring und Optimierung</H2>
-            <p>
+            <p className="mt-2">
               Die Webanalyse (auch als “Reichweitenmessung” bezeichnet) dient
               der Auswertung der Besucherströme unseres Onlineangebotes und kann
               Verhalten, Interessen oder demographische Informationen zu den
@@ -452,12 +452,12 @@ const DatenschutzPage = () => {
               Wiederverwendung einladen. Ebenso können wir nachvollziehen,
               welche Bereiche der Optimierung bedürfen.
             </p>
-            <p>
+            <p className="mt-2">
               Neben der Webanalyse können wir auch Testverfahren einsetzen, um
               z.B. unterschiedliche Versionen unseres Onlineangebotes oder
               seiner Bestandteile zu testen und optimieren.
             </p>
-            <p>
+            <p className="mt-2">
               Sofern nachfolgend nicht anders angegeben, können zu diesen
               Zwecken Profile, d.h. zu einem Nutzungsvorgang zusammengefasste
               Daten angelegt und Informationen in einem Browser, bzw. in einem
@@ -470,7 +470,7 @@ const DatenschutzPage = () => {
               eingesetzten Dienste einverstanden erklärt haben, können auch
               Standortdaten verarbeitet werden.
             </p>
-            <p>
+            <p className="mt-2">
               Es werden ebenfalls die IP-Adressen der Nutzer gespeichert. Jedoch
               nutzen wir ein IP-Masking-Verfahren (d.h., Pseudonymisierung durch
               Kürzung der IP-Adresse) zum Schutz der Nutzer. Generell werden die
@@ -481,7 +481,7 @@ const DatenschutzPage = () => {
               der Nutzer, sondern nur den für Zwecke der jeweiligen Verfahren in
               deren Profilen gespeicherten Angaben.
             </p>
-            <p>
+            <p className="mt-2">
               <span className="font-bold">Hinweise zu Rechtsgrundlagen:</span>
               &nbsp; Sofern wir die Nutzer um deren Einwilligung in den Einsatz
               der Drittanbieter bitten, ist die Rechtsgrundlage der Verarbeitung
@@ -539,6 +539,178 @@ const DatenschutzPage = () => {
                 möglich sind. Die im Rahmen der Nutzung von Matomo erhobenen
                 Daten der Nutzer werden nur von uns verarbeitet und nicht mit
                 Dritten geteilt; Website: matomo.org.
+              </li>
+            </ul>
+          </div>
+          <div className="mt-8">
+            <H2>Änderung und Aktualisierung der Datenschutzerklärung</H2>
+            <p className="mt-2">
+              Wir bitten Sie, sich regelmäßig über den Inhalt unserer
+              Datenschutzerklärung zu informieren. Wir passen die
+              Datenschutzerklärung an, sobald die Änderungen der von uns
+              durchgeführten Datenverarbeitungen dies erforderlich machen. Wir
+              informieren Sie, sobald durch die Änderungen eine
+              Mitwirkungshandlung Ihrerseits (z.B. Einwilligung) oder eine
+              sonstige individuelle Benachrichtigung erforderlich wird.
+            </p>
+            <p className="mt-2">
+              Sofern wir in dieser Datenschutzerklärung Adressen und
+              Kontaktinformationen von Unternehmen und Organisationen angeben,
+              bitten wir zu beachten, dass die Adressen sich über die Zeit
+              ändern können und bitten die Angaben vor Kontaktaufnahme zu
+              prüfen.
+            </p>
+          </div>
+          <div className="mt-8">
+            <H2>Rechte der betroffenen Personen</H2>
+            <p className="mt-2">
+              Ihnen stehen als Betroffene nach der DSGVO verschiedene Rechte zu,
+              die sich insbesondere aus Art. 15 bis 21 DSGVO ergeben:
+            </p>
+            <ul className="mt-2 list-disc pl-4">
+              <li>
+                <span className="font-bold">Widerspruchsrecht:</span>&nbsp;Sie
+                haben das Recht, aus Gründen, die sich aus Ihrer besonderen
+                Situation ergeben, jederzeit gegen die Verarbeitung der Sie
+                betreffenden personenbezogenen Daten, die aufgrund von Art. 6
+                Abs. 1 lit. e oder f DSGVO erfolgt, Widerspruch einzulegen; dies
+                gilt auch für ein auf diese Bestimmungen gestütztes Profiling.
+                Werden die Sie betreffenden personenbezogenen Daten verarbeitet,
+                um Direktwerbung zu betreiben, haben Sie das Recht, jederzeit
+                Widerspruch gegen die Verarbeitung der Sie betreffenden
+                personenbezogenen Daten zum Zwecke derartiger Werbung
+                einzulegen; dies gilt auch für das Profiling, soweit es mit
+                solcher Direktwerbung in Verbindung steht.
+              </li>
+              <li>
+                <span className="font-bold">
+                  Widerrufsrecht bei Einwilligungen:
+                </span>
+                &nbsp;Sie haben das Recht, erteilte Einwilligungen jederzeit zu
+                widerrufen.
+              </li>
+              <li>
+                <span className="font-bold">Auskunftsrecht:</span>&nbsp;Sie
+                haben das Recht, eine Bestätigung darüber zu verlangen, ob
+                betreffende Daten verarbeitet werden und auf Auskunft über diese
+                Daten sowie auf weitere Informationen und Kopie der Daten
+                entsprechend den gesetzlichen Vorgaben.
+              </li>
+              <li>
+                <span className="font-bold">Recht auf Berichtigung:</span>
+                &nbsp;Sie haben entsprechend den gesetzlichen Vorgaben das
+                Recht, die Vervollständigung der Sie betreffenden Daten oder die
+                Berichtigung der Sie betreffenden unrichtigen Daten zu
+                verlangen.
+              </li>
+              <li>
+                <span className="font-bold">
+                  Recht auf Löschung und Einschränkung der Verarbeitung:
+                </span>
+                &nbsp;Sie haben nach Maßgabe der gesetzlichen Vorgaben das
+                Recht, zu verlangen, dass Sie betreffende Daten unverzüglich
+                gelöscht werden, bzw. alternativ nach Maßgabe der gesetzlichen
+                Vorgaben eine Einschränkung der Verarbeitung der Daten zu
+                verlangen.
+              </li>
+              <li>
+                <span className="font-bold">
+                  Recht auf Datenübertragbarkeit:
+                </span>
+                &nbsp;Sie haben das Recht, Sie betreffende Daten, die Sie uns
+                bereitgestellt haben, nach Maßgabe der gesetzlichen Vorgaben in
+                einem strukturierten, gängigen und maschinenlesbaren Format zu
+                erhalten oder deren Übermittlung an einen anderen
+                Verantwortlichen zu fordern.
+              </li>
+              <li>
+                <span className="font-bold">
+                  Beschwerde bei Aufsichtsbehörde:
+                </span>
+                &nbsp;Sie haben unbeschadet eines anderweitigen
+                verwaltungsrechtlichen oder gerichtlichen Rechtsbehelfs das
+                Recht auf Beschwerde bei einer Aufsichtsbehörde, insbesondere in
+                dem Mitgliedstaat ihres gewöhnlichen Aufenthaltsorts, ihres
+                Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes, wenn
+                Sie der Ansicht sind, dass die Verarbeitung der Sie betreffenden
+                personenbezogenen Daten gegen die Vorgaben der DSGVO verstößt.
+              </li>
+            </ul>
+          </div>
+          <div className="mt-8 mb-20">
+            <H2>Begriffsdefinitionen</H2>
+            <p className="mt-2">
+              In diesem Abschnitt erhalten Sie eine Übersicht über die in dieser
+              Datenschutzerklärung verwendeten Begrifflichkeiten. Viele der
+              Begriffe sind dem Gesetz entnommen und vor allem im Art. 4 DSGVO
+              definiert. Die gesetzlichen Definitionen sind verbindlich. Die
+              nachfolgenden Erläuterungen sollen dagegen vor allem dem
+              Verständnis dienen. Die Begriffe sind alphabetisch sortiert.
+            </p>
+            <ul className="mt-2 list-disc pl-4">
+              <li>
+                <span className="font-bold">Personenbezogene Daten:</span>
+                &nbsp;“Personenbezogene Daten” sind alle Informationen, die sich
+                auf eine identifizierte oder identifizierbare natürliche Person
+                (im Folgenden “betroffene Person” beziehen; als identifizierbar
+                wird eine natürliche Person angesehen, die direkt oder indirekt,
+                insbesondere mittels Zuordnung zu einer Kennung wie einem Namen,
+                zu einer Kennnummer, zu Standortdaten, zu einer Online-Kennung
+                (z.B. Cookie) oder zu einem oder mehreren besonderen Merkmalen
+                identifiziert werden kann, die Ausdruck der physischen,
+                physiologischen, genetischen, psychischen, wirtschaftlichen,
+                kulturellen oder sozialen Identität dieser natürlichen Person
+                sind.
+              </li>
+              <li>
+                <span className="font-bold">
+                  Profile mit nutzerbezogenen Informationen:
+                </span>
+                &nbsp;Die Verarbeitung von “Profilen mit nutzerbezogenen
+                Informationen”, bzw. kurz “Profilen” umfasst jede Art der
+                automatisierten Verarbeitung personenbezogener Daten, die darin
+                besteht, dass diese personenbezogenen Daten verwendet werden, um
+                bestimmte persönliche Aspekte, die sich auf eine natürliche
+                Person beziehen (je nach Art der Profilbildung können dazu
+                unterschiedliche Informationen betreffend die Demographie,
+                Verhalten und Interessen, wie z.B. die Interaktion mit Webseiten
+                und deren Inhalten, etc.) zu analysieren, zu bewerten oder, um
+                sie vorherzusagen (z.B. die Interessen an bestimmten Inhalten
+                oder Produkten, das Klickverhalten auf einer Webseite oder den
+                Aufenthaltsort). Zu Zwecken des Profilings werden häufig Cookies
+                und Web-Beacons eingesetzt.
+              </li>
+              <li>
+                <span className="font-bold">Reichweitenmessung:</span>&nbsp;Die
+                Reichweitenmessung (auch als Web Analytics bezeichnet) dient der
+                Auswertung der Besucherströme eines Onlineangebotes und kann das
+                Verhalten oder Interessen der Besucher an bestimmten
+                Informationen, wie z.B. Inhalten von Webseiten, umfassen. Mit
+                Hilfe der Reichweitenanalyse können Webseiteninhaber z.B.
+                erkennen, zu welcher Zeit Besucher ihre Webseite besuchen und
+                für welche Inhalte sie sich interessieren. Dadurch können sie
+                z.B. die Inhalte der Webseite besser an die Bedürfnisse ihrer
+                Besucher anpassen. Zu Zwecken der Reichweitenanalyse werden
+                häufig pseudonyme Cookies und Web-Beacons eingesetzt, um
+                wiederkehrende Besucher zu erkennen und so genauere Analysen zur
+                Nutzung eines Onlineangebotes zu erhalten.
+              </li>
+              <li>
+                <span className="font-bold">Verantwortlicher:</span>&nbsp;Als
+                “Verantwortlicher” wird die natürliche oder juristische Person,
+                Behörde, Einrichtung oder andere Stelle, die allein oder
+                gemeinsam mit anderen über die Zwecke und Mittel der
+                Verarbeitung von personenbezogenen Daten entscheidet,
+                bezeichnet.
+              </li>
+              <li>
+                <span className="font-bold">Verarbeitung:</span>
+                &nbsp;“Verarbeitung” ist jeder mit oder ohne Hilfe
+                automatisierter Verfahren ausgeführte Vorgang oder jede solche
+                Vorgangsreihe im Zusammenhang mit personenbezogenen Daten. Der
+                Begriff reicht weit und umfasst praktisch jeden Umgang mit
+                Daten, sei es das Erheben, das Auswerten, das Speichern, das
+                Übermitteln oder das Löschen.
               </li>
             </ul>
           </div>
