@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
-import { Link } from '~/components/Link';
+import { TextLink } from '~/components/Link';
 import { FooterMenuItem } from '../const/footerLinks.const';
 
 type Props = {
@@ -13,12 +13,13 @@ export const FooterLinkList: React.FC<Props> = ({ linkList, className }) => {
     <ul className={classNames('space-y-3', className)}>
       {linkList.map((item) => (
         <li key={item.name}>
-          <Link
+          <TextLink
             to={item.to}
-            className="block text-base leading-5 text-stone-50 decoration-stone-400 decoration-1 underline-offset-2 hover:text-white hover:decoration-white"
+            external={item.external}
+            className="block font-apercuMono text-[14px] leading-5 text-white no-underline decoration-white decoration-1 "
           >
             {item.name}
-          </Link>
+          </TextLink>
         </li>
       ))}
     </ul>

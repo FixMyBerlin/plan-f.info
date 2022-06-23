@@ -1,7 +1,7 @@
 module.exports = {
   // Required by 'gatsby-plugin-sitemap' Plugin
   siteMetadata: {
-    title: 'TODO siteMeta.title',
+    title: 'Plan F',
     siteUrl: 'https://plan-f.de',
     description: 'TODO siteMeta.description',
   },
@@ -37,20 +37,20 @@ module.exports = {
         },
       },
     },
-    // {
-    //   // Docs https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/
-    //   resolve: 'gatsby-plugin-manifest',
-    //   options: {
-    //     name: 'Plan-F',
-    //     short_name: 'Plan-F',
-    //     start_url: '/',
-    //     background_color: 'white',
-    //     theme_color: '#fff8e8',
-    //     display: 'minimal-ui', // https://developer.mozilla.org/en-US/docs/Web/Manifest/display#values
-    //     icon: 'src/components/assets/plan-f-logo.png',
-    //     legacy: false,
-    //     lang: 'de-DE', // https://developer.mozilla.org/en-US/docs/Web/Manifest/lang
-    //   },
-    // },
+    {
+      // Docs https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Plan-F.info',
+        short_name: 'Plan-F.info',
+        start_url: '/',
+        background_color: 'white',
+        theme_color: '#fff8e8',
+        display: 'minimal-ui', // https://developer.mozilla.org/en-US/docs/Web/Manifest/display#values
+        icon: 'src/assets/planf_icon.png',
+        legacy: false,
+        lang: 'de-DE', // https://developer.mozilla.org/en-US/docs/Web/Manifest/lang
+      },
+    },
   ],
 };
