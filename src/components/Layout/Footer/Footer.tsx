@@ -13,13 +13,10 @@ export const Footer: React.FC = () => {
     >
       <div className="pl-4 sm:pl-[3vw]">
         <div className="flex flex-row">
-          <Link className="grow-0" to="/">
-            <LogoNegative className="h-[40px] w-[120px] sm:h-[60px] sm:w-[160px]" />
+          <Link className="hidden grow-0 sm:block" to="/">
+            <LogoNegative />
           </Link>
-          <FooterLinkList
-            linkList={pages}
-            className="flex-grow px-4 sm:px-[3vw]"
-          />
+          <FooterLinkList linkList={pages} className="flex-grow sm:px-[3vw]" />
           <FooterLinkList
             linkList={legal}
             className="ml-auto mr-4 flex-none sm:pr-[12vw]"
