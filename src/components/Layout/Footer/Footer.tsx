@@ -11,19 +11,21 @@ export const Footer: React.FC = () => {
       className="z-0 bg-dark-gray pb-16 pt-14"
       aria-labelledby="footer-heading"
     >
-      <div className="flex flex-row">
-        <div className="pl-4 md:pl-[3vw]">
-          <Link to="/">
-            <LogoNegative />
+      <div className="pl-4 sm:pl-[3vw]">
+        <div className="flex flex-row">
+          <Link className="grow-0" to="/">
+            <LogoNegative className="h-[40px] w-[120px] sm:h-[60px] sm:w-[160px]" />
           </Link>
-          <SocialMediaLinks />
+          <FooterLinkList
+            linkList={pages}
+            className="flex-grow px-4 sm:px-[3vw]"
+          />
+          <FooterLinkList
+            linkList={legal}
+            className="ml-auto mr-4 flex-none sm:pr-[12vw]"
+          />
         </div>
-
-        <FooterLinkList linkList={pages} className="flex-grow px-[3vw]" />
-        <FooterLinkList
-          linkList={legal}
-          className="ml-auto flex-none pr-4 md:pr-[12vw]"
-        />
+        <SocialMediaLinks />
       </div>
     </footer>
   );

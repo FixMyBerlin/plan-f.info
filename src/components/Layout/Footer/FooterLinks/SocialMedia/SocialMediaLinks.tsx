@@ -5,7 +5,7 @@ import InstagramIcon from './assets/instagram-icon.svg';
 
 export const SocialMediaLinks: React.FC = () => {
   return (
-    <div className="flex flex-row gap-4 pt-12 text-white">
+    <div className="flex -translate-y-full flex-row gap-4 text-white">
       <Link newWindow to="https://twitter.com/planf7">
         <TwitterIcon className="h-5 w-5 hover:text-light-gray" />
       </Link>
