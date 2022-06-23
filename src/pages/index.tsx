@@ -66,8 +66,8 @@ const IndexPage: React.FC = () => {
               oder Umsetzung? Dann nehmen Sie mit Ihrem guten Beispiel am
               Wettbewerb von Plan F teil.
             </p>
-            <div className="mx-auto mt-8 rounded-br-[4rem] rounded-tl-[4rem] rounded-bl-sm rounded-tr-sm bg-dark-gray md:mx-20">
-              <p className="p-8 font-apercuMono text-lg text-white">
+            <div className="mx-auto mt-8 rounded-tl-[2rem] rounded-br-[2rem] rounded-bl-sm rounded-tr-sm bg-dark-gray sm:mx-20 sm:rounded-br-[4rem] sm:rounded-tl-[4rem]">
+              <p className="p-4 font-apercuMono text-white sm:p-8">
                 Gute Praxisbeispiele der kommunalen Radverkehrsförderung bis zum
                 31.8.2022 einreichen. Siegerehrung auf der
                 Fahrradkommunalkonferenz 2022 in Aachen.
