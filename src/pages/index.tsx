@@ -66,8 +66,8 @@ const IndexPage: React.FC = () => {
               oder Umsetzung? Dann nehmen Sie mit Ihrem guten Beispiel am
               Wettbewerb von Plan F teil.
             </p>
-            <div className="mx-auto mt-8 rounded-br-[4rem] rounded-tl-[4rem] rounded-bl-sm rounded-tr-sm bg-dark-gray md:mx-20">
-              <p className="p-8 font-apercuMono text-lg text-white">
+            <div className="mx-auto mt-8 rounded-tl-[2rem] rounded-br-[2rem] rounded-bl-sm rounded-tr-sm bg-dark-gray sm:mx-20 sm:rounded-br-[4rem] sm:rounded-tl-[4rem]">
+              <p className="p-4 font-apercuMono text-white sm:p-8">
                 Gute Praxisbeispiele der kommunalen Radverkehrsförderung bis zum
                 31.8.2022 einreichen. Siegerehrung auf der
                 Fahrradkommunalkonferenz 2022 in Aachen.
@@ -193,7 +193,7 @@ const IndexPage: React.FC = () => {
       </section>
       <section className="mt-16 bg-pastel-purple pb-8">
         <Content>
-          <div className="pt-8">
+          <div className="pt-14">
             <H2>Das sind die Preise</H2>
             <ol className="my-8 list-none">
               <CountLI value={1}>
@@ -223,7 +223,7 @@ const IndexPage: React.FC = () => {
               gewinnen.
             </p>
           </div>
-          <div className="mt-8">
+          <div className="mt-14">
             <FoldOut foldedText="Wie läuft das Audit ab?">
               <H2>Ablauf Plan F Audit mit Maßnahmenempfehlung</H2>
               <p className="mt-6">
@@ -248,7 +248,7 @@ const IndexPage: React.FC = () => {
                 Politik, Verbänden oder weitere beteiligte Akteur*innen)
                 präsentiert.
               </p>
-              <div className="mt-12">
+              <div className="mt-8">
                 <H3>Mehrwert für alle Beteiligten</H3>
 
                 <p className="mt-6">

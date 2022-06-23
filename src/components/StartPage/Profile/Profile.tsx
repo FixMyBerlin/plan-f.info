@@ -16,11 +16,11 @@ export const Profile: React.FC<Props> = ({
   mirror = false,
 }) => {
   return (
-    <div className="h-fit-max overflow-auto">
+    <div className="h-fit-max overflow-y-auto overflow-x-hidden">
       <img
         className={classNames(
           mirror ? 'float-right ml-4' : 'float-left mr-4',
-          'h-28 w-28 rounded-full lg:h-40 lg:w-40'
+          'h-24 w-24 rounded-full lg:h-40 lg:w-40'
         )}
         src={src}
         alt={`profilfoto ${name}`}
