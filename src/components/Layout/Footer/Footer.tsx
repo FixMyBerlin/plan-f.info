@@ -12,13 +12,13 @@ export const Footer: React.FC = () => {
       aria-labelledby="footer-heading"
     >
       <div className="flex flex-row">
-        <Link className="px-[3vw]" to="/">
+        <Link className="pl-4 md:pl-[3vw]" to="/">
           <LogoNegative />
         </Link>
         <FooterLinkList linkList={pages} className="flex-grow px-[3vw]" />
         <FooterLinkList
           linkList={legal}
-          className="ml-auto flex-none pr-[15vw]"
+          className="ml-auto flex-none pr-4 md:pr-[12vw]"
         />
       </div>
     </footer>
