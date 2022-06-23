@@ -16,7 +16,7 @@ const legal: FooterMenuItem[] = [
   },
   {
     name: 'Kontakt',
-    to: 'kontakt@plan-f.de',
+    to: 'mailto:kontakt@plan-f.info',
     external: true,
   },
   { name: 'Impressum', to: '/impressum/', external: false },
