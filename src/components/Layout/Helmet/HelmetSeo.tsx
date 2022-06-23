@@ -5,7 +5,8 @@ import { domain } from '~/domain';
 // FYI, https://www.gatsbyjs.com/docs/add-seo-component/ suggest to use useStaticQuery but I don't see why, yet
 const seoDefaultValues = {
   defaultTitle: 'Plan-F.info',
-  defaultDescription: 'TODO',
+  defaultDescription:
+    'Jetzt sind Ihre Projekte gefragt für den #PlanfAward Wenn Sie in Ihrer Kommune aktuell ein Projekt zur Radverkehrsförderung umgesetzt haben, dann bewerben Sie sich bis zum 31. August 2022 um den Plan F Award.',
 };
 
 type Props = {
