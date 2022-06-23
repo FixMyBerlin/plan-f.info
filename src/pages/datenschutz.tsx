@@ -1,6 +1,7 @@
 import React from 'react';
 import { Layout, Hero, Content } from '~/components/Layout';
 import { H1, H2, H3 } from '~/components/Text';
+import { TextLink } from '~/components/Link';
 
 const DatenschutzPage = () => {
   return (
@@ -38,7 +39,9 @@ const DatenschutzPage = () => {
           <p className="font-bold">AEM Accesible Equitable Mobility GmbH</p>
           <p className="mt-2">
             Impressum:&nbsp;
-            <a href="https://www.aem-institute.de/agb/">www.aem-institute.de</a>
+            <TextLink to="https://www.aem-institute.de/agb/">
+              www.aem-institute.de
+            </TextLink>
           </p>
         </div>
         <div className="mt-8">
@@ -81,9 +84,9 @@ const DatenschutzPage = () => {
           <p className="mt-2">
             Eine Liste der Aufsichtsbehörden (für den nichtöffentlichen Bereich)
             mit Anschrift finden Sie unter:&nbsp;
-            <a href="https://www.bfdi.bund.de/DE/Service/Anschriften/Laender/Laender-node.html">
+            <TextLink to="https://www.bfdi.bund.de/DE/Service/Anschriften/Laender/Laender-node.html">
               bfdi.bund.de
-            </a>
+            </TextLink>
           </p>
         </div>
         <div className="mt-8">
@@ -251,9 +254,9 @@ const DatenschutzPage = () => {
             Standardschutzklauseln der EU-Kommission, beim Vorliegen von
             Zertifizierungen oder verbindlicher internen Datenschutzvorschriften
             verarbeiten (Art. 44 bis 49 DSGVO,{' '}
-            <a href="https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection_de">
+            <TextLink to="https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection_de">
               Informationsseite
-            </a>{' '}
+            </TextLink>{' '}
             der EU-Kommission.
           </p>
         </div>
@@ -442,7 +445,9 @@ const DatenschutzPage = () => {
             <p className="mt-2">
               Näheres zur Datenverarbeitung mittels Heyflow findet sich
               auf:&nbsp;
-              <a href="https://heyflow.app/de/datenschutz?">heyflow.app</a>
+              <TextLink to="https://heyflow.app/de/datenschutz?">
+                heyflow.app
+              </TextLink>
             </p>
           </div>
           <div className="mt-8">

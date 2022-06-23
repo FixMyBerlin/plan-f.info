@@ -1,6 +1,7 @@
 import React from 'react';
 import { Layout, Content, Hero } from '~/components/Layout';
 import { H2 } from '~/components/Text';
+import { TextLink } from '~/components/Link';
 
 const ImpressumPage = () => {
   return (
@@ -24,7 +25,16 @@ const ImpressumPage = () => {
           <H2>Kontakt:</H2>
           <ul className="mt-2">
             <li>Telefon: (+49) (0) 176 8071 2212</li>
-            <li>E-Mail: kontakt@plan-f.info oder contact@aem-institute.de</li>
+            <li>
+              E-Mail:{' '}
+              <TextLink external to="mailto:kontakt@plan-f.info">
+                kontakt@plan-f.info
+              </TextLink>{' '}
+              oder{' '}
+              <TextLink external to="mailto:contact@aem-institute.de">
+                contact@aem-institute.de
+              </TextLink>
+            </li>
           </ul>
         </div>
         <div className="mt-8">

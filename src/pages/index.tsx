@@ -7,10 +7,11 @@ import {
   FoldOut,
   CheckLI,
   CountLI,
+  CEO,
+  jury,
 } from '~/components/StartPage';
 import { Layout, Hero, Content } from '~/components/Layout';
-import { CEO, jury } from '~/data/profiles';
-import { ButtonLink } from '~/components/Link';
+import { ButtonLink, TextLink } from '~/components/Link';
 import { H1, H2, H3 } from '~/components/Text';
 
 const IndexPage: React.FC = () => {
@@ -266,9 +267,9 @@ const IndexPage: React.FC = () => {
                   haben im Rahmen dieses Projekts bereits in Kassel, Chemnitz,
                   Mönchengladbach, Wuppertal, Bonn, und Dortmund ein
                   Fahrradaudit durchgeführt.{' '}
-                  <a href="http://nrvp.de/22122" className="text-black">
+                  <TextLink to="http://nrvp.de/22122">
                     Weiterführende Informationen zu dem Projekt.
-                  </a>
+                  </TextLink>
                 </p>
               </div>
             </FoldOut>
@@ -297,7 +298,7 @@ const IndexPage: React.FC = () => {
           </div>
         </Content>
       </section>
-      <div className="mt-44 mb-12 px-8">
+      <div className="object-left pt-28 pb-6">
         <Fundings />
       </div>
     </Layout>

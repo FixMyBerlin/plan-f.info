@@ -46,7 +46,7 @@ export const FoldOut: React.FC<Props> = ({
         className="flex flex-row items-center font-apercu text-[16px] font-bold hover:cursor-pointer"
         onClick={() => setFolded(!folded)}
       >
-        <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-dark-green">
+        <div className="mr-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-dark-green">
           {folded ? <PlusIcon /> : <MinusIcon />}
         </div>
         {folded ? foldedText : unfoldedText}
