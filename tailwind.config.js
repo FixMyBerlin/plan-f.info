@@ -5,14 +5,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'dark-green': '#6bdc93',
+        'dark-green': '#16e08c',
         'lemon-yellow': '#e8ff99',
-        'lime-green': '#bdfa78',
-        'pastel-purple': '#b082f7',
+        'lime-green': '#cbfc60',
+        'pastel-purple': '#ba7dff',
         'dark-gray': '#353535',
         'light-gray': '#787878',
       },
-      padding: { layout: '10vw' },
       typography: {
         DEFAULT: {
           // Tell the plugin to not add any classes to anchor tags
