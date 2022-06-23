@@ -193,7 +193,7 @@ const IndexPage: React.FC = () => {
       </section>
       <section className="mt-16 bg-pastel-purple pb-8">
         <Content>
-          <div className="pt-8">
+          <div className="pt-14">
             <H2>Das sind die Preise</H2>
             <ol className="my-8 list-none">
               <CountLI value={1}>
@@ -223,7 +223,7 @@ const IndexPage: React.FC = () => {
               gewinnen.
             </p>
           </div>
-          <div className="mt-8">
+          <div className="mt-14">
             <FoldOut foldedText="Wie läuft das Audit ab?">
               <H2>Ablauf Plan F Audit mit Maßnahmenempfehlung</H2>
               <p className="mt-6">
@@ -248,7 +248,7 @@ const IndexPage: React.FC = () => {
                 Politik, Verbänden oder weitere beteiligte Akteur*innen)
                 präsentiert.
               </p>
-              <div className="mt-12">
+              <div className="mt-8">
                 <H3>Mehrwert für alle Beteiligten</H3>
 
                 <p className="mt-6">
