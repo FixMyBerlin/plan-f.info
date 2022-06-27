@@ -162,7 +162,7 @@ const IndexPage: React.FC = () => {
           <div className="mt-24">
             <H2>Unsere Schirmfrau</H2>
             <div className="mt-9">
-              <Profile profile={CEO} />
+              <Profile profile={CEO} preload />
               <div className="mr-20">
                 <QuoteBox>{CEO.quote}</QuoteBox>
               </div>

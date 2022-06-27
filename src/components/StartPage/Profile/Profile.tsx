@@ -5,6 +5,7 @@ import { ProfileData } from 'src/types/ProfileData';
 type Props = {
   profile: ProfileData;
   mirror?: boolean;
+  preload?: boolean;
 };
 
 export const Profile: React.FC<Props> = ({
@@ -14,6 +15,7 @@ export const Profile: React.FC<Props> = ({
     foto: { src, attribution },
   },
   mirror = false,
+  preload = false,
 }) => {
   return (
     <div className="h-fit-max overflow-y-auto overflow-x-hidden">
@@ -24,6 +26,7 @@ export const Profile: React.FC<Props> = ({
         )}
         src={src}
         alt={`profilfoto ${name}`}
+        loading={preload ? 'eager' : 'lazy'}
       />
       <div className={classNames('flex flex-col')}>
         <h1 className="font-bold">{name}</h1>
