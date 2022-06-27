@@ -20,18 +20,18 @@ const IndexPage: React.FC = () => {
       <Hero title="Impulse für die kommunale Fahrradmobilität">
         <FoldOut previewMode="clamp">
           <p>
-            Einen Plan zu haben, ist gut. Plan F zu haben, ist sehr gut. F wie
-            Fahrrad, Fortschritt und Fachthemen. Plan F unterstützt Kommunen bei
-            der Förderung des Radverkehrs. Dafür strukturieren wir bestehendes
-            Wissen, Maßnahmen und Leitfäden zur Fahrradmobilität und zeigen
-            notwendige Handlungsfelder auf. Ergänzt wird die Übersicht durch
-            aktuelle Beispiele aus der kommunalen Praxis, die auf städtische und
-            zielgruppenspezifische Besonderheiten eingehen. Kommunen erhalten
-            auf diese Weise einen Überblick und konkrete Handlungsmöglichkeiten
-            zur Radverkehrsförderung.
+            Einen Plan zu haben, ist gut. Plan&nbsp;F zu haben, ist sehr gut. F
+            wie Fahrrad, Fortschritt und Fachthemen. Plan&nbsp;F unterstützt
+            Kommunen bei der Förderung des Radverkehrs. Dafür strukturieren wir
+            bestehendes Wissen, Maßnahmen und Leitfäden zur Fahrradmobilität und
+            zeigen notwendige Handlungsfelder auf. Ergänzt wird die Übersicht
+            durch aktuelle Beispiele aus der kommunalen Praxis, die auf
+            städtische und zielgruppenspezifische Besonderheiten eingehen.
+            Kommunen erhalten auf diese Weise einen Überblick und konkrete
+            Handlungsmöglichkeiten zur Radverkehrsförderung.
           </p>
           <p className="mt-6">
-            Im Projekt Plan F werden vier Produkte erarbeitet:
+            Im Projekt Plan&nbsp;F werden vier Produkte erarbeitet:
           </p>
           <ol className="mt-6 ml-12 list-decimal">
             <li>Ein komprimiertes und übersichtliches Handbuch</li>
@@ -41,14 +41,12 @@ const IndexPage: React.FC = () => {
               Maßnahmenempfehlung
             </li>
             <li>
-              Pressemittteilungen, Plakate, Broschüren, etc. Berichte,
-              Planungsdokumente, entstandene Leitfäden, Verkehrstechnischer
-              Erläuterungsbericht etc. Ein interaktiver E-Learningkurs zu den
-              Inhalten der Systematisierung und Q&A Sessions
+              Ein interaktiver E-Learningkurs zu den Inhalten der
+              Systematisierung und Q&amp;A Sessions
             </li>
           </ol>
           <p className="mt-6">
-            Plan F ist ein gemeinschaftliches Projekt von AEM Institute und
+            Plan&nbsp;F ist ein gemeinschaftliches Projekt von AEM Institute und
             FixMyCity und wird vom Bundesministerium für Digitales und Verkehr
             (BMDV) im Rahmen des Nationalen Radverkehrsplan (NRVP) gefördert.
           </p>
@@ -58,13 +56,14 @@ const IndexPage: React.FC = () => {
         <Content>
           <div className="mt-8">
             <H1>
-              Jetzt mit ihrem Praxisbeispiel bewerben für den Plan F Award
+              Jetzt mit ihrem kommunalen Praxisbeispiel bewerben für den
+              Plan&nbsp;F Award
             </H1>
             <p className="mt-6">
               Sie haben in Ihrer Kommune aktuell eine Maßnahme oder ein Projekt
               zur Radverkehrsförderung umgesetzt oder sind gerade in der Planung
               oder Umsetzung? Dann nehmen Sie mit Ihrem guten Beispiel am
-              Wettbewerb von Plan F teil.
+              Wettbewerb von Plan&nbsp;F teil.
             </p>
             <div className="mx-auto mt-8 rounded-tl-[2rem] rounded-br-[2rem] rounded-bl-sm rounded-tr-sm bg-dark-gray sm:mx-20 sm:rounded-br-[4rem] sm:rounded-tl-[4rem]">
               <p className="p-4 font-apercuMono text-white sm:p-8">
@@ -91,8 +90,8 @@ const IndexPage: React.FC = () => {
                 <H2>Themen</H2>
                 <p className="mt-6">
                   Wir haben insgesamt neun Handlungsfelder für Ihre Ideen und
-                  Maßnahmen definiert, zu denen Sie weitere Informationen auf
-                  dieser Website finden:
+                  Maßnahmen definiert, zu denen Sie weitere Informationen in dem
+                  Bewerbungsformular für den Plan&nbsp;F Award finden:
                 </p>
                 <ul className="my-6 ml-16 list-inside list-square ">
                   <li>Governance</li>
@@ -157,7 +156,7 @@ const IndexPage: React.FC = () => {
           </p>
           <div className="mt-6">
             <ButtonLink large external to="anleitung_bewerbung.pdf">
-              Anleitung zur Bewerbung Plan F Award
+              Anleitung zur Bewerbung Plan&nbsp;F Award
             </ButtonLink>
           </div>
           <div className="mt-24">
@@ -197,48 +196,50 @@ const IndexPage: React.FC = () => {
             <H2>Das sind die Preise</H2>
             <ol className="my-8 list-none">
               <CountLI value={1}>
-                Das erstplatzierte Projekt gewinnt ein Plan F Audit mit
+                Das erstplatzierte Projekt gewinnt ein Plan&nbsp;F Audit mit
                 Maßnahmenempfehlung. Das Audit besteht aus mehreren Workshops,
                 die gemeinsam vor Ort in Ihrer Kommune vom 17. bis 21. Oktober
                 2022 mit Fahrradprofessorin Ineke Spapé und ihren Studierenden
                 aus Breda (NL), dem Team vom AEM Institute sowie Studierenden
                 aus Deutschland durchgeführt wird. Das Vorgehen orientiert sich
                 an dem ehemaligen NRVP-Projekt FreshBrains unter
-                Berücksichtigung der Systematisierung von Plan F.
+                Berücksichtigung der Systematisierung von Plan&nbsp;F.
               </CountLI>
               <CountLI value={2}>
-                Das zweitplatzierte Projekt gewinnt ein Plan F Online Audit von
-                Studierenden unter der Anleitung des Teams vom AEM Institute.
+                Das zweitplatzierte Projekt gewinnt ein Plan&nbsp;F Online Audit
+                von Studierenden unter der Anleitung des Teams vom AEM
+                Institute.
               </CountLI>
               <CountLI value={3}>
-                Das drittplatzierte Projekt gewinnt ein Plan F Online Audit in
-                einem selbst gewählten Handlungsfeld.
+                Das drittplatzierte Projekt gewinnt ein Plan&nbsp;F Online Audit
+                in einem selbst gewählten Handlungsfeld.
               </CountLI>
             </ol>
             <p className="mt-6">
               Neben den drei bestplatzierten Projekten werden auf der
               Fahrradkommunalkonferenz außerdem die besten Maßnahmen pro
               Handlungsfeld geehrt. Auch hier gibt es tolle Preise, wie zum
-              Beispiel coole Plan F Sachpreise oder ein mobilogisch-Abo zu
+              Beispiel coole Plan&nbsp;F Sachpreise oder ein mobilogisch-Abo zu
               gewinnen.
             </p>
           </div>
           <div className="mt-14">
             <FoldOut foldedText="Wie läuft das Audit ab?">
-              <H2>Ablauf Plan F Audit mit Maßnahmenempfehlung</H2>
+              <H2>Ablauf Plan&nbsp;F Audit mit Maßnahmenempfehlung</H2>
               <p className="mt-6">
                 Die Studierenden sind eine Woche zu Gast in Ihrer Kommune und
-                entwickeln in fachlicher Begleitung durch Plan F neue Ideen zur
-                Verbesserung der Radmobilität, angepasst an Ihre spezifischen
-                Bedürfnisse und Gegebenheiten vor Ort. Zu Beginn der
-                Aktionswoche stellt die Kommunalverwaltung kurz die wesentlichen
-                Knackpunkte der Radverkehrsförderung vor. Die Studierenden bauen
-                auf diesen auf und entwickeln eigene Visionen mit dem Ziel, die
-                Fahrradmobilität in kurzer Zeit wesentlich zu verbessern – von
-                der klassischen Planung bis zu Guerilla-Aktionen. Dabei wird
-                Radverkehr grundsätzlich als Gesamtsystem gedacht – mit
-                unterschiedlichen Zielgruppen, Handlungsfeldern und Maßnahmen,
-                die weit über die einfache Infrastruktur hinausgehen.
+                entwickeln in fachlicher Begleitung durch Plan&nbsp;F neue Ideen
+                zur Verbesserung der Radmobilität, angepasst an Ihre
+                spezifischen Bedürfnisse und Gegebenheiten vor Ort. Zu Beginn
+                der Aktionswoche stellt die Kommunalverwaltung kurz die
+                wesentlichen Knackpunkte der Radverkehrsförderung vor. Die
+                Studierenden bauen auf diesen auf und entwickeln eigene Visionen
+                mit dem Ziel, die Fahrradmobilität in kurzer Zeit wesentlich zu
+                verbessern – von der klassischen Planung bis zu
+                Guerilla-Aktionen. Dabei wird Radverkehr grundsätzlich als
+                Gesamtsystem gedacht – mit unterschiedlichen Zielgruppen,
+                Handlungsfeldern und Maßnahmen, die weit über die einfache
+                Infrastruktur hinausgehen.
               </p>
               <p>
                 Die für Ihre Kommune maßgeschneiderten Ergebnisse der
@@ -252,17 +253,17 @@ const IndexPage: React.FC = () => {
                 <H3>Mehrwert für alle Beteiligten</H3>
 
                 <p className="mt-6">
-                  Durch das Plan F Audit entsteht ein deutlicher Mehrwert für
-                  alle Beteiligten – Ihre Kommune erhält innovative und
+                  Durch das Plan&nbsp;F Audit entsteht ein deutlicher Mehrwert
+                  für alle Beteiligten – Ihre Kommune erhält innovative und
                   fachliche Unterstützung und wird so in kurzer Zeit (noch)
                   fahrradfreundlicher. Die Studierenden wiederum lernen aus der
                   kommunalen Praxis und erproben gleichzeitig die Anwendung der
-                  Systematisierung von Plan F – die besten Voraussetzungen also
-                  für einen gemeinsamen neuen Weg der kommunalen
+                  Systematisierung von Plan&nbsp;F – die besten Voraussetzungen
+                  also für einen gemeinsamen neuen Weg der kommunalen
                   Radverkehrsförderung,
                 </p>
                 <p>
-                  Das Plan F Audit ist angelehnt an das NRPV-Projekt
+                  Das Plan&nbsp;F Audit ist angelehnt an das NRPV-Projekt
                   FreshBrains. Studierende aus Deutschland und den Niederlanden
                   haben im Rahmen dieses Projekts bereits in Kassel, Chemnitz,
                   Mönchengladbach, Wuppertal, Bonn, und Dortmund ein
@@ -282,9 +283,9 @@ const IndexPage: React.FC = () => {
           <p className="mt-4">
             Die besten Praxisbeispiele in den unterschiedlichen Handlungsfeldern
             der kommunalen Radverkehrsförderung werden zudem in unserem
-            Handlungsleitfaden sowie auf der Webseite von Plan F veröffentlicht.
-            Die guten Beispiele aus der kommunalen Praxis sollen die
-            vielfältigen Handlungsmöglichkeiten in der Radverkehrsförderung
+            Handlungsleitfaden sowie auf der Webseite von Plan&nbsp;F
+            veröffentlicht. Die guten Beispiele aus der kommunalen Praxis sollen
+            die vielfältigen Handlungsmöglichkeiten in der Radverkehrsförderung
             veranschaulichen und dienen anderen Kommunen künftig als
             Orientierung und Vorbild.
           </p>

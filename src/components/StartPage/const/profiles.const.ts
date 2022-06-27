@@ -18,7 +18,7 @@ export const jury: ProfileData[] = [
     description:
       'Professorin für Radverkehr und Nahmobilität an der Universität Kassel',
     quote:
-      '„Ich finde, jede Kommune sollte einen Plan F haben! Ich möchte gerne dabei unterstützen, dass dieser unkompliziert und schnell umgesetzt werden kann.“',
+      'Ich finde, jede Kommune sollte einen Plan F haben! Ich möchte gerne dabei unterstützen, dass dieser unkompliziert und schnell umgesetzt werden kann.',
     foto: {
       src: aFrancke,
     },

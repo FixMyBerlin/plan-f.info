@@ -4,67 +4,39 @@
 
 
 @font-face {
-
   font-family: ApercuMonoPro;
-
   src: local(ApercuMonoPro-Regular),
-
     url(fonts/apercu-mono-regular-pro/apercu-mono-regular-pro.woff2) format("woff2"),
-
     url(fonts/apercu-mono-regular-pro/apercu-mono-regular-pro.woff) format("woff"),
-
     url(fonts/apercu-mono-regular-pro/apercu-mono-regular-pro.ttf) format("truetype");
 
   font-weight: normal;
-
   font-style: normal;
-
   font-stretch: normal;
-
 }
 
 @font-face {
-
   font-family: ApercuPro;
-
   src: local(ApercuPro-Regular),
-
     url(fonts/apercu-regular-pro/apercu-regular-pro.woff2) format("woff2"),
-
     url(fonts/apercu-regular-pro/apercu-regular-pro.woff) format("woff"),
-
     url(fonts/apercu-regular-pro/apercu-regular-pro.ttf) format("truetype");
 
   font-weight: normal;
-
   font-style: normal;
-
   font-stretch: normal;
-
 }
 
 @font-face {
-
   font-family: ApercuPro;
-
   src: local(ApercuPro-Bold),
-
-    url(/fonts/apercu-bold-pro/apercu-bold-pro.woff2) format("woff2"),
-
+    url(fonts/apercu-bold-pro/apercu-bold-pro.woff2) format("woff2"),
     url(fonts/apercu-bold-pro/apercu-bold-pro.woff) format("woff"),
-
     url(fonts/apercu-bold-pro/apercu-bold-pro.ttf) format("truetype");
 
   font-weight: bold;
-
   font-style: normal;
-
   font-stretch: normal;
-
-}
-
-.ul.li {
-
 }
 
 @layer base {
