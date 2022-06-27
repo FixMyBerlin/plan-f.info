@@ -1,5 +1,6 @@
 import { Link as GatsbyLink } from 'gatsby';
 import React from 'react';
+import { classNames } from '../utils';
 
 export type LinkProps = {
   to: string;
@@ -20,7 +21,7 @@ export const Link: React.FC<LinkProps> = ({
     return (
       <a
         href={to}
-        className={className}
+        className={classNames('hover:underline', className)}
         target={newWindow && '_blank'}
         rel={newWindow && 'noopener noreferrer'}
       >
@@ -30,7 +31,7 @@ export const Link: React.FC<LinkProps> = ({
   }
 
   return (
-    <GatsbyLink to={to} className={className}>
+    <GatsbyLink to={to} className={classNames('hover:underline', className)}>
       {children}
     </GatsbyLink>
   );

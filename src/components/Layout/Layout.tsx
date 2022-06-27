@@ -11,7 +11,7 @@ export const Layout: React.FC<Props> = ({ children }) => {
   return (
     <div className="relative flex h-full flex-col overflow-x-hidden text-[16px] text-dark-gray">
       <HelmetSeo />
-      <main>{children}</main>
+      <main className="flex-grow">{children}</main>
       <Footer />
     </div>
   );
