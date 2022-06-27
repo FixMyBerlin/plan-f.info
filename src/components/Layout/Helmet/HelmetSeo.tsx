@@ -34,7 +34,11 @@ export const HelmetSeo: React.FC<Props> = ({
 
   if (noindex === true) {
     return (
-      <Helmet>
+      <Helmet
+        htmlAttributes={{
+          lang: 'de',
+        }}
+      >
         <title>{seo.title}</title>
         <meta name="robots" content="noindex" />
       </Helmet>
@@ -44,7 +48,11 @@ export const HelmetSeo: React.FC<Props> = ({
   // FYI, we do not inlcude the url meta tags since there was an issue with specs and `useLocation`.
   //  Since we do not need this field, its OK to remove it.
   return (
-    <Helmet>
+    <Helmet
+      htmlAttributes={{
+        lang: 'de',
+      }}
+    >
       <title>{seo.title}</title>
       <meta property="og:title" content={seo.title} />
       <meta name="twitter:title" content={seo.title} />
