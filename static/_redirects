@@ -1,18 +1,4 @@
-# After Initial Release
-# https://www.planf.info/*     https://plan-f.info/:splat   301
-# https://planf.info/*         https://plan-f.info/:splat   301
-# https://www.planf.info       https://plan-f.info          301
-# https://planf.info           https://plan-f.info          301
-
-
-# Redirect any url beside homepage
-https://www.plan-f.info/*     https://fixmyberlin.de       302
-https://plan-f.info/*         https://fixmyberlin.de       302
-https://www.planf.info/*      https://fixmyberlin.de       302
-https://planf.info/*          https://fixmyberlin.de       302
-
-# Redirect homepage
-https://www.planf.info        https://fixmyberlin.de       302
-https://planf.info            https://fixmyberlin.de       302
-https://www.plan-f.info       https://fixmyberlin.de       302
-https://plan-f.info           https://fixmyberlin.de       302
+https://www.planf.info/*     https://plan-f.info/:splat   301
+https://planf.info/*         https://plan-f.info/:splat   301
+https://www.planf.info       https://plan-f.info          301
+https://planf.info           https://plan-f.info          301
