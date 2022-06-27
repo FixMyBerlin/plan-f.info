@@ -23,7 +23,6 @@ module.exports = {
     fontFamily: {
       apercu: ['ApercuPro'],
       apercuMono: ['ApercuMonoPro'],
-      barlow: ['Barlow'],
     },
     listStyleType: {
       none: 'none',
