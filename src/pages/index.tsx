@@ -242,16 +242,14 @@ const IndexPage: React.FC = () => {
                 Infrastruktur hinausgehen.
               </p>
               <p>
-                Die für Ihre Kommune maßgeschneiderten Ergebnisse der
-                FreshBrains werden in einer Broschüre mit Planungen,
-                Visualisierungen und Texten aufbereitet und am Ende der Woche
-                der Stadtverwaltung sowie interessiertem Publikum (z. B. aus der
-                Politik, Verbänden oder weitere beteiligte Akteur*innen)
-                präsentiert.
+                Die für Ihre Kommune maßgeschneiderten Ergebnisse des Plan F
+                Audits werden in einer Broschüre mit Planungen, Visualisierungen
+                und Texten aufbereitet und am Ende der Woche der Stadtverwaltung
+                sowie interessiertem Publikum (z. B. aus der Politik, Verbänden
+                oder weitere beteiligte Akteur*innen) präsentiert.
               </p>
               <div className="mt-8">
                 <H3>Mehrwert für alle Beteiligten</H3>
-
                 <p className="mt-6">
                   Durch das Plan&nbsp;F Audit entsteht ein deutlicher Mehrwert
                   für alle Beteiligten – Ihre Kommune erhält innovative und
@@ -260,16 +258,23 @@ const IndexPage: React.FC = () => {
                   kommunalen Praxis und erproben gleichzeitig die Anwendung der
                   Systematisierung von Plan&nbsp;F – die besten Voraussetzungen
                   also für einen gemeinsamen neuen Weg der kommunalen
-                  Radverkehrsförderung,
+                  Radverkehrsförderung.
                 </p>
                 <p>
-                  Das Plan&nbsp;F Audit ist angelehnt an das NRPV-Projekt
+                  Das Plan&nbsp;F Audit ist angelehnt an das NRVP-Projekt
                   FreshBrains. Studierende aus Deutschland und den Niederlanden
                   haben im Rahmen dieses Projekts bereits in Kassel, Chemnitz,
                   Mönchengladbach, Wuppertal, Bonn, und Dortmund ein
-                  Fahrradaudit durchgeführt.{' '}
-                  <TextLink to="http://nrvp.de/22122">
+                  Fahrradaudit durchgeführt.
+                  {/* <TextLink to="http://nrvp.de/22122">
                     Weiterführende Informationen zu dem Projekt.
+                  </TextLink> */}
+                </p>
+                <p className="mt-6">
+                  Aufruf:&nbsp;
+                  <TextLink external to="Aufruf_Studierende_PlanF_Audit.pdf">
+                    Gesucht: Studierende für das Plan F Audit mit
+                    Maßnahmenempfehlung
                   </TextLink>
                 </p>
               </div>
