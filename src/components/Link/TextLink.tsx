@@ -7,8 +7,7 @@ type Props = {
   children: React.ReactNode;
 } & LinkProps;
 
-const linkStyles =
-  'underline hover:underline active:underline underline-offset-2';
+const linkStyles = 'underline hover:text-black underline-offset-4';
 
 export const TextLink: React.FC<Props> = ({
   className,
