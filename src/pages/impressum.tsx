@@ -40,7 +40,6 @@ const ImpressumPage = () => {
         <div className="mt-8">
           <H2>Vertreten durch:</H2>
           <ul className="mt-2">
-            <li>Ines Kawgan-Kagan </li>
             <li>Carolin Kruse</li>
           </ul>
         </div>
