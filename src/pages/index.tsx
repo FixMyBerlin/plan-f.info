@@ -155,7 +155,7 @@ const IndexPage: React.FC = () => {
             können Sie hier herunterladen.
           </p>
           <div className="mt-6">
-            <ButtonLink large external to="anleitung_bewerbung.pdf">
+            <ButtonLink large newWindow to="anleitung_bewerbung.pdf">
               Anleitung zur Bewerbung Plan&nbsp;F Award
             </ButtonLink>
           </div>
