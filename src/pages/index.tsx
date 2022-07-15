@@ -155,7 +155,7 @@ const IndexPage: React.FC = () => {
             können Sie hier herunterladen.
           </p>
           <div className="mt-6">
-            <ButtonLink large external to="anleitung_bewerbung.pdf">
+            <ButtonLink large newWindow to="anleitung_bewerbung.pdf">
               Anleitung zur Bewerbung Plan&nbsp;F Award
             </ButtonLink>
           </div>
@@ -272,7 +272,11 @@ const IndexPage: React.FC = () => {
                 </p>
                 <p className="mt-6">
                   Aufruf:&nbsp;
-                  <TextLink external to="Aufruf_Studierende_PlanF_Audit.pdf">
+                  <TextLink
+                    newWindow
+                    to="Aufruf_Studierende_PlanF_Audit.pdf"
+                    className="hover:text-black"
+                  >
                     Gesucht: Studierende für das Plan F Audit mit
                     Maßnahmenempfehlung
                   </TextLink>
@@ -298,7 +302,11 @@ const IndexPage: React.FC = () => {
             Bewerben Sie sich bis zum 31. August 2022 mit Ihrem Projekt!
           </p>
           <div className="mt-6">
-            <ButtonLink large to="https://heyflow.id/plan-f-award#start">
+            <ButtonLink
+              newWindow
+              large
+              to="https://heyflow.id/plan-f-award#start"
+            >
               Hier gehts zum Bewerbungsformular
             </ButtonLink>
           </div>
