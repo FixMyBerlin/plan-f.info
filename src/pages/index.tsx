@@ -10,13 +10,14 @@ import {
   CEO,
   jury,
 } from '~/components/StartPage';
-import { Layout, Hero, Content } from '~/components/Layout';
+import { Layout, Hero, Content, HelmetSeo } from '~/components/Layout';
 import { ButtonLink, TextLink } from '~/components/Link';
 import { H1, H2, H3 } from '~/components/Text';
 
 const IndexPage: React.FC = () => {
   return (
     <Layout>
+      <HelmetSeo />
       <Hero title="Impulse für die kommunale Fahrradmobilität">
         <FoldOut previewMode="clamp">
           <p>

@@ -1,11 +1,12 @@
 import React from 'react';
-import { Layout, Hero, Content } from '~/components/Layout';
+import { Layout, Hero, Content, HelmetSeo } from '~/components/Layout';
 import { H1, H2, H3 } from '~/components/Text';
 import { TextLink } from '~/components/Link';
 
 const DatenschutzPage = () => {
   return (
-    <Layout noindex>
+    <Layout>
+      <HelmetSeo noindex />
       <Hero title="Datenschutz" />
       <Content>
         <div className="mt-16">

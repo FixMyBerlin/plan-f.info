@@ -1,11 +1,12 @@
 import React from 'react';
-import { Layout, Content, Hero } from '~/components/Layout';
+import { Layout, Content, Hero, HelmetSeo } from '~/components/Layout';
 import { H2 } from '~/components/Text';
 import { TextLink } from '~/components/Link';
 
 const ImpressumPage = () => {
   return (
-    <Layout noindex>
+    <Layout>
+      <HelmetSeo noindex />
       <Hero title="Impressum" />
       <Content>
         {/* <H1>Impressum</H1> */}
