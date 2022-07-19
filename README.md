@@ -18,5 +18,4 @@ It contains dependencies which have different Licenses, see [`package.json`](./p
 
 - This site is build using [Gatsby](https://www.gatsbyjs.com/) which allows us to manage our data in a convenient way in a spreadsheet, export as CSV and generate static content based on this.
 - We used a [Gatsby starter](https://github.com/jpedroschmitz/gatsby-starter-ts) by João Pedro Schmitz.
-- The search filtering is provided [ItemsJS](https://github.com/itemsapi/itemsjs) which allows us to provide advanded filtering right in the browser.
-- We rely heavily on [Tailwind CSS](https://tailwindcss.com/), [Tailwind UI](https://tailwindui.com/) and [Headless UI](https://headlessui.dev/).
+- We rely heavily on [Tailwind CSS](https://tailwindcss.com/).
