@@ -9,7 +9,7 @@ const seoDefaultValues = {
     'Jetzt sind Ihre Projekte gefragt für den #PlanfAward Wenn Sie in Ihrer Kommune aktuell ein Projekt zur Radverkehrsförderung umgesetzt haben, dann bewerben Sie sich bis zum 31. August 2022 um den Plan F Award.',
 };
 
-type Props = {
+export type Props = {
   noindex?: boolean;
   title?: string | null;
   description?: string | null;

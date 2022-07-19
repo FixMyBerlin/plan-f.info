@@ -5,7 +5,7 @@ import { TextLink } from '~/components/Link';
 
 const ImpressumPage = () => {
   return (
-    <Layout>
+    <Layout noindex>
       <Hero title="Impressum" />
       <Content>
         {/* <H1>Impressum</H1> */}
