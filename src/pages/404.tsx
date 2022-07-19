@@ -6,7 +6,7 @@ import Logo from '~/components/Layout/assets/Logo.svg';
 
 const NotFound: React.FC = () => {
   return (
-    <Layout>
+    <Layout noindex>
       <div className="flex h-full flex-col bg-pastel-purple">
         <div className="bg-dark-green pt-20 pb-12">
           <Content>

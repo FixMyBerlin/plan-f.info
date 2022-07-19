@@ -5,7 +5,7 @@ import { TextLink } from '~/components/Link';
 
 const DatenschutzPage = () => {
   return (
-    <Layout>
+    <Layout noindex>
       <Hero title="Datenschutz" />
       <Content>
         <div className="mt-16">
