@@ -16,6 +16,6 @@ It contains dependencies which have different Licenses, see [`package.json`](./p
 
 ## Thanks
 
-- This site is build using [Gatsby](https://www.gatsbyjs.com/) which allows us to manage our data in a convenient way in a spreadsheet, export as CSV and generate static content based on this.
+- This site is build using [Gatsby](https://www.gatsbyjs.com/).
 - We used a [Gatsby starter](https://github.com/jpedroschmitz/gatsby-starter-ts) by João Pedro Schmitz.
 - We rely heavily on [Tailwind CSS](https://tailwindcss.com/).
