@@ -15,10 +15,11 @@ import { ButtonLink, TextLink } from '~/components/Link';
 import { H1, H2, H3 } from '~/components/Text';
 
 const IndexPage: React.FC = () => {
+  const title = 'Impulse für die kommunale Fahrradmobilität';
   return (
     <Layout>
-      <HelmetSeo />
-      <Hero title="Impulse für die kommunale Fahrradmobilität">
+      <HelmetSeo title={title} />
+      <Hero title={title}>
         <FoldOut previewMode="clamp">
           <p>
             Einen Plan zu haben, ist gut. Plan&nbsp;F zu haben, ist sehr gut. F

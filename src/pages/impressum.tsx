@@ -4,10 +4,11 @@ import { H2 } from '~/components/Text';
 import { TextLink } from '~/components/Link';
 
 const ImpressumPage = () => {
+  const title = 'Impressum';
   return (
     <Layout>
-      <HelmetSeo noindex />
-      <Hero title="Impressum" />
+      <HelmetSeo noindex title={title} />
+      <Hero title={title} />
       <Content>
         {/* <H1>Impressum</H1> */}
         <div className="mt-8">

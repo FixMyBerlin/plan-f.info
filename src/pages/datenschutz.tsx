@@ -4,10 +4,11 @@ import { H1, H2, H3 } from '~/components/Text';
 import { TextLink } from '~/components/Link';
 
 const DatenschutzPage = () => {
+  const title = 'Datenschutz';
   return (
     <Layout>
-      <HelmetSeo noindex />
-      <Hero title="Datenschutz" />
+      <HelmetSeo noindex title={title} />
+      <Hero title={title} />
       <Content>
         <div className="mt-16">
           <H1>Datenschutzvereinbarung</H1>
