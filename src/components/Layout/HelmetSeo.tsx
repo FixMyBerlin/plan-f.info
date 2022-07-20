@@ -11,10 +11,10 @@ const seoDefaultValues = {
 
 type Props = {
   noindex?: boolean;
-  title?: string | null;
-  description?: string | null;
-  image?: string | null;
-  article?: boolean | null;
+  title?: string;
+  description?: string;
+  image?: string;
+  article?: boolean;
 };
 
 export const HelmetSeo: React.FC<Props> = ({

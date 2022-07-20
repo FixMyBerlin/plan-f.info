@@ -10,14 +10,16 @@ import {
   CEO,
   jury,
 } from '~/components/StartPage';
-import { Layout, Hero, Content } from '~/components/Layout';
+import { Layout, Hero, Content, HelmetSeo } from '~/components/Layout';
 import { ButtonLink, TextLink } from '~/components/Link';
 import { H1, H2, H3 } from '~/components/Text';
 
 const IndexPage: React.FC = () => {
+  const title = 'Impulse für die kommunale Fahrradmobilität';
   return (
     <Layout>
-      <Hero title="Impulse für die kommunale Fahrradmobilität">
+      <HelmetSeo title={title} />
+      <Hero title={title}>
         <FoldOut previewMode="clamp">
           <p>
             Einen Plan zu haben, ist gut. Plan&nbsp;F zu haben, ist sehr gut. F
@@ -265,10 +267,13 @@ const IndexPage: React.FC = () => {
                   FreshBrains. Studierende aus Deutschland und den Niederlanden
                   haben im Rahmen dieses Projekts bereits in Kassel, Chemnitz,
                   Mönchengladbach, Wuppertal, Bonn, und Dortmund ein
-                  Fahrradaudit durchgeführt.
-                  {/* <TextLink to="http://nrvp.de/22122">
+                  Fahrradaudit durchgeführt.{' '}
+                  <TextLink
+                    newWindow
+                    to="https://www.mobilitaetsforum.bund.de/DE/Themen/Wissenspool/Projekte/Projektbeispiele/Projekte/19730_freshbrains_fahrradaudits_durch_niederla.html?cms_submit=Suchen&cms_templateQueryString=freshbrain"
+                  >
                     Weiterführende Informationen zu dem Projekt.
-                  </TextLink> */}
+                  </TextLink>
                 </p>
                 <p className="mt-6">
                   Aufruf:&nbsp;

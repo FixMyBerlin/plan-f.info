@@ -1,12 +1,14 @@
 import React from 'react';
-import { Layout, Content, Hero } from '~/components/Layout';
+import { Layout, Content, Hero, HelmetSeo } from '~/components/Layout';
 import { H2 } from '~/components/Text';
 import { TextLink } from '~/components/Link';
 
 const ImpressumPage = () => {
+  const title = 'Impressum';
   return (
     <Layout>
-      <Hero title="Impressum" />
+      <HelmetSeo noindex title={title} />
+      <Hero title={title} />
       <Content>
         {/* <H1>Impressum</H1> */}
         <div className="mt-8">
