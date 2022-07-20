@@ -117,7 +117,11 @@ const IndexPage: React.FC = () => {
               </div>
             </FoldOut>
             <div className="pt-14">
-              <ButtonLink large to="https://heyflow.id/plan-f-award#start">
+              <ButtonLink
+                newWindow
+                large
+                to="https://heyflow.id/plan-f-award#start"
+              >
                 Hier gehts zum Bewerbungsformular
               </ButtonLink>
             </div>
