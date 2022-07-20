@@ -268,7 +268,10 @@ const IndexPage: React.FC = () => {
                   haben im Rahmen dieses Projekts bereits in Kassel, Chemnitz,
                   Mönchengladbach, Wuppertal, Bonn, und Dortmund ein
                   Fahrradaudit durchgeführt.{' '}
-                  <TextLink to="https://www.mobilitaetsforum.bund.de/DE/Themen/Wissenspool/Projekte/Projektbeispiele/Projekte/19730_freshbrains_fahrradaudits_durch_niederla.html?cms_submit=Suchen&cms_templateQueryString=freshbrain">
+                  <TextLink
+                    newWindow
+                    to="https://www.mobilitaetsforum.bund.de/DE/Themen/Wissenspool/Projekte/Projektbeispiele/Projekte/19730_freshbrains_fahrradaudits_durch_niederla.html?cms_submit=Suchen&cms_templateQueryString=freshbrain"
+                  >
                     Weiterführende Informationen zu dem Projekt.
                   </TextLink>
                 </p>
