@@ -13,25 +13,98 @@ import {
 import { Layout, Hero, Content, HelmetSeo } from '~/components/Layout';
 import { ButtonLink, TextLink } from '~/components/Link';
 import { H1, H2, H3 } from '~/components/Text';
+import { graphql } from 'gatsby';
+import { useForm } from 'react-hook-form';
 
-const IndexPage: React.FC = () => {
+export const query = graphql`
+  query HomepageQuery {
+    allStrapiHeader {
+      edges {
+        node {
+          Headline
+          Content {
+            data {
+              Content
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+const IndexPage: React.FC<{ data: any }> = ({ data }) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (formdata) => console.log(formdata);
+  console.error(errors);
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // const { isLoading, error, data } = useQuery(['strapi'], () =>
+  //   fetch('http://0.0.0.0:1337/api/header').then((res) => res.json())
+  // );
+
   const title = 'Impulse für die kommunale Fahrradmobilität';
   return (
     <Layout>
       <HelmetSeo title={title} />
-      <Hero title={title}>
+
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <input
+          type="text"
+          placeholder="First name"
+          {...register('First name', { required: true, maxLength: 80 })}
+        />
+        <input
+          type="text"
+          placeholder="Last name"
+          {...register('Last name', { required: true, maxLength: 100 })}
+        />
+        <input
+          type="text"
+          placeholder="Email"
+          {...register('Email', { required: true, pattern: /^\S+@\S+$/i })}
+        />
+
+        <input type="submit" />
+      </form>
+
+      <svg version="1.1" id="L4" x="0px" y="0px" viewBox="0 0 100 100">
+        <circle fill="#fff" stroke="none" cx="6" cy="50" r="6">
+          <animate
+            attributeName="opacity"
+            dur="1s"
+            values="0;1;0"
+            repeatCount="indefinite"
+            begin="0.1"
+          />
+        </circle>
+        <circle fill="#fff" stroke="none" cx="26" cy="50" r="6">
+          <animate
+            attributeName="opacity"
+            dur="1s"
+            values="0;1;0"
+            repeatCount="indefinite"
+            begin="0.2"
+          />
+        </circle>
+        <circle fill="#fff" stroke="none" cx="46" cy="50" r="6">
+          <animate
+            attributeName="opacity"
+            dur="1s"
+            values="0;1;0"
+            repeatCount="indefinite"
+            begin="0.3"
+          />
+        </circle>
+      </svg>
+
+      <Hero title={data.allStrapiHeader.edges[0].node.Headline}>
         <FoldOut previewMode="clamp">
-          <p>
-            Einen Plan zu haben, ist gut. Plan&nbsp;F zu haben, ist sehr gut. F
-            wie Fahrrad, Fortschritt und Fachthemen. Plan&nbsp;F unterstützt
-            Kommunen bei der Förderung des Radverkehrs. Dafür strukturieren wir
-            bestehendes Wissen, Maßnahmen und Leitfäden zur Fahrradmobilität und
-            zeigen notwendige Handlungsfelder auf. Ergänzt wird die Übersicht
-            durch aktuelle Beispiele aus der kommunalen Praxis, die auf
-            städtische und zielgruppenspezifische Besonderheiten eingehen.
-            Kommunen erhalten auf diese Weise einen Überblick und konkrete
-            Handlungsmöglichkeiten zur Radverkehrsförderung.
-          </p>
+          <p>{data.allStrapiHeader.edges[0].node.Content.data.Content}</p>
           <p className="mt-6">
             Im Projekt Plan&nbsp;F werden vier Produkte erarbeitet:
           </p>
