@@ -57,7 +57,7 @@ module.exports = {
       options: {
         apiURL: 'http://0.0.0.0:1337',
         accessToken:
-          'a964128e5990bea3eb8ae02b0c687bceeff16e0583ef21841d1586819259f52708a36947fce22ddd80e8b4851afdbea2d13c496c0874991f481dc2b8e9d7ddc22711b51745e2a047f4374212816d80603474b4a7881a5f33e49c890470f564407c7af8409fcfd58c1f2cdc835cf351276fb0de330a7368bbb809b4b02ac33bf4',
+          'c1da9faf6180a839c851327cefe478d4dabd35917bfac33f0c5b651fc5f0f493dea16041f592acdec7e9d4984ffe0e6394938ca0f8340172e6759713827712c3d704acfc9cf0ba8ee8d5e5aeacba706d1307ba8d9590740889c0b940c36ade0d4e926b5bfbcabfd1273379d9ef35d8dcddef920d9e19e3a2c502ebbbef451608',
         collectionTypes: ['text-block'],
         singleTypes: ['header'],
       },

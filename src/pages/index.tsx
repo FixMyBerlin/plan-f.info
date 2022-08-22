@@ -13,39 +13,68 @@ import {
 import { Layout, Hero, Content, HelmetSeo } from '~/components/Layout';
 import { ButtonLink, TextLink } from '~/components/Link';
 import { H1, H2, H3 } from '~/components/Text';
-import { graphql } from 'gatsby';
+// import { graphql } from 'gatsby';
 import { useForm } from 'react-hook-form';
+import { useMutation, useQuery } from '@tanstack/react-query';
+import axios from 'axios';
 
-export const query = graphql`
-  query HomepageQuery {
-    allStrapiHeader {
-      edges {
-        node {
-          Headline
-          Content {
-            data {
-              Content
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query HomepageQuery {
+//     allStrapiHeader {
+//       edges {
+//         node {
+//           Headline
+//           Content {
+//             data {
+//               Content
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
 
-const IndexPage: React.FC<{ data: any }> = ({ data }) => {
+const IndexPage: React.FC = () => {
+  const sendName = useMutation((newName) => {
+    console.warn('newname', newName);
+    return fetch('http://localhost:1337/api/annotations', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization:
+          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjYwODI4MzYzLCJleHAiOjE2NjM0MjAzNjN9.hmmJxkHR_QX8mFkfvBfbYS8a2qQ9OZq9uoxFiiRs_1Y',
+      },
+      body: JSON.stringify({ data: { Text: newName } }),
+    });
+  });
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (formdata) => console.log(formdata);
-  console.error(errors);
+  const onSubmit = (formdata) => {
+    console.log(formdata);
+    sendName.mutate(formdata.first);
+  };
+  console.error('Form errors', errors);
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  // const { isLoading, error, data } = useQuery(['strapi'], () =>
-  //   fetch('http://0.0.0.0:1337/api/header').then((res) => res.json())
-  // );
+  // async function getAnnotations() {
+  //   // eslint-disable-next-line no-return-await
+  //   return await fetch('http://localhost:1337/api/annotations', {
+  //     method: 'GET',
+  //     redirect: 'follow',
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => console.log('data_', data));
+  // }
+
+  const { isLoading, error, data, isFetching } = useQuery(
+    ['annotationList'],
+    () =>
+      fetch('http://localhost:1337/api/annotations').then((res) => res.json())
+  );
 
   const title = 'Impulse für die kommunale Fahrradmobilität';
   return (
@@ -56,12 +85,12 @@ const IndexPage: React.FC<{ data: any }> = ({ data }) => {
         <input
           type="text"
           placeholder="First name"
-          {...register('First name', { required: true, maxLength: 80 })}
+          {...register('first', { required: true, maxLength: 80 })}
         />
         <input
           type="text"
           placeholder="Last name"
-          {...register('Last name', { required: true, maxLength: 100 })}
+          {...register('Last', { required: true, maxLength: 100 })}
         />
         <input
           type="text"
@@ -70,6 +99,9 @@ const IndexPage: React.FC<{ data: any }> = ({ data }) => {
         />
 
         <input type="submit" />
+        {error && <strong>Error: {error.message}</strong>}
+        {isFetching && <p>DAs läd</p>}
+        {data && <p>{data.data[0].attributes.Text}</p>}
       </form>
 
       <svg version="1.1" id="L4" x="0px" y="0px" viewBox="0 0 100 100">
@@ -102,9 +134,8 @@ const IndexPage: React.FC<{ data: any }> = ({ data }) => {
         </circle>
       </svg>
 
-      <Hero title={data.allStrapiHeader.edges[0].node.Headline}>
+      <Hero title="tASASDF">
         <FoldOut previewMode="clamp">
-          <p>{data.allStrapiHeader.edges[0].node.Content.data.Content}</p>
           <p className="mt-6">
             Im Projekt Plan&nbsp;F werden vier Produkte erarbeitet:
           </p>
