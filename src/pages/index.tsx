@@ -279,17 +279,6 @@ const IndexPage: React.FC = () => {
                     Weiterführende Informationen zu dem Projekt.
                   </TextLink>
                 </p>
-                <p className="mt-6">
-                  Aufruf:&nbsp;
-                  <TextLink
-                    newWindow
-                    to="Aufruf_Studierende_PlanF_Audit.pdf"
-                    className="hover:text-black"
-                  >
-                    Gesucht: Studierende für das Plan F Audit mit
-                    Maßnahmenempfehlung
-                  </TextLink>
-                </p>
               </div>
             </FoldOut>
           </div>
