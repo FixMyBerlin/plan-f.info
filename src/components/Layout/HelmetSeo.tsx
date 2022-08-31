@@ -6,7 +6,7 @@ import { domain } from '~/domain';
 const seoDefaultValues = {
   defaultTitle: 'Plan-F.info',
   defaultDescription:
-    'Jetzt sind Ihre Projekte gefragt für den #PlanfAward Wenn Sie in Ihrer Kommune aktuell ein Projekt zur Radverkehrsförderung umgesetzt haben, dann bewerben Sie sich bis zum 31. August 2022 um den Plan F Award.',
+    'Jetzt sind Ihre Projekte gefragt für den #PlanfAward Wenn Sie in Ihrer Kommune aktuell ein Projekt zur Radverkehrsförderung umgesetzt haben, dann bewerben Sie sich bis zum 10. September 2022 um den Plan F Award.',
 };
 
 type Props = {

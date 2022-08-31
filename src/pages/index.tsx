@@ -70,7 +70,7 @@ const IndexPage: React.FC = () => {
             <div className="mx-auto mt-8 rounded-tl-[2rem] rounded-br-[2rem] rounded-bl-sm rounded-tr-sm bg-dark-gray sm:mx-20 sm:rounded-br-[4rem] sm:rounded-tl-[4rem]">
               <p className="p-4 font-apercuMono text-white sm:p-8">
                 Gute Praxisbeispiele der kommunalen Radverkehrsförderung bis zum
-                31.8.2022 einreichen. Siegerehrung auf der
+                10. September 2022 einreichen. Siegerehrung auf der
                 Fahrradkommunalkonferenz 2022 in Aachen.
               </p>
             </div>
@@ -112,7 +112,8 @@ const IndexPage: React.FC = () => {
                   Radverkehr.
                 </p>
                 <p className="mt-6">
-                  Bewerben Sie sich bis zum 31. August 2022 mit Ihrem Projekt!
+                  Bewerben Sie sich bis zum 10. September 2022 mit Ihrem
+                  Projekt!
                 </p>
               </div>
             </FoldOut>
@@ -297,7 +298,7 @@ const IndexPage: React.FC = () => {
             Orientierung und Vorbild.
           </p>
           <p className="mt-20">
-            Bewerben Sie sich bis zum 31. August 2022 mit Ihrem Projekt!
+            Bewerben Sie sich bis zum 10. September 2022 mit Ihrem Projekt!
           </p>
           <div className="mt-6">
             <ButtonLink
