@@ -55,9 +55,13 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
+        // in ENV verschieben, da pro Dev unterschiedlich
         apiURL: 'http://0.0.0.0:1337',
+        // in ENV verschieben, da pro Dev unterschiedlich
         accessToken:
-          'c1da9faf6180a839c851327cefe478d4dabd35917bfac33f0c5b651fc5f0f493dea16041f592acdec7e9d4984ffe0e6394938ca0f8340172e6759713827712c3d704acfc9cf0ba8ee8d5e5aeacba706d1307ba8d9590740889c0b940c36ade0d4e926b5bfbcabfd1273379d9ef35d8dcddef920d9e19e3a2c502ebbbef451608',
+          'a4b1e09b99c7ad0a47ce29492b2b480b3831bf492e9a2081fee7b0ddbc8d3a93279888dc132d3e4c07f332bd31ca03e190d06d91c7cb749b45c8ebc09c1da0f5b1e258cd05f6533bcd403c26187bb3a9a41c44a3e06c4a363981cd3dd775b83b2b9502dccf0aa73e3b0ad10b31915cd6e92d3e63520d78fbbaccc2259ad36bd8',
+        // Hier die Content types angeben, die wir in Gatsby verfügbar haben wollen.
+        // collection = array, signle = ein object
         collectionTypes: ['text-block'],
         singleTypes: ['header'],
       },
