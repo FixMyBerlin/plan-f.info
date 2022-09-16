@@ -17,25 +17,27 @@ import { H1, H2, H3 } from '~/components/Text';
 import { useForm } from 'react-hook-form';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import axios from 'axios';
+import { graphql } from 'gatsby';
 
-// export const query = graphql`
-//   query HomepageQuery {
-//     allStrapiHeader {
-//       edges {
-//         node {
-//           Headline
-//           Content {
-//             data {
-//               Content
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
+export const query = graphql`
+  query HomepageQuery {
+    allStrapiHeader {
+      edges {
+        node {
+          id
+          headline
+          content {
+            data {
+              content
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
-const IndexPage: React.FC = () => {
+const IndexPage: React.FC = ({ data }) => {
   const sendName = useMutation((newName) => {
     console.warn('newname', newName);
     return fetch('http://localhost:1337/api/annotations', {
@@ -70,11 +72,11 @@ const IndexPage: React.FC = () => {
   //     .then((data) => console.log('data_', data));
   // }
 
-  const { isLoading, error, data, isFetching } = useQuery(
-    ['annotationList'],
-    () =>
-      fetch('http://localhost:1337/api/annotations').then((res) => res.json())
-  );
+  // const { isLoading, error, data: useQueryData, isFetching } = useQuery(
+  //   ['annotationList'],
+  //   () =>
+  //     fetch('http://localhost:1337/api/annotations').then((res) => res.json())
+  // );
 
   const title = 'Impulse für die kommunale Fahrradmobilität';
   return (
@@ -99,9 +101,12 @@ const IndexPage: React.FC = () => {
         />
 
         <input type="submit" />
-        {error && <strong>Error: {error.message}</strong>}
-        {isFetching && <p>DAs läd</p>}
-        {data && <p>{data.data[0].attributes.Text}</p>}
+        {/* {error && <strong>Error: {error.message}</strong>}
+        {isFetching && <p>DAs läd</p>} */}
+        <pre>
+          HIER:
+          {data && <p>{JSON.stringify(data)}</p>}
+        </pre>
       </form>
 
       <svg version="1.1" id="L4" x="0px" y="0px" viewBox="0 0 100 100">
