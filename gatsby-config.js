@@ -1,4 +1,5 @@
 module.exports = {
+  graphqlTypegen: true,
   // Required by 'gatsby-plugin-sitemap' Plugin
   siteMetadata: {
     title: 'Plan F',
@@ -59,11 +60,11 @@ module.exports = {
         apiURL: 'http://0.0.0.0:1337',
         // in ENV verschieben, da pro Dev unterschiedlich
         accessToken:
-          'a4b1e09b99c7ad0a47ce29492b2b480b3831bf492e9a2081fee7b0ddbc8d3a93279888dc132d3e4c07f332bd31ca03e190d06d91c7cb749b45c8ebc09c1da0f5b1e258cd05f6533bcd403c26187bb3a9a41c44a3e06c4a363981cd3dd775b83b2b9502dccf0aa73e3b0ad10b31915cd6e92d3e63520d78fbbaccc2259ad36bd8',
+          'ed46610f6cb4fa63786e98b1a436c5605084a4a6328204fd1be6ae77cc6ada11d4bfba51c43c1c72f4a48129a265a558c710c7f18c3eef6cce0abf2ffbdc21e6b498d4073798fbb4c9af75f274225ddf876f801b1d2c1f34a9a7ce598fbd4bc86725a59e4d904b82ffecb3867f72da3d041da83640989c8bf10ba8c140aaf079',
         // Hier die Content types angeben, die wir in Gatsby verfügbar haben wollen.
-        // collection = array, signle = ein object
-        collectionTypes: ['text-block'],
-        singleTypes: ['header'],
+        // collection = array, single = ein object
+        collectionTypes: ['example', 'measure', 'topic'],
+        singleTypes: [],
       },
     },
   ],

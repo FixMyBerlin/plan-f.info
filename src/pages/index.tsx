@@ -13,133 +13,13 @@ import {
 import { Layout, Hero, Content, HelmetSeo } from '~/components/Layout';
 import { ButtonLink, TextLink } from '~/components/Link';
 import { H1, H2, H3 } from '~/components/Text';
-// import { graphql } from 'gatsby';
-import { useForm } from 'react-hook-form';
-import { useMutation, useQuery } from '@tanstack/react-query';
-import axios from 'axios';
-import { graphql } from 'gatsby';
 
-export const query = graphql`
-  query HomepageQuery {
-    allStrapiHeader {
-      edges {
-        node {
-          id
-          headline
-          content {
-            data {
-              content
-            }
-          }
-        }
-      }
-    }
-  }
-`;
-
-const IndexPage: React.FC = ({ data }) => {
-  const sendName = useMutation((newName) => {
-    console.warn('newname', newName);
-    return fetch('http://localhost:1337/api/annotations', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization:
-          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjYwODI4MzYzLCJleHAiOjE2NjM0MjAzNjN9.hmmJxkHR_QX8mFkfvBfbYS8a2qQ9OZq9uoxFiiRs_1Y',
-      },
-      body: JSON.stringify({ data: { Text: newName } }),
-    });
-  });
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (formdata) => {
-    console.log(formdata);
-    sendName.mutate(formdata.first);
-  };
-  console.error('Form errors', errors);
-
-  // async function getAnnotations() {
-  //   // eslint-disable-next-line no-return-await
-  //   return await fetch('http://localhost:1337/api/annotations', {
-  //     method: 'GET',
-  //     redirect: 'follow',
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => console.log('data_', data));
-  // }
-
-  // const { isLoading, error, data: useQueryData, isFetching } = useQuery(
-  //   ['annotationList'],
-  //   () =>
-  //     fetch('http://localhost:1337/api/annotations').then((res) => res.json())
-  // );
-
+const IndexPage: React.FC = () => {
   const title = 'Impulse für die kommunale Fahrradmobilität';
   return (
     <Layout>
       <HelmetSeo title={title} />
-
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input
-          type="text"
-          placeholder="First name"
-          {...register('first', { required: true, maxLength: 80 })}
-        />
-        <input
-          type="text"
-          placeholder="Last name"
-          {...register('Last', { required: true, maxLength: 100 })}
-        />
-        <input
-          type="text"
-          placeholder="Email"
-          {...register('Email', { required: true, pattern: /^\S+@\S+$/i })}
-        />
-
-        <input type="submit" />
-        {/* {error && <strong>Error: {error.message}</strong>}
-        {isFetching && <p>DAs läd</p>} */}
-        <pre>
-          HIER:
-          {data && <p>{JSON.stringify(data)}</p>}
-        </pre>
-      </form>
-
-      <svg version="1.1" id="L4" x="0px" y="0px" viewBox="0 0 100 100">
-        <circle fill="#fff" stroke="none" cx="6" cy="50" r="6">
-          <animate
-            attributeName="opacity"
-            dur="1s"
-            values="0;1;0"
-            repeatCount="indefinite"
-            begin="0.1"
-          />
-        </circle>
-        <circle fill="#fff" stroke="none" cx="26" cy="50" r="6">
-          <animate
-            attributeName="opacity"
-            dur="1s"
-            values="0;1;0"
-            repeatCount="indefinite"
-            begin="0.2"
-          />
-        </circle>
-        <circle fill="#fff" stroke="none" cx="46" cy="50" r="6">
-          <animate
-            attributeName="opacity"
-            dur="1s"
-            values="0;1;0"
-            repeatCount="indefinite"
-            begin="0.3"
-          />
-        </circle>
-      </svg>
-
-      <Hero title="tASASDF">
+      <Hero title={title}>
         <FoldOut previewMode="clamp">
           <p className="mt-6">
             Im Projekt Plan&nbsp;F werden vier Produkte erarbeitet:
