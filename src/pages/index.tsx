@@ -21,7 +21,7 @@ const IndexPage: React.FC = () => {
       <HelmetSeo title={title} />
       <Hero title={title}>
         <FoldOut previewMode="clamp">
-          <p className="mt-6">
+          <p className="pt-6">
             Im Projekt Plan&nbsp;F werden vier Produkte erarbeitet:
           </p>
           <ol className="mt-6 ml-12 list-decimal">
