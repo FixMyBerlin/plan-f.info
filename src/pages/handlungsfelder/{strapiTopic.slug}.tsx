@@ -1,42 +1,16 @@
 import React from 'react';
+import { Fundings, FoldOut } from '~/components/StartPage';
 import {
-  Profile,
-  ProfileGrid,
-  QuoteBox,
-  Fundings,
-  FoldOut,
-  CheckLI,
-  CountLI,
-  CEO,
-  jury,
-} from '~/components/StartPage';
-import { Layout, Hero, Content, HelmetSeo } from '~/components/Layout';
-import { H1, H2, H3 } from '~/components/Text';
+  Layout,
+  Hero,
+  Content,
+  HelmetSeo,
+  Navigation,
+} from '~/components/Layout';
 import { graphql, Link, PageProps } from 'gatsby';
 
-export const query = graphql`
-  query TopicDetails($id: String!) {
-    topic: strapiTopic(id: { eq: $id }) {
-      name
-      description {
-        data {
-          description
-        }
-      }
-      measures {
-        name
-        slug
-        description {
-          data {
-            description
-          }
-        }
-      }
-    }
-  }
-`;
-
-const IndexPage: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
+const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
+  path,
   data: { topic },
 }) => {
   return (
@@ -66,6 +40,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
           </p>
         </FoldOut>
       </Hero>
+      <Navigation path={path} />
       <section className="pt-1">
         <Content>
           {topic.measures.map((measure) => (
@@ -85,4 +60,26 @@ const IndexPage: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
   );
 };
 
-export default IndexPage;
+export default TopicDetails;
+
+export const query = graphql`
+  query TopicDetails($id: String!) {
+    topic: strapiTopic(id: { eq: $id }) {
+      name
+      description {
+        data {
+          description
+        }
+      }
+      measures {
+        name
+        slug
+        description {
+          data {
+            description
+          }
+        }
+      }
+    }
+  }
+`;

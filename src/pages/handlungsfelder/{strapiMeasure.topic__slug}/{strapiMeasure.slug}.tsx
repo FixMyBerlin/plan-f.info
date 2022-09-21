@@ -1,42 +1,16 @@
 import React from 'react';
+import { Fundings, FoldOut } from '~/components/StartPage';
 import {
-  Profile,
-  ProfileGrid,
-  QuoteBox,
-  Fundings,
-  FoldOut,
-  CheckLI,
-  CountLI,
-  CEO,
-  jury,
-} from '~/components/StartPage';
-import { Layout, Hero, Content, HelmetSeo } from '~/components/Layout';
-import { H1, H2, H3 } from '~/components/Text';
+  Layout,
+  Hero,
+  Content,
+  HelmetSeo,
+  Navigation,
+} from '~/components/Layout';
 import { graphql, Link, PageProps } from 'gatsby';
 
-export const query = graphql`
-  query MeasureDetails($id: String!) {
-    measure: strapiMeasure(id: { eq: $id }) {
-      name
-      description {
-        data {
-          description
-        }
-      }
-      examples {
-        name
-        slug
-        description {
-          data {
-            description
-          }
-        }
-      }
-    }
-  }
-`;
-
-const IndexPage: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
+const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
+  path,
   data: { measure },
 }) => {
   return (
@@ -66,6 +40,7 @@ const IndexPage: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
           </p>
         </FoldOut>
       </Hero>
+      <Navigation path={path} />
       <section className="pt-1">
         <Content>
           {measure.examples.map((example) => (
@@ -85,4 +60,26 @@ const IndexPage: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
   );
 };
 
-export default IndexPage;
+export default MeasureDetails;
+
+export const query = graphql`
+  query MeasureDetails($id: String!) {
+    measure: strapiMeasure(id: { eq: $id }) {
+      name
+      description {
+        data {
+          description
+        }
+      }
+      examples {
+        name
+        slug
+        description {
+          data {
+            description
+          }
+        }
+      }
+    }
+  }
+`;

@@ -1,18 +1,12 @@
 import React from 'react';
+import { Fundings, FoldOut } from '~/components/StartPage';
 import {
-  Profile,
-  ProfileGrid,
-  QuoteBox,
-  Fundings,
-  FoldOut,
-  CheckLI,
-  CountLI,
-  CEO,
-  jury,
-} from '~/components/StartPage';
-import { Layout, Hero, Content, HelmetSeo } from '~/components/Layout';
-import { ButtonLink, TextLink } from '~/components/Link';
-import { H1, H2, H3 } from '~/components/Text';
+  Layout,
+  Hero,
+  Content,
+  HelmetSeo,
+  Navigation,
+} from '~/components/Layout';
 import { graphql, PageProps, Link } from 'gatsby';
 
 export const query = graphql`
@@ -32,6 +26,7 @@ export const query = graphql`
 `;
 
 const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
+  path,
   data: { topics },
 }) => {
   const title = 'Handlungsfelder';
@@ -62,6 +57,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
           </p>
         </FoldOut>
       </Hero>
+      <Navigation path={path} />
       <section className="pt-1">
         <Content>
           {topics.nodes.map((topic) => (

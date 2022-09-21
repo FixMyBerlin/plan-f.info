@@ -1,33 +1,16 @@
 import React from 'react';
+import { Fundings, FoldOut } from '~/components/StartPage';
 import {
-  Profile,
-  ProfileGrid,
-  QuoteBox,
-  Fundings,
-  FoldOut,
-  CheckLI,
-  CountLI,
-  CEO,
-  jury,
-} from '~/components/StartPage';
-import { Layout, Hero, Content, HelmetSeo } from '~/components/Layout';
-import { H1, H2, H3 } from '~/components/Text';
-import { graphql, Link, PageProps } from 'gatsby';
+  Layout,
+  Hero,
+  Content,
+  HelmetSeo,
+  Navigation,
+} from '~/components/Layout';
+import { graphql, PageProps } from 'gatsby';
 
-export const query = graphql`
-  query ExampleDetails($id: String!) {
-    example: strapiExample(id: { eq: $id }) {
-      name
-      description {
-        data {
-          description
-        }
-      }
-    }
-  }
-`;
-
-const IndexPage: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
+const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
+  path,
   data: { example },
 }) => {
   return (
@@ -57,6 +40,7 @@ const IndexPage: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
           </p>
         </FoldOut>
       </Hero>
+      <Navigation path={path} />
       <section className="pt-1">
         <Content>{example.description.data.description}</Content>
       </section>
@@ -67,4 +51,17 @@ const IndexPage: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
   );
 };
 
-export default IndexPage;
+export default ExampleDetails;
+
+export const query = graphql`
+  query ExampleDetails($id: String!) {
+    example: strapiExample(id: { eq: $id }) {
+      name
+      description {
+        data {
+          description
+        }
+      }
+    }
+  }
+`;
