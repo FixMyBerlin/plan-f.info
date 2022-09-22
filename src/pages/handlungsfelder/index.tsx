@@ -1,5 +1,5 @@
 import React from 'react';
-import { Fundings, FoldOut } from '~/components/StartPage';
+import { Fundings } from '~/components/StartPage';
 import {
   Layout,
   Hero,
@@ -33,30 +33,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
   return (
     <Layout>
       <HelmetSeo title={title} />
-      <Hero title={title}>
-        <FoldOut previewMode="clamp">
-          <p className="mt-6">
-            Im Projekt Plan&nbsp;F werden vier Produkte erarbeitet:
-          </p>
-          <ol className="mt-6 ml-12 list-decimal">
-            <li>Ein komprimiertes und übersichtliches Handbuch</li>
-            <li>Eine interaktive Webseite</li>
-            <li>
-              Ein kommunaler Fahrradcheck (Selbstaudit) inkl.
-              Maßnahmenempfehlung
-            </li>
-            <li>
-              Ein interaktiver E-Learningkurs zu den Inhalten der
-              Systematisierung und Q&amp;A Sessions
-            </li>
-          </ol>
-          <p className="mt-6">
-            Plan&nbsp;F ist ein gemeinschaftliches Projekt von AEM Institute und
-            FixMyCity und wird vom Bundesministerium für Digitales und Verkehr
-            (BMDV) im Rahmen des Nationalen Radverkehrsplan (NRVP) gefördert.
-          </p>
-        </FoldOut>
-      </Hero>
+      <Hero title={title} />
       <Navigation path={path} />
       <section className="pt-1">
         <Content>

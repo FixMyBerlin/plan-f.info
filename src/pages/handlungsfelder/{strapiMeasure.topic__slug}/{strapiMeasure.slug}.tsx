@@ -1,5 +1,5 @@
 import React from 'react';
-import { Fundings, FoldOut } from '~/components/StartPage';
+import { Fundings } from '~/components/StartPage';
 import {
   Layout,
   Hero,
@@ -17,28 +17,11 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
     <Layout>
       <HelmetSeo title={measure.name} />
       <Hero title={measure.name}>
-        <FoldOut previewMode="clamp">
-          <p className="mt-6">
-            Im Projekt Plan&nbsp;F werden vier Produkte erarbeitet:
-          </p>
-          <ol className="mt-6 ml-12 list-decimal">
-            <li>Ein komprimiertes und übersichtliches Handbuch</li>
-            <li>Eine interaktive Webseite</li>
-            <li>
-              Ein kommunaler Fahrradcheck (Selbstaudit) inkl.
-              Maßnahmenempfehlung
-            </li>
-            <li>
-              Ein interaktiver E-Learningkurs zu den Inhalten der
-              Systematisierung und Q&amp;A Sessions
-            </li>
-          </ol>
-          <p className="mt-6">
-            Plan&nbsp;F ist ein gemeinschaftliches Projekt von AEM Institute und
-            FixMyCity und wird vom Bundesministerium für Digitales und Verkehr
-            (BMDV) im Rahmen des Nationalen Radverkehrsplan (NRVP) gefördert.
-          </p>
-        </FoldOut>
+        <Link to="../../">Handlungsfelder</Link>
+        {' / '}
+        <Link to="../">{measure.topic.name}</Link>
+        {' / '}
+        <Link to=".">{measure.name}</Link>
       </Hero>
       <Navigation path={path} />
       <section className="pt-1">
@@ -70,6 +53,9 @@ export const query = graphql`
         data {
           description
         }
+      }
+      topic {
+        name
       }
       examples {
         name

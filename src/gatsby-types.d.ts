@@ -5322,7 +5322,7 @@ type ExampleDetailsQueryVariables = Exact<{
 }>;
 
 
-type ExampleDetailsQuery = { readonly example: { readonly name: string | null, readonly description: { readonly data: { readonly description: string | null } | null } | null } | null };
+type ExampleDetailsQuery = { readonly example: { readonly name: string | null, readonly measure: { readonly name: string | null, readonly topic: { readonly name: string | null } | null } | null, readonly description: { readonly data: { readonly description: string | null } | null } | null } | null, readonly exampleList: { readonly nodes: ReadonlyArray<{ readonly slug: string | null }> } };
 
 type GatsbyImageSharpFixedFragment = { readonly base64: string | null, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
 
@@ -5355,7 +5355,7 @@ type MeasureDetailsQueryVariables = Exact<{
 }>;
 
 
-type MeasureDetailsQuery = { readonly measure: { readonly name: string | null, readonly description: { readonly data: { readonly description: string | null } | null } | null, readonly examples: ReadonlyArray<{ readonly name: string | null, readonly slug: string | null, readonly description: { readonly data: { readonly description: string | null } | null } | null } | null> | null } | null };
+type MeasureDetailsQuery = { readonly measure: { readonly name: string | null, readonly description: { readonly data: { readonly description: string | null } | null } | null, readonly topic: { readonly name: string | null } | null, readonly examples: ReadonlyArray<{ readonly name: string | null, readonly slug: string | null, readonly description: { readonly data: { readonly description: string | null } | null } | null } | null> | null } | null };
 
 type TopicDetailsQueryVariables = Exact<{
   id: Scalars['String'];
