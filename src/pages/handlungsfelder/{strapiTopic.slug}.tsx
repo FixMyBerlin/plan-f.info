@@ -6,6 +6,7 @@ import {
   Content,
   HelmetSeo,
   Navigation,
+  Breadcrumbs,
 } from '~/components/Layout';
 import { graphql, Link, PageProps } from 'gatsby';
 
@@ -17,9 +18,7 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
     <Layout>
       <HelmetSeo title={topic.name} />
       <Hero title={topic.name}>
-        <Link to="../">Handlungsfelder</Link>
-        {' / '}
-        <Link to=".">{topic.name}</Link>
+        <Breadcrumbs names={['Handlungsfelder', topic.name]} />
       </Hero>
       <Navigation path={path} />
       <section className="pt-1">

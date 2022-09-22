@@ -6,6 +6,7 @@ import {
   Content,
   HelmetSeo,
   Navigation,
+  Breadcrumbs,
 } from '~/components/Layout';
 import { graphql, PageProps } from 'gatsby';
 import { Link } from '~/components/Link';
@@ -18,15 +19,19 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
   const pos = slugList.indexOf(example.slug);
   const prevSlug = slugList[pos - 1] || slugList[slugList.length - 1];
   const nextSlug = slugList[pos + 1] || slugList[0];
+
   return (
     <Layout>
       <HelmetSeo title={example.measure.name} />
       <Hero title={example.measure.name}>
-        <Link to="../../../">Handlungsfelder</Link>
-        {' / '}
-        <Link to="../../">{example.measure.topic.name}</Link>
-        {' / '}
-        <Link to="../">{example.measure.name}</Link>
+        <Breadcrumbs
+          names={[
+            'Handlungsfelder',
+            example.measure.topic.name,
+            example.measure.name,
+          ]}
+          prefix="../"
+        />
       </Hero>
       <Navigation
         path={
@@ -57,6 +62,7 @@ export const query = graphql`
   query ExampleDetails($id: String!) {
     example: strapiExample(id: { eq: $id }) {
       name
+      slug
       measure {
         name
         topic {

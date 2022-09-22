@@ -6,6 +6,7 @@ import {
   Content,
   HelmetSeo,
   Navigation,
+  Breadcrumbs,
 } from '~/components/Layout';
 import { graphql, PageProps, Link } from 'gatsby';
 
@@ -33,7 +34,9 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
   return (
     <Layout>
       <HelmetSeo title={title} />
-      <Hero title={title} />
+      <Hero title={title}>
+        <Breadcrumbs names={[title]} />
+      </Hero>
       <Navigation path={path} />
       <section className="pt-1">
         <Content>
