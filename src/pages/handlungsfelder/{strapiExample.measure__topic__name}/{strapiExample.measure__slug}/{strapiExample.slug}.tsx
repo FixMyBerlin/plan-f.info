@@ -1,18 +1,10 @@
 import React from 'react';
 import { Fundings } from '~/components/StartPage';
-import {
-  Layout,
-  Hero,
-  Content,
-  HelmetSeo,
-  Navigation,
-  Breadcrumbs,
-} from '~/components/Layout';
+import { Hero, Content, HelmetSeo, Breadcrumbs } from '~/components/Layout';
 import { graphql, PageProps } from 'gatsby';
 import { Link } from '~/components/Link';
 
 const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
-  path,
   data: { example, exampleList },
 }) => {
   const slugList = exampleList.nodes.map(({ slug }) => slug);
@@ -21,7 +13,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
   const nextSlug = slugList[pos + 1] || slugList[0];
 
   return (
-    <Layout>
+    <>
       <HelmetSeo title={example.measure.name} />
       <Hero title={example.measure.name}>
         <Breadcrumbs
@@ -33,12 +25,12 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
           prefix="../"
         />
       </Hero>
-      <Navigation
+      {/* <Navigation
         path={
           path.slice(0, path.lastIndexOf('/', path.length - 2) + 1)
           // can't use `path` lib here due to hydration :(
         }
-      />
+      /> */}
       <section>
         <Content>
           <h1>{example.name}</h1>
@@ -52,7 +44,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
       <div className="object-left pt-28 pb-6">
         <Fundings />
       </div>
-    </Layout>
+    </>
   );
 };
 

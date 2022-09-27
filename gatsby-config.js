@@ -21,6 +21,12 @@ module.exports = {
     'gatsby-plugin-postcss',
     'gatsby-transformer-sharp',
     {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: 'src/components/Layout/Layout',
+      },
+    },
+    {
       // Docs https://www.gatsbyjs.com/plugins/gatsby-plugin-sitemap/
       resolve: 'gatsby-plugin-sitemap',
       options: {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Fundings } from '~/components/StartPage';
 import {
-  Layout,
   Hero,
   Content,
   HelmetSeo,
@@ -32,7 +31,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
 }) => {
   const title = 'Handlungsfelder';
   return (
-    <Layout>
+    <>
       <HelmetSeo title={title} />
       <Hero title={title}>
         <Breadcrumbs names={[title]} />
@@ -53,7 +52,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
       <div className="object-left pt-28 pb-6">
         <Fundings />
       </div>
-    </Layout>
+    </>
   );
 };
 

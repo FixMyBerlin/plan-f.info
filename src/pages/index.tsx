@@ -10,14 +10,14 @@ import {
   CEO,
   jury,
 } from '~/components/StartPage';
-import { Layout, Hero, Content, HelmetSeo } from '~/components/Layout';
+import { Hero, Content, HelmetSeo } from '~/components/Layout';
 import { ButtonLink, TextLink } from '~/components/Link';
 import { H1, H2, H3 } from '~/components/Text';
 
 const IndexPage: React.FC = () => {
   const title = 'Impulse für die kommunale Fahrradmobilität';
   return (
-    <Layout>
+    <>
       <HelmetSeo title={title} />
       <Hero title={title}>
         <FoldOut previewMode="clamp">
@@ -313,7 +313,7 @@ const IndexPage: React.FC = () => {
       <div className="object-left pt-28 pb-6">
         <Fundings />
       </div>
-    </Layout>
+    </>
   );
 };
 

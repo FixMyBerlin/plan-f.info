@@ -1,26 +1,17 @@
 import React from 'react';
 import { Fundings } from '~/components/StartPage';
-import {
-  Layout,
-  Hero,
-  Content,
-  HelmetSeo,
-  Navigation,
-  Breadcrumbs,
-} from '~/components/Layout';
+import { Hero, Content, HelmetSeo, Breadcrumbs } from '~/components/Layout';
 import { graphql, Link, PageProps } from 'gatsby';
 
 const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
-  path,
   data: { topic },
 }) => {
   return (
-    <Layout>
+    <>
       <HelmetSeo title={topic.name} />
       <Hero title={topic.name}>
         <Breadcrumbs names={['Handlungsfelder', topic.name]} />
       </Hero>
-      <Navigation path={path} />
       <section className="pt-1">
         <Content>
           {topic.measures.map((measure) => (
@@ -36,7 +27,7 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
       <div className="object-left pt-28 pb-6">
         <Fundings />
       </div>
-    </Layout>
+    </>
   );
 };
 
