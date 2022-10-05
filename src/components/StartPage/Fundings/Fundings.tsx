@@ -1,7 +1,7 @@
 import React from 'react';
 import BMDVLogo from './assets/bmdv.svg';
 import VeloplanLogo from './assets/veloplan.png';
-import fairSpacesLogo from './assets/fairspaces.png';
+import FairSpacesLogo from './assets/fairspaces.svg';
 
 export const Fundings: React.FC = () => {
   return (
@@ -16,11 +16,7 @@ export const Fundings: React.FC = () => {
         />
       </div>
       <div className="mx-10 flex grow-0 self-center">
-        <img
-          className="h-20 object-scale-down"
-          src={fairSpacesLogo}
-          alt="fair spaces Logo"
-        />
+        <FairSpacesLogo className="h-20 object-scale-down" />
       </div>
     </div>
   );
