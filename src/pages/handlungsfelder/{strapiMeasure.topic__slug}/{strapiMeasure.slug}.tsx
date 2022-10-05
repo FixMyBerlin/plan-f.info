@@ -18,13 +18,13 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
         <Content>
           <div className="relative bg-dark-green  px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28">
             <div className="relative mx-auto max-w-7xl">
-              <div className="text-center">
+              <div className="text-left">
                 <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                   Praxisbeispiele
                 </h2>
-                <p className="mx-auto mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa
-                  libero labore natus atque, ducimus sed.
+                <p className="mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
+                  Schau was andere Kommunen zu diesem Thema bereits für
+                  Maßnahmen umgesetzt haben.
                 </p>
               </div>
               <div className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
