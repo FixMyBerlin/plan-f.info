@@ -25,21 +25,19 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
           prefix="../"
         />
       </Hero>
-      {/* <Navigation
-        path={
-          path.slice(0, path.lastIndexOf('/', path.length - 2) + 1)
-          // can't use `path` lib here due to hydration :(
-        }
-      /> */}
       <section>
         <Content>
-          <h1>{example.name}</h1>
-          <Link to={`../${prevSlug}`}> Prev</Link>
-          <Link to={`../${nextSlug}`}> Next</Link>
+          <div className="bg-dark-green py-10 px-10">
+            Praxisbesipiel
+            <Link to={`../${prevSlug}`}> Prev</Link>
+            {pos + 1}
+            <Link to={`../${nextSlug}`}> Next</Link>
+            <div className="bg-white">
+              <h1>{example.name}</h1>
+              {JSON.stringify(example)}
+            </div>
+          </div>
         </Content>
-      </section>
-      <section className="pt-1">
-        <Content>{example.description.data.description}</Content>
       </section>
       <div className="object-left pt-28 pb-6">
         <Fundings />
@@ -53,17 +51,77 @@ export default ExampleDetails;
 export const query = graphql`
   query ExampleDetails($id: String!) {
     example: strapiExample(id: { eq: $id }) {
+      countryState
       name
       slug
-      measure {
-        name
-        topic {
-          name
+      period
+      population
+      shortDescription
+      spatialStructure
+      state
+      targetGroup
+      funding
+      localChallanges
+      accessibility {
+        description
+        percent
+      }
+      effectiveness {
+        percent
+        description
+      }
+      effort {
+        percent
+        description
+      }
+      evaluation {
+        description
+        percent
+      }
+      execution {
+        percent
+        description
+      }
+      participation {
+        description
+        percent
+      }
+      synergies {
+        percent
+        description
+      }
+      portability {
+        percent
+        description
+      }
+      links {
+        url
+        display
+      }
+      stakeholders {
+        data {
+          stakeholders
+        }
+      }
+      award {
+        data {
+          award
         }
       }
       description {
         data {
           description
+        }
+      }
+      relatedOffice {
+        data {
+          relatedOffice
+        }
+      }
+      measure {
+        name
+        topic {
+          name
         }
       }
     }
