@@ -3,6 +3,7 @@ import { Fundings } from '~/components/StartPage';
 import { Hero, Content, HelmetSeo, Breadcrumbs } from '~/components/Layout';
 import { graphql, PageProps } from 'gatsby';
 import { Link } from '~/components/Link';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
   data: { example, exampleList },
@@ -36,6 +37,18 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
               <h1>{example.name}</h1>
               {JSON.stringify(example)}
             </div>
+            <GatsbyImage
+              image={getImage(example.image.localFile as any)}
+              alt="Titelbild"
+            />
+            <div>
+              {Object.keys(example.evaluation).map((key) => (
+                <div key={key}>
+                  {key}: {`${example.evaluation[key].percent} % `}
+                  {example.evaluation[key].description}
+                </div>
+              ))}
+            </div>
           </div>
         </Content>
       </section>
@@ -51,61 +64,22 @@ export default ExampleDetails;
 export const query = graphql`
   query ExampleDetails($id: String!) {
     example: strapiExample(id: { eq: $id }) {
-      countryState
       name
-      slug
-      period
-      population
       shortDescription
+      countryState
+      commune
+      population
       spatialStructure
+      localChallanges
       state
+      period
       targetGroup
       funding
-      localChallanges
-      accessibility {
-        description
-        percent
-      }
-      effectiveness {
-        percent
-        description
-      }
-      effort {
-        percent
-        description
-      }
-      evaluation {
-        description
-        percent
-      }
-      execution {
-        percent
-        description
-      }
-      participation {
-        description
-        percent
-      }
-      synergies {
-        percent
-        description
-      }
-      portability {
-        percent
-        description
-      }
-      links {
-        url
-        display
-      }
-      stakeholders {
-        data {
-          stakeholders
-        }
-      }
-      award {
-        data {
-          award
+      image {
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
       description {
@@ -118,12 +92,57 @@ export const query = graphql`
           relatedOffice
         }
       }
+      stakeholders {
+        data {
+          stakeholders
+        }
+      }
+      award {
+        data {
+          award
+        }
+      }
+      links {
+        url
+        display
+      }
       measure {
         name
         topic {
           name
         }
       }
+      evaluation {
+        accessibility {
+          description
+          percent
+        }
+        effectiveness {
+          percent
+          description
+        }
+        effort {
+          percent
+          description
+        }
+        execution {
+          percent
+          description
+        }
+        participation {
+          description
+          percent
+        }
+        synergies {
+          percent
+          description
+        }
+        portability {
+          percent
+          description
+        }
+      }
+      slug
     }
     exampleList: allStrapiExample {
       nodes {

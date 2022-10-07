@@ -69,7 +69,21 @@ module.exports = {
           'ed46610f6cb4fa63786e98b1a436c5605084a4a6328204fd1be6ae77cc6ada11d4bfba51c43c1c72f4a48129a265a558c710c7f18c3eef6cce0abf2ffbdc21e6b498d4073798fbb4c9af75f274225ddf876f801b1d2c1f34a9a7ce598fbd4bc86725a59e4d904b82ffecb3867f72da3d041da83640989c8bf10ba8c140aaf079',
         // Hier die Content types angeben, die wir in Gatsby verfügbar haben wollen.
         // collection = array, single = ein object
-        collectionTypes: ['example', 'measure', 'topic'],
+        collectionTypes: [
+          'measure',
+          'topic',
+          {
+            singularName: 'example',
+            queryParams: {
+              populate: {
+                evaluation: { populate: '*' },
+                links: { populate: '*' },
+                measure: { populate: '*' },
+                image: { populate: '*' },
+              },
+            },
+          },
+        ],
         singleTypes: [],
       },
     },

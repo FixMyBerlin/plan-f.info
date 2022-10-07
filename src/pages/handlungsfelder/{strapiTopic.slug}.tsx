@@ -2,6 +2,7 @@ import React from 'react';
 import { Fundings } from '~/components/StartPage';
 import { Hero, Content, HelmetSeo, Breadcrumbs } from '~/components/Layout';
 import { graphql, Link, PageProps } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
   data: { topic },
@@ -14,6 +15,7 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
       </Hero>
       <section className="pt-1">
         <Content>
+          <div>{topic.description.data.description}</div>
           <div className="relative bg-pastel-purple  px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28">
             <div className="relative mx-auto max-w-7xl">
               <div className="text-left">
@@ -34,10 +36,9 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
                   >
                     <div className="flex-shrink-0">
                       <Link to={measure.slug}>
-                        <img
-                          className="h-48 w-full object-cover"
-                          src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-                          alt=""
+                        <GatsbyImage
+                          image={getImage(measure.image.localFile as any)}
+                          alt={`Titelbild ${measure.name}`}
                         />
                       </Link>
                     </div>
@@ -47,7 +48,7 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
                           <p className="text-xl font-semibold text-gray-900">
                             {measure.name}
                           </p>
-                          <p className="mt-3 text-base text-gray-500">
+                          <p className="mt-3 text-base text-gray-500 line-clamp-3">
                             {measure.description.data.description}
                           </p>
                         </Link>
@@ -73,6 +74,13 @@ export const query = graphql`
   query TopicDetails($id: String!) {
     topic: strapiTopic(id: { eq: $id }) {
       name
+      image {
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+      }
       description {
         data {
           description
@@ -84,6 +92,13 @@ export const query = graphql`
         description {
           data {
             description
+          }
+        }
+        image {
+          localFile {
+            childImageSharp {
+              gatsbyImageData
+            }
           }
         }
       }
