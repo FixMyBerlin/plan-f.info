@@ -36,12 +36,14 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
                     className="flex flex-col overflow-hidden rounded-lg shadow-lg"
                   >
                     <div className="flex-shrink-0">
-                      <Link to={example.slug}>
-                        <GatsbyImage
-                          image={getImage(example.image.localFile as any)}
-                          alt={`Titelbild: ${example.name}`}
-                        />
-                      </Link>
+                      {example.image && (
+                        <Link to={example.slug}>
+                          <GatsbyImage
+                            image={getImage(example.image.localFile as any)}
+                            alt={`Titelbild: ${example.name}`}
+                          />
+                        </Link>
+                      )}
                     </div>
                     <div className="flex flex-1 flex-col justify-between bg-white p-6">
                       <div className="flex-1">
@@ -50,7 +52,7 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
                             {example.name}
                           </p>
                           <p className="mt-3 text-base text-gray-500 line-clamp-3">
-                            {example.description.data.description}
+                            {example.shortDescription}
                           </p>
                         </Link>
                       </div>
@@ -93,11 +95,7 @@ export const query = graphql`
       examples {
         name
         slug
-        description {
-          data {
-            description
-          }
-        }
+        shortDescription
         image {
           localFile {
             childImageSharp {

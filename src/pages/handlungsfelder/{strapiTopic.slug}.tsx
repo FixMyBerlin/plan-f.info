@@ -35,12 +35,14 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
                     className="flex flex-col overflow-hidden rounded-lg shadow-lg"
                   >
                     <div className="flex-shrink-0">
-                      <Link to={measure.slug}>
-                        <GatsbyImage
-                          image={getImage(measure.image.localFile as any)}
-                          alt={`Titelbild ${measure.name}`}
-                        />
-                      </Link>
+                      {measure.image && (
+                        <Link to={measure.slug}>
+                          <GatsbyImage
+                            image={getImage(measure.image.localFile as any)}
+                            alt={`Titelbild ${measure.name}`}
+                          />
+                        </Link>
+                      )}
                     </div>
                     <div className="flex flex-1 flex-col justify-between bg-white p-6">
                       <div className="flex-1">
