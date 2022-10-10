@@ -6,9 +6,9 @@ import { Link } from '~/components/Link';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
-  data: { example, exampleList },
+  data: { example },
 }) => {
-  const slugList = exampleList.nodes.map(({ slug }) => slug);
+  const slugList = example.measure.examples.map(({ slug }) => slug);
   const pos = slugList.indexOf(example.slug);
   const prevSlug = slugList[pos - 1] || slugList[slugList.length - 1];
   const nextSlug = slugList[pos + 1] || slugList[0];
@@ -123,6 +123,9 @@ export const query = graphql`
         topic {
           name
         }
+        examples {
+          slug
+        }
       }
       evaluation {
         accessibility {
@@ -155,11 +158,6 @@ export const query = graphql`
         }
       }
       slug
-    }
-    exampleList: allStrapiExample {
-      nodes {
-        slug
-      }
     }
   }
 `;
