@@ -37,18 +37,21 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
               <h1>{example.name}</h1>
               {JSON.stringify(example)}
             </div>
-            <GatsbyImage
-              image={getImage(example.image.localFile as any)}
-              alt="Titelbild"
-            />
+            {example.image && (
+              <GatsbyImage
+                image={getImage(example.image.localFile as any)}
+                alt="Titelbild"
+              />
+            )}
             <h1>Auswertung:</h1>
             <div>
-              {Object.keys(example.evaluation).map((key) => (
-                <div key={key}>
-                  {key}: {`${example.evaluation[key].percent} % `}
-                  {example.evaluation[key].description}
-                </div>
-              ))}
+              {example.evaluation &&
+                Object.keys(example.evaluation).map((key) => (
+                  <div key={key}>
+                    {key}: {`${example.evaluation[key].percent} % `}
+                    {example.evaluation[key].description}
+                  </div>
+                ))}
             </div>
             <h1>Links:</h1>
             <div>
