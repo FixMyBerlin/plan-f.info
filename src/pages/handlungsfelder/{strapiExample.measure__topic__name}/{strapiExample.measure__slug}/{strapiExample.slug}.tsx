@@ -41,11 +41,20 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
               image={getImage(example.image.localFile as any)}
               alt="Titelbild"
             />
+            <h1>Auswertung:</h1>
             <div>
               {Object.keys(example.evaluation).map((key) => (
                 <div key={key}>
                   {key}: {`${example.evaluation[key].percent} % `}
                   {example.evaluation[key].description}
+                </div>
+              ))}
+            </div>
+            <h1>Links:</h1>
+            <div>
+              {example.links.map(({ display, url }) => (
+                <div key={url}>
+                  <a href={url}>{display || url}</a>
                 </div>
               ))}
             </div>

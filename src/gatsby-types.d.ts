@@ -2808,6 +2808,22 @@ type STRAPI_EXAMPLEFieldsEnum =
   | 'image.children.parent.id'
   | 'image.createdAt'
   | 'image.ext'
+  | 'image.formats.large.ext'
+  | 'image.formats.large.hash'
+  | 'image.formats.large.height'
+  | 'image.formats.large.mime'
+  | 'image.formats.large.name'
+  | 'image.formats.large.size'
+  | 'image.formats.large.url'
+  | 'image.formats.large.width'
+  | 'image.formats.medium.ext'
+  | 'image.formats.medium.hash'
+  | 'image.formats.medium.height'
+  | 'image.formats.medium.mime'
+  | 'image.formats.medium.name'
+  | 'image.formats.medium.size'
+  | 'image.formats.medium.url'
+  | 'image.formats.medium.width'
   | 'image.formats.small.ext'
   | 'image.formats.small.hash'
   | 'image.formats.small.height'
@@ -4909,6 +4925,22 @@ type STRAPI_MEASUREFieldsEnum =
   | 'image.children.parent.id'
   | 'image.createdAt'
   | 'image.ext'
+  | 'image.formats.large.ext'
+  | 'image.formats.large.hash'
+  | 'image.formats.large.height'
+  | 'image.formats.large.mime'
+  | 'image.formats.large.name'
+  | 'image.formats.large.size'
+  | 'image.formats.large.url'
+  | 'image.formats.large.width'
+  | 'image.formats.medium.ext'
+  | 'image.formats.medium.hash'
+  | 'image.formats.medium.height'
+  | 'image.formats.medium.mime'
+  | 'image.formats.medium.name'
+  | 'image.formats.medium.size'
+  | 'image.formats.medium.url'
+  | 'image.formats.medium.width'
   | 'image.formats.small.ext'
   | 'image.formats.small.hash'
   | 'image.formats.small.height'
@@ -5816,6 +5848,22 @@ type STRAPI_TOPICFieldsEnum =
   | 'image.children.parent.id'
   | 'image.createdAt'
   | 'image.ext'
+  | 'image.formats.large.ext'
+  | 'image.formats.large.hash'
+  | 'image.formats.large.height'
+  | 'image.formats.large.mime'
+  | 'image.formats.large.name'
+  | 'image.formats.large.size'
+  | 'image.formats.large.url'
+  | 'image.formats.large.width'
+  | 'image.formats.medium.ext'
+  | 'image.formats.medium.hash'
+  | 'image.formats.medium.height'
+  | 'image.formats.medium.mime'
+  | 'image.formats.medium.name'
+  | 'image.formats.medium.size'
+  | 'image.formats.medium.url'
+  | 'image.formats.medium.width'
   | 'image.formats.small.ext'
   | 'image.formats.small.hash'
   | 'image.formats.small.height'
@@ -7605,6 +7653,22 @@ type STRAPI__MEDIAFieldsEnum =
   | 'children.parent.parent.id'
   | 'createdAt'
   | 'ext'
+  | 'formats.large.ext'
+  | 'formats.large.hash'
+  | 'formats.large.height'
+  | 'formats.large.mime'
+  | 'formats.large.name'
+  | 'formats.large.size'
+  | 'formats.large.url'
+  | 'formats.large.width'
+  | 'formats.medium.ext'
+  | 'formats.medium.hash'
+  | 'formats.medium.height'
+  | 'formats.medium.mime'
+  | 'formats.medium.name'
+  | 'formats.medium.size'
+  | 'formats.medium.url'
+  | 'formats.medium.width'
   | 'formats.small.ext'
   | 'formats.small.hash'
   | 'formats.small.height'
@@ -7866,13 +7930,61 @@ type STRAPI__MEDIAFilterInput = {
 };
 
 type STRAPI__MEDIAFormats = {
+  readonly large: Maybe<STRAPI__MEDIAFormatsLarge>;
+  readonly medium: Maybe<STRAPI__MEDIAFormatsMedium>;
   readonly small: Maybe<STRAPI__MEDIAFormatsSmall>;
   readonly thumbnail: Maybe<STRAPI__MEDIAFormatsThumbnail>;
 };
 
 type STRAPI__MEDIAFormatsFilterInput = {
+  readonly large: InputMaybe<STRAPI__MEDIAFormatsLargeFilterInput>;
+  readonly medium: InputMaybe<STRAPI__MEDIAFormatsMediumFilterInput>;
   readonly small: InputMaybe<STRAPI__MEDIAFormatsSmallFilterInput>;
   readonly thumbnail: InputMaybe<STRAPI__MEDIAFormatsThumbnailFilterInput>;
+};
+
+type STRAPI__MEDIAFormatsLarge = {
+  readonly ext: Maybe<Scalars['String']>;
+  readonly hash: Maybe<Scalars['String']>;
+  readonly height: Maybe<Scalars['Int']>;
+  readonly mime: Maybe<Scalars['String']>;
+  readonly name: Maybe<Scalars['String']>;
+  readonly size: Maybe<Scalars['Float']>;
+  readonly url: Maybe<Scalars['String']>;
+  readonly width: Maybe<Scalars['Int']>;
+};
+
+type STRAPI__MEDIAFormatsLargeFilterInput = {
+  readonly ext: InputMaybe<StringQueryOperatorInput>;
+  readonly hash: InputMaybe<StringQueryOperatorInput>;
+  readonly height: InputMaybe<IntQueryOperatorInput>;
+  readonly mime: InputMaybe<StringQueryOperatorInput>;
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly size: InputMaybe<FloatQueryOperatorInput>;
+  readonly url: InputMaybe<StringQueryOperatorInput>;
+  readonly width: InputMaybe<IntQueryOperatorInput>;
+};
+
+type STRAPI__MEDIAFormatsMedium = {
+  readonly ext: Maybe<Scalars['String']>;
+  readonly hash: Maybe<Scalars['String']>;
+  readonly height: Maybe<Scalars['Int']>;
+  readonly mime: Maybe<Scalars['String']>;
+  readonly name: Maybe<Scalars['String']>;
+  readonly size: Maybe<Scalars['Float']>;
+  readonly url: Maybe<Scalars['String']>;
+  readonly width: Maybe<Scalars['Int']>;
+};
+
+type STRAPI__MEDIAFormatsMediumFilterInput = {
+  readonly ext: InputMaybe<StringQueryOperatorInput>;
+  readonly hash: InputMaybe<StringQueryOperatorInput>;
+  readonly height: InputMaybe<IntQueryOperatorInput>;
+  readonly mime: InputMaybe<StringQueryOperatorInput>;
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly size: InputMaybe<FloatQueryOperatorInput>;
+  readonly url: InputMaybe<StringQueryOperatorInput>;
+  readonly width: InputMaybe<IntQueryOperatorInput>;
 };
 
 type STRAPI__MEDIAFormatsSmall = {
@@ -9177,7 +9289,7 @@ type MeasureDetailsQueryVariables = Exact<{
 }>;
 
 
-type MeasureDetailsQuery = { readonly measure: { readonly name: string | null, readonly image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null, readonly description: { readonly data: { readonly description: string | null } | null } | null, readonly topic: { readonly name: string | null } | null, readonly examples: ReadonlyArray<{ readonly name: string | null, readonly slug: string | null, readonly description: { readonly data: { readonly description: string | null } | null } | null, readonly image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null> | null } | null };
+type MeasureDetailsQuery = { readonly measure: { readonly name: string | null, readonly image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null, readonly description: { readonly data: { readonly description: string | null } | null } | null, readonly topic: { readonly name: string | null } | null, readonly examples: ReadonlyArray<{ readonly name: string | null, readonly slug: string | null, readonly shortDescription: string | null, readonly image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null> | null } | null };
 
 type TopicDetailsQueryVariables = Exact<{
   id: Scalars['String'];

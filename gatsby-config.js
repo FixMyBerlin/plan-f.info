@@ -63,10 +63,11 @@ module.exports = {
       resolve: `gatsby-source-strapi`,
       options: {
         // in ENV verschieben, da pro Dev unterschiedlich
-        apiURL: 'http://0.0.0.0:1337',
+        apiURL:
+          'https://plan-f-staging.tiummk647p9vk.eu-central-1.cs.amazonlightsail.com',
         // in ENV verschieben, da pro Dev unterschiedlich
         accessToken:
-          'ed46610f6cb4fa63786e98b1a436c5605084a4a6328204fd1be6ae77cc6ada11d4bfba51c43c1c72f4a48129a265a558c710c7f18c3eef6cce0abf2ffbdc21e6b498d4073798fbb4c9af75f274225ddf876f801b1d2c1f34a9a7ce598fbd4bc86725a59e4d904b82ffecb3867f72da3d041da83640989c8bf10ba8c140aaf079',
+          '44eb72583fe9dc62e133b857021517d3b34a090e36706fbb1396b8d4da12d8df0cbba39e4e209b668b35462320816f128da27d315cd70697a821cefc4b09b6e7698d39f58a8e6592d9d14f9ed5735646e85d03684c9457427e39f9820a3de34c9966332f9c399b13dbb209944c616304c80338f4b2ade5400c3b96726689b404',
         // Hier die Content types angeben, die wir in Gatsby verfügbar haben wollen.
         // collection = array, single = ein object
         collectionTypes: [
