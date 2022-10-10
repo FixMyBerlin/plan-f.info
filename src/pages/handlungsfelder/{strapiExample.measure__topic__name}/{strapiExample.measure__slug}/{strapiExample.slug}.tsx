@@ -12,11 +12,18 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
   const pos = slugList.indexOf(example.slug);
   const prevSlug = slugList[pos - 1] || slugList[slugList.length - 1];
   const nextSlug = slugList[pos + 1] || slugList[0];
-
+  const steckbiref = {
+    name: 'Name des Projektes',
+    commune: 'Kommune',
+    population: 'Einwohner*innen',
+    countryState: 'Bundesland',
+    spatialStructure: 'Raumstruktur',
+    localChallenges: 'Lokale Herausforderungen',
+  };
   return (
     <>
       <HelmetSeo title={example.measure.name} />
-      <Hero title={example.measure.name}>
+      <Hero title="Handlungsfelder">
         <Breadcrumbs
           names={[
             'Handlungsfelder',
@@ -34,32 +41,60 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
             {pos + 1}
             <Link to={`../${nextSlug}`}> Next</Link>
             <div className="bg-white">
-              <h1>{example.name}</h1>
-              {JSON.stringify(example)}
-            </div>
-            {example.image && (
-              <GatsbyImage
-                image={getImage(example.image.localFile as any)}
-                alt="Titelbild"
-              />
-            )}
-            <h1>Auswertung:</h1>
-            <div>
-              {example.evaluation &&
-                Object.keys(example.evaluation).map((key) => (
-                  <div key={key}>
-                    {key}: {`${example.evaluation[key].percent} % `}
-                    {example.evaluation[key].description}
+              <h1 className="text-center">{example.name}</h1>
+              <div>{example.shortDescription}</div>
+              {example.image && (
+                <GatsbyImage
+                  image={getImage(example.image.localFile as any)}
+                  alt="Titelbild"
+                />
+              )}
+              <h1 className="mt-8">Steckbrief:</h1>
+              <div>
+                <table className="min-w-full divide-y divide-gray-300">
+                  <tbody className="divide-y divide-gray-200 bg-white">
+                    {Object.keys(steckbiref).map((key) => (
+                      <tr key={key}>
+                        <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
+                          {steckbiref[key]}
+                        </td>
+                        <td className="px-3 py-4 text-sm text-gray-500">
+                          {example[key]}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <h1 className="mt-8">Beschreibung:</h1>
+              <div>{example.description.data.description}</div>
+              {example.evaluation && (
+                <>
+                  <h1 className="mt-8">Einordnung:</h1>
+                  <table className="min-w-full divide-y divide-gray-300">
+                    <tbody className="divide-y divide-gray-200 bg-white">
+                      {Object.keys(example.evaluation).map((key) => (
+                        <tr key={key}>
+                          <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
+                            {`${example.evaluation[key].percent} % `}
+                          </td>
+                          <td className="px-3 py-4 text-sm text-gray-500">
+                            {example.evaluation[key].description}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </>
+              )}
+              <h1 className="mt-8">Links:</h1>
+              <div>
+                {example.links.map(({ display, url }) => (
+                  <div key={url}>
+                    <a href={url}>{display || url}</a>
                   </div>
                 ))}
-            </div>
-            <h1>Links:</h1>
-            <div>
-              {example.links.map(({ display, url }) => (
-                <div key={url}>
-                  <a href={url}>{display || url}</a>
-                </div>
-              ))}
+              </div>
             </div>
           </div>
         </Content>
