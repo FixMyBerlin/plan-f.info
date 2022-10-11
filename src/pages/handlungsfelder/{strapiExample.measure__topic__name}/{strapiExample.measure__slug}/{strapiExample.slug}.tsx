@@ -23,18 +23,24 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
   return (
     <>
       <HelmetSeo title={example.measure.name} />
-      <Hero title="Handlungsfelder">
-        <Breadcrumbs
-          names={[
-            'Handlungsfelder',
-            example.measure.topic.name,
-            example.measure.name,
-          ]}
-          prefix="../"
-        />
-      </Hero>
+      <Hero title="Handlungsfelder" />
       <section>
         <Content>
+          <div className="mt-6 ml-10">
+            <Breadcrumbs
+              names={[
+                'Handlungsfelder',
+                example.measure.topic.name,
+                example.measure.name,
+              ]}
+              prefix="../"
+            />
+          </div>
+          <div className="bg-pastel-purple pl-2">
+            <div className="bg-white pl-6">
+              <h1 className="mt-6">{example.measure.name}</h1>
+            </div>
+          </div>
           <div className="bg-dark-green py-10 px-10">
             Praxisbesipiel
             <Link to={`../${prevSlug}`}> Prev</Link>

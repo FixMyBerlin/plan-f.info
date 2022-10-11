@@ -10,14 +10,20 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
   return (
     <>
       <HelmetSeo title={measure.name} />
-      <Hero title={measure.name}>
-        <Breadcrumbs
-          names={['Handlungsfelder', measure.topic.name, measure.name]}
-        />
-      </Hero>
+      <Hero title="Handlungsfelder" />
       <section className="pt-1">
         <Content>
-          <div>{measure.description.data.description}</div>
+          <div className="mt-6 ml-10">
+            <Breadcrumbs
+              names={['Handlungsfelder', measure.topic.name, measure.name]}
+            />
+          </div>
+          <div className="bg-pastel-purple pl-2">
+            <div className="bg-white pl-6">
+              <h1 className="mt-6">{measure.name}</h1>
+              <div className="mt-2">{measure.description.data.description}</div>
+            </div>
+          </div>
           <div className="relative bg-dark-green  px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28">
             <div className="relative mx-auto max-w-7xl">
               <div className="text-left">
