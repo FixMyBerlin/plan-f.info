@@ -1,12 +1,6 @@
 import React from 'react';
 import { Fundings } from '~/components/StartPage';
-import {
-  Hero,
-  Content,
-  HelmetSeo,
-  Navigation,
-  Breadcrumbs,
-} from '~/components/Layout';
+import { Hero, Content, HelmetSeo, Breadcrumbs } from '~/components/Layout';
 import { graphql, PageProps, Link } from 'gatsby';
 
 export const query = graphql`
@@ -26,7 +20,6 @@ export const query = graphql`
 `;
 
 const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
-  path,
   data: { topics },
 }) => {
   const title = 'Handlungsfelder';
@@ -36,7 +29,6 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
       <Hero title={title}>
         <Breadcrumbs names={[title]} />
       </Hero>
-      <Navigation path={path} />
       <section className="pt-1">
         <Content>
           {topics.nodes.map((topic) => (
