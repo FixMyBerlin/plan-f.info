@@ -24,7 +24,7 @@ export const Navigation: React.FC<Props> = ({ path }) => {
   `);
   const [folded, setFolded] = useState(true);
   return (
-    <nav className="absolute bg-white text-base lg:text-sm">
+    <nav className="bg-white text-base lg:text-sm">
       <button type="button" onClick={() => setFolded(!folded)}>
         show
       </button>
