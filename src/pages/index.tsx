@@ -48,7 +48,7 @@ const IndexPage: React.FC = () => {
             </li>
           </ol>
           <p className="mt-6">
-            Plan&nbsp;F ist ein gemeinschaftliches Projekt von AEM Institute und
+            Plan&nbsp;F ist ein gemeinschaftliches Projekt von Fair Spaces und
             FixMyCity und wird vom Bundesministerium für Digitales und Verkehr
             (BMDV) im Rahmen des Nationalen Radverkehrsplan (NRVP) gefördert.
           </p>
@@ -191,15 +191,14 @@ const IndexPage: React.FC = () => {
                 Maßnahmenempfehlung. Das Audit besteht aus mehreren Workshops,
                 die gemeinsam vor Ort in Ihrer Kommune vom 17. bis 21. Oktober
                 2022 mit Fahrradprofessorin Ineke Spapé und ihren Studierenden
-                aus Breda (NL), dem Team vom AEM Institute sowie Studierenden
-                aus Deutschland durchgeführt wird. Das Vorgehen orientiert sich
-                an dem ehemaligen NRVP-Projekt FreshBrains unter
-                Berücksichtigung der Systematisierung von Plan&nbsp;F.
+                aus Breda (NL), dem Team von Fair Spaces sowie Studierenden aus
+                Deutschland durchgeführt wird. Das Vorgehen orientiert sich an
+                dem ehemaligen NRVP-Projekt FreshBrains unter Berücksichtigung
+                der Systematisierung von Plan&nbsp;F.
               </CountLI>
               <CountLI value={2}>
                 Das zweitplatzierte Projekt gewinnt ein Plan&nbsp;F Online Audit
-                von Studierenden unter der Anleitung des Teams vom AEM
-                Institute.
+                von Studierenden unter der Anleitung des Teams von Fair Spaces.
               </CountLI>
               <CountLI value={3}>
                 Das drittplatzierte Projekt gewinnt ein Plan&nbsp;F Online Audit
