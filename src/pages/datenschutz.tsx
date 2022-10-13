@@ -38,11 +38,11 @@ const DatenschutzPage = () => {
             Verantwortlicher im Sinne der Datenschutzgesetze, insbesondere der
             EU-Datenschutzgrundverordnung (DSGVO), ist:
           </p>
-          <p className="font-bold">AEM Accesible Equitable Mobility GmbH</p>
+          <p className="font-bold">Fair Spaces GmbH</p>
           <p className="mt-2">
             Impressum:&nbsp;
-            <TextLink to="https://www.aem-institute.de/agb/">
-              www.aem-institute.de
+            <TextLink to="http://fair-spaces.de/home/impressum/">
+              www.fair-spaces.de
             </TextLink>
           </p>
         </div>
