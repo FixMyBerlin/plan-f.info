@@ -37,7 +37,7 @@ const IndexPage: React.FC = () => {
             </li>
           </ol>
           <p className="mt-6">
-            Plan&nbsp;F ist ein gemeinschaftliches Projekt von AEM Institute und
+            Plan&nbsp;F ist ein gemeinschaftliches Projekt von Fair Spaces und
             FixMyCity und wird vom Bundesministerium für Digitales und Verkehr
             (BMDV) im Rahmen des Nationalen Radverkehrsplan (NRVP) gefördert.
           </p>
@@ -46,10 +46,7 @@ const IndexPage: React.FC = () => {
       <section className="pt-1">
         <Content>
           <div className="mt-8">
-            <H1>
-              Jetzt mit ihrem kommunalen Praxisbeispiel bewerben für den
-              Plan&nbsp;F Award
-            </H1>
+            <H1>Bewerbungszeitraum für den Plan F Award beendet</H1>
             <p className="mt-6">
               Sie haben in Ihrer Kommune aktuell eine Maßnahme oder ein Projekt
               zur Radverkehrsförderung umgesetzt oder sind gerade in der Planung
@@ -58,8 +55,8 @@ const IndexPage: React.FC = () => {
             </p>
             <div className="mx-auto mt-8 rounded-tl-[2rem] rounded-br-[2rem] rounded-bl-sm rounded-tr-sm bg-dark-gray sm:mx-20 sm:rounded-br-[4rem] sm:rounded-tl-[4rem]">
               <p className="p-4 font-apercuMono text-white sm:p-8">
-                Gute Praxisbeispiele der kommunalen Radverkehrsförderung bis zum
-                31.8.2022 einreichen. Siegerehrung auf der
+                Der Bewerbungszeitraum ist zu Ende. Unsere Jury wertet nun die
+                zahlreichen Einreichungen aus. Siegerehrung auf der
                 Fahrradkommunalkonferenz 2022 in Aachen.
               </p>
             </div>
@@ -100,20 +97,8 @@ const IndexPage: React.FC = () => {
                   Kommunen, ob Einsteiger*innen oder Vorreiter*innen im
                   Radverkehr.
                 </p>
-                <p className="mt-6">
-                  Bewerben Sie sich bis zum 31. August 2022 mit Ihrem Projekt!
-                </p>
               </div>
             </FoldOut>
-            <div className="pt-14">
-              <ButtonLink
-                newWindow
-                large
-                to="https://heyflow.id/plan-f-award#start"
-              >
-                Hier gehts zum Bewerbungsformular
-              </ButtonLink>
-            </div>
           </div>
           <p className="mt-10">
             Halten Sie für die Bewerbung – soweit vorhanden – folgende
@@ -195,15 +180,14 @@ const IndexPage: React.FC = () => {
                 Maßnahmenempfehlung. Das Audit besteht aus mehreren Workshops,
                 die gemeinsam vor Ort in Ihrer Kommune vom 17. bis 21. Oktober
                 2022 mit Fahrradprofessorin Ineke Spapé und ihren Studierenden
-                aus Breda (NL), dem Team vom AEM Institute sowie Studierenden
-                aus Deutschland durchgeführt wird. Das Vorgehen orientiert sich
-                an dem ehemaligen NRVP-Projekt FreshBrains unter
-                Berücksichtigung der Systematisierung von Plan&nbsp;F.
+                aus Breda (NL), dem Team von Fair Spaces sowie Studierenden aus
+                Deutschland durchgeführt wird. Das Vorgehen orientiert sich an
+                dem ehemaligen NRVP-Projekt FreshBrains unter Berücksichtigung
+                der Systematisierung von Plan&nbsp;F.
               </CountLI>
               <CountLI value={2}>
                 Das zweitplatzierte Projekt gewinnt ein Plan&nbsp;F Online Audit
-                von Studierenden unter der Anleitung des Teams vom AEM
-                Institute.
+                von Studierenden unter der Anleitung des Teams von Fair Spaces.
               </CountLI>
               <CountLI value={3}>
                 Das drittplatzierte Projekt gewinnt ein Plan&nbsp;F Online Audit
@@ -268,17 +252,6 @@ const IndexPage: React.FC = () => {
                     Weiterführende Informationen zu dem Projekt.
                   </TextLink>
                 </p>
-                <p className="mt-6">
-                  Aufruf:&nbsp;
-                  <TextLink
-                    newWindow
-                    to="Aufruf_Studierende_PlanF_Audit.pdf"
-                    className="hover:text-black"
-                  >
-                    Gesucht: Studierende für das Plan F Audit mit
-                    Maßnahmenempfehlung
-                  </TextLink>
-                </p>
               </div>
             </FoldOut>
           </div>
@@ -296,18 +269,6 @@ const IndexPage: React.FC = () => {
             veranschaulichen und dienen anderen Kommunen künftig als
             Orientierung und Vorbild.
           </p>
-          <p className="mt-20">
-            Bewerben Sie sich bis zum 31. August 2022 mit Ihrem Projekt!
-          </p>
-          <div className="mt-6">
-            <ButtonLink
-              newWindow
-              large
-              to="https://heyflow.id/plan-f-award#start"
-            >
-              Hier gehts zum Bewerbungsformular
-            </ButtonLink>
-          </div>
         </Content>
       </section>
       <div className="object-left pt-28 pb-6">

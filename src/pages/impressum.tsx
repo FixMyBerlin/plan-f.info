@@ -13,14 +13,13 @@ const ImpressumPage = () => {
         {/* <H1>Impressum</H1> */}
         <div className="mt-8">
           <H2>Angaben gemäß § 5 TMG:</H2>
-          <p className="mt-2">AEM Accessible Equitable Mobility GmbH</p>
+          <p className="mt-2">Fair Spaces GmbH</p>
         </div>
         <div className="mt-8">
           <H2>Postanschrift:</H2>
           <ul className="mt-2">
-            <li>Lohmühlenstraße 65</li>
-            <li>12435 Berlin</li>
-            <li>c/o Factory Berlin</li>
+            <li>Rollbergstraße 28A</li>
+            <li>12053 Berlin</li>
           </ul>
         </div>
         <div className="mt-8">
@@ -33,8 +32,8 @@ const ImpressumPage = () => {
                 kontakt@plan-f.info
               </TextLink>{' '}
               oder{' '}
-              <TextLink external to="mailto:contact@aem-institute.de">
-                contact@aem-institute.de
+              <TextLink external to="mailto:kontakt@fair-spaces.de">
+                kontakt@fair-spaces.de
               </TextLink>
             </li>
           </ul>
