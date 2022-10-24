@@ -30,6 +30,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
         <Breadcrumbs names={[title]} />
       </Hero>
       <section className="pt-1">
+        <h1>Liste der Handlungsfelder</h1>
         <Content>
           {topics.nodes.map((topic) => (
             <Link to={topic.slug}>
