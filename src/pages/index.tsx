@@ -62,19 +62,23 @@ const IndexPage: React.FC = () => {
             <p>
               Das Handlungsfeld Governance schließt alle Maßnahmen der
               Radverkehrsförderung ein, die sich auf einer politischen,
-              konzeptionellen und organisatorischen Ebene befinden. Dabei geht
-              es sowohl um politische Entscheidungen, rechtliche Grundlagen,
-              Finanzierung und Verantwortlichkeiten in der Verwaltung als auch
-              um Konzepte, wie z. B. Radverkehrs- oder
+              konzeptionellen und organisatorischen Ebene befinden.
+            </p>
+            <p>
+              Dabei geht es sowohl um politische Entscheidungen, rechtliche
+              Grundlagen, Finanzierung und Verantwortlichkeiten in der
+              Verwaltung als auch um Konzepte, wie z. B. Radverkehrs- oder
               Stadtentwicklungskonzepte, Organisation und Zusammenarbeit,
-              Informationen und Beteiligung, Monitoring und Evaluation. Um die
-              Radmobilität in einem Gesamtsystem zu verbessern, ist es wichtig,
-              dass Kommunen auch das Thema Wohnen angehen und beispielsweise
-              Stellplatzschlüssel für Fahrräder einführen oder Abstellanlagen
-              fördern. Auch die Förderung von gemeinnützigen Institutionen und
-              sozialem Engagement, welches einen Betrag zu einer verbesserten
-              Radmobilität leistet, sind gute Maßnahmen in dem Handlungsfeld
-              Governance.
+              Informationen und Beteiligung, Monitoring und Evaluation.
+            </p>
+            <p className="pt-2">
+              Um die Radmobilität in einem Gesamtsystem zu verbessern, ist es
+              wichtig, dass Kommunen auch das Thema Wohnen angehen und
+              beispielsweise Stellplatzschlüssel für Fahrräder einführen oder
+              Abstellanlagen fördern. Auch die Förderung von gemeinnützigen
+              Institutionen und sozialem Engagement, welches einen Betrag zu
+              einer verbesserten Radmobilität leistet, sind gute Maßnahmen in
+              dem Handlungsfeld Governance.
             </p>
           </FoldOut>
           <H2>Bildung und Trainings</H2>
@@ -85,13 +89,16 @@ const IndexPage: React.FC = () => {
               zu machen. Maßnahmen wie Mobilitätsbildung, Fahrradkurse oder
               Serviceangebote z. B. zur Reparatur, in Schulen, Kitas oder
               Jugendclubs tragen dazu bei, dass das Fahrrad ein
-              selbstverständlicher Bestandteil der Mobilitätskultur wird. Aber
-              auch für Erwachsene sind Bildungs- und Trainingsangebote wichtig.
-              Es gibt viele Personen, die nicht Fahrradfahren, weil sie es nie
-              gelernt haben oder sich, z. B. mit zunehmendem Alter, unsicher
-              fühlen. (Weiter-) Bildung beinhaltet zudem nicht nur das Erlernen
-              des Fahrradfahrens, sondern auch die Vermittlung der Vorteile des
-              Radfahrens sowohl für Jugendliche als auch für ältere Menschen.
+              selbstverständlicher Bestandteil der Mobilitätskultur wird.
+            </p>
+            <p className="pt-2">
+              Aber auch für Erwachsene sind Bildungs- und Trainingsangebote
+              wichtig. Es gibt viele Personen, die nicht Fahrradfahren, weil sie
+              es nie gelernt haben oder sich, z. B. mit zunehmendem Alter,
+              unsicher fühlen. (Weiter-) Bildung beinhaltet zudem nicht nur das
+              Erlernen des Fahrradfahrens, sondern auch die Vermittlung der
+              Vorteile des Radfahrens sowohl für Jugendliche als auch für ältere
+              Menschen.
             </p>
           </FoldOut>
           <H2>Infrastruktur</H2>
@@ -141,10 +148,12 @@ const IndexPage: React.FC = () => {
               verbessert werden, welche die Mitnahme des Fahrrads in
               öffentlichen Verkehrsmitteln oder den Umstieg (Bike & Ride,
               Mobility Hubs, Abstellanlagen an ÖPNV- Haltestellen etc.) zu
-              anderen Verkehrsmitteln erleichtern. Zusätzlich ist es wichtig,
-              geeignete Maßnahmen umzusetzen, die ein gutes Miteinander der
-              verschiedenen Nahmobilitätsformen (Fußverkehr, Radverkehr,
-              E-Scooter) fördern.
+              anderen Verkehrsmitteln erleichtern.
+            </p>
+            <p>
+              Zusätzlich ist es wichtig, geeignete Maßnahmen umzusetzen, die ein
+              gutes Miteinander der verschiedenen Nahmobilitätsformen
+              (Fußverkehr, Radverkehr, E-Scooter) fördern.
             </p>
           </FoldOut>
           <H2>Wirtschaft</H2>
@@ -226,7 +235,7 @@ const IndexPage: React.FC = () => {
                 und Bedeutung des Radverkehrs als Mobilitätsform für den Alltag
                 steigen.
               </p>
-              <p>
+              <p className="pt-2">
                 Der Zweckverband hat dafür ein regionales Radverkehrskonzept
                 erstellt, welches in den kommenden Jahren umgesetzt werden soll.
                 Ziel ist es, durch die interkommunale Radverkehrsförderung eine
@@ -353,7 +362,7 @@ const IndexPage: React.FC = () => {
                 Verhalten und genereller Sicherheit im Straßenverkehr vermittelt
                 unter anderem zu Abbiegesituationen.
               </p>
-              <p>
+              <p className="pt-2">
                 Damit die Kinder einen Eindruck vom Straßenverkehr bekommen, hat
                 die Stadtverwaltung in dem Schonraum auf dem Feuerwehrgelände
                 Verkehrsschilder aufgestellt und Radwege sowie Aufstellflächen
@@ -534,7 +543,7 @@ const IndexPage: React.FC = () => {
                 Servicestationen an fast sämtlichen Tankstellen im Stadtgebiet
                 sowie weiteren Standorten finden.
               </p>
-              <p>
+              <p className="pt-2">
                 Um sicherzustellen, dass die Fahrradservicestationen laufend
                 ihrem Qualitätsstandard entsprechen und Nutzer*innen kein
                 kaputtes oder fehlendes Werkzeug vorfinden, wurde die Wartung
@@ -551,7 +560,7 @@ const IndexPage: React.FC = () => {
                 Radwegweiser werden leider nicht regelmäßig gewartet - das führt
                 zu Fehlinformationen für Radfahrende!
               </p>
-              <p>
+              <p className="pt-2">
                 Um dem entgegenzuwirken und Radfahrende in Adelsdorf nicht auf
                 eine falsche Fährte zu leiten, hat die Kommune an jedem
                 Radwegweiser einen Aufkleber mit einem QR-Code angebracht.
@@ -570,13 +579,13 @@ const IndexPage: React.FC = () => {
                 Flohmarktstand, den Wocheneinkauf, die Werkzeugkiste,
                 Papierakten/Ordner oder oder oder...
               </p>
-              <p>
+              <p className="pt-2">
                 Alle Kaufunger*innen können sich kostenlos E-Lastenräder
                 ausleihen und umweltfreundlich und kräfteschonend Einkäufe und
                 kleinere und größere Transporte erledigen oder Kinder und sogar
                 Erwachsene chauffieren!
               </p>
-              <p>
+              <p className="pt-2">
                 Die Flotte besteht aus: 10 einspurigen Lastenrädern, 3
                 dreispurigen Schwerlastenrädern, 2 Rikschas, 1 zweisitziges
                 vierrädriges Schwerlastenrad (noch nicht im Verleih), 1 Gespann
@@ -624,7 +633,7 @@ const IndexPage: React.FC = () => {
                 Verknüpfung zwischen Fahrrad und öffentlichen Verkehrsmitteln zu
                 fördern und intermodale Wegeketten zu stärken.
               </p>
-              <p>
+              <p className="pt-2">
                 Der Verkehrsverbund Rhein-Neckar hat eigene abschließbare
                 Fahrradboxen inklusive Ladevorrichtung für E-Bikes aufgestellt.
                 Die VRNradboxen sollen künftig auf das gesamte VRN-Gebiet
@@ -642,6 +651,8 @@ const IndexPage: React.FC = () => {
               Im Handlungsfeld Wirtschaft haben wir keine Einreichung erhalten,
               die unsere Jury mit dem Plan F Award auszeichnen wollte.
             </p>
+          </div>
+          <div>
             <H2>Tourismus und Freizeitverkehr</H2>
             <H3>1. Morsbach: Fahrrad-Schnitzeljagd</H3>
             <FoldOut>
@@ -652,7 +663,7 @@ const IndexPage: React.FC = () => {
                 Zeitraum der Aktion STADTRADELN vom 4. Bis 24. September 2022
                 statt.
               </p>
-              <p>
+              <p className="pt-2">
                 Um an der Fahrrad-Schnitzeljagd teilzunehmen, brauchte es
                 lediglich ein verkehrssicheres Fahrrad und eine Prise
                 Entdeckerdrang! Die Teilnehmer*innen hatten die Aufgabe, entlang
@@ -676,7 +687,7 @@ const IndexPage: React.FC = () => {
                 wenig bis sehr ambitionierten Radfahrenden in einer oder
                 mehreren Etappen bewältigt werden.
               </p>
-              <p>
+              <p className="pt-2">
                 Mit geringem baulichem und finanziellem Aufwand wurde eine neue
                 Freizeitroute geschaffen, die der einheimischen Bevölkerung neue
                 Blickwinkel auf ihre Stadt eröffnet und zugleich den
@@ -699,7 +710,7 @@ const IndexPage: React.FC = () => {
                 und die Verkehrssicherheit insbesondere für Schüler*innen
                 verbessern.
               </p>
-              <p>
+              <p className="pt-2">
                 Der Verkehrsversuch endete am 31. März 2022. Nun möchte die
                 Stadt Neuss ein Konzept für eine dauerhaft autoreduzierte
                 Innenstadt entwickeln.
@@ -718,11 +729,11 @@ const IndexPage: React.FC = () => {
                 In Verbindung mit den reduzierten Geschwindigkeiten wird so eine
                 Begegnungszone in der Innenstadt von Friesoythe geschaffen.
               </p>
-              <p>
+              <p className="pt-2">
                 Für Strecken, die nicht mit dem Rad zu bewältigen sind, wird der
                 kreisweite Carsharing-Dienst moobil+ angeboten.
               </p>
-              <p>
+              <p className="pt-2">
                 Interessierte Anwohner*innen haben sich frühzeitig in den
                 Planungsprozess eingebracht. Im Ergebnis führte dieses zu einer
                 Art Mix aus Geschäftsstraße und Fußgänger*innenzone. Die
@@ -784,7 +795,7 @@ const IndexPage: React.FC = () => {
                 ehemaligen NRVP-Projekt FreshBrains unter Berücksichtigung der
                 Systematisierung von Plan F.
               </p>
-              <p>
+              <p className="pt-2">
                 Wir haben vor Ort mit der Verwaltung und der lokalen Bevölkerung
                 gesprochen und Herausforderungen, Wünsche und Anregungen für den
                 Radverkehr in Wallmerod erfahren. In der Woche wurden drei
@@ -814,7 +825,7 @@ const IndexPage: React.FC = () => {
                 Hinweisschilder und Plakaten. Wir kamen mit Eltern, Großeltern,
                 Kindern und Senior*innen ins Gespräch.
               </p>
-              <p>
+              <p className="pt-2">
                 Die Ergebnisse der Woche wurden am letzten Tag der Verwaltung,
                 beteiligten Akteur*innen und der interessierten Öffentlichkeit
                 im Rathaus der Verbandsgemeinde präsentiert. Die Gemeinde erhält
@@ -870,7 +881,7 @@ const IndexPage: React.FC = () => {
               Systematisierung von Plan F - die besten Voraussetzungen also für
               einen gemeinsamen neuen Weg der kommunalen Radverkehrsförderung.
             </p>
-            <p>
+            <p className="pt-2">
               Das Plan F Audit ist angelehnt an das NRVP-Projekt FreshBrains.
               Studierende aus Deutschland und den Niederlanden haben im Rahmen
               dieses Projekts bereits in Kassel, Chemnitz, Mönchengladbach,
@@ -884,7 +895,7 @@ const IndexPage: React.FC = () => {
               </TextLink>
               .
             </p>
-            <p>
+            <p className="pt-2">
               Haben Sie auch Interesse an einem solchen Audit bei sich in der
               Kommune? Dann sprechen Sie uns an unter:{' '}
               <TextLink to="mailto:kontakt@plan-f.info">
@@ -978,7 +989,7 @@ const IndexPage: React.FC = () => {
             entwickelt. Dieser ist voraussichtlich ab Sommer 2023 über die Plan
             F Webseite abrufbar.
           </p>
-          <p>
+          <p className="pt-6">
             Sie haben sich nicht für den Plan F Award beworben, aber in Ihrer
             Kommune wird ebenfalls ein gutes Projekt oder eine Maßnahme
             umgesetzt und sie möchten, dass andere Kommunen davon lernen können?
