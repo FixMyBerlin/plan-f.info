@@ -982,9 +982,7 @@ const IndexPage: React.FC = () => {
           </p>
           <div className="pt-6 pb-6">
             <H2>Was steht noch aus? Die nächsten Schritte im Projekt</H2>
-            <H3>
-              <span className="text-pastel-purple">Frühjahr 2023:</span>
-            </H3>
+            <H3 className="!text-pastel-purple">Frühjahr 2023:</H3>
             <H3>Plan F Webseite</H3>
             <p className="pb-2">
               Die Plan F Systematisierung der Handlungsfelder der kommunalen
@@ -1007,9 +1005,7 @@ const IndexPage: React.FC = () => {
               E-Learningkurs konzipiert, welcher die Inhalte der Systematik
               vermittelt.
             </p>
-            <H3>
-              <span className="text-pastel-purple">Sommer 2023:</span>
-            </H3>
+            <H3 className="!text-pastel-purple">Sommer 2023:</H3>
             <H3>
               Plan F Check - Passgenaue Handlungsempfehlungen durch
               Selbstevaluation von Kommunen
