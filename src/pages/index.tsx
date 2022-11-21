@@ -9,6 +9,7 @@ import {
   jury,
   FotoCopyright,
   fotos,
+  icons,
 } from '~/components/StartPage';
 import { Layout, Hero, Content, HelmetSeo } from '~/components/Layout';
 import { ButtonLink, TextLink } from '~/components/Link';
@@ -57,7 +58,10 @@ const IndexPage: React.FC = () => {
       <section className="mt-8">
         <Content>
           <H1>Die 9 Handlungsfelder der kommunalen Radverkehrsförderung</H1>
-          <H2> Governance </H2>
+
+          <div className="flex flex-row">
+            <icons.governance className="mr-2 h-12 w-12" /> <H2>Governance</H2>
+          </div>
           <FoldOut className="pb-4">
             <p>
               Das Handlungsfeld Governance schließt alle Maßnahmen der
@@ -81,7 +85,10 @@ const IndexPage: React.FC = () => {
               dem Handlungsfeld Governance.
             </p>
           </FoldOut>
-          <H2>Bildung und Trainings</H2>
+          <div className="flex flex-row">
+            <icons.bildung className="mr-2 h-12 w-12" />
+            <H2>Bildung und Trainings</H2>
+          </div>
           <FoldOut className="pb-4">
             <p>
               Um die Radmobilität langfristig zu erhöhen, ist es wichtig, Kinder
@@ -101,7 +108,10 @@ const IndexPage: React.FC = () => {
               Menschen.
             </p>
           </FoldOut>
-          <H2>Infrastruktur</H2>
+          <div className="flex flex-row">
+            <icons.infrastruktur className="mr-2 h-12 w-12" />
+            <H2>Infrastruktur</H2>
+          </div>
           <FoldOut className="pb-4">
             Das Handlungsfeld Infrastruktur schließt alle Maßnahmen ein, die der
             Verbesserung der Radinfrastrukturanlagen dienen. Dabei geht es um
@@ -114,7 +124,10 @@ const IndexPage: React.FC = () => {
             Multimodalität zu fördern, sind im Handlungsfeld 6 „Multimodalität
             und Nahmobilität“ aufgeführt.
           </FoldOut>
-          <H2>Kommunikation und Öffentlichkeitsarbeit</H2>
+          <div className="flex flex-row">
+            <icons.kommunikation className="mr-2 h-12 w-12" />
+            <H2>Kommunikation und Öffentlichkeitsarbeit</H2>
+          </div>
           <FoldOut className="pb-4">
             <p>
               Das Handlungsfeld Kommunikation und Öffentlichkeitsarbeit schließt
@@ -129,7 +142,10 @@ const IndexPage: React.FC = () => {
               Arbeitgeber.
             </p>
           </FoldOut>
-          <H2>Services</H2>
+          <div className="flex flex-row">
+            <icons.services className="mr-2 h-12 w-12" />
+            <H2>Services</H2>
+          </div>
           <FoldOut className="pb-4">
             <p>
               Radverkehrsbezogene Serviceangebote, wie Reparaturstationen sowie
@@ -138,7 +154,10 @@ const IndexPage: React.FC = () => {
               fördern und zugänglicher zu gestalten.
             </p>
           </FoldOut>
-          <H2>Multimodalität und Nahmobilität</H2>
+          <div className="flex flex-row">
+            <icons.multimodalitaet className="mr-2 h-12 w-12" />
+            <H2>Multimodalität und Nahmobilität</H2>
+          </div>
           <FoldOut className="pb-4">
             <p>
               In dem Handlungsfeld Multimodalität und Nahmobilität dreht sich
@@ -156,7 +175,10 @@ const IndexPage: React.FC = () => {
               (Fußverkehr, Radverkehr, E-Scooter) fördern.
             </p>
           </FoldOut>
-          <H2>Wirtschaft</H2>
+          <div className="flex flex-row">
+            <icons.wirtschaft className="mr-2 h-12 w-12" />
+            <H2>Wirtschaft</H2>{' '}
+          </div>
           <FoldOut className="pb-4">
             <p>
               Wirtschafts- und Lieferverkehr macht einen großen Teil des
@@ -172,7 +194,10 @@ const IndexPage: React.FC = () => {
               Stellplatzschlüssel für Fahrräder).
             </p>
           </FoldOut>
-          <H2>Tourismus und Freizeitverkehr</H2>
+          <div className="flex flex-row">
+            <icons.touristik className="mr-2 h-12 w-12" />
+            <H2>Tourismus und Freizeitverkehr</H2>
+          </div>
           <FoldOut className="pb-4">
             Das Handlungsfeld Tourismus und Freizeitverkehr schließt
             unterschiedliche kommunale Handlungsmöglichkeiten ein, welche die
@@ -181,7 +206,10 @@ const IndexPage: React.FC = () => {
             Informationen als auch Fördermöglichkeiten für die Privatwirtschaft
             (z. B. Abstellanlagen oder E-Ladestationen) oder Bike Parks.
           </FoldOut>
-          <H2>Verkehrsberuhigung</H2>
+          <div className="flex flex-row">
+            <icons.verkehrsberuhigung className="mr-2 h-12 w-12" />
+            <H2>Verkehrsberuhigung</H2>
+          </div>
           <FoldOut className="pb-4">
             Das Handlungsfeld Verkehrsberuhigung zeigt Maßnahmen auf, welche
             durch die Reduzierung des Kfz-Verkehrs zu einer Verbesserung der
@@ -958,7 +986,7 @@ const IndexPage: React.FC = () => {
               <span className="text-pastel-purple">Frühjahr 2023:</span>
             </H3>
             <H3>Plan F Webseite</H3>
-            <p>
+            <p className="pb-2">
               Die Plan F Systematisierung der Handlungsfelder der kommunalen
               Radverkehrsförderung inklusive Maßnahmen und guter Praxisbeispiele
               werden zurzeit durch das Team von Fair Spaces und FixMyCity
@@ -967,14 +995,14 @@ const IndexPage: React.FC = () => {
               Radverkehrsförderung.
             </p>
             <H3>Handbuch</H3>
-            <p>
+            <p className="pb-2">
               Wir erstellen ein Plan F Handbuch, welches einen Überblick über
               die neun Handlungsfelder gibt und einen Eindruck der besten
               Praxisbeispiele der kommunalen Radverkehrsförderung. Das Handbuch
               wird als Printvision sowie digital verfügbar sein.
             </p>
             <H3>E-Learningkurs</H3>
-            <p className="pb-4">
+            <p className="pb-6">
               Zu den neun Handlungsfeldern der Radverkehrsförderung wird ein
               E-Learningkurs konzipiert, welcher die Inhalte der Systematik
               vermittelt.
