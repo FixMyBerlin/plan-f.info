@@ -122,7 +122,7 @@ const IndexPage: React.FC = () => {
               Arbeitgeber.
             </p>
           </FoldOut>
-          <H2>Service</H2>
+          <H2>Services</H2>
           <FoldOut>
             <p>
               Radverkehrsbezogene Serviceangebote, wie Reparaturstationen sowie
@@ -312,7 +312,7 @@ const IndexPage: React.FC = () => {
               Schüler*innen genutzt werden können.
               <FotoCopyright data={fotos.b1} />
             </FoldOut>
-            <H3>2. Bad Honnef: FahrRADMOMENTE – Schulaktion</H3>
+            <H3>2. Bad Honnef: FahrRADMOMENTE - Schulaktion</H3>
             <FoldOut>
               <p>
                 Wer auf das Fahrrad zu sprechen kommt, redet viel von
@@ -387,13 +387,20 @@ const IndexPage: React.FC = () => {
                 Die Verbandsgemeinde Wallmerod ist belegt mit dem
                 Wäller-ALLEnweg den 1. Platz (Gesamtwertung) des Plan F Awards
                 2022 und hat das <TextLink to="#erster">Plan F Audit</TextLink>{' '}
-                gewonnen, welches vom 17. – 21. Oktober vor Ort durchgeführt
+                gewonnen, welches vom 17. - 21. Oktober vor Ort durchgeführt
                 wurde.
               </QuoteBox>
               <p>
-                In einem kurzen Video beantwortet die Verbandsgemeinde die drei
-                häufigsten Fragen zu dem neuen Radweg:
-                https://www.facebook.com/watch/?v=5382383398456066
+                In einem kurzen{' '}
+                <TextLink
+                  newWindow
+                  to="
+                https://www.facebook.com/watch/?v=5382383398456066"
+                >
+                  Video
+                </TextLink>{' '}
+                beantwortet die Verbandsgemeinde die drei häufigsten Fragen zu
+                dem neuen Radweg:
               </p>
               <FotoCopyright data={fotos.i1} />
               <FotoCopyright data={fotos.i12} />
@@ -455,7 +462,7 @@ const IndexPage: React.FC = () => {
                 Austausch zwischen dem Team des Radentscheids und der Stadt,
                 jährlichen Tätigkeitsberichten und Kampagnen auch eine
                 Jahresveranstaltung für den Dialog zwischen Verwaltung, Team
-                Radentscheid und der Bürger*innenschaft.
+                Radentscheid und der Stadtgesellschaft.
               </p>
               <QuoteBox>
                 Die Stadt Aachen belegt mit der Kommunikation rund um den
@@ -541,7 +548,7 @@ const IndexPage: React.FC = () => {
             <H3>2. Adelsdorf: Mängelerkennung Radwegweisung</H3>
             <FoldOut>
               <p>
-                Radwegweiser werden leider nicht regelmäßig gewartet – das führt
+                Radwegweiser werden leider nicht regelmäßig gewartet - das führt
                 zu Fehlinformationen für Radfahrende!
               </p>
               <p>
@@ -598,7 +605,7 @@ const IndexPage: React.FC = () => {
                 Fahrradschloss und trotzdem gut gesichert: So können Fahrräder
                 und Pedelecs seit Dezember 2021 am Fellbacher Bahnhof abgestellt
                 werden. Denn in der „Fellbach.go! radbox“, dem neuen
-                Fahrradparkhaus, finden 76 Räder einen trockenen Abstellplatz –
+                Fahrradparkhaus, finden 76 Räder einen trockenen Abstellplatz -
                 und das ganz automatisch. Nutzer*innen müssen dafür nur die App
                 auf ihrem Smartphone bedienen. Das Projekt wurde mit Mitteln des
                 Europäischen Fonds für Regionalentwicklung (EFRE) und des Landes
@@ -733,9 +740,15 @@ const IndexPage: React.FC = () => {
               <FotoCopyright data={fotos.v2} />
             </FoldOut>
           </div>
-          <ButtonLink newWindow to="Projektmappe_PlanfAward.pdf">
-            Projektmappe mit allen Bewerbungen
-          </ButtonLink>
+          <div>
+            <H2>Alle Einreichungen</H2>
+            Hier finden sie die Mappe aller eingereichten Projekte:
+            <p className="pt-6">
+              <ButtonLink large newWindow to="Projektmappe_PlanfAward.pdf">
+                Projektmappe mit allen Bewerbungen
+              </ButtonLink>
+            </p>
+          </div>
         </Content>
         <Content>
           <div className="pt-8">
@@ -761,7 +774,7 @@ const IndexPage: React.FC = () => {
             </H3>
             <FoldOut>
               <p>
-                Vom 17. – 21. Oktober fand das Plan F Audit - Hauptgewinn des
+                Vom 17. - 21. Oktober fand das Plan F Audit - Hauptgewinn des
                 Plan F Awards 2022 - in der Verbandsgemeinde Wallmerod in
                 Rheinland-Pfalz statt. Das Team von Fair Spaces war gemeinsam
                 mit Professor Ineke Spapé und ihren Studierenden von der
@@ -795,8 +808,8 @@ const IndexPage: React.FC = () => {
                 Als kleines Highlight der Woche fand am Mittwoch eine
                 Guerillaaktion statt, wo es bunt in der Verbandsgemeinde wurde!
                 Wir haben gezeigt, wie ein fuß- und fahrradfreundliches Dorf
-                aussehen kann – mit weniger Autoverkehr und mehr Aufenthalts-
-                und Lebensqualität für die Bürger*innen – mit fahrenden
+                aussehen kann - mit weniger Autoverkehr und mehr Aufenthalts-
+                und Lebensqualität für die Bürger*innen - mit fahrenden
                 Radwegen, einem flexiblen Pop-Up Zebrastreifen, selbst gemachten
                 Hinweisschilder und Plakaten. Wir kamen mit Eltern, Großeltern,
                 Kindern und Senior*innen ins Gespräch.
@@ -850,11 +863,11 @@ const IndexPage: React.FC = () => {
             <H2>Plan F Audit: Mehrwert für alle Beteiligten </H2>
             <p>
               Durch das Plan F Audit entsteht ein deutlicher Mehrwert für alle
-              Beteiligten – Ihre Kommune erhält innovative und fachliche
+              Beteiligten - Ihre Kommune erhält innovative und fachliche
               Unterstützung und wird so in kurzer Zeit (noch)
               fahrradfreundlicher. Die Studierenden wiederum lernen aus der
               kommunalen Praxis und erproben gleichzeitig die Anwendung der
-              Systematisierung von Plan F – die besten Voraussetzungen also für
+              Systematisierung von Plan F - die besten Voraussetzungen also für
               einen gemeinsamen neuen Weg der kommunalen Radverkehrsförderung.
             </p>
             <p>
