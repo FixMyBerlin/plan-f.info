@@ -5,10 +5,10 @@ import {
   QuoteBox,
   Fundings,
   FoldOut,
-  CheckLI,
-  CountLI,
   CEO,
   jury,
+  FotoCopyright,
+  fotos,
 } from '~/components/StartPage';
 import { Layout, Hero, Content, HelmetSeo } from '~/components/Layout';
 import { ButtonLink, TextLink } from '~/components/Link';
@@ -54,7 +54,7 @@ const IndexPage: React.FC = () => {
           </p>
         </FoldOut>
       </Hero>
-      <section className="pt-1">
+      <section className="mt-8">
         <Content>
           <H1>Die 9 Handlungsfelder der kommunalen Radverkehrsförderung</H1>
           <H2> Governance </H2>
@@ -149,14 +149,19 @@ const IndexPage: React.FC = () => {
           </FoldOut>
           <H2>Wirtschaft</H2>
           <FoldOut>
-            Wirtschafts- und Lieferverkehr macht einen großen Teil des
-            Verkehrsaufkommens aus. Stadtlogistikkonzepte oder Förderangebote
-            für Unternehmen können dazu beitragen, dass ein Teil der
-            Lieferfahrzeuge durch geeignete Fahrräder (z. B. Lastenräder)
-            ersetzt wird. Das Handlungsfeld Wirtschaft integriert auch
-            Maßnahmen, die den Kundenverkehr im Einzelhandel adressieren und die
-            Radmobilität diesbezüglich fördern (z. B. durch bestimmte Vorgaben,
-            wie z. B. Stellplatzschlüssel für Fahrräder).
+            <p>
+              Wirtschafts- und Lieferverkehr macht einen großen Teil des
+              Verkehrsaufkommens aus. Stadtlogistikkonzepte oder Förderangebote
+              für Unternehmen können dazu beitragen, dass ein Teil der
+              Lieferfahrzeuge durch geeignete Fahrräder (z. B. Lastenräder)
+              ersetzt wird.
+            </p>
+            <p>
+              Das Handlungsfeld Wirtschaft integriert auch Maßnahmen, die den
+              Kundenverkehr im Einzelhandel adressieren und die Radmobilität
+              diesbezüglich fördern (z. B. durch bestimmte Vorgaben, wie z. B.
+              Stellplatzschlüssel für Fahrräder).
+            </p>
           </FoldOut>
           <H2>Tourismus und Freizeitverkehr</H2>
           <FoldOut>
@@ -176,31 +181,35 @@ const IndexPage: React.FC = () => {
             Reduzierung von Kfz-Stellplätzen.
           </FoldOut>
         </Content>
+      </section>
+      <section className="mt-16 bg-pastel-purple pb-16 pt-8">
         <Content>
-          <H1>Plan F Award 2022</H1>
-          <p>
-            Es haben sich insgesamt 66 Projekte aus unterschiedlichen Kommunen
-            in ganz Deutschland für den Plan F Award 2022 beworben. Kleine und
-            große Kommunen aus ländlichen sowie urbanen Regionen waren vertreten
-            und bilden dabei die große Vielfalt deutscher Kommunen und deren
-            unterschiedliche Herausforderungen und Möglichkeiten in der
-            Radverkehrsförderung ab. Wir haben im kleinen als auch im großen
-            Maßstab geplante und umgesetzte Maßnahmen aus den neun
-            Handlungsfeldern der Radverkehrsförderung erhalten, die allesamt
-            dazu beitragen, das Radfahren angenehmer und zugänglicher zu
-            gestalten und den Radverkehr zu fördern.
-          </p>
-          <QuoteBox>
-            Unserer Jury hat die besten Praxisbeispiele pro Handlungsfeld sowie
-            drei Gesamtsieger*innen des Plan F Award 2022 gekürt. Die
-            Siegerehrung und Preisverleihung fand auf der
-            Fahrradkommunalkonferenz am 22. November 2022 in Aachen statt.
-          </QuoteBox>
-          <H2>
-            Unsere Sieger*innen in den neun Handlungsfeldern der kommunalen
-            Radverkehrsförderung
-          </H2>
           <div>
+            <H1>Plan F Award 2022</H1>
+            <p>
+              Es haben sich insgesamt 66 Projekte aus unterschiedlichen Kommunen
+              in ganz Deutschland für den Plan F Award 2022 beworben. Kleine und
+              große Kommunen aus ländlichen sowie urbanen Regionen waren
+              vertreten und bilden dabei die große Vielfalt deutscher Kommunen
+              und deren unterschiedliche Herausforderungen und Möglichkeiten in
+              der Radverkehrsförderung ab. Wir haben im kleinen als auch im
+              großen Maßstab geplante und umgesetzte Maßnahmen aus den neun
+              Handlungsfeldern der Radverkehrsförderung erhalten, die allesamt
+              dazu beitragen, das Radfahren angenehmer und zugänglicher zu
+              gestalten und den Radverkehr zu fördern.
+            </p>
+            <QuoteBox>
+              Unserer Jury hat die besten Praxisbeispiele pro Handlungsfeld
+              sowie drei Gesamtsieger*innen des Plan F Award 2022 gekürt. Die
+              Siegerehrung und Preisverleihung fand auf der
+              Fahrradkommunalkonferenz am 22. November 2022 in Aachen statt.
+            </QuoteBox>
+          </div>
+          <div className="mt-16">
+            <H2>
+              Unsere Sieger*innen in den neun Handlungsfeldern der kommunalen
+              Radverkehrsförderung
+            </H2>
             <H2>Governance</H2>
             <H3>
               1. Zweckverband LANDFOLGE Garzweiler: Rheinisches
@@ -231,10 +240,11 @@ const IndexPage: React.FC = () => {
               <QuoteBox>
                 Der Zweckverband LANDFOLGE Garzweiler belegt mit dem Rheinischen
                 Radverkehrsrevier den 3. Platz (Gesamtwertung) des Plan F Awards
-                2022 und hat das Plan F Online-Audit in einem Handlungsfeld
-                gewonnen.
+                2022 und hat das{' '}
+                <TextLink to="#dritter">Plan F Online-Audit</TextLink> in einem
+                Handlungsfeld gewonnen.
               </QuoteBox>
-              {/* TODO: insert media */}
+              <FotoCopyright data={fotos.g1} />
             </FoldOut>
             <H3>
               2. Freie und Hansestadt Hamburg: Leitfaden Fahrradparken im
@@ -253,7 +263,7 @@ const IndexPage: React.FC = () => {
               Nachrüstung von Fahrradabstellanlagen im Bestand. Darauf aufbauend
               hat Hamburg ein Förderprogramm aufgelegt, das den formulierten
               Anspruch an die Qualität der Anlagen in die Umsetzung bringt.
-              {/* TODO: media */}
+              <FotoCopyright data={fotos.g2} />
             </FoldOut>
             <H3>
               3. Region Hannover: Social2Mobility II: Fahrradmobilität und
@@ -274,6 +284,8 @@ const IndexPage: React.FC = () => {
                 sowie Dialog und Vernetzung. Fahrradmobilität soll damit soziale
                 Teilhabe ermöglichen.
               </p>
+
+              <FotoCopyright data={fotos.g3} />
             </FoldOut>
           </div>
           <div>
@@ -298,7 +310,7 @@ const IndexPage: React.FC = () => {
               Am Ende erhielten die bestplatzierten Schulen Geldpreise, die für
               die Anschaffung von z. B. Spiel- oder Sportgeräten für die
               Schüler*innen genutzt werden können.
-              {/* Todo:media */}
+              <FotoCopyright data={fotos.b1} />
             </FoldOut>
             <H3>2. Bad Honnef: FahrRADMOMENTE – Schulaktion</H3>
             <FoldOut>
@@ -319,7 +331,7 @@ const IndexPage: React.FC = () => {
                 Die Schulaktion war ein Element der Radkommunikationskampagne
                 „FahrRADMOMENTE“.
               </p>
-              {/* TODO: media */}
+              <FotoCopyright data={fotos.b2} />
             </FoldOut>
             <H3>3. Aachen: FahrRad Kampagne</H3>
             <FoldOut>
@@ -348,7 +360,7 @@ const IndexPage: React.FC = () => {
                 markiert. Außerdem steht seit diesem Jahr eine Ampelanlage zur
                 Verfügung.
               </p>
-              {/* TODO: media */}
+              <FotoCopyright data={fotos.b2} />
             </FoldOut>
           </div>
           <div>
@@ -374,15 +386,17 @@ const IndexPage: React.FC = () => {
               <QuoteBox>
                 Die Verbandsgemeinde Wallmerod ist belegt mit dem
                 Wäller-ALLEnweg den 1. Platz (Gesamtwertung) des Plan F Awards
-                2022 und hat das Plan F Audit gewonnen, welches vom 17. – 21.
-                Oktober vor Ort durchgeführt wurde.
+                2022 und hat das <TextLink to="#erster">Plan F Audit</TextLink>{' '}
+                gewonnen, welches vom 17. – 21. Oktober vor Ort durchgeführt
+                wurde.
               </QuoteBox>
               <p>
                 In einem kurzen Video beantwortet die Verbandsgemeinde die drei
                 häufigsten Fragen zu dem neuen Radweg:
                 https://www.facebook.com/watch/?v=5382383398456066
               </p>
-              {/* TODO media */}
+              <FotoCopyright data={fotos.i1} />
+              <FotoCopyright data={fotos.i12} />
             </FoldOut>
             <H3>2. Köln: Rück- und Umbau freilaufender Rechtsabbieger</H3>
             <FoldOut>
@@ -403,9 +417,10 @@ const IndexPage: React.FC = () => {
                 langfristig anwendbar sind und dadurch die Planer*innen beim
                 Umbau unterstützen.
               </p>
+              <FotoCopyright data={fotos.i2} />
             </FoldOut>
             <H3>3. Erfurt: Südknoten</H3>
-            <QuoteBox>
+            <FoldOut>
               <p>
                 Der Erfurter Südknoten ist ein komplexer Verkehrsknoten, welcher
                 dem Generalverkehrsplan von 1968 entstammt. Heute kreuzen dort
@@ -421,8 +436,8 @@ const IndexPage: React.FC = () => {
                 geschaffen und somit die Verkehrssituation an die Anforderungen
                 des 21. Jahrhunderts angepasst.
               </p>
-              {/* TODO: media */}
-            </QuoteBox>
+              <FotoCopyright data={fotos.i3} />
+            </FoldOut>
           </div>
           <div>
             <H2>Kommunikation und Öffentlichkeitsarbeit</H2>
@@ -445,14 +460,20 @@ const IndexPage: React.FC = () => {
               <QuoteBox>
                 Die Stadt Aachen belegt mit der Kommunikation rund um den
                 Radentscheid den 2. Platz (Gesamtwertung) des Plan F Awards 2022
-                und hat das Plan F Online-Audit gewonnen.
+                und hat das{' '}
+                <TextLink to="#zweiter">Plan F Online-Audit</TextLink> gewonnen.
               </QuoteBox>
               <p>
-                Das Video zur Jahresveranstaltung Radentscheid 2022 gibt es
-                hier:
-                https://www.youtube.com/watch?v=MPveXoqAnjc&ab_channel=StadtAachen
+                Das Video zur Jahresveranstaltung Radentscheid 2022 gibt es{' '}
+                <TextLink
+                  to="
+                https://www.youtube.com/watch?v=MPveXoqAnjc&ab_channel=StadtAachen"
+                  external
+                >
+                  hier
+                </TextLink>
               </p>
-              {/* TODO: media */}
+              <FotoCopyright data={fotos.k1} />
             </FoldOut>
             <H3>
               2. Oberursel: Orscheler Neubürgerinnen und Neubürger Radtour
@@ -472,7 +493,7 @@ const IndexPage: React.FC = () => {
                 Lebensumbrüche, wie z.B. ein Umzug, bieten die Chance, eingeübte
                 Verhaltensweisen zu verändern.
               </p>
-              {/* TODO: media */}
+              <FotoCopyright data={fotos.k2} />
             </FoldOut>
             <H3>3. Wiesbaden: Mit der App DB Rad+ aufs Rad steigen</H3>
             <FoldOut>
@@ -489,12 +510,13 @@ const IndexPage: React.FC = () => {
                 Rabatte bei Partner*innen einlösen oder einen Cappuccino, einen
                 Apfel oder auch den Eintritt ins Museum Wiesbaden bezahlen.
               </p>
+              <FotoCopyright data={fotos.k3} />
             </FoldOut>
           </div>
           <div>
             <H2>Services</H2>
             <H3>1. Gelsenkirchen: Fahrradservicestationen</H3>
-            <QuoteBox>
+            <FoldOut>
               <p>
                 Die Stadt hat insgesamt 50 Fahrradservicestationen eingerichtet,
                 welche Radfahrende unterwegs die Möglichkeit geben, kleine
@@ -513,7 +535,8 @@ const IndexPage: React.FC = () => {
                 unkompliziert und direkt bei den zuständigen Stellen eingehen
                 und Mängel schnell behoben werden können.
               </p>
-            </QuoteBox>
+              <FotoCopyright data={fotos.s1} />
+            </FoldOut>
             <H3>2. Adelsdorf: Mängelerkennung Radwegweisung</H3>
             <FoldOut>
               <p>
@@ -528,7 +551,6 @@ const IndexPage: React.FC = () => {
                 melden, welche die Gemeinde direkt an die entsprechende
                 Dienststelle weiterleitet, damit diese schnellst behoben werden.
               </p>
-              {/* TODO */}
             </FoldOut>
             <H3> 3. Kaufungen: E-Lastenradverleihsystem</H3>
             <FoldOut>
@@ -554,7 +576,7 @@ const IndexPage: React.FC = () => {
                 Schwerlast- Anhänger (Der Anhänger kann auch als Handwagen
                 genutzt werden.)
               </p>
-              {/* TODO */}
+              <FotoCopyright data={fotos.s3} />
             </FoldOut>
           </div>
           <div>
@@ -584,6 +606,7 @@ const IndexPage: React.FC = () => {
                 Region Stuttgart (VRS), der Verkehrsverbund Stuttgart (VVS) und
                 die Stadt Fellbach.
               </p>
+              <FotoCopyright data={fotos.m1} />
             </FoldOut>
             <H3>2. Verkehrsverbund Rhein-Neckar GmbH: VRNradbox</H3>
             <FoldOut>
@@ -602,6 +625,7 @@ const IndexPage: React.FC = () => {
                 Buchungssystem. So kann das Fahrrad trocken und sicher am
                 Bahnhof abgestellt werden.
               </p>
+              <FotoCopyright data={fotos.m2} />
             </FoldOut>
           </div>
           <div>
@@ -615,7 +639,7 @@ const IndexPage: React.FC = () => {
             <FoldOut>
               <p>
                 Bei dieser werden genau wie bei einer klassischen Schnitzeljagd
-                Hinweise verfolgt, um am Ende das Ziel zu erreichen – nur eben
+                Hinweise verfolgt, um am Ende das Ziel zu erreichen - nur eben
                 mit dem Fahrrad. Die Morsbacher Fahrrad-Schnitzeljagd fand im
                 Zeitraum der Aktion STADTRADELN vom 4. Bis 24. September 2022
                 statt.
@@ -629,10 +653,11 @@ const IndexPage: React.FC = () => {
                 und verrieten nicht nur einen Teil des zu lösenden Wortpuzzles,
                 sondern auch den Weg zur nächsten Station. Wer die
                 Wortpuzzleteile in die richtige Reihenfolge brachte, erhielt mit
-                etwas Geschick das Lösungswort. Unter allen Teilnehmer*innen
+                etwas Geschick das Lösungswort. Unter allen Teilnehmer*innen
                 wurden am Ende der Aktion tolle Preise verlost, die von lokalen
                 Betrieben gesponsert wurden.
               </p>
+              <FotoCopyright data={fotos.t1} />
             </FoldOut>
             <H3>2. Erfurt: Radring</H3>
             <FoldOut>
@@ -651,6 +676,7 @@ const IndexPage: React.FC = () => {
                 auch der Alltagsradverkehr, denn der Rundweg schafft eine gute
                 Anbindung der angrenzenden Landkreise an die Stadt Erfurt!
               </p>
+              <FotoCopyright data={fotos.t2} />
             </FoldOut>
           </div>
           <div>
@@ -670,6 +696,7 @@ const IndexPage: React.FC = () => {
                 Stadt Neuss ein Konzept für eine dauerhaft autoreduzierte
                 Innenstadt entwickeln.
               </p>
+              <FotoCopyright data={fotos.v1} />
             </FoldOut>
             <H3>2. Friesoythe: Ausbau der Innenstadt und Radverkehrskonzept</H3>
             <FoldOut>
@@ -702,25 +729,35 @@ const IndexPage: React.FC = () => {
                 bieten. Zudem ist eine Vielzahl von Geschäften ohne Stufen
                 erreichbar.
               </p>
+              <FotoCopyright data={fotos.v2} />
             </FoldOut>
           </div>
+          <ButtonLink to="Projektmappe_PlanfAward.pdf">
+            Projektmappe mit allen Bewerbungen
+          </ButtonLink>
         </Content>
         <Content>
-          {/* TODO: projektmappe einfuegen */}
-          <div>
+          <div className="pt-8">
             <H2>
               Unsere Gesamtsieger*innen des Plan F Award gewannen je ein Plan F
               Audit
             </H2>
             <p>
-              Unsere drei Gesamtsieger*innen haben je ein individuelles
-              {/*bold */}Plan F Audit mit Maßnahmenempfehlung gewonnen. Hier
-              finden Sie Eindrücke und Ergebnisse unseres Vor-Ort Audits,
-              welches wir vom 17. - 21. Oktober 2022 in der Verbandgemeinde
-              Wallmerod durchgeführt haben. In Aachen und Garzweiler, unsere
-              Plätze 2 & 3, führen wir je ein Online-Audit durch.
+              Unsere drei Gesamtsieger*innen haben je ein individuelles{' '}
+              <span className="font-bold">
+                Plan F Audit mit Maßnahmenempfehlung
+              </span>{' '}
+              gewonnen. Hier finden Sie Eindrücke und Ergebnisse unseres Vor-Ort
+              Audits, welches wir vom 17. - 21. Oktober 2022 in der
+              Verbandgemeinde Wallmerod durchgeführt haben. In Aachen und
+              Garzweiler, unsere Plätze 2 & 3, führen wir je ein Online-Audit
+              durch.
             </p>
-            <H3>1. Platz: Plan F Audit für die Verbandsgemeinde Wallmerod</H3>
+          </div>
+          <div>
+            <H3 id="erster">
+              1. Platz: Plan F Audit für die Verbandsgemeinde Wallmerod
+            </H3>
             <FoldOut>
               <p>
                 Vom 17. – 21. Oktober fand das Plan F Audit - Hauptgewinn des
@@ -741,14 +778,17 @@ const IndexPage: React.FC = () => {
                 einen zukunftsfähigen Radverkehr in der ländlichen Gemeinde in
                 Rheinland-Pfalz sind.
               </p>
-              {/* TODO: bulletpoints */}
-              <p>• Radwegenetz • Radweg Wallmerod-Hundsangen • Fahrradkultur</p>
+              <ul className="my-6 ml-16 list-inside list-square ">
+                <li>Radwegenetz</li>
+                <li>Radweg Wallmerod-Hundsangen</li>
+                <li>Fahrradkultur</li>
+              </ul>
               <p>
                 Unsere Studierenden, die „FreshBrains“, haben dafür ihre
                 kreativen Ideen mit unseren Plan F Handlungsfeldern für eine
                 ganzheitliche Radverkehrsförderung kombiniert und in fünf Tagen
                 wertvolle radverkehrsfördernde Maßnahmen für eine
-                fahrradfreundliche Verbandsgemeinde erarbeitet. 
+                fahrradfreundliche Verbandsgemeinde erarbeitet.
               </p>
               <p>
                 Als kleines Highlight der Woche fand am Mittwoch eine
@@ -769,7 +809,9 @@ const IndexPage: React.FC = () => {
                 Wallmerod enthält.
               </p>
             </FoldOut>
-            <H2>2. Platz: Plan F Online-Audit für die Stadt Aachen</H2>
+            <H3 id="zweiter">
+              2. Platz: Plan F Online-Audit für die Stadt Aachen
+            </H3>
             <FoldOut>
               <p>
                 Das Online-Audit für die Stadt Aachen findet seit dem 24.
@@ -788,7 +830,7 @@ const IndexPage: React.FC = () => {
                 Abschlussveranstaltung am 14. Dezember 2022 präsentiert.
               </p>
             </FoldOut>
-            <H3>
+            <H3 id="dritter">
               3. Platz: Plan F Online-Audit in einem Handlungsfeld für
               Zweckverband LANDFOLGE Garzweiler
             </H3>
@@ -803,7 +845,7 @@ const IndexPage: React.FC = () => {
               </p>
             </FoldOut>
           </div>
-          <div>
+          <div className="pt-12">
             <H2>Plan F Audit: Mehrwert für alle Beteiligten </H2>
             <p>
               Durch das Plan F Audit entsteht ein deutlicher Mehrwert für alle
@@ -819,18 +861,26 @@ const IndexPage: React.FC = () => {
               Studierende aus Deutschland und den Niederlanden haben im Rahmen
               dieses Projekts bereits in Kassel, Chemnitz, Mönchengladbach,
               Wuppertal, Bonn, und Dortmund ein Fahrradaudit durchgeführt.
-              Weiterführende Informationen zu dem Projekt finden Sie hier. TODO:
-              link=https://www.mobilitaetsforum.bund.de/DE/Themen/Wissenspool/Projekte/Projektbeispiele/Projekte/19730_freshbrains_fahrradaudits_durch_niederla.html?cms_submit=Suchen&cms_templateQueryString=freshbrains.
+              Weiterführende Informationen zu dem Projekt finden Sie{' '}
+              <TextLink to="https://www.mobilitaetsforum.bund.de/DE/Themen/Wissenspool/Projekte/Projektbeispiele/Projekte/19730_freshbrains_fahrradaudits_durch_niederla.html?cms_submit=Suchen&cms_templateQueryString=freshbrains">
+                hier
+              </TextLink>
+              .
             </p>
             <p>
               Haben Sie auch Interesse an einem solchen Audit bei sich in der
-              Kommune? Dann sprechen Sie uns an unter: kontakt@plan-f.info TODO:
-              link mail
+              Kommune? Dann sprechen Sie uns an unter:{' '}
+              <TextLink to="mailto:kontakt@plan-f.info">
+                kontakt@plan-f.info
+              </TextLink>
+              .
             </p>
           </div>
         </Content>
+      </section>
+      <section>
         <Content>
-          <div className="mt-24">
+          <div className="mt-8">
             <H2>Unsere Schirmfrau</H2>
             <div className="mt-9">
               <Profile profile={CEO} preload />
@@ -873,7 +923,9 @@ const IndexPage: React.FC = () => {
             Kommunen künftig als Orientierung und Vorbild.
           </p>
           <H2>Was steht noch aus? Die nächsten Schritte im Projekt</H2>
-          <H3>Frühjahr 2023:</H3>
+          <H3>
+            <span className="text-pastel-purple">Frühjahr 2023:</span>
+          </H3>
           <H3>Plan F Webseite</H3>
           <p>
             Die Plan F Systematisierung der Handlungsfelder der kommunalen
@@ -896,7 +948,9 @@ const IndexPage: React.FC = () => {
             E-Learningkurs konzipiert, welcher die Inhalte der Systematik
             vermittelt.
           </p>
-          <H3>Sommer 2023:</H3>
+          <H3>
+            <span className="text-pastel-purple">Sommer 2023:</span>
+          </H3>
           <H3>Plan F Check:</H3>
           <H2>
             Passgenaue Handlungsempfehlungen durch Selbstevaluation von Kommunen
@@ -911,9 +965,12 @@ const IndexPage: React.FC = () => {
             Sie haben sich nicht für den Plan F Award beworben, aber in Ihrer
             Kommune wird ebenfalls ein gutes Projekt oder eine Maßnahme
             umgesetzt und sie möchten, dass andere Kommunen davon lernen können?
-            Schreiben Sie uns gern eine E-Mail dazu an
+            Schreiben Sie uns gern eine E-Mail dazu an{' '}
+            <TextLink to="mailto:kontakt@plan-f.info">
+              kontakt@plan-f.info
+            </TextLink>
+            .
           </p>
-          {/* TODO: kontakt@plan-f.info */}
         </Content>
       </section>
       <div className="object-left pt-28 pb-6">
