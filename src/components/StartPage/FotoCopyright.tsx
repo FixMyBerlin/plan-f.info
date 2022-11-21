@@ -4,7 +4,7 @@ type Props = { data: { src: any; copyright: string }; preload?: boolean };
 
 export const FotoCopyright: React.FC<Props> = ({
   data: { src, copyright },
-  preload = false,
+  preload = true,
 }) => {
   return (
     <div>
