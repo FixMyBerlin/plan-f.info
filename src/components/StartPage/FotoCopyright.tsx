@@ -1,5 +1,4 @@
 import React from 'react';
-import { Attribution } from '.';
 
 type Props = { data: { src: any; copyright: string }; preload?: boolean };
 
@@ -14,7 +13,9 @@ export const FotoCopyright: React.FC<Props> = ({
         alt={`Foto von ${copyright}`}
         loading={preload ? 'eager' : 'lazy'}
       />
-      <Attribution owner={copyright} />
+      <div className="mt-auto flex-none text-sm">
+        Foto:&nbsp;&copy;&nbsp;{copyright}
+      </div>
     </div>
   );
 };
