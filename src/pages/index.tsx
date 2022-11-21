@@ -10,6 +10,7 @@ import {
   FotoCopyright,
   fotos,
 } from '~/components/StartPage';
+import TestIcon from '~/components/StartPage/assets/icons/bildung.svg';
 import { Layout, Hero, Content, HelmetSeo } from '~/components/Layout';
 import { ButtonLink, TextLink } from '~/components/Link';
 import { H1, H2, H3 } from '~/components/Text';
@@ -58,7 +59,7 @@ const IndexPage: React.FC = () => {
         <Content>
           <H1>Die 9 Handlungsfelder der kommunalen Radverkehrsförderung</H1>
           <H2> Governance </H2>
-          <FoldOut>
+          <FoldOut className="pb-4">
             <p>
               Das Handlungsfeld Governance schließt alle Maßnahmen der
               Radverkehrsförderung ein, die sich auf einer politischen,
@@ -82,7 +83,7 @@ const IndexPage: React.FC = () => {
             </p>
           </FoldOut>
           <H2>Bildung und Trainings</H2>
-          <FoldOut>
+          <FoldOut className="pb-4">
             <p>
               Um die Radmobilität langfristig zu erhöhen, ist es wichtig, Kinder
               und Jugendliche bereits früh mit der Nutzung des Fahrrads vertraut
@@ -102,7 +103,7 @@ const IndexPage: React.FC = () => {
             </p>
           </FoldOut>
           <H2>Infrastruktur</H2>
-          <FoldOut>
+          <FoldOut className="pb-4">
             Das Handlungsfeld Infrastruktur schließt alle Maßnahmen ein, die der
             Verbesserung der Radinfrastrukturanlagen dienen. Dabei geht es um
             den fließenden Radverkehr, z. B. Radwege, Einrichtung von
@@ -115,7 +116,7 @@ const IndexPage: React.FC = () => {
             und Nahmobilität“ aufgeführt.
           </FoldOut>
           <H2>Kommunikation und Öffentlichkeitsarbeit</H2>
-          <FoldOut>
+          <FoldOut className="pb-4">
             <p>
               Das Handlungsfeld Kommunikation und Öffentlichkeitsarbeit schließt
               alle Maßnahmen ein, die das Fahrrad als Verkehrsmittel bewerben
@@ -130,7 +131,7 @@ const IndexPage: React.FC = () => {
             </p>
           </FoldOut>
           <H2>Services</H2>
-          <FoldOut>
+          <FoldOut className="pb-4">
             <p>
               Radverkehrsbezogene Serviceangebote, wie Reparaturstationen sowie
               Bike- Sharing oder verschiedene Apps (z. B. zur Routenführung oder
@@ -139,7 +140,7 @@ const IndexPage: React.FC = () => {
             </p>
           </FoldOut>
           <H2>Multimodalität und Nahmobilität</H2>
-          <FoldOut>
+          <FoldOut className="pb-4">
             <p>
               In dem Handlungsfeld Multimodalität und Nahmobilität dreht sich
               alles darum, den Radverkehr besser mit anderen Verkehrsmitteln zu
@@ -157,7 +158,7 @@ const IndexPage: React.FC = () => {
             </p>
           </FoldOut>
           <H2>Wirtschaft</H2>
-          <FoldOut>
+          <FoldOut className="pb-4">
             <p>
               Wirtschafts- und Lieferverkehr macht einen großen Teil des
               Verkehrsaufkommens aus. Stadtlogistikkonzepte oder Förderangebote
@@ -173,7 +174,7 @@ const IndexPage: React.FC = () => {
             </p>
           </FoldOut>
           <H2>Tourismus und Freizeitverkehr</H2>
-          <FoldOut>
+          <FoldOut className="pb-4">
             Das Handlungsfeld Tourismus und Freizeitverkehr schließt
             unterschiedliche kommunale Handlungsmöglichkeiten ein, welche die
             touristische und Freizeitradmobilität fördern. Dazu gehören u. a.
@@ -182,7 +183,7 @@ const IndexPage: React.FC = () => {
             (z. B. Abstellanlagen oder E-Ladestationen) oder Bike Parks.
           </FoldOut>
           <H2>Verkehrsberuhigung</H2>
-          <FoldOut>
+          <FoldOut className="pb-4">
             Das Handlungsfeld Verkehrsberuhigung zeigt Maßnahmen auf, welche
             durch die Reduzierung des Kfz-Verkehrs zu einer Verbesserung der
             Radmobilität beitragen. Dazu gehören beispielsweise
@@ -193,7 +194,7 @@ const IndexPage: React.FC = () => {
       </section>
       <section className="mt-16 bg-pastel-purple pb-16 pt-8">
         <Content>
-          <div>
+          <div className="pb-6">
             <H1>Plan F Award 2022</H1>
             <p>
               Es haben sich insgesamt 66 Projekte aus unterschiedlichen Kommunen
@@ -214,17 +215,19 @@ const IndexPage: React.FC = () => {
               Fahrradkommunalkonferenz am 22. November 2022 in Aachen statt.
             </QuoteBox>
           </div>
-          <div className="mt-16">
+          <div>
             <H2>
               Unsere Sieger*innen in den neun Handlungsfeldern der kommunalen
               Radverkehrsförderung
             </H2>
+          </div>
+          <div className="pb-6">
             <H2>Governance</H2>
             <H3>
               1. Zweckverband LANDFOLGE Garzweiler: Rheinisches
               Radverkehrsrevier
             </H3>
-            <FoldOut>
+            <FoldOut className="pb-4">
               <p>
                 Im Rheinischen Revier stoßen die für die Verflechtung zu den
                 umgebenden Ballungsräumen notwendigen Infrastrukturen an ihre
@@ -259,7 +262,7 @@ const IndexPage: React.FC = () => {
               2. Freie und Hansestadt Hamburg: Leitfaden Fahrradparken im
               Quartier
             </H3>
-            <FoldOut>
+            <FoldOut className="pb-4">
               Die Freie und Hansestadt Hamburg hat einen Leitfaden
               „Fahrradparken im Quartier“ entwickelt. Damit Fahrräder für
               möglichst viele alltägliche Wege genutzt werden, müssen sie am
@@ -278,7 +281,7 @@ const IndexPage: React.FC = () => {
               3. Region Hannover: Social2Mobility II: Fahrradmobilität und
               soziale Teilhabe ermöglichen
             </H3>
-            <FoldOut>
+            <FoldOut className="pb-4">
               <p>
                 Erklärtes Ziel des Projekts „Social2Mobility“ ist es, das
                 Fahrrad in der Region Hannover zu einem kostengünstigen,
@@ -297,10 +300,10 @@ const IndexPage: React.FC = () => {
               <FotoCopyright data={fotos.g3} />
             </FoldOut>
           </div>
-          <div>
+          <div className="pb-6">
             <H2>Bildung und Trainings</H2>
             <H3>1. Landkreis Osnabrück: Bike to School</H3>
-            <FoldOut>
+            <FoldOut className="pb-4">
               Mit der Kampagne „Bike to School“ wurden im Herbst 2020 und
               Frühjahr 2021 im Landkreis Osnabrück Schüler*innen ab der fünften
               Klasse sowie das Schulpersonal motiviert, ihre Schulwege mit dem
@@ -322,7 +325,7 @@ const IndexPage: React.FC = () => {
               <FotoCopyright data={fotos.b1} />
             </FoldOut>
             <H3>2. Bad Honnef: FahrRADMOMENTE - Schulaktion</H3>
-            <FoldOut>
+            <FoldOut className="pb-4">
               <p>
                 Wer auf das Fahrrad zu sprechen kommt, redet viel von
                 Verkehrssicherheit, Radverkehrsanlagen oder Förderprojekten.
@@ -343,7 +346,7 @@ const IndexPage: React.FC = () => {
               <FotoCopyright data={fotos.b2} />
             </FoldOut>
             <H3>3. Aachen: FahrRad Kampagne</H3>
-            <FoldOut>
+            <FoldOut className="pb-4">
               <p>
                 Die städtische Kampagne „FahrRad“ des Fachbereichs
                 Stadtentwicklung, -planung und Mobilitätsinfrastruktur der Stadt
@@ -372,10 +375,10 @@ const IndexPage: React.FC = () => {
               <FotoCopyright data={fotos.b2} />
             </FoldOut>
           </div>
-          <div>
+          <div className="pb-6">
             <H2>Infrastruktur</H2>
             <H3>1. Verbandsgemeinde Wallmerod: Wäller ALLEn-Weg</H3>
-            <FoldOut>
+            <FoldOut className="pb-4">
               <p>
                 Mobilität soll für alle sein, deshalb hat die Gemeinde Wallmerod
                 den ersten barrierefreien Radweg in Rheinland-Pfalz gebaut. Ob
@@ -399,7 +402,7 @@ const IndexPage: React.FC = () => {
                 gewonnen, welches vom 17. - 21. Oktober vor Ort durchgeführt
                 wurde.
               </QuoteBox>
-              <p>
+              <p className="pt-6">
                 In einem kurzen{' '}
                 <TextLink
                   newWindow
@@ -415,7 +418,7 @@ const IndexPage: React.FC = () => {
               <FotoCopyright data={fotos.i12} />
             </FoldOut>
             <H3>2. Köln: Rück- und Umbau freilaufender Rechtsabbieger</H3>
-            <FoldOut>
+            <FoldOut className="pb-4">
               <p>
                 In der Stadt Köln gibt es ca. 310 signalisierte Knotenpunkte,
                 die mit mindestens einem freilaufenden Rechtsabbieger
@@ -436,7 +439,7 @@ const IndexPage: React.FC = () => {
               <FotoCopyright data={fotos.i2} />
             </FoldOut>
             <H3>3. Erfurt: Südknoten</H3>
-            <FoldOut>
+            <FoldOut className="pb-4">
               <p>
                 Der Erfurter Südknoten ist ein komplexer Verkehrsknoten, welcher
                 dem Generalverkehrsplan von 1968 entstammt. Heute kreuzen dort
@@ -455,10 +458,10 @@ const IndexPage: React.FC = () => {
               <FotoCopyright data={fotos.i3} />
             </FoldOut>
           </div>
-          <div>
+          <div className="pb-6">
             <H2>Kommunikation und Öffentlichkeitsarbeit</H2>
             <H3>1. Aachen: Kommunikation rund um den Radentscheid</H3>
-            <FoldOut>
+            <FoldOut className="pb-4">
               <p>
                 Im Jahr 2019 wurde das Bürger*innenbegehren Radentscheid durch
                 die Stadt Aachen angenommen mit dem Ziel der Umsetzung bis 2027.
@@ -495,7 +498,7 @@ const IndexPage: React.FC = () => {
             <H3>
               2. Oberursel: Orscheler Neubürgerinnen und Neubürger Radtour
             </H3>
-            <FoldOut>
+            <FoldOut className="pb-4">
               <p>
                 Erst eine Runde mit dem Rad, dann eine Erfrischung bei der
                 Feuerwehr mit Wasser, Saft und Obst sowie ein Gespräch mit der
@@ -513,7 +516,7 @@ const IndexPage: React.FC = () => {
               <FotoCopyright data={fotos.k2} />
             </FoldOut>
             <H3>3. Wiesbaden: Mit der App DB Rad+ aufs Rad steigen</H3>
-            <FoldOut>
+            <FoldOut className="pb-4">
               <p>
                 Ein Kaffee für 25 km oder eine Eintrittskarte für 60km? Mit der
                 App „DB Rad+“ der Deutschen Bahn kann man jetzt
@@ -530,10 +533,10 @@ const IndexPage: React.FC = () => {
               <FotoCopyright data={fotos.k3} />
             </FoldOut>
           </div>
-          <div>
+          <div className="pb-6">
             <H2>Services</H2>
             <H3>1. Gelsenkirchen: Fahrradservicestationen</H3>
-            <FoldOut>
+            <FoldOut className="pb-4">
               <p>
                 Die Stadt hat insgesamt 50 Fahrradservicestationen eingerichtet,
                 welche Radfahrende unterwegs die Möglichkeit geben, kleine
@@ -555,7 +558,7 @@ const IndexPage: React.FC = () => {
               <FotoCopyright data={fotos.s1} />
             </FoldOut>
             <H3>2. Adelsdorf: Mängelerkennung Radwegweisung</H3>
-            <FoldOut>
+            <FoldOut className="pb-4">
               <p>
                 Radwegweiser werden leider nicht regelmäßig gewartet - das führt
                 zu Fehlinformationen für Radfahrende!
@@ -570,7 +573,7 @@ const IndexPage: React.FC = () => {
               </p>
             </FoldOut>
             <H3> 3. Kaufungen: E-Lastenradverleihsystem</H3>
-            <FoldOut>
+            <FoldOut className="pb-4">
               <p>
                 Das Kaufunger E-Lastenradverleihsystem ist in den Probebetrieb
                 gestartet! Alle Kaufunger*innen können sich nun kostenlos eines
@@ -596,16 +599,16 @@ const IndexPage: React.FC = () => {
               <FotoCopyright data={fotos.s3} />
             </FoldOut>
           </div>
-          <div>
+          <div className="pb-6">
             <H2>Multimodalität und Nahmobilität</H2>
-            <p>
+            <p className="pb-2">
               Im Handlungsfeld Multimodalität und Nahmobilität gab es leider
               keinen ersten Platz. Unsere Jury hat jedoch zwei zweite Plätze
               ausgewählt. Für den ersten Platz hat es bei beiden Projekten noch
               an kleineren Punkten gefehlt.
             </p>
             <H3>2. Fellbach: Automatisiertes Fahrradparkhaus</H3>
-            <FoldOut>
+            <FoldOut className="pb-4">
               <p>
                 Das Fahrradparkhaus vereint bewährte Paternoster-Technik mit
                 ansprechender Architektur bei geringem Platzverbrauch und mit
@@ -626,7 +629,7 @@ const IndexPage: React.FC = () => {
               <FotoCopyright data={fotos.m1} />
             </FoldOut>
             <H3>2. Verkehrsverbund Rhein-Neckar GmbH: VRNradbox</H3>
-            <FoldOut>
+            <FoldOut className="pb-4">
               <p>
                 Hochwertige und sichere Fahrradabstellanlagen an
                 ÖPNV-Haltestellen sowie Bahnhöfen sind zentral, um die
@@ -645,17 +648,17 @@ const IndexPage: React.FC = () => {
               <FotoCopyright data={fotos.m2} />
             </FoldOut>
           </div>
-          <div>
+          <div className="pb-6">
             <H2>Wirtschaft</H2>
             <p>
               Im Handlungsfeld Wirtschaft haben wir keine Einreichung erhalten,
               die unsere Jury mit dem Plan F Award auszeichnen wollte.
             </p>
           </div>
-          <div>
+          <div className="pb-6">
             <H2>Tourismus und Freizeitverkehr</H2>
             <H3>1. Morsbach: Fahrrad-Schnitzeljagd</H3>
-            <FoldOut>
+            <FoldOut className="pb-4">
               <p>
                 Bei dieser werden genau wie bei einer klassischen Schnitzeljagd
                 Hinweise verfolgt, um am Ende das Ziel zu erreichen - nur eben
@@ -679,7 +682,7 @@ const IndexPage: React.FC = () => {
               <FotoCopyright data={fotos.t1} />
             </FoldOut>
             <H3>2. Erfurt: Radring</H3>
-            <FoldOut>
+            <FoldOut className="pb-4">
               <p>
                 Der vielfältige ländlich geprägte Raum rund um Erfurt soll mit
                 dem Fahrrad erlebbar gemacht werden. Mittels sieben Radialen
@@ -698,10 +701,10 @@ const IndexPage: React.FC = () => {
               <FotoCopyright data={fotos.t2} />
             </FoldOut>
           </div>
-          <div>
+          <div className="pb-6">
             <H2>Verkehrsberuhigung</H2>
             <H3>1. Neuss: Fahrradachse Innenstadt</H3>
-            <FoldOut>
+            <FoldOut className="pb-4">
               <p>
                 Zur Reduzierung des MIV in der Neusser Innenstadt hat die Stadt
                 verschiedene Erschließungsstraßen im Rahmen eines neunmonatigen
@@ -718,7 +721,7 @@ const IndexPage: React.FC = () => {
               <FotoCopyright data={fotos.v1} />
             </FoldOut>
             <H3>2. Friesoythe: Ausbau der Innenstadt und Radverkehrskonzept</H3>
-            <FoldOut>
+            <FoldOut className="pb-4">
               <p>
                 Mobilität ohne eigenes Auto ist in der Stadt bereits Realität.
                 Das Ziel der Familienstadt Friesoythe ist es, die Begegnung
@@ -751,9 +754,9 @@ const IndexPage: React.FC = () => {
               <FotoCopyright data={fotos.v2} />
             </FoldOut>
           </div>
-          <div>
+          <div className="pt-4">
             <H2>Alle Einreichungen</H2>
-            Hier finden sie die Mappe aller eingereichten Projekte:
+            Hier finden sie die Mappe aller eingereichten Projekte zum Download:
             <p className="pt-6">
               <ButtonLink large newWindow to="Projektmappe_PlanfAward.pdf">
                 Projektmappe mit allen Bewerbungen
@@ -762,7 +765,7 @@ const IndexPage: React.FC = () => {
           </div>
         </Content>
         <Content>
-          <div className="pt-8">
+          <div className="pt-12">
             <H2>
               Unsere Gesamtsieger*innen des Plan F Award gewannen je ein Plan F
               Audit
@@ -779,11 +782,11 @@ const IndexPage: React.FC = () => {
               durch.
             </p>
           </div>
-          <div>
+          <div className="pt-6">
             <H3 id="erster">
               1. Platz: Plan F Audit für die Verbandsgemeinde Wallmerod
             </H3>
-            <FoldOut>
+            <FoldOut className="pb-4">
               <p>
                 Vom 17. - 21. Oktober fand das Plan F Audit - Hauptgewinn des
                 Plan F Awards 2022 - in der Verbandsgemeinde Wallmerod in
@@ -837,7 +840,7 @@ const IndexPage: React.FC = () => {
             <H3 id="zweiter">
               2. Platz: Plan F Online-Audit für die Stadt Aachen
             </H3>
-            <FoldOut>
+            <FoldOut className="pb-4">
               <p>
                 Das Online-Audit für die Stadt Aachen findet seit dem 24.
                 Oktober 2022 statt und wird von den Studierenden des
@@ -859,7 +862,7 @@ const IndexPage: React.FC = () => {
               3. Platz: Plan F Online-Audit in einem Handlungsfeld für
               Zweckverband LANDFOLGE Garzweiler
             </H3>
-            <FoldOut>
+            <FoldOut className="pb-4">
               <p>
                 Das Online-Audit für die Stadt Garzweiler wird von dem Team von
                 Fair Spaces in dem selbst gewählten Handlungsfeld Kommunikation
@@ -939,7 +942,7 @@ const IndexPage: React.FC = () => {
           </div>
         </Content>
       </section>
-      <section className="mt-8">
+      <section className="pt-20">
         <Content>
           <H1>Orientierung und Vorbild für andere Kommunen</H1>
           <p>
@@ -950,45 +953,46 @@ const IndexPage: React.FC = () => {
             der Radverkehrsförderung veranschaulichen und dienen anderen
             Kommunen künftig als Orientierung und Vorbild.
           </p>
-          <H2>Was steht noch aus? Die nächsten Schritte im Projekt</H2>
-          <H3>
-            <span className="text-pastel-purple">Frühjahr 2023:</span>
-          </H3>
-          <H3>Plan F Webseite</H3>
-          <p>
-            Die Plan F Systematisierung der Handlungsfelder der kommunalen
-            Radverkehrsförderung inklusive Maßnahmen und guter Praxisbeispiele
-            werden zurzeit durch das Team von Fair Spaces und FixMyCity
-            aufbereitet. Kommunen finden hier wichtige Informationen zu
-            Maßnahmen und Möglichkeiten für eine ganzheitliche
-            Radverkehrsförderung.
-          </p>
-          <H3>Handbuch</H3>
-          <p>
-            Wir erstellen ein Plan F Handbuch, welches einen Überblick über die
-            neun Handlungsfelder gibt und einen Eindruck der besten
-            Praxisbeispiele der kommunalen Radverkehrsförderung. Das Handbuch
-            wird als Printvision sowie digital verfügbar sein.
-          </p>
-          <H3>E-Learningkurs</H3>
-          <p>
-            Zu den neun Handlungsfeldern der Radverkehrsförderung wird ein
-            E-Learningkurs konzipiert, welcher die Inhalte der Systematik
-            vermittelt.
-          </p>
-          <H3>
-            <span className="text-pastel-purple">Sommer 2023:</span>
-          </H3>
-          <H3>Plan F Check:</H3>
-          <H2>
-            Passgenaue Handlungsempfehlungen durch Selbstevaluation von Kommunen
-          </H2>
-          <p>
-            Ein kommunaler Fahrradcheck zur Selbstevaluation und passgenauen
-            Handlungsempfehlungen wird von Fair Spaces zusammen mit FixMyCity
-            entwickelt. Dieser ist voraussichtlich ab Sommer 2023 über die Plan
-            F Webseite abrufbar.
-          </p>
+          <div className="pt-6 pb-6">
+            <H2>Was steht noch aus? Die nächsten Schritte im Projekt</H2>
+            <H3>
+              <span className="text-pastel-purple">Frühjahr 2023:</span>
+            </H3>
+            <H3>Plan F Webseite</H3>
+            <p>
+              Die Plan F Systematisierung der Handlungsfelder der kommunalen
+              Radverkehrsförderung inklusive Maßnahmen und guter Praxisbeispiele
+              werden zurzeit durch das Team von Fair Spaces und FixMyCity
+              aufbereitet. Kommunen finden hier wichtige Informationen zu
+              Maßnahmen und Möglichkeiten für eine ganzheitliche
+              Radverkehrsförderung.
+            </p>
+            <H3>Handbuch</H3>
+            <p>
+              Wir erstellen ein Plan F Handbuch, welches einen Überblick über
+              die neun Handlungsfelder gibt und einen Eindruck der besten
+              Praxisbeispiele der kommunalen Radverkehrsförderung. Das Handbuch
+              wird als Printvision sowie digital verfügbar sein.
+            </p>
+            <H3>E-Learningkurs</H3>
+            <p className="pb-4">
+              Zu den neun Handlungsfeldern der Radverkehrsförderung wird ein
+              E-Learningkurs konzipiert, welcher die Inhalte der Systematik
+              vermittelt.
+            </p>
+            <H3>
+              <span className="text-pastel-purple">Sommer 2023:</span>
+            </H3>
+            <H3>
+              Plan F Check - Passgenaue Handlungsempfehlungen durch
+              Selbstevaluation von Kommunen
+            </H3>
+            <p>
+              Ein kommunaler Fahrradcheck zur Selbstevaluation und passgenauen
+              Handlungsempfehlungen wird von Fair Spaces zusammen mit FixMyCity
+              entwickelt.
+            </p>
+          </div>
           <p className="pt-6">
             Sie haben sich nicht für den Plan F Award beworben, aber in Ihrer
             Kommune wird ebenfalls ein gutes Projekt oder eine Maßnahme
