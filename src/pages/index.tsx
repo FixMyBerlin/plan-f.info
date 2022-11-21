@@ -469,6 +469,7 @@ const IndexPage: React.FC = () => {
                   to="
                 https://www.youtube.com/watch?v=MPveXoqAnjc&ab_channel=StadtAachen"
                   external
+                  newWindow
                 >
                   hier
                 </TextLink>
@@ -732,7 +733,7 @@ const IndexPage: React.FC = () => {
               <FotoCopyright data={fotos.v2} />
             </FoldOut>
           </div>
-          <ButtonLink to="Projektmappe_PlanfAward.pdf">
+          <ButtonLink newWindow to="Projektmappe_PlanfAward.pdf">
             Projektmappe mit allen Bewerbungen
           </ButtonLink>
         </Content>
@@ -862,7 +863,10 @@ const IndexPage: React.FC = () => {
               dieses Projekts bereits in Kassel, Chemnitz, Mönchengladbach,
               Wuppertal, Bonn, und Dortmund ein Fahrradaudit durchgeführt.
               Weiterführende Informationen zu dem Projekt finden Sie{' '}
-              <TextLink to="https://www.mobilitaetsforum.bund.de/DE/Themen/Wissenspool/Projekte/Projektbeispiele/Projekte/19730_freshbrains_fahrradaudits_durch_niederla.html?cms_submit=Suchen&cms_templateQueryString=freshbrains">
+              <TextLink
+                to="https://www.mobilitaetsforum.bund.de/DE/Themen/Wissenspool/Projekte/Projektbeispiele/Projekte/19730_freshbrains_fahrradaudits_durch_niederla.html?cms_submit=Suchen&cms_templateQueryString=freshbrains"
+                newWindow
+              >
                 hier
               </TextLink>
               .
