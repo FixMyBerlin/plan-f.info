@@ -10,7 +10,6 @@ import {
   FotoCopyright,
   fotos,
 } from '~/components/StartPage';
-import TestIcon from '~/components/StartPage/assets/icons/bildung.svg';
 import { Layout, Hero, Content, HelmetSeo } from '~/components/Layout';
 import { ButtonLink, TextLink } from '~/components/Link';
 import { H1, H2, H3 } from '~/components/Text';
