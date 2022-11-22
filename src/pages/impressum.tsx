@@ -13,18 +13,18 @@ const ImpressumPage = () => {
         {/* <H1>Impressum</H1> */}
         <div className="mt-8">
           <H2>Angaben gemäß § 5 TMG:</H2>
-          <p className="mt-2">Fair Spaces GmbH</p>
+          <p>Fair Spaces GmbH</p>
         </div>
         <div className="mt-8">
           <H2>Postanschrift:</H2>
-          <ul className="mt-2">
+          <ul>
             <li>Rollbergstraße 28A</li>
             <li>12053 Berlin</li>
           </ul>
         </div>
         <div className="mt-8">
           <H2>Kontakt:</H2>
-          <ul className="mt-2">
+          <ul>
             <li>Telefon: (+49) (0) 176 8071 2212</li>
             <li>
               E-Mail:{' '}
@@ -40,29 +40,29 @@ const ImpressumPage = () => {
         </div>
         <div className="mt-8">
           <H2>Vertreten durch:</H2>
-          <ul className="mt-2">
+          <ul>
             <li>Carolin Kruse</li>
           </ul>
         </div>
         <div className="mt-8">
           <H2>Handelsregister</H2>
-          <ul className="mt-2">
+          <ul>
             <li>Berlin Charlottenburg</li>
             <li>HRB 225269</li>
           </ul>
         </div>
         <div className="mt-8">
           <H2>Steuernummer</H2>
-          <p className="mt-2">37/202/50875</p>
+          <p>37/202/50875</p>
         </div>
         <div className="mt-8 mb-20">
           <H2>Information gemäß § 36 VSBG</H2>
-          <p className="mt-2">
+          <p>
             Gemäß § 36 VSBG (Verbraucherstreitbeilegungsgesetz – Gesetz über die
             alternative Streitbeilegung in Verbrauchersachen) erklärt der
             Betreiber dieser Website:
           </p>
-          <p className="mt-2">
+          <p>
             Wir sind weder bereit noch verpflichtet, an
             Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
             teilzunehmen.

@@ -2,15 +2,17 @@ import React, { ReactNode } from 'react';
 import { classNames } from '../utils';
 
 type Props = {
+  id?: string;
   children: ReactNode;
   className?: string;
 };
 
-export const H1: React.FC<Props> = ({ className, children }) => {
+export const H1: React.FC<Props> = ({ id, className, children }) => {
   return (
     <h1
+      id={id}
       className={classNames(
-        'font-apercuMono text-[32px] leading-[44px]',
+        'pb-4 font-apercuMono text-[32px] leading-[44px]',
         className
       )}
     >
@@ -19,11 +21,12 @@ export const H1: React.FC<Props> = ({ className, children }) => {
   );
 };
 
-export const H2: React.FC<Props> = ({ className, children }) => {
+export const H2: React.FC<Props> = ({ id, className, children }) => {
   return (
     <h2
+      id={id}
       className={classNames(
-        'font-apercu text-[32px] font-bold text-dark-gray',
+        'pb-2 font-apercu text-[32px] font-bold text-dark-gray',
         className
       )}
     >
@@ -32,11 +35,12 @@ export const H2: React.FC<Props> = ({ className, children }) => {
   );
 };
 
-export const H3: React.FC<Props> = ({ className, children }) => {
+export const H3: React.FC<Props> = ({ id, className, children }) => {
   return (
     <h3
+      id={id}
       className={classNames(
-        'font-apercu text-[24px] font-bold text-dark-gray',
+        'pb-1 font-apercu text-[24px] font-bold text-dark-gray',
         className
       )}
     >
