@@ -58,7 +58,6 @@ const IndexPage: React.FC = () => {
       <section className="mt-8">
         <Content>
           <H1>Die 9 Handlungsfelder der kommunalen Radverkehrsförderung</H1>
-
           <div className="flex flex-row">
             <icons.governance className="mr-2 h-12 w-12" /> <H2>Governance</H2>
           </div>
@@ -242,11 +241,18 @@ const IndexPage: React.FC = () => {
               Fahrradkommunalkonferenz am 22. November 2022 in Aachen statt.
             </QuoteBox>
           </div>
-          <div>
+          <div className="pb-4">
             <H2>
               Unsere Sieger*innen in den neun Handlungsfeldern der kommunalen
               Radverkehrsförderung
             </H2>
+            <p>
+              Unter den 66 Einreichungen hat unsere Jury die besten drei
+              Maßnahmen (maximal) pro Handlungsfeld ausgewählt. Die prämierten
+              Maßnahmen sind nachfolgend pro Handlungsfeld gelistet. Weiter
+              unten findet sich die Projektmappe aller Einreichungen zum
+              download.
+            </p>
           </div>
           <div className="pb-6">
             <H2>Governance</H2>
