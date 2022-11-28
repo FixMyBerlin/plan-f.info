@@ -13,7 +13,7 @@ type Props = {
 export const FoldOut: React.FC<Props> = ({
   children,
   previewMode,
-  foldedText = 'Mehr Anzeigen',
+  foldedText = 'Mehr erfahren',
   unfoldedText = 'Weniger Details',
   className,
 }) => {
