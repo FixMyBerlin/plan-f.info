@@ -20,12 +20,12 @@ module.exports = {
     // TailwindCSS needs PostCSS, https://tailwindcss.com/docs/guides/gatsby
     'gatsby-plugin-postcss',
     'gatsby-transformer-sharp',
-    {
-      resolve: `gatsby-plugin-layout`,
-      options: {
-        component: 'src/components/Layout/Layout',
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-layout`,
+    //   options: {
+    //     component: 'src/components/Layout/Layout',
+    //   },
+    // },
     {
       // Docs https://www.gatsbyjs.com/plugins/gatsby-plugin-sitemap/
       resolve: 'gatsby-plugin-sitemap',
@@ -65,9 +65,9 @@ module.exports = {
         // in ENV verschieben, da pro Dev unterschiedlich
         apiURL:
           'https://plan-f-staging.tiummk647p9vk.eu-central-1.cs.amazonlightsail.com',
-        // in ENV verschieben, da pro Dev unterschiedlich
+        // in ENV verschieben, da pro Dev unterschiedlich und geheim seien sollte
         accessToken:
-          '44eb72583fe9dc62e133b857021517d3b34a090e36706fbb1396b8d4da12d8df0cbba39e4e209b668b35462320816f128da27d315cd70697a821cefc4b09b6e7698d39f58a8e6592d9d14f9ed5735646e85d03684c9457427e39f9820a3de34c9966332f9c399b13dbb209944c616304c80338f4b2ade5400c3b96726689b404',
+          '265ea8e28817d4f4272ae2c61c39b19e18c4fc964db5941b114d9726dde7d08555523e92e90b87578f597c0f7637d95c648bd87274bf70f16db6c7d8e1479aebf8c6e5a78776d5d9d79be2c8f489f6d685284d7c4592245f9d626e4f75a78b687ee0ed5593401b7c0443d85f94966780048292b144e4ae1b27f7faca2592a7f0',
         // Hier die Content types angeben, die wir in Gatsby verfügbar haben wollen.
         // collection = array, single = ein object
         collectionTypes: [
@@ -75,6 +75,7 @@ module.exports = {
             singularName: 'topic',
             queryParams: {
               populate: {
+                measures: { populate: '*' },
                 additionalResources: { populate: '*' },
                 image: { populate: '*' },
                 examples: { populate: '*' },
