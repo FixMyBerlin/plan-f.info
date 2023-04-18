@@ -72,6 +72,14 @@ module.exports = {
         // collection = array, single = ein object
         collectionTypes: [
           {
+            singularName: 'award',
+            queryParams: {
+              populate: {
+                logo: { populate: '*' },
+              },
+            },
+          },
+          {
             singularName: 'topic',
             queryParams: {
               populate: {
@@ -97,20 +105,11 @@ module.exports = {
             singularName: 'example',
             queryParams: {
               populate: {
-                evaluation: { populate: '*' },
                 links: { populate: '*' },
                 measure: { populate: '*' },
                 image: { populate: '*' },
                 awards: { populate: '*' },
                 relatedTopic: { populate: '*' },
-              },
-            },
-          },
-          {
-            singularName: 'award',
-            queryParams: {
-              populate: {
-                logo: { populate: '*' },
               },
             },
           },
