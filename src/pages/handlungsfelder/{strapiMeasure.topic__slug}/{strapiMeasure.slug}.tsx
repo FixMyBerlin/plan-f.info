@@ -55,7 +55,7 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
                       <div className="flex-1">
                         <Link to={example.slug} className="mt-2 block">
                           <p className="text-xl font-semibold text-gray-900">
-                            {example.name}
+                            {example.title}
                           </p>
                           <p className="mt-3 text-base text-gray-500 line-clamp-3">
                             {example.shortDescription}
@@ -84,11 +84,14 @@ export const query = graphql`
     measure: strapiMeasure(id: { eq: $id }) {
       name
       image {
-        localFile {
-          childImageSharp {
-            gatsbyImageData
+        image {
+          localFile {
+            childImageSharp {
+              gatsbyImageData
+            }
           }
         }
+        copyright
       }
       description {
         data {
@@ -99,15 +102,18 @@ export const query = graphql`
         name
       }
       examples {
-        name
+        title
         slug
         shortDescription
         image {
-          localFile {
-            childImageSharp {
-              gatsbyImageData
+          image {
+            localFile {
+              childImageSharp {
+                gatsbyImageData
+              }
             }
           }
+          copyright
         }
       }
     }

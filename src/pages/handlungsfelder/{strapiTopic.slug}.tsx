@@ -97,11 +97,14 @@ export const query = graphql`
           }
         }
         image {
-          localFile {
-            childImageSharp {
-              gatsbyImageData
+          image {
+            localFile {
+              childImageSharp {
+                gatsbyImageData
+              }
             }
           }
+          copyright
         }
       }
     }

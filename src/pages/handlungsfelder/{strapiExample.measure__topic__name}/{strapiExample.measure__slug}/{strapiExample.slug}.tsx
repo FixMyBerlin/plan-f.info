@@ -47,7 +47,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
             {pos + 1}
             <Link to={`../${nextSlug}`}> Next</Link>
             <div className="bg-white">
-              <h1 className="text-center">{example.name}</h1>
+              <h1 className="text-center">{example.title}</h1>
               <div>{example.shortDescription}</div>
               {example.image && (
                 <GatsbyImage
@@ -117,23 +117,28 @@ export default ExampleDetails;
 export const query = graphql`
   query ExampleDetails($id: String!) {
     example: strapiExample(id: { eq: $id }) {
-      name
+      title
       shortDescription
       countryState
       commune
       population
       spatialStructure
-      localChallanges
-      state
+      localChallenges
       period
-      targetGroup
-      funding
+      funding {
+        data {
+          funding
+        }
+      }
       image {
-        localFile {
-          childImageSharp {
-            gatsbyImageData
+        image {
+          localFile {
+            childImageSharp {
+              gatsbyImageData
+            }
           }
         }
+        copyright
       }
       description {
         data {
@@ -150,9 +155,24 @@ export const query = graphql`
           stakeholders
         }
       }
-      award {
-        data {
-          award
+      awards {
+        award {
+          logo {
+            image {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
+            }
+            copyright
+          }
+          name
+        }
+        description {
+          data {
+            description
+          }
         }
       }
       links {
@@ -166,36 +186,6 @@ export const query = graphql`
         }
         examples {
           slug
-        }
-      }
-      evaluation {
-        accessibility {
-          description
-          percent
-        }
-        effectiveness {
-          percent
-          description
-        }
-        effort {
-          percent
-          description
-        }
-        execution {
-          percent
-          description
-        }
-        participation {
-          description
-          percent
-        }
-        synergies {
-          percent
-          description
-        }
-        portability {
-          percent
-          description
         }
       }
       slug
