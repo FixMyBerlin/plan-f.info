@@ -20,12 +20,12 @@ module.exports = {
     // TailwindCSS needs PostCSS, https://tailwindcss.com/docs/guides/gatsby
     'gatsby-plugin-postcss',
     'gatsby-transformer-sharp',
-    // {
-    //   resolve: `gatsby-plugin-layout`,
-    //   options: {
-    //     component: 'src/components/Layout/Layout',
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: 'src/components/Layout/Layout',
+      },
+    },
     {
       // Docs https://www.gatsbyjs.com/plugins/gatsby-plugin-sitemap/
       resolve: 'gatsby-plugin-sitemap',
