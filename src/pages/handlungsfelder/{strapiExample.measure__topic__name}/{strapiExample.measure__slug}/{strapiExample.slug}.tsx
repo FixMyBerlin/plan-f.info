@@ -51,7 +51,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
               <div>{example.shortDescription}</div>
               {example.image && (
                 <GatsbyImage
-                  image={getImage(example.image.localFile as any)}
+                  image={getImage(example.image.image.localFile as any)}
                   alt="Titelbild"
                 />
               )}
@@ -74,25 +74,6 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
               </div>
               <h1 className="mt-8">Beschreibung:</h1>
               <div>{example.description.data.description}</div>
-              {example.evaluation && (
-                <>
-                  <h1 className="mt-8">Einordnung:</h1>
-                  <table className="min-w-full divide-y divide-gray-300">
-                    <tbody className="divide-y divide-gray-200 bg-white">
-                      {Object.keys(example.evaluation).map((key) => (
-                        <tr key={key}>
-                          <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
-                            {`${example.evaluation[key].percent} % `}
-                          </td>
-                          <td className="px-3 py-4 text-sm text-gray-500">
-                            {example.evaluation[key].description}
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </>
-              )}
               <h1 className="mt-8">Links:</h1>
               <div>
                 {example.links.map(({ display, url }) => (

@@ -38,7 +38,9 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
                       {measure.image && (
                         <Link to={measure.slug}>
                           <GatsbyImage
-                            image={getImage(measure.image.localFile as any)}
+                            image={getImage(
+                              measure.image.image.localFile as any
+                            )}
                             alt={`Titelbild ${measure.name}`}
                           />
                         </Link>

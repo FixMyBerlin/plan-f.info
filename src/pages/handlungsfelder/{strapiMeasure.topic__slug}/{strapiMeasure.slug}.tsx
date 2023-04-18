@@ -38,15 +38,17 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
               <div className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
                 {measure.examples.map((example) => (
                   <div
-                    key={example.name}
+                    key={example.title}
                     className="flex flex-col overflow-hidden rounded-lg shadow-lg"
                   >
                     <div className="flex-shrink-0">
                       {example.image && (
                         <Link to={example.slug}>
                           <GatsbyImage
-                            image={getImage(example.image.localFile as any)}
-                            alt={`Titelbild: ${example.name}`}
+                            image={getImage(
+                              example.image.image.localFile as any
+                            )}
+                            alt={`Titelbild: ${example.title}`}
                           />
                         </Link>
                       )}
