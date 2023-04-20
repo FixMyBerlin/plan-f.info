@@ -52,5 +52,12 @@ module.exports = {
         lang: 'de-DE', // https://developer.mozilla.org/en-US/docs/Web/Manifest/lang
       },
     },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://plan-f.info`,
+        stripQueryString: true,
+      },
+    },
   ],
 };
