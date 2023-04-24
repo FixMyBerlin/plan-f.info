@@ -11,7 +11,7 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
     <>
       <HelmetSeo title={topic.name} />
       <Hero title={topic.name}>
-        <Breadcrumbs names={['Handlungsfelder', topic.name]} />
+        <Breadcrumbs names={['Wissensspeicher', topic.name]} />
       </Hero>
       <section className="pt-1">
         <Content>
@@ -49,10 +49,10 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
                     <div className="flex flex-1 flex-col justify-between bg-white p-6">
                       <div className="flex-1">
                         <Link to={measure.slug} className="mt-2 block">
-                          <p className="text-xl font-semibold text-gray-900">
+                          <p className="font-semibold text-xl text-gray-900">
                             {measure.name}
                           </p>
-                          <p className="mt-3 text-base text-gray-500 line-clamp-3">
+                          <p className="line-clamp-3 mt-3 text-base text-gray-500">
                             {measure.description.data.description}
                           </p>
                         </Link>

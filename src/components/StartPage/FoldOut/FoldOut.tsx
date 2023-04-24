@@ -46,7 +46,7 @@ export const FoldOut: React.FC<Props> = ({
       {(!folded || preview != null) && <div className="h-4" />}
       <button
         type="button"
-        className="font-sans flex flex-row items-center text-[16px] font-bold  hover:cursor-pointer"
+        className="flex flex-row items-center font-sans text-[16px] font-bold  hover:cursor-pointer"
         onClick={() => setFolded(!folded)}
       >
         <div className="mr-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-green-500">

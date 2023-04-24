@@ -31,7 +31,7 @@ export const Breadcrumbs: React.FC<Props> = ({ names, prefix = './' }) => {
               </svg>
               <Link
                 to={prefix + '../'.repeat(n - i - 1)}
-                className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
+                className="font-medium ml-4 text-sm text-gray-500 hover:text-gray-700"
               >
                 {name}
               </Link>
