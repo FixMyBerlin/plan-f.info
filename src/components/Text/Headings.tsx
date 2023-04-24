@@ -12,7 +12,7 @@ export const H1: React.FC<Props> = ({ id, className, children }) => {
     <h1
       id={id}
       className={classNames(
-        'font-mono pb-4 text-[32px] leading-[44px]',
+        'text-[28px] font-bold md:text-4xl lg:text-[42px]',
         className
       )}
     >
@@ -26,7 +26,7 @@ export const H2: React.FC<Props> = ({ id, className, children }) => {
     <h2
       id={id}
       className={classNames(
-        'font-sans pb-2 text-[32px] font-bold text-black',
+        'font-mono text-xl font-normal md:text-2xl',
         className
       )}
     >
@@ -39,10 +39,7 @@ export const H3: React.FC<Props> = ({ id, className, children }) => {
   return (
     <h3
       id={id}
-      className={classNames(
-        'font-sans pb-1 text-[24px] font-bold text-black',
-        className
-      )}
+      className={classNames('text-base font-bold md:text-xl', className)}
     >
       {children}
     </h3>
