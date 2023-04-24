@@ -2252,8 +2252,6 @@ type Query_strapiMeasureDescriptionTextnodeArgs = {
 
 
 type Query_strapiMediaArgs = {
-  alternativeText: InputMaybe<StringQueryOperatorInput>;
-  caption: InputMaybe<StringQueryOperatorInput>;
   children: InputMaybe<NodeFilterListInput>;
   createdAt: InputMaybe<DateQueryOperatorInput>;
   ext: InputMaybe<StringQueryOperatorInput>;
@@ -2456,8 +2454,6 @@ type STRAPI_AWARDFieldsEnum =
   | 'logo.children.parent.id'
   | 'logo.copyright'
   | 'logo.id'
-  | 'logo.image.alternativeText'
-  | 'logo.image.caption'
   | 'logo.image.children'
   | 'logo.image.children.children'
   | 'logo.image.children.id'
@@ -3007,8 +3003,6 @@ type STRAPI_EXAMPLEFieldsEnum =
   | 'image.children.parent.id'
   | 'image.copyright'
   | 'image.id'
-  | 'image.image.alternativeText'
-  | 'image.image.caption'
   | 'image.image.children'
   | 'image.image.children.children'
   | 'image.image.children.id'
@@ -3249,8 +3243,6 @@ type STRAPI_EXAMPLEFieldsEnum =
   | 'measure.image.children.id'
   | 'measure.image.copyright'
   | 'measure.image.id'
-  | 'measure.image.image.alternativeText'
-  | 'measure.image.image.caption'
   | 'measure.image.image.children'
   | 'measure.image.image.createdAt'
   | 'measure.image.image.ext'
@@ -3317,8 +3309,6 @@ type STRAPI_EXAMPLEFieldsEnum =
   | 'measure.topic.createdAt'
   | 'measure.topic.gatsbyPath'
   | 'measure.topic.id'
-  | 'measure.topic.image.alternativeText'
-  | 'measure.topic.image.caption'
   | 'measure.topic.image.children'
   | 'measure.topic.image.createdAt'
   | 'measure.topic.image.ext'
@@ -3512,8 +3502,6 @@ type STRAPI_EXAMPLEFieldsEnum =
   | 'relatedTopic.description.data.id'
   | 'relatedTopic.gatsbyPath'
   | 'relatedTopic.id'
-  | 'relatedTopic.image.alternativeText'
-  | 'relatedTopic.image.caption'
   | 'relatedTopic.image.children'
   | 'relatedTopic.image.children.children'
   | 'relatedTopic.image.children.id'
@@ -6552,8 +6540,6 @@ type STRAPI_MEASUREFieldsEnum =
   | 'examples.image.children.id'
   | 'examples.image.copyright'
   | 'examples.image.id'
-  | 'examples.image.image.alternativeText'
-  | 'examples.image.image.caption'
   | 'examples.image.image.children'
   | 'examples.image.image.createdAt'
   | 'examples.image.image.ext'
@@ -6712,8 +6698,6 @@ type STRAPI_MEASUREFieldsEnum =
   | 'examples.relatedTopic.createdAt'
   | 'examples.relatedTopic.gatsbyPath'
   | 'examples.relatedTopic.id'
-  | 'examples.relatedTopic.image.alternativeText'
-  | 'examples.relatedTopic.image.caption'
   | 'examples.relatedTopic.image.children'
   | 'examples.relatedTopic.image.createdAt'
   | 'examples.relatedTopic.image.ext'
@@ -6792,8 +6776,6 @@ type STRAPI_MEASUREFieldsEnum =
   | 'image.children.parent.id'
   | 'image.copyright'
   | 'image.id'
-  | 'image.image.alternativeText'
-  | 'image.image.caption'
   | 'image.image.children'
   | 'image.image.children.children'
   | 'image.image.children.id'
@@ -6978,8 +6960,6 @@ type STRAPI_MEASUREFieldsEnum =
   | 'topic.description.data.id'
   | 'topic.gatsbyPath'
   | 'topic.id'
-  | 'topic.image.alternativeText'
-  | 'topic.image.caption'
   | 'topic.image.children'
   | 'topic.image.children.children'
   | 'topic.image.children.id'
@@ -7617,8 +7597,6 @@ type STRAPI_TOPICFieldsEnum =
   | 'description.data.parent.id'
   | 'gatsbyPath'
   | 'id'
-  | 'image.alternativeText'
-  | 'image.caption'
   | 'image.children'
   | 'image.children.children'
   | 'image.children.children.children'
@@ -7637,22 +7615,6 @@ type STRAPI_TOPICFieldsEnum =
   | 'image.children.parent.id'
   | 'image.createdAt'
   | 'image.ext'
-  | 'image.formats.large.ext'
-  | 'image.formats.large.hash'
-  | 'image.formats.large.height'
-  | 'image.formats.large.mime'
-  | 'image.formats.large.name'
-  | 'image.formats.large.size'
-  | 'image.formats.large.url'
-  | 'image.formats.large.width'
-  | 'image.formats.medium.ext'
-  | 'image.formats.medium.hash'
-  | 'image.formats.medium.height'
-  | 'image.formats.medium.mime'
-  | 'image.formats.medium.name'
-  | 'image.formats.medium.size'
-  | 'image.formats.medium.url'
-  | 'image.formats.medium.width'
   | 'image.formats.small.ext'
   | 'image.formats.small.hash'
   | 'image.formats.small.height'
@@ -7866,8 +7828,6 @@ type STRAPI_TOPICFieldsEnum =
   | 'measures.image.children.id'
   | 'measures.image.copyright'
   | 'measures.image.id'
-  | 'measures.image.image.alternativeText'
-  | 'measures.image.image.caption'
   | 'measures.image.image.children'
   | 'measures.image.image.createdAt'
   | 'measures.image.image.ext'
@@ -7934,8 +7894,6 @@ type STRAPI_TOPICFieldsEnum =
   | 'measures.topic.createdAt'
   | 'measures.topic.gatsbyPath'
   | 'measures.topic.id'
-  | 'measures.topic.image.alternativeText'
-  | 'measures.topic.image.caption'
   | 'measures.topic.image.children'
   | 'measures.topic.image.createdAt'
   | 'measures.topic.image.ext'
@@ -8391,8 +8349,6 @@ type STRAPI__COMPONENT_AWARD_AWARDFieldsEnum =
   | 'award.logo.children.id'
   | 'award.logo.copyright'
   | 'award.logo.id'
-  | 'award.logo.image.alternativeText'
-  | 'award.logo.image.caption'
   | 'award.logo.image.children'
   | 'award.logo.image.createdAt'
   | 'award.logo.image.ext'
@@ -8911,8 +8867,6 @@ type STRAPI__COMPONENT_IMAGE_COPYRIGHT_IMAGEFieldsEnum =
   | 'children.parent.parent.id'
   | 'copyright'
   | 'id'
-  | 'image.alternativeText'
-  | 'image.caption'
   | 'image.children'
   | 'image.children.children'
   | 'image.children.children.children'
@@ -8931,22 +8885,6 @@ type STRAPI__COMPONENT_IMAGE_COPYRIGHT_IMAGEFieldsEnum =
   | 'image.children.parent.id'
   | 'image.createdAt'
   | 'image.ext'
-  | 'image.formats.large.ext'
-  | 'image.formats.large.hash'
-  | 'image.formats.large.height'
-  | 'image.formats.large.mime'
-  | 'image.formats.large.name'
-  | 'image.formats.large.size'
-  | 'image.formats.large.url'
-  | 'image.formats.large.width'
-  | 'image.formats.medium.ext'
-  | 'image.formats.medium.hash'
-  | 'image.formats.medium.height'
-  | 'image.formats.medium.mime'
-  | 'image.formats.medium.name'
-  | 'image.formats.medium.size'
-  | 'image.formats.medium.url'
-  | 'image.formats.medium.width'
   | 'image.formats.small.ext'
   | 'image.formats.small.hash'
   | 'image.formats.small.height'
@@ -9375,8 +9313,6 @@ type STRAPI__COMPONENT_LINKS_LINKSSortInput = {
 };
 
 type STRAPI__MEDIA = Node & {
-  readonly alternativeText: Maybe<Scalars['String']>;
-  readonly caption: Maybe<Scalars['String']>;
   readonly children: ReadonlyArray<Node>;
   readonly createdAt: Maybe<Scalars['Date']>;
   readonly ext: Maybe<Scalars['String']>;
@@ -9458,8 +9394,6 @@ type STRAPI__MEDIAEdge = {
 };
 
 type STRAPI__MEDIAFieldsEnum =
-  | 'alternativeText'
-  | 'caption'
   | 'children'
   | 'children.children'
   | 'children.children.children'
@@ -9504,22 +9438,6 @@ type STRAPI__MEDIAFieldsEnum =
   | 'children.parent.parent.id'
   | 'createdAt'
   | 'ext'
-  | 'formats.large.ext'
-  | 'formats.large.hash'
-  | 'formats.large.height'
-  | 'formats.large.mime'
-  | 'formats.large.name'
-  | 'formats.large.size'
-  | 'formats.large.url'
-  | 'formats.large.width'
-  | 'formats.medium.ext'
-  | 'formats.medium.hash'
-  | 'formats.medium.height'
-  | 'formats.medium.mime'
-  | 'formats.medium.name'
-  | 'formats.medium.size'
-  | 'formats.medium.url'
-  | 'formats.medium.width'
   | 'formats.small.ext'
   | 'formats.small.hash'
   | 'formats.small.height'
@@ -9768,8 +9686,6 @@ type STRAPI__MEDIAFieldsEnum =
   | 'width';
 
 type STRAPI__MEDIAFilterInput = {
-  readonly alternativeText: InputMaybe<StringQueryOperatorInput>;
-  readonly caption: InputMaybe<StringQueryOperatorInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
   readonly createdAt: InputMaybe<DateQueryOperatorInput>;
   readonly ext: InputMaybe<StringQueryOperatorInput>;
@@ -9790,61 +9706,13 @@ type STRAPI__MEDIAFilterInput = {
 };
 
 type STRAPI__MEDIAFormats = {
-  readonly large: Maybe<STRAPI__MEDIAFormatsLarge>;
-  readonly medium: Maybe<STRAPI__MEDIAFormatsMedium>;
   readonly small: Maybe<STRAPI__MEDIAFormatsSmall>;
   readonly thumbnail: Maybe<STRAPI__MEDIAFormatsThumbnail>;
 };
 
 type STRAPI__MEDIAFormatsFilterInput = {
-  readonly large: InputMaybe<STRAPI__MEDIAFormatsLargeFilterInput>;
-  readonly medium: InputMaybe<STRAPI__MEDIAFormatsMediumFilterInput>;
   readonly small: InputMaybe<STRAPI__MEDIAFormatsSmallFilterInput>;
   readonly thumbnail: InputMaybe<STRAPI__MEDIAFormatsThumbnailFilterInput>;
-};
-
-type STRAPI__MEDIAFormatsLarge = {
-  readonly ext: Maybe<Scalars['String']>;
-  readonly hash: Maybe<Scalars['String']>;
-  readonly height: Maybe<Scalars['Int']>;
-  readonly mime: Maybe<Scalars['String']>;
-  readonly name: Maybe<Scalars['String']>;
-  readonly size: Maybe<Scalars['Float']>;
-  readonly url: Maybe<Scalars['String']>;
-  readonly width: Maybe<Scalars['Int']>;
-};
-
-type STRAPI__MEDIAFormatsLargeFilterInput = {
-  readonly ext: InputMaybe<StringQueryOperatorInput>;
-  readonly hash: InputMaybe<StringQueryOperatorInput>;
-  readonly height: InputMaybe<IntQueryOperatorInput>;
-  readonly mime: InputMaybe<StringQueryOperatorInput>;
-  readonly name: InputMaybe<StringQueryOperatorInput>;
-  readonly size: InputMaybe<FloatQueryOperatorInput>;
-  readonly url: InputMaybe<StringQueryOperatorInput>;
-  readonly width: InputMaybe<IntQueryOperatorInput>;
-};
-
-type STRAPI__MEDIAFormatsMedium = {
-  readonly ext: Maybe<Scalars['String']>;
-  readonly hash: Maybe<Scalars['String']>;
-  readonly height: Maybe<Scalars['Int']>;
-  readonly mime: Maybe<Scalars['String']>;
-  readonly name: Maybe<Scalars['String']>;
-  readonly size: Maybe<Scalars['Float']>;
-  readonly url: Maybe<Scalars['String']>;
-  readonly width: Maybe<Scalars['Int']>;
-};
-
-type STRAPI__MEDIAFormatsMediumFilterInput = {
-  readonly ext: InputMaybe<StringQueryOperatorInput>;
-  readonly hash: InputMaybe<StringQueryOperatorInput>;
-  readonly height: InputMaybe<IntQueryOperatorInput>;
-  readonly mime: InputMaybe<StringQueryOperatorInput>;
-  readonly name: InputMaybe<StringQueryOperatorInput>;
-  readonly size: InputMaybe<FloatQueryOperatorInput>;
-  readonly url: InputMaybe<StringQueryOperatorInput>;
-  readonly width: InputMaybe<IntQueryOperatorInput>;
 };
 
 type STRAPI__MEDIAFormatsSmall = {
