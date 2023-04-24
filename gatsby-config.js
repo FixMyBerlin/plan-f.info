@@ -117,5 +117,12 @@ module.exports = {
         singleTypes: [],
       },
     },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://plan-f.info`,
+        stripQueryString: true,
+      },
+    },
   ],
 };

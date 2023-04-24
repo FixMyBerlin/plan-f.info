@@ -11,7 +11,7 @@ const pages: FooterMenuItem[] = [
 const legal: FooterMenuItem[] = [
   {
     name: 'Newsletter',
-    to: 'https://21c51c7f.sibforms.com/serve/MUIEAMjW98vg7w0GP1kG2ZA2DFSP7395kHdbQWUiz9-np8R5ByL1lcmg41MT_tU9NfTH-40qsRO_EAV6llscH-xmR7Na56wzNBJqGqjQRHjJ-QQfCLJa9jrwJkbGTGVKfTqKBrRtALCidg1rzZTeSlja_f8PC6cmhk9JcppFYr3wMmJkjsMsau9090eKeAzr_HAgP-Hm5pp-GvRz',
+    to: 'https://21c51c7f.sibforms.com/serve/MUIEAGplIkaHl15aR0t77TNjvH7cDv4l8zcUfOrncK7K6guRKNllBJWifyt4jlFptCKiYzTo0bG-8Yki2vBvV_zEa-iaSrhDdFkL672BPNxBpijMD8iCnMJOFOiTmHDYSg_g2EuFAd2YLTRe5BTKYvjiNkqDQZT4SHRCgemWbXl8C60kIzzwmBd4uYzO65v3DYJvlmpHqLaRyVPz',
     newWindow: true,
   },
   {

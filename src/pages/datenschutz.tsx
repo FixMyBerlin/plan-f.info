@@ -15,7 +15,7 @@ const DatenschutzPage = () => {
         </div>
         <div className="mt-8">
           <H2>Einleitung</H2>
-          <p className="mt-2">
+          <p>
             Mit der folgenden Datenschutzerklärung möchten wir Sie darüber
             aufklären, welche Arten Ihrer personenbezogenen Daten (nachfolgend
             auch kurz als “Daten” bezeichnet) wir zu welchen Zwecken und in
@@ -34,7 +34,7 @@ const DatenschutzPage = () => {
         </div>
         <div className="mt-8">
           <H2>Verantwortliche Person</H2>
-          <p className="mt-2">
+          <p>
             Verantwortlicher im Sinne der Datenschutzgesetze, insbesondere der
             EU-Datenschutzgrundverordnung (DSGVO), ist:
           </p>
@@ -48,7 +48,7 @@ const DatenschutzPage = () => {
         </div>
         <div className="mt-8">
           <H2>Ihre Betroffenenrechte</H2>
-          <p className="mt-2">
+          <p>
             Unter den angegebenen Kontaktdaten unseres Datenschutzbeauftragten
             können Sie jederzeit folgende Rechte ausüben:
           </p>
@@ -93,7 +93,7 @@ const DatenschutzPage = () => {
         </div>
         <div className="mt-8">
           <H2>Übersicht der Verarbeitungen</H2>
-          <p className="mt-2">
+          <p>
             Die nachfolgende Übersicht fasst die Arten der verarbeiteten Daten
             und die Zwecke ihrer Verarbeitung zusammen und verweist auf die
             betroffenen Personen.
@@ -131,7 +131,7 @@ const DatenschutzPage = () => {
         </div>
         <div className="mt-6">
           <H3>Maßgebliche Rechtsgrundlagen</H3>
-          <p className="mt-2">
+          <p>
             Im Folgenden erhalten Sie eine Übersicht der Rechtsgrundlagen der
             DSGVO, auf deren Basis wir personenbezogene Daten verarbeiten. Bitte
             nehmen Sie zur Kenntnis, dass neben den Regelungen der DSGVO
@@ -198,7 +198,7 @@ const DatenschutzPage = () => {
         </div>
         <div className="mt-8">
           <H2>Sicherheitsmaßnahmen</H2>
-          <p className="mt-2">
+          <p>
             Wir treffen nach Maßgabe der gesetzlichen Vorgaben unter
             Berücksichtigung des Stands der Technik, der Implementierungskosten
             und der Art, des Umfangs, der Umstände und der Zwecke der
@@ -225,7 +225,7 @@ const DatenschutzPage = () => {
         </div>
         <div className="mt-8">
           <H2>Übermittlung von personenbezogenen Daten</H2>
-          <p className="mt-2">
+          <p>
             Im Rahmen unserer Verarbeitung von personenbezogenen Daten kommt es
             vor, dass die Daten an andere Stellen, Unternehmen, rechtlich
             selbstständige Organisationseinheiten oder Personen übermittelt oder
@@ -264,7 +264,7 @@ const DatenschutzPage = () => {
         </div>
         <div className="mt-8">
           <H2>Löschung von Daten</H2>
-          <p className="mt-2">
+          <p>
             Die von uns verarbeiteten Daten werden nach Maßgabe der gesetzlichen
             Vorgaben gelöscht, sobald deren zur Verarbeitung erlaubten
             Einwilligungen widerrufen werden oder sonstige Erlaubnisse entfallen
@@ -289,7 +289,7 @@ const DatenschutzPage = () => {
         </div>
         <div className="mt-8">
           <H2>Bereitstellung des Onlineangebotes und Webhosting</H2>
-          <p className="mt-2">
+          <p>
             Um unser Onlineangebot sicher und effizient bereitstellen zu können,
             nehmen wir die Leistungen von einem oder mehreren
             Webhosting-Anbietern in Anspruch, von deren Servern (bzw. von ihnen
@@ -353,7 +353,7 @@ const DatenschutzPage = () => {
           <H2>Newsletter</H2>
           <div className="mt-6">
             <H3>Art und Zweck der Verarbeitung:</H3>
-            <p className="mt-2">
+            <p>
               Für die Zustellung unseres Newsletters erheben wir
               personenbezogene Daten, die über eine Eingabemaske an uns
               übermittelt werden.
@@ -370,7 +370,7 @@ const DatenschutzPage = () => {
           </div>
           <div className="mt-6">
             <H3>Rechtsgrundlage:</H3>
-            <p className="mt-2">
+            <p>
               Auf Grundlage Ihrer ausdrücklich erteilten Einwilligung (Art. 6
               Abs. 1 lit. a DSGVO), übersenden wir Ihnen regelmäßig unseren
               Newsletter bzw. vergleichbare Informationen per E-Mail an Ihre
@@ -388,13 +388,13 @@ const DatenschutzPage = () => {
           </div>
           <div className="mt-6">
             <H3>Empfänger*in:</H3>
-            <p className="mt-2">
+            <p>
               Empfänger*innen der Daten sind ggf. Auftragsverarbeiter*innen.
             </p>
           </div>
           <div className="mt-6">
             <H3>Speicherdauer:</H3>
-            <p className="mt-2">
+            <p>
               Die Daten werden in diesem Zusammenhang nur verarbeitet, solange
               die entsprechende Einwilligung vorliegt. Danach werden sie
               gelöscht.
@@ -402,7 +402,7 @@ const DatenschutzPage = () => {
           </div>
           <div className="mt-6">
             <H3>Bereitstellung vorgeschrieben oder erforderlich:</H3>
-            <p className="mt-2">
+            <p>
               Die Bereitstellung Ihrer personenbezogenen Daten erfolgt
               freiwillig, allein auf Basis Ihrer Einwilligung. Ohne bestehende
               Einwilligung können wir Ihnen unseren Newsletter leider nicht
@@ -411,7 +411,7 @@ const DatenschutzPage = () => {
           </div>
           <div className="mt-6">
             <H3>Widerruf der Einwilligung:</H3>
-            <p className="mt-2">
+            <p>
               Die Einwilligung zur Speicherung Ihrer persönlichen Daten und
               ihrer Nutzung für den Newsletterversand können Sie jederzeit mit
               Wirkung für die Zukunft widerrufen. Die Abmeldung kann über den in
@@ -422,7 +422,7 @@ const DatenschutzPage = () => {
           </div>
           <div className="mt-8">
             <H2>Heyflow.</H2>
-            <p className="mt-2">
+            <p>
               Wir verwenden interaktive Anfrageformulare, sogenannte „Flows“, um
               gute Maßnahmen für die kommunale Radverkehrsförderung von Kommunen
               zu erhalten. Wir verarbeiten hierbei personenbezogene Daten, die
@@ -454,7 +454,7 @@ const DatenschutzPage = () => {
           </div>
           <div className="mt-8">
             <H2>Webanalyse, Monitoring und Optimierung</H2>
-            <p className="mt-2">
+            <p>
               Die Webanalyse (auch als “Reichweitenmessung” bezeichnet) dient
               der Auswertung der Besucherströme unseres Onlineangebotes und kann
               Verhalten, Interessen oder demographische Informationen zu den
@@ -557,7 +557,7 @@ const DatenschutzPage = () => {
           </div>
           <div className="mt-8">
             <H2>Änderung und Aktualisierung der Datenschutzerklärung</H2>
-            <p className="mt-2">
+            <p>
               Wir bitten Sie, sich regelmäßig über den Inhalt unserer
               Datenschutzerklärung zu informieren. Wir passen die
               Datenschutzerklärung an, sobald die Änderungen der von uns
@@ -576,7 +576,7 @@ const DatenschutzPage = () => {
           </div>
           <div className="mt-8">
             <H2>Rechte der betroffenen Personen</H2>
-            <p className="mt-2">
+            <p>
               Ihnen stehen als Betroffene nach der DSGVO verschiedene Rechte zu,
               die sich insbesondere aus Art. 15 bis 21 DSGVO ergeben:
             </p>
@@ -652,7 +652,7 @@ const DatenschutzPage = () => {
           </div>
           <div className="mt-8 mb-20">
             <H2>Begriffsdefinitionen</H2>
-            <p className="mt-2">
+            <p>
               In diesem Abschnitt erhalten Sie eine Übersicht über die in dieser
               Datenschutzerklärung verwendeten Begrifflichkeiten. Viele der
               Begriffe sind dem Gesetz entnommen und vor allem im Art. 4 DSGVO

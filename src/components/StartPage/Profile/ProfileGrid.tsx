@@ -13,7 +13,7 @@ export const ProfileGrid: React.FC<Props> = ({ profiles }) => {
       {profiles.map((profile: ProfileData, index) => {
         const isEven = index % 2 === 0;
         return (
-          <div>
+          <div key={profile.name}>
             <Profile profile={profile} mirror={isEven} />
             <QuoteBox mirror={isEven}>{profile.quote}</QuoteBox>
           </div>
