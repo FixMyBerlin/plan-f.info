@@ -2100,6 +2100,7 @@ type Query_strapiExampleArgs = {
   population: InputMaybe<StringQueryOperatorInput>;
   publishedAt: InputMaybe<DateQueryOperatorInput>;
   relatedOffice: InputMaybe<STRAPI_EXAMPLERelatedOfficeFilterInput>;
+  relatedTopic: InputMaybe<STRAPI_TOPICFilterInput>;
   results: InputMaybe<STRAPI_EXAMPLEResultsFilterInput>;
   shortDescription: InputMaybe<StringQueryOperatorInput>;
   slug: InputMaybe<StringQueryOperatorInput>;
@@ -2274,6 +2275,7 @@ type Query_strapiMediaArgs = {
 
 
 type Query_strapiTopicArgs = {
+  additionalResources: InputMaybe<STRAPI__COMPONENT_LINKS_LINKSFilterListInput>;
   children: InputMaybe<NodeFilterListInput>;
   createdAt: InputMaybe<DateQueryOperatorInput>;
   description: InputMaybe<STRAPI_TOPICDescriptionFilterInput>;
@@ -2677,6 +2679,7 @@ type STRAPI_EXAMPLE = Node & {
   readonly population: Maybe<Scalars['String']>;
   readonly publishedAt: Maybe<Scalars['Date']>;
   readonly relatedOffice: Maybe<STRAPI_EXAMPLERelatedOffice>;
+  readonly relatedTopic: Maybe<STRAPI_TOPIC>;
   readonly results: Maybe<STRAPI_EXAMPLEResults>;
   readonly shortDescription: Maybe<Scalars['String']>;
   readonly slug: Maybe<Scalars['String']>;
@@ -3220,6 +3223,18 @@ type STRAPI_EXAMPLEFieldsEnum =
   | 'measure.examples.period'
   | 'measure.examples.population'
   | 'measure.examples.publishedAt'
+  | 'measure.examples.relatedTopic.additionalResources'
+  | 'measure.examples.relatedTopic.children'
+  | 'measure.examples.relatedTopic.createdAt'
+  | 'measure.examples.relatedTopic.gatsbyPath'
+  | 'measure.examples.relatedTopic.id'
+  | 'measure.examples.relatedTopic.measures'
+  | 'measure.examples.relatedTopic.name'
+  | 'measure.examples.relatedTopic.number'
+  | 'measure.examples.relatedTopic.publishedAt'
+  | 'measure.examples.relatedTopic.slug'
+  | 'measure.examples.relatedTopic.strapi_id'
+  | 'measure.examples.relatedTopic.updatedAt'
   | 'measure.examples.shortDescription'
   | 'measure.examples.slug'
   | 'measure.examples.spatialStructure'
@@ -3290,6 +3305,12 @@ type STRAPI_EXAMPLEFieldsEnum =
   | 'measure.publishedAt'
   | 'measure.slug'
   | 'measure.strapi_id'
+  | 'measure.topic.additionalResources'
+  | 'measure.topic.additionalResources.children'
+  | 'measure.topic.additionalResources.display'
+  | 'measure.topic.additionalResources.id'
+  | 'measure.topic.additionalResources.strapi_id'
+  | 'measure.topic.additionalResources.url'
   | 'measure.topic.children'
   | 'measure.topic.children.children'
   | 'measure.topic.children.id'
@@ -3450,6 +3471,204 @@ type STRAPI_EXAMPLEFieldsEnum =
   | 'relatedOffice.data.parent.children'
   | 'relatedOffice.data.parent.id'
   | 'relatedOffice.data.relatedOffice'
+  | 'relatedTopic.additionalResources'
+  | 'relatedTopic.additionalResources.children'
+  | 'relatedTopic.additionalResources.children.children'
+  | 'relatedTopic.additionalResources.children.id'
+  | 'relatedTopic.additionalResources.display'
+  | 'relatedTopic.additionalResources.id'
+  | 'relatedTopic.additionalResources.internal.content'
+  | 'relatedTopic.additionalResources.internal.contentDigest'
+  | 'relatedTopic.additionalResources.internal.contentFilePath'
+  | 'relatedTopic.additionalResources.internal.description'
+  | 'relatedTopic.additionalResources.internal.fieldOwners'
+  | 'relatedTopic.additionalResources.internal.ignoreType'
+  | 'relatedTopic.additionalResources.internal.mediaType'
+  | 'relatedTopic.additionalResources.internal.owner'
+  | 'relatedTopic.additionalResources.internal.type'
+  | 'relatedTopic.additionalResources.parent.children'
+  | 'relatedTopic.additionalResources.parent.id'
+  | 'relatedTopic.additionalResources.strapi_id'
+  | 'relatedTopic.additionalResources.url'
+  | 'relatedTopic.children'
+  | 'relatedTopic.children.children'
+  | 'relatedTopic.children.children.children'
+  | 'relatedTopic.children.children.id'
+  | 'relatedTopic.children.id'
+  | 'relatedTopic.children.internal.content'
+  | 'relatedTopic.children.internal.contentDigest'
+  | 'relatedTopic.children.internal.contentFilePath'
+  | 'relatedTopic.children.internal.description'
+  | 'relatedTopic.children.internal.fieldOwners'
+  | 'relatedTopic.children.internal.ignoreType'
+  | 'relatedTopic.children.internal.mediaType'
+  | 'relatedTopic.children.internal.owner'
+  | 'relatedTopic.children.internal.type'
+  | 'relatedTopic.children.parent.children'
+  | 'relatedTopic.children.parent.id'
+  | 'relatedTopic.createdAt'
+  | 'relatedTopic.description.data.children'
+  | 'relatedTopic.description.data.description'
+  | 'relatedTopic.description.data.id'
+  | 'relatedTopic.gatsbyPath'
+  | 'relatedTopic.id'
+  | 'relatedTopic.image.alternativeText'
+  | 'relatedTopic.image.caption'
+  | 'relatedTopic.image.children'
+  | 'relatedTopic.image.children.children'
+  | 'relatedTopic.image.children.id'
+  | 'relatedTopic.image.createdAt'
+  | 'relatedTopic.image.ext'
+  | 'relatedTopic.image.hash'
+  | 'relatedTopic.image.height'
+  | 'relatedTopic.image.id'
+  | 'relatedTopic.image.internal.content'
+  | 'relatedTopic.image.internal.contentDigest'
+  | 'relatedTopic.image.internal.contentFilePath'
+  | 'relatedTopic.image.internal.description'
+  | 'relatedTopic.image.internal.fieldOwners'
+  | 'relatedTopic.image.internal.ignoreType'
+  | 'relatedTopic.image.internal.mediaType'
+  | 'relatedTopic.image.internal.owner'
+  | 'relatedTopic.image.internal.type'
+  | 'relatedTopic.image.localFile.absolutePath'
+  | 'relatedTopic.image.localFile.accessTime'
+  | 'relatedTopic.image.localFile.atime'
+  | 'relatedTopic.image.localFile.atimeMs'
+  | 'relatedTopic.image.localFile.base'
+  | 'relatedTopic.image.localFile.birthTime'
+  | 'relatedTopic.image.localFile.birthtime'
+  | 'relatedTopic.image.localFile.birthtimeMs'
+  | 'relatedTopic.image.localFile.blksize'
+  | 'relatedTopic.image.localFile.blocks'
+  | 'relatedTopic.image.localFile.changeTime'
+  | 'relatedTopic.image.localFile.children'
+  | 'relatedTopic.image.localFile.childrenImageSharp'
+  | 'relatedTopic.image.localFile.ctime'
+  | 'relatedTopic.image.localFile.ctimeMs'
+  | 'relatedTopic.image.localFile.dev'
+  | 'relatedTopic.image.localFile.dir'
+  | 'relatedTopic.image.localFile.ext'
+  | 'relatedTopic.image.localFile.extension'
+  | 'relatedTopic.image.localFile.gid'
+  | 'relatedTopic.image.localFile.id'
+  | 'relatedTopic.image.localFile.ino'
+  | 'relatedTopic.image.localFile.mode'
+  | 'relatedTopic.image.localFile.modifiedTime'
+  | 'relatedTopic.image.localFile.mtime'
+  | 'relatedTopic.image.localFile.mtimeMs'
+  | 'relatedTopic.image.localFile.name'
+  | 'relatedTopic.image.localFile.nlink'
+  | 'relatedTopic.image.localFile.prettySize'
+  | 'relatedTopic.image.localFile.rdev'
+  | 'relatedTopic.image.localFile.relativeDirectory'
+  | 'relatedTopic.image.localFile.relativePath'
+  | 'relatedTopic.image.localFile.root'
+  | 'relatedTopic.image.localFile.size'
+  | 'relatedTopic.image.localFile.sourceInstanceName'
+  | 'relatedTopic.image.localFile.uid'
+  | 'relatedTopic.image.localFile.url'
+  | 'relatedTopic.image.mime'
+  | 'relatedTopic.image.name'
+  | 'relatedTopic.image.parent.children'
+  | 'relatedTopic.image.parent.id'
+  | 'relatedTopic.image.size'
+  | 'relatedTopic.image.strapi_id'
+  | 'relatedTopic.image.updatedAt'
+  | 'relatedTopic.image.url'
+  | 'relatedTopic.image.width'
+  | 'relatedTopic.internal.content'
+  | 'relatedTopic.internal.contentDigest'
+  | 'relatedTopic.internal.contentFilePath'
+  | 'relatedTopic.internal.description'
+  | 'relatedTopic.internal.fieldOwners'
+  | 'relatedTopic.internal.ignoreType'
+  | 'relatedTopic.internal.mediaType'
+  | 'relatedTopic.internal.owner'
+  | 'relatedTopic.internal.type'
+  | 'relatedTopic.measures'
+  | 'relatedTopic.measures.children'
+  | 'relatedTopic.measures.children.children'
+  | 'relatedTopic.measures.children.id'
+  | 'relatedTopic.measures.createdAt'
+  | 'relatedTopic.measures.examples'
+  | 'relatedTopic.measures.examples.awards'
+  | 'relatedTopic.measures.examples.centrality'
+  | 'relatedTopic.measures.examples.children'
+  | 'relatedTopic.measures.examples.commune'
+  | 'relatedTopic.measures.examples.countryState'
+  | 'relatedTopic.measures.examples.createdAt'
+  | 'relatedTopic.measures.examples.gatsbyPath'
+  | 'relatedTopic.measures.examples.id'
+  | 'relatedTopic.measures.examples.links'
+  | 'relatedTopic.measures.examples.localChallenges'
+  | 'relatedTopic.measures.examples.number'
+  | 'relatedTopic.measures.examples.period'
+  | 'relatedTopic.measures.examples.population'
+  | 'relatedTopic.measures.examples.publishedAt'
+  | 'relatedTopic.measures.examples.shortDescription'
+  | 'relatedTopic.measures.examples.slug'
+  | 'relatedTopic.measures.examples.spatialStructure'
+  | 'relatedTopic.measures.examples.strapi_id'
+  | 'relatedTopic.measures.examples.subcategory'
+  | 'relatedTopic.measures.examples.title'
+  | 'relatedTopic.measures.examples.updatedAt'
+  | 'relatedTopic.measures.gatsbyPath'
+  | 'relatedTopic.measures.id'
+  | 'relatedTopic.measures.image.children'
+  | 'relatedTopic.measures.image.copyright'
+  | 'relatedTopic.measures.image.id'
+  | 'relatedTopic.measures.image.strapi_id'
+  | 'relatedTopic.measures.internal.content'
+  | 'relatedTopic.measures.internal.contentDigest'
+  | 'relatedTopic.measures.internal.contentFilePath'
+  | 'relatedTopic.measures.internal.description'
+  | 'relatedTopic.measures.internal.fieldOwners'
+  | 'relatedTopic.measures.internal.ignoreType'
+  | 'relatedTopic.measures.internal.mediaType'
+  | 'relatedTopic.measures.internal.owner'
+  | 'relatedTopic.measures.internal.type'
+  | 'relatedTopic.measures.name'
+  | 'relatedTopic.measures.number'
+  | 'relatedTopic.measures.parent.children'
+  | 'relatedTopic.measures.parent.id'
+  | 'relatedTopic.measures.publishedAt'
+  | 'relatedTopic.measures.slug'
+  | 'relatedTopic.measures.strapi_id'
+  | 'relatedTopic.measures.topic.additionalResources'
+  | 'relatedTopic.measures.topic.children'
+  | 'relatedTopic.measures.topic.createdAt'
+  | 'relatedTopic.measures.topic.gatsbyPath'
+  | 'relatedTopic.measures.topic.id'
+  | 'relatedTopic.measures.topic.measures'
+  | 'relatedTopic.measures.topic.name'
+  | 'relatedTopic.measures.topic.number'
+  | 'relatedTopic.measures.topic.publishedAt'
+  | 'relatedTopic.measures.topic.slug'
+  | 'relatedTopic.measures.topic.strapi_id'
+  | 'relatedTopic.measures.topic.updatedAt'
+  | 'relatedTopic.measures.updatedAt'
+  | 'relatedTopic.name'
+  | 'relatedTopic.number'
+  | 'relatedTopic.parent.children'
+  | 'relatedTopic.parent.children.children'
+  | 'relatedTopic.parent.children.id'
+  | 'relatedTopic.parent.id'
+  | 'relatedTopic.parent.internal.content'
+  | 'relatedTopic.parent.internal.contentDigest'
+  | 'relatedTopic.parent.internal.contentFilePath'
+  | 'relatedTopic.parent.internal.description'
+  | 'relatedTopic.parent.internal.fieldOwners'
+  | 'relatedTopic.parent.internal.ignoreType'
+  | 'relatedTopic.parent.internal.mediaType'
+  | 'relatedTopic.parent.internal.owner'
+  | 'relatedTopic.parent.internal.type'
+  | 'relatedTopic.parent.parent.children'
+  | 'relatedTopic.parent.parent.id'
+  | 'relatedTopic.publishedAt'
+  | 'relatedTopic.slug'
+  | 'relatedTopic.strapi_id'
+  | 'relatedTopic.updatedAt'
   | 'results.data.children'
   | 'results.data.children.children'
   | 'results.data.children.id'
@@ -3534,6 +3753,7 @@ type STRAPI_EXAMPLEFilterInput = {
   readonly population: InputMaybe<StringQueryOperatorInput>;
   readonly publishedAt: InputMaybe<DateQueryOperatorInput>;
   readonly relatedOffice: InputMaybe<STRAPI_EXAMPLERelatedOfficeFilterInput>;
+  readonly relatedTopic: InputMaybe<STRAPI_TOPICFilterInput>;
   readonly results: InputMaybe<STRAPI_EXAMPLEResultsFilterInput>;
   readonly shortDescription: InputMaybe<StringQueryOperatorInput>;
   readonly slug: InputMaybe<StringQueryOperatorInput>;
@@ -6436,6 +6656,7 @@ type STRAPI_MEASUREFieldsEnum =
   | 'examples.measure.publishedAt'
   | 'examples.measure.slug'
   | 'examples.measure.strapi_id'
+  | 'examples.measure.topic.additionalResources'
   | 'examples.measure.topic.children'
   | 'examples.measure.topic.createdAt'
   | 'examples.measure.topic.gatsbyPath'
@@ -6479,6 +6700,62 @@ type STRAPI_MEASUREFieldsEnum =
   | 'examples.relatedOffice.data.children'
   | 'examples.relatedOffice.data.id'
   | 'examples.relatedOffice.data.relatedOffice'
+  | 'examples.relatedTopic.additionalResources'
+  | 'examples.relatedTopic.additionalResources.children'
+  | 'examples.relatedTopic.additionalResources.display'
+  | 'examples.relatedTopic.additionalResources.id'
+  | 'examples.relatedTopic.additionalResources.strapi_id'
+  | 'examples.relatedTopic.additionalResources.url'
+  | 'examples.relatedTopic.children'
+  | 'examples.relatedTopic.children.children'
+  | 'examples.relatedTopic.children.id'
+  | 'examples.relatedTopic.createdAt'
+  | 'examples.relatedTopic.gatsbyPath'
+  | 'examples.relatedTopic.id'
+  | 'examples.relatedTopic.image.alternativeText'
+  | 'examples.relatedTopic.image.caption'
+  | 'examples.relatedTopic.image.children'
+  | 'examples.relatedTopic.image.createdAt'
+  | 'examples.relatedTopic.image.ext'
+  | 'examples.relatedTopic.image.hash'
+  | 'examples.relatedTopic.image.height'
+  | 'examples.relatedTopic.image.id'
+  | 'examples.relatedTopic.image.mime'
+  | 'examples.relatedTopic.image.name'
+  | 'examples.relatedTopic.image.size'
+  | 'examples.relatedTopic.image.strapi_id'
+  | 'examples.relatedTopic.image.updatedAt'
+  | 'examples.relatedTopic.image.url'
+  | 'examples.relatedTopic.image.width'
+  | 'examples.relatedTopic.internal.content'
+  | 'examples.relatedTopic.internal.contentDigest'
+  | 'examples.relatedTopic.internal.contentFilePath'
+  | 'examples.relatedTopic.internal.description'
+  | 'examples.relatedTopic.internal.fieldOwners'
+  | 'examples.relatedTopic.internal.ignoreType'
+  | 'examples.relatedTopic.internal.mediaType'
+  | 'examples.relatedTopic.internal.owner'
+  | 'examples.relatedTopic.internal.type'
+  | 'examples.relatedTopic.measures'
+  | 'examples.relatedTopic.measures.children'
+  | 'examples.relatedTopic.measures.createdAt'
+  | 'examples.relatedTopic.measures.examples'
+  | 'examples.relatedTopic.measures.gatsbyPath'
+  | 'examples.relatedTopic.measures.id'
+  | 'examples.relatedTopic.measures.name'
+  | 'examples.relatedTopic.measures.number'
+  | 'examples.relatedTopic.measures.publishedAt'
+  | 'examples.relatedTopic.measures.slug'
+  | 'examples.relatedTopic.measures.strapi_id'
+  | 'examples.relatedTopic.measures.updatedAt'
+  | 'examples.relatedTopic.name'
+  | 'examples.relatedTopic.number'
+  | 'examples.relatedTopic.parent.children'
+  | 'examples.relatedTopic.parent.id'
+  | 'examples.relatedTopic.publishedAt'
+  | 'examples.relatedTopic.slug'
+  | 'examples.relatedTopic.strapi_id'
+  | 'examples.relatedTopic.updatedAt'
   | 'examples.results.data.children'
   | 'examples.results.data.id'
   | 'examples.results.data.results'
@@ -6660,6 +6937,25 @@ type STRAPI_MEASUREFieldsEnum =
   | 'publishedAt'
   | 'slug'
   | 'strapi_id'
+  | 'topic.additionalResources'
+  | 'topic.additionalResources.children'
+  | 'topic.additionalResources.children.children'
+  | 'topic.additionalResources.children.id'
+  | 'topic.additionalResources.display'
+  | 'topic.additionalResources.id'
+  | 'topic.additionalResources.internal.content'
+  | 'topic.additionalResources.internal.contentDigest'
+  | 'topic.additionalResources.internal.contentFilePath'
+  | 'topic.additionalResources.internal.description'
+  | 'topic.additionalResources.internal.fieldOwners'
+  | 'topic.additionalResources.internal.ignoreType'
+  | 'topic.additionalResources.internal.mediaType'
+  | 'topic.additionalResources.internal.owner'
+  | 'topic.additionalResources.internal.type'
+  | 'topic.additionalResources.parent.children'
+  | 'topic.additionalResources.parent.id'
+  | 'topic.additionalResources.strapi_id'
+  | 'topic.additionalResources.url'
   | 'topic.children'
   | 'topic.children.children'
   | 'topic.children.children.children'
@@ -6805,6 +7101,7 @@ type STRAPI_MEASUREFieldsEnum =
   | 'topic.measures.publishedAt'
   | 'topic.measures.slug'
   | 'topic.measures.strapi_id'
+  | 'topic.measures.topic.additionalResources'
   | 'topic.measures.topic.children'
   | 'topic.measures.topic.createdAt'
   | 'topic.measures.topic.gatsbyPath'
@@ -7113,6 +7410,7 @@ type STRAPI_MEASURE_DESCRIPTION_TEXTNODESortInput = {
 };
 
 type STRAPI_TOPIC = Node & {
+  readonly additionalResources: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_LINKS_LINKS>>>;
   readonly children: ReadonlyArray<Node>;
   readonly createdAt: Maybe<Scalars['Date']>;
   readonly description: Maybe<STRAPI_TOPICDescription>;
@@ -7213,6 +7511,51 @@ type STRAPI_TOPICEdge = {
 };
 
 type STRAPI_TOPICFieldsEnum =
+  | 'additionalResources'
+  | 'additionalResources.children'
+  | 'additionalResources.children.children'
+  | 'additionalResources.children.children.children'
+  | 'additionalResources.children.children.id'
+  | 'additionalResources.children.id'
+  | 'additionalResources.children.internal.content'
+  | 'additionalResources.children.internal.contentDigest'
+  | 'additionalResources.children.internal.contentFilePath'
+  | 'additionalResources.children.internal.description'
+  | 'additionalResources.children.internal.fieldOwners'
+  | 'additionalResources.children.internal.ignoreType'
+  | 'additionalResources.children.internal.mediaType'
+  | 'additionalResources.children.internal.owner'
+  | 'additionalResources.children.internal.type'
+  | 'additionalResources.children.parent.children'
+  | 'additionalResources.children.parent.id'
+  | 'additionalResources.display'
+  | 'additionalResources.id'
+  | 'additionalResources.internal.content'
+  | 'additionalResources.internal.contentDigest'
+  | 'additionalResources.internal.contentFilePath'
+  | 'additionalResources.internal.description'
+  | 'additionalResources.internal.fieldOwners'
+  | 'additionalResources.internal.ignoreType'
+  | 'additionalResources.internal.mediaType'
+  | 'additionalResources.internal.owner'
+  | 'additionalResources.internal.type'
+  | 'additionalResources.parent.children'
+  | 'additionalResources.parent.children.children'
+  | 'additionalResources.parent.children.id'
+  | 'additionalResources.parent.id'
+  | 'additionalResources.parent.internal.content'
+  | 'additionalResources.parent.internal.contentDigest'
+  | 'additionalResources.parent.internal.contentFilePath'
+  | 'additionalResources.parent.internal.description'
+  | 'additionalResources.parent.internal.fieldOwners'
+  | 'additionalResources.parent.internal.ignoreType'
+  | 'additionalResources.parent.internal.mediaType'
+  | 'additionalResources.parent.internal.owner'
+  | 'additionalResources.parent.internal.type'
+  | 'additionalResources.parent.parent.children'
+  | 'additionalResources.parent.parent.id'
+  | 'additionalResources.strapi_id'
+  | 'additionalResources.url'
   | 'children'
   | 'children.children'
   | 'children.children.children'
@@ -7294,6 +7637,22 @@ type STRAPI_TOPICFieldsEnum =
   | 'image.children.parent.id'
   | 'image.createdAt'
   | 'image.ext'
+  | 'image.formats.large.ext'
+  | 'image.formats.large.hash'
+  | 'image.formats.large.height'
+  | 'image.formats.large.mime'
+  | 'image.formats.large.name'
+  | 'image.formats.large.size'
+  | 'image.formats.large.url'
+  | 'image.formats.large.width'
+  | 'image.formats.medium.ext'
+  | 'image.formats.medium.hash'
+  | 'image.formats.medium.height'
+  | 'image.formats.medium.mime'
+  | 'image.formats.medium.name'
+  | 'image.formats.medium.size'
+  | 'image.formats.medium.url'
+  | 'image.formats.medium.width'
   | 'image.formats.small.ext'
   | 'image.formats.small.hash'
   | 'image.formats.small.height'
@@ -7481,6 +7840,18 @@ type STRAPI_TOPICFieldsEnum =
   | 'measures.examples.period'
   | 'measures.examples.population'
   | 'measures.examples.publishedAt'
+  | 'measures.examples.relatedTopic.additionalResources'
+  | 'measures.examples.relatedTopic.children'
+  | 'measures.examples.relatedTopic.createdAt'
+  | 'measures.examples.relatedTopic.gatsbyPath'
+  | 'measures.examples.relatedTopic.id'
+  | 'measures.examples.relatedTopic.measures'
+  | 'measures.examples.relatedTopic.name'
+  | 'measures.examples.relatedTopic.number'
+  | 'measures.examples.relatedTopic.publishedAt'
+  | 'measures.examples.relatedTopic.slug'
+  | 'measures.examples.relatedTopic.strapi_id'
+  | 'measures.examples.relatedTopic.updatedAt'
   | 'measures.examples.shortDescription'
   | 'measures.examples.slug'
   | 'measures.examples.spatialStructure'
@@ -7551,6 +7922,12 @@ type STRAPI_TOPICFieldsEnum =
   | 'measures.publishedAt'
   | 'measures.slug'
   | 'measures.strapi_id'
+  | 'measures.topic.additionalResources'
+  | 'measures.topic.additionalResources.children'
+  | 'measures.topic.additionalResources.display'
+  | 'measures.topic.additionalResources.id'
+  | 'measures.topic.additionalResources.strapi_id'
+  | 'measures.topic.additionalResources.url'
   | 'measures.topic.children'
   | 'measures.topic.children.children'
   | 'measures.topic.children.id'
@@ -7651,6 +8028,7 @@ type STRAPI_TOPICFieldsEnum =
   | 'updatedAt';
 
 type STRAPI_TOPICFilterInput = {
+  readonly additionalResources: InputMaybe<STRAPI__COMPONENT_LINKS_LINKSFilterListInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
   readonly createdAt: InputMaybe<DateQueryOperatorInput>;
   readonly description: InputMaybe<STRAPI_TOPICDescriptionFilterInput>;
@@ -8553,6 +8931,22 @@ type STRAPI__COMPONENT_IMAGE_COPYRIGHT_IMAGEFieldsEnum =
   | 'image.children.parent.id'
   | 'image.createdAt'
   | 'image.ext'
+  | 'image.formats.large.ext'
+  | 'image.formats.large.hash'
+  | 'image.formats.large.height'
+  | 'image.formats.large.mime'
+  | 'image.formats.large.name'
+  | 'image.formats.large.size'
+  | 'image.formats.large.url'
+  | 'image.formats.large.width'
+  | 'image.formats.medium.ext'
+  | 'image.formats.medium.hash'
+  | 'image.formats.medium.height'
+  | 'image.formats.medium.mime'
+  | 'image.formats.medium.name'
+  | 'image.formats.medium.size'
+  | 'image.formats.medium.url'
+  | 'image.formats.medium.width'
   | 'image.formats.small.ext'
   | 'image.formats.small.hash'
   | 'image.formats.small.height'
@@ -9110,6 +9504,22 @@ type STRAPI__MEDIAFieldsEnum =
   | 'children.parent.parent.id'
   | 'createdAt'
   | 'ext'
+  | 'formats.large.ext'
+  | 'formats.large.hash'
+  | 'formats.large.height'
+  | 'formats.large.mime'
+  | 'formats.large.name'
+  | 'formats.large.size'
+  | 'formats.large.url'
+  | 'formats.large.width'
+  | 'formats.medium.ext'
+  | 'formats.medium.hash'
+  | 'formats.medium.height'
+  | 'formats.medium.mime'
+  | 'formats.medium.name'
+  | 'formats.medium.size'
+  | 'formats.medium.url'
+  | 'formats.medium.width'
   | 'formats.small.ext'
   | 'formats.small.hash'
   | 'formats.small.height'
@@ -9380,13 +9790,61 @@ type STRAPI__MEDIAFilterInput = {
 };
 
 type STRAPI__MEDIAFormats = {
+  readonly large: Maybe<STRAPI__MEDIAFormatsLarge>;
+  readonly medium: Maybe<STRAPI__MEDIAFormatsMedium>;
   readonly small: Maybe<STRAPI__MEDIAFormatsSmall>;
   readonly thumbnail: Maybe<STRAPI__MEDIAFormatsThumbnail>;
 };
 
 type STRAPI__MEDIAFormatsFilterInput = {
+  readonly large: InputMaybe<STRAPI__MEDIAFormatsLargeFilterInput>;
+  readonly medium: InputMaybe<STRAPI__MEDIAFormatsMediumFilterInput>;
   readonly small: InputMaybe<STRAPI__MEDIAFormatsSmallFilterInput>;
   readonly thumbnail: InputMaybe<STRAPI__MEDIAFormatsThumbnailFilterInput>;
+};
+
+type STRAPI__MEDIAFormatsLarge = {
+  readonly ext: Maybe<Scalars['String']>;
+  readonly hash: Maybe<Scalars['String']>;
+  readonly height: Maybe<Scalars['Int']>;
+  readonly mime: Maybe<Scalars['String']>;
+  readonly name: Maybe<Scalars['String']>;
+  readonly size: Maybe<Scalars['Float']>;
+  readonly url: Maybe<Scalars['String']>;
+  readonly width: Maybe<Scalars['Int']>;
+};
+
+type STRAPI__MEDIAFormatsLargeFilterInput = {
+  readonly ext: InputMaybe<StringQueryOperatorInput>;
+  readonly hash: InputMaybe<StringQueryOperatorInput>;
+  readonly height: InputMaybe<IntQueryOperatorInput>;
+  readonly mime: InputMaybe<StringQueryOperatorInput>;
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly size: InputMaybe<FloatQueryOperatorInput>;
+  readonly url: InputMaybe<StringQueryOperatorInput>;
+  readonly width: InputMaybe<IntQueryOperatorInput>;
+};
+
+type STRAPI__MEDIAFormatsMedium = {
+  readonly ext: Maybe<Scalars['String']>;
+  readonly hash: Maybe<Scalars['String']>;
+  readonly height: Maybe<Scalars['Int']>;
+  readonly mime: Maybe<Scalars['String']>;
+  readonly name: Maybe<Scalars['String']>;
+  readonly size: Maybe<Scalars['Float']>;
+  readonly url: Maybe<Scalars['String']>;
+  readonly width: Maybe<Scalars['Int']>;
+};
+
+type STRAPI__MEDIAFormatsMediumFilterInput = {
+  readonly ext: InputMaybe<StringQueryOperatorInput>;
+  readonly hash: InputMaybe<StringQueryOperatorInput>;
+  readonly height: InputMaybe<IntQueryOperatorInput>;
+  readonly mime: InputMaybe<StringQueryOperatorInput>;
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly size: InputMaybe<FloatQueryOperatorInput>;
+  readonly url: InputMaybe<StringQueryOperatorInput>;
+  readonly width: InputMaybe<IntQueryOperatorInput>;
 };
 
 type STRAPI__MEDIAFormatsSmall = {
