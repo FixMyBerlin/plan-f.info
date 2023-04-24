@@ -67,7 +67,7 @@ module.exports = {
           'https://plan-f-staging.tiummk647p9vk.eu-central-1.cs.amazonlightsail.com',
         // in ENV verschieben, da pro Dev unterschiedlich und geheim seien sollte
         accessToken:
-          '265ea8e28817d4f4272ae2c61c39b19e18c4fc964db5941b114d9726dde7d08555523e92e90b87578f597c0f7637d95c648bd87274bf70f16db6c7d8e1479aebf8c6e5a78776d5d9d79be2c8f489f6d685284d7c4592245f9d626e4f75a78b687ee0ed5593401b7c0443d85f94966780048292b144e4ae1b27f7faca2592a7f0',
+          '07c8b96dcb0de371f7c45f3ab47477e9bc93d57c3d048107d1e6cdfac8a37d176db404e8a71ff3d04ecc0833d143d5d3def3441be0382d19f3b220190d39bf3ce68eb1c7093e000169a3c201456053141631c31709aade5ec76a29964315710132a0de2b3ce6f92e70a831ff0ff8227ca67f1c29ebaa20321ac1ccca0a231737',
         // Hier die Content types angeben, die wir in Gatsby verfügbar haben wollen.
         // collection = array, single = ein object
         collectionTypes: [
