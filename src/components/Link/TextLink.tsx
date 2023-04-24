@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { Link, LinkProps } from './Link';
 
 type Props = {
@@ -14,7 +14,7 @@ export const TextLink: React.FC<Props> = ({
   children,
   ...props
 }) => {
-  const classes = classNames(className, linkStyles);
+  const classes = clsx(className, linkStyles);
 
   return (
     <Link className={classes} {...props}>

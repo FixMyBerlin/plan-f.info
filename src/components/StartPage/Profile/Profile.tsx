@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import React from 'react';
 import { ProfileData } from 'src/types/ProfileData';
 
@@ -20,7 +20,7 @@ export const Profile: React.FC<Props> = ({
   return (
     <div className="h-fit-max overflow-y-auto overflow-x-hidden">
       <img
-        className={classNames(
+        className={clsx(
           mirror ? 'float-right ml-4' : 'float-left mr-4',
           'h-24 w-24 rounded-full lg:h-40 lg:w-40'
         )}
@@ -28,7 +28,7 @@ export const Profile: React.FC<Props> = ({
         alt={`profilfoto ${name}`}
         loading={preload ? 'eager' : 'lazy'}
       />
-      <div className={classNames('flex flex-col')}>
+      <div className={clsx('flex flex-col')}>
         <h1 className="font-bold">{name}</h1>
         <p className="mt-2 flex-grow text-gray-300">{description}</p>
         {attribution && (

@@ -17,9 +17,7 @@ export const Hero: React.FC<Props> = ({ title, children }) => {
           <Logo />
         </Link>
         <div className="mt-6 lg:w-1/2">
-          <h1 className="font-mono text-[24px] leading-[33px]">
-            {title}
-          </h1>
+          <h1 className="font-mono text-[24px] leading-[33px]">{title}</h1>
         </div>
         <div className="mt-10">{children}</div>
       </Content>

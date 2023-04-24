@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { Link, LinkProps } from './Link';
 
 type Props = {
@@ -17,7 +17,7 @@ export const ButtonLink: React.FC<Props> = ({
   children,
   ...props
 }) => {
-  const style = classNames(
+  const style = clsx(
     buttonStyle,
     { 'px-12 py-4': large },
     { 'px-4 py-2': small }

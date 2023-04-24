@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import React from 'react';
 import { TextLink } from '~/components/Link';
 import { FooterMenuItem } from '../const/footerLinks.const';
@@ -10,7 +10,7 @@ type Props = {
 
 export const FooterLinkList: React.FC<Props> = ({ linkList, className }) => {
   return (
-    <ul className={classNames('space-y-3', className)}>
+    <ul className={clsx('space-y-3', className)}>
       {linkList.map((item) => (
         <li key={item.name}>
           <TextLink
