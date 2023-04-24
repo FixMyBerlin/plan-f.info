@@ -16,7 +16,7 @@ export const FooterLinkList: React.FC<Props> = ({ linkList, className }) => {
           <TextLink
             to={item.to}
             newWindow={item.newWindow}
-            className="block font-apercuMono text-[14px] leading-5 text-white no-underline decoration-white decoration-1 "
+            className="block font-mono text-[14px] leading-5 text-white no-underline decoration-white decoration-1 "
           >
             {item.name}
           </TextLink>

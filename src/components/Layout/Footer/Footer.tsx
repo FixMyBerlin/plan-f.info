@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
   const { pages, legal } = footerLinks;
   return (
     <footer
-      className="z-0 bg-dark-gray pb-16 pt-14"
+      className="z-0 bg-black pb-16 pt-14"
       aria-labelledby="footer-heading"
     >
       <div className="pl-4 sm:pl-[3vw]">

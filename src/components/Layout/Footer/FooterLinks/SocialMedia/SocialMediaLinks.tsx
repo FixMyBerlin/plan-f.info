@@ -7,10 +7,10 @@ export const SocialMediaLinks: React.FC = () => {
   return (
     <div className="flex flex-row gap-4 text-white">
       <Link newWindow to="https://twitter.com/planf7">
-        <TwitterIcon className="h-5 w-5 hover:text-light-gray" />
+        <TwitterIcon className="h-5 w-5 hover:text-gray-300" />
       </Link>
       <Link newWindow to="https://www.instagram.com/planf_impulse/">
-        <InstagramIcon className="h-5 w-5 hover:text-light-gray" />
+        <InstagramIcon className="h-5 w-5 hover:text-gray-300" />
       </Link>
     </div>
   );

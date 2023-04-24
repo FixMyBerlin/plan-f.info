@@ -36,12 +36,12 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
               prefix="../"
             />
           </div>
-          <div className="bg-pastel-purple pl-2">
+          <div className="bg-purple-300 pl-2">
             <div className="bg-white pl-6">
               <h1 className="mt-6">{example.measure.name}</h1>
             </div>
           </div>
-          <div className="bg-dark-green py-10 px-10">
+          <div className="bg-green-500 py-10 px-10">
             Praxisbesipiel
             <Link to={`../${prevSlug}`}> Prev</Link>
             {pos + 1}

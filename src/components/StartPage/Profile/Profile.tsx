@@ -30,9 +30,9 @@ export const Profile: React.FC<Props> = ({
       />
       <div className={classNames('flex flex-col')}>
         <h1 className="font-bold">{name}</h1>
-        <p className="mt-2 flex-grow text-light-gray">{description}</p>
+        <p className="mt-2 flex-grow text-gray-300">{description}</p>
         {attribution && (
-          <div className="mt-auto flex-none text-sm text-light-gray">
+          <div className="mt-auto flex-none text-sm text-gray-300">
             Foto:&nbsp;&copy;&nbsp;{attribution}
           </div>
         )}

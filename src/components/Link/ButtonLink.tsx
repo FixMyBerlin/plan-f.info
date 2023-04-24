@@ -8,7 +8,7 @@ type Props = {
 } & LinkProps;
 
 const buttonStyle =
-  'inline-flex items-center justify-center rounded-full py-2 px-4 bg-dark-green font-bold';
+  'inline-flex items-center justify-center rounded-full py-2 px-4 bg-green-500 font-bold';
 
 // TODO: Refactor all those link components to share more logic
 export const ButtonLink: React.FC<Props> = ({

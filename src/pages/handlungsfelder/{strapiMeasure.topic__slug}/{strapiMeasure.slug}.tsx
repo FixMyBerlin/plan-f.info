@@ -18,13 +18,13 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
               names={['Handlungsfelder', measure.topic.name, measure.name]}
             />
           </div>
-          <div className="bg-pastel-purple pl-2">
+          <div className="bg-purple-300 pl-2">
             <div className="bg-white pl-6">
               <h1 className="mt-6">{measure.name}</h1>
               <div className="mt-2">{measure.description.data.description}</div>
             </div>
           </div>
-          <div className="relative bg-dark-green  px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28">
+          <div className="relative bg-green-500  px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28">
             <div className="relative mx-auto max-w-7xl">
               <div className="text-left">
                 <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">

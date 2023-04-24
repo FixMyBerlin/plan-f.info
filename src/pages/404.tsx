@@ -8,13 +8,13 @@ const NotFound: React.FC = () => {
   return (
     <>
       <HelmetSeo noindex />
-      <div className="flex h-full flex-col bg-pastel-purple">
-        <div className="bg-dark-green pt-20 pb-12">
+      <div className="flex h-full flex-col bg-purple-300">
+        <div className="bg-green-500 pt-20 pb-12">
           <Content>
             <Link to="/">
               <Logo />
             </Link>
-            <H2 className="!font-apercuMono">404</H2>
+            <H2 className="!font-mono">404</H2>
           </Content>
         </div>
         <div className="flex-grow  py-16">

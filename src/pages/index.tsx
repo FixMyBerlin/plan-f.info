@@ -207,7 +207,7 @@ const IndexPage: React.FC = () => {
           </FoldOut>
         </Content>
       </section>
-      <section className="mt-16 bg-pastel-purple pb-16 pt-8">
+      <section className="mt-16 bg-purple-300 pb-16 pt-8">
         <Content>
           <div className="pb-6">
             <H1>Plan F Award 2022</H1>
@@ -828,7 +828,7 @@ const IndexPage: React.FC = () => {
                 einen zukunftsfähigen Radverkehr in der ländlichen Gemeinde in
                 Rheinland-Pfalz sind.
               </p>
-              <ul className="my-6 ml-16 list-inside list-square ">
+              <ul className="list-square my-6 ml-16 list-inside ">
                 <li>Radwegenetz</li>
                 <li>Radweg Wallmerod-Hundsangen</li>
                 <li>Fahrradkultur</li>
@@ -977,7 +977,7 @@ const IndexPage: React.FC = () => {
           </p>
           <div className="pt-6 pb-6">
             <H2>Was steht noch aus? Die nächsten Schritte im Projekt</H2>
-            <H3 className="!text-pastel-purple">Frühjahr 2023:</H3>
+            <H3 className="!text-purple-300">Frühjahr 2023:</H3>
             <H3>Plan F Webseite</H3>
             <p className="pb-2">
               Die Plan F Systematisierung der Handlungsfelder der kommunalen
@@ -1000,7 +1000,7 @@ const IndexPage: React.FC = () => {
               E-Learningkurs konzipiert, welcher die Inhalte der Systematik
               vermittelt.
             </p>
-            <H3 className="!text-pastel-purple">Sommer 2023:</H3>
+            <H3 className="!text-purple-300">Sommer 2023:</H3>
             <H3>
               Plan F Check - Passgenaue Handlungsempfehlungen durch
               Selbstevaluation von Kommunen

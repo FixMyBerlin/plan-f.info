@@ -8,7 +8,7 @@ export const Fundings: React.FC = () => {
     <div className="flex flex-row pl-2 pr-4">
       <BMDVLogo className="mb-auto h-32" />
       <div className="grow-0">
-        <span className="text-[10px] text-dark-gray">Partner Plan F</span>
+        <span className="text-[10px] text-black">Partner Plan F</span>
         <img
           className="h-20 object-scale-down"
           src={VeloplanLogo}
