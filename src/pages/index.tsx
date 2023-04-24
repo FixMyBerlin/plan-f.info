@@ -11,29 +11,18 @@ import {
   fotos,
   icons,
 } from '~/components/StartPage';
-import { Layout, Hero, Content, HelmetSeo } from '~/components/Layout';
+import { Hero, Content, HelmetSeo } from '~/components/Layout';
 import { ButtonLink, TextLink } from '~/components/Link';
 import { H1, H2, H3 } from '~/components/Text';
 
 const IndexPage: React.FC = () => {
   const title = 'Impulse für die kommunale Fahrradmobilität';
   return (
-    <Layout>
+    <>
       <HelmetSeo title={title} />
       <Hero title={title}>
         <FoldOut previewMode="clamp">
-          <p>
-            Einen Plan zu haben, ist gut. Plan&nbsp;F zu haben, ist sehr gut. F
-            wie Fahrrad, Fortschritt und Fachthemen. Plan&nbsp;F unterstützt
-            Kommunen bei der Förderung des Radverkehrs. Dafür strukturieren wir
-            bestehendes Wissen, Maßnahmen und Leitfäden zur Fahrradmobilität und
-            zeigen notwendige Handlungsfelder auf. Ergänzt wird die Übersicht
-            durch aktuelle Beispiele aus der kommunalen Praxis, die auf
-            städtische und zielgruppenspezifische Besonderheiten eingehen.
-            Kommunen erhalten auf diese Weise einen Überblick und konkrete
-            Handlungsmöglichkeiten zur Radverkehrsförderung.
-          </p>
-          <p className="mt-6">
+          <p className="pt-6">
             Im Projekt Plan&nbsp;F werden vier Produkte erarbeitet:
           </p>
           <ol className="mt-6 ml-12 list-decimal">
@@ -1037,7 +1026,7 @@ const IndexPage: React.FC = () => {
       <div className="object-left pt-28 pb-6">
         <Fundings />
       </div>
-    </Layout>
+    </>
   );
 };
 

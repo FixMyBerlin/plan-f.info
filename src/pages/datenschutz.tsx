@@ -1,12 +1,12 @@
 import React from 'react';
-import { Layout, Hero, Content, HelmetSeo } from '~/components/Layout';
+import { Hero, Content, HelmetSeo } from '~/components/Layout';
 import { H1, H2, H3 } from '~/components/Text';
 import { TextLink } from '~/components/Link';
 
 const DatenschutzPage = () => {
   const title = 'Datenschutz';
   return (
-    <Layout>
+    <>
       <HelmetSeo noindex title={title} />
       <Hero title={title} />
       <Content>
@@ -729,7 +729,7 @@ const DatenschutzPage = () => {
           </div>
         </div>
       </Content>
-    </Layout>
+    </>
   );
 };
 

@@ -1,12 +1,12 @@
 import React from 'react';
-import { Content, Layout, HelmetSeo } from '~/components/Layout';
+import { Content, HelmetSeo } from '~/components/Layout';
 import { Link } from '~/components/Link';
 import { H1, H2 } from '~/components/Text';
 import Logo from '~/components/Layout/assets/Logo.svg';
 
 const NotFound: React.FC = () => {
   return (
-    <Layout>
+    <>
       <HelmetSeo noindex />
       <div className="flex h-full flex-col bg-pastel-purple">
         <div className="bg-dark-green pt-20 pb-12">
@@ -28,7 +28,7 @@ const NotFound: React.FC = () => {
           </Content>
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 

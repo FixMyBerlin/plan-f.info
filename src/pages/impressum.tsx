@@ -1,12 +1,12 @@
 import React from 'react';
-import { Layout, Content, Hero, HelmetSeo } from '~/components/Layout';
+import { Content, Hero, HelmetSeo } from '~/components/Layout';
 import { H2 } from '~/components/Text';
 import { TextLink } from '~/components/Link';
 
 const ImpressumPage = () => {
   const title = 'Impressum';
   return (
-    <Layout>
+    <>
       <HelmetSeo noindex title={title} />
       <Hero title={title} />
       <Content>
@@ -69,7 +69,7 @@ const ImpressumPage = () => {
           </p>
         </div>
       </Content>
-    </Layout>
+    </>
   );
 };
 
