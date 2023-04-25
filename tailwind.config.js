@@ -5,7 +5,10 @@ const colors = require('tailwindcss/colors');
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
-  content: ['src/pages/**/*.tsx', 'src/components/**/*.tsx'],
+  content: [
+    './src/pages/**/*.{js,jsx,ts,tsx}',
+    './src/components/**/*.{js,jsx,ts,tsx}',
+  ],
   theme: {
     extend: {
       typography: {
@@ -23,7 +26,6 @@ module.exports = {
               'margin-bottom': '1.5rem',
             },
             h2: {
-              'font-weight': '400',
               'margin-top': '1rem',
               'margin-bottom': '1.5rem',
             },
@@ -85,17 +87,6 @@ module.exports = {
       normal: '400',
       bold: '700',
     },
-    listStyleType: {
-      none: 'none',
-      square: 'square',
-      decimal: 'decimal',
-      disc: 'disc',
-    },
-
-    plugins: [
-      require('@tailwindcss/typography'),
-      require('@tailwindcss/forms'),
-      require('@tailwindcss/line-clamp'),
-    ],
   },
+  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],
 };
