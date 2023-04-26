@@ -6,5 +6,5 @@ type Props = {
   className?: string;
 };
 export const Article: React.FC<Props> = ({ children, className }) => {
-  return <article className={clsx(className, 'max-w-3xl')}>{children}</article>;
+  return <article className={clsx(className, 'max-w-2xl')}>{children}</article>;
 };
