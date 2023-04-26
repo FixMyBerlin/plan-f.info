@@ -1,8 +1,14 @@
-import React from 'react';
-import { Fundings } from '~/components/StartPage';
-import { Hero, Content, HelmetSeo, Breadcrumbs } from '~/components/Layout';
-import { graphql, Link, PageProps } from 'gatsby';
+import { PageProps, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import React from 'react';
+import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
+import { Article } from '~/components/Layout/Article';
+import { CardImageAndTextResponsive } from '~/components/Layout/CardImageAndTextResponsive';
+import { CardWrapper } from '~/components/Layout/CardWrapper';
+import { Section } from '~/components/Layout/Section';
+import { LinkButtonWithArrow } from '~/components/PageTopic/LinkButtonWithArrow';
+import { H2, H3, P } from '~/components/Text';
+import { Prose } from '~/components/core/Prose';
 
 const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
   data: { topic },
@@ -10,64 +16,60 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
   return (
     <>
       <HelmetSeo title={topic.name} />
-      <Hero title={topic.name}>
+
+      <Hero title={topic.name} className="bg-purple-300">
         <Breadcrumbs names={['Wissensspeicher', topic.name]} />
       </Hero>
-      <section className="pt-1">
-        <Content>
-          <div>{topic.description.data.description}</div>
-          <div className="relative bg-purple-300  px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28">
-            <div className="relative mx-auto max-w-7xl">
-              <div className="text-left">
-                <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                  Maßnahmen im Handlungsfeld {topic.name}
-                </h2>
-                <p className="mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
-                  Entdecken Sie die Verschiedenen Maßnahmen, die zu diesem
-                  Handlungsfeld gehören, dort finden Sie auch viele
-                  Praxisbeispiele
-                </p>
-              </div>
-              <div className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
-                {topic.measures.map((measure) => (
-                  <div
-                    key={measure.name}
-                    className="flex flex-col overflow-hidden rounded-lg shadow-lg"
-                  >
-                    <div className="flex-shrink-0">
-                      {measure.image && (
-                        <Link to={measure.slug}>
-                          <GatsbyImage
-                            image={getImage(
-                              measure.image.image.localFile as any
-                            )}
-                            alt={`Titelbild ${measure.name}`}
-                          />
-                        </Link>
-                      )}
-                    </div>
-                    <div className="flex flex-1 flex-col justify-between bg-white p-6">
-                      <div className="flex-1">
-                        <Link to={measure.slug} className="mt-2 block">
-                          <p className="font-semibold text-xl text-gray-900">
-                            {measure.name}
-                          </p>
-                          <p className="line-clamp-3 mt-3 text-base text-gray-500">
-                            {measure.description.data.description}
-                          </p>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </Content>
-      </section>
-      <div className="object-left pt-28 pb-6">
-        <Fundings />
-      </div>
+
+      <Section className="flex flex-col gap-10 lg:flex-row">
+        <Article>
+          <Prose>{topic.description.data.description}</Prose>
+        </Article>
+        <GatsbyImage
+          className="h-72 w-72 flex-shrink-0"
+          image={getImage(topic.image.localFile as any)}
+          alt={`Titelbild ${topic.name}`}
+        />
+      </Section>
+
+      <Section className="mb-20 flex flex-col  gap-10 sm:flex-row sm:gap-20">
+        <div className="flex flex-col items-start gap-5">
+          <H3 className="uppercase">Leitfäden</H3>
+          <LinkButtonWithArrow href="/">Leitfaden 1</LinkButtonWithArrow>
+          <LinkButtonWithArrow href="/">Leitfaden 2</LinkButtonWithArrow>
+          {/* TODO ? */}
+        </div>
+        <div className="flex flex-col items-start gap-5">
+          <H3 className="uppercase">weitere Hinweise</H3>
+          {topic.additionalResources.map((resource) => (
+            <LinkButtonWithArrow href={resource.url}>
+              {resource.display}
+            </LinkButtonWithArrow>
+          ))}
+        </div>
+      </Section>
+
+      <Section className="bg-green-500">
+        <H2>Maßnahmen im Handlungsfeld {topic.name}</H2>
+        <P>
+          Entdecken Sie die Verschiedenen Maßnahmen, die zu diesem Handlungsfeld
+          gehören, dort finden Sie auch viele Praxisbeispiele
+        </P>
+        <CardWrapper className="mt-12">
+          {topic.measures.map((measure) => (
+            <CardImageAndTextResponsive
+              key={measure.slug}
+              link={measure.slug}
+              image={getImage(measure.image.image.localFile as any)}
+            >
+              <H3>{measure.name}</H3>
+              <Prose className="line-clamp-4">
+                {measure.description.data.description}
+              </Prose>
+            </CardImageAndTextResponsive>
+          ))}
+        </CardWrapper>
+      </Section>
     </>
   );
 };
@@ -84,6 +86,10 @@ export const query = graphql`
             gatsbyImageData
           }
         }
+      }
+      additionalResources {
+        display
+        url
       }
       description {
         data {
