@@ -23,13 +23,13 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
   return (
     <>
       <HelmetSeo title={example.measure.name} />
-      <Hero title="Handlungsfelder" />
+      <Hero title="Wissensspeicher" />
       <section>
         <Content>
-          <div className="mt-6 ml-10">
+          <div className="ml-10 mt-6">
             <Breadcrumbs
               names={[
-                'Handlungsfelder',
+                'Wissensspeicher',
                 example.measure.topic.name,
                 example.measure.name,
               ]}
@@ -41,7 +41,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
               <h1 className="mt-6">{example.measure.name}</h1>
             </div>
           </div>
-          <div className="bg-green-500 py-10 px-10">
+          <div className="bg-green-500 p-10">
             Praxisbesipiel
             <Link to={`../${prevSlug}`}> Prev</Link>
             {pos + 1}
@@ -86,7 +86,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
           </div>
         </Content>
       </section>
-      <div className="object-left pt-28 pb-6">
+      <div className="object-left pb-6 pt-28 ">
         <Fundings />
       </div>
     </>
