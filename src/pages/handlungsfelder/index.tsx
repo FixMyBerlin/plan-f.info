@@ -6,7 +6,8 @@ import { CardIconAndText } from '~/components/Layout/CardIconAndText';
 import { CardWrapper } from '~/components/Layout/CardWrapper';
 import { Section } from '~/components/Layout/Section';
 import { icons } from '~/components/StartPage';
-import { H2, H3 } from '~/components/Text';
+import { H2, H3, P } from '~/components/Text';
+import { Prose } from '~/components/links/core/Prose';
 
 export const query = graphql`
   query TopicTeasers {
@@ -32,12 +33,15 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
   return (
     <>
       <HelmetSeo title={title} />
-      <Hero title={title}>
+      <Hero title={title} className="bg-purple-100">
         <Breadcrumbs names={[title]} />
       </Hero>
+      {/* <Link button="black" href="https://tailwindcss.com/docs/ring-width">
+        Hallo Test
+      </Link> */}
       <Section>
         <Article>
-          <p>
+          <P>
             Kommunikation und Öffentlichkeitsarbeit sind ein zentrales
             Handlungsfeld der Radverkehrsförderung, welches insbesondere
             Personen, die (noch) nicht Fahrrad fahren, adressiert und erreichen
@@ -57,29 +61,26 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
             Öffentlichkeitsarbeit in den Kommunen umgesetzt wurden und dazu
             beitragen, den Radverkehr zu fördern. Wichtige Leitfäden und
             Literaturtipps unterstützen Sie in der Umsetzung.
-          </p>
+          </P>
         </Article>
       </Section>
       <Section className="bg-purple-300">
         <H2>Handlungsfelder</H2>
-        <p>
+        <P>
           Entdecken Sie die verschiedenen Handlungsfelder. Dort finden Sie
           Maßnahmen und deren zugehörigen Praxisbeispiele
-        </p>
-
-        <CardWrapper>
+        </P>
+        <CardWrapper className="mt-10">
           {topics.nodes.map((topic) => (
             <CardIconAndText
               link={topic.slug}
-              icon={<icons.governance className="h-24 w-24 flex-shrink-0" />}
+              icon={<icons.governance className="h-24 w-24 flex-shrink-0" />} // TODO dynamisieren
             >
               <H3>{topic.name}</H3>
-              <div className="line-clamp-4 overflow-hidden">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Consequatur, inventore beatae rerum, et tempore eum, possimus
-                aliquid laboriosam a id nemo! Architecto, harum maxime
-                necessitatibus tenetur voluptate placeat fuga qui!
-                {/* {topic.description.data.description} */}
+              <div className="line-clamp-4">
+                <Prose>
+                  <p>{topic.description.data.description}</p>
+                </Prose>
               </div>
             </CardIconAndText>
           ))}
