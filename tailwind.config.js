@@ -18,21 +18,6 @@ module.exports = {
           // since we always use the Link component which is styled already.
           css: {
             a: false,
-            p: {
-              'margin-top': '1rem',
-            },
-            h1: {
-              'margin-top': '1rem',
-              'margin-bottom': '1.5rem',
-            },
-            h2: {
-              'margin-top': '1rem',
-              'margin-bottom': '1.5rem',
-            },
-            h3: {
-              'margin-top': '1rem',
-              'margin-bottom': '1.5rem',
-            },
           },
         },
       },
