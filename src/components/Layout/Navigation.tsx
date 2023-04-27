@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Link, graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import clsx from 'clsx';
+import { Link } from '../core/links/Link';
 
 type Props = { path: string };
 
@@ -33,7 +34,7 @@ export const Navigation: React.FC<Props> = ({ path }) => {
           {nodes.map((topic) => (
             <li key={topic.name}>
               <Link
-                to={`${basePath}/${topic.slug}`}
+                href={`${basePath}/${topic.slug}`}
                 className={clsx(
                   'font-display font-medium',
                   `${basePath}/${topic.slug}/` === path
@@ -47,7 +48,7 @@ export const Navigation: React.FC<Props> = ({ path }) => {
                 {topic.measures.map((measure) => (
                   <li key={measure.name} className="relative">
                     <Link
-                      to={`${basePath}/${topic.slug}/${measure.slug}`}
+                      href={`${basePath}/${topic.slug}/${measure.slug}`}
                       className={clsx(
                         'block w-full pl-3.5 before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full',
                         `${basePath}/${topic.slug}/${measure.slug}/` === path

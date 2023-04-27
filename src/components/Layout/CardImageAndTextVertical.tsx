@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
-import { Link } from '../Link';
+import { Link } from '../core/links/Link';
 
 type Props = {
   link: string;
@@ -13,7 +13,7 @@ export const CardImageAndTextVertical: React.FC<Props> = ({
   image,
 }) => {
   return (
-    <Link to={link}>
+    <Link href={link}>
       <div className="flex h-full flex-col rounded-b-3xl bg-white">
         <GatsbyImage
           className="h-52 w-full overflow-hidden"

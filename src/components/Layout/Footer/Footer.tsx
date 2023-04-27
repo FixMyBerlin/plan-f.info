@@ -1,6 +1,6 @@
-import { Link } from 'gatsby';
 import React from 'react';
 import { Fundings } from '~/components/StartPage';
+import { Link } from '~/components/core/links/Link';
 import LogoNegative from '../assets/LogoNegative.svg';
 import { FooterLinks } from './FooterLinks/FooterLinks';
 import { SocialMediaLinks } from './SocialMediaLinks/SocialMediaLinks';
@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
         aria-labelledby="footer-heading"
       >
         <div className="flex flex-col gap-8">
-          <Link to="/">
+          <Link href="/">
             <LogoNegative height={48} width={127} />
           </Link>
         </div>
