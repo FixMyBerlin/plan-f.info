@@ -1,22 +1,24 @@
 import React from 'react';
+import { P } from '~/components/Text';
 import BMDVLogo from './assets/bmdv.svg';
-import VeloplanLogo from './assets/veloplan.png';
 import FairSpacesLogo from './assets/fairspaces.svg';
+import VeloplanLogo from './assets/veloplan.png';
 
 export const Fundings: React.FC = () => {
   return (
-    <div className="flex flex-row pl-2 pr-4">
-      <BMDVLogo className="mb-auto h-32" />
-      <div className="grow-0">
-        <span className="text-[10px] text-black">Partner Plan F</span>
-        <img
-          className="h-20 object-scale-down"
-          src={VeloplanLogo}
-          alt="veloplan logo"
-        />
-      </div>
-      <div className="mx-10 flex grow-0 self-center">
-        <FairSpacesLogo className="h-20 object-scale-down" />
+    <div className="flex w-full flex-col px-10 py-16 sm:py-24">
+      <div className="mx-auto flex max-w-3xl flex-col sm:flex-row">
+        <div className="flex flex-col">
+          <P>Gefördert durch:</P>
+          <BMDVLogo height="100" />
+        </div>
+        <div className="flex flex-col">
+          <P>Partner von PlanF:</P>
+          <div className="grid grid-cols-2 gap-4">
+            <img src={VeloplanLogo} alt="veloplan logo" />
+            <FairSpacesLogo />
+          </div>
+        </div>
       </div>
     </div>
   );

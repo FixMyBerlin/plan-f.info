@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import React from 'react';
-import { TextLink } from '~/components/Link';
+import { Link } from '~/components/links/Link';
 import { FooterMenuItem } from '../const/footerLinks.const';
 
 type Props = {
@@ -10,16 +10,12 @@ type Props = {
 
 export const FooterLinkList: React.FC<Props> = ({ linkList, className }) => {
   return (
-    <ul className={clsx('space-y-3', className)}>
+    <ul className={clsx('flex justify-start gap-4 sm:justify-end', className)}>
       {linkList.map((item) => (
         <li key={item.name}>
-          <TextLink
-            to={item.to}
-            newWindow={item.newWindow}
-            className="block font-mono text-[14px] leading-5 text-white no-underline decoration-white decoration-1 "
-          >
+          <Link href={item.to} className="text-gray-400">
             {item.name}
-          </TextLink>
+          </Link>
         </li>
       ))}
     </ul>

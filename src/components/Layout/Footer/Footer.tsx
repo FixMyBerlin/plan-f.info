@@ -1,29 +1,32 @@
-import React from 'react';
 import { Link } from 'gatsby';
-import { FooterLinkList, SocialMediaLinks } from './FooterLinks';
+import React from 'react';
+import { Fundings } from '~/components/StartPage';
 import LogoNegative from '../assets/LogoNegative.svg';
+import { FooterLinkList, SocialMediaLinks } from './FooterLinks';
 import { footerLinks } from './const';
 
 export const Footer: React.FC = () => {
-  const { pages, legal } = footerLinks;
+  const { legal } = footerLinks;
   return (
-    <footer
-      className="z-0 bg-black pb-16 pt-14"
-      aria-labelledby="footer-heading"
-    >
-      <div className="pl-4 sm:pl-[3vw]">
-        <div className="flex flex-row">
-          <Link className="hidden grow-0 sm:block" to="/">
-            <LogoNegative />
+    <>
+      <Fundings />
+
+      <footer
+        className="z-0 flex flex-col justify-between gap-6 bg-black py-10 px-10 text-sm sm:flex-row sm:px-12"
+        aria-labelledby="footer-heading"
+      >
+        <div className="ga flex flex-col gap-8">
+          <Link className="" to="/">
+            <LogoNegative height={48} width={127} />
           </Link>
-          <FooterLinkList linkList={pages} className="flex-grow sm:px-[3vw]" />
-          <FooterLinkList
-            linkList={legal}
-            className="ml-auto mr-4 flex-none sm:pr-[12vw]"
-          />
+          <p className="hidden text-gray-400 sm:block">© 2022 plan GmbH</p>
         </div>
-        <SocialMediaLinks />
-      </div>
-    </footer>
+        <div className="flex flex-col gap-8 sm:flex-col-reverse sm:items-end">
+          <FooterLinkList linkList={legal} />
+          <SocialMediaLinks />
+          <p className="text-gray-400  sm:hidden">© 2022 plan GmbH</p>
+        </div>
+      </footer>
+    </>
   );
 };
