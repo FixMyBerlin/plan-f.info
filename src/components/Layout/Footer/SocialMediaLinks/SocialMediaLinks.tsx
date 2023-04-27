@@ -15,12 +15,10 @@ export const SocialMediaLinks: React.FC = () => {
       <Link href="https://www.instagram.com/planf_impulse/">
         <InstagramIcon className="h-5 w-5" />
       </Link>
-      {/* TODO gibt es diese Links? */}
       <Link href="https://twitter.com/planf7">
         <FacebookIcon className="h-5 w-5" />
       </Link>
-      {/* TODO gibt es diese Links? */}
-      <Link href="https://www.instagram.com/planf_impulse/">
+      <Link href="https://github.com/orgs/FixMyBerlin/repositories?q=plan-f&type=all&language=&sort=">
         <GithubIcon className="h-5 w-5" />
       </Link>
     </div>
