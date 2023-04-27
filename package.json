@@ -21,6 +21,7 @@
     "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
+    "updatePackages": "npx npm-check-updates -u",
     "prepare": "husky install"
   },
   "lint-staged": {
