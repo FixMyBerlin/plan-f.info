@@ -3,7 +3,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
 import { Article } from '~/components/Layout/Article';
-import { CardImageAndTextResponsive } from '~/components/Layout/CardImageAndTextResponsive';
+import { CardImageAndTextResponsiveImgFull } from '~/components/Layout/CardImageAndTextResponsiveImgFull';
 import { CardImageAndTextVertical } from '~/components/Layout/CardImageAndTextVertical';
 import { CardWrapperThreeCols } from '~/components/Layout/CardWrapperThreeCols';
 import { Section } from '~/components/Layout/Section';
@@ -74,21 +74,21 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
 
       <Section className="bg-gray-300">
         <H2>Weitere Beiträge</H2>
-        {/* TODO ? Was sind die weiteren Beiträge in den Daten?? */}
+        {/* TODO ? Was sind die weiteren Beiträge in den Daten? */}
         <P>
           TODO Entdecken Sie die Verschiedenen Maßnahmen, die zu diesem
           Handlungsfeld gehören, dort finden Sie auch viele Praxisbeispiele
         </P>
         <div className="mt-12 flex flex-col gap-5">
           {measure.examples.map((example) => (
-            <CardImageAndTextResponsive
+            <CardImageAndTextResponsiveImgFull
               key={example.slug}
               link={example.slug}
               image={getImage(example.image.image.localFile as any)}
             >
               <H3>{example.title}</H3>
               <Prose className="line-clamp-4">{example.shortDescription}</Prose>
-            </CardImageAndTextResponsive>
+            </CardImageAndTextResponsiveImgFull>
           ))}
         </div>
       </Section>
