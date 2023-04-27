@@ -2,8 +2,11 @@ import React from 'react';
 import { Fundings } from '~/components/StartPage';
 import { Hero, Content, HelmetSeo, Breadcrumbs } from '~/components/Layout';
 import { graphql, PageProps } from 'gatsby';
-import { Link } from '~/components/Link';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { Section } from '~/components/Layout/Section';
+import { Link } from '~/components/core/links/Link';
+import { SectionWithPagination } from '~/components/PageExample/SectionWithPagination';
+import { Pagination } from '~/components/PageExample/Pagination';
 
 const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
   data: { example },
@@ -23,69 +26,59 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
   return (
     <>
       <HelmetSeo title={example.measure.name} />
-      <Hero title="Wissensspeicher" />
-      <section>
-        <Content>
-          <div className="ml-10 mt-6">
-            <Breadcrumbs
-              names={[
-                'Wissensspeicher',
-                example.measure.topic.name,
-                example.measure.name,
-              ]}
-              prefix="../"
+      <Hero className="" title="Praxisbeispiele">
+        <Breadcrumbs
+          names={[
+            'Wissensspeicher',
+            example.measure.topic.name,
+            example.measure.name,
+          ]}
+          prefix="../"
+        />
+      </Hero>
+
+      <Section className="bg-lime-300">
+        <SectionWithPagination className="bg-white">
+          <Pagination pos={pos} prevSlug={prevSlug} nextSlug={nextSlug} />
+
+          <h1 className="text-center">{example.title}</h1>
+          <div>{example.shortDescription}</div>
+          {example.image && (
+            <GatsbyImage
+              image={getImage(example.image.image.localFile as any)}
+              alt="Titelbild"
             />
-          </div>
-          <div className="bg-purple-300 pl-2">
-            <div className="bg-white pl-6">
-              <h1 className="mt-6">{example.measure.name}</h1>
-            </div>
-          </div>
-          <div className="bg-green-500 p-10">
-            Praxisbesipiel
-            <Link to={`../${prevSlug}`}> Prev</Link>
-            {pos + 1}
-            <Link to={`../${nextSlug}`}> Next</Link>
-            <div className="bg-white">
-              <h1 className="text-center">{example.title}</h1>
-              <div>{example.shortDescription}</div>
-              {example.image && (
-                <GatsbyImage
-                  image={getImage(example.image.image.localFile as any)}
-                  alt="Titelbild"
-                />
-              )}
-              <h1 className="mt-8">Steckbrief:</h1>
-              <div>
-                <table className="min-w-full divide-y divide-gray-300">
-                  <tbody className="divide-y divide-gray-200 bg-white">
-                    {Object.keys(steckbiref).map((key) => (
-                      <tr key={key}>
-                        <td className="font-medium whitespace-nowrap py-4 pl-4 pr-3 text-sm text-gray-900 sm:pl-6">
-                          {steckbiref[key]}
-                        </td>
-                        <td className="px-3 py-4 text-sm text-gray-500">
-                          {example[key]}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <h1 className="mt-8">Beschreibung:</h1>
-              <div>{example.description.data.description}</div>
-              <h1 className="mt-8">Links:</h1>
-              <div>
-                {example.links.map(({ display, url }) => (
-                  <div key={url}>
-                    <a href={url}>{display || url}</a>
-                  </div>
+          )}
+          <h1 className="mt-8">Steckbrief:</h1>
+          <div>
+            <table className="min-w-full divide-y divide-gray-300">
+              <tbody className="divide-y divide-gray-200 bg-white">
+                {Object.keys(steckbiref).map((key) => (
+                  <tr key={key}>
+                    <td className="font-medium whitespace-nowrap py-4 pl-4 pr-3 text-sm text-gray-900 sm:pl-6">
+                      {steckbiref[key]}
+                    </td>
+                    <td className="px-3 py-4 text-sm text-gray-500">
+                      {example[key]}
+                    </td>
+                  </tr>
                 ))}
-              </div>
-            </div>
+              </tbody>
+            </table>
           </div>
-        </Content>
-      </section>
+          <h1 className="mt-8">Beschreibung:</h1>
+          <div>{example.description.data.description}</div>
+          <h1 className="mt-8">Links:</h1>
+          <div>
+            {example.links.map(({ display, url }) => (
+              <div key={url}>
+                <a href={url}>{display || url}</a>
+              </div>
+            ))}
+          </div>
+        </SectionWithPagination>
+      </Section>
+
       <div className="object-left pb-6 pt-28 ">
         <Fundings />
       </div>
