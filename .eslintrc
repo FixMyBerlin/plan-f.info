@@ -28,6 +28,8 @@
   ],
   // Docs: off=0, warn=1, error=2, see https://eslint.org/docs/user-guide/configuring/rules
   "rules": {
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/react-in-jsx-scope.md#disallow-missing-react-when-using-jsx-reactreact-in-jsx-scope
+    "react/react-in-jsx-scope": "off",
     "jest/prefer-strict-equal": "error",
     "jest/prefer-to-have-length": "warn",
     "prettier/prettier": "error",

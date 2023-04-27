@@ -1,4 +1,8 @@
 module.exports = {
+  // Allows the use of JSX without having to import React
+  // Docs https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/#jsxruntime
+  jsxRuntime: 'automatic',
+
   graphqlTypegen: true,
   // Required by 'gatsby-plugin-sitemap' Plugin
   siteMetadata: {
