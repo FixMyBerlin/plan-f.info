@@ -650,7 +650,7 @@ const DatenschutzPage = () => {
               </li>
             </ul>
           </div>
-          <div className="mt-8 mb-20">
+          <div className="mb-20 mt-8">
             <H2>Begriffsdefinitionen</H2>
             <p>
               In diesem Abschnitt erhalten Sie eine Übersicht über die in dieser

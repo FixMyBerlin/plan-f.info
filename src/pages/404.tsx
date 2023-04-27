@@ -9,7 +9,7 @@ const NotFound: React.FC = () => {
     <>
       <HelmetSeo noindex />
       <div className="flex h-full flex-col bg-purple-300">
-        <div className="bg-green-500 pt-20 pb-12">
+        <div className="bg-green-500 pb-12 pt-20">
           <Content>
             <Link to="/">
               <Logo />

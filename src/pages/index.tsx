@@ -25,7 +25,7 @@ const IndexPage: React.FC = () => {
           <p className="pt-6">
             Im Projekt Plan&nbsp;F werden vier Produkte erarbeitet:
           </p>
-          <ol className="mt-6 ml-12 list-decimal">
+          <ol className="ml-12 mt-6 list-decimal">
             <li>Ein komprimiertes und übersichtliches Handbuch</li>
             <li>Eine interaktive Webseite</li>
             <li>
@@ -975,7 +975,7 @@ const IndexPage: React.FC = () => {
             der Radverkehrsförderung veranschaulichen und dienen anderen
             Kommunen künftig als Orientierung und Vorbild.
           </p>
-          <div className="pt-6 pb-6">
+          <div className="pb-6 pt-6">
             <H2>Was steht noch aus? Die nächsten Schritte im Projekt</H2>
             <H3 className="!text-purple-300">Frühjahr 2023:</H3>
             <H3>Plan F Webseite</H3>
@@ -1023,7 +1023,7 @@ const IndexPage: React.FC = () => {
           </p>
         </Content>
       </section>
-      <div className="object-left pt-28 pb-6">
+      <div className="object-left pb-6 pt-28">
         <Fundings />
       </div>
     </>

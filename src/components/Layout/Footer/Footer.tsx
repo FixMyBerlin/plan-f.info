@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
       <Fundings />
 
       <footer
-        className="z-0 flex flex-col justify-between gap-6 bg-black py-10 px-10 text-sm sm:flex-row sm:px-12"
+        className="z-0 flex flex-col justify-between gap-6 bg-black px-10 py-10 text-sm sm:flex-row sm:px-12"
         aria-labelledby="footer-heading"
       >
         <div className="ga flex flex-col gap-8">

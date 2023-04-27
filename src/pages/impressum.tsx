@@ -55,7 +55,7 @@ const ImpressumPage = () => {
           <H2>Steuernummer</H2>
           <p>37/202/50875</p>
         </div>
-        <div className="mt-8 mb-20">
+        <div className="mb-20 mt-8">
           <H2>Information gemäß § 36 VSBG</H2>
           <p>
             Gemäß § 36 VSBG (Verbraucherstreitbeilegungsgesetz – Gesetz über die
