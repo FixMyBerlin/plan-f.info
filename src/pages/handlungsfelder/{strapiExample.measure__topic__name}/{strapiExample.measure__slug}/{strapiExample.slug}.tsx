@@ -6,9 +6,10 @@ import { ImageWithCopyright } from '~/components/Layout/ImageWithCopyright';
 import { Section } from '~/components/Layout/Section';
 import { CardText } from '~/components/PageExample/CardText';
 import { SectionWithPagination } from '~/components/PageExample/SectionWithPagination';
-import { Fundings } from '~/components/StartPage';
-import { H2, P } from '~/components/Text';
+import { LinkButtonWithArrow } from '~/components/PageTopic/LinkButtonWithArrow';
+import { H2, H3, P } from '~/components/Text';
 import { Prose } from '~/components/core/Prose';
+import { truncateString } from '~/components/utils/truncateString';
 
 const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
   data: { example },
@@ -79,6 +80,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
             <H2>Maßnahmenbeschreibung</H2>
             <Prose>{example.description.data.description}</Prose>
           </div>
+
           <div className="mt-12">
             <H2>Auswertung Praxisbeispiel</H2>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -94,20 +96,43 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
               />
             </div>
           </div>
-          <h1 className="mt-8">Links:</h1>
-          <div>
+
+          <div className="mt-12">
+            <H2>Links</H2>
             {example.links.map(({ display, url }) => (
-              <div key={url}>
-                <a href={url}>{display || url}</a>
+              <LinkButtonWithArrow href={url} key={url}>
+                {display || truncateString(url, 25)}
+              </LinkButtonWithArrow>
+            ))}
+          </div>
+
+          <div className="mt-12">
+            <H2>Auszeichnung</H2>
+            {example.awards.map((award) => (
+              <div className="flex">
+                {award.award.logo && (
+                  <ImageWithCopyright
+                    className="mt-8"
+                    copyright={award.award.logo.copyright}
+                  >
+                    <GatsbyImage
+                      className="h-12 flex-shrink-0"
+                      image={getImage(award.award.logo.image.localFile as any)}
+                      alt="Titelbild"
+                    />
+                  </ImageWithCopyright>
+                )}
+                <div className="flex flex-col justify-evenly">
+                  <H3>{award.award.name}</H3>
+                  <Prose className="line-clamp-4">
+                    {award.description.data.description}
+                  </Prose>
+                </div>
               </div>
             ))}
           </div>
         </SectionWithPagination>
       </Section>
-
-      <div className="object-left pb-6 pt-28 ">
-        <Fundings />
-      </div>
     </>
   );
 };
