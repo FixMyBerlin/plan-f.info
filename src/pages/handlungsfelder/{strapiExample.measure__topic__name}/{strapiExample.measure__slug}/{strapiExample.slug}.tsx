@@ -1,12 +1,11 @@
-import React from 'react';
-import { Fundings } from '~/components/StartPage';
-import { Hero, Content, HelmetSeo, Breadcrumbs } from '~/components/Layout';
 import { graphql, PageProps } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import React from 'react';
+import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
 import { Section } from '~/components/Layout/Section';
-import { Link } from '~/components/core/links/Link';
-import { SectionWithPagination } from '~/components/PageExample/SectionWithPagination';
 import { Pagination } from '~/components/PageExample/Pagination';
+import { SectionWithPagination } from '~/components/PageExample/SectionWithPagination';
+import { Fundings } from '~/components/StartPage';
 
 const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
   data: { example },

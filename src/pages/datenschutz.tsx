@@ -1,7 +1,6 @@
-import React from 'react';
-import { Hero, Content, HelmetSeo } from '~/components/Layout';
-import { H1, H2, H3 } from '~/components/Text';
+import { Content, HelmetSeo, Hero } from '~/components/Layout';
 import { TextLink } from '~/components/Link';
+import { H1, H2, H3 } from '~/components/Text';
 
 const DatenschutzPage = () => {
   const title = 'Datenschutz';

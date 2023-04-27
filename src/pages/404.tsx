@@ -1,8 +1,8 @@
 import React from 'react';
 import { Content, HelmetSeo } from '~/components/Layout';
+import Logo from '~/components/Layout/assets/Logo.svg';
 import { Link } from '~/components/Link';
 import { H1, H2 } from '~/components/Text';
-import Logo from '~/components/Layout/assets/Logo.svg';
 
 const NotFound: React.FC = () => {
   return (

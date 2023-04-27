@@ -1,6 +1,7 @@
-import { PageProps, graphql } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
+import { Prose } from '~/components/core/Prose';
 import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
 import { Article } from '~/components/Layout/Article';
 import { CardImageAndTextResponsiveImgFull } from '~/components/Layout/CardImageAndTextResponsiveImgFull';
@@ -9,7 +10,6 @@ import { CardWrapperThreeCols } from '~/components/Layout/CardWrapperThreeCols';
 import { Section } from '~/components/Layout/Section';
 import { LinkButtonWithArrow } from '~/components/PageTopic/LinkButtonWithArrow';
 import { H2, H3, P } from '~/components/Text';
-import { Prose } from '~/components/core/Prose';
 
 const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
   data: { measure },

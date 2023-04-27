@@ -1,6 +1,7 @@
-import { PageProps, graphql } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
+import { Prose } from '~/components/core/Prose';
 import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
 import { Article } from '~/components/Layout/Article';
 import { CardImageAndTextResponsive } from '~/components/Layout/CardImageAndTextResponsive';
@@ -8,7 +9,6 @@ import { CardWrapper } from '~/components/Layout/CardWrapper';
 import { Section } from '~/components/Layout/Section';
 import { LinkButtonWithArrow } from '~/components/PageTopic/LinkButtonWithArrow';
 import { H2, H3, P } from '~/components/Text';
-import { Prose } from '~/components/core/Prose';
 
 const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
   data: { topic },

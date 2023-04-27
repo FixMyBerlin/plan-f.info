@@ -1,18 +1,18 @@
 import React from 'react';
+import { Content, HelmetSeo, Hero } from '~/components/Layout';
+import { ButtonLink, TextLink } from '~/components/Link';
 import {
+  CEO,
+  FoldOut,
+  FotoCopyright,
+  fotos,
+  Fundings,
+  icons,
+  jury,
   Profile,
   ProfileGrid,
   QuoteBox,
-  Fundings,
-  FoldOut,
-  CEO,
-  jury,
-  FotoCopyright,
-  fotos,
-  icons,
 } from '~/components/StartPage';
-import { Hero, Content, HelmetSeo } from '~/components/Layout';
-import { ButtonLink, TextLink } from '~/components/Link';
 import { H1, H2, H3 } from '~/components/Text';
 
 const IndexPage: React.FC = () => {
