@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from '~/components/links/Link';
+import { Link } from '~/components/core/links/Link';
 import FacebookIcon from './assets/facebook-icon.svg'; // https://fontawesome.com/icons/twitter?s=brands
 import GithubIcon from './assets/github-icon.svg';
 import InstagramIcon from './assets/instagram-icon.svg';

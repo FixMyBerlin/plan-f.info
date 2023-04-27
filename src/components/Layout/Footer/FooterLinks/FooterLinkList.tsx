@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import React from 'react';
-import { Link } from '~/components/links/Link';
+import { Link } from '~/components/core/links/Link';
 import { FooterMenuItem } from '../const/footerLinks.const';
 
 type Props = {

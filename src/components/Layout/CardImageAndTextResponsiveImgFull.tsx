@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import React, { ReactNode } from 'react';
 import { Link } from '../Link';

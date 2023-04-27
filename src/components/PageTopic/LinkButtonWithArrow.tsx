@@ -1,7 +1,7 @@
 import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 import React, { ReactNode } from 'react';
-import { Link, LinkProps } from '../links/Link';
+import { Link, LinkProps } from '../core/links/Link';
 
 type Props = {
   children?: ReactNode;

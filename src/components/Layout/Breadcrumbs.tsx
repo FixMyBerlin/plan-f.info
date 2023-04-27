@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { HomeIcon } from '@heroicons/react/20/solid';
-import { Link } from '../links/Link';
+import { Link } from '../core/links/Link';
 
 type Props = { names: string[]; prefix?: string };
 
