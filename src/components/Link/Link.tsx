@@ -7,6 +7,7 @@ export type LinkProps = {
   className?: string;
   newWindow?: boolean;
   external?: boolean;
+  children: React.ReactNode;
 };
 
 // TODO: Refactor all those link components to share more logic
