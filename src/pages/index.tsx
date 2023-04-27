@@ -5,13 +5,12 @@ import {
   CEO,
   FoldOut,
   FotoCopyright,
-  fotos,
-  Fundings,
-  icons,
-  jury,
   Profile,
   ProfileGrid,
   QuoteBox,
+  fotos,
+  icons,
+  jury,
 } from '~/components/StartPage';
 import { H1, H2, H3 } from '~/components/Text';
 import { Link } from '~/components/core/links/Link';
@@ -1013,9 +1012,6 @@ const IndexPage: React.FC = () => {
           </p>
         </Content>
       </section>
-      <div className="object-left pb-6 pt-28">
-        <Fundings />
-      </div>
     </>
   );
 };
