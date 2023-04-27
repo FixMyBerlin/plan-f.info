@@ -17,9 +17,10 @@ export const TelLink: React.FC<Props> = ({
   children,
   ...props
 }) => {
+  const cleanTel = `${tel || children}`.replace(/[^0-9+]/g, '');
   return (
     <a
-      href={`tel:${tel || children}`}
+      href={`tel:${cleanTel}`}
       className={selectLinkStyle(button, className)}
       {...props}
     >
