@@ -1,14 +1,26 @@
+import clsx from 'clsx';
 import React from 'react';
 import { Link } from '../core/links/Link';
 
-type Props = {
+export type PaginationProps = {
+  sectionPosition: 'top' | 'bottom';
   pos: number;
   prevSlug: string;
   nextSlug: string;
 };
-export const Pagination: React.FC<Props> = ({ pos, prevSlug, nextSlug }) => {
+export const Pagination: React.FC<PaginationProps> = ({
+  pos,
+  prevSlug,
+  nextSlug,
+  sectionPosition,
+}) => {
   return (
-    <div className="w-full bg-gray-50 p-2 text-sm">
+    <div
+      className={clsx(
+        sectionPosition === 'top' ? 'rounded-t-3xl' : 'rounded-b-3xl',
+        'w-full bg-gray-50 p-2 text-sm'
+      )}
+    >
       <Link button href={`../${prevSlug}`}>
         {' '}
         Prev

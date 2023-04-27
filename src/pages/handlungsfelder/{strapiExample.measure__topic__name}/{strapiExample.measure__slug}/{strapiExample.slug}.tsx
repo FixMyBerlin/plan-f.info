@@ -1,11 +1,14 @@
-import { graphql, PageProps } from 'gatsby';
+import { PageProps, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
+import { ImageWithCopyright } from '~/components/Layout/ImageWithCopyright';
 import { Section } from '~/components/Layout/Section';
-import { Pagination } from '~/components/PageExample/Pagination';
+import { CardText } from '~/components/PageExample/CardText';
 import { SectionWithPagination } from '~/components/PageExample/SectionWithPagination';
 import { Fundings } from '~/components/StartPage';
+import { H2, P } from '~/components/Text';
+import { Prose } from '~/components/core/Prose';
 
 const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
   data: { example },
@@ -22,6 +25,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
     spatialStructure: 'Raumstruktur',
     localChallenges: 'Lokale Herausforderungen',
   };
+  console.log(example);
   return (
     <>
       <HelmetSeo title={example.measure.name} />
@@ -37,36 +41,59 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
       </Hero>
 
       <Section className="bg-lime-300">
-        <SectionWithPagination className="bg-white">
-          <Pagination pos={pos} prevSlug={prevSlug} nextSlug={nextSlug} />
-
-          <h1 className="text-center">{example.title}</h1>
-          <div>{example.shortDescription}</div>
+        <SectionWithPagination
+          className="bg-white"
+          pagination={{ pos, prevSlug, nextSlug }}
+        >
+          <H2>{example.title}</H2>
+          <Prose>{example.shortDescription}</Prose>
           {example.image && (
-            <GatsbyImage
-              image={getImage(example.image.image.localFile as any)}
-              alt="Titelbild"
-            />
+            <ImageWithCopyright
+              className="mt-8"
+              copyright={example.image.copyright}
+            >
+              <GatsbyImage
+                className=""
+                image={getImage(example.image.image.localFile as any)}
+                alt="Titelbild"
+              />
+            </ImageWithCopyright>
           )}
-          <h1 className="mt-8">Steckbrief:</h1>
-          <div>
-            <table className="min-w-full divide-y divide-gray-300">
-              <tbody className="divide-y divide-gray-200 bg-white">
-                {Object.keys(steckbiref).map((key) => (
-                  <tr key={key}>
-                    <td className="font-medium whitespace-nowrap py-4 pl-4 pr-3 text-sm text-gray-900 sm:pl-6">
-                      {steckbiref[key]}
-                    </td>
-                    <td className="px-3 py-4 text-sm text-gray-500">
-                      {example[key]}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="mt-8 rounded-br-3xl rounded-tl-3xl bg-lime-200 p-4 py-6">
+            <H2 className="">{example.commune}</H2>
+
+            {Object.keys(steckbiref).map((key) => (
+              <div
+                className="grid grid-cols-1 text-sm md:grid-cols-2 md:flex-row"
+                key={key}
+              >
+                <P className="whitespace-nowrap font-bold uppercase">
+                  {steckbiref[key]}
+                </P>
+                <P>{example[key]}</P>
+              </div>
+            ))}
           </div>
-          <h1 className="mt-8">Beschreibung:</h1>
-          <div>{example.description.data.description}</div>
+
+          <div className="mt-12">
+            <H2>Maßnahmenbeschreibung</H2>
+            <Prose>{example.description.data.description}</Prose>
+          </div>
+          <div className="mt-12">
+            <H2>Auswertung Praxisbeispiel</H2>
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              <CardText title="Ziele" list={['todo', 'todo']} />
+              <CardText
+                title="Dauer: Planung und Umsetzung"
+                list={['todo', 'todo']}
+              />
+              <CardText title="Ergebnisse" list={['todo', 'todo']} />
+              <CardText
+                title="Kosten / Mittelherkunft"
+                list={['todo', 'todo']}
+              />
+            </div>
+          </div>
           <h1 className="mt-8">Links:</h1>
           <div>
             {example.links.map(({ display, url }) => (
