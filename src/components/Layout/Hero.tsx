@@ -2,7 +2,6 @@ import clsx from 'clsx';
 import React, { ReactNode } from 'react';
 import { H2 } from '../Text';
 import { Section } from './Section';
-import { Navigation } from './Navigation/NavigationDesktop';
 
 type Props = {
   title: string;
