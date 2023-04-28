@@ -3,17 +3,17 @@ import { LinkProps } from './Link';
 
 // LINK
 export const linkStyles =
-  'underline underline-offset-4 decoration-black hover:decoration-purple-600 hover:text-purple-600';
+  'underline decoration-black hover:decoration-purple-600 hover:text-purple-600';
 
 const buttonBase = 'inline-flex py-2';
 
-// WHITE BUTTON  (primary - white/purple text)
+// WHITE BUTTON  (white/purple text)
 const whiteButtonBase =
-  'border-black text-black bg-white rounded-lg border-1 px-8';
+  'ring-black text-black bg-transparent rounded-lg ring-1 px-6';
 const whiteButtonStylesForLinkElement = clsx(
   buttonBase,
   whiteButtonBase,
-  'hover:border-0 hover:ring-2 hover:ring-purple-600', // hoverStyleForLinkElement
+  'hover:hover:ring-2 hover:ring-purple-600', // hoverStyleForLinkElement
   'active:bg-purple-600 active:text-white' // activeStyleForLinkElement
 );
 export const whiteButtonStyles = clsx(
@@ -23,12 +23,12 @@ export const whiteButtonStyles = clsx(
   'enabled:active:bg-purple-600 enabled:active:text-white' // activeStyleForButtonElement
 );
 
-// BUTTON BLACK  (primary - black/white text)
+// BUTTON BLACK  (black/white text)
 const blackButtonBase = 'text-white bg-black px-2';
 const blackButtonStylesForLinkElement = clsx(
   buttonBase,
   blackButtonBase,
-  'hover:border-0 hover:ring-2 hover:ring-purple-600', // hoverStyleForLinkElement
+  'hover:hover:ring-2 hover:ring-purple-600', // hoverStyleForLinkElement
   'active:bg-purple-600' // activeStyleForLinkElement
 );
 export const blackButtonStyles = clsx(

@@ -3,13 +3,12 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
 import { ImageWithCopyright } from '~/components/Layout/ImageWithCopyright';
+import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
 import { Section } from '~/components/Layout/Section';
 import { CardText } from '~/components/PageExample/CardText';
 import { SectionWithPagination } from '~/components/PageExample/SectionWithPagination';
-import { LinkButtonWithArrow } from '~/components/PageTopic/LinkButtonWithArrow';
 import { H2, H3, P } from '~/components/Text';
 import { Prose } from '~/components/core/Prose';
-import { truncateString } from '~/components/utils/truncateString';
 
 const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
   data: { example },
@@ -29,11 +28,14 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
     localChallenges: 'Lokale Herausforderungen (nicht in wireframes)',
     commune: 'Kommune (nicht in wireframes)',
   };
-  console.log(example.measure.name);
+  console.log(example.description);
   return (
     <>
       <HelmetSeo title={example.measure.name} />
-      <Hero className="" title="Praxisbeispiele">
+      <Hero
+        className="!mb-0 rounded-b-none bg-lime-300"
+        title="Praxisbeispiele"
+      >
         <Breadcrumbs
           names={[
             'Wissensspeicher',
@@ -44,7 +46,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
         />
       </Hero>
 
-      <Section className="bg-lime-300">
+      <Section className="bg-lime-300 pt-12">
         <SectionWithPagination
           className="bg-white"
           pagination={{
@@ -105,14 +107,13 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
             </div>
           </div>
 
-          <div className="mt-12">
-            <H2>Links</H2>
-            {example.links.map(({ display, url }) => (
-              <LinkButtonWithArrow href={url} key={url}>
-                {truncateString(display) || truncateString(url)}
-              </LinkButtonWithArrow>
-            ))}
-          </div>
+          <LinkListBlackButton
+            className="mt-12"
+            links={example.links}
+            titleMono
+            title="Links"
+          />
+
           <div className="mt-12">
             <H2>Auszeichnungen</H2>
             {example.awards.map((award) => (
@@ -120,13 +121,13 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
                 {award.award.logo && (
                   <ImageWithCopyright copyright={award.award.logo.copyright}>
                     <GatsbyImage
-                      className="h-12 flex-shrink-0"
+                      className="h-20 w-20 flex-shrink-0 md:h-36 md:w-36"
                       image={getImage(award.award.logo.image.localFile as any)}
                       alt="Titelbild"
                     />
                   </ImageWithCopyright>
                 )}
-                <div className="flex flex-col justify-evenly">
+                <div className="flex flex-col justify-start">
                   <H3>{award.award.name}</H3>
                   <Prose className="line-clamp-4">
                     {award.description.data.description}
@@ -151,7 +152,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
         </SectionWithPagination>
       </Section>
 
-      <Section className="bg-gray-300">
+      <Section className="mt-12 bg-gray-300">
         <H2>Weitere Beiträge</H2>
         <P>
           TODO Entdecken Sie die Verschiedenen Maßnahmen, die zu diesem
