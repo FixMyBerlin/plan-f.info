@@ -9,6 +9,7 @@ import { CardWrapper } from '~/components/Layout/CardWrapper';
 import { Section } from '~/components/Layout/Section';
 import { LinkButtonWithArrow } from '~/components/PageTopic/LinkButtonWithArrow';
 import { H2, H3, P } from '~/components/Text';
+import { truncateString } from '~/components/utils/truncateString';
 
 const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
   data: { topic },
@@ -43,7 +44,7 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
           <H3 className="uppercase">weitere Hinweise</H3>
           {topic.additionalResources.map((resource) => (
             <LinkButtonWithArrow href={resource.url}>
-              {resource.display}
+              {truncateString(resource.display) || truncateString(resource.url)}
             </LinkButtonWithArrow>
           ))}
         </div>

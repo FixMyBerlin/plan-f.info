@@ -109,7 +109,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
             <H2>Links</H2>
             {example.links.map(({ display, url }) => (
               <LinkButtonWithArrow href={url} key={url}>
-                {display || truncateString(url, 25)}
+                {truncateString(display) || truncateString(url)}
               </LinkButtonWithArrow>
             ))}
           </div>
@@ -149,6 +149,26 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
             Quelle: {example.sources.data.sources}
           </Prose>
         </SectionWithPagination>
+      </Section>
+
+      <Section className="bg-gray-300">
+        <H2>Weitere Beiträge</H2>
+        <P>
+          TODO Entdecken Sie die Verschiedenen Maßnahmen, die zu diesem
+          Handlungsfeld gehören, dort finden Sie auch viele Praxisbeispiele
+        </P>
+        <div className="mt-12 flex flex-col gap-5">
+          {/* {measure.examples.map((example) => (
+            <CardImageAndTextResponsiveImgFull
+              key={example.slug}
+              link={example.slug}
+              image={getImage(example.image.image.localFile as any)}
+            >
+              <H3>{example.title}</H3>
+              <Prose className="line-clamp-4">{example.shortDescription}</Prose>
+            </CardImageAndTextResponsiveImgFull>
+          ))} */}
+        </div>
       </Section>
     </>
   );

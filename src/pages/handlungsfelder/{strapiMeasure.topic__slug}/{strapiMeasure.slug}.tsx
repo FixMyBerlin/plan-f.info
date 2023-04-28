@@ -10,6 +10,7 @@ import { CardWrapperThreeCols } from '~/components/Layout/CardWrapperThreeCols';
 import { Section } from '~/components/Layout/Section';
 import { LinkButtonWithArrow } from '~/components/PageTopic/LinkButtonWithArrow';
 import { H2, H3, P } from '~/components/Text';
+import { truncateString } from '~/components/utils/truncateString';
 
 const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
   data: { measure },
@@ -45,7 +46,8 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
           {measure.additionalResources?.length &&
             measure.additionalResources.map((resource) => (
               <LinkButtonWithArrow href={resource.url}>
-                {resource.display}
+                {truncateString(resource.display) ||
+                  truncateString(resource.url)}
               </LinkButtonWithArrow>
             ))}
           {/* TODO Warum keine query Ergebnisse? */}
@@ -76,8 +78,9 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
         <H2>Weitere Beiträge</H2>
         {/* TODO ? Was sind die weiteren Beiträge in den Daten? */}
         <P>
-          TODO Entdecken Sie die Verschiedenen Maßnahmen, die zu diesem
-          Handlungsfeld gehören, dort finden Sie auch viele Praxisbeispiele
+          TODO Text aus WIreframes: Entdecken Sie die Verschiedenen Maßnahmen,
+          die zu diesem Handlungsfeld gehören, dort finden Sie auch viele
+          Praxisbeispiele
         </P>
         <div className="mt-12 flex flex-col gap-5">
           {measure.examples.map((example) => (
