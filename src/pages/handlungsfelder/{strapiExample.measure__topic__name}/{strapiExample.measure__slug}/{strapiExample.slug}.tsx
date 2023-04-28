@@ -19,14 +19,17 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
   const prevSlug = slugList[pos - 1] || slugList[slugList.length - 1];
   const nextSlug = slugList[pos + 1] || slugList[0];
   const steckbiref = {
+    subcategory: 'Maßnahmentyp',
     name: 'Name des Projektes',
-    commune: 'Kommune',
-    population: 'Einwohner*innen',
     countryState: 'Bundesland',
-    spatialStructure: 'Raumstruktur',
-    localChallenges: 'Lokale Herausforderungen',
+    population: 'Einwohner*innen',
+    spatialStructure: 'Besiedelung',
+    centrality: 'Lage',
+    'relatedOffice.data.relatedOffice': 'Zuständige Abteilung',
+    localChallenges: 'Lokale Herausforderungen (nicht in wireframes)',
+    commune: 'Kommune (nicht in wireframes)',
   };
-  console.log(example);
+  console.log(example.measure.name);
   return (
     <>
       <HelmetSeo title={example.measure.name} />
@@ -44,7 +47,12 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
       <Section className="bg-lime-300">
         <SectionWithPagination
           className="bg-white"
-          pagination={{ pos, prevSlug, nextSlug }}
+          pagination={{
+            pos,
+            prevSlug,
+            nextSlug,
+            total: example.measure.examples.length,
+          }}
         >
           <H2>{example.title}</H2>
           <Prose>{example.shortDescription}</Prose>
@@ -71,7 +79,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
                 <P className="whitespace-nowrap font-bold uppercase">
                   {steckbiref[key]}
                 </P>
-                <P>{example[key]}</P>
+                <Prose>{example[key]}</Prose>
               </div>
             ))}
           </div>
@@ -83,17 +91,17 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
 
           <div className="mt-12">
             <H2>Auswertung Praxisbeispiel</H2>
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-              <CardText title="Ziele" list={['todo', 'todo']} />
-              <CardText
-                title="Dauer: Planung und Umsetzung"
-                list={['todo', 'todo']}
-              />
-              <CardText title="Ergebnisse" list={['todo', 'todo']} />
-              <CardText
-                title="Kosten / Mittelherkunft"
-                list={['todo', 'todo']}
-              />
+            <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
+              <CardText title="Ziele">{example.goals.data.goals}</CardText>
+              <CardText title="Ergebnisse">
+                {example.results.data.results}
+              </CardText>
+              <CardText title="Dauer: Planung und Umsetzung">
+                {example.period}
+              </CardText>
+              <CardText title="Kosten / Mittelherkunft">
+                {example.goals.data.goals}
+              </CardText>
             </div>
           </div>
 
@@ -105,16 +113,12 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
               </LinkButtonWithArrow>
             ))}
           </div>
-
           <div className="mt-12">
-            <H2>Auszeichnung</H2>
+            <H2>Auszeichnungen</H2>
             {example.awards.map((award) => (
-              <div className="flex">
+              <div className="flex gap-2 md:gap-6">
                 {award.award.logo && (
-                  <ImageWithCopyright
-                    className="mt-8"
-                    copyright={award.award.logo.copyright}
-                  >
+                  <ImageWithCopyright copyright={award.award.logo.copyright}>
                     <GatsbyImage
                       className="h-12 flex-shrink-0"
                       image={getImage(award.award.logo.image.localFile as any)}
@@ -131,6 +135,19 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
               </div>
             ))}
           </div>
+
+          <div className="mt-12">
+            <H2>Besonderheiten (nicht in wireframes)</H2>
+            <Prose>{example.particularities.data.particularities}</Prose>
+          </div>
+          <div className="mt-12">
+            <H2>Anmerkungen</H2>
+            <Prose>{example.notes.data.notes}</Prose>
+          </div>
+
+          <Prose className="mt-12">
+            Quelle: {example.sources.data.sources}
+          </Prose>
         </SectionWithPagination>
       </Section>
     </>
@@ -153,6 +170,31 @@ export const query = graphql`
       funding {
         data {
           funding
+        }
+      }
+      goals {
+        data {
+          goals
+        }
+      }
+      results {
+        data {
+          results
+        }
+      }
+      sources {
+        data {
+          sources
+        }
+      }
+      particularities {
+        data {
+          particularities
+        }
+      }
+      notes {
+        data {
+          notes
         }
       }
       image {

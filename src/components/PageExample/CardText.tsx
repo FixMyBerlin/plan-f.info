@@ -1,23 +1,18 @@
 import clsx from 'clsx';
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { H2 } from '../Text';
+import { Prose } from '../core/Prose';
 
 type Props = {
   title: string;
-  list: string[];
+  children: ReactNode;
   className?: string;
 };
-export const CardText: React.FC<Props> = ({ title, list, className }) => {
+export const CardText: React.FC<Props> = ({ title, children, className }) => {
   return (
     <div className={clsx(className, 'rounded-b-3xl bg-gray-50')}>
       <H2 className=" bg-lime-200 p-4">{title}</H2>
-      <div className="-mt-6 p-4">
-        <ul className=" pl-4">
-          {list.map((item) => (
-            <li className="list-disc">{item}</li>
-          ))}
-        </ul>
-      </div>
+      <Prose className="-mt-6 p-4 pt-6">{children}</Prose>
     </div>
   );
 };
