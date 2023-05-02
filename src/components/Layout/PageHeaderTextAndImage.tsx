@@ -6,7 +6,7 @@ import { Article } from './Article';
 import { Section } from './Section';
 
 type Props = {
-  image: IGatsbyImageData;
+  image: IGatsbyImageData | null;
   children: ReactNode;
   className?: string;
 };
@@ -21,11 +21,13 @@ export const PageHeaderTextAndImage: React.FC<Props> = ({
         <Prose>{children}</Prose>
       </Article>
 
-      <GatsbyImage
-        className="h-72 w-72 flex-shrink-0"
-        image={image}
-        alt="Titelbild"
-      />
+      {image && (
+        <GatsbyImage
+          className="h-72 w-72 flex-shrink-0"
+          image={image}
+          alt="Titelbild"
+        />
+      )}
     </Section>
   );
 };

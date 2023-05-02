@@ -4,7 +4,7 @@ import { Link } from '../core/links/Link';
 
 type Props = {
   link: string;
-  image: IGatsbyImageData;
+  image: IGatsbyImageData | null;
   children: ReactNode;
 };
 export const CardImageAndTextVertical: React.FC<Props> = ({
@@ -15,11 +15,13 @@ export const CardImageAndTextVertical: React.FC<Props> = ({
   return (
     <Link className="!no-underline" href={link}>
       <div className="flex h-full flex-col rounded-b-3xl bg-white">
-        <GatsbyImage
-          className="h-52 w-full overflow-hidden"
-          alt={`Titelbild ${link}`}
-          image={image}
-        />
+        {image && (
+          <GatsbyImage
+            className="h-52 w-full overflow-hidden"
+            alt={`Titelbild ${link}`}
+            image={image}
+          />
+        )}
         <div className="p-4">{children}</div>
       </div>
     </Link>
