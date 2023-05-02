@@ -1,6 +1,7 @@
 import { PageProps, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
+import { CommunityEntriesSection } from '~/components/CommunityEntriesSection';
 import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
 import { ImageWithCopyright } from '~/components/Layout/ImageWithCopyright';
 import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
@@ -10,9 +11,9 @@ import { SectionWithPagination } from '~/components/PageExample/SectionWithPagin
 import { H2, H3, P } from '~/components/Text';
 import { Prose } from '~/components/core/Prose';
 
-const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
-  data: { example },
-}) => {
+const ExampleDetails: React.FC<
+  PageProps<Queries.ExampleDetailsAndCommunityEntriesQuery>
+> = ({ data: { example, communityEntries } }) => {
   const slugList = example.measure.examples.map(({ slug }) => slug);
   const pos = slugList.indexOf(example.slug);
   const prevSlug = slugList[pos - 1] || slugList[slugList.length - 1];
@@ -28,14 +29,11 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
     localChallenges: 'Lokale Herausforderungen (nicht in wireframes)',
     commune: 'Kommune (nicht in wireframes)',
   };
-  console.log(example.description);
+
   return (
     <>
       <HelmetSeo title={example.measure.name} />
-      <Hero
-        className="!mb-0 rounded-b-none bg-lime-300"
-        title="Praxisbeispiele"
-      >
+      <Hero className="!mb-0 rounded-b-none bg-lime-300" title={example.title}>
         <Breadcrumbs
           names={[
             'Wissensspeicher',
@@ -46,7 +44,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
         />
       </Hero>
 
-      <Section className="bg-lime-300 pt-12">
+      <Section className="mb-12 bg-lime-300 pt-12">
         <SectionWithPagination
           className="bg-white"
           pagination={{
@@ -152,25 +150,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
         </SectionWithPagination>
       </Section>
 
-      <Section className="mt-12 bg-gray-300">
-        <H2>Weitere Beiträge</H2>
-        <P>
-          TODO Entdecken Sie die Verschiedenen Maßnahmen, die zu diesem
-          Handlungsfeld gehören, dort finden Sie auch viele Praxisbeispiele
-        </P>
-        <div className="mt-12 flex flex-col gap-5">
-          {/* {measure.examples.map((example) => (
-            <CardImageAndTextResponsiveImgFull
-              key={example.slug}
-              link={example.slug}
-              image={getImage(example.image.image.localFile as any)}
-            >
-              <H3>{example.title}</H3>
-              <Prose className="line-clamp-4">{example.shortDescription}</Prose>
-            </CardImageAndTextResponsiveImgFull>
-          ))} */}
-        </div>
-      </Section>
+      <CommunityEntriesSection communityEntries={communityEntries} />
     </>
   );
 };
@@ -178,7 +158,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
 export default ExampleDetails;
 
 export const query = graphql`
-  query ExampleDetails($id: String!) {
+  query ExampleDetailsAndCommunityEntries($id: String!) {
     example: strapiExample(id: { eq: $id }) {
       title
       shortDescription
@@ -277,6 +257,30 @@ export const query = graphql`
         }
       }
       slug
+    }
+    communityEntries: allStrapiCommunityEntry {
+      nodes {
+        description {
+          data {
+            description
+          }
+        }
+        image {
+          image {
+            localFile {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+          }
+          copyright
+        }
+        title
+        website {
+          url
+          display
+        }
+      }
     }
   }
 `;
