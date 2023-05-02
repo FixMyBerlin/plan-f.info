@@ -3,6 +3,7 @@ import React from 'react';
 import { Footer } from './Footer';
 import { NavigationDesktopAndMobile } from './Navigation/NavigationDesktopAndMobile';
 import { SideNavigation } from './Navigation/SideNavigation';
+import { ScrollTopLink } from './ScrollTopLink';
 
 type Props = {
   children?: React.ReactNode;
@@ -12,7 +13,8 @@ const Layout: React.FC<Props & PageProps> = ({ path, children }) => {
   const dirs = path.split('/');
   return (
     <div className="relative flex h-full flex-col overflow-x-hidden bg-gray-200">
-      <div className="mx-auto w-full max-w-7xl bg-white">
+      <div className="relative mx-auto w-full max-w-7xl bg-white">
+        <ScrollTopLink />
         <NavigationDesktopAndMobile path={path} />
 
         <div className="mx-auto w-full bg-white">
