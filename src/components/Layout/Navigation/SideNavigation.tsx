@@ -27,7 +27,7 @@ export const SideNavigation: React.FC<Props> = ({ path }) => {
   const [folded, setFolded] = useState(true);
   return (
     <div className="h-full">
-      <nav className="flex h-screen items-center">
+      <nav className="flex h-[80vh] min-h-fit items-center">
         {/* Shadow for custom shape https://stackoverflow.com/questions/12855529/css-box-shadow-around-a-custom-shape */}
         {/* TODO maintain the height of teh side nav */}
         {!folded && (

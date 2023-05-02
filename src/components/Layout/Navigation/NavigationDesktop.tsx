@@ -8,7 +8,7 @@ type Props = { path: string };
 
 export const NavigationDesktop: React.FC<Props> = ({ path }) => {
   return (
-    <nav className="fixed z-10 flex w-full items-center justify-between gap-8 bg-white px-8 py-3 shadow">
+    <nav className="fixed z-10 flex w-full max-w-7xl items-center justify-between gap-8 bg-white px-8 py-3 shadow">
       <Link href="/">
         <Logo className="h-8 w-auto shrink-0" />
       </Link>
