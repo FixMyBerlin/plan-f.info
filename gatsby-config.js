@@ -116,6 +116,15 @@ module.exports = {
               },
             },
           },
+          {
+            singularName: 'community-entry',
+            queryParams: {
+              populate: {
+                image: { populate: '*' },
+                website: { populate: '*' },
+              },
+            },
+          },
         ],
         singleTypes: [],
       },
