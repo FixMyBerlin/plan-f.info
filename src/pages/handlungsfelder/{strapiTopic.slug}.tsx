@@ -5,11 +5,11 @@ import { Prose } from '~/components/core/Prose';
 import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
 import { CardImageAndTextResponsive } from '~/components/Layout/CardImageAndTextResponsive';
 import { CardWrapper } from '~/components/Layout/CardWrapper';
+import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
 import { PageHeaderTextAndImage } from '~/components/Layout/PageHeaderTextAndImage';
 import { Section } from '~/components/Layout/Section';
 import { LinkButtonWithArrow } from '~/components/PageTopic/LinkButtonWithArrow';
 import { H2, H3, P } from '~/components/Text';
-import { truncateString } from '~/components/utils/truncateString';
 
 const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
   data: { topic },
@@ -28,19 +28,17 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
 
       <Section className="mb-20 flex flex-col  gap-10 sm:flex-row sm:gap-20">
         <div className="flex flex-col items-start gap-5">
-          <H3 className="uppercase">Leitfäden (nicht in Daten)</H3>
-          <LinkButtonWithArrow href="/">Leitfaden 1</LinkButtonWithArrow>
-          <LinkButtonWithArrow href="/">Leitfaden 2</LinkButtonWithArrow>
-          {/* TODO ? */}
+          <div className="flex flex-col items-start gap-5">
+            <H3 className="uppercase">Leitfäden (nicht in Daten)</H3>
+            <LinkButtonWithArrow href="/">Leitfaden 1</LinkButtonWithArrow>
+            <LinkButtonWithArrow href="/">Leitfaden 2</LinkButtonWithArrow>
+          </div>
         </div>
-        <div className="flex flex-col items-start gap-5">
-          <H3 className="uppercase">weitere Hinweise</H3>
-          {topic.additionalResources.map((resource) => (
-            <LinkButtonWithArrow href={resource.url}>
-              {truncateString(resource.display) || truncateString(resource.url)}
-            </LinkButtonWithArrow>
-          ))}
-        </div>
+
+        <LinkListBlackButton
+          links={topic.additionalResources}
+          title="weitere Hinweise"
+        />
       </Section>
 
       <Section className="bg-green-500">
@@ -53,8 +51,10 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
           {topic.measures.map((measure) => (
             <CardImageAndTextResponsive
               key={measure.slug}
-              link={measure.slug}
-              image={getImage(measure.image.image.localFile as any)}
+              link={measure.slug || '/'} // This is only quick fix - slug should be Pflichtfpeld
+              image={
+                measure.image && getImage(measure.image.image.localFile as any)
+              }
             >
               <H3>{measure.name}</H3>
               <Prose className="line-clamp-4">

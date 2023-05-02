@@ -39,6 +39,16 @@ const MeasureDetails: React.FC<
         links={measure.additionalResources}
         title="weitere Hinweise"
       />
+
+      <div className="flex flex-col items-start gap-5">
+        <H3 className="uppercase">Fördermöglichkeiten (nicht in Daten)</H3>
+        <LinkButtonWithArrow href="/">
+          Fördermöglichkeiten 1
+        </LinkButtonWithArrow>
+        <LinkButtonWithArrow href="/">
+          Fördermöglichkeiten 2
+        </LinkButtonWithArrow>
+      </div>
     </Section>
 
     <Section className="mb-12 bg-lime-300">
