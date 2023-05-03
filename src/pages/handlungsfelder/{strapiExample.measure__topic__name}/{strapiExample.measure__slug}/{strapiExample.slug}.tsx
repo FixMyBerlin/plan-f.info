@@ -26,7 +26,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
       <Hero title="Handlungsfelder" />
       <section>
         <Content>
-          <div className="mt-6 ml-10">
+          <div className="ml-10 mt-6">
             <Breadcrumbs
               names={[
                 'Handlungsfelder',
@@ -41,7 +41,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
               <h1 className="mt-6">{example.measure.name}</h1>
             </div>
           </div>
-          <div className="bg-dark-green py-10 px-10">
+          <div className="bg-dark-green px-10 py-10">
             Praxisbesipiel
             <Link to={`../${prevSlug}`}> Prev</Link>
             {pos + 1}
@@ -86,7 +86,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
           </div>
         </Content>
       </section>
-      <div className="object-left pt-28 pb-6">
+      <div className="object-left pb-6 pt-28">
         <Fundings />
       </div>
     </>
@@ -104,7 +104,11 @@ export const query = graphql`
       commune
       population
       spatialStructure
-      localChallenges
+      localChallenges {
+        data {
+          localChallenges
+        }
+      }
       period
       funding {
         data {

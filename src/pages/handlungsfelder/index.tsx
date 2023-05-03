@@ -42,7 +42,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
           ))}
         </Content>
       </section>
-      <div className="object-left pt-28 pb-6">
+      <div className="object-left pb-6 pt-28">
         <Fundings />
       </div>
     </>

@@ -15,11 +15,8 @@ module.exports = {
     // Test with `npm run build && npm run serve` to validate server side rendering (with rehydration)
     'gatsby-plugin-react-helmet',
     // Docs https://www.gatsbyjs.com/plugins/gatsby-plugin-image/
-    `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
     // TailwindCSS needs PostCSS, https://tailwindcss.com/docs/guides/gatsby
     'gatsby-plugin-postcss',
-    'gatsby-transformer-sharp',
     {
       resolve: `gatsby-plugin-layout`,
       options: {
@@ -94,7 +91,6 @@ module.exports = {
             queryParams: {
               populate: {
                 topic: { populate: '*' },
-                image: { populate: '*' },
                 additionalResources: { populate: '*' },
                 examples: { populate: '*' },
               },
@@ -123,5 +119,8 @@ module.exports = {
         stripQueryString: true,
       },
     },
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    'gatsby-transformer-sharp',
   ],
 };

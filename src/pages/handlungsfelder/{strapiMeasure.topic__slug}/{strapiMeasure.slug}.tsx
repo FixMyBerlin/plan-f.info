@@ -13,7 +13,7 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
       <Hero title="Handlungsfelder" />
       <section className="pt-1">
         <Content>
-          <div className="mt-6 ml-10">
+          <div className="ml-10 mt-6">
             <Breadcrumbs
               names={['Handlungsfelder', measure.topic.name, measure.name]}
             />
@@ -24,7 +24,7 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
               <div className="mt-2">{measure.description.data.description}</div>
             </div>
           </div>
-          <div className="relative bg-dark-green  px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28">
+          <div className="relative bg-dark-green  px-4 pb-20 pt-16 sm:px-6 lg:px-8 lg:pb-28 lg:pt-24">
             <div className="relative mx-auto max-w-7xl">
               <div className="text-left">
                 <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -59,7 +59,7 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
                           <p className="text-xl font-semibold text-gray-900">
                             {example.title}
                           </p>
-                          <p className="mt-3 text-base text-gray-500 line-clamp-3">
+                          <p className="mt-3 line-clamp-3 text-base text-gray-500">
                             {example.shortDescription}
                           </p>
                         </Link>
@@ -72,7 +72,7 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
           </div>
         </Content>
       </section>
-      <div className="object-left pt-28 pb-6">
+      <div className="object-left pb-6 pt-28">
         <Fundings />
       </div>
     </>
@@ -85,16 +85,6 @@ export const query = graphql`
   query MeasureDetails($id: String!) {
     measure: strapiMeasure(id: { eq: $id }) {
       name
-      image {
-        image {
-          localFile {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
-        }
-        copyright
-      }
       description {
         data {
           description
