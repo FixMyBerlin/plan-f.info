@@ -88,8 +88,8 @@ module.exports = {
               populate: {
                 measures: { populate: '*' },
                 additionalResources: { populate: '*' },
+                guidelines: { populate: '*' },
                 image: { populate: '*' },
-                examples: { populate: '*' },
               },
             },
           },
@@ -99,7 +99,9 @@ module.exports = {
               populate: {
                 topic: { populate: '*' },
                 image: { populate: '*' },
-                additionalResources: { populate: '*' },
+                additonalResources: { populate: '*' },
+                guidelines: { populate: '*' },
+                fundings: { populate: '*' },
                 examples: { populate: '*' },
               },
             },
