@@ -74,9 +74,8 @@ export const NavigationMobile: React.FC<Props> = ({ path }) => {
                   {key}
                   {key === 'Wissensspeicher' &&
                     nodes.map((topic) => (
-                      <li className="list-none pl-3.5">
+                      <li className="list-none pl-3.5" key={topic.name}>
                         <Link
-                          key={topic.name}
                           href={`${menuItems[key]}/${topic.slug}`}
                           className={clsx(
                             '!text-sm !no-underline',

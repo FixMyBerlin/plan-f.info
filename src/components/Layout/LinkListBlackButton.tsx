@@ -29,7 +29,7 @@ export const LinkListBlackButton: React.FC<Props> = ({
         {!titleMono ? <H3 className="uppercase">{title}</H3> : <H2>{title}</H2>}
         <div className="flex flex-col items-start gap-5">
           {links.map((resource) => (
-            <LinkButtonWithArrow href={resource.url}>
+            <LinkButtonWithArrow href={resource.url} key={resource.url}>
               {truncateString(resource.display) || truncateString(resource.url)}
             </LinkButtonWithArrow>
           ))}
@@ -42,19 +42,16 @@ export const LinkListBlackButton: React.FC<Props> = ({
       {!titleMono ? <H3 className="uppercase">{title}</H3> : <H2>{title}</H2>}
       <div className="flex flex-col items-start gap-5">
         {links.slice(0, 2).map((resource) => (
-          <LinkButtonWithArrow href={resource.url}>
+          <LinkButtonWithArrow href={resource.url} key={resource.url}>
             {truncateString(resource.display) || truncateString(resource.url)}
           </LinkButtonWithArrow>
         ))}
         {isExpand &&
-          links
-            .slice(2)
-            .map((resource) => (
-              <LinkButtonWithArrow href={resource.url}>
-                {truncateString(resource.display) ||
-                  truncateString(resource.url)}
-              </LinkButtonWithArrow>
-            ))}
+          links.slice(2).map((resource) => (
+            <LinkButtonWithArrow href={resource.url} key={resource.url}>
+              {truncateString(resource.display) || truncateString(resource.url)}
+            </LinkButtonWithArrow>
+          ))}
         <button
           className="flex items-center gap-2"
           type="button"
