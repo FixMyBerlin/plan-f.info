@@ -49,6 +49,7 @@
     "gatsby-plugin-sharp": "^5.9",
     "gatsby-plugin-sitemap": "^6.9",
     "gatsby-source-strapi": "^3.2.0",
+    "gatsby-transformer-remark": "^6.9.0",
     "gatsby-transformer-sharp": "^5.9",
     "itemsjs": "^2.1.15",
     "query-string": "^7.1.1",
