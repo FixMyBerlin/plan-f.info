@@ -1,5 +1,5 @@
+import clsx from 'clsx';
 import React, { ReactNode } from 'react';
-import { classNames } from '../utils';
 
 type Props = {
   id?: string;
@@ -7,14 +7,13 @@ type Props = {
   className?: string;
 };
 
+// p & heading configuaretions here should be always in sync with Prose.tsx
+
 export const H1: React.FC<Props> = ({ id, className, children }) => {
   return (
     <h1
       id={id}
-      className={classNames(
-        'pb-4 font-apercuMono text-[32px] leading-[44px]',
-        className
-      )}
+      className={clsx('mb-3 text-3xl font-bold md:mb-6 md:text-4xl', className)}
     >
       {children}
     </h1>
@@ -25,8 +24,8 @@ export const H2: React.FC<Props> = ({ id, className, children }) => {
   return (
     <h2
       id={id}
-      className={classNames(
-        'pb-2 font-apercu text-[32px] font-bold text-dark-gray',
+      className={clsx(
+        'mb-3 mt-0.5 font-mono text-xl font-normal md:mb-6 md:mt-1 md:text-2xl',
         className
       )}
     >
@@ -39,12 +38,25 @@ export const H3: React.FC<Props> = ({ id, className, children }) => {
   return (
     <h3
       id={id}
-      className={classNames(
-        'pb-1 font-apercu text-[24px] font-bold text-dark-gray',
+      className={clsx(
+        'mb-3 mt-2 text-base font-bold md:mb-6 md:mt-4 md:text-xl ',
         className
       )}
     >
       {children}
     </h3>
+  );
+};
+export const P: React.FC<Props> = ({ id, className, children }) => {
+  return (
+    <p
+      id={id}
+      className={clsx(
+        'mb-1 mt-1 text-sm leading-relaxed md:mb-2 md:mt-2 md:text-base',
+        className
+      )}
+    >
+      {children}
+    </p>
   );
 };

@@ -1,14 +1,13 @@
-import React from 'react';
-import { Hero, Content, HelmetSeo } from '~/components/Layout';
-import { H1, H2, H3 } from '~/components/Text';
-import { TextLink } from '~/components/Link';
+import { Content, HelmetSeo, Hero } from '~/components/Layout';
+import { H1, H2, H3 } from '~/components/Text/Headings';
+import { Link } from '~/components/core/links/Link';
 
 const DatenschutzPage = () => {
   const title = 'Datenschutz';
   return (
     <>
       <HelmetSeo noindex title={title} />
-      <Hero title={title} />
+      <Hero className="bg-green-300" title={title} />
       <Content>
         <div className="mt-16">
           <H1>Datenschutzvereinbarung</H1>
@@ -41,9 +40,9 @@ const DatenschutzPage = () => {
           <p className="font-bold">Fair Spaces GmbH</p>
           <p className="mt-2">
             Impressum:&nbsp;
-            <TextLink to="http://fair-spaces.de/home/impressum/">
+            <Link href="http://fair-spaces.de/home/impressum/">
               www.fair-spaces.de
-            </TextLink>
+            </Link>
           </p>
         </div>
         <div className="mt-8">
@@ -86,9 +85,9 @@ const DatenschutzPage = () => {
           <p className="mt-2">
             Eine Liste der Aufsichtsbehörden (für den nichtöffentlichen Bereich)
             mit Anschrift finden Sie unter:&nbsp;
-            <TextLink to="https://www.bfdi.bund.de/DE/Service/Anschriften/Laender/Laender-node.html">
+            <Link href="https://www.bfdi.bund.de/DE/Service/Anschriften/Laender/Laender-node.html">
               bfdi.bund.de
-            </TextLink>
+            </Link>
           </p>
         </div>
         <div className="mt-8">
@@ -256,9 +255,9 @@ const DatenschutzPage = () => {
             Standardschutzklauseln der EU-Kommission, beim Vorliegen von
             Zertifizierungen oder verbindlicher internen Datenschutzvorschriften
             verarbeiten (Art. 44 bis 49 DSGVO,{' '}
-            <TextLink to="https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection_de">
+            <Link href="https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection_de">
               Informationsseite
-            </TextLink>{' '}
+            </Link>{' '}
             der EU-Kommission.
           </p>
         </div>
@@ -447,9 +446,9 @@ const DatenschutzPage = () => {
             <p className="mt-2">
               Näheres zur Datenverarbeitung mittels Heyflow findet sich
               auf:&nbsp;
-              <TextLink to="https://heyflow.app/de/datenschutz?">
+              <Link href="https://heyflow.app/de/datenschutz?">
                 heyflow.app
-              </TextLink>
+              </Link>
             </p>
           </div>
           <div className="mt-8">
@@ -650,7 +649,7 @@ const DatenschutzPage = () => {
               </li>
             </ul>
           </div>
-          <div className="mt-8 mb-20">
+          <div className="mb-20 mt-8">
             <H2>Begriffsdefinitionen</H2>
             <p>
               In diesem Abschnitt erhalten Sie eine Übersicht über die in dieser

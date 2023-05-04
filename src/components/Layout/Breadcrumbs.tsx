@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'gatsby';
+
 import { HomeIcon } from '@heroicons/react/20/solid';
+import { Link } from '../core/links/Link';
 
 type Props = { names: string[]; prefix?: string };
 
@@ -8,11 +9,14 @@ export const Breadcrumbs: React.FC<Props> = ({ names, prefix = './' }) => {
   const n = names.length;
   return (
     <nav className="flex" aria-label="Breadcrumb">
-      <ol className="flex items-center space-x-4">
+      <ol className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
         <li>
           <div>
-            <Link to="/" className="text-gray-400 hover:text-gray-500">
-              <HomeIcon className="h-5 w-5 flex-shrink-0" aria-hidden="true" />
+            <Link href="/">
+              <HomeIcon
+                className="mb-2 h-4 w-4 flex-shrink-0 sm:mb-0"
+                aria-hidden="true"
+              />
               <span className="sr-only">Home</span>
             </Link>
           </div>
@@ -21,7 +25,7 @@ export const Breadcrumbs: React.FC<Props> = ({ names, prefix = './' }) => {
           <li key={name}>
             <div className="flex items-center">
               <svg
-                className="h-5 w-5 flex-shrink-0 text-gray-300"
+                className="h-5 w-5 flex-shrink-0"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
                 viewBox="0 0 20 20"
@@ -30,8 +34,8 @@ export const Breadcrumbs: React.FC<Props> = ({ names, prefix = './' }) => {
                 <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
               </svg>
               <Link
-                to={prefix + '../'.repeat(n - i - 1)}
-                className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
+                className="pl-2 text-sm no-underline"
+                href={prefix + '../'.repeat(n - i - 1)}
               >
                 {name}
               </Link>

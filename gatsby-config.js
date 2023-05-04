@@ -1,4 +1,8 @@
 module.exports = {
+  // Allows the use of JSX without having to import React
+  // Docs https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/#jsxruntime
+  jsxRuntime: 'automatic',
+
   graphqlTypegen: true,
   // Required by 'gatsby-plugin-sitemap' Plugin
   siteMetadata: {
@@ -81,8 +85,8 @@ module.exports = {
               populate: {
                 measures: { populate: '*' },
                 additionalResources: { populate: '*' },
+                guidelines: { populate: '*' },
                 image: { populate: '*' },
-                examples: { populate: '*' },
               },
             },
           },
@@ -91,7 +95,10 @@ module.exports = {
             queryParams: {
               populate: {
                 topic: { populate: '*' },
-                additionalResources: { populate: '*' },
+                image: { populate: '*' },
+                additonalResources: { populate: '*' },
+                guidelines: { populate: '*' },
+                fundings: { populate: '*' },
                 examples: { populate: '*' },
               },
             },
@@ -105,6 +112,15 @@ module.exports = {
                 image: { populate: '*' },
                 awards: { populate: '*' },
                 relatedTopic: { populate: '*' },
+              },
+            },
+          },
+          {
+            singularName: 'community-entry',
+            queryParams: {
+              populate: {
+                image: { populate: '*' },
+                website: { populate: '*' },
               },
             },
           },

@@ -1,7 +1,9 @@
-import React from 'react';
 import { PageProps } from 'gatsby';
+import React from 'react';
 import { Footer } from './Footer';
-import { Navigation } from '.';
+import { NavigationDesktopAndMobile } from './Navigation/NavigationDesktopAndMobile';
+import { SideNavigation } from './Navigation/SideNavigation';
+import { ScrollTopLink } from './ScrollTopLink';
 
 type Props = {
   children?: React.ReactNode;
@@ -10,15 +12,26 @@ type Props = {
 const Layout: React.FC<Props & PageProps> = ({ path, children }) => {
   const dirs = path.split('/');
   return (
-    <div className="relative flex h-full flex-col overflow-x-hidden text-[16px] text-dark-gray">
-      <div className="flex flex-row">
-        <Navigation
-          path={`${dirs.slice(0, Math.min(dirs.length - 1, 4)).join('/')}/`}
-        />
+    <div className="relative flex h-full flex-col overflow-x-hidden bg-gray-200">
+      <div className="relative mx-auto w-full max-w-7xl bg-white">
+        <ScrollTopLink />
+        <NavigationDesktopAndMobile path={path} />
 
-        <main className="flex-grow">{children}</main>
+        <div className="mx-auto w-full bg-white">
+          <div className="flex w-full flex-row">
+            <div className="hidden md:block">
+              <SideNavigation
+                path={`${dirs
+                  .slice(0, Math.min(dirs.length - 1, 4))
+                  .join('/')}/`}
+              />
+            </div>
+
+            <main className="flex-grow">{children}</main>
+          </div>
+          <Footer />
+        </div>
       </div>
-      <Footer />
     </div>
   );
 };

@@ -1,7 +1,13 @@
+import { PageProps, graphql } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
-import { Fundings } from '~/components/StartPage';
-import { Hero, Content, HelmetSeo, Breadcrumbs } from '~/components/Layout';
-import { graphql, PageProps, Link } from 'gatsby';
+import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
+import { Article } from '~/components/Layout/Article';
+import { CardImageAndTextResponsive } from '~/components/Layout/CardImageAndTextResponsive';
+import { CardWrapper } from '~/components/Layout/CardWrapper';
+import { Section } from '~/components/Layout/Section';
+import { H2, H3, P } from '~/components/Text';
+import { Prose } from '~/components/core/Prose';
 
 export const query = graphql`
   query TopicTeasers {
@@ -9,6 +15,13 @@ export const query = graphql`
       nodes {
         slug
         name
+        image {
+          localFile {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
         description {
           data {
             description
@@ -22,29 +35,64 @@ export const query = graphql`
 const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
   data: { topics },
 }) => {
-  const title = 'Handlungsfelder';
+  const title = 'Wissensspeicher';
   return (
     <>
       <HelmetSeo title={title} />
-      <Hero title={title}>
+      <Hero title={title} className="bg-purple-100">
         <Breadcrumbs names={[title]} />
       </Hero>
-      <section className="pt-1">
-        <h1>Liste der Handlungsfelder</h1>
-        <Content>
+      {/* <Link button="black" href="https://tailwindcss.com/docs/ring-width">
+        Hallo Test
+      </Link> */}
+      <Section className="mb-12">
+        <Article>
+          <P>
+            Kommunikation und Öffentlichkeitsarbeit sind ein zentrales
+            Handlungsfeld der Radverkehrsförderung, welches insbesondere
+            Personen, die (noch) nicht Fahrrad fahren, adressiert und erreichen
+            möchte. Neben Maßnahmen im Bereich #Marketing und Kommunikation
+            können auch #Innovationen und #Modellprojekte einen wichtigen
+            Beitrag dazu leisten, dass das Fahrrad als Mobilitätsmittel beworben
+            und die Bevölkerung zum Radfahren motiviert wird. Darüber hinaus ist
+            es wichtig, dass Kommunen selbst als #Vorbild auftreten und den
+            Radverkehr in der eigenen Verwaltung fördern. Ein positives Framing
+            des Fahrradfahrens durch gute Öffentlichkeitsarbeit zielt darauf ab,
+            das Fahrrad als Alltagsverkehrsmittel zu „normalisieren“.
+            Gleichzeitig ist die Verbreitung wichtiger Informationen, zum
+            Beispiel über radverkehrsbezogene Angebote und Möglichkeiten in
+            Ihrer Kommune, ein wichtiger Baustein, um mehr Menschen das
+            Radfahren zugänglich zu machen. Gute Praxisbeispiele zeigen auf, wie
+            verschiedene Maßnahmen aus dem Handlungsfeld Kommunikation und
+            Öffentlichkeitsarbeit in den Kommunen umgesetzt wurden und dazu
+            beitragen, den Radverkehr zu fördern. Wichtige Leitfäden und
+            Literaturtipps unterstützen Sie in der Umsetzung.
+          </P>
+        </Article>
+      </Section>
+      <Section className="bg-purple-300">
+        <H2>Handlungsfelder</H2>
+        <P>
+          Entdecken Sie die verschiedenen Handlungsfelder. Dort finden Sie
+          Maßnahmen und deren zugehörigen Praxisbeispiele
+        </P>
+        <CardWrapper className="mt-10">
           {topics.nodes.map((topic) => (
-            <Link to={topic.slug}>
-              <div className="pt-6">
-                <h1>{topic.name}</h1>
-                {topic.description.data.description}
-              </div>
-            </Link>
+            <CardImageAndTextResponsive
+              key={topic.slug}
+              link={topic.slug}
+              image={topic.image && getImage(topic.image.localFile as any)}
+            >
+              <H3>{topic.name}</H3>
+              {topic.description?.data?.description && (
+                <Prose className="line-clamp-4">
+                  {topic.description.data.description}
+                </Prose>
+              )}
+            </CardImageAndTextResponsive>
           ))}
-        </Content>
-      </section>
-      <div className="object-left pb-6 pt-28">
-        <Fundings />
-      </div>
+        </CardWrapper>
+      </Section>
     </>
   );
 };

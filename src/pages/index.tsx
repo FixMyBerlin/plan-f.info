@@ -1,19 +1,19 @@
 import React from 'react';
+import { Content, HelmetSeo, Hero } from '~/components/Layout';
+
 import {
+  CEO,
+  FoldOut,
+  FotoCopyright,
   Profile,
   ProfileGrid,
   QuoteBox,
-  Fundings,
-  FoldOut,
-  CEO,
-  jury,
-  FotoCopyright,
   fotos,
   icons,
+  jury,
 } from '~/components/StartPage';
-import { Hero, Content, HelmetSeo } from '~/components/Layout';
-import { ButtonLink, TextLink } from '~/components/Link';
 import { H1, H2, H3 } from '~/components/Text';
+import { Link } from '~/components/core/links/Link';
 
 const IndexPage: React.FC = () => {
   const title = 'Impulse für die kommunale Fahrradmobilität';
@@ -25,7 +25,7 @@ const IndexPage: React.FC = () => {
           <p className="pt-6">
             Im Projekt Plan&nbsp;F werden vier Produkte erarbeitet:
           </p>
-          <ol className="mt-6 ml-12 list-decimal">
+          <ol className="ml-12 mt-6 list-decimal">
             <li>Ein komprimiertes und übersichtliches Handbuch</li>
             <li>Eine interaktive Webseite</li>
             <li>
@@ -207,7 +207,7 @@ const IndexPage: React.FC = () => {
           </FoldOut>
         </Content>
       </section>
-      <section className="mt-16 bg-pastel-purple pb-16 pt-8">
+      <section className="mt-16 bg-purple-300 pb-16 pt-8">
         <Content>
           <div className="pb-6">
             <H1>Plan F Award 2022</H1>
@@ -275,7 +275,7 @@ const IndexPage: React.FC = () => {
                 Der Zweckverband LANDFOLGE Garzweiler belegt mit dem Rheinischen
                 Radverkehrsrevier den 3. Platz (Gesamtwertung) des Plan F Awards
                 2022 und hat das{' '}
-                <TextLink to="#dritter">Plan F Online-Audit</TextLink> in einem
+                <Link href="#dritter">Plan F Online-Audit</Link>hrefn einem
                 Handlungsfeld gewonnen.
               </QuoteBox>
               <FotoCopyright data={fotos.g1} />
@@ -420,19 +420,18 @@ const IndexPage: React.FC = () => {
               <QuoteBox>
                 Die Verbandsgemeinde Wallmerod ist belegt mit dem
                 Wäller-ALLEnweg den 1. Platz (Gesamtwertung) des Plan F Awards
-                2022 und hat das <TextLink to="#erster">Plan F Audit</TextLink>{' '}
+                2022 und hat das <Link href="#erster">Plan F Audit</Link>{' '}
                 gewonnen, welches vom 17. - 21. Oktober vor Ort durchgeführt
                 wurde.
               </QuoteBox>
               <p className="pt-6">
                 In einem kurzen{' '}
-                <TextLink
-                  newWindow
-                  to="
+                <Link
+                  href="
                 https://www.facebook.com/watch/?v=5382383398456066"
                 >
                   Video
-                </TextLink>{' '}
+                </Link>{' '}
                 beantwortet die Verbandsgemeinde die drei häufigsten Fragen zu
                 dem neuen Radweg:
               </p>
@@ -501,19 +500,17 @@ const IndexPage: React.FC = () => {
               <QuoteBox>
                 Die Stadt Aachen belegt mit der Kommunikation rund um den
                 Radentscheid den 2. Platz (Gesamtwertung) des Plan F Awards 2022
-                und hat das{' '}
-                <TextLink to="#zweiter">Plan F Online-Audit</TextLink> gewonnen.
+                und hat das <Link href="#zweiter">Plan F Online-Audit</Link>{' '}
+                gewonnen.
               </QuoteBox>
               <p>
                 Das Video zur Jahresveranstaltung Radentscheid 2022 gibt es{' '}
-                <TextLink
-                  to="
+                <Link
+                  href="
                 https://www.youtube.com/watch?v=MPveXoqAnjc&ab_channel=StadtAachen"
-                  external
-                  newWindow
                 >
                   hier
-                </TextLink>
+                </Link>
               </p>
               <FotoCopyright data={fotos.k1} />
             </FoldOut>
@@ -780,9 +777,9 @@ const IndexPage: React.FC = () => {
             <H2>Alle Einreichungen</H2>
             Hier finden sie die Mappe aller eingereichten Projekte zum Download:
             <p className="pt-6">
-              <ButtonLink large newWindow to="Projektmappe_PlanfAward.pdf">
+              <Link button href="Projektmappe_PlanfAward.pdf">
                 Projektmappe mit allen Bewerbungen
-              </ButtonLink>
+              </Link>
             </p>
           </div>
         </Content>
@@ -828,7 +825,7 @@ const IndexPage: React.FC = () => {
                 einen zukunftsfähigen Radverkehr in der ländlichen Gemeinde in
                 Rheinland-Pfalz sind.
               </p>
-              <ul className="my-6 ml-16 list-inside list-square ">
+              <ul className="list-square my-6 ml-16 list-inside ">
                 <li>Radwegenetz</li>
                 <li>Radweg Wallmerod-Hundsangen</li>
                 <li>Fahrradkultur</li>
@@ -912,20 +909,15 @@ const IndexPage: React.FC = () => {
               dieses Projekts bereits in Kassel, Chemnitz, Mönchengladbach,
               Wuppertal, Bonn, und Dortmund ein Fahrradaudit durchgeführt.
               Weiterführende Informationen zu dem Projekt finden Sie{' '}
-              <TextLink
-                to="https://www.mobilitaetsforum.bund.de/DE/Themen/Wissenspool/Projekte/Projektbeispiele/Projekte/19730_freshbrains_fahrradaudits_durch_niederla.html?cms_submit=Suchen&cms_templateQueryString=freshbrains"
-                newWindow
-              >
+              <Link href="https://www.mobilitaetsforum.bund.de/DE/Themen/Wissenspool/Projekte/Projektbeispiele/Projekte/19730_freshbrains_fahrradaudits_durch_niederla.html?cms_submit=Suchen&cms_templateQueryString=freshbrains">
                 hier
-              </TextLink>
+              </Link>
               .
             </p>
             <p className="pt-2">
               Haben Sie auch Interesse an einem solchen Audit bei sich in der
               Kommune? Dann sprechen Sie uns an unter:{' '}
-              <TextLink to="mailto:kontakt@plan-f.info">
-                kontakt@plan-f.info
-              </TextLink>
+              <Link href="mailto:kontakt@plan-f.info">kontakt@plan-f.info</Link>
               .
             </p>
           </div>
@@ -975,9 +967,9 @@ const IndexPage: React.FC = () => {
             der Radverkehrsförderung veranschaulichen und dienen anderen
             Kommunen künftig als Orientierung und Vorbild.
           </p>
-          <div className="pt-6 pb-6">
+          <div className="pb-6 pt-6">
             <H2>Was steht noch aus? Die nächsten Schritte im Projekt</H2>
-            <H3 className="!text-pastel-purple">Frühjahr 2023:</H3>
+            <H3 className="!text-purple-300">Frühjahr 2023:</H3>
             <H3>Plan F Webseite</H3>
             <p className="pb-2">
               Die Plan F Systematisierung der Handlungsfelder der kommunalen
@@ -1000,7 +992,7 @@ const IndexPage: React.FC = () => {
               E-Learningkurs konzipiert, welcher die Inhalte der Systematik
               vermittelt.
             </p>
-            <H3 className="!text-pastel-purple">Sommer 2023:</H3>
+            <H3 className="!text-purple-300">Sommer 2023:</H3>
             <H3>
               Plan F Check - Passgenaue Handlungsempfehlungen durch
               Selbstevaluation von Kommunen
@@ -1016,16 +1008,10 @@ const IndexPage: React.FC = () => {
             Kommune wird ebenfalls ein gutes Projekt oder eine Maßnahme
             umgesetzt und sie möchten, dass andere Kommunen davon lernen können?
             Schreiben Sie uns gern eine E-Mail dazu an{' '}
-            <TextLink to="mailto:kontakt@plan-f.info">
-              kontakt@plan-f.info
-            </TextLink>
-            .
+            <Link href="mailto:kontakt@plan-f.info">kontakt@plan-f.info</Link>.
           </p>
         </Content>
       </section>
-      <div className="object-left pt-28 pb-6">
-        <Fundings />
-      </div>
     </>
   );
 };

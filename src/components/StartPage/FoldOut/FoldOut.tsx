@@ -25,7 +25,7 @@ export const FoldOut: React.FC<Props> = ({
       preview = (
         <div className="relative h-40 overflow-hidden">
           {children}
-          <div className="absolute bottom-0 z-10 h-40 w-full translate-y-1 bg-gradient-to-b from-transparent to-white" />
+          <div className="from-transparent absolute bottom-0 z-10 h-40 w-full translate-y-1 bg-gradient-to-b to-white" />
         </div>
       );
       break;
@@ -46,10 +46,10 @@ export const FoldOut: React.FC<Props> = ({
       {(!folded || preview != null) && <div className="h-4" />}
       <button
         type="button"
-        className="flex flex-row items-center font-apercu text-[16px] font-bold  hover:cursor-pointer"
+        className="flex flex-row items-center font-sans text-[16px] font-bold  hover:cursor-pointer"
         onClick={() => setFolded(!folded)}
       >
-        <div className="mr-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-dark-green">
+        <div className="mr-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-green-500">
           {folded ? <PlusIcon /> : <MinusIcon />}
         </div>
         {folded ? foldedText : unfoldedText}

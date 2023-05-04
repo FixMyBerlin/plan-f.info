@@ -1,7 +1,15 @@
+import { graphql, PageProps } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
-import { Fundings } from '~/components/StartPage';
-import { Hero, Content, HelmetSeo, Breadcrumbs } from '~/components/Layout';
-import { graphql, Link, PageProps } from 'gatsby';
+import { Prose } from '~/components/core/Prose';
+import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
+import { CardImageAndTextResponsive } from '~/components/Layout/CardImageAndTextResponsive';
+import { CardWrapper } from '~/components/Layout/CardWrapper';
+import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
+import { PageHeaderTextAndImage } from '~/components/Layout/PageHeaderTextAndImage';
+import { Section } from '~/components/Layout/Section';
+import { LinkButtonWithArrow } from '~/components/PageTopic/LinkButtonWithArrow';
+import { H2, H3, P } from '~/components/Text';
 
 const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
   data: { topic },
@@ -9,57 +17,56 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
   return (
     <>
       <HelmetSeo title={topic.name} />
-      <Hero title={topic.name}>
-        <Breadcrumbs names={['Handlungsfelder', topic.name]} />
+
+      <Hero title={topic.name} className="bg-purple-300">
+        <Breadcrumbs names={['Wissensspeicher', topic.name]} />
       </Hero>
-      <section className="pt-1">
-        <Content>
-          <div>{topic.description.data.description}</div>
-          <div className="relative bg-pastel-purple  px-4 pb-20 pt-16 sm:px-6 lg:px-8 lg:pb-28 lg:pt-24">
-            <div className="relative mx-auto max-w-7xl">
-              <div className="text-left">
-                <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                  Maßnahmen im Handlungsfeld {topic.name}
-                </h2>
-                <p className="mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
-                  Entdecken Sie die Verschiedenen Maßnahmen, die zu diesem
-                  Handlungsfeld gehören, dort finden Sie auch viele
-                  Praxisbeispiele
-                </p>
-              </div>
-              <div className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
-                {topic.measures.map((measure) => (
-                  <div
-                    key={measure.name}
-                    className="flex flex-col overflow-hidden rounded-lg shadow-lg"
-                  >
-                    <div className="flex-shrink-0">
-                      {measure.image && (
-                        <Link to={measure.slug}>{measure.name}</Link>
-                      )}
-                    </div>
-                    <div className="flex flex-1 flex-col justify-between bg-white p-6">
-                      <div className="flex-1">
-                        <Link to={measure.slug} className="mt-2 block">
-                          <p className="text-xl font-semibold text-gray-900">
-                            {measure.name}
-                          </p>
-                          <p className="mt-3 line-clamp-3 text-base text-gray-500">
-                            {measure.description.data.description}
-                          </p>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+
+      <PageHeaderTextAndImage
+        image={topic.image && getImage(topic.image.localFile as any)}
+      >
+        {topic.description?.data?.description &&
+          topic.description.data.description}
+      </PageHeaderTextAndImage>
+
+      <Section className="mb-20 flex flex-col  gap-10 sm:flex-row sm:gap-20">
+        <div className="flex flex-col items-start gap-5">
+          <div className="flex flex-col items-start gap-5">
+            <H3 className="uppercase">Leitfäden (nicht in Daten)</H3>
+            <LinkButtonWithArrow href="/">Leitfaden 1</LinkButtonWithArrow>
+            <LinkButtonWithArrow href="/">Leitfaden 2</LinkButtonWithArrow>
           </div>
-        </Content>
-      </section>
-      <div className="object-left pb-6 pt-28">
-        <Fundings />
-      </div>
+        </div>
+
+        {topic.additionalResources && (
+          <LinkListBlackButton
+            links={topic.additionalResources}
+            title="weitere Hinweise"
+          />
+        )}
+      </Section>
+
+      <Section className="bg-green-500">
+        <H2>Maßnahmen im Handlungsfeld {topic.name}</H2>
+        <P>
+          Entdecken Sie die Verschiedenen Maßnahmen, die zu diesem Handlungsfeld
+          gehören, dort finden Sie auch viele Praxisbeispiele
+        </P>
+        <CardWrapper className="mt-12">
+          {topic.measures &&
+            topic.measures.map((measure) => (
+              <CardImageAndTextResponsive
+                key={measure.slug}
+                link={measure.slug || '/'} // This is only quick fix - slug should be Pflichtfpeld
+              >
+                <H3>{measure.name}</H3>
+                <Prose className="line-clamp-4">
+                  {measure.description.data.description}
+                </Prose>
+              </CardImageAndTextResponsive>
+            ))}
+        </CardWrapper>
+      </Section>
     </>
   );
 };
@@ -77,10 +84,18 @@ export const query = graphql`
           }
         }
       }
+      additionalResources {
+        display
+        url
+      }
       description {
         data {
           description
         }
+      }
+      guidelines {
+        display
+        url
       }
       measures {
         name
