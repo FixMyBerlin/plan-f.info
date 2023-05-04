@@ -134,7 +134,7 @@ const ExampleDetails: React.FC<
                   </ImageWithCopyright>
                 )}
                 <div className="flex flex-col justify-start">
-                  <H3>{award.award.name}</H3>
+                  {award.award?.name && <H3>{award.award.name}</H3>}
                   <Prose className="line-clamp-4">
                     {award.description.data.childMarkdownRemark.html}
                   </Prose>
