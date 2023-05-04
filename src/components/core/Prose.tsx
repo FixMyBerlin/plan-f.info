@@ -1,14 +1,14 @@
 import clsx from 'clsx';
-import React, { ReactNode } from 'react';
+import React from 'react';
 
 type Props = {
-  children?: ReactNode;
+  markdownHTML: string;
   className?: string;
 };
 
 // p & heading configuaretions here should be always in sync with Headings.tsx
 
-export const Prose: React.FC<Props> = ({ children, className }) => {
+export const Prose: React.FC<Props> = ({ markdownHTML, className }) => {
   return (
     <div
       className={clsx(
@@ -22,8 +22,8 @@ export const Prose: React.FC<Props> = ({ children, className }) => {
         'prose-h1:mb-3 prose-h1:mt-0 prose-h2:mb-3 prose-h2:mt-0.5 prose-h3:mb-3 prose-h3:mt-2 prose-p:mb-1 prose-p:mt-1', // p & heading margins for mobile
         'prose-ul:list-none prose-ul:pl-0 prose-li:m-0 prose-li:p-0'
       )}
-    >
-      {children}
-    </div>
+      // eslint-disable-next-line react/no-danger
+      dangerouslySetInnerHTML={{ __html: markdownHTML }}
+    />
   );
 };

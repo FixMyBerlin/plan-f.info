@@ -24,10 +24,8 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
 
       <PageHeaderTextAndImage
         image={topic.image && getImage(topic.image.localFile as any)}
-      >
-        {topic.description?.data?.description &&
-          topic.description.data.description}
-      </PageHeaderTextAndImage>
+        markdownHTML={topic.description.data.childMarkdownRemark.html}
+      />
 
       <Section className="mb-20 flex flex-col  gap-10 sm:flex-row sm:gap-20">
         <div className="flex flex-col items-start gap-5">
@@ -60,9 +58,12 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
                 link={measure.slug || '/'} // This is only quick fix - slug should be Pflichtfpeld
               >
                 <H3>{measure.name}</H3>
-                <Prose className="line-clamp-4">
-                  {measure.description.data.description}
-                </Prose>
+                <Prose
+                  className="line-clamp-4"
+                  markdownHTML={
+                    measure.description.data.childMarkdownRemark.html
+                  }
+                />
               </CardImageAndTextResponsive>
             ))}
         </CardWrapper>
@@ -90,7 +91,9 @@ export const query = graphql`
       }
       description {
         data {
-          description
+          childMarkdownRemark {
+            html
+          }
         }
       }
       guidelines {
@@ -102,7 +105,9 @@ export const query = graphql`
         slug
         description {
           data {
-            description
+            childMarkdownRemark {
+              html
+            }
           }
         }
       }

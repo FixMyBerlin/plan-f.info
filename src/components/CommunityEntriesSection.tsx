@@ -27,9 +27,10 @@ export const CommunityEntriesSection: React.FC<Props> = ({
             image={entry.image && getImage(entry.image.image.localFile as any)}
           >
             <H3>{entry.title}</H3>
-            <Prose className="line-clamp-4">
-              {entry.description.data.description}
-            </Prose>
+            <Prose
+              className="line-clamp-4"
+              markdownHTML={entry.description.data.childMarkdownRemark.html}
+            />
           </CardImageAndTextResponsiveImgFull>
         ))}
       </div>

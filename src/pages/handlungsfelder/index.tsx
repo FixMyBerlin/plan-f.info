@@ -24,7 +24,9 @@ export const query = graphql`
         }
         description {
           data {
-            description
+            childMarkdownRemark {
+              html
+            }
           }
         }
       }
@@ -84,10 +86,11 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
               image={topic.image && getImage(topic.image.localFile as any)}
             >
               <H3>{topic.name}</H3>
-              {topic.description?.data?.description && (
-                <Prose className="line-clamp-4">
-                  {topic.description.data.description}
-                </Prose>
+              {topic.description?.data?.childMarkdownRemark.html && (
+                <Prose
+                  className="line-clamp-4"
+                  markdownHTML={topic.description.data.childMarkdownRemark.html}
+                />
               )}
             </CardImageAndTextResponsive>
           ))}

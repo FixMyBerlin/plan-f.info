@@ -55,7 +55,7 @@ const ExampleDetails: React.FC<
           }}
         >
           <H2>{example.title}</H2>
-          <Prose>{example.shortDescription}</Prose>
+          <Prose markdownHTML={example.shortDescription} />
           {example.image && (
             <ImageWithCopyright
               className="mt-8"
@@ -83,37 +83,39 @@ const ExampleDetails: React.FC<
               </div>
             ))}
           </div>
-
           <div className="mt-12">
             <H2>Maßnahmenbeschreibung</H2>
-            <Prose>{example.description.data.childMarkdownRemark.html}</Prose>
+            <Prose
+              markdownHTML={example.description.data.childMarkdownRemark.html}
+            />
           </div>
-
           <div className="mt-12">
             <H2>Auswertung Praxisbeispiel</H2>
             <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
-              <CardText title="Ziele">
-                {example.goals.data.childMarkdownRemark.html}
-              </CardText>
-              <CardText title="Ergebnisse">
-                {example.results.data.childMarkdownRemark.html}
-              </CardText>
-              <CardText title="Dauer: Planung und Umsetzung">
-                {example.period}
-              </CardText>
-              <CardText title="Kosten / Mittelherkunft">
-                {example.goals.data.childMarkdownRemark.html}
-              </CardText>
+              <CardText
+                title="Ziele"
+                markdownHTML={example.goals.data.childMarkdownRemark.html}
+              />
+              <CardText
+                title="Ergebnisse"
+                markdownHTML={example.results.data.childMarkdownRemark.html}
+              />
+              <CardText
+                title="Dauer: Planung und Umsetzung"
+                markdownHTML={example.period}
+              />
+              <CardText
+                title="Kosten / Mittelherkunft"
+                markdownHTML={example.goals.data.childMarkdownRemark.html}
+              />
             </div>
           </div>
-
           <LinkListBlackButton
             className="mt-12"
             links={example.links}
             titleMono
             title="Links"
           />
-
           <div className="mt-12">
             <H2>Auszeichnungen</H2>
             {example.awards.map((award) => (
@@ -135,28 +137,33 @@ const ExampleDetails: React.FC<
                 )}
                 <div className="flex flex-col justify-start">
                   {award.award?.name && <H3>{award.award.name}</H3>}
-                  <Prose className="line-clamp-4">
-                    {award.description.data.childMarkdownRemark.html}
-                  </Prose>
+                  <Prose
+                    className="line-clamp-4"
+                    markdownHTML={
+                      award.description.data.childMarkdownRemark.html
+                    }
+                  />
                 </div>
               </div>
             ))}
           </div>
-
           <div className="mt-12">
             <H2>Besonderheiten (nicht in wireframes)</H2>
-            <Prose>
-              {example.particularities.data.childMarkdownRemark.html}
-            </Prose>
+            <Prose
+              markdownHTML={
+                example.particularities.data.childMarkdownRemark.html
+              }
+            />
           </div>
           <div className="mt-12">
             <H2>Anmerkungen</H2>
-            <Prose>{example.notes.data.childMarkdownRemark.html}</Prose>
+            <Prose markdownHTML={example.notes.data.childMarkdownRemark.html} />
           </div>
-
-          <Prose className="mt-12">
-            Quelle: {example.sources.data.childMarkdownRemark.html}
-          </Prose>
+          Quelle:
+          <Prose
+            className="mt-12"
+            markdownHTML={example.sources.data.childMarkdownRemark.html}
+          />
         </SectionWithPagination>
       </Section>
 
@@ -336,7 +343,9 @@ export const query = graphql`
       nodes {
         description {
           data {
-            description
+            childMarkdownRemark {
+              html
+            }
           }
         }
         image {

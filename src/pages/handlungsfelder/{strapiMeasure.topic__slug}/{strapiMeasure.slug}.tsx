@@ -2,7 +2,6 @@ import { graphql, PageProps } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { CommunityEntriesSection } from '~/components/CommunityEntriesSection';
-import { Prose } from '~/components/core/Prose';
 import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
 import { CardImageAndTextVertical } from '~/components/Layout/CardImageAndTextVertical';
 import { CardWrapperThreeCols } from '~/components/Layout/CardWrapperThreeCols';
@@ -23,9 +22,9 @@ const MeasureDetails: React.FC<
           names={['Wissensspeicher', measure.topic.name, measure.name]}
         />
       </Hero>
-      <PageHeaderTextAndImage>
-        {measure.description.data.description}
-      </PageHeaderTextAndImage>
+      <PageHeaderTextAndImage
+        markdownHTML={measure.description.data.childMarkdownRemark.html}
+      />
 
       <Section className="mb-20 flex flex-col gap-10 sm:flex-row sm:gap-20">
         <div className="flex flex-col items-start gap-5">
@@ -68,7 +67,7 @@ const MeasureDetails: React.FC<
               }
             >
               <H3>{example.title}</H3>
-              <Prose className="line-clamp-4">{example.shortDescription}</Prose>
+              <div className="line-clamp-4">{example.shortDescription}</div>
             </CardImageAndTextVertical>
           ))}
         </CardWrapperThreeCols>
@@ -88,7 +87,9 @@ export const query = graphql`
       name
       description {
         data {
-          description
+          childMarkdownRemark {
+            html
+          }
         }
       }
       additonalResources {
@@ -126,7 +127,9 @@ export const query = graphql`
       nodes {
         description {
           data {
-            description
+            childMarkdownRemark {
+              html
+            }
           }
         }
         image {
