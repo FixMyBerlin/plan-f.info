@@ -81,12 +81,14 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
             <CardImageAndTextResponsive
               key={topic.slug}
               link={topic.slug}
-              image={getImage(topic.image.localFile as any)}
+              image={topic.image && getImage(topic.image.localFile as any)}
             >
               <H3>{topic.name}</H3>
-              <Prose className="line-clamp-4">
-                {topic.description.data.description}
-              </Prose>
+              {topic.description?.data?.description && (
+                <Prose className="line-clamp-4">
+                  {topic.description.data.description}
+                </Prose>
+              )}
             </CardImageAndTextResponsive>
           ))}
         </CardWrapper>

@@ -22,9 +22,9 @@ export const CommunityEntriesSection: React.FC<Props> = ({
       <div className="mt-12 flex flex-col gap-5">
         {communityEntries.nodes.map((entry) => (
           <CardImageAndTextResponsiveImgFull
-            key={entry.website.url}
-            link={entry.website.url}
-            image={getImage(entry.image.image.localFile as any)}
+            key={entry.title}
+            link={entry.website.length && entry.website[0].url}
+            image={entry.image && getImage(entry.image.image.localFile as any)}
           >
             <H3>{entry.title}</H3>
             <Prose className="line-clamp-4">

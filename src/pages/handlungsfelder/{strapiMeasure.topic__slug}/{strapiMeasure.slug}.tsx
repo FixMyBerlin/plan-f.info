@@ -14,65 +14,71 @@ import { H2, H3, P } from '~/components/Text';
 
 const MeasureDetails: React.FC<
   PageProps<Queries.MeasureDetailsAndCommunityEntriesQuery>
-> = ({ data: { measure, communityEntries } }) => (
-  <>
-    <HelmetSeo title={measure.name} />
-    <Hero title={measure.name} className="bg-green-500">
-      <Breadcrumbs
-        names={['Wissensspeicher', measure.topic.name, measure.name]}
-      />
-    </Hero>
-    <PageHeaderTextAndImage
-      image={getImage(measure.image.image.localFile as any)}
-    >
-      {measure.description.data.description}
-    </PageHeaderTextAndImage>
+> = ({ data: { measure, communityEntries } }) => {
+  return (
+    <>
+      <HelmetSeo title={measure.name} />
+      <Hero title={measure.name} className="bg-green-500">
+        <Breadcrumbs
+          names={['Wissensspeicher', measure.topic.name, measure.name]}
+        />
+      </Hero>
+      <PageHeaderTextAndImage>
+        {measure.description.data.description}
+      </PageHeaderTextAndImage>
 
-    <Section className="mb-20 flex flex-col gap-10 sm:flex-row sm:gap-20">
-      <div className="flex flex-col items-start gap-5">
-        <H3 className="uppercase">Leitfäden (nicht in Daten)</H3>
-        <LinkButtonWithArrow href="/">Leitfaden 1</LinkButtonWithArrow>
-        <LinkButtonWithArrow href="/">Leitfaden 2</LinkButtonWithArrow>
-      </div>
+      <Section className="mb-20 flex flex-col gap-10 sm:flex-row sm:gap-20">
+        <div className="flex flex-col items-start gap-5">
+          <H3 className="uppercase">Leitfäden (nicht in Daten)</H3>
+          <LinkButtonWithArrow href="/">Leitfaden 1</LinkButtonWithArrow>
+          <LinkButtonWithArrow href="/">Leitfaden 2</LinkButtonWithArrow>
+        </div>
 
-      <LinkListBlackButton
-        links={measure.additionalResources}
-        title="weitere Hinweise"
-      />
+        {measure.additonalResources && (
+          <LinkListBlackButton
+            links={measure.additonalResources}
+            title="weitere Hinweise"
+          />
+        )}
 
-      <div className="flex flex-col items-start gap-5">
-        <H3 className="uppercase">Fördermöglichkeiten (nicht in Daten)</H3>
-        <LinkButtonWithArrow href="/">
-          Fördermöglichkeiten 1
-        </LinkButtonWithArrow>
-        <LinkButtonWithArrow href="/">
-          Fördermöglichkeiten 2
-        </LinkButtonWithArrow>
-      </div>
-    </Section>
+        <div className="flex flex-col items-start gap-5">
+          <H3 className="uppercase">Fördermöglichkeiten (nicht in Daten)</H3>
+          <LinkButtonWithArrow href="/">
+            Fördermöglichkeiten 1
+          </LinkButtonWithArrow>
+          <LinkButtonWithArrow href="/">
+            Fördermöglichkeiten 2
+          </LinkButtonWithArrow>
+        </div>
+      </Section>
 
-    <Section className="mb-12 bg-lime-300">
-      <H2>Praxisbeispiele</H2>
-      <P>
-        Schau was andere Kommunen zu diesem Thema bereits für Maßnahmen
-        umgesetzt haben.
-      </P>
-      <CardWrapperThreeCols className="mt-12">
-        {measure.examples.map((example) => (
-          <CardImageAndTextVertical
-            key={example.slug}
-            link={example.slug}
-            image={getImage(example.image.image.localFile as any)}
-          >
-            <H3>{example.title}</H3>
-            <Prose className="line-clamp-4">{example.shortDescription}</Prose>
-          </CardImageAndTextVertical>
-        ))}
-      </CardWrapperThreeCols>
-    </Section>
-    <CommunityEntriesSection communityEntries={communityEntries} />
-  </>
-);
+      <Section className="mb-12 bg-lime-300">
+        <H2>Praxisbeispiele</H2>
+        <P>
+          Schau was andere Kommunen zu diesem Thema bereits für Maßnahmen
+          umgesetzt haben.
+        </P>
+        <CardWrapperThreeCols className="mt-12">
+          {measure.examples.map((example) => (
+            <CardImageAndTextVertical
+              key={example.slug}
+              link={example.slug}
+              image={
+                example.image && getImage(example.image.image.localFile as any)
+              }
+            >
+              <H3>{example.title}</H3>
+              <Prose className="line-clamp-4">{example.shortDescription}</Prose>
+            </CardImageAndTextVertical>
+          ))}
+        </CardWrapperThreeCols>
+      </Section>
+      {communityEntries && (
+        <CommunityEntriesSection communityEntries={communityEntries} />
+      )}
+    </>
+  );
+};
 
 export default MeasureDetails;
 
@@ -80,24 +86,22 @@ export const query = graphql`
   query MeasureDetailsAndCommunityEntries($id: String!) {
     measure: strapiMeasure(id: { eq: $id }) {
       name
-      image {
-        image {
-          localFile {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
-        }
-        copyright
-      }
       description {
         data {
           description
         }
       }
-      additionalResources {
+      additonalResources {
         url
         display
+      }
+      guidelines {
+        display
+        url
+      }
+      fundings {
+        display
+        url
       }
       topic {
         name

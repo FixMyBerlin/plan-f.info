@@ -6,7 +6,7 @@ import { Article } from './Article';
 import { Section } from './Section';
 
 type Props = {
-  image: IGatsbyImageData | null;
+  image?: IGatsbyImageData | null;
   children: ReactNode;
   className?: string;
 };

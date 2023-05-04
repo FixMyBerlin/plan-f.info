@@ -22,8 +22,11 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
         <Breadcrumbs names={['Wissensspeicher', topic.name]} />
       </Hero>
 
-      <PageHeaderTextAndImage image={getImage(topic.image.localFile as any)}>
-        {topic.description.data.description}
+      <PageHeaderTextAndImage
+        image={topic.image && getImage(topic.image.localFile as any)}
+      >
+        {topic.description?.data?.description &&
+          topic.description.data.description}
       </PageHeaderTextAndImage>
 
       <Section className="mb-20 flex flex-col  gap-10 sm:flex-row sm:gap-20">
@@ -35,10 +38,12 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
           </div>
         </div>
 
-        <LinkListBlackButton
-          links={topic.additionalResources}
-          title="weitere Hinweise"
-        />
+        {topic.additionalResources && (
+          <LinkListBlackButton
+            links={topic.additionalResources}
+            title="weitere Hinweise"
+          />
+        )}
       </Section>
 
       <Section className="bg-green-500">
@@ -48,20 +53,18 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
           gehören, dort finden Sie auch viele Praxisbeispiele
         </P>
         <CardWrapper className="mt-12">
-          {topic.measures.map((measure) => (
-            <CardImageAndTextResponsive
-              key={measure.slug}
-              link={measure.slug || '/'} // This is only quick fix - slug should be Pflichtfpeld
-              image={
-                measure.image && getImage(measure.image.image.localFile as any)
-              }
-            >
-              <H3>{measure.name}</H3>
-              <Prose className="line-clamp-4">
-                {measure.description.data.description}
-              </Prose>
-            </CardImageAndTextResponsive>
-          ))}
+          {topic.measures &&
+            topic.measures.map((measure) => (
+              <CardImageAndTextResponsive
+                key={measure.slug}
+                link={measure.slug || '/'} // This is only quick fix - slug should be Pflichtfpeld
+              >
+                <H3>{measure.name}</H3>
+                <Prose className="line-clamp-4">
+                  {measure.description.data.description}
+                </Prose>
+              </CardImageAndTextResponsive>
+            ))}
         </CardWrapper>
       </Section>
     </>
@@ -90,6 +93,10 @@ export const query = graphql`
           description
         }
       }
+      guidelines {
+        display
+        url
+      }
       measures {
         name
         slug
@@ -97,16 +104,6 @@ export const query = graphql`
           data {
             description
           }
-        }
-        image {
-          image {
-            localFile {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
-          }
-          copyright
         }
       }
     }

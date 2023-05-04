@@ -116,11 +116,14 @@ const ExampleDetails: React.FC<
             <H2>Auszeichnungen</H2>
             {example.awards.map((award) => (
               <div className="flex gap-2 md:gap-6">
-                {award.award.logo && (
+                {award.award?.logo && (
                   <ImageWithCopyright copyright={award.award.logo.copyright}>
                     <GatsbyImage
                       className="h-20 w-20 flex-shrink-0 md:h-36 md:w-36"
-                      image={getImage(award.award.logo.image.localFile as any)}
+                      image={
+                        award.award?.logo?.image &&
+                        getImage(award.award?.logo.image.localFile as any)
+                      }
                       alt="Titelbild"
                     />
                   </ImageWithCopyright>
@@ -150,7 +153,9 @@ const ExampleDetails: React.FC<
         </SectionWithPagination>
       </Section>
 
-      <CommunityEntriesSection communityEntries={communityEntries} />
+      {communityEntries && (
+        <CommunityEntriesSection communityEntries={communityEntries} />
+      )}
     </>
   );
 };
@@ -166,7 +171,16 @@ export const query = graphql`
       commune
       population
       spatialStructure
-      localChallenges
+      localChallenges {
+        data {
+          localChallenges
+        }
+      }
+      communication {
+        data {
+          communication
+        }
+      }
       period
       funding {
         data {
@@ -255,6 +269,9 @@ export const query = graphql`
         examples {
           slug
         }
+      }
+      relatedTopic {
+        name
       }
       slug
     }

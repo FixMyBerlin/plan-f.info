@@ -5,7 +5,7 @@ import { Link } from '../core/links/Link';
 
 type Props = {
   link: string;
-  image: IGatsbyImageData | null;
+  image?: IGatsbyImageData | null;
   children: ReactNode;
   className?: string;
 };
