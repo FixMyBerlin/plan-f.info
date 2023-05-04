@@ -235,6 +235,31 @@ export const query = graphql`
           }
         }
       }
+      goals {
+        data {
+          goals
+        }
+      }
+      results {
+        data {
+          results
+        }
+      }
+      sources {
+        data {
+          sources
+        }
+      }
+      particularities {
+        data {
+          particularities
+        }
+      }
+      notes {
+        data {
+          notes
+        }
+      }
       image {
         image {
           localFile {

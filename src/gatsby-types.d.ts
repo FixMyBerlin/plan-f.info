@@ -1739,6 +1739,22 @@ type Query_allStrapiCommunityEntryDescriptionTextnodeArgs = {
 };
 
 
+type Query_allStrapiCommunityEntryArgs = {
+  filter: InputMaybe<STRAPI_COMMUNITY_ENTRYFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<STRAPI_COMMUNITY_ENTRYSortInput>;
+};
+
+
+type Query_allStrapiCommunityEntryDescriptionTextnodeArgs = {
+  filter: InputMaybe<STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODESortInput>;
+};
+
+
 type Query_allStrapiComponentAwardAwardArgs = {
   filter: InputMaybe<STRAPI__COMPONENT_AWARD_AWARDFilterInput>;
   limit: InputMaybe<Scalars['Int']>;
@@ -1803,6 +1819,14 @@ type Query_allStrapiExampleCommunicationTextnodeArgs = {
 };
 
 
+type Query_allStrapiExampleCommunicationTextnodeArgs = {
+  filter: InputMaybe<STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<STRAPI_EXAMPLE_COMMUNICATION_TEXTNODESortInput>;
+};
+
+
 type Query_allStrapiExampleDescriptionTextnodeArgs = {
   filter: InputMaybe<STRAPI_EXAMPLE_DESCRIPTION_TEXTNODEFilterInput>;
   limit: InputMaybe<Scalars['Int']>;
@@ -1832,6 +1856,14 @@ type Query_allStrapiExampleLocalchallengesTextnodeArgs = {
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ReadonlyArray<InputMaybe<STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODESortInput>>>;
+};
+
+
+type Query_allStrapiExampleLocalchallengesTextnodeArgs = {
+  filter: InputMaybe<STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODESortInput>;
 };
 
 
@@ -2272,6 +2304,15 @@ type Query_strapiExampleCommunicationTextnodeArgs = {
   childMarkdownRemark: InputMaybe<MarkdownRemarkFilterInput>;
   children: InputMaybe<NodeFilterListInput>;
   childrenMarkdownRemark: InputMaybe<MarkdownRemarkFilterListInput>;
+  communication: InputMaybe<StringQueryOperatorInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  parent: InputMaybe<NodeFilterInput>;
+};
+
+
+type Query_strapiExampleCommunicationTextnodeArgs = {
+  children: InputMaybe<NodeFilterListInput>;
   communication: InputMaybe<StringQueryOperatorInput>;
   id: InputMaybe<StringQueryOperatorInput>;
   internal: InputMaybe<InternalFilterInput>;
@@ -2961,6 +3002,629 @@ type STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODESortInput = {
   readonly parent: InputMaybe<NodeSortInput>;
 };
 
+type STRAPI_COMMUNITY_ENTRY = Node & {
+  readonly children: ReadonlyArray<Node>;
+  readonly createdAt: Maybe<Scalars['Date']>;
+  readonly description: Maybe<STRAPI_COMMUNITY_ENTRYDescription>;
+  readonly id: Scalars['ID'];
+  readonly image: Maybe<STRAPI__COMPONENT_IMAGE_COPYRIGHT_IMAGE>;
+  readonly internal: Internal;
+  readonly parent: Maybe<Node>;
+  readonly publishedAt: Maybe<Scalars['Date']>;
+  readonly strapi_id: Maybe<Scalars['Int']>;
+  readonly title: Maybe<Scalars['String']>;
+  readonly updatedAt: Maybe<Scalars['Date']>;
+  readonly website: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_LINKS_LINKS>>>;
+};
+
+
+type STRAPI_COMMUNITY_ENTRY_createdAtArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type STRAPI_COMMUNITY_ENTRY_publishedAtArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type STRAPI_COMMUNITY_ENTRY_updatedAtArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+type STRAPI_COMMUNITY_ENTRYConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI_COMMUNITY_ENTRYEdge>;
+  readonly group: ReadonlyArray<STRAPI_COMMUNITY_ENTRYGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI_COMMUNITY_ENTRY>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI_COMMUNITY_ENTRYConnection_distinctArgs = {
+  field: STRAPI_COMMUNITY_ENTRYFieldsEnum;
+};
+
+
+type STRAPI_COMMUNITY_ENTRYConnection_groupArgs = {
+  field: STRAPI_COMMUNITY_ENTRYFieldsEnum;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI_COMMUNITY_ENTRYConnection_maxArgs = {
+  field: STRAPI_COMMUNITY_ENTRYFieldsEnum;
+};
+
+
+type STRAPI_COMMUNITY_ENTRYConnection_minArgs = {
+  field: STRAPI_COMMUNITY_ENTRYFieldsEnum;
+};
+
+
+type STRAPI_COMMUNITY_ENTRYConnection_sumArgs = {
+  field: STRAPI_COMMUNITY_ENTRYFieldsEnum;
+};
+
+type STRAPI_COMMUNITY_ENTRYDescription = {
+  readonly data: Maybe<STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODE>;
+};
+
+type STRAPI_COMMUNITY_ENTRYDescriptionFilterInput = {
+  readonly data: InputMaybe<STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEFilterInput>;
+};
+
+type STRAPI_COMMUNITY_ENTRYEdge = {
+  readonly next: Maybe<STRAPI_COMMUNITY_ENTRY>;
+  readonly node: STRAPI_COMMUNITY_ENTRY;
+  readonly previous: Maybe<STRAPI_COMMUNITY_ENTRY>;
+};
+
+type STRAPI_COMMUNITY_ENTRYFieldsEnum =
+  | 'children'
+  | 'children.children'
+  | 'children.children.children'
+  | 'children.children.children.children'
+  | 'children.children.children.id'
+  | 'children.children.id'
+  | 'children.children.internal.content'
+  | 'children.children.internal.contentDigest'
+  | 'children.children.internal.contentFilePath'
+  | 'children.children.internal.description'
+  | 'children.children.internal.fieldOwners'
+  | 'children.children.internal.ignoreType'
+  | 'children.children.internal.mediaType'
+  | 'children.children.internal.owner'
+  | 'children.children.internal.type'
+  | 'children.children.parent.children'
+  | 'children.children.parent.id'
+  | 'children.id'
+  | 'children.internal.content'
+  | 'children.internal.contentDigest'
+  | 'children.internal.contentFilePath'
+  | 'children.internal.description'
+  | 'children.internal.fieldOwners'
+  | 'children.internal.ignoreType'
+  | 'children.internal.mediaType'
+  | 'children.internal.owner'
+  | 'children.internal.type'
+  | 'children.parent.children'
+  | 'children.parent.children.children'
+  | 'children.parent.children.id'
+  | 'children.parent.id'
+  | 'children.parent.internal.content'
+  | 'children.parent.internal.contentDigest'
+  | 'children.parent.internal.contentFilePath'
+  | 'children.parent.internal.description'
+  | 'children.parent.internal.fieldOwners'
+  | 'children.parent.internal.ignoreType'
+  | 'children.parent.internal.mediaType'
+  | 'children.parent.internal.owner'
+  | 'children.parent.internal.type'
+  | 'children.parent.parent.children'
+  | 'children.parent.parent.id'
+  | 'createdAt'
+  | 'description.data.children'
+  | 'description.data.children.children'
+  | 'description.data.children.id'
+  | 'description.data.description'
+  | 'description.data.id'
+  | 'description.data.internal.content'
+  | 'description.data.internal.contentDigest'
+  | 'description.data.internal.contentFilePath'
+  | 'description.data.internal.description'
+  | 'description.data.internal.fieldOwners'
+  | 'description.data.internal.ignoreType'
+  | 'description.data.internal.mediaType'
+  | 'description.data.internal.owner'
+  | 'description.data.internal.type'
+  | 'description.data.parent.children'
+  | 'description.data.parent.id'
+  | 'id'
+  | 'image.children'
+  | 'image.children.children'
+  | 'image.children.children.children'
+  | 'image.children.children.id'
+  | 'image.children.id'
+  | 'image.children.internal.content'
+  | 'image.children.internal.contentDigest'
+  | 'image.children.internal.contentFilePath'
+  | 'image.children.internal.description'
+  | 'image.children.internal.fieldOwners'
+  | 'image.children.internal.ignoreType'
+  | 'image.children.internal.mediaType'
+  | 'image.children.internal.owner'
+  | 'image.children.internal.type'
+  | 'image.children.parent.children'
+  | 'image.children.parent.id'
+  | 'image.copyright'
+  | 'image.id'
+  | 'image.image.children'
+  | 'image.image.children.children'
+  | 'image.image.children.id'
+  | 'image.image.createdAt'
+  | 'image.image.ext'
+  | 'image.image.hash'
+  | 'image.image.height'
+  | 'image.image.id'
+  | 'image.image.internal.content'
+  | 'image.image.internal.contentDigest'
+  | 'image.image.internal.contentFilePath'
+  | 'image.image.internal.description'
+  | 'image.image.internal.fieldOwners'
+  | 'image.image.internal.ignoreType'
+  | 'image.image.internal.mediaType'
+  | 'image.image.internal.owner'
+  | 'image.image.internal.type'
+  | 'image.image.localFile.absolutePath'
+  | 'image.image.localFile.accessTime'
+  | 'image.image.localFile.atime'
+  | 'image.image.localFile.atimeMs'
+  | 'image.image.localFile.base'
+  | 'image.image.localFile.birthTime'
+  | 'image.image.localFile.birthtime'
+  | 'image.image.localFile.birthtimeMs'
+  | 'image.image.localFile.blksize'
+  | 'image.image.localFile.blocks'
+  | 'image.image.localFile.changeTime'
+  | 'image.image.localFile.children'
+  | 'image.image.localFile.childrenImageSharp'
+  | 'image.image.localFile.ctime'
+  | 'image.image.localFile.ctimeMs'
+  | 'image.image.localFile.dev'
+  | 'image.image.localFile.dir'
+  | 'image.image.localFile.ext'
+  | 'image.image.localFile.extension'
+  | 'image.image.localFile.gid'
+  | 'image.image.localFile.id'
+  | 'image.image.localFile.ino'
+  | 'image.image.localFile.mode'
+  | 'image.image.localFile.modifiedTime'
+  | 'image.image.localFile.mtime'
+  | 'image.image.localFile.mtimeMs'
+  | 'image.image.localFile.name'
+  | 'image.image.localFile.nlink'
+  | 'image.image.localFile.prettySize'
+  | 'image.image.localFile.rdev'
+  | 'image.image.localFile.relativeDirectory'
+  | 'image.image.localFile.relativePath'
+  | 'image.image.localFile.root'
+  | 'image.image.localFile.size'
+  | 'image.image.localFile.sourceInstanceName'
+  | 'image.image.localFile.uid'
+  | 'image.image.localFile.url'
+  | 'image.image.mime'
+  | 'image.image.name'
+  | 'image.image.parent.children'
+  | 'image.image.parent.id'
+  | 'image.image.size'
+  | 'image.image.strapi_id'
+  | 'image.image.updatedAt'
+  | 'image.image.url'
+  | 'image.image.width'
+  | 'image.internal.content'
+  | 'image.internal.contentDigest'
+  | 'image.internal.contentFilePath'
+  | 'image.internal.description'
+  | 'image.internal.fieldOwners'
+  | 'image.internal.ignoreType'
+  | 'image.internal.mediaType'
+  | 'image.internal.owner'
+  | 'image.internal.type'
+  | 'image.parent.children'
+  | 'image.parent.children.children'
+  | 'image.parent.children.id'
+  | 'image.parent.id'
+  | 'image.parent.internal.content'
+  | 'image.parent.internal.contentDigest'
+  | 'image.parent.internal.contentFilePath'
+  | 'image.parent.internal.description'
+  | 'image.parent.internal.fieldOwners'
+  | 'image.parent.internal.ignoreType'
+  | 'image.parent.internal.mediaType'
+  | 'image.parent.internal.owner'
+  | 'image.parent.internal.type'
+  | 'image.parent.parent.children'
+  | 'image.parent.parent.id'
+  | 'image.strapi_id'
+  | 'internal.content'
+  | 'internal.contentDigest'
+  | 'internal.contentFilePath'
+  | 'internal.description'
+  | 'internal.fieldOwners'
+  | 'internal.ignoreType'
+  | 'internal.mediaType'
+  | 'internal.owner'
+  | 'internal.type'
+  | 'parent.children'
+  | 'parent.children.children'
+  | 'parent.children.children.children'
+  | 'parent.children.children.id'
+  | 'parent.children.id'
+  | 'parent.children.internal.content'
+  | 'parent.children.internal.contentDigest'
+  | 'parent.children.internal.contentFilePath'
+  | 'parent.children.internal.description'
+  | 'parent.children.internal.fieldOwners'
+  | 'parent.children.internal.ignoreType'
+  | 'parent.children.internal.mediaType'
+  | 'parent.children.internal.owner'
+  | 'parent.children.internal.type'
+  | 'parent.children.parent.children'
+  | 'parent.children.parent.id'
+  | 'parent.id'
+  | 'parent.internal.content'
+  | 'parent.internal.contentDigest'
+  | 'parent.internal.contentFilePath'
+  | 'parent.internal.description'
+  | 'parent.internal.fieldOwners'
+  | 'parent.internal.ignoreType'
+  | 'parent.internal.mediaType'
+  | 'parent.internal.owner'
+  | 'parent.internal.type'
+  | 'parent.parent.children'
+  | 'parent.parent.children.children'
+  | 'parent.parent.children.id'
+  | 'parent.parent.id'
+  | 'parent.parent.internal.content'
+  | 'parent.parent.internal.contentDigest'
+  | 'parent.parent.internal.contentFilePath'
+  | 'parent.parent.internal.description'
+  | 'parent.parent.internal.fieldOwners'
+  | 'parent.parent.internal.ignoreType'
+  | 'parent.parent.internal.mediaType'
+  | 'parent.parent.internal.owner'
+  | 'parent.parent.internal.type'
+  | 'parent.parent.parent.children'
+  | 'parent.parent.parent.id'
+  | 'publishedAt'
+  | 'strapi_id'
+  | 'title'
+  | 'updatedAt'
+  | 'website'
+  | 'website.children'
+  | 'website.children.children'
+  | 'website.children.children.children'
+  | 'website.children.children.id'
+  | 'website.children.id'
+  | 'website.children.internal.content'
+  | 'website.children.internal.contentDigest'
+  | 'website.children.internal.contentFilePath'
+  | 'website.children.internal.description'
+  | 'website.children.internal.fieldOwners'
+  | 'website.children.internal.ignoreType'
+  | 'website.children.internal.mediaType'
+  | 'website.children.internal.owner'
+  | 'website.children.internal.type'
+  | 'website.children.parent.children'
+  | 'website.children.parent.id'
+  | 'website.display'
+  | 'website.id'
+  | 'website.internal.content'
+  | 'website.internal.contentDigest'
+  | 'website.internal.contentFilePath'
+  | 'website.internal.description'
+  | 'website.internal.fieldOwners'
+  | 'website.internal.ignoreType'
+  | 'website.internal.mediaType'
+  | 'website.internal.owner'
+  | 'website.internal.type'
+  | 'website.parent.children'
+  | 'website.parent.children.children'
+  | 'website.parent.children.id'
+  | 'website.parent.id'
+  | 'website.parent.internal.content'
+  | 'website.parent.internal.contentDigest'
+  | 'website.parent.internal.contentFilePath'
+  | 'website.parent.internal.description'
+  | 'website.parent.internal.fieldOwners'
+  | 'website.parent.internal.ignoreType'
+  | 'website.parent.internal.mediaType'
+  | 'website.parent.internal.owner'
+  | 'website.parent.internal.type'
+  | 'website.parent.parent.children'
+  | 'website.parent.parent.id'
+  | 'website.strapi_id'
+  | 'website.url';
+
+type STRAPI_COMMUNITY_ENTRYFilterInput = {
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly createdAt: InputMaybe<DateQueryOperatorInput>;
+  readonly description: InputMaybe<STRAPI_COMMUNITY_ENTRYDescriptionFilterInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly image: InputMaybe<STRAPI__COMPONENT_IMAGE_COPYRIGHT_IMAGEFilterInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly publishedAt: InputMaybe<DateQueryOperatorInput>;
+  readonly strapi_id: InputMaybe<IntQueryOperatorInput>;
+  readonly title: InputMaybe<StringQueryOperatorInput>;
+  readonly updatedAt: InputMaybe<DateQueryOperatorInput>;
+  readonly website: InputMaybe<STRAPI__COMPONENT_LINKS_LINKSFilterListInput>;
+};
+
+type STRAPI_COMMUNITY_ENTRYGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI_COMMUNITY_ENTRYEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<STRAPI_COMMUNITY_ENTRYGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI_COMMUNITY_ENTRY>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI_COMMUNITY_ENTRYGroupConnection_distinctArgs = {
+  field: STRAPI_COMMUNITY_ENTRYFieldsEnum;
+};
+
+
+type STRAPI_COMMUNITY_ENTRYGroupConnection_groupArgs = {
+  field: STRAPI_COMMUNITY_ENTRYFieldsEnum;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI_COMMUNITY_ENTRYGroupConnection_maxArgs = {
+  field: STRAPI_COMMUNITY_ENTRYFieldsEnum;
+};
+
+
+type STRAPI_COMMUNITY_ENTRYGroupConnection_minArgs = {
+  field: STRAPI_COMMUNITY_ENTRYFieldsEnum;
+};
+
+
+type STRAPI_COMMUNITY_ENTRYGroupConnection_sumArgs = {
+  field: STRAPI_COMMUNITY_ENTRYFieldsEnum;
+};
+
+type STRAPI_COMMUNITY_ENTRYSortInput = {
+  readonly fields: InputMaybe<ReadonlyArray<InputMaybe<STRAPI_COMMUNITY_ENTRYFieldsEnum>>>;
+  readonly order: InputMaybe<ReadonlyArray<InputMaybe<SortOrderEnum>>>;
+};
+
+type STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODE = Node & {
+  readonly children: ReadonlyArray<Node>;
+  readonly description: Maybe<Scalars['String']>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly parent: Maybe<Node>;
+};
+
+type STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEEdge>;
+  readonly group: ReadonlyArray<STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODE>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEConnection_distinctArgs = {
+  field: STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEFieldsEnum;
+};
+
+
+type STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEConnection_groupArgs = {
+  field: STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEFieldsEnum;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEConnection_maxArgs = {
+  field: STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEFieldsEnum;
+};
+
+
+type STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEConnection_minArgs = {
+  field: STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEFieldsEnum;
+};
+
+
+type STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEConnection_sumArgs = {
+  field: STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEFieldsEnum;
+};
+
+type STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEEdge = {
+  readonly next: Maybe<STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODE>;
+  readonly node: STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODE;
+  readonly previous: Maybe<STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODE>;
+};
+
+type STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEFieldsEnum =
+  | 'children'
+  | 'children.children'
+  | 'children.children.children'
+  | 'children.children.children.children'
+  | 'children.children.children.id'
+  | 'children.children.id'
+  | 'children.children.internal.content'
+  | 'children.children.internal.contentDigest'
+  | 'children.children.internal.contentFilePath'
+  | 'children.children.internal.description'
+  | 'children.children.internal.fieldOwners'
+  | 'children.children.internal.ignoreType'
+  | 'children.children.internal.mediaType'
+  | 'children.children.internal.owner'
+  | 'children.children.internal.type'
+  | 'children.children.parent.children'
+  | 'children.children.parent.id'
+  | 'children.id'
+  | 'children.internal.content'
+  | 'children.internal.contentDigest'
+  | 'children.internal.contentFilePath'
+  | 'children.internal.description'
+  | 'children.internal.fieldOwners'
+  | 'children.internal.ignoreType'
+  | 'children.internal.mediaType'
+  | 'children.internal.owner'
+  | 'children.internal.type'
+  | 'children.parent.children'
+  | 'children.parent.children.children'
+  | 'children.parent.children.id'
+  | 'children.parent.id'
+  | 'children.parent.internal.content'
+  | 'children.parent.internal.contentDigest'
+  | 'children.parent.internal.contentFilePath'
+  | 'children.parent.internal.description'
+  | 'children.parent.internal.fieldOwners'
+  | 'children.parent.internal.ignoreType'
+  | 'children.parent.internal.mediaType'
+  | 'children.parent.internal.owner'
+  | 'children.parent.internal.type'
+  | 'children.parent.parent.children'
+  | 'children.parent.parent.id'
+  | 'description'
+  | 'id'
+  | 'internal.content'
+  | 'internal.contentDigest'
+  | 'internal.contentFilePath'
+  | 'internal.description'
+  | 'internal.fieldOwners'
+  | 'internal.ignoreType'
+  | 'internal.mediaType'
+  | 'internal.owner'
+  | 'internal.type'
+  | 'parent.children'
+  | 'parent.children.children'
+  | 'parent.children.children.children'
+  | 'parent.children.children.id'
+  | 'parent.children.id'
+  | 'parent.children.internal.content'
+  | 'parent.children.internal.contentDigest'
+  | 'parent.children.internal.contentFilePath'
+  | 'parent.children.internal.description'
+  | 'parent.children.internal.fieldOwners'
+  | 'parent.children.internal.ignoreType'
+  | 'parent.children.internal.mediaType'
+  | 'parent.children.internal.owner'
+  | 'parent.children.internal.type'
+  | 'parent.children.parent.children'
+  | 'parent.children.parent.id'
+  | 'parent.id'
+  | 'parent.internal.content'
+  | 'parent.internal.contentDigest'
+  | 'parent.internal.contentFilePath'
+  | 'parent.internal.description'
+  | 'parent.internal.fieldOwners'
+  | 'parent.internal.ignoreType'
+  | 'parent.internal.mediaType'
+  | 'parent.internal.owner'
+  | 'parent.internal.type'
+  | 'parent.parent.children'
+  | 'parent.parent.children.children'
+  | 'parent.parent.children.id'
+  | 'parent.parent.id'
+  | 'parent.parent.internal.content'
+  | 'parent.parent.internal.contentDigest'
+  | 'parent.parent.internal.contentFilePath'
+  | 'parent.parent.internal.description'
+  | 'parent.parent.internal.fieldOwners'
+  | 'parent.parent.internal.ignoreType'
+  | 'parent.parent.internal.mediaType'
+  | 'parent.parent.internal.owner'
+  | 'parent.parent.internal.type'
+  | 'parent.parent.parent.children'
+  | 'parent.parent.parent.id';
+
+type STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEFilterInput = {
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly description: InputMaybe<StringQueryOperatorInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+};
+
+type STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODE>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEGroupConnection_distinctArgs = {
+  field: STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEFieldsEnum;
+};
+
+
+type STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEGroupConnection_groupArgs = {
+  field: STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEFieldsEnum;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEGroupConnection_maxArgs = {
+  field: STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEFieldsEnum;
+};
+
+
+type STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEGroupConnection_minArgs = {
+  field: STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEFieldsEnum;
+};
+
+
+type STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEGroupConnection_sumArgs = {
+  field: STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEFieldsEnum;
+};
+
+type STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODESortInput = {
+  readonly fields: InputMaybe<ReadonlyArray<InputMaybe<STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODEFieldsEnum>>>;
+  readonly order: InputMaybe<ReadonlyArray<InputMaybe<SortOrderEnum>>>;
+};
+
 type STRAPI_EXAMPLE = Node & {
   readonly authorities: Maybe<STRAPI_EXAMPLEAuthorities>;
   readonly awards: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_AWARD_AWARD>>>;
@@ -3316,6 +3980,14 @@ type STRAPI_EXAMPLELocalChallengesFilterInput = {
 
 type STRAPI_EXAMPLELocalChallengesSortInput = {
   readonly data: InputMaybe<STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODESortInput>;
+};
+
+type STRAPI_EXAMPLELocalChallenges = {
+  readonly data: Maybe<STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODE>;
+};
+
+type STRAPI_EXAMPLELocalChallengesFilterInput = {
+  readonly data: InputMaybe<STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEFilterInput>;
 };
 
 type STRAPI_EXAMPLENotes = {
@@ -3856,6 +4528,209 @@ type STRAPI_EXAMPLE_COMMUNICATION_TEXTNODESortInput = {
   readonly parent: InputMaybe<NodeSortInput>;
 };
 
+type STRAPI_EXAMPLE_COMMUNICATION_TEXTNODE = Node & {
+  readonly children: ReadonlyArray<Node>;
+  readonly communication: Maybe<Scalars['String']>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly parent: Maybe<Node>;
+};
+
+type STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEEdge>;
+  readonly group: ReadonlyArray<STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI_EXAMPLE_COMMUNICATION_TEXTNODE>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEConnection_distinctArgs = {
+  field: STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEFieldsEnum;
+};
+
+
+type STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEConnection_groupArgs = {
+  field: STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEFieldsEnum;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEConnection_maxArgs = {
+  field: STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEFieldsEnum;
+};
+
+
+type STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEConnection_minArgs = {
+  field: STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEFieldsEnum;
+};
+
+
+type STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEConnection_sumArgs = {
+  field: STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEFieldsEnum;
+};
+
+type STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEEdge = {
+  readonly next: Maybe<STRAPI_EXAMPLE_COMMUNICATION_TEXTNODE>;
+  readonly node: STRAPI_EXAMPLE_COMMUNICATION_TEXTNODE;
+  readonly previous: Maybe<STRAPI_EXAMPLE_COMMUNICATION_TEXTNODE>;
+};
+
+type STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEFieldsEnum =
+  | 'children'
+  | 'children.children'
+  | 'children.children.children'
+  | 'children.children.children.children'
+  | 'children.children.children.id'
+  | 'children.children.id'
+  | 'children.children.internal.content'
+  | 'children.children.internal.contentDigest'
+  | 'children.children.internal.contentFilePath'
+  | 'children.children.internal.description'
+  | 'children.children.internal.fieldOwners'
+  | 'children.children.internal.ignoreType'
+  | 'children.children.internal.mediaType'
+  | 'children.children.internal.owner'
+  | 'children.children.internal.type'
+  | 'children.children.parent.children'
+  | 'children.children.parent.id'
+  | 'children.id'
+  | 'children.internal.content'
+  | 'children.internal.contentDigest'
+  | 'children.internal.contentFilePath'
+  | 'children.internal.description'
+  | 'children.internal.fieldOwners'
+  | 'children.internal.ignoreType'
+  | 'children.internal.mediaType'
+  | 'children.internal.owner'
+  | 'children.internal.type'
+  | 'children.parent.children'
+  | 'children.parent.children.children'
+  | 'children.parent.children.id'
+  | 'children.parent.id'
+  | 'children.parent.internal.content'
+  | 'children.parent.internal.contentDigest'
+  | 'children.parent.internal.contentFilePath'
+  | 'children.parent.internal.description'
+  | 'children.parent.internal.fieldOwners'
+  | 'children.parent.internal.ignoreType'
+  | 'children.parent.internal.mediaType'
+  | 'children.parent.internal.owner'
+  | 'children.parent.internal.type'
+  | 'children.parent.parent.children'
+  | 'children.parent.parent.id'
+  | 'communication'
+  | 'id'
+  | 'internal.content'
+  | 'internal.contentDigest'
+  | 'internal.contentFilePath'
+  | 'internal.description'
+  | 'internal.fieldOwners'
+  | 'internal.ignoreType'
+  | 'internal.mediaType'
+  | 'internal.owner'
+  | 'internal.type'
+  | 'parent.children'
+  | 'parent.children.children'
+  | 'parent.children.children.children'
+  | 'parent.children.children.id'
+  | 'parent.children.id'
+  | 'parent.children.internal.content'
+  | 'parent.children.internal.contentDigest'
+  | 'parent.children.internal.contentFilePath'
+  | 'parent.children.internal.description'
+  | 'parent.children.internal.fieldOwners'
+  | 'parent.children.internal.ignoreType'
+  | 'parent.children.internal.mediaType'
+  | 'parent.children.internal.owner'
+  | 'parent.children.internal.type'
+  | 'parent.children.parent.children'
+  | 'parent.children.parent.id'
+  | 'parent.id'
+  | 'parent.internal.content'
+  | 'parent.internal.contentDigest'
+  | 'parent.internal.contentFilePath'
+  | 'parent.internal.description'
+  | 'parent.internal.fieldOwners'
+  | 'parent.internal.ignoreType'
+  | 'parent.internal.mediaType'
+  | 'parent.internal.owner'
+  | 'parent.internal.type'
+  | 'parent.parent.children'
+  | 'parent.parent.children.children'
+  | 'parent.parent.children.id'
+  | 'parent.parent.id'
+  | 'parent.parent.internal.content'
+  | 'parent.parent.internal.contentDigest'
+  | 'parent.parent.internal.contentFilePath'
+  | 'parent.parent.internal.description'
+  | 'parent.parent.internal.fieldOwners'
+  | 'parent.parent.internal.ignoreType'
+  | 'parent.parent.internal.mediaType'
+  | 'parent.parent.internal.owner'
+  | 'parent.parent.internal.type'
+  | 'parent.parent.parent.children'
+  | 'parent.parent.parent.id';
+
+type STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEFilterInput = {
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly communication: InputMaybe<StringQueryOperatorInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+};
+
+type STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI_EXAMPLE_COMMUNICATION_TEXTNODE>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEGroupConnection_distinctArgs = {
+  field: STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEFieldsEnum;
+};
+
+
+type STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEGroupConnection_groupArgs = {
+  field: STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEFieldsEnum;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEGroupConnection_maxArgs = {
+  field: STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEFieldsEnum;
+};
+
+
+type STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEGroupConnection_minArgs = {
+  field: STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEFieldsEnum;
+};
+
+
+type STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEGroupConnection_sumArgs = {
+  field: STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEFieldsEnum;
+};
+
+type STRAPI_EXAMPLE_COMMUNICATION_TEXTNODESortInput = {
+  readonly fields: InputMaybe<ReadonlyArray<InputMaybe<STRAPI_EXAMPLE_COMMUNICATION_TEXTNODEFieldsEnum>>>;
+  readonly order: InputMaybe<ReadonlyArray<InputMaybe<SortOrderEnum>>>;
+};
+
 type STRAPI_EXAMPLE_DESCRIPTION_TEXTNODE = Node & {
   /** Returns the first child node of type MarkdownRemark or null if there are no children of given type on this node */
   readonly childMarkdownRemark: Maybe<MarkdownRemark>;
@@ -4366,6 +5241,209 @@ type STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODESortInput = {
   readonly internal: InputMaybe<InternalSortInput>;
   readonly localChallenges: InputMaybe<SortOrderEnum>;
   readonly parent: InputMaybe<NodeSortInput>;
+};
+
+type STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODE = Node & {
+  readonly children: ReadonlyArray<Node>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly localChallenges: Maybe<Scalars['String']>;
+  readonly parent: Maybe<Node>;
+};
+
+type STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEEdge>;
+  readonly group: ReadonlyArray<STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODE>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEConnection_distinctArgs = {
+  field: STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEFieldsEnum;
+};
+
+
+type STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEConnection_groupArgs = {
+  field: STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEFieldsEnum;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEConnection_maxArgs = {
+  field: STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEFieldsEnum;
+};
+
+
+type STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEConnection_minArgs = {
+  field: STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEFieldsEnum;
+};
+
+
+type STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEConnection_sumArgs = {
+  field: STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEFieldsEnum;
+};
+
+type STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEEdge = {
+  readonly next: Maybe<STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODE>;
+  readonly node: STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODE;
+  readonly previous: Maybe<STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODE>;
+};
+
+type STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEFieldsEnum =
+  | 'children'
+  | 'children.children'
+  | 'children.children.children'
+  | 'children.children.children.children'
+  | 'children.children.children.id'
+  | 'children.children.id'
+  | 'children.children.internal.content'
+  | 'children.children.internal.contentDigest'
+  | 'children.children.internal.contentFilePath'
+  | 'children.children.internal.description'
+  | 'children.children.internal.fieldOwners'
+  | 'children.children.internal.ignoreType'
+  | 'children.children.internal.mediaType'
+  | 'children.children.internal.owner'
+  | 'children.children.internal.type'
+  | 'children.children.parent.children'
+  | 'children.children.parent.id'
+  | 'children.id'
+  | 'children.internal.content'
+  | 'children.internal.contentDigest'
+  | 'children.internal.contentFilePath'
+  | 'children.internal.description'
+  | 'children.internal.fieldOwners'
+  | 'children.internal.ignoreType'
+  | 'children.internal.mediaType'
+  | 'children.internal.owner'
+  | 'children.internal.type'
+  | 'children.parent.children'
+  | 'children.parent.children.children'
+  | 'children.parent.children.id'
+  | 'children.parent.id'
+  | 'children.parent.internal.content'
+  | 'children.parent.internal.contentDigest'
+  | 'children.parent.internal.contentFilePath'
+  | 'children.parent.internal.description'
+  | 'children.parent.internal.fieldOwners'
+  | 'children.parent.internal.ignoreType'
+  | 'children.parent.internal.mediaType'
+  | 'children.parent.internal.owner'
+  | 'children.parent.internal.type'
+  | 'children.parent.parent.children'
+  | 'children.parent.parent.id'
+  | 'id'
+  | 'internal.content'
+  | 'internal.contentDigest'
+  | 'internal.contentFilePath'
+  | 'internal.description'
+  | 'internal.fieldOwners'
+  | 'internal.ignoreType'
+  | 'internal.mediaType'
+  | 'internal.owner'
+  | 'internal.type'
+  | 'localChallenges'
+  | 'parent.children'
+  | 'parent.children.children'
+  | 'parent.children.children.children'
+  | 'parent.children.children.id'
+  | 'parent.children.id'
+  | 'parent.children.internal.content'
+  | 'parent.children.internal.contentDigest'
+  | 'parent.children.internal.contentFilePath'
+  | 'parent.children.internal.description'
+  | 'parent.children.internal.fieldOwners'
+  | 'parent.children.internal.ignoreType'
+  | 'parent.children.internal.mediaType'
+  | 'parent.children.internal.owner'
+  | 'parent.children.internal.type'
+  | 'parent.children.parent.children'
+  | 'parent.children.parent.id'
+  | 'parent.id'
+  | 'parent.internal.content'
+  | 'parent.internal.contentDigest'
+  | 'parent.internal.contentFilePath'
+  | 'parent.internal.description'
+  | 'parent.internal.fieldOwners'
+  | 'parent.internal.ignoreType'
+  | 'parent.internal.mediaType'
+  | 'parent.internal.owner'
+  | 'parent.internal.type'
+  | 'parent.parent.children'
+  | 'parent.parent.children.children'
+  | 'parent.parent.children.id'
+  | 'parent.parent.id'
+  | 'parent.parent.internal.content'
+  | 'parent.parent.internal.contentDigest'
+  | 'parent.parent.internal.contentFilePath'
+  | 'parent.parent.internal.description'
+  | 'parent.parent.internal.fieldOwners'
+  | 'parent.parent.internal.ignoreType'
+  | 'parent.parent.internal.mediaType'
+  | 'parent.parent.internal.owner'
+  | 'parent.parent.internal.type'
+  | 'parent.parent.parent.children'
+  | 'parent.parent.parent.id';
+
+type STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEFilterInput = {
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly localChallenges: InputMaybe<StringQueryOperatorInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+};
+
+type STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODE>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEGroupConnection_distinctArgs = {
+  field: STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEFieldsEnum;
+};
+
+
+type STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEGroupConnection_groupArgs = {
+  field: STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEFieldsEnum;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEGroupConnection_maxArgs = {
+  field: STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEFieldsEnum;
+};
+
+
+type STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEGroupConnection_minArgs = {
+  field: STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEFieldsEnum;
+};
+
+
+type STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEGroupConnection_sumArgs = {
+  field: STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEFieldsEnum;
+};
+
+type STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODESortInput = {
+  readonly fields: InputMaybe<ReadonlyArray<InputMaybe<STRAPI_EXAMPLE_LOCALCHALLENGES_TEXTNODEFieldsEnum>>>;
+  readonly order: InputMaybe<ReadonlyArray<InputMaybe<SortOrderEnum>>>;
 };
 
 type STRAPI_EXAMPLE_NOTES_TEXTNODE = Node & {
