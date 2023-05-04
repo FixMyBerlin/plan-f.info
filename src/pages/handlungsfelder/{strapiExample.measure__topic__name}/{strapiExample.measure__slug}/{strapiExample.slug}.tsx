@@ -25,7 +25,7 @@ const ExampleDetails: React.FC<
     population: 'Einwohner*innen',
     spatialStructure: 'Besiedelung',
     centrality: 'Lage',
-    'relatedOffice.data.relatedOffice': 'Zuständige Abteilung',
+    'relatedOffice.data.childMarkdownRemark.html': 'Zuständige Abteilung',
     localChallenges: 'Lokale Herausforderungen (nicht in wireframes)',
     commune: 'Kommune (nicht in wireframes)',
   };
@@ -79,28 +79,30 @@ const ExampleDetails: React.FC<
                 <P className="whitespace-nowrap font-bold uppercase">
                   {steckbiref[key]}
                 </P>
-                <Prose>{example[key]}</Prose>
+                {/* <Prose>{example[key]}</Prose> */}
               </div>
             ))}
           </div>
 
           <div className="mt-12">
             <H2>Maßnahmenbeschreibung</H2>
-            <Prose>{example.description.data.description}</Prose>
+            <Prose>{example.description.data.childMarkdownRemark.html}</Prose>
           </div>
 
           <div className="mt-12">
             <H2>Auswertung Praxisbeispiel</H2>
             <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
-              <CardText title="Ziele">{example.goals.data.goals}</CardText>
+              <CardText title="Ziele">
+                {example.goals.data.childMarkdownRemark.html}
+              </CardText>
               <CardText title="Ergebnisse">
-                {example.results.data.results}
+                {example.results.data.childMarkdownRemark.html}
               </CardText>
               <CardText title="Dauer: Planung und Umsetzung">
                 {example.period}
               </CardText>
               <CardText title="Kosten / Mittelherkunft">
-                {example.goals.data.goals}
+                {example.goals.data.childMarkdownRemark.html}
               </CardText>
             </div>
           </div>
@@ -115,7 +117,10 @@ const ExampleDetails: React.FC<
           <div className="mt-12">
             <H2>Auszeichnungen</H2>
             {example.awards.map((award) => (
-              <div className="flex gap-2 md:gap-6">
+              <div
+                className="flex gap-2 md:gap-6"
+                key={award.description.data.id}
+              >
                 {award.award?.logo && (
                   <ImageWithCopyright copyright={award.award.logo.copyright}>
                     <GatsbyImage
@@ -129,9 +134,9 @@ const ExampleDetails: React.FC<
                   </ImageWithCopyright>
                 )}
                 <div className="flex flex-col justify-start">
-                  <H3>{award.award.name}</H3>
+                  {award.award?.name && <H3>{award.award.name}</H3>}
                   <Prose className="line-clamp-4">
-                    {award.description.data.description}
+                    {award.description.data.childMarkdownRemark.html}
                   </Prose>
                 </div>
               </div>
@@ -140,15 +145,17 @@ const ExampleDetails: React.FC<
 
           <div className="mt-12">
             <H2>Besonderheiten (nicht in wireframes)</H2>
-            <Prose>{example.particularities.data.particularities}</Prose>
+            <Prose>
+              {example.particularities.data.childMarkdownRemark.html}
+            </Prose>
           </div>
           <div className="mt-12">
             <H2>Anmerkungen</H2>
-            <Prose>{example.notes.data.notes}</Prose>
+            <Prose>{example.notes.data.childMarkdownRemark.html}</Prose>
           </div>
 
           <Prose className="mt-12">
-            Quelle: {example.sources.data.sources}
+            Quelle: {example.sources.data.childMarkdownRemark.html}
           </Prose>
         </SectionWithPagination>
       </Section>
@@ -173,18 +180,59 @@ export const query = graphql`
       spatialStructure
       localChallenges {
         data {
-          localChallenges
+          childMarkdownRemark {
+            html
+          }
         }
       }
       communication {
         data {
-          communication
+          childMarkdownRemark {
+            html
+          }
         }
       }
       period
       funding {
         data {
-          funding
+          childMarkdownRemark {
+            html
+          }
+        }
+      }
+      goals {
+        data {
+          childMarkdownRemark {
+            html
+          }
+        }
+      }
+      results {
+        data {
+          childMarkdownRemark {
+            html
+          }
+        }
+      }
+      sources {
+        data {
+          childMarkdownRemark {
+            html
+          }
+        }
+      }
+      particularities {
+        data {
+          childMarkdownRemark {
+            html
+          }
+        }
+      }
+      notes {
+        data {
+          childMarkdownRemark {
+            html
+          }
         }
       }
       goals {
@@ -224,17 +272,23 @@ export const query = graphql`
       }
       description {
         data {
-          description
+          childMarkdownRemark {
+            html
+          }
         }
       }
       relatedOffice {
         data {
-          relatedOffice
+          childMarkdownRemark {
+            html
+          }
         }
       }
       stakeholders {
         data {
-          stakeholders
+          childMarkdownRemark {
+            html
+          }
         }
       }
       awards {
@@ -253,7 +307,10 @@ export const query = graphql`
         }
         description {
           data {
-            description
+            childMarkdownRemark {
+              html
+            }
+            id
           }
         }
       }
