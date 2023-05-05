@@ -37,7 +37,7 @@ export const NavigationMobile: React.FC<Props> = ({ path }) => {
               <Link className="flex flex-col justify-center" href="/">
                 <Logo className="h-8 w-auto shrink-0" />
               </Link>
-              <div className="-mr-2 flex items-center sm:hidden">
+              <div className="-mr-2 flex items-center md:hidden">
                 {/* Mobile menu button */}
                 <Disclosure.Button className="inline-flex items-center justify-center">
                   <span className="sr-only">Open main menu</span>
@@ -57,7 +57,7 @@ export const NavigationMobile: React.FC<Props> = ({ path }) => {
             </div>
           </div>
 
-          <Disclosure.Panel className="sm:hidden">
+          <Disclosure.Panel className="md:hidden">
             <div className="flex flex-col gap-2 px-4 py-10">
               {Object.keys(menuItems).map((key) => (
                 <Disclosure.Button
