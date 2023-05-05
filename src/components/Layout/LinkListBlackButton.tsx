@@ -1,4 +1,4 @@
-import { PlusIcon } from '@heroicons/react/20/solid';
+import { MinusIcon, PlusIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 import React, { useState } from 'react';
 import { LinkButtonWithArrow } from '../PageTopic/LinkButtonWithArrow';
@@ -57,7 +57,11 @@ export const LinkListBlackButton: React.FC<Props> = ({
           type="button"
           onClick={() => setIsExpand(!isExpand)}
         >
-          <PlusIcon className="h-8 rounded-full border border-black p-1" />
+          {isExpand ? (
+            <MinusIcon className="h-8 rounded-full border border-black p-1" />
+          ) : (
+            <PlusIcon className="h-8 rounded-full border border-black p-1" />
+          )}
           <p className=" whitespace-nowrap">{`${
             isExpand ? 'Weniger' : 'Mehr'
           } anzeigen`}</p>
