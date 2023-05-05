@@ -160,7 +160,7 @@ const ExampleDetails: React.FC<
             ))}
           </div>
           <div className="mt-12">
-            <H2>Besonderheiten (nicht in wireframes)</H2>
+            <H2>Besonderheiten</H2>
             <Prose
               markdownHTML={
                 example.particularities.data.childMarkdownRemark.html
@@ -171,11 +171,14 @@ const ExampleDetails: React.FC<
             <H2>Anmerkungen</H2>
             <Prose markdownHTML={example.notes.data.childMarkdownRemark.html} />
           </div>
-          Quelle:
-          <Prose
-            className="mt-12"
-            markdownHTML={example.sources.data.childMarkdownRemark.html}
-          />
+          {example.sources && (
+            <div className="mt-12">
+              <P>Quelle:</P>
+              <Prose
+                markdownHTML={example.sources.data.childMarkdownRemark.html}
+              />
+            </div>
+          )}
         </SectionWithPagination>
       </Section>
 
