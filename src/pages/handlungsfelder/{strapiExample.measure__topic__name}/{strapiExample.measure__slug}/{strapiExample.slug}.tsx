@@ -20,14 +20,12 @@ const ExampleDetails: React.FC<
   const nextSlug = slugList[pos + 1] || slugList[0];
   const steckbiref = {
     subcategory: 'Maßnahmentyp',
-    name: 'Name des Projektes',
+    title: 'Name des Projektes',
     countryState: 'Bundesland',
     population: 'Einwohner*innen',
     spatialStructure: 'Besiedelung',
     centrality: 'Lage',
-    'relatedOffice.data.childMarkdownRemark.html': 'Zuständige Abteilung',
-    localChallenges: 'Lokale Herausforderungen (nicht in wireframes)',
-    commune: 'Kommune (nicht in wireframes)',
+    commune: 'Kommune',
   };
 
   return (
@@ -70,7 +68,6 @@ const ExampleDetails: React.FC<
           )}
           <div className="mt-8 rounded-br-3xl rounded-tl-3xl bg-lime-200 p-4 py-6">
             <H2 className="">{example.commune}</H2>
-
             {Object.keys(steckbiref).map((key) => (
               <div
                 className="grid grid-cols-1 text-sm md:grid-cols-2 md:flex-row"
@@ -79,9 +76,24 @@ const ExampleDetails: React.FC<
                 <P className="whitespace-nowrap font-bold uppercase">
                   {steckbiref[key]}
                 </P>
-                {/* <Prose>{example[key]}</Prose> */}
+                <Prose markdownHTML={example[key]} />
               </div>
             ))}
+            <P>{}</P>
+            <P className="whitespace-nowrap font-bold uppercase">
+              Zuständige Abteilung
+            </P>
+            <Prose
+              markdownHTML={example.relatedOffice.data.childMarkdownRemark.html}
+            />
+            <P className="whitespace-nowrap font-bold uppercase">
+              Lokale Herausforderungen
+            </P>
+            <Prose
+              markdownHTML={
+                example.localChallenges.data.childMarkdownRemark.html
+              }
+            />
           </div>
           <div className="mt-12">
             <H2>Maßnahmenbeschreibung</H2>
@@ -180,9 +192,12 @@ export const query = graphql`
   query ExampleDetailsAndCommunityEntries($id: String!) {
     example: strapiExample(id: { eq: $id }) {
       title
+      subcategory
       shortDescription
       countryState
       commune
+      title
+      centrality
       population
       spatialStructure
       localChallenges {

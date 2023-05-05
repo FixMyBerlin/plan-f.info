@@ -8,7 +8,6 @@ import { CardWrapperThreeCols } from '~/components/Layout/CardWrapperThreeCols';
 import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
 import { PageHeaderTextAndImage } from '~/components/Layout/PageHeaderTextAndImage';
 import { Section } from '~/components/Layout/Section';
-import { LinkButtonWithArrow } from '~/components/PageTopic/LinkButtonWithArrow';
 import { H2, H3, P } from '~/components/Text';
 
 const MeasureDetails: React.FC<
@@ -26,29 +25,22 @@ const MeasureDetails: React.FC<
         markdownHTML={measure.description.data.childMarkdownRemark.html}
       />
 
-      <Section className="mb-20 flex flex-col gap-10 sm:flex-row sm:gap-20">
-        <div className="flex flex-col items-start gap-5">
-          <H3 className="uppercase">Leitfäden (nicht in Daten)</H3>
-          <LinkButtonWithArrow href="/">Leitfaden 1</LinkButtonWithArrow>
-          <LinkButtonWithArrow href="/">Leitfaden 2</LinkButtonWithArrow>
-        </div>
-
+      <Section className="mb-20 grid gap-10 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
+        {measure.guidelines && (
+          <LinkListBlackButton links={measure.guidelines} title="Leitfäden" />
+        )}
         {measure.additonalResources && (
           <LinkListBlackButton
             links={measure.additonalResources}
             title="weitere Hinweise"
           />
         )}
-
-        <div className="flex flex-col items-start gap-5">
-          <H3 className="uppercase">Fördermöglichkeiten (nicht in Daten)</H3>
-          <LinkButtonWithArrow href="/">
-            Fördermöglichkeiten 1
-          </LinkButtonWithArrow>
-          <LinkButtonWithArrow href="/">
-            Fördermöglichkeiten 2
-          </LinkButtonWithArrow>
-        </div>
+        {measure.fundings && (
+          <LinkListBlackButton
+            links={measure.fundings}
+            title="Fördermöglichkeiten"
+          />
+        )}
       </Section>
 
       <Section className="mb-12 bg-lime-300">
@@ -67,7 +59,9 @@ const MeasureDetails: React.FC<
               }
             >
               <H3>{example.title}</H3>
-              <div className="line-clamp-4">{example.shortDescription}</div>
+              <div className="line-clamp-4">
+                <P>{example.shortDescription}</P>
+              </div>
             </CardImageAndTextVertical>
           ))}
         </CardWrapperThreeCols>
