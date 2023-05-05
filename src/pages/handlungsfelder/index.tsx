@@ -42,11 +42,8 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
     <>
       <HelmetSeo title={title} />
       <Hero title={title} className="bg-purple-100">
-        <Breadcrumbs names={[title]} />
+        <Breadcrumbs names={[]} />
       </Hero>
-      {/* <Link button="black" href="https://tailwindcss.com/docs/ring-width">
-        Hallo Test
-      </Link> */}
       <Section className="mb-12">
         <Article>
           <P>

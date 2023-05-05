@@ -18,7 +18,7 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
       <HelmetSeo title={topic.name} />
 
       <Hero title={topic.name} className="bg-purple-300">
-        <Breadcrumbs names={['Wissensspeicher', topic.name]} />
+        <Breadcrumbs names={['Wissensspeicher']} />
       </Hero>
 
       <PageHeaderTextAndImage
