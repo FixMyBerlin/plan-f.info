@@ -7,11 +7,11 @@ import Logo from '~/components/Layout/assets/Logo.svg';
 import { Link } from '../../core/links/Link';
 import { menuItems } from './menuItems';
 
-type Props = { path: string };
+type Props = { path: string; className?: string };
 
 // base: 'simple' from https://tailwindui.com/components/application-ui/navigation/navbars
 
-export const NavigationMobile: React.FC<Props> = ({ path }) => {
+export const NavigationMobile: React.FC<Props> = ({ path, className }) => {
   const {
     nestedMeasures: { nodes },
   }: Queries.TopicMeasureTreeQuery = useStaticQuery(graphql`
@@ -29,10 +29,15 @@ export const NavigationMobile: React.FC<Props> = ({ path }) => {
     }
   `);
   return (
-    <Disclosure as="nav" className="fixed z-10 w-full bg-white shadow">
+    <Disclosure as="nav" className={clsx(className, 'fixed z-10 w-full')}>
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div
+            className={clsx(
+              'mx-auto max-w-7xl px-4 sm:px-6 lg:px-8',
+              open && 'bg-white'
+            )}
+          >
             <div className="flex h-16 justify-between">
               <Link className="flex flex-col justify-center" href="/">
                 <Logo className="h-8 w-auto shrink-0" />
@@ -58,7 +63,7 @@ export const NavigationMobile: React.FC<Props> = ({ path }) => {
           </div>
 
           <Disclosure.Panel className="md:hidden">
-            <div className="flex flex-col gap-2 px-4 py-10">
+            <div className="flex flex-col gap-2 bg-white px-4 py-10">
               {Object.keys(menuItems).map((key) => (
                 <Disclosure.Button
                   as="a"

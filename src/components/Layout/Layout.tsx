@@ -11,6 +11,7 @@ type Props = {
 // TODO: Maybe find a better way to manipulate the path to the first thre directories
 const Layout: React.FC<Props & PageProps> = ({ path, children }) => {
   const dirs = path.split('/');
+
   return (
     <div className="relative flex h-full flex-col overflow-x-hidden bg-gray-200">
       <div className="relative mx-auto w-full max-w-7xl bg-white">
