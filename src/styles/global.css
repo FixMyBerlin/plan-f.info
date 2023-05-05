@@ -14,6 +14,10 @@ body {
   @apply min-h-full;
 }
 
+.shadow-r {
+  box-shadow: 3px 3px 5px -2px #888;
+}
+
 @font-face {
   font-family: 'ApercuMonoPro';
   src: local(ApercuMonoPro-Regular),

@@ -75,7 +75,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
           Entdecken Sie die verschiedenen Handlungsfelder. Dort finden Sie
           Maßnahmen und deren zugehörigen Praxisbeispiele
         </P>
-        <CardWrapper className="mt-10">
+        <CardWrapper breakpoint="lg:grid-cols-2" className="mt-10">
           {topics.nodes.map((topic) => (
             <CardImageAndTextResponsive
               key={topic.slug}

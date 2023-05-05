@@ -2,6 +2,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 import { graphql, useStaticQuery } from 'gatsby';
 import React, { useState } from 'react';
+import Logo from '~/components/Layout/assets/Logo.svg';
 import { Link } from '../../core/links/Link';
 
 type Props = { path: string };
@@ -26,12 +27,17 @@ export const SideNavigation: React.FC<Props> = ({ path }) => {
   `);
   const [folded, setFolded] = useState(true);
   return (
-    <div className="h-full">
-      <nav className="flex h-[80vh] min-h-fit items-center">
-        {/* Shadow for custom shape https://stackoverflow.com/questions/12855529/css-box-shadow-around-a-custom-shape */}
-        {/* TODO maintain the height of teh side nav */}
-        {!folded && (
-          <ul className={clsx('h-full w-72 bg-gray-100 px-4 py-20')}>
+    <div className="fixed z-20 h-screen">
+      <nav className="flex h-full items-center">
+        {!folded ? (
+          <ul
+            className={clsx('shadow-r h-full w-72 bg-gray-100 px-4 py-3 pr-8')}
+          >
+            <li className="mb-16 px-4">
+              <Link href="/">
+                <Logo className="h-8 w-auto shrink-0" />
+              </Link>
+            </li>
             {nodes.map((topic) => (
               <li key={topic.name}>
                 <Link
@@ -46,7 +52,7 @@ export const SideNavigation: React.FC<Props> = ({ path }) => {
                   {topic.name}
                 </Link>
                 <ul className="mt-4 flex flex-col gap-2">
-                  {topic.measures?.length &&
+                  {Boolean(topic.measures?.length) &&
                     topic.measures.map((measure) => (
                       <li key={measure.name} className="relative">
                         <Link
@@ -67,11 +73,13 @@ export const SideNavigation: React.FC<Props> = ({ path }) => {
               </li>
             ))}
           </ul>
+        ) : (
+          <div className="shadow-r h-full w-[6px] bg-gray-100" />
         )}
 
         <div className="flex flex-col justify-center">
           <button
-            className="rounded-br-lg rounded-tr-lg bg-gray-100 py-10 "
+            className="shadow-r rounded-br-lg rounded-tr-lg bg-gray-100 py-10"
             type="button"
             onClick={() => setFolded(!folded)}
           >
