@@ -18,7 +18,7 @@ export const Prose: React.FC<Props> = ({ markdownHTML, className }) => {
         'prose-h3:text-base', // h3 size
         'prose prose-sm md:prose-base', // responsive sizes
         'prose-h3:m1-1 prose-h1:mb-2 prose-h2:mb-2 prose-h2:mt-1 prose-h3:mb-2 prose-p:mb-2 prose-p:mt-1',
-        'prose-ul:list-none prose-ul:pl-0 prose-li:m-0 prose-li:p-0'
+        'prose-li:m-0 prose-li:p-0'
       )}
       // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{ __html: markdownHTML }}
