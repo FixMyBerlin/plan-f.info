@@ -1,3 +1,6 @@
+require('dotenv').config({
+  path: `.env`,
+});
 module.exports = {
   // Allows the use of JSX without having to import React
   // Docs https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/#jsxruntime
@@ -66,8 +69,7 @@ module.exports = {
         // in ENV verschieben, da pro Dev unterschiedlich
         apiURL: 'https://backend-staging.plan-f.info',
         // in ENV verschieben, da pro Dev unterschiedlich und geheim seien sollte
-        accessToken:
-          '07c8b96dcb0de371f7c45f3ab47477e9bc93d57c3d048107d1e6cdfac8a37d176db404e8a71ff3d04ecc0833d143d5d3def3441be0382d19f3b220190d39bf3ce68eb1c7093e000169a3c201456053141631c31709aade5ec76a29964315710132a0de2b3ce6f92e70a831ff0ff8227ca67f1c29ebaa20321ac1ccca0a231737',
+        accessToken: process.env.STRAPI_TOKEN,
         // Hier die Content types angeben, die wir in Gatsby verfügbar haben wollen.
         // collection = array, single = ein object
         collectionTypes: [
@@ -96,7 +98,7 @@ module.exports = {
               populate: {
                 topic: { populate: '*' },
                 image: { populate: '*' },
-                additonalResources: { populate: '*' },
+                additionalResources: { populate: '*' },
                 guidelines: { populate: '*' },
                 fundings: { populate: '*' },
                 examples: { populate: '*' },
