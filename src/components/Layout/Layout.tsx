@@ -20,7 +20,7 @@ const Layout: React.FC<Props & PageProps> = ({ path, children }) => {
 
         <div className="mx-auto w-full bg-white">
           <div className="flex w-full flex-row">
-            <div className="hidden md:block">
+            <div className="hidden lg:block">
               <SideNavigation
                 path={`${dirs
                   .slice(0, Math.min(dirs.length - 1, 4))
