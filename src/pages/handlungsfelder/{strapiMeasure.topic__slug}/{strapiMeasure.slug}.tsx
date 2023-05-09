@@ -27,9 +27,9 @@ const MeasureDetails: React.FC<
         {measure.guidelines && (
           <LinkListBlackButton links={measure.guidelines} title="Leitfäden" />
         )}
-        {measure.additonalResources && (
+        {measure.additionalResources && (
           <LinkListBlackButton
-            links={measure.additonalResources}
+            links={measure.additionalResources}
             title="weitere Hinweise"
           />
         )}
@@ -84,7 +84,7 @@ export const query = graphql`
           }
         }
       }
-      additonalResources {
+      additionalResources {
         url
         display
       }
