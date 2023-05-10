@@ -10,8 +10,11 @@ type Props = {
 };
 // TODO: Maybe find a better way to manipulate the path to the first thre directories
 const Layout: React.FC<Props & PageProps> = ({ path, children }) => {
-  const dirs = path.split('/');
-
+  const truncatedPath = `/${path
+    .slice(1, -1) // omit leading and trailing slash (we add them after depth limit)
+    .split('/')
+    .slice(0, 3) // limit the path depth to 3
+    .join('/')}/`;
   return (
     <div className="relative flex h-full flex-col overflow-x-hidden bg-gray-200">
       <div className="relative mx-auto w-full max-w-7xl bg-white">
@@ -21,11 +24,7 @@ const Layout: React.FC<Props & PageProps> = ({ path, children }) => {
         <div className="mx-auto w-full bg-white">
           <div className="flex w-full flex-row">
             <div className="hidden md:block">
-              <SideNavigation
-                path={`${dirs
-                  .slice(0, Math.min(dirs.length - 1, 4))
-                  .join('/')}/`}
-              />
+              <SideNavigation path={truncatedPath} />
             </div>
 
             <main className="flex-grow">{children}</main>
