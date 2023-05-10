@@ -4,7 +4,7 @@ import React from 'react';
 import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
 import { Article } from '~/components/Layout/Article';
 import { CardImageAndTextResponsive } from '~/components/Layout/CardImageAndTextResponsive';
-import { CardWrapper } from '~/components/Layout/CardWrapper';
+import { CardWrapperWissensspeicherPage } from '~/components/Layout/CardWrapperWissensspeicherPage';
 import { Section } from '~/components/Layout/Section';
 import { H2, H3, P } from '~/components/Text';
 import { Prose } from '~/components/core/Prose';
@@ -75,7 +75,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
           Entdecken Sie die verschiedenen Handlungsfelder. Dort finden Sie
           Maßnahmen und deren zugehörigen Praxisbeispiele
         </P>
-        <CardWrapper className="mt-10 md:grid-cols-1 lg:grid-cols-2">
+        <CardWrapperWissensspeicherPage className="mt-10">
           {topics.nodes.map((topic) => (
             <CardImageAndTextResponsive
               key={topic.slug}
@@ -91,7 +91,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
               )}
             </CardImageAndTextResponsive>
           ))}
-        </CardWrapper>
+        </CardWrapperWissensspeicherPage>
       </Section>
     </>
   );

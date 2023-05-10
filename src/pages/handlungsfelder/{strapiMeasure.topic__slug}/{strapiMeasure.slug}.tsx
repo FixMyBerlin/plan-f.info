@@ -4,7 +4,7 @@ import React from 'react';
 import { CommunityEntriesSection } from '~/components/CommunityEntriesSection';
 import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
 import { CardImageAndTextVertical } from '~/components/Layout/CardImageAndTextVertical';
-import { CardWrapperThreeCols } from '~/components/Layout/CardWrapperThreeCols';
+import { CardWrapperMeasurePage } from '~/components/Layout/CardWrapperMeasurePage';
 import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
 import { PageHeaderTextAndImage } from '~/components/Layout/PageHeaderTextAndImage';
 import { Section } from '~/components/Layout/Section';
@@ -47,7 +47,7 @@ const MeasureDetails: React.FC<
           Schau was andere Kommunen zu diesem Thema bereits für Maßnahmen
           umgesetzt haben.
         </P>
-        <CardWrapperThreeCols className="mt-12">
+        <CardWrapperMeasurePage className="mt-12">
           {measure.examples.map((example) => (
             <CardImageAndTextVertical
               key={example.slug}
@@ -62,7 +62,7 @@ const MeasureDetails: React.FC<
               </div>
             </CardImageAndTextVertical>
           ))}
-        </CardWrapperThreeCols>
+        </CardWrapperMeasurePage>
       </Section>
       {communityEntries && (
         <CommunityEntriesSection communityEntries={communityEntries} />

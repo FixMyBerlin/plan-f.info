@@ -84,7 +84,7 @@ export const SideNavigation: React.FC<Props> = ({ path }) => {
             <div className="shadow-r h-full w-[6px] bg-gray-100" />
           )}
 
-          <div className="flex flex-col justify-center">
+          <div className="z-30 flex flex-col justify-center">
             <button
               className="shadow-r rounded-br-lg rounded-tr-lg bg-gray-100 py-10"
               type="button"
@@ -101,7 +101,7 @@ export const SideNavigation: React.FC<Props> = ({ path }) => {
       </div>
       {/* div pushes main to the side */}
       {!folded ? (
-        <div className={sidePanelWidthClassName} />
+        <div className={clsx(sidePanelWidthClassName, 'z-10')} />
       ) : (
         <div className="shadow-r h-full w-[6px] bg-gray-100" />
       )}

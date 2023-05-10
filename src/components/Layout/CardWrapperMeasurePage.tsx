@@ -5,7 +5,7 @@ type Props = {
   children?: ReactNode;
   className?: string;
 };
-export const CardWrapperThreeCols: React.FC<Props> = ({
+export const CardWrapperMeasurePage: React.FC<Props> = ({
   children,
   className,
 }) => {
@@ -13,7 +13,7 @@ export const CardWrapperThreeCols: React.FC<Props> = ({
     <div
       className={clsx(
         className,
-        'grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3'
+        'grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3'
       )}
     >
       {children}
