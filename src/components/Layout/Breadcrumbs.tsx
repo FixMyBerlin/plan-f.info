@@ -5,7 +5,7 @@ import { Link } from '../core/links/Link';
 
 type Props = { names: string[]; prefix?: string };
 
-export const Breadcrumbs: React.FC<Props> = ({ names, prefix = './' }) => {
+export const Breadcrumbs: React.FC<Props> = ({ names, prefix = '../' }) => {
   const n = names.length;
   return (
     <nav className="flex" aria-label="Breadcrumb">
