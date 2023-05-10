@@ -68,7 +68,7 @@ module.exports = {
       resolve: `gatsby-source-strapi`,
       options: {
         // in ENV verschieben, da pro Dev unterschiedlich
-        apiURL: process.env.BACKEND_URL,
+        apiURL: process.env.GATSBY_BACKEND_URL,
         // in ENV verschieben, da pro Dev unterschiedlich und geheim seien sollte
         accessToken: process.env.STRAPI_TOKEN,
         // Hier die Content types angeben, die wir in Gatsby verfügbar haben wollen.

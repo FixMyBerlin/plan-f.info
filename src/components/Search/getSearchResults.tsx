@@ -87,7 +87,7 @@ function buildPaths({ examples, topics, measures }) {
 
 export async function getSearchResults(query: string) {
   // TODO: get url from env (had problems with gatsbys wierd env handling)
-  const endpoint = `https://plan-f-staging.tiummk647p9vk.eu-central-1.cs.amazonlightsail.com/graphql`;
+  const endpoint = `${process.env.GATSBY_BACKEND_URL}/graphql`;
   return fetch(endpoint, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
