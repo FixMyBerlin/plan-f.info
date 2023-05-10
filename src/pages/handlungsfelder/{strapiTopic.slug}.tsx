@@ -23,7 +23,10 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
 
       <PageHeaderTextAndImage
         image={topic.image && getImage(topic.image.localFile as any)}
-        markdownHTML={topic.description.data.childMarkdownRemark.html}
+        markdownHTML={
+          topic.description?.data?.childMarkdownRemark?.html &&
+          topic.description.data.childMarkdownRemark.html
+        }
       />
 
       <Section className="mb-20 flex flex-col  gap-10 sm:flex-row sm:gap-20">

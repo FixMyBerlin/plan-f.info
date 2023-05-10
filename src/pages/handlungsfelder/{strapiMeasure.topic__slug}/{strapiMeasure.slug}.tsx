@@ -20,7 +20,10 @@ const MeasureDetails: React.FC<
         <Breadcrumbs names={['Wissensspeicher', measure.topic.name]} />
       </Hero>
       <PageHeaderTextAndImage
-        markdownHTML={measure.description.data.childMarkdownRemark.html}
+        markdownHTML={
+          measure?.description?.data?.childMarkdownRemark?.html &&
+          measure.description.data.childMarkdownRemark.html
+        }
       />
 
       <Section className="mb-20 grid gap-10 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
