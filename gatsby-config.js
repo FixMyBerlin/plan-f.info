@@ -1,6 +1,7 @@
 require('dotenv').config({
   path: `.env`,
 });
+
 module.exports = {
   // Allows the use of JSX without having to import React
   // Docs https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/#jsxruntime
@@ -67,7 +68,7 @@ module.exports = {
       resolve: `gatsby-source-strapi`,
       options: {
         // in ENV verschieben, da pro Dev unterschiedlich
-        apiURL: 'https://backend-staging.plan-f.info',
+        apiURL: process.env.BACKEND_URL,
         // in ENV verschieben, da pro Dev unterschiedlich und geheim seien sollte
         accessToken: process.env.STRAPI_TOKEN,
         // Hier die Content types angeben, die wir in Gatsby verfügbar haben wollen.
