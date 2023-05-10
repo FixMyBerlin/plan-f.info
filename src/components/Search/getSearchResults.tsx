@@ -71,7 +71,7 @@ function buildPaths({ examples, topics, measures }) {
     const topicAttributes = measureAttributes.topic.data.attributes;
     return {
       name: measureAttributes.name,
-      path: [topicAttributes.slug, measureAttributes.slug].join(),
+      path: [topicAttributes.slug, measureAttributes.slug].join('/'),
     };
   });
   // format topics
