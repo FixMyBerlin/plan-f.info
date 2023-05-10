@@ -1,5 +1,3 @@
-import path from 'path';
-
 const SEARCH_QUERY = `
   query Search($query: String!) {
     search(query: $query) {
@@ -60,11 +58,11 @@ function buildPaths({ examples, topics, measures }) {
     const topicAttributes = measureAttributes.topic.data.attributes;
     return {
       name: exampleAttributes.title,
-      path: path.join(
+      path: [
         topicAttributes.slug,
         measureAttributes.slug,
-        exampleAttributes.slug
-      ),
+        exampleAttributes.slug,
+      ].join('/'),
     };
   });
   // format measures
@@ -73,7 +71,7 @@ function buildPaths({ examples, topics, measures }) {
     const topicAttributes = measureAttributes.topic.data.attributes;
     return {
       name: measureAttributes.name,
-      path: path.join(topicAttributes.slug, measureAttributes.slug),
+      path: [topicAttributes.slug, measureAttributes.slug].join(),
     };
   });
   // format topics
@@ -87,8 +85,9 @@ function buildPaths({ examples, topics, measures }) {
   return { topicResults, measureResults, exampleResults };
 }
 
-export async function getSearchResults(query) {
-  const endpoint = path.join(process.env.BACKEND_URL, 'graphql');
+export async function getSearchResults(query: string) {
+  // TODO: get url from env (had problems with gatsbys wierd env handling)
+  const endpoint = `https://plan-f-staging.tiummk647p9vk.eu-central-1.cs.amazonlightsail.com/graphql`;
   return fetch(endpoint, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
