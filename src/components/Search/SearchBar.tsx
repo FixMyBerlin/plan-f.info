@@ -21,12 +21,20 @@ const categoryMeta: categoryMeta[] = [
   { key: 'measureResults', displayName: 'MAßNAHMEN', color: 'bg-green-500' },
 ];
 
+const defaultValue = 'Suche im Wissensspeicher';
+
 export const SearchBar = () => {
   // const [query, setQuery] = useState<string>('');
   const [searchResults, setSearchResults] = useState(undefined);
-
+  const [displayVal, setDisplayVal] = useState(defaultValue);
   return (
-    <Combobox as="div" nullable onChange={(path: string) => navigate(path)}>
+    <Combobox
+      as="div"
+      value={displayVal}
+      onChange={(path: string) => navigate(path)}
+      onFocus={() => setDisplayVal('')}
+      onBlur={() => setDisplayVal(defaultValue)}
+    >
       <div className="relative mt-2">
         <Combobox.Input
           className="h-10 w-80 rounded-md border-0 bg-white py-1.5 pl-10 pr-12  text-gray-500 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-purple-600 sm:text-sm sm:leading-6"
