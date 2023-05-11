@@ -8,6 +8,7 @@ import { CardWrapper } from '~/components/Layout/CardWrapper';
 import { Section } from '~/components/Layout/Section';
 import { H2, H3, P } from '~/components/Text';
 import { Prose } from '~/components/core/Prose';
+import { SearchBar } from '~/components/Search';
 
 export const query = graphql`
   query TopicTeasers {
@@ -45,6 +46,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
         <Breadcrumbs />
       </Hero>
       <Section className="mb-12">
+        <SearchBar />
         <Article>
           <P>
             Kommunikation und Öffentlichkeitsarbeit sind ein zentrales
