@@ -33,10 +33,7 @@ export const NavigationMobile: React.FC<Props> = ({ path, className }) => {
       {({ open }) => (
         <>
           <div
-            className={clsx(
-              'mx-auto max-w-7xl px-4 sm:px-6 lg:px-8',
-              open && 'bg-white'
-            )}
+            className={clsx('mx-auto px-4 sm:px-6 lg:px-8', open && 'bg-white')}
           >
             <div className="flex h-16 justify-between">
               <Link className="flex flex-col justify-center" href="/">

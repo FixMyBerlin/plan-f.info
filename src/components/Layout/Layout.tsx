@@ -23,13 +23,14 @@ const Layout: React.FC<Props & PageProps> = ({ path, children }) => {
 
         <div className="mx-auto w-full bg-white">
           <div className="flex w-full flex-row">
-            <div className="hidden md:block">
+            <div className="hidden xl:block">
               <SideNavigation path={truncatedPath} />
             </div>
-
-            <main className="flex-grow">{children}</main>
+            <div className="flex-grow">
+              <main>{children}</main>
+              <Footer />
+            </div>
           </div>
-          <Footer />
         </div>
       </div>
     </div>

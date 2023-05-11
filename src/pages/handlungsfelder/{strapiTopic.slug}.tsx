@@ -4,7 +4,7 @@ import React from 'react';
 import { Prose } from '~/components/core/Prose';
 import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
 import { CardImageAndTextResponsive } from '~/components/Layout/CardImageAndTextResponsive';
-import { CardWrapper } from '~/components/Layout/CardWrapper';
+import { CardWrapperTopicPage } from '~/components/Layout/CardWrapperTopicPage';
 import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
 import { PageHeaderTextAndImage } from '~/components/Layout/PageHeaderTextAndImage';
 import { Section } from '~/components/Layout/Section';
@@ -23,7 +23,10 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
 
       <PageHeaderTextAndImage
         image={topic.image && getImage(topic.image.localFile as any)}
-        markdownHTML={topic.description.data.childMarkdownRemark.html}
+        markdownHTML={
+          topic.description?.data?.childMarkdownRemark?.html &&
+          topic.description.data.childMarkdownRemark.html
+        }
       />
 
       <Section className="mb-20 flex flex-col  gap-10 sm:flex-row sm:gap-20">
@@ -44,7 +47,7 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
           Entdecken Sie die Verschiedenen Maßnahmen, die zu diesem Handlungsfeld
           gehören, dort finden Sie auch viele Praxisbeispiele
         </P>
-        <CardWrapper className="mt-12">
+        <CardWrapperTopicPage className="mt-12">
           {topic.measures &&
             topic.measures.map((measure) => (
               <CardImageAndTextResponsive
@@ -60,7 +63,7 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
                 />
               </CardImageAndTextResponsive>
             ))}
-        </CardWrapper>
+        </CardWrapperTopicPage>
       </Section>
     </>
   );
