@@ -14,7 +14,7 @@ export const NavigationDesktopAndMobile: React.FC<Props> = ({ path }) => {
 
   // nav bg color
   let bgClassName = '';
-  if (path.split('/').length >= 3 && path.split('/')[1] === 'handlungsfelder') {
+  if (path.split('/').length >= 3 && path.split('/')[1] === 'wissensspeicher') {
     bgClassName = wikilayerColors[path.split('/').length];
   } else {
     bgClassName = 'bg-white';

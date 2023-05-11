@@ -10,7 +10,7 @@ type Props = { path: string };
 export const sidePanelWidthClassName = 'w-72';
 
 export const SideNavigation: React.FC<Props> = ({ path }) => {
-  const basePath = '/handlungsfelder';
+  const basePath = '/wissensspeicher';
   const {
     nestedMeasures: { nodes },
   }: Queries.TopicMeasureTreeQuery = useStaticQuery(graphql`
