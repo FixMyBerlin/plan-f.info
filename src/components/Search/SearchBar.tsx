@@ -26,7 +26,8 @@ const defaultValue = 'Suche im Wissensspeicher';
 export const SearchBar = () => {
   // const [query, setQuery] = useState<string>('');
   const [searchResults, setSearchResults] = useState(undefined);
-  const [displayVal, setDisplayVal] = useState(defaultValue);
+  const [resultHeader, setResultHeader] = useState<string>('');
+  const [displayVal, setDisplayVal] = useState<string>(defaultValue);
   return (
     <Combobox
       as="div"
@@ -44,14 +45,22 @@ export const SearchBar = () => {
               setSearchResults(undefined);
               return;
             }
-            getSearchResults(query).then((results) =>
-              setSearchResults(results)
-            );
+            getSearchResults(query).then((results) => {
+              setSearchResults(results);
+              const nResults = Object.values(results).reduce(
+                (acc, cur) => acc + cur.length,
+                0
+              );
+              setResultHeader(`${nResults} Ergebnisse für „${query}“`);
+            });
           }}
         />
         <SearchIcon className="absolute left-4 top-3 flex" />
         {searchResults && (
           <Combobox.Options className="max-h-120 absolute z-10 mt-1 w-80 overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+            <div className="relative cursor-default select-none py-2 pl-3 pr-9 font-bold text-gray-700">
+              {resultHeader}
+            </div>
             {categoryMeta.map(({ key, displayName, color }) => {
               const results = searchResults[key];
               return (
