@@ -19,15 +19,15 @@ const Layout: React.FC<Props & PageProps> = ({ path, children }) => {
         <NavigationDesktopAndMobile path={path} />
         <div className="mx-auto w-full bg-white">
           <div className="flex w-full flex-row">
-            <div className="hidden xl:block">
-              {dirs[1] === 'wissensspeicher' && (
+            {dirs[1] === 'wissensspeicher' && (
+              <div className="hidden xl:block">
                 <SideNavigation
                   path={`${dirs
                     .slice(0, Math.min(dirs.length - 1, 4))
                     .join('/')}/`}
                 />
-              )}
-            </div>
+              </div>
+            )}
             <div className="flex-grow">
               <main>{children}</main>
               <Footer />
