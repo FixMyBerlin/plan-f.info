@@ -41,9 +41,11 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
   return (
     <>
       <HelmetSeo title={title} />
-      <Hero title={title} className="bg-purple-100">
-        <Breadcrumbs names={['Wissensspeicher']} />
-      </Hero>
+      <Hero
+        title={title}
+        className="bg-purple-100"
+        breadcrumbs={<Breadcrumbs names={['Wissensspeicher']} />}
+      />
       <Section className="mb-12">
         <Article>
           <P>
@@ -76,21 +78,24 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
           Maßnahmen und deren zugehörigen Praxisbeispiele
         </P>
         <CardWrapperWissensspeicherPage className="mt-10">
-          {topics.nodes.map((topic) => (
-            <CardImageAndTextResponsive
-              key={topic.slug}
-              link={topic.slug}
-              image={topic.image && getImage(topic.image.localFile as any)}
-            >
-              <H3>{topic.name}</H3>
-              {topic.description?.data?.childMarkdownRemark.html && (
-                <Prose
-                  className="line-clamp-4"
-                  markdownHTML={topic.description.data.childMarkdownRemark.html}
-                />
-              )}
-            </CardImageAndTextResponsive>
-          ))}
+          {topics &&
+            topics.nodes.map((topic) => (
+              <CardImageAndTextResponsive
+                key={topic.slug}
+                link={topic.slug}
+                image={topic.image && getImage(topic.image.localFile as any)}
+              >
+                <H3>{topic.name}</H3>
+                {topic.description?.data?.childMarkdownRemark.html && (
+                  <Prose
+                    className="line-clamp-4"
+                    markdownHTML={
+                      topic.description.data.childMarkdownRemark.html
+                    }
+                  />
+                )}
+              </CardImageAndTextResponsive>
+            ))}
         </CardWrapperWissensspeicherPage>
       </Section>
     </>

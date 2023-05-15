@@ -2,26 +2,36 @@ import React, { ReactNode } from 'react';
 import { NavigationDesktop } from './NavigationDesktop';
 import { NavigationMobile } from './NavigationMobile';
 
-type Props = { path: string; children: ReactNode };
+type Props = {
+  path: string;
+  children?: ReactNode;
+  isWiki?: boolean;
+  layer?: string;
+};
+
+export const wikilayerColors = {
+  topics: 'bg-purple-100',
+  topic: 'bg-purple-300',
+  measure: 'bg-green-500',
+  example: 'bg-lime-300',
+};
 
 export const NavigationDesktopAndMobile: React.FC<Props> = ({
   path,
   children,
+  isWiki,
+  layer,
 }) => {
-  const wikilayerColors = {
-    3: 'bg-purple-100', // wissensspeicher
-    4: 'bg-purple-300', // topic
-    5: 'bg-green-500', // measure
-    6: 'bg-lime-300', // example
-  };
-
-  // nav bg color
+  // // nav bg color
+  // let bgClassName = '';
+  // if (path.split('/').length >= 3 && path.split('/')[1] === 'wissensspeicher') {
+  //   bgClassName = wikilayerColors[path.split('/').length];
+  // } else {
+  //   bgClassName = 'bg-white';
+  // }
   let bgClassName = '';
-  if (path.split('/').length >= 3 && path.split('/')[1] === 'wissensspeicher') {
-    bgClassName = wikilayerColors[path.split('/').length];
-  } else {
-    bgClassName = 'bg-white';
-  }
+
+  bgClassName = isWiki ? wikilayerColors[layer] : 'bg-white';
 
   return (
     <>

@@ -31,17 +31,21 @@ const ExampleDetails: React.FC<
   return (
     <>
       <HelmetSeo title={example.measure.name} />
-      <Hero className="!mb-0 rounded-b-none bg-lime-300" title={example.title}>
-        <Breadcrumbs
-          names={[
-            'Wissensspeicher',
-            example.measure.topic.name,
-            example.measure.name,
-            example.title,
-          ]}
-          prefix="../"
-        />
-      </Hero>
+      <Hero
+        className="!mb-0 rounded-b-none bg-lime-300"
+        title={example.title}
+        breadcrumbs={
+          <Breadcrumbs
+            names={[
+              'Wissensspeicher',
+              example.measure.topic.name,
+              example.measure.name,
+              example.title,
+            ]}
+            prefix="../"
+          />
+        }
+      />
 
       <Section className="mb-12 bg-lime-300 pt-12">
         <SectionWithPagination

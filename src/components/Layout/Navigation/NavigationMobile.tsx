@@ -36,9 +36,7 @@ export const NavigationMobile: React.FC<Props> = ({
     <Disclosure as="nav" className={clsx(className, 'fixed z-10 w-full')}>
       {({ open }) => (
         <>
-          <div
-            className={clsx('mx-auto px-4 sm:px-6 lg:px-8', open && 'bg-white')}
-          >
+          <div className={clsx('mx-auto px-4 pb-2 sm:px-6 lg:px-8')}>
             <div className="flex h-16 justify-between">
               <Link className="flex flex-col justify-center" href="/">
                 <Logo className="h-8 w-auto shrink-0" />
@@ -61,8 +59,9 @@ export const NavigationMobile: React.FC<Props> = ({
                 </Disclosure.Button>
               </div>
             </div>
+            {children}
           </div>
-          {children}
+
           <Disclosure.Panel>
             <div className="flex flex-col gap-2 bg-white px-4 py-10">
               {Object.keys(menuItems).map((key) => (

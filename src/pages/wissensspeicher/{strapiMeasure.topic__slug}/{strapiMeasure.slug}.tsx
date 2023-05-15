@@ -16,11 +16,15 @@ const MeasureDetails: React.FC<
   return (
     <>
       <HelmetSeo title={measure.name} />
-      <Hero title={measure.name} className="bg-green-500">
-        <Breadcrumbs
-          names={['Wissensspeicher', measure.topic.name, measure.name]}
-        />
-      </Hero>
+      <Hero
+        title={measure.name}
+        className="bg-green-500"
+        breadcrumbs={
+          <Breadcrumbs
+            names={['Wissensspeicher', measure.topic.name, measure.name]}
+          />
+        }
+      />
       <PageHeaderTextAndImage
         markdownHTML={
           measure?.description?.data?.childMarkdownRemark?.html &&
