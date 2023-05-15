@@ -17,15 +17,16 @@ const Layout: React.FC<Props & PageProps> = ({ path, children }) => {
       <div className="relative mx-auto w-full max-w-7xl bg-white">
         <ScrollTopLink />
         <NavigationDesktopAndMobile path={path} />
-
         <div className="mx-auto w-full bg-white">
           <div className="flex w-full flex-row">
             <div className="hidden xl:block">
-              <SideNavigation
-                path={`${dirs
-                  .slice(0, Math.min(dirs.length - 1, 4))
-                  .join('/')}/`}
-              />
+              {dirs[1] === 'wissensspeicher' && (
+                <SideNavigation
+                  path={`${dirs
+                    .slice(0, Math.min(dirs.length - 1, 4))
+                    .join('/')}/`}
+                />
+              )}
             </div>
             <div className="flex-grow">
               <main>{children}</main>
