@@ -42,7 +42,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
     <>
       <HelmetSeo title={title} />
       <Hero title={title} className="bg-purple-100">
-        <Breadcrumbs names={[]} />
+        <Breadcrumbs names={['Wissensspeicher']} />
       </Hero>
       <Section className="mb-12">
         <Article>

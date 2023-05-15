@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { NavigationDesktop } from './NavigationDesktop';
 import { NavigationMobile } from './NavigationMobile';
 
-type Props = { path: string };
+type Props = { path: string; children: ReactNode };
 
-export const NavigationDesktopAndMobile: React.FC<Props> = ({ path }) => {
+export const NavigationDesktopAndMobile: React.FC<Props> = ({
+  path,
+  children,
+}) => {
   const wikilayerColors = {
     3: 'bg-purple-100', // wissensspeicher
     4: 'bg-purple-300', // topic
@@ -26,7 +29,9 @@ export const NavigationDesktopAndMobile: React.FC<Props> = ({ path }) => {
         <NavigationDesktop className={bgClassName} path={path} />
       </div>
       <div className="w-full md:hidden">
-        <NavigationMobile className={bgClassName} path={path} />
+        <NavigationMobile className={bgClassName} path={path}>
+          {children}
+        </NavigationMobile>
       </div>
     </>
   );

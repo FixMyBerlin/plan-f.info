@@ -37,6 +37,7 @@ const ExampleDetails: React.FC<
             'Wissensspeicher',
             example.measure.topic.name,
             example.measure.name,
+            example.title,
           ]}
           prefix="../"
         />

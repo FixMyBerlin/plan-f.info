@@ -17,7 +17,9 @@ const MeasureDetails: React.FC<
     <>
       <HelmetSeo title={measure.name} />
       <Hero title={measure.name} className="bg-green-500">
-        <Breadcrumbs names={['Wissensspeicher', measure.topic.name]} />
+        <Breadcrumbs
+          names={['Wissensspeicher', measure.topic.name, measure.name]}
+        />
       </Hero>
       <PageHeaderTextAndImage
         markdownHTML={

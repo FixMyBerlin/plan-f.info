@@ -2,17 +2,20 @@ import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 import { graphql, useStaticQuery } from 'gatsby';
-import React from 'react';
+import React, { ReactNode } from 'react';
 import Logo from '~/components/Layout/assets/Logo.svg';
 import { Link } from '../../core/links/Link';
 import { menuItems } from './menuItems';
-import { Breadcrumbs } from '../Breadcrumbs';
 
-type Props = { path: string; className?: string };
+type Props = { path: string; className?: string; children?: ReactNode };
 
 // base: 'simple' from https://tailwindui.com/components/application-ui/navigation/navbars
 
-export const NavigationMobile: React.FC<Props> = ({ path, className }) => {
+export const NavigationMobile: React.FC<Props> = ({
+  children,
+  path,
+  className,
+}) => {
   const {
     nestedMeasures: { nodes },
   }: Queries.TopicMeasureTreeQuery = useStaticQuery(graphql`
@@ -58,11 +61,8 @@ export const NavigationMobile: React.FC<Props> = ({ path, className }) => {
                 </Disclosure.Button>
               </div>
             </div>
-            <div className="h-50">
-              <Breadcrumbs names={['Wissensspeicher']} />
-            </div>
           </div>
-
+          {children}
           <Disclosure.Panel>
             <div className="flex flex-col gap-2 bg-white px-4 py-10">
               {Object.keys(menuItems).map((key) => (
