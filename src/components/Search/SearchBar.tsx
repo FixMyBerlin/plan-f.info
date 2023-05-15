@@ -4,6 +4,7 @@ import { Combobox } from '@headlessui/react';
 import clsx from 'clsx';
 import { getSearchResults } from './getSearchResults';
 import SearchIcon from './assets/SearchIcon.svg';
+import CancelIcon from './assets/CancelIcon.svg';
 
 type categoryMeta = {
   key: string;
@@ -12,35 +13,42 @@ type categoryMeta = {
 };
 
 const categoryMeta: categoryMeta[] = [
-  // { key: 'topicResults', displayName: 'Handlungsfelder', color:  },
   {
     key: 'exampleResults',
     displayName: 'PRAXISBEISPIELE',
     color: 'bg-lime-400',
   },
   { key: 'measureResults', displayName: 'MAßNAHMEN', color: 'bg-green-500' },
+  {
+    key: 'topicResults',
+    displayName: 'HANDLUNGSFELDER',
+    color: 'bg-purple-300',
+  },
 ];
 
-const defaultValue = 'Suche im Wissensspeicher';
+const defaultDisplayValue = 'Suche im Wissensspeicher';
 
 export const SearchBar = () => {
-  // const [query, setQuery] = useState<string>('');
   const [searchResults, setSearchResults] = useState(undefined);
   const [resultHeader, setResultHeader] = useState<string>('');
-  const [displayVal, setDisplayVal] = useState<string>(defaultValue);
+  const [displayVal, setDisplayVal] = useState<string>(defaultDisplayValue);
   return (
     <Combobox
       as="div"
       value={displayVal}
       onChange={(path: string) => navigate(path)}
       onFocus={() => setDisplayVal('')}
-      onBlur={() => setDisplayVal(defaultValue)}
+      onBlur={() => {
+        setDisplayVal(defaultDisplayValue);
+        setSearchResults(undefined);
+      }}
     >
-      <div className="relative mt-2">
+      <div className="relative mt-2 w-80">
         <Combobox.Input
-          className="h-10 w-80 rounded-md border-0 bg-white py-1.5 pl-10 pr-12  text-gray-500 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-purple-600 sm:text-sm sm:leading-6"
+          className="h-10 w-full rounded-md border-0 bg-white py-1.5 pl-10 pr-12  text-gray-500 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-purple-600 sm:text-sm sm:leading-6"
           onChange={(event) => {
             const query = event.target.value;
+            setDisplayVal(query);
             if (query === '') {
               setSearchResults(undefined);
               return;
@@ -51,14 +59,27 @@ export const SearchBar = () => {
                 (acc, cur) => acc + cur.length,
                 0
               );
-              setResultHeader(`${nResults} Ergebnisse für „${query}“`);
+              if (nResults > 1) {
+                setResultHeader(
+                  `Die ${nResults} besten Ergebnisse für „${query}“`
+                );
+              } else if (nResults === 1) {
+                setResultHeader(`Ein Ergebnis für „${query}“`);
+              } else {
+                setResultHeader(`Keine Ergebnisse gefunden für „${query}“`);
+              }
             });
           }}
         />
-        <SearchIcon className="absolute left-4 top-3 flex" />
+        <SearchIcon className="absolute left-4 top-3 flex h-4 w-4" />
+        {!{ [defaultDisplayValue]: true, '': true }[displayVal] && (
+          <Combobox.Button>
+            <CancelIcon className="absolute right-4 top-4 flex h-2.5 w-2.5" />
+          </Combobox.Button>
+        )}
         {searchResults && (
-          <Combobox.Options className="max-h-120 absolute z-10 mt-1 w-80 overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-            <div className="relative cursor-default select-none py-2 pl-3 pr-9 font-bold text-gray-700">
+          <Combobox.Options className="max-h-120 absolute z-10 mt-4 w-full overflow-auto rounded-md bg-white py-2 pl-4 pr-9 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+            <div className="relative cursor-default select-none py-2 font-bold text-gray-700">
               {resultHeader}
             </div>
             {categoryMeta.map(({ key, displayName, color }) => {
@@ -66,7 +87,7 @@ export const SearchBar = () => {
               return (
                 results.length > 0 && (
                   <div key={key}>
-                    <div className="relative cursor-default select-none py-2 pl-3 pr-9 text-gray-700">
+                    <div className="relative cursor-default select-none py-3 text-gray-700">
                       {displayName}
                     </div>
                     {results.map(({ name, path }) => {
@@ -76,10 +97,8 @@ export const SearchBar = () => {
                           value={`/handlungsfelder/${path}`}
                           className={({ active }) =>
                             clsx(
-                              'relative cursor-default select-none py-2 pl-3 pr-9',
-                              active
-                                ? 'bg-purple-600 text-white'
-                                : 'text-gray-700'
+                              'relative cursor-default select-none py-2',
+                              active && 'bg-gray-50'
                             )
                           }
                         >
