@@ -14,7 +14,7 @@ const Layout: React.FC<Props & PageProps> = ({ path, children }) => {
 
   return (
     <div className="relative flex h-full flex-col overflow-x-hidden bg-gray-200">
-      <div className="relative mx-auto w-full max-w-7xl bg-white">
+      <div className="relative mx-auto w-full max-w-[1440px] bg-white">
         <ScrollTopLink />
         <NavigationDesktopAndMobile path={path} />
         <div className="mx-auto w-full bg-white">
