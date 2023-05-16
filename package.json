@@ -45,7 +45,6 @@
     "gatsby": "5.8",
     "gatsby-plugin-canonical-urls": "^5.9.0",
     "gatsby-plugin-image": "^3.9",
-    "gatsby-plugin-layout": "^4.9",
     "gatsby-plugin-manifest": "^5.9",
     "gatsby-plugin-react-helmet": "^6.9",
     "gatsby-plugin-react-svg": "^3.3",

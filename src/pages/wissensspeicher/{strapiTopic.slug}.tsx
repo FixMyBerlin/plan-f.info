@@ -9,6 +9,7 @@ import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
 import { PageHeaderTextAndImage } from '~/components/Layout/PageHeaderTextAndImage';
 import { Section } from '~/components/Layout/Section';
 import { H2, H3, P } from '~/components/Text';
+import { wikiColors } from '~/components/utils';
 
 const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
   data: { topic },
@@ -17,9 +18,11 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
     <>
       <HelmetSeo title={topic.name} />
 
-      <Hero title={topic.name} className="bg-purple-300">
-        <Breadcrumbs names={['Wissensspeicher']} />
-      </Hero>
+      <Hero
+        title={topic.name}
+        bgColor={wikiColors.topic}
+        breadcrumbs={<Breadcrumbs names={['Wissensspeicher', topic.name]} />}
+      />
 
       <PageHeaderTextAndImage
         image={topic.image && getImage(topic.image.localFile as any)}

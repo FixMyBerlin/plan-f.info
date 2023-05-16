@@ -1,32 +1,27 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { NavigationDesktop } from './NavigationDesktop';
 import { NavigationMobile } from './NavigationMobile';
 
-type Props = { path: string };
+type Props = {
+  path: string;
+  children?: ReactNode;
+  bgColor: string;
+};
 
-export const NavigationDesktopAndMobile: React.FC<Props> = ({ path }) => {
-  const wikilayerColors = {
-    3: 'bg-purple-100', // wissensspeicher
-    4: 'bg-purple-300', // topic
-    5: 'bg-green-500', // measure
-    6: 'bg-lime-300', // example
-  };
-
-  // nav bg color
-  let bgClassName = '';
-  if (path.split('/').length >= 3 && path.split('/')[1] === 'handlungsfelder') {
-    bgClassName = wikilayerColors[path.split('/').length];
-  } else {
-    bgClassName = 'bg-white';
-  }
-
+export const NavigationDesktopAndMobile: React.FC<Props> = ({
+  path,
+  children,
+  bgColor,
+}) => {
   return (
     <>
-      <div className="hidden w-full md:block">
-        <NavigationDesktop className={bgClassName} path={path} />
+      <div className="hidden w-full bg-gray-200 md:block">
+        <NavigationDesktop className={bgColor} path={path} />
       </div>
       <div className="w-full md:hidden">
-        <NavigationMobile className={bgClassName} path={path} />
+        <NavigationMobile className={bgColor} path={path}>
+          {children}
+        </NavigationMobile>
       </div>
     </>
   );

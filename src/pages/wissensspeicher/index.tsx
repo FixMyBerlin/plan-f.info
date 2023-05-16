@@ -9,6 +9,7 @@ import { Section } from '~/components/Layout/Section';
 import { H2, H3, P } from '~/components/Text';
 import { Prose } from '~/components/core/Prose';
 import { SearchBar } from '~/components/SearchBar';
+import { wikiColors } from '~/components/utils';
 
 export const query = graphql`
   query TopicTeasers {
@@ -42,9 +43,11 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
   return (
     <>
       <HelmetSeo title={title} />
-      <Hero title={title} className="bg-purple-100">
-        <Breadcrumbs />
-      </Hero>
+      <Hero
+        title={title}
+        bgColor={wikiColors.root}
+        breadcrumbs={<Breadcrumbs names={['Wissensspeicher']} />}
+      />
       <Section className="mb-12">
         <SearchBar />
         <Article>
@@ -78,21 +81,24 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
           Maßnahmen und deren zugehörigen Praxisbeispiele
         </P>
         <CardWrapperWissensspeicherPage className="mt-10">
-          {topics.nodes.map((topic) => (
-            <CardImageAndTextResponsive
-              key={topic.slug}
-              link={topic.slug}
-              image={topic.image && getImage(topic.image.localFile as any)}
-            >
-              <H3>{topic.name}</H3>
-              {topic.description?.data?.childMarkdownRemark.html && (
-                <Prose
-                  className="line-clamp-4"
-                  markdownHTML={topic.description.data.childMarkdownRemark.html}
-                />
-              )}
-            </CardImageAndTextResponsive>
-          ))}
+          {topics &&
+            topics.nodes.map((topic) => (
+              <CardImageAndTextResponsive
+                key={topic.slug}
+                link={topic.slug}
+                image={topic.image && getImage(topic.image.localFile as any)}
+              >
+                <H3>{topic.name}</H3>
+                {topic.description?.data?.childMarkdownRemark.html && (
+                  <Prose
+                    className="line-clamp-4"
+                    markdownHTML={
+                      topic.description.data.childMarkdownRemark.html
+                    }
+                  />
+                )}
+              </CardImageAndTextResponsive>
+            ))}
         </CardWrapperWissensspeicherPage>
       </Section>
     </>

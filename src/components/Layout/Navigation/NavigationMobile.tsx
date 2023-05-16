@@ -2,16 +2,20 @@ import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 import { graphql, useStaticQuery } from 'gatsby';
-import React from 'react';
+import React, { ReactNode } from 'react';
 import Logo from '~/components/Layout/assets/Logo.svg';
 import { Link } from '../../core/links/Link';
 import { menuItems } from './menuItems';
 
-type Props = { path: string; className?: string };
+type Props = { path: string; className?: string; children?: ReactNode };
 
 // base: 'simple' from https://tailwindui.com/components/application-ui/navigation/navbars
 
-export const NavigationMobile: React.FC<Props> = ({ path, className }) => {
+export const NavigationMobile: React.FC<Props> = ({
+  children,
+  path,
+  className,
+}) => {
   const {
     nestedMeasures: { nodes },
   }: Queries.TopicMeasureTreeQuery = useStaticQuery(graphql`
@@ -32,14 +36,12 @@ export const NavigationMobile: React.FC<Props> = ({ path, className }) => {
     <Disclosure as="nav" className={clsx(className, 'fixed z-10 w-full')}>
       {({ open }) => (
         <>
-          <div
-            className={clsx('mx-auto px-4 sm:px-6 lg:px-8', open && 'bg-white')}
-          >
+          <div className={clsx('mx-auto px-4 pb-2 sm:px-6 lg:px-8')}>
             <div className="flex h-16 justify-between">
               <Link className="flex flex-col justify-center" href="/">
                 <Logo className="h-8 w-auto shrink-0" />
               </Link>
-              <div className="-mr-2 flex items-center md:hidden">
+              <div className="-mr-2 flex items-center">
                 {/* Mobile menu button */}
                 <Disclosure.Button className="inline-flex items-center justify-center">
                   <span className="sr-only">Open main menu</span>
@@ -57,9 +59,10 @@ export const NavigationMobile: React.FC<Props> = ({ path, className }) => {
                 </Disclosure.Button>
               </div>
             </div>
+            {children}
           </div>
 
-          <Disclosure.Panel className="md:hidden">
+          <Disclosure.Panel>
             <div className="flex flex-col gap-2 bg-white px-4 py-10">
               {Object.keys(menuItems).map((key) => (
                 <Disclosure.Button

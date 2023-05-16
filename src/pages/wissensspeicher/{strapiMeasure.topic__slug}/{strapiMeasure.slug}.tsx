@@ -9,6 +9,7 @@ import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
 import { PageHeaderTextAndImage } from '~/components/Layout/PageHeaderTextAndImage';
 import { Section } from '~/components/Layout/Section';
 import { H2, H3, P } from '~/components/Text';
+import { wikiColors } from '~/components/utils';
 
 const MeasureDetails: React.FC<
   PageProps<Queries.MeasureDetailsAndCommunityEntriesQuery>
@@ -16,9 +17,15 @@ const MeasureDetails: React.FC<
   return (
     <>
       <HelmetSeo title={measure.name} />
-      <Hero title={measure.name} className="bg-green-500">
-        <Breadcrumbs names={['Wissensspeicher', measure.topic.name]} />
-      </Hero>
+      <Hero
+        title={measure.name}
+        bgColor={wikiColors.measure}
+        breadcrumbs={
+          <Breadcrumbs
+            names={['Wissensspeicher', measure.topic.name, measure.name]}
+          />
+        }
+      />
       <PageHeaderTextAndImage
         markdownHTML={
           measure?.description?.data?.childMarkdownRemark?.html &&

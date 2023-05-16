@@ -1,5 +1,5 @@
 export const menuItems = {
-  Wissensspeicher: '/handlungsfelder',
+  Wissensspeicher: '/wissensspeicher',
   'Fahrrad-Check': '/fahrrad-check',
   Leitfäden: '/leitfaeden',
   About: '/about',

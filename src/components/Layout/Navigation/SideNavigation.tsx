@@ -10,7 +10,7 @@ type Props = { path: string };
 export const sidePanelWidthClassName = 'w-72';
 
 export const SideNavigation: React.FC<Props> = ({ path }) => {
-  const basePath = '/handlungsfelder';
+  const basePath = '/wissensspeicher';
   const {
     nestedMeasures: { nodes },
   }: Queries.TopicMeasureTreeQuery = useStaticQuery(graphql`
@@ -51,7 +51,7 @@ export const SideNavigation: React.FC<Props> = ({ path }) => {
                     href={`${basePath}/${topic.slug}`}
                     className={clsx(
                       '!text-sm !no-underline',
-                      `${basePath}/${topic.slug}/` === path
+                      path === `${basePath}/${topic.slug}/`
                         ? 'text-purple-500 before:bg-purple-500'
                         : 'text-black'
                     )}
@@ -66,8 +66,9 @@ export const SideNavigation: React.FC<Props> = ({ path }) => {
                             href={`${basePath}/${topic.slug}/${measure.slug}`}
                             className={clsx(
                               'block w-full pl-3.5 !text-sm !no-underline',
-                              `${basePath}/${topic.slug}/${measure.slug}/` ===
-                                path
+                              path.startsWith(
+                                `${basePath}/${topic.slug}/${measure.slug}/`
+                              )
                                 ? 'text-purple-500 before:bg-purple-500'
                                 : 'text-black'
                             )}

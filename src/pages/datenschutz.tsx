@@ -7,7 +7,7 @@ const DatenschutzPage = () => {
   return (
     <>
       <HelmetSeo noindex title={title} />
-      <Hero className="bg-green-300" title={title} />
+      <Hero className="!bg-green-500" title={title} />
       <Content>
         <div className="mt-16">
           <H1>Datenschutzvereinbarung</H1>

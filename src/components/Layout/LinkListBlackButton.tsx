@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import React, { useState } from 'react';
 import { LinkButtonWithArrow } from '../PageTopic/LinkButtonWithArrow';
 import { H2, H3 } from '../Text';
-import { truncateString } from '../utils/truncateString';
 
 type Props = {
   links: readonly {
@@ -30,7 +29,7 @@ export const LinkListBlackButton: React.FC<Props> = ({
         <div className="flex flex-col items-start gap-5">
           {links.map((resource) => (
             <LinkButtonWithArrow href={resource.url} key={resource.url}>
-              {truncateString(resource.display) || truncateString(resource.url)}
+              {resource.display || resource.url}
             </LinkButtonWithArrow>
           ))}
         </div>
@@ -43,13 +42,13 @@ export const LinkListBlackButton: React.FC<Props> = ({
       <div className="flex flex-col items-start gap-5">
         {links.slice(0, 2).map((resource) => (
           <LinkButtonWithArrow href={resource.url} key={resource.url}>
-            {truncateString(resource.display) || truncateString(resource.url)}
+            {resource.display || resource.url}
           </LinkButtonWithArrow>
         ))}
         {isExpand &&
           links.slice(2).map((resource) => (
             <LinkButtonWithArrow href={resource.url} key={resource.url}>
-              {truncateString(resource.display) || truncateString(resource.url)}
+              {resource.display || resource.url}
             </LinkButtonWithArrow>
           ))}
         <button

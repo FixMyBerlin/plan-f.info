@@ -1,18 +1,30 @@
 import React from 'react';
 
 import { HomeIcon } from '@heroicons/react/20/solid';
+import clsx from 'clsx';
+import { wikiColors } from '~/components/utils';
 import { Link } from '../core/links/Link';
 
 type Props = { names?: string[]; prefix?: string };
 
-export const Breadcrumbs: React.FC<Props> = ({
-  names = [],
-  prefix = '../',
-}) => {
+export const Breadcrumbs: React.FC<Props> = ({ names = [], prefix = './' }) => {
   const n = names.length;
+  const wikiColorsArray = [
+    wikiColors.root,
+    wikiColors.topic,
+    wikiColors.measure,
+    wikiColors.example,
+  ]; // build array explicit as there are no gurantees on iterating order (with Object.values)
+
+  // const testLinkDisplays = [
+  //   'Radverkehr in Schulen, Kinder- und Jugendclubs und Kindergärten',
+  //   'WissensspsMobilitätsbildunFahrradkurse, Fahrradflotten, Ausflügssssddfeicher.',
+  //   'Mon, AusflügeMobilitätsbildunFahrradkurse, Fahrradflotten, Ausflüg',
+  //   'MobilitätsbildunFahrradkurse, Fahrradflotten, Ausflüge',
+  // ];
   return (
-    <nav className="flex" aria-label="Breadcrumb">
-      <ol className="flex flex-col sm:flex-row sm:items-center">
+    <nav className="" aria-label="Breadcrumb">
+      <ol className="flex flex-wrap gap-2">
         <li>
           <div className="flex items-center">
             <Link href="/">
@@ -22,35 +34,23 @@ export const Breadcrumbs: React.FC<Props> = ({
               />
               <span className="sr-only">Home</span>
             </Link>
-            <svg
-              className="h-5 w-5 flex-shrink-0"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              aria-hidden="true"
-            >
-              <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
-            </svg>
           </div>
         </li>
         {names.map((name, i) => (
           <li key={name}>
-            <div className="flex items-center">
+            <div className="flex items-center gap-2">
+              <div
+                className={clsx(
+                  'h-4 w-[6px] border border-black',
+                  wikiColorsArray[i]
+                )}
+              />
               <Link
-                className="text-sm no-underline"
+                className="max-w-[9rem] truncate text-sm no-underline md:max-w-[12rem] lg:max-w-none"
                 href={prefix + '../'.repeat(n - i - 1)}
               >
                 {name}
               </Link>
-              <svg
-                className="h-5 w-5 flex-shrink-0"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                aria-hidden="true"
-              >
-                <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
-              </svg>
             </div>
           </li>
         ))}

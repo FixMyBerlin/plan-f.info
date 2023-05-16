@@ -5,20 +5,29 @@ import { H2 } from '../Text';
 type Props = {
   title: string;
   children?: ReactNode;
+  breadcrumbs?: ReactNode;
   className?: string;
+  bgColor?: string;
 };
 
-// TODO: Maybe we need to prevent the layout from unmounting, see https://www.gatsbyjs.com/docs/how-to/routing/layout-components/#how-to-prevent-layout-components-from-unmounting
-export const Hero: React.FC<Props> = ({ className, title, children }) => {
+export const Hero: React.FC<Props> = ({
+  breadcrumbs,
+  className,
+  title,
+  children,
+  bgColor = 'bg-white',
+}) => {
   return (
     <section
       className={clsx(
-        'relative mb-12 flex flex-col justify-center gap-6 rounded-b-3xl px-5 pb-8 pt-24 md:gap-12 md:pb-16 md:pl-8 md:pt-32 lg:px-10',
-        className
+        'relative mb-12 flex flex-col justify-center gap-6 rounded-b-3xl px-5 pb-8 pt-32 md:gap-12 md:pb-16 md:pl-8 lg:px-10',
+        className,
+        bgColor
       )}
     >
-      <div className="">{children}</div>
-      <H2 className="">{title}</H2>
+      {breadcrumbs && <div className="hidden md:block">{breadcrumbs}</div>}
+      <div>{children}</div>
+      <H2>{title}</H2>
     </section>
   );
 };
