@@ -50,11 +50,11 @@ const SEARCH_QUERY = `
   }
 `;
 
-type searchResult = { name: string; path: string };
+type SearchResult = { name: string; path: string };
 
 function buildPaths({ examples, topics, measures }) {
   // format examples
-  const exampleResults: searchResult[] = examples.data.map((x) => {
+  const exampleResults: SearchResult[] = examples.data.map((x) => {
     const exampleAttributes = x.attributes;
     const measureAttributes = exampleAttributes.measure.data.attributes;
     const topicAttributes = measureAttributes.topic.data.attributes;
@@ -68,7 +68,7 @@ function buildPaths({ examples, topics, measures }) {
     };
   });
   // format measures
-  const measureResults: searchResult[] = measures.data.map((x) => {
+  const measureResults: SearchResult[] = measures.data.map((x) => {
     const measureAttributes = x.attributes;
     const topicAttributes = measureAttributes.topic.data.attributes;
     return {
@@ -77,7 +77,7 @@ function buildPaths({ examples, topics, measures }) {
     };
   });
   // format topics
-  const topicResults: searchResult[] = topics.data.map((x) => {
+  const topicResults: SearchResult[] = topics.data.map((x) => {
     const topicAttributes = x.attributes;
     return {
       name: topicAttributes.name,
@@ -87,10 +87,10 @@ function buildPaths({ examples, topics, measures }) {
   return { topicResults, measureResults, exampleResults };
 }
 
-export async function getSearchResults(query: string) {
-  // TODO: get url from env (had problems with gatsbys wierd env handling)
+export async function getSearchResults(query: string, signal: AbortSignal) {
   const endpoint = `${process.env.GATSBY_BACKEND_URL}/graphql`;
   return fetch(endpoint, {
+    signal,
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ query: SEARCH_QUERY, variables: { query } }),

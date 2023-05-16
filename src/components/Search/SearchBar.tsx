@@ -29,6 +29,9 @@ const categoryMeta: categoryMeta[] = [
 const defaultDisplayValue = 'Suche im Wissensspeicher';
 
 export const SearchBar = () => {
+  const [controller, setController] = useState<AbortController>(
+    new AbortController()
+  );
   const [searchResults, setSearchResults] = useState(undefined);
   const [resultHeader, setResultHeader] = useState<string>('');
   const [displayVal, setDisplayVal] = useState<string>(defaultDisplayValue);
@@ -47,28 +50,39 @@ export const SearchBar = () => {
         <Combobox.Input
           className="h-10 w-full rounded-md border-0 bg-white py-1.5 pl-10 pr-12  text-gray-500 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-purple-600 sm:text-sm sm:leading-6"
           onChange={(event) => {
+            controller.abort();
             const query = event.target.value;
             setDisplayVal(query);
             if (query === '') {
               setSearchResults(undefined);
               return;
             }
-            getSearchResults(query).then((results) => {
-              setSearchResults(results);
-              const nResults = Object.values(results).reduce(
-                (acc, cur) => acc + cur.length,
-                0
-              );
-              if (nResults > 1) {
-                setResultHeader(
-                  `Die ${nResults} besten Ergebnisse für „${query}“`
+            const newController = new AbortController();
+            setController(newController);
+            const { signal } = newController;
+            getSearchResults(query, signal)
+              .then((results) => {
+                setSearchResults(results);
+                const nResults = Object.values(results).reduce(
+                  (acc, cur) => acc + cur.length,
+                  0
                 );
-              } else if (nResults === 1) {
-                setResultHeader(`Ein Ergebnis für „${query}“`);
-              } else {
-                setResultHeader(`Keine Ergebnisse gefunden für „${query}“`);
-              }
-            });
+                if (nResults > 1) {
+                  setResultHeader(
+                    `Die ${nResults} besten Ergebnisse für „${query}“`
+                  );
+                } else if (nResults === 1) {
+                  setResultHeader(`Ein Ergebnis für „${query}“`);
+                } else {
+                  setResultHeader(`Keine Ergebnisse gefunden für „${query}“`);
+                }
+              })
+              .catch((e) => {
+                // we let abort errors pass
+                if (e.name !== 'AbortError') {
+                  throw e;
+                }
+              });
           }}
         />
         <SearchIcon className="absolute left-4 top-3 flex h-4 w-4" />
