@@ -2,28 +2,20 @@ import React, { useState, ChangeEvent } from 'react';
 import { navigate } from 'gatsby';
 import { Combobox } from '@headlessui/react';
 import clsx from 'clsx';
+import { wikiColors } from '../utils';
 import { getSearchResults } from './getSearchResults';
 import SearchIcon from './assets/SearchIcon.svg';
 import CancelIcon from './assets/CancelIcon.svg';
 
 type categoryMeta = {
   key: string;
-  displayName: string;
-  color: string;
+  name: string;
 };
 
 const categoryMeta: categoryMeta[] = [
-  {
-    key: 'exampleResults',
-    displayName: 'PRAXISBEISPIELE',
-    color: 'bg-lime-400',
-  },
-  { key: 'measureResults', displayName: 'MAßNAHMEN', color: 'bg-green-500' },
-  {
-    key: 'topicResults',
-    displayName: 'HANDLUNGSFELDER',
-    color: 'bg-purple-300',
-  },
+  { key: 'example', name: 'PRAXISBEISPIELE' },
+  { key: 'measure', name: 'MAßNAHMEN' },
+  { key: 'topic', name: 'HANDLUNGSFELDER' },
 ];
 
 const defaultDisplayValue = 'Suche im Wissensspeicher';
@@ -97,15 +89,15 @@ export const SearchBar = () => {
             <div className="relative cursor-default select-none py-2 font-bold text-gray-700">
               {resultHeader}
             </div>
-            {categoryMeta.map(({ key, displayName, color }) => {
+            {categoryMeta.map(({ key, name }) => {
               const results = searchResults[key];
               return (
                 results.length > 0 && (
                   <div key={key}>
                     <div className="relative cursor-default select-none py-3 text-gray-700">
-                      {displayName}
+                      {name}
                     </div>
-                    {results.map(({ name, path }) => {
+                    {results.map(({ title, path }) => {
                       return (
                         <Combobox.Option
                           key={path}
@@ -121,11 +113,11 @@ export const SearchBar = () => {
                             <span
                               className={clsx(
                                 'inline-block h-5 w-5 flex-shrink-0 rounded-full',
-                                color
+                                wikiColors[key]
                               )}
                               aria-hidden="true"
                             />
-                            <span className="ml-3 truncate">{name}</span>
+                            <span className="ml-3 truncate">{title}</span>
                           </div>
                         </Combobox.Option>
                       );

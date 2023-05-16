@@ -50,16 +50,16 @@ const SEARCH_QUERY = `
   }
 `;
 
-type SearchResult = { name: string; path: string };
+type SearchResult = { title: string; path: string };
 
 function buildPaths({ examples, topics, measures }) {
   // format examples
-  const exampleResults: SearchResult[] = examples.data.map((x) => {
+  const example: SearchResult[] = examples.data.map((x) => {
     const exampleAttributes = x.attributes;
     const measureAttributes = exampleAttributes.measure.data.attributes;
     const topicAttributes = measureAttributes.topic.data.attributes;
     return {
-      name: exampleAttributes.title,
+      title: exampleAttributes.title,
       path: [
         topicAttributes.slug,
         measureAttributes.slug,
@@ -68,23 +68,23 @@ function buildPaths({ examples, topics, measures }) {
     };
   });
   // format measures
-  const measureResults: SearchResult[] = measures.data.map((x) => {
+  const measure: SearchResult[] = measures.data.map((x) => {
     const measureAttributes = x.attributes;
     const topicAttributes = measureAttributes.topic.data.attributes;
     return {
-      name: measureAttributes.name,
+      title: measureAttributes.name,
       path: [topicAttributes.slug, measureAttributes.slug].join('/'),
     };
   });
   // format topics
-  const topicResults: SearchResult[] = topics.data.map((x) => {
+  const topic: SearchResult[] = topics.data.map((x) => {
     const topicAttributes = x.attributes;
     return {
-      name: topicAttributes.name,
+      title: topicAttributes.name,
       path: topicAttributes.slug,
     };
   });
-  return { topicResults, measureResults, exampleResults };
+  return { topic, measure, example };
 }
 
 export async function getSearchResults(query: string, signal: AbortSignal) {
