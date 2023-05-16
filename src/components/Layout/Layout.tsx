@@ -22,11 +22,13 @@ const Layout: React.FC<
 
   // check if we are inside wiki
   const isWiki = dirs[1] === 'wissensspeicher';
-
   // check if we have property in data object to find wiki layer
-  const layer = ['measure', 'topic', 'example', 'topics'].filter((property) =>
-    Object.hasOwn(data, property)
-  )[0];
+  let layer = '';
+  if (data) {
+    [layer] = ['measure', 'topic', 'example', 'topics'].filter((property) =>
+      Object.hasOwn(data, property)
+    );
+  }
 
   let breadcrumbNames = [];
   // find names for breadcrumbs of layers from data depending on layer
