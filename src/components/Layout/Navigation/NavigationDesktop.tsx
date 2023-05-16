@@ -11,7 +11,7 @@ export const NavigationDesktop: React.FC<Props> = ({ path, className }) => {
     <nav
       className={clsx(
         className,
-        'fixed z-10 flex w-full max-w-[1440px] items-center justify-between gap-8 px-8 py-3'
+        'fixed z-10 flex w-full max-w-[1440px] items-center justify-between gap-8 bg-white px-8 py-3'
       )}
     >
       <Link href="/">

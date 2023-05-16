@@ -33,7 +33,10 @@ export const NavigationMobile: React.FC<Props> = ({
     }
   `);
   return (
-    <Disclosure as="nav" className={clsx(className, 'fixed z-10 w-full')}>
+    <Disclosure
+      as="nav"
+      className={clsx(className, 'fixed z-10 w-full bg-white')}
+    >
       {({ open }) => (
         <>
           <div className={clsx('mx-auto px-4 pb-2 sm:px-6 lg:px-8')}>
