@@ -9,6 +9,7 @@ import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
 import { PageHeaderTextAndImage } from '~/components/Layout/PageHeaderTextAndImage';
 import { Section } from '~/components/Layout/Section';
 import { H2, H3, P } from '~/components/Text';
+import { wikiColors } from '~/components/utils';
 
 const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
   data: { topic },
@@ -19,7 +20,7 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
 
       <Hero
         title={topic.name}
-        layer="topic"
+        bgColor={wikiColors.topic}
         breadcrumbs={<Breadcrumbs names={['Wissensspeicher', topic.name]} />}
       />
 

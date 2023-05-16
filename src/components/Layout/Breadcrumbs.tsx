@@ -2,14 +2,19 @@ import React from 'react';
 
 import { HomeIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
+import { wikiColors } from '~/components/utils';
 import { Link } from '../core/links/Link';
-import { wikilayerColors } from './Navigation/NavigationDesktopAndMobile';
 
 type Props = { names: string[]; prefix?: string };
 
 export const Breadcrumbs: React.FC<Props> = ({ names = [], prefix = './' }) => {
   const n = names.length;
-  const wikiColorsArray = Object.values(wikilayerColors);
+  const wikiColorsArray = [
+    wikiColors.root,
+    wikiColors.topic,
+    wikiColors.measure,
+    wikiColors.example,
+  ]; // build array explicit as there are no gurantees on iterating order (with Object.values)
 
   // const testLinkDisplays = [
   //   'Radverkehr in Schulen, Kinder- und Jugendclubs und Kindergärten',

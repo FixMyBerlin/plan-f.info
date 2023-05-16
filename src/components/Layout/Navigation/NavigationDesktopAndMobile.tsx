@@ -5,31 +5,21 @@ import { NavigationMobile } from './NavigationMobile';
 type Props = {
   path: string;
   children?: ReactNode;
-  isWiki?: boolean;
-  layer?: string;
-};
-
-export const wikilayerColors = {
-  topics: 'bg-purple-100', // wiki/wissensspeicher
-  topic: 'bg-purple-300',
-  measure: 'bg-green-500',
-  example: 'bg-lime-300',
+  bgColor: string;
 };
 
 export const NavigationDesktopAndMobile: React.FC<Props> = ({
   path,
   children,
-  isWiki = false,
-  layer,
+  bgColor,
 }) => {
-  const bgClassName = isWiki ? wikilayerColors[layer] : 'bg-white';
   return (
     <>
       <div className="hidden w-full bg-gray-200 md:block">
-        <NavigationDesktop className={bgClassName} path={path} />
+        <NavigationDesktop className={bgColor} path={path} />
       </div>
       <div className="w-full md:hidden">
-        <NavigationMobile className={bgClassName} path={path}>
+        <NavigationMobile className={bgColor} path={path}>
           {children}
         </NavigationMobile>
       </div>
