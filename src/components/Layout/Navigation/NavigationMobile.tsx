@@ -1,10 +1,11 @@
-import { Disclosure } from '@headlessui/react';
+import { Disclosure, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 import { graphql, useStaticQuery } from 'gatsby';
-import React, { ReactNode } from 'react';
+import React, { Fragment, ReactNode } from 'react';
 import Logo from '~/components/Layout/assets/Logo.svg';
 import { Link } from '../../core/links/Link';
+import { NavigationMobileDisclosure } from './NavigationMobileDisclosure';
 import { menuItems } from './menuItems';
 
 type Props = { path: string; className?: string; children?: ReactNode };
@@ -64,42 +65,66 @@ export const NavigationMobile: React.FC<Props> = ({
             </div>
             {children}
           </div>
-
-          <Disclosure.Panel>
-            <div className="flex flex-col gap-2 bg-white px-4 py-10">
-              {Object.keys(menuItems).map((key) => (
-                <Disclosure.Button
-                  as="a"
-                  key={key}
-                  href={menuItems[key]}
-                  className={clsx(
-                    '!text-sm !no-underline',
-                    `${menuItems[key]}/` === path
-                      ? 'text-purple-500 before:bg-purple-500'
-                      : 'text-black'
-                  )}
-                >
-                  {key}
-                  {key === 'Wissensspeicher' &&
-                    nodes.map((topic) => (
-                      <li className="list-none pl-3.5" key={topic.name}>
+          <Transition
+            enter="transition duration-100 ease-out"
+            enterFrom="transform scale-95 opacity-0"
+            enterTo="transform scale-100 opacity-100"
+            leave="transition duration-75 ease-out"
+            leaveFrom="transform scale-100 opacity-100"
+            leaveTo="transform scale-95 opacity-0"
+          >
+            <Disclosure.Panel>
+              <div className="flex flex-col divide-y border bg-white px-4 py-8 font-bold">
+                {Object.keys(menuItems).map((key) => (
+                  // eslint-disable-next-line react/jsx-no-useless-fragment
+                  <Fragment key={key}>
+                    {key === 'Wissensspeicher' ? (
+                      <NavigationMobileDisclosure button="Wissensspeicher">
                         <Link
-                          href={`${menuItems[key]}/${topic.slug}`}
+                          href={menuItems[key]}
                           className={clsx(
-                            '!text-sm !no-underline',
-                            `/${topic.slug}/` === path
+                            '!text-sm  !no-underline',
+                            `${menuItems[key]}/` === path
                               ? 'text-purple-500 before:bg-purple-500'
                               : 'text-black'
                           )}
                         >
-                          {topic.name}
+                          {key}
                         </Link>
-                      </li>
-                    ))}
-                </Disclosure.Button>
-              ))}
-            </div>
-          </Disclosure.Panel>
+                        {nodes.map((topic) => (
+                          <li className="list-none" key={topic.name}>
+                            <Link
+                              href={`${menuItems[key]}/${topic.slug}`}
+                              className={clsx(
+                                '!text-sm !no-underline',
+                                `/${topic.slug}/` === path
+                                  ? 'text-purple-500 before:bg-purple-500'
+                                  : 'text-black'
+                              )}
+                            >
+                              {topic.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </NavigationMobileDisclosure>
+                    ) : (
+                      <Link
+                        href={menuItems[key]}
+                        className={clsx(
+                          'py-3 !text-sm !no-underline',
+                          `${menuItems[key]}/` === path
+                            ? 'text-purple-500 before:bg-purple-500'
+                            : 'text-black'
+                        )}
+                      >
+                        {key}
+                      </Link>
+                    )}
+                  </Fragment>
+                ))}
+              </div>
+            </Disclosure.Panel>
+          </Transition>
         </>
       )}
     </Disclosure>
