@@ -1,1 +1,1 @@
-export const isWiki = (path: string) => /\/wissensspeicher\/.*/.test(path);
+export const isWiki = (path: string) => path.startsWith('/wissensspeicher/');
