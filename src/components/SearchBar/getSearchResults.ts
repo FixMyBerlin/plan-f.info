@@ -53,6 +53,7 @@ const SEARCH_QUERY = `
 type SearchResult = { title: string; path: string };
 
 function buildPaths({ examples, topics, measures }) {
+  const wikiPath = '/wissensspeicher';
   // format examples
   const example: SearchResult[] = examples.data.map((x) => {
     const exampleAttributes = x.attributes;
@@ -61,6 +62,7 @@ function buildPaths({ examples, topics, measures }) {
     return {
       title: exampleAttributes.title,
       path: [
+        wikiPath,
         topicAttributes.slug,
         measureAttributes.slug,
         exampleAttributes.slug,
@@ -73,7 +75,7 @@ function buildPaths({ examples, topics, measures }) {
     const topicAttributes = measureAttributes.topic.data.attributes;
     return {
       title: measureAttributes.name,
-      path: [topicAttributes.slug, measureAttributes.slug].join('/'),
+      path: [wikiPath, topicAttributes.slug, measureAttributes.slug].join('/'),
     };
   });
   // format topics
@@ -81,7 +83,7 @@ function buildPaths({ examples, topics, measures }) {
     const topicAttributes = x.attributes;
     return {
       title: topicAttributes.name,
-      path: topicAttributes.slug,
+      path: [wikiPath, topicAttributes.slug].join('/'),
     };
   });
   return { topic, measure, example };

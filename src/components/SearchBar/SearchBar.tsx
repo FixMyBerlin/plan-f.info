@@ -70,7 +70,6 @@ export const SearchBar = () => {
       onFocus={() => setDisplayVal('')}
       onBlur={() => {
         setDisplayVal(defaultDisplayValue);
-        setSearchResults(undefined);
       }}
     >
       <div className="relative mt-2 w-80">
@@ -101,7 +100,7 @@ export const SearchBar = () => {
                       return (
                         <Combobox.Option
                           key={path}
-                          value={`/handlungsfelder/${path}`}
+                          value={path}
                           className={({ active }) =>
                             clsx(
                               'relative cursor-default select-none py-2',
