@@ -14,15 +14,15 @@ export const CardImageAndTextHorizontal: React.FC<Props> = ({
 }) => {
   return (
     <Link className="!no-underline" href={link}>
-      <div className="flex h-full rounded-b-3xl bg-white">
+      <div className="flex h-28 min-h-fit items-center justify-start gap-4 rounded-b-3xl bg-white px-4">
         {image && (
           <GatsbyImage
-            className="h-5 overflow-hidden"
+            className="h-16 w-16 shrink-0 flex-grow-0 overflow-hidden"
             alt={`Titelbild ${link}`}
             image={image}
           />
         )}
-        <div className="p-4">{children}</div>
+        <div className="overflow-hidden py-4">{children}</div>
       </div>
     </Link>
   );
