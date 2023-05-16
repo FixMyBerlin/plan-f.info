@@ -8,7 +8,7 @@ const ImpressumPage = () => {
   return (
     <>
       <HelmetSeo noindex title={title} />
-      <Hero className="!bg-green-500" title={title} />
+      <Hero bgColor="bg-green-500" title={title} />
       <Section>
         <Content>
           <div className="mt-8">
