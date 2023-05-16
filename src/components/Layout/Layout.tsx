@@ -5,6 +5,7 @@ import { NavigationDesktopAndMobile } from './Navigation/NavigationDesktopAndMob
 import { SideNavigation } from './Navigation/SideNavigation';
 import { ScrollTopLink } from './ScrollTopLink';
 import { Breadcrumbs } from './Breadcrumbs';
+import { isWiki } from '../utils';
 
 type Props = {
   children?: React.ReactNode;
@@ -18,56 +19,44 @@ const Layout: React.FC<
       | Queries.TopicDetailsQuery
     >
 > = ({ data, path, children }) => {
-  const dirs = path.split('/');
+  const isTopic = (x: any): x is Queries.TopicDetailsQuery =>
+    Object.hasOwn(x, 'topic');
+  const isMeasure = (
+    x: any
+  ): x is Queries.MeasureDetailsAndCommunityEntriesQuery =>
+    Object.hasOwn(x, 'measure');
+  const isExample = (
+    x: any
+  ): x is Queries.ExampleDetailsAndCommunityEntriesQuery =>
+    Object.hasOwn(x, 'example');
+  const breadcrumbs = ['Wissensspeicher'];
 
-  // check if we are inside wiki
-  const isWiki = dirs[1] === 'wissensspeicher';
-  // check if we have property in data object to find wiki layer
-  let layer = '';
-  if (data) {
-    [layer] = ['measure', 'topic', 'example', 'topics'].filter((property) =>
-      Object.hasOwn(data, property)
-    );
-  }
-
-  let breadcrumbNames = [];
   // find names for breadcrumbs of layers from data depending on layer
-  if (layer) {
-    switch (layer) {
-      case 'topic':
-        breadcrumbNames = [data.topic.name];
-        break;
-      case 'measure':
-        breadcrumbNames = [data.measure.topic.name, data.measure.name];
-        break;
-      case 'example':
-        breadcrumbNames = [
-          data.example.measure.topic.name,
-          data.example.measure.name,
-          data.example.title,
-        ];
-        break;
-      default:
+  if (data) {
+    if (isTopic(data)) {
+      breadcrumbs.push(data.topic.name);
+    } else if (isMeasure(data)) {
+      breadcrumbs.push(data.measure.topic.name, data.measure.name);
+    } else if (isExample(data)) {
+      breadcrumbs.push(
+        data.example.measure.topic.name,
+        data.example.measure.name,
+        data.example.title
+      );
     }
   }
   return (
     <div className="relative flex h-full flex-col overflow-x-hidden bg-gray-200">
       <div className="relative mx-auto w-full max-w-[1440px] bg-white">
         <ScrollTopLink />
-        <NavigationDesktopAndMobile isWiki layer={layer} path={path}>
-          {isWiki && (
-            <Breadcrumbs names={['Wissensspeicher'].concat(breadcrumbNames)} />
-          )}
+        <NavigationDesktopAndMobile path={path}>
+          {isWiki(path) && <Breadcrumbs names={breadcrumbs} />}
         </NavigationDesktopAndMobile>
         <div className="mx-auto w-full bg-white">
           <div className="flex w-full flex-row">
-            {isWiki && (
+            {isWiki(path) && (
               <div className="hidden xl:block">
-                <SideNavigation
-                  path={`${dirs
-                    .slice(0, Math.min(dirs.length - 1, 4))
-                    .join('/')}/`}
-                />
+                <SideNavigation path={path} />
               </div>
             )}
             <div className="flex-grow">
