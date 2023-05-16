@@ -16,7 +16,7 @@ export const LinkButtonWithArrow: React.FC<Props> = ({
   return (
     <Link className={clsx(className, 'pr-3')} {...props} button="black">
       <ArrowUpRightIcon className="mr-2 h-6 w-6 flex-shrink-0" />
-      {children}
+      <div className="max-w-[150px] truncate">{children}</div>
     </Link>
   );
 };
