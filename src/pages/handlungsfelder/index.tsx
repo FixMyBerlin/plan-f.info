@@ -8,7 +8,7 @@ import { CardWrapperWissensspeicherPage } from '~/components/Layout/CardWrapperW
 import { Section } from '~/components/Layout/Section';
 import { H2, H3, P } from '~/components/Text';
 import { Prose } from '~/components/core/Prose';
-import { SearchBar } from '~/components/Search';
+import { SearchBar } from '~/components/SearchBar';
 
 export const query = graphql`
   query TopicTeasers {
