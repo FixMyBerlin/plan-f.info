@@ -22,8 +22,9 @@ export const Breadcrumbs: React.FC<Props> = ({ names = [], prefix = './' }) => {
   //   'Mon, AusflügeMobilitätsbildunFahrradkurse, Fahrradflotten, Ausflüg',
   //   'MobilitätsbildunFahrradkurse, Fahrradflotten, Ausflüge',
   // ];
+
   return (
-    <nav className="" aria-label="Breadcrumb">
+    <nav className="py-4" aria-label="Breadcrumb">
       <ol className="flex flex-wrap gap-2">
         <li>
           <div className="flex items-center">
@@ -41,8 +42,8 @@ export const Breadcrumbs: React.FC<Props> = ({ names = [], prefix = './' }) => {
             <div className="flex items-center gap-2">
               <div
                 className={clsx(
-                  'h-4 w-[6px] border border-black',
-                  wikiColorsArray[i]
+                  'h-4 w-[4px] ',
+                  names.length - 1 === i ? 'bg-white/40' : wikiColorsArray[i]
                 )}
               />
               <Link
