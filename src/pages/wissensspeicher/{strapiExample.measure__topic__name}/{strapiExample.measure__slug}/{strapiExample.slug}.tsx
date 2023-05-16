@@ -43,7 +43,6 @@ const ExampleDetails: React.FC<
               example.measure.name,
               example.title,
             ]}
-            prefix="../"
           />
         }
       />
