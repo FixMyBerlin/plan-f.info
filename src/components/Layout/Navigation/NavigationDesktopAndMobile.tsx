@@ -1,12 +1,11 @@
 import React, { ReactNode } from 'react';
+import { isWiki, wikiLevel } from '~/components/utils';
 import { NavigationDesktop } from './NavigationDesktop';
 import { NavigationMobile } from './NavigationMobile';
 
 type Props = {
   path: string;
   children?: ReactNode;
-  isWiki?: boolean;
-  layer?: string;
 };
 
 export const wikilayerColors = {
@@ -19,10 +18,10 @@ export const wikilayerColors = {
 export const NavigationDesktopAndMobile: React.FC<Props> = ({
   path,
   children,
-  isWiki = false,
-  layer,
 }) => {
-  const bgClassName = isWiki ? wikilayerColors[layer] : 'bg-white';
+  const bgClassName = isWiki(path)
+    ? wikilayerColors[wikiLevel(path)]
+    : 'bg-white';
   return (
     <>
       <div className="hidden w-full bg-gray-200 md:block">
