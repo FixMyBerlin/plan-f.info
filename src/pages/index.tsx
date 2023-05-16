@@ -1,5 +1,10 @@
+import { PageProps, graphql } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { Content, HelmetSeo, Hero } from '~/components/Layout';
+import { CardImageAndTextHorizontal } from '~/components/Layout/CardImageAndTextHorizontal';
+import { CardWrapperWissensspeicherPage } from '~/components/Layout/CardWrapperWissensspeicherPage';
+import { Section } from '~/components/Layout/Section';
 
 import {
   CEO,
@@ -12,38 +17,55 @@ import {
   icons,
   jury,
 } from '~/components/StartPage';
-import { H1, H2, H3 } from '~/components/Text';
+import { H1, H2, H3, P } from '~/components/Text';
 import { Link } from '~/components/core/links/Link';
 
-const IndexPage: React.FC = () => {
-  const title = 'Impulse für die kommunale Fahrradmobilität';
+export const query = graphql`
+  query TopicOverview {
+    topics: allStrapiTopic {
+      nodes {
+        slug
+        name
+        image {
+          localFile {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
+  data: { topics },
+}) => {
+  const title = 'Impulse für die fahrradfreundliche Kommune';
   return (
     <>
       <HelmetSeo title={title} />
-      <Hero title={title}>
-        <FoldOut previewMode="clamp">
-          <p className="pt-6">
-            Im Projekt Plan&nbsp;F werden vier Produkte erarbeitet:
-          </p>
-          <ol className="ml-12 mt-6 list-decimal">
-            <li>Ein komprimiertes und übersichtliches Handbuch</li>
-            <li>Eine interaktive Webseite</li>
-            <li>
-              Plan F Check: Passgenaue Handlungsempfehlungen durch
-              Selbstevaluation von Kommunen
-            </li>
-            <li>
-              Ein interaktiver E-Learningkurs zu den Inhalten der
-              Systematisierung und Q&amp;A Sessions
-            </li>
-          </ol>
-          <p className="mt-6">
-            Plan&nbsp;F ist ein gemeinschaftliches Projekt von Fair Spaces und
-            FixMyCity und wird vom Bundesministerium für Digitales und Verkehr
-            (BMDV) im Rahmen des Nationalen Radverkehrsplan (NRVP) gefördert.
-          </p>
-        </FoldOut>
+      <Hero className="bg-green-500" title="Plan F">
+        <H3>{title}</H3>
       </Hero>
+      <Section className="bg-purple-300">
+        <H2>Handlungsfelder</H2>
+        <P>
+          Entdecken Sie die verschiedenen Handlungsfelder. Dort finden Sie
+          Maßnahmen und deren zugehörigen Praxisbeispiele
+        </P>
+        <CardWrapperWissensspeicherPage className="mt-10">
+          {topics.nodes.map((topic) => (
+            <CardImageAndTextHorizontal
+              key={topic.slug}
+              link={topic.slug}
+              image={topic.image && getImage(topic.image.localFile as any)}
+            >
+              <H3>{topic.name}</H3>
+            </CardImageAndTextHorizontal>
+          ))}
+        </CardWrapperWissensspeicherPage>
+      </Section>
       <section className="mt-8">
         <Content>
           <H1>Die 9 Handlungsfelder der kommunalen Radverkehrsförderung</H1>
