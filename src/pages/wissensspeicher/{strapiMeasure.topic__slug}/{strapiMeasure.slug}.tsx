@@ -18,7 +18,7 @@ const MeasureDetails: React.FC<
       <HelmetSeo title={measure.name} />
       <Hero
         title={measure.name}
-        className="bg-green-500"
+        layer="measure"
         breadcrumbs={
           <Breadcrumbs
             names={['Wissensspeicher', measure.topic.name, measure.name]}

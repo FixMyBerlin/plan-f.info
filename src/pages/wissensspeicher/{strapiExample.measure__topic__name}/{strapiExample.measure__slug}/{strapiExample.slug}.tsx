@@ -32,7 +32,8 @@ const ExampleDetails: React.FC<
     <>
       <HelmetSeo title={example.measure.name} />
       <Hero
-        className="!mb-0 rounded-b-none bg-lime-300"
+        className="!mb-0 rounded-b-none"
+        layer="example"
         title={example.title}
         breadcrumbs={
           <Breadcrumbs

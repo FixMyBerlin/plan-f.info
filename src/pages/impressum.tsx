@@ -7,7 +7,7 @@ const ImpressumPage = () => {
   return (
     <>
       <HelmetSeo noindex title={title} />
-      <Hero className="bg-green-300" title={title} />
+      <Hero className="!bg-green-500" title={title} />
       <Content>
         <section className="mt-8">
           <H2>Angaben gemäß § 5 TMG</H2>

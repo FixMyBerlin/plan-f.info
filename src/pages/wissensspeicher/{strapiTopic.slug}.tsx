@@ -19,7 +19,7 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
 
       <Hero
         title={topic.name}
-        className="bg-purple-300"
+        layer="topic"
         breadcrumbs={<Breadcrumbs names={['Wissensspeicher', topic.name]} />}
       />
 

@@ -10,7 +10,7 @@ type Props = {
 };
 
 export const wikilayerColors = {
-  topics: 'bg-purple-100',
+  topics: 'bg-purple-100', // wiki/wissensspeicher
   topic: 'bg-purple-300',
   measure: 'bg-green-500',
   example: 'bg-lime-300',
@@ -19,23 +19,13 @@ export const wikilayerColors = {
 export const NavigationDesktopAndMobile: React.FC<Props> = ({
   path,
   children,
-  isWiki,
+  isWiki = false,
   layer,
 }) => {
-  // // nav bg color
-  // let bgClassName = '';
-  // if (path.split('/').length >= 3 && path.split('/')[1] === 'wissensspeicher') {
-  //   bgClassName = wikilayerColors[path.split('/').length];
-  // } else {
-  //   bgClassName = 'bg-white';
-  // }
-  let bgClassName = '';
-
-  bgClassName = isWiki ? wikilayerColors[layer] : 'bg-white';
-
+  const bgClassName = isWiki ? wikilayerColors[layer] : 'bg-white';
   return (
     <>
-      <div className="hidden w-full md:block">
+      <div className="hidden w-full bg-gray-200 md:block">
         <NavigationDesktop className={bgClassName} path={path} />
       </div>
       <div className="w-full md:hidden">
