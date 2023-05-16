@@ -1,3 +1,3 @@
 export * from './domain';
 export * from './isWiki';
-export * from './wikiLevel';
+export * from './wikiColors.const';

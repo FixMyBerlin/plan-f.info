@@ -5,7 +5,7 @@ import { NavigationDesktopAndMobile } from './Navigation/NavigationDesktopAndMob
 import { SideNavigation } from './Navigation/SideNavigation';
 import { ScrollTopLink } from './ScrollTopLink';
 import { Breadcrumbs } from './Breadcrumbs';
-import { isWiki } from '../utils';
+import { isWiki, wikiColors } from '../utils';
 
 type Props = {
   children?: React.ReactNode;
@@ -32,12 +32,17 @@ const Layout: React.FC<
   const breadcrumbs = ['Wissensspeicher'];
 
   // find names for breadcrumbs of layers from data depending on layer
-  if (data) {
+  let bgColor = 'bg-white';
+  if (data && isWiki(path)) {
+    bgColor = wikiColors.root;
     if (isTopic(data)) {
+      bgColor = wikiColors.topic;
       breadcrumbs.push(data.topic.name);
     } else if (isMeasure(data)) {
+      bgColor = wikiColors.measure;
       breadcrumbs.push(data.measure.topic.name, data.measure.name);
     } else if (isExample(data)) {
+      bgColor = wikiColors.example;
       breadcrumbs.push(
         data.example.measure.topic.name,
         data.example.measure.name,
@@ -45,11 +50,12 @@ const Layout: React.FC<
       );
     }
   }
+
   return (
     <div className="relative flex h-full flex-col overflow-x-hidden bg-gray-200">
       <div className="relative mx-auto w-full max-w-[1440px] bg-white">
         <ScrollTopLink />
-        <NavigationDesktopAndMobile path={path}>
+        <NavigationDesktopAndMobile path={path} bgColor={bgColor}>
           {isWiki(path) && <Breadcrumbs names={breadcrumbs} />}
         </NavigationDesktopAndMobile>
         <div className="mx-auto w-full bg-white">

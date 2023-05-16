@@ -8,6 +8,7 @@ import { CardWrapperWissensspeicherPage } from '~/components/Layout/CardWrapperW
 import { Section } from '~/components/Layout/Section';
 import { H2, H3, P } from '~/components/Text';
 import { Prose } from '~/components/core/Prose';
+import { wikiColors } from '~/components/utils';
 
 export const query = graphql`
   query TopicTeasers {
@@ -43,7 +44,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
       <HelmetSeo title={title} />
       <Hero
         title={title}
-        layer="topics"
+        bgColor={wikiColors.root}
         breadcrumbs={<Breadcrumbs names={['Wissensspeicher']} />}
       />
       <Section className="mb-12">
