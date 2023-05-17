@@ -49,7 +49,6 @@ export const Breadcrumbs: React.FC<Props> = ({ names = [], prefix = './' }) => {
               />
               <Link
                 className={clsx(
-                  isLastItem(i) && 'font-bold',
                   'max-w-[9rem] truncate text-sm no-underline md:max-w-[12rem] lg:max-w-none'
                 )}
                 href={prefix + '../'.repeat(n - i - 1)}
