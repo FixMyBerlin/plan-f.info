@@ -3,7 +3,7 @@ import { MinusCircleIcon, PlusCircleIcon } from '@heroicons/react/20/solid';
 import React, { ReactNode } from 'react';
 
 type Props = {
-  button: string;
+  button: ReactNode;
   children: ReactNode;
 };
 
@@ -17,7 +17,7 @@ export const NavigationMobileDisclosure: React.FC<Props> = ({
         <>
           {/* Mobile menu button */}
           <Disclosure.Button className="inline-flex w-full items-center justify-between py-3 !text-sm">
-            <p className="whitespace-nowrap">{button}</p>
+            {button}
             {open ? (
               <MinusCircleIcon className="h-6 text-black" />
             ) : (

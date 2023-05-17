@@ -17,6 +17,7 @@ export const NavigationMobile: React.FC<Props> = ({
   path,
   className,
 }) => {
+  const basePath = '/wissensspeicher';
   const {
     nestedMeasures: { nodes },
   }: Queries.TopicMeasureTreeQuery = useStaticQuery(graphql`
@@ -79,25 +80,44 @@ export const NavigationMobile: React.FC<Props> = ({
                   // eslint-disable-next-line react/jsx-no-useless-fragment
                   <Fragment key={key}>
                     {key === 'Wissensspeicher' ? (
-                      <NavigationMobileDisclosure button="Wissensspeicher">
+                      // Inner Disclosure
+                      <NavigationMobileDisclosure
+                        // Inner Disclosure Button
+                        button={
+                          <p
+                            className={clsx(
+                              'whitespace-nowrap',
+                              '!text-sm  !no-underline',
+                              path.startsWith(`${basePath}/`)
+                                ? 'text-purple-500 before:bg-purple-500'
+                                : 'text-black'
+                            )}
+                          >
+                            {key}
+                          </p>
+                        }
+                      >
+                        {/* children: Inner Disclosure Panel */}
+                        {/* First Link: Wissensspeicher */}
                         <Link
                           href={menuItems[key]}
                           className={clsx(
                             '!text-sm  !no-underline',
-                            `${menuItems[key]}/` === path
+                            `${basePath}/` === path
                               ? 'text-purple-500 before:bg-purple-500'
                               : 'text-black'
                           )}
                         >
                           {key}
                         </Link>
+                        {/* List of all topics */}
                         {nodes.map((topic) => (
                           <li className="list-none" key={topic.name}>
                             <Link
                               href={`${menuItems[key]}/${topic.slug}`}
                               className={clsx(
                                 '!text-sm !no-underline',
-                                `/${topic.slug}/` === path
+                                path === `${basePath}/${topic.slug}/`
                                   ? 'text-purple-500 before:bg-purple-500'
                                   : 'text-black'
                               )}
@@ -108,6 +128,7 @@ export const NavigationMobile: React.FC<Props> = ({
                         ))}
                       </NavigationMobileDisclosure>
                     ) : (
+                      // End of Inner Disclosure
                       <Link
                         href={menuItems[key]}
                         className={clsx(

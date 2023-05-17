@@ -22,7 +22,7 @@ export const Breadcrumbs: React.FC<Props> = ({ names = [], prefix = './' }) => {
   //   'Mon, AusflügeMobilitätsbildunFahrradkurse, Fahrradflotten, Ausflüg',
   //   'MobilitätsbildunFahrradkurse, Fahrradflotten, Ausflüge',
   // ];
-
+  const isLastItem = (key: number) => names.length - 1 === key;
   return (
     <nav className="py-4" aria-label="Breadcrumb">
       <ol className="flex flex-wrap gap-2">
@@ -43,11 +43,15 @@ export const Breadcrumbs: React.FC<Props> = ({ names = [], prefix = './' }) => {
               <div
                 className={clsx(
                   'h-4 w-[4px] ',
-                  names.length - 1 === i ? 'bg-white/40' : wikiColorsArray[i]
+                  // the current breadcrumb has a lighter color
+                  isLastItem(i) ? 'bg-white/40' : wikiColorsArray[i]
                 )}
               />
               <Link
-                className="max-w-[9rem] truncate text-sm no-underline md:max-w-[12rem] lg:max-w-none"
+                className={clsx(
+                  isLastItem(i) && 'font-bold',
+                  'max-w-[9rem] truncate text-sm no-underline md:max-w-[12rem] lg:max-w-none'
+                )}
                 href={prefix + '../'.repeat(n - i - 1)}
               >
                 {name}
