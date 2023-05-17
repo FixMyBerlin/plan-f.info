@@ -55,7 +55,7 @@ export const SearchBar = () => {
         }
       })
       .catch((e) => {
-        // we let abort errors pass
+        // we only abort errors pass
         if (e.name !== 'AbortError') {
           throw e;
         }
@@ -66,7 +66,12 @@ export const SearchBar = () => {
     <Combobox
       as="div"
       value={displayVal}
-      onChange={(path: string) => navigate(path)}
+      onChange={(path: string) => {
+        setSearchResults(undefined);
+        if (path) {
+          navigate(path);
+        }
+      }}
       onFocus={() => setDisplayVal('')}
       onBlur={() => {
         setDisplayVal(defaultDisplayValue);
@@ -85,17 +90,26 @@ export const SearchBar = () => {
         )}
         {searchResults && (
           <Combobox.Options className="max-h-120 absolute z-10 mt-4 w-full overflow-auto rounded-md bg-white py-2 pl-4 pr-9 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-            <div className="relative cursor-default select-none py-2 font-bold text-gray-700">
+            <Combobox.Option
+              key="header"
+              value={null}
+              className="relative cursor-default select-none py-2 font-bold text-gray-700"
+            >
               {resultHeader}
-            </div>
+            </Combobox.Option>
             {categoryMeta.map(({ key, name }) => {
               const results = searchResults[key];
               return (
                 results.length > 0 && (
                   <div key={key}>
-                    <div className="relative cursor-default select-none py-3 text-gray-700">
+                    <Combobox.Option
+                      key={key}
+                      value={null}
+                      className="relative cursor-default select-none py-3 text-gray-700"
+                    >
                       {name}
-                    </div>
+                    </Combobox.Option>
+
                     {results.map(({ title, path }) => {
                       return (
                         <Combobox.Option
