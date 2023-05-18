@@ -26,7 +26,7 @@ export const ScrollTopLink: React.FC = () => {
       <button
         type="button"
         onClick={() => window.scrollTo(0, 0)}
-        className="flex no-underline"
+        className="flex"
       >
         <ArrowUpIcon className="hover:text-puple-400 fixed bottom-16 right-8 z-40 w-10 rounded-full border-2 border-gray-400 bg-white p-1 text-gray-400 md:bottom-52" />
       </button>

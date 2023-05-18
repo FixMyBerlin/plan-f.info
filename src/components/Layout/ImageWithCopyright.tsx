@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import React, { ReactNode } from 'react';
+import { Caption } from '../Text';
 
 type Props = {
   children?: ReactNode; // image
@@ -14,7 +15,7 @@ export const ImageWithCopyright: React.FC<Props> = ({
   return (
     <div className={clsx(className, '')}>
       {children}
-      <p className="mt-1 text-sm text-gray-400">{`Copyright: ${copyright}`}</p>
+      <Caption>{`Copyright: ${copyright}`}</Caption>
     </div>
   );
 };

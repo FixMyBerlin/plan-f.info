@@ -13,17 +13,19 @@ export const CardImageAndTextVertical: React.FC<Props> = ({
   image,
 }) => {
   return (
-    <Link className="!no-underline" href={link}>
-      <div className="flex h-full flex-col rounded-b-3xl bg-white">
-        {image && (
-          <GatsbyImage
-            className="h-52 w-full overflow-hidden"
-            alt={`Titelbild ${link}`}
-            image={image}
-          />
-        )}
-        <div className="p-4">{children}</div>
-      </div>
+    <Link
+      button="card"
+      className="flex h-full flex-col rounded-b-3xl bg-white"
+      href={link}
+    >
+      {image && (
+        <GatsbyImage
+          className="h-52 w-full overflow-hidden"
+          alt={`Titelbild ${link}`}
+          image={image}
+        />
+      )}
+      <div className="p-4">{children}</div>
     </Link>
   );
 };

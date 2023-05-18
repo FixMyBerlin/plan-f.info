@@ -48,7 +48,7 @@ const ExampleDetails: React.FC<
         }
       />
 
-      <Section className="mb-12 bg-lime-300 pt-12">
+      <Section className="mb-12 bg-lime-300 pt-6">
         <SectionWithPagination
           className="bg-white"
           pagination={{
@@ -85,7 +85,7 @@ const ExampleDetails: React.FC<
                 <Prose markdownHTML={example[key]} />
               </div>
             ))}
-            <P>{}</P>
+
             <P className="whitespace-nowrap font-bold uppercase">
               Zuständige Abteilung
             </P>

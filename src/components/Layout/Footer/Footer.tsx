@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
     <>
       <Fundings />
       <footer
-        className="z-0 bg-black  px-10 py-10 sm:px-12 "
+        className="z-0 bg-black px-10 py-10 sm:px-12"
         aria-labelledby="footer-heading"
       >
         <ul

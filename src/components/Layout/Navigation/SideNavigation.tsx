@@ -51,26 +51,22 @@ export const SideNavigation: React.FC<Props> = ({ path }) => {
                     href={`${basePath}/${topic.slug}`}
                     className={clsx(
                       '!text-sm !no-underline',
-                      path === `${basePath}/${topic.slug}/`
-                        ? 'text-purple-500 before:bg-purple-500'
-                        : 'text-black'
+                      path === `${basePath}/${topic.slug}/` && 'font-bold'
                     )}
                   >
                     {topic.name}
                   </Link>
-                  <ul className="mt-4 flex flex-col gap-2">
+                  <ul className="my-3 flex flex-col gap-2">
                     {Boolean(topic.measures?.length) &&
                       topic.measures.map((measure) => (
                         <li key={measure.name} className="relative">
                           <Link
                             href={`${basePath}/${topic.slug}/${measure.slug}`}
                             className={clsx(
-                              'block w-full pl-3.5 !text-sm !no-underline',
+                              'block pl-3.5 !text-sm text-gray-600 !no-underline',
                               path.startsWith(
                                 `${basePath}/${topic.slug}/${measure.slug}/`
-                              )
-                                ? 'text-purple-500 before:bg-purple-500'
-                                : 'text-black'
+                              ) && 'font-bold'
                             )}
                           >
                             {measure.name}

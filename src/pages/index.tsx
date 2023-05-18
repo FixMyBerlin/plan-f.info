@@ -54,7 +54,9 @@ const IndexPage: React.FC<PageProps<Queries.TopicAndExampleOverviewQuery>> = ({
       <HelmetSeo title={title} />
       <Section className="relative flex flex-col items-start justify-between gap-4 !bg-green-500 px-5 !pt-32 pb-8 md:flex-row-reverse md:pb-16 md:pl-8 lg:px-10">
         <div className="flex w-full justify-end">
-          <LinkButtonWithArrow href="/">Was ist Plan F</LinkButtonWithArrow>
+          <LinkButtonWithArrow button="black" href="/">
+            Was ist Plan F
+          </LinkButtonWithArrow>
         </div>
         <div className="flex-col justify-center gap-8 md:gap-16">
           <div>
