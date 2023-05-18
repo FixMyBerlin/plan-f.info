@@ -1,16 +1,15 @@
 import clsx from 'clsx';
-import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import React from 'react';
 import { Prose } from '../core/Prose';
 import { Article } from './Article';
 import { Section } from './Section';
 
 type Props = {
-  image?: IGatsbyImageData | null;
+  image?: string;
   markdownHTML: string;
   className?: string;
 };
-export const PageHeaderTextAndImage: React.FC<Props> = ({
+export const PageHeader: React.FC<Props> = ({
   className,
   markdownHTML,
   image,
@@ -20,13 +19,8 @@ export const PageHeaderTextAndImage: React.FC<Props> = ({
       <Article>
         <Prose markdownHTML={markdownHTML} />
       </Article>
-
       {image && (
-        <GatsbyImage
-          className="h-72 w-72 flex-shrink-0"
-          image={image}
-          alt="Titelbild"
-        />
+        <img className="h-72 w-72 flex-shrink-0" src={image} alt="Titelbild" />
       )}
     </Section>
   );

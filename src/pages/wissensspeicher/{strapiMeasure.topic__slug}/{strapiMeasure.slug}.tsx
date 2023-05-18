@@ -6,7 +6,7 @@ import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
 import { CardImageAndTextVertical } from '~/components/Layout/CardImageAndTextVertical';
 import { CardWrapperMeasurePage } from '~/components/Layout/CardWrapperMeasurePage';
 import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
-import { PageHeaderTextAndImage } from '~/components/Layout/PageHeaderTextAndImage';
+import { PageHeader } from '~/components/Layout/PageHeader';
 import { Section } from '~/components/Layout/Section';
 import { H2, H3, P } from '~/components/Text';
 import { wikiColors } from '~/components/utils';
@@ -27,11 +27,8 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
           />
         }
       />
-      <PageHeaderTextAndImage
-        markdownHTML={
-          measure?.description?.data?.childMarkdownRemark?.html &&
-          measure.description.data.childMarkdownRemark.html
-        }
+      <PageHeader
+        markdownHTML={measure.description.data.childMarkdownRemark.html}
       />
 
       <Section className="mb-20 grid gap-10 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
