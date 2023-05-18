@@ -14,20 +14,16 @@ type Props = {
 const Layout: React.FC<
   Props &
     PageProps<
-      | Queries.ExampleDetailsAndCommunityEntriesQuery
-      | Queries.MeasureDetailsAndCommunityEntriesQuery
+      | Queries.ExampleDetailsQuery
+      | Queries.MeasureDetailsQuery
       | Queries.TopicDetailsQuery
     >
 > = ({ data, path, children }) => {
   const isTopic = (x: any): x is Queries.TopicDetailsQuery =>
     Object.hasOwn(x, 'topic');
-  const isMeasure = (
-    x: any
-  ): x is Queries.MeasureDetailsAndCommunityEntriesQuery =>
+  const isMeasure = (x: any): x is Queries.MeasureDetailsQuery =>
     Object.hasOwn(x, 'measure');
-  const isExample = (
-    x: any
-  ): x is Queries.ExampleDetailsAndCommunityEntriesQuery =>
+  const isExample = (x: any): x is Queries.ExampleDetailsQuery =>
     Object.hasOwn(x, 'example');
   const breadcrumbs = ['Wissensspeicher'];
 

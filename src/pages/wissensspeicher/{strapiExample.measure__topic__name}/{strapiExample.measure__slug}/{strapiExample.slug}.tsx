@@ -12,13 +12,14 @@ import { H2, H3, P } from '~/components/Text';
 import { Prose } from '~/components/core/Prose';
 import { wikiColors } from '~/components/utils';
 
-const ExampleDetails: React.FC<
-  PageProps<Queries.ExampleDetailsAndCommunityEntriesQuery>
-> = ({ data: { example, communityEntries } }) => {
+const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
+  data: { example },
+}) => {
   const slugList = example.measure.examples.map(({ slug }) => slug);
   const pos = slugList.indexOf(example.slug);
   const prevSlug = slugList[pos - 1] || slugList[slugList.length - 1];
   const nextSlug = slugList[pos + 1] || slugList[0];
+
   const steckbiref = {
     subcategory: 'Maßnahmentyp',
     title: 'Name des Projektes',
@@ -28,7 +29,7 @@ const ExampleDetails: React.FC<
     centrality: 'Lage',
     commune: 'Kommune',
   };
-
+  const { communityEntries } = example.measure;
   return (
     <>
       <HelmetSeo title={example.measure.name} />
@@ -198,7 +199,7 @@ const ExampleDetails: React.FC<
 export default ExampleDetails;
 
 export const query = graphql`
-  query ExampleDetailsAndCommunityEntries($id: String!) {
+  query ExampleDetails($id: String!) {
     example: strapiExample(id: { eq: $id }) {
       title
       subcategory
@@ -357,37 +358,38 @@ export const query = graphql`
         examples {
           slug
         }
+        communityEntries {
+          author
+          contact
+          subcategory
+          description {
+            data {
+              childMarkdownRemark {
+                html
+              }
+            }
+          }
+          image {
+            image {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
+            }
+            copyright
+          }
+          title
+          website {
+            url
+            display
+          }
+        }
       }
       relatedTopic {
         name
       }
       slug
-    }
-    communityEntries: allStrapiCommunityEntry {
-      nodes {
-        description {
-          data {
-            childMarkdownRemark {
-              html
-            }
-          }
-        }
-        image {
-          image {
-            localFile {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
-          }
-          copyright
-        }
-        title
-        website {
-          url
-          display
-        }
-      }
     }
   }
 `;
