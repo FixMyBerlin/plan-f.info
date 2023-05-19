@@ -1,3 +1,4 @@
+import { Transition } from '@headlessui/react';
 import { MinusIcon, PlusIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 import React, { useState } from 'react';
@@ -45,12 +46,22 @@ export const LinkListBlackButton: React.FC<Props> = ({
             {resource.display || resource.url}
           </LinkButtonWithArrow>
         ))}
-        {isExpand &&
-          links.slice(2).map((resource) => (
+        <Transition
+          show={isExpand}
+          enter="transition duration-100 ease-out"
+          enterFrom="transform scale-95 opacity-0"
+          enterTo="transform scale-100 opacity-100"
+          leave="transition duration-75 ease-out"
+          leaveFrom="transform scale-100 opacity-100"
+          leaveTo="transform scale-95 opacity-0"
+        >
+          {links.slice(2).map((resource) => (
             <LinkButtonWithArrow href={resource.url} key={resource.url}>
               {resource.display || resource.url}
             </LinkButtonWithArrow>
           ))}
+        </Transition>
+
         <button
           className="flex items-center gap-2"
           type="button"

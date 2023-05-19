@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import React from 'react';
-import { H2 } from '../Text';
+import { H3 } from '../Text';
 import { Prose } from '../core/Prose';
 
 type Props = {
@@ -15,8 +15,8 @@ export const CardText: React.FC<Props> = ({
 }) => {
   return (
     <div className={clsx(className, 'rounded-b-3xl bg-gray-50')}>
-      <H2 className=" bg-lime-200 p-4">{title}</H2>
-      <Prose className="-mt-6 p-4 pt-6" markdownHTML={markdownHTML} />
+      <H3 className="bg-lime-200 p-4">{title}</H3>
+      <Prose className="-mt-5 p-4 pt-6" markdownHTML={markdownHTML} />
     </div>
   );
 };

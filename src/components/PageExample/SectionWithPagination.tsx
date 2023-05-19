@@ -15,7 +15,7 @@ export const SectionWithPagination: React.FC<Props> = ({
   return (
     <section className={clsx(className, 'rounded-3xl')}>
       <Pagination sectionPosition="top" {...pagination} />
-      <div className="p-5 lg:p-10">{children}</div>
+      <div className="p-5 pt-6 lg:p-10">{children}</div>
       <Pagination sectionPosition="bottom" {...pagination} />
     </section>
   );

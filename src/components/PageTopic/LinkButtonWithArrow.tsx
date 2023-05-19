@@ -16,11 +16,11 @@ export const LinkButtonWithArrow: React.FC<Props> = ({
   ...props
 }) => {
   return (
-    <Link className={clsx(className, 'pr-5')} {...props} button="black">
+    <Link className={clsx(className, 'flex pr-5')} {...props}>
       <ArrowUpRightIcon className="mr-2 h-6 w-6 flex-shrink-0" />
       <div
         className={clsx(
-          'nowrap max-w-[150px] whitespace-nowrap',
+          'nowrap max-w-[200px] whitespace-nowrap',
           truncate && 'truncate'
         )}
       >

@@ -21,11 +21,14 @@ export const query = graphql`
         }
       }
     }
-    examples: allStrapiExample(limit: 3) {
+    examples: allStrapiExample {
       nodes {
         slug
         title
         shortDescription
+        measure {
+          id
+        }
         image {
           image {
             localFile {
@@ -45,12 +48,34 @@ const IndexPage: React.FC<PageProps<Queries.TopicAndExampleOverviewQuery>> = ({
 }) => {
   const title = 'Impulse für die fahrradfreundliche Kommune';
 
+  // get three example nodes - from distinct measures
+
+  const uniqueMeasureIds = new Set();
+
+  // Filter example nodes to get unique measure IDs
+  const filteredExamples = examples.nodes.filter((example) => {
+    if (!uniqueMeasureIds.has(example.measure.id)) {
+      uniqueMeasureIds.add(example.measure.id);
+      return true;
+    }
+    return false;
+  });
+
+  // Select the first three nodes from the filtered list
+  // in case the list is shorter than three, simply take the first three example nodes
+  const selectedFilteredExamples =
+    filteredExamples.length < 3
+      ? examples.nodes.slice(0, 3)
+      : filteredExamples.slice(0, 3);
+
   return (
     <>
       <HelmetSeo title={title} />
       <Section className="relative flex flex-col items-start justify-between gap-4 !bg-green-500 px-5 !pt-32 pb-8 md:flex-row-reverse md:pb-16 md:pl-8 lg:px-10">
         <div className="flex w-full justify-end">
-          <LinkButtonWithArrow href="/">Was ist Plan F</LinkButtonWithArrow>
+          <LinkButtonWithArrow button="black" href="/">
+            Was ist Plan F
+          </LinkButtonWithArrow>
         </div>
         <div className="flex-col justify-center gap-8 md:gap-16">
           <div>
@@ -85,7 +110,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicAndExampleOverviewQuery>> = ({
           umgesetzt haben.
         </P>
         <CardWrapperMeasurePage className="mt-12">
-          {examples.nodes.map((example) => (
+          {selectedFilteredExamples.map((example) => (
             <CardImageAndTextVertical
               key={example.slug}
               link={example.slug}

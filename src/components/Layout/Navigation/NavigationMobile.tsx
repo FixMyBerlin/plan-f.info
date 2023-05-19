@@ -105,7 +105,7 @@ export const NavigationMobile: React.FC<Props> = ({
                             '!text-sm  !no-underline',
                             `${basePath}/` === path
                               ? 'text-purple-500 before:bg-purple-500'
-                              : 'text-black'
+                              : 'text-gray-500'
                           )}
                         >
                           {key}
@@ -119,7 +119,7 @@ export const NavigationMobile: React.FC<Props> = ({
                                 '!text-sm !no-underline',
                                 path === `${basePath}/${topic.slug}/`
                                   ? 'text-purple-500 before:bg-purple-500'
-                                  : 'text-black'
+                                  : 'text-gray-500'
                               )}
                             >
                               {topic.name}
