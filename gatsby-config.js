@@ -62,8 +62,7 @@ module.exports = {
       resolve: `gatsby-source-strapi`,
       options: {
         // in ENV verschieben, da pro Dev unterschiedlich
-        apiURL:
-          'https://plan-f-staging.tiummk647p9vk.eu-central-1.cs.amazonlightsail.com',
+        apiURL: process.env.GATSBY_BACKEND_URL,
         // in ENV verschieben, da pro Dev unterschiedlich und geheim seien sollte
         accessToken: process.env.STRAPI_TOKEN,
         // Hier die Content types angeben, die wir in Gatsby verfügbar haben wollen.
@@ -98,6 +97,7 @@ module.exports = {
                 guidelines: { populate: '*' },
                 fundings: { populate: '*' },
                 examples: { populate: '*' },
+                communityEntries: { populate: '*' },
               },
             },
           },
@@ -118,6 +118,7 @@ module.exports = {
             queryParams: {
               populate: {
                 image: { populate: '*' },
+                description: { populate: '*' },
                 website: { populate: '*' },
               },
             },

@@ -1,11 +1,10 @@
 import clsx from 'clsx';
-import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import React, { ReactNode } from 'react';
 import { Link } from '../core/links/Link';
 
 type Props = {
   link: string;
-  image?: IGatsbyImageData | null;
+  image?: string;
   children: ReactNode;
   className?: string;
 };
@@ -25,10 +24,10 @@ export const CardImageAndTextResponsive: React.FC<Props> = ({
       href={link}
     >
       {image && (
-        <GatsbyImage
+        <img
+          src={image}
           className="h-36 w-36 flex-shrink-0 overflow-hidden"
           alt={`Titelbild ${link}`}
-          image={image}
         />
       )}
       <div>{children}</div>

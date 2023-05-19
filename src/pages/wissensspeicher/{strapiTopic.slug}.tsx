@@ -1,12 +1,11 @@
 import { graphql, PageProps } from 'gatsby';
-import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { Prose } from '~/components/core/Prose';
 import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
 import { CardImageAndTextResponsive } from '~/components/Layout/CardImageAndTextResponsive';
 import { CardWrapperTopicPage } from '~/components/Layout/CardWrapperTopicPage';
 import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
-import { PageHeaderTextAndImage } from '~/components/Layout/PageHeaderTextAndImage';
+import { PageHeader } from '~/components/Layout/PageHeader';
 import { Section } from '~/components/Layout/Section';
 import { H2, H3, P } from '~/components/Text';
 import { wikiColors } from '~/components/utils';
@@ -24,12 +23,9 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
         breadcrumbs={<Breadcrumbs names={['Wissensspeicher', topic.name]} />}
       />
 
-      <PageHeaderTextAndImage
-        image={topic.image && getImage(topic.image.localFile as any)}
-        markdownHTML={
-          topic.description?.data?.childMarkdownRemark?.html &&
-          topic.description.data.childMarkdownRemark.html
-        }
+      <PageHeader
+        image={topic.image.url}
+        markdownHTML={topic.description.data.childMarkdownRemark.html}
       />
 
       <Section className="mb-20 flex flex-col  gap-10 sm:flex-row sm:gap-20">
@@ -79,11 +75,7 @@ export const query = graphql`
     topic: strapiTopic(id: { eq: $id }) {
       name
       image {
-        localFile {
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
+        url
       }
       additionalResources {
         display

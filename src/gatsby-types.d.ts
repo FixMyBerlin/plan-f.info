@@ -2133,7 +2133,11 @@ type Query_strapiAwardArgs = {
 
 
 type Query_strapiCommunityEntryArgs = {
+  author: InputMaybe<StringQueryOperatorInput>;
   children: InputMaybe<NodeFilterListInput>;
+  commune: InputMaybe<StringQueryOperatorInput>;
+  contact: InputMaybe<StringQueryOperatorInput>;
+  countryState: InputMaybe<StringQueryOperatorInput>;
   createdAt: InputMaybe<DateQueryOperatorInput>;
   description: InputMaybe<STRAPI_COMMUNITY_ENTRYDescriptionFilterInput>;
   id: InputMaybe<StringQueryOperatorInput>;
@@ -2142,9 +2146,10 @@ type Query_strapiCommunityEntryArgs = {
   parent: InputMaybe<NodeFilterInput>;
   publishedAt: InputMaybe<DateQueryOperatorInput>;
   strapi_id: InputMaybe<IntQueryOperatorInput>;
+  subcategory: InputMaybe<StringQueryOperatorInput>;
   title: InputMaybe<StringQueryOperatorInput>;
   updatedAt: InputMaybe<DateQueryOperatorInput>;
-  website: InputMaybe<STRAPI__COMPONENT_LINKS_LINKSFilterListInput>;
+  website: InputMaybe<STRAPI__COMPONENT_LINKS_LINKSFilterInput>;
 };
 
 
@@ -2206,14 +2211,17 @@ type Query_strapiComponentLinksLinksArgs = {
 type Query_strapiExampleArgs = {
   authorities: InputMaybe<STRAPI_EXAMPLEAuthoritiesFilterInput>;
   awards: InputMaybe<STRAPI__COMPONENT_AWARD_AWARDFilterListInput>;
+  beginnerFriendly: InputMaybe<BooleanQueryOperatorInput>;
   centrality: InputMaybe<StringQueryOperatorInput>;
   challenges: InputMaybe<STRAPI_EXAMPLEChallengesFilterInput>;
   children: InputMaybe<NodeFilterListInput>;
   commune: InputMaybe<StringQueryOperatorInput>;
   communication: InputMaybe<STRAPI_EXAMPLECommunicationFilterInput>;
+  costs: InputMaybe<StringQueryOperatorInput>;
   countryState: InputMaybe<StringQueryOperatorInput>;
   createdAt: InputMaybe<DateQueryOperatorInput>;
   description: InputMaybe<STRAPI_EXAMPLEDescriptionFilterInput>;
+  financiallyWeak: InputMaybe<BooleanQueryOperatorInput>;
   funding: InputMaybe<STRAPI_EXAMPLEFundingFilterInput>;
   gatsbyPath: InputMaybe<StringQueryOperatorInput>;
   goals: InputMaybe<STRAPI_EXAMPLEGoalsFilterInput>;
@@ -2403,6 +2411,7 @@ type Query_strapiExampleStakeholdersTextnodeArgs = {
 type Query_strapiMeasureArgs = {
   additionalResources: InputMaybe<STRAPI__COMPONENT_LINKS_LINKSFilterListInput>;
   children: InputMaybe<NodeFilterListInput>;
+  communityEntries: InputMaybe<STRAPI_COMMUNITY_ENTRYFilterListInput>;
   createdAt: InputMaybe<DateQueryOperatorInput>;
   description: InputMaybe<STRAPI_MEASUREDescriptionFilterInput>;
   examples: InputMaybe<STRAPI_EXAMPLEFilterListInput>;
@@ -2648,7 +2657,11 @@ type STRAPI_AWARDSortInput = {
 };
 
 type STRAPI_COMMUNITY_ENTRY = Node & {
+  readonly author: Maybe<Scalars['String']>;
   readonly children: ReadonlyArray<Node>;
+  readonly commune: Maybe<Scalars['String']>;
+  readonly contact: Maybe<Scalars['String']>;
+  readonly countryState: Maybe<Scalars['String']>;
   readonly createdAt: Maybe<Scalars['Date']>;
   readonly description: Maybe<STRAPI_COMMUNITY_ENTRYDescription>;
   readonly id: Scalars['ID'];
@@ -2657,9 +2670,10 @@ type STRAPI_COMMUNITY_ENTRY = Node & {
   readonly parent: Maybe<Node>;
   readonly publishedAt: Maybe<Scalars['Date']>;
   readonly strapi_id: Maybe<Scalars['Int']>;
+  readonly subcategory: Maybe<Scalars['String']>;
   readonly title: Maybe<Scalars['String']>;
   readonly updatedAt: Maybe<Scalars['Date']>;
-  readonly website: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_LINKS_LINKS>>>;
+  readonly website: Maybe<STRAPI__COMPONENT_LINKS_LINKS>;
 };
 
 
@@ -2748,7 +2762,11 @@ type STRAPI_COMMUNITY_ENTRYEdge = {
 };
 
 type STRAPI_COMMUNITY_ENTRYFieldSelector = {
+  readonly author: InputMaybe<FieldSelectorEnum>;
   readonly children: InputMaybe<NodeFieldSelector>;
+  readonly commune: InputMaybe<FieldSelectorEnum>;
+  readonly contact: InputMaybe<FieldSelectorEnum>;
+  readonly countryState: InputMaybe<FieldSelectorEnum>;
   readonly createdAt: InputMaybe<FieldSelectorEnum>;
   readonly description: InputMaybe<STRAPI_COMMUNITY_ENTRYDescriptionFieldSelector>;
   readonly id: InputMaybe<FieldSelectorEnum>;
@@ -2757,13 +2775,18 @@ type STRAPI_COMMUNITY_ENTRYFieldSelector = {
   readonly parent: InputMaybe<NodeFieldSelector>;
   readonly publishedAt: InputMaybe<FieldSelectorEnum>;
   readonly strapi_id: InputMaybe<FieldSelectorEnum>;
+  readonly subcategory: InputMaybe<FieldSelectorEnum>;
   readonly title: InputMaybe<FieldSelectorEnum>;
   readonly updatedAt: InputMaybe<FieldSelectorEnum>;
   readonly website: InputMaybe<STRAPI__COMPONENT_LINKS_LINKSFieldSelector>;
 };
 
 type STRAPI_COMMUNITY_ENTRYFilterInput = {
+  readonly author: InputMaybe<StringQueryOperatorInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
+  readonly commune: InputMaybe<StringQueryOperatorInput>;
+  readonly contact: InputMaybe<StringQueryOperatorInput>;
+  readonly countryState: InputMaybe<StringQueryOperatorInput>;
   readonly createdAt: InputMaybe<DateQueryOperatorInput>;
   readonly description: InputMaybe<STRAPI_COMMUNITY_ENTRYDescriptionFilterInput>;
   readonly id: InputMaybe<StringQueryOperatorInput>;
@@ -2772,9 +2795,14 @@ type STRAPI_COMMUNITY_ENTRYFilterInput = {
   readonly parent: InputMaybe<NodeFilterInput>;
   readonly publishedAt: InputMaybe<DateQueryOperatorInput>;
   readonly strapi_id: InputMaybe<IntQueryOperatorInput>;
+  readonly subcategory: InputMaybe<StringQueryOperatorInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
   readonly updatedAt: InputMaybe<DateQueryOperatorInput>;
-  readonly website: InputMaybe<STRAPI__COMPONENT_LINKS_LINKSFilterListInput>;
+  readonly website: InputMaybe<STRAPI__COMPONENT_LINKS_LINKSFilterInput>;
+};
+
+type STRAPI_COMMUNITY_ENTRYFilterListInput = {
+  readonly elemMatch: InputMaybe<STRAPI_COMMUNITY_ENTRYFilterInput>;
 };
 
 type STRAPI_COMMUNITY_ENTRYGroupConnection = {
@@ -2819,7 +2847,11 @@ type STRAPI_COMMUNITY_ENTRYGroupConnection_sumArgs = {
 };
 
 type STRAPI_COMMUNITY_ENTRYSortInput = {
+  readonly author: InputMaybe<SortOrderEnum>;
   readonly children: InputMaybe<NodeSortInput>;
+  readonly commune: InputMaybe<SortOrderEnum>;
+  readonly contact: InputMaybe<SortOrderEnum>;
+  readonly countryState: InputMaybe<SortOrderEnum>;
   readonly createdAt: InputMaybe<SortOrderEnum>;
   readonly description: InputMaybe<STRAPI_COMMUNITY_ENTRYDescriptionSortInput>;
   readonly id: InputMaybe<SortOrderEnum>;
@@ -2828,6 +2860,7 @@ type STRAPI_COMMUNITY_ENTRYSortInput = {
   readonly parent: InputMaybe<NodeSortInput>;
   readonly publishedAt: InputMaybe<SortOrderEnum>;
   readonly strapi_id: InputMaybe<SortOrderEnum>;
+  readonly subcategory: InputMaybe<SortOrderEnum>;
   readonly title: InputMaybe<SortOrderEnum>;
   readonly updatedAt: InputMaybe<SortOrderEnum>;
   readonly website: InputMaybe<STRAPI__COMPONENT_LINKS_LINKSSortInput>;
@@ -2964,14 +2997,17 @@ type STRAPI_COMMUNITY_ENTRY_DESCRIPTION_TEXTNODESortInput = {
 type STRAPI_EXAMPLE = Node & {
   readonly authorities: Maybe<STRAPI_EXAMPLEAuthorities>;
   readonly awards: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_AWARD_AWARD>>>;
+  readonly beginnerFriendly: Maybe<Scalars['Boolean']>;
   readonly centrality: Maybe<Scalars['String']>;
   readonly challenges: Maybe<STRAPI_EXAMPLEChallenges>;
   readonly children: ReadonlyArray<Node>;
   readonly commune: Maybe<Scalars['String']>;
   readonly communication: Maybe<STRAPI_EXAMPLECommunication>;
+  readonly costs: Maybe<Scalars['String']>;
   readonly countryState: Maybe<Scalars['String']>;
   readonly createdAt: Maybe<Scalars['Date']>;
   readonly description: Maybe<STRAPI_EXAMPLEDescription>;
+  readonly financiallyWeak: Maybe<Scalars['Boolean']>;
   readonly funding: Maybe<STRAPI_EXAMPLEFunding>;
   readonly gatsbyPath: Maybe<Scalars['String']>;
   readonly goals: Maybe<STRAPI_EXAMPLEGoals>;
@@ -3144,14 +3180,17 @@ type STRAPI_EXAMPLEEdge = {
 type STRAPI_EXAMPLEFieldSelector = {
   readonly authorities: InputMaybe<STRAPI_EXAMPLEAuthoritiesFieldSelector>;
   readonly awards: InputMaybe<STRAPI__COMPONENT_AWARD_AWARDFieldSelector>;
+  readonly beginnerFriendly: InputMaybe<FieldSelectorEnum>;
   readonly centrality: InputMaybe<FieldSelectorEnum>;
   readonly challenges: InputMaybe<STRAPI_EXAMPLEChallengesFieldSelector>;
   readonly children: InputMaybe<NodeFieldSelector>;
   readonly commune: InputMaybe<FieldSelectorEnum>;
   readonly communication: InputMaybe<STRAPI_EXAMPLECommunicationFieldSelector>;
+  readonly costs: InputMaybe<FieldSelectorEnum>;
   readonly countryState: InputMaybe<FieldSelectorEnum>;
   readonly createdAt: InputMaybe<FieldSelectorEnum>;
   readonly description: InputMaybe<STRAPI_EXAMPLEDescriptionFieldSelector>;
+  readonly financiallyWeak: InputMaybe<FieldSelectorEnum>;
   readonly funding: InputMaybe<STRAPI_EXAMPLEFundingFieldSelector>;
   readonly gatsbyPath: InputMaybe<FieldSelectorEnum>;
   readonly goals: InputMaybe<STRAPI_EXAMPLEGoalsFieldSelector>;
@@ -3186,14 +3225,17 @@ type STRAPI_EXAMPLEFieldSelector = {
 type STRAPI_EXAMPLEFilterInput = {
   readonly authorities: InputMaybe<STRAPI_EXAMPLEAuthoritiesFilterInput>;
   readonly awards: InputMaybe<STRAPI__COMPONENT_AWARD_AWARDFilterListInput>;
+  readonly beginnerFriendly: InputMaybe<BooleanQueryOperatorInput>;
   readonly centrality: InputMaybe<StringQueryOperatorInput>;
   readonly challenges: InputMaybe<STRAPI_EXAMPLEChallengesFilterInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
   readonly commune: InputMaybe<StringQueryOperatorInput>;
   readonly communication: InputMaybe<STRAPI_EXAMPLECommunicationFilterInput>;
+  readonly costs: InputMaybe<StringQueryOperatorInput>;
   readonly countryState: InputMaybe<StringQueryOperatorInput>;
   readonly createdAt: InputMaybe<DateQueryOperatorInput>;
   readonly description: InputMaybe<STRAPI_EXAMPLEDescriptionFilterInput>;
+  readonly financiallyWeak: InputMaybe<BooleanQueryOperatorInput>;
   readonly funding: InputMaybe<STRAPI_EXAMPLEFundingFilterInput>;
   readonly gatsbyPath: InputMaybe<StringQueryOperatorInput>;
   readonly goals: InputMaybe<STRAPI_EXAMPLEGoalsFilterInput>;
@@ -3401,14 +3443,17 @@ type STRAPI_EXAMPLEResultsSortInput = {
 type STRAPI_EXAMPLESortInput = {
   readonly authorities: InputMaybe<STRAPI_EXAMPLEAuthoritiesSortInput>;
   readonly awards: InputMaybe<STRAPI__COMPONENT_AWARD_AWARDSortInput>;
+  readonly beginnerFriendly: InputMaybe<SortOrderEnum>;
   readonly centrality: InputMaybe<SortOrderEnum>;
   readonly challenges: InputMaybe<STRAPI_EXAMPLEChallengesSortInput>;
   readonly children: InputMaybe<NodeSortInput>;
   readonly commune: InputMaybe<SortOrderEnum>;
   readonly communication: InputMaybe<STRAPI_EXAMPLECommunicationSortInput>;
+  readonly costs: InputMaybe<SortOrderEnum>;
   readonly countryState: InputMaybe<SortOrderEnum>;
   readonly createdAt: InputMaybe<SortOrderEnum>;
   readonly description: InputMaybe<STRAPI_EXAMPLEDescriptionSortInput>;
+  readonly financiallyWeak: InputMaybe<SortOrderEnum>;
   readonly funding: InputMaybe<STRAPI_EXAMPLEFundingSortInput>;
   readonly gatsbyPath: InputMaybe<SortOrderEnum>;
   readonly goals: InputMaybe<STRAPI_EXAMPLEGoalsSortInput>;
@@ -5267,6 +5312,7 @@ type STRAPI_EXAMPLE_STAKEHOLDERS_TEXTNODESortInput = {
 type STRAPI_MEASURE = Node & {
   readonly additionalResources: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_LINKS_LINKS>>>;
   readonly children: ReadonlyArray<Node>;
+  readonly communityEntries: Maybe<ReadonlyArray<Maybe<STRAPI_COMMUNITY_ENTRY>>>;
   readonly createdAt: Maybe<Scalars['Date']>;
   readonly description: Maybe<STRAPI_MEASUREDescription>;
   readonly examples: Maybe<ReadonlyArray<Maybe<STRAPI_EXAMPLE>>>;
@@ -5378,6 +5424,7 @@ type STRAPI_MEASUREEdge = {
 type STRAPI_MEASUREFieldSelector = {
   readonly additionalResources: InputMaybe<STRAPI__COMPONENT_LINKS_LINKSFieldSelector>;
   readonly children: InputMaybe<NodeFieldSelector>;
+  readonly communityEntries: InputMaybe<STRAPI_COMMUNITY_ENTRYFieldSelector>;
   readonly createdAt: InputMaybe<FieldSelectorEnum>;
   readonly description: InputMaybe<STRAPI_MEASUREDescriptionFieldSelector>;
   readonly examples: InputMaybe<STRAPI_EXAMPLEFieldSelector>;
@@ -5399,6 +5446,7 @@ type STRAPI_MEASUREFieldSelector = {
 type STRAPI_MEASUREFilterInput = {
   readonly additionalResources: InputMaybe<STRAPI__COMPONENT_LINKS_LINKSFilterListInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
+  readonly communityEntries: InputMaybe<STRAPI_COMMUNITY_ENTRYFilterListInput>;
   readonly createdAt: InputMaybe<DateQueryOperatorInput>;
   readonly description: InputMaybe<STRAPI_MEASUREDescriptionFilterInput>;
   readonly examples: InputMaybe<STRAPI_EXAMPLEFilterListInput>;
@@ -5465,6 +5513,7 @@ type STRAPI_MEASUREGroupConnection_sumArgs = {
 type STRAPI_MEASURESortInput = {
   readonly additionalResources: InputMaybe<STRAPI__COMPONENT_LINKS_LINKSSortInput>;
   readonly children: InputMaybe<NodeSortInput>;
+  readonly communityEntries: InputMaybe<STRAPI_COMMUNITY_ENTRYSortInput>;
   readonly createdAt: InputMaybe<SortOrderEnum>;
   readonly description: InputMaybe<STRAPI_MEASUREDescriptionSortInput>;
   readonly examples: InputMaybe<STRAPI_EXAMPLESortInput>;
@@ -7514,12 +7563,12 @@ type WebPOptions = {
   readonly quality: InputMaybe<Scalars['Int']>;
 };
 
-type ExampleDetailsAndCommunityEntriesQueryVariables = Exact<{
+type ExampleDetailsQueryVariables = Exact<{
   id: Scalars['String'];
 }>;
 
 
-type ExampleDetailsAndCommunityEntriesQuery = { readonly example: { readonly title: string | null, readonly subcategory: string | null, readonly shortDescription: string | null, readonly countryState: string | null, readonly commune: string | null, readonly centrality: string | null, readonly population: string | null, readonly spatialStructure: string | null, readonly period: string | null, readonly slug: string | null, readonly localChallenges: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly communication: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly funding: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly goals: { readonly data: { readonly goals: string | null, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly results: { readonly data: { readonly results: string | null, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly sources: { readonly data: { readonly sources: string | null, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly particularities: { readonly data: { readonly particularities: string | null, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly notes: { readonly data: { readonly notes: string | null, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly image: { readonly copyright: string | null, readonly image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null, readonly description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly relatedOffice: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly stakeholders: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly awards: ReadonlyArray<{ readonly award: { readonly name: string | null, readonly logo: { readonly copyright: string | null, readonly image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null } | null, readonly description: { readonly data: { readonly id: string, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } | null> | null, readonly links: ReadonlyArray<{ readonly url: string | null, readonly display: string | null } | null> | null, readonly measure: { readonly name: string | null, readonly topic: { readonly name: string | null } | null, readonly examples: ReadonlyArray<{ readonly slug: string | null } | null> | null } | null, readonly relatedTopic: { readonly name: string | null } | null } | null, readonly communityEntries: { readonly nodes: ReadonlyArray<{ readonly title: string | null, readonly description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly image: { readonly copyright: string | null, readonly image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null, readonly website: ReadonlyArray<{ readonly url: string | null, readonly display: string | null } | null> | null }> } };
+type ExampleDetailsQuery = { readonly example: { readonly title: string | null, readonly subcategory: string | null, readonly shortDescription: string | null, readonly countryState: string | null, readonly commune: string | null, readonly centrality: string | null, readonly population: string | null, readonly spatialStructure: string | null, readonly period: string | null, readonly slug: string | null, readonly localChallenges: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly communication: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly funding: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly goals: { readonly data: { readonly goals: string | null, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly results: { readonly data: { readonly results: string | null, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly sources: { readonly data: { readonly sources: string | null, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly particularities: { readonly data: { readonly particularities: string | null, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly notes: { readonly data: { readonly notes: string | null, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly image: { readonly copyright: string | null, readonly image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null, readonly description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly relatedOffice: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly stakeholders: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly awards: ReadonlyArray<{ readonly award: { readonly name: string | null, readonly logo: { readonly copyright: string | null, readonly image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null } | null, readonly description: { readonly data: { readonly id: string, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } | null> | null, readonly links: ReadonlyArray<{ readonly url: string | null, readonly display: string | null } | null> | null, readonly measure: { readonly name: string | null, readonly topic: { readonly name: string | null } | null, readonly examples: ReadonlyArray<{ readonly slug: string | null } | null> | null, readonly communityEntries: ReadonlyArray<{ readonly author: string | null, readonly contact: string | null, readonly subcategory: string | null, readonly title: string | null, readonly description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly image: { readonly copyright: string | null, readonly image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null, readonly website: { readonly url: string | null, readonly display: string | null } | null } | null> | null } | null, readonly relatedTopic: { readonly name: string | null } | null } | null };
 
 type GatsbyImageSharpFixedFragment = { readonly base64: string | null, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
 
@@ -7547,19 +7596,24 @@ type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = { readonly tracedSVG: st
 
 type GatsbyImageSharpFluidLimitPresentationSizeFragment = { readonly maxHeight: number, readonly maxWidth: number };
 
-type MeasureDetailsAndCommunityEntriesQueryVariables = Exact<{
+type MeasureDetailsQueryVariables = Exact<{
   id: Scalars['String'];
 }>;
 
 
-type MeasureDetailsAndCommunityEntriesQuery = { readonly measure: { readonly name: string | null, readonly description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly additionalResources: ReadonlyArray<{ readonly url: string | null, readonly display: string | null } | null> | null, readonly guidelines: ReadonlyArray<{ readonly display: string | null, readonly url: string | null } | null> | null, readonly fundings: ReadonlyArray<{ readonly display: string | null, readonly url: string | null } | null> | null, readonly topic: { readonly name: string | null } | null, readonly examples: ReadonlyArray<{ readonly title: string | null, readonly slug: string | null, readonly shortDescription: string | null, readonly image: { readonly copyright: string | null, readonly image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null } | null> | null } | null, readonly communityEntries: { readonly nodes: ReadonlyArray<{ readonly title: string | null, readonly description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly image: { readonly copyright: string | null, readonly image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null, readonly website: ReadonlyArray<{ readonly url: string | null, readonly display: string | null } | null> | null }> } };
+type MeasureDetailsQuery = { readonly measure: { readonly name: string | null, readonly description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly additionalResources: ReadonlyArray<{ readonly url: string | null, readonly display: string | null } | null> | null, readonly guidelines: ReadonlyArray<{ readonly display: string | null, readonly url: string | null } | null> | null, readonly fundings: ReadonlyArray<{ readonly display: string | null, readonly url: string | null } | null> | null, readonly topic: { readonly name: string | null } | null, readonly examples: ReadonlyArray<{ readonly title: string | null, readonly slug: string | null, readonly shortDescription: string | null, readonly image: { readonly copyright: string | null, readonly image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null } | null> | null, readonly communityEntries: ReadonlyArray<{ readonly author: string | null, readonly contact: string | null, readonly subcategory: string | null, readonly title: string | null, readonly description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly image: { readonly copyright: string | null, readonly image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null, readonly website: { readonly url: string | null, readonly display: string | null } | null } | null> | null } | null };
+
+type TopicAndExampleOverviewQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type TopicAndExampleOverviewQuery = { readonly topics: { readonly nodes: ReadonlyArray<{ readonly slug: string | null, readonly name: string | null, readonly image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null }> }, readonly examples: { readonly nodes: ReadonlyArray<{ readonly slug: string | null, readonly title: string | null, readonly shortDescription: string | null, readonly image: { readonly image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null }> } };
 
 type TopicDetailsQueryVariables = Exact<{
   id: Scalars['String'];
 }>;
 
 
-type TopicDetailsQuery = { readonly topic: { readonly name: string | null, readonly image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null, readonly additionalResources: ReadonlyArray<{ readonly display: string | null, readonly url: string | null } | null> | null, readonly description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly guidelines: ReadonlyArray<{ readonly display: string | null, readonly url: string | null } | null> | null, readonly measures: ReadonlyArray<{ readonly name: string | null, readonly slug: string | null, readonly description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } | null> | null } | null };
+type TopicDetailsQuery = { readonly topic: { readonly name: string | null, readonly image: { readonly url: string | null } | null, readonly additionalResources: ReadonlyArray<{ readonly display: string | null, readonly url: string | null } | null> | null, readonly description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly guidelines: ReadonlyArray<{ readonly display: string | null, readonly url: string | null } | null> | null, readonly measures: ReadonlyArray<{ readonly name: string | null, readonly slug: string | null, readonly description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } | null> | null } | null };
 
 type TopicMeasureTreeQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -7569,7 +7623,7 @@ type TopicMeasureTreeQuery = { readonly nestedMeasures: { readonly nodes: Readon
 type TopicTeasersQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type TopicTeasersQuery = { readonly topics: { readonly nodes: ReadonlyArray<{ readonly slug: string | null, readonly name: string | null, readonly image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null, readonly description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null }> } };
+type TopicTeasersQuery = { readonly topics: { readonly nodes: ReadonlyArray<{ readonly slug: string | null, readonly name: string | null, readonly image: { readonly url: string | null } | null, readonly description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null }> } };
 
 
 }

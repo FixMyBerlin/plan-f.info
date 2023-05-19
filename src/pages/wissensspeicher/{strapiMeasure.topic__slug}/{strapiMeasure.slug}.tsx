@@ -6,14 +6,15 @@ import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
 import { CardImageAndTextVertical } from '~/components/Layout/CardImageAndTextVertical';
 import { CardWrapperMeasurePage } from '~/components/Layout/CardWrapperMeasurePage';
 import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
-import { PageHeaderTextAndImage } from '~/components/Layout/PageHeaderTextAndImage';
+import { PageHeader } from '~/components/Layout/PageHeader';
 import { Section } from '~/components/Layout/Section';
 import { H2, H3, P } from '~/components/Text';
 import { wikiColors } from '~/components/utils';
 
-const MeasureDetails: React.FC<
-  PageProps<Queries.MeasureDetailsAndCommunityEntriesQuery>
-> = ({ data: { measure, communityEntries } }) => {
+const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
+  data: { measure },
+}) => {
+  const { communityEntries } = measure;
   return (
     <>
       <HelmetSeo title={measure.name} />
@@ -26,11 +27,8 @@ const MeasureDetails: React.FC<
           />
         }
       />
-      <PageHeaderTextAndImage
-        markdownHTML={
-          measure?.description?.data?.childMarkdownRemark?.html &&
-          measure.description.data.childMarkdownRemark.html
-        }
+      <PageHeader
+        markdownHTML={measure.description.data.childMarkdownRemark.html}
       />
 
       <Section className="mb-20 grid gap-10 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
@@ -84,7 +82,7 @@ const MeasureDetails: React.FC<
 export default MeasureDetails;
 
 export const query = graphql`
-  query MeasureDetailsAndCommunityEntries($id: String!) {
+  query MeasureDetails($id: String!) {
     measure: strapiMeasure(id: { eq: $id }) {
       name
       description {
@@ -124,9 +122,10 @@ export const query = graphql`
           copyright
         }
       }
-    }
-    communityEntries: allStrapiCommunityEntry {
-      nodes {
+      communityEntries {
+        author
+        contact
+        subcategory
         description {
           data {
             childMarkdownRemark {
