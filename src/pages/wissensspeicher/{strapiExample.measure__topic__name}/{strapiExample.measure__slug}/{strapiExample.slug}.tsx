@@ -10,25 +10,36 @@ import { CardText } from '~/components/PageExample/CardText';
 import { SectionWithPagination } from '~/components/PageExample/SectionWithPagination';
 import { H2, H3, P } from '~/components/Text';
 import { Prose } from '~/components/core/Prose';
-import { wikiColors } from '~/components/utils';
+import { wikiColors, sortByPosition } from '~/components/utils';
+
+const steckbiref = {
+  subcategory: 'Maßnahmentyp',
+  title: 'Name des Projektes',
+  countryState: 'Bundesland',
+  population: 'Einwohner*innen',
+  spatialStructure: 'Besiedelung',
+  centrality: 'Lage',
+  commune: 'Kommune',
+};
+const adjacentSlugs = (
+  examples: Queries.ExampleDetailsQuery['example']['measure']['examples'],
+  current: string
+) => {
+  const sortedExamples = sortByPosition(examples);
+  const slugList = sortedExamples.map(({ slug }) => slug);
+  const pos = slugList.indexOf(current);
+  const prevSlug = slugList[pos - 1] || slugList[slugList.length - 1];
+  const nextSlug = slugList[pos + 1] || slugList[0];
+  return { prevSlug, nextSlug, pos };
+};
 
 const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
   data: { example },
 }) => {
-  const slugList = example.measure.examples.map(({ slug }) => slug);
-  const pos = slugList.indexOf(example.slug);
-  const prevSlug = slugList[pos - 1] || slugList[slugList.length - 1];
-  const nextSlug = slugList[pos + 1] || slugList[0];
-
-  const steckbiref = {
-    subcategory: 'Maßnahmentyp',
-    title: 'Name des Projektes',
-    countryState: 'Bundesland',
-    population: 'Einwohner*innen',
-    spatialStructure: 'Besiedelung',
-    centrality: 'Lage',
-    commune: 'Kommune',
-  };
+  const { prevSlug, nextSlug, pos } = adjacentSlugs(
+    example.measure.examples,
+    example.slug
+  );
   const { communityEntries } = example.measure;
   return (
     <>
@@ -357,6 +368,7 @@ export const query = graphql`
         }
         examples {
           slug
+          position
         }
         communityEntries {
           author

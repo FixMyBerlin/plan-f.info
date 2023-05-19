@@ -9,12 +9,13 @@ import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
 import { PageHeader } from '~/components/Layout/PageHeader';
 import { Section } from '~/components/Layout/Section';
 import { H2, H3, P } from '~/components/Text';
-import { wikiColors } from '~/components/utils';
+import { sortByPosition, wikiColors } from '~/components/utils';
 
 const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
   data: { measure },
 }) => {
   const { communityEntries } = measure;
+  const examples = sortByPosition(measure.examples);
   return (
     <>
       <HelmetSeo title={measure.name} />
@@ -56,7 +57,7 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
           umgesetzt haben.
         </P>
         <CardWrapperMeasurePage className="mt-12">
-          {measure.examples.map((example) => (
+          {examples.map((example) => (
             <CardImageAndTextVertical
               key={example.slug}
               link={example.slug}
@@ -111,6 +112,7 @@ export const query = graphql`
         title
         slug
         shortDescription
+        position
         image {
           image {
             localFile {
