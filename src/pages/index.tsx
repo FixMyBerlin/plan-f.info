@@ -17,11 +17,7 @@ export const query = graphql`
         slug
         name
         image {
-          localFile {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
+          url
         }
       }
     }
@@ -75,7 +71,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicAndExampleOverviewQuery>> = ({
             <CardImageAndTextHorizontal
               key={topic.slug}
               link={topic.slug}
-              image={topic.image && getImage(topic.image.localFile as any)}
+              image={topic.image}
             >
               <H3>{topic.name}</H3>
             </CardImageAndTextHorizontal>
