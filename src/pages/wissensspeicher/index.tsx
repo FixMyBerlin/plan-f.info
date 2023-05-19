@@ -79,7 +79,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
               <CardImageAndTextResponsive
                 key={topic.slug}
                 link={topic.slug}
-                image={topic.image.url}
+                image={topic.image && topic.image.url}
               >
                 <H3>{topic.name}</H3>
                 {topic.description?.data?.childMarkdownRemark.html && (

@@ -17,11 +17,7 @@ export const query = graphql`
         slug
         name
         image {
-          localFile {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
+          url
         }
       }
     }
