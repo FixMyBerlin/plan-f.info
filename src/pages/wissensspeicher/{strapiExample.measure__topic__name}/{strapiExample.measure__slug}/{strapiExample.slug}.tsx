@@ -359,9 +359,12 @@ export const query = graphql`
           slug
         }
         communityEntries {
+          title
           author
           contact
           subcategory
+          countryState
+          commune
           description {
             data {
               childMarkdownRemark {
@@ -379,7 +382,6 @@ export const query = graphql`
             }
             copyright
           }
-          title
           website {
             url
             display

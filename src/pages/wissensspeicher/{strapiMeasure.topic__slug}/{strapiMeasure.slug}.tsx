@@ -123,9 +123,12 @@ export const query = graphql`
         }
       }
       communityEntries {
+        title
         author
         contact
         subcategory
+        countryState
+        commune
         description {
           data {
             childMarkdownRemark {
@@ -143,7 +146,6 @@ export const query = graphql`
           }
           copyright
         }
-        title
         website {
           url
           display

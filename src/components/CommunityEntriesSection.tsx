@@ -23,10 +23,20 @@ export const CommunityEntriesSection: React.FC<Props> = ({
         {communityEntries.map((entry) => (
           <CardImageAndTextResponsiveImgFull
             key={entry.title}
-            link={entry.website.url}
+            link={entry.website?.url && entry.website.url}
             image={entry.image && getImage(entry.image.image.localFile as any)}
           >
             <H3>{entry.title}</H3>
+            <P className="uppercase">
+              <strong>Stadt: </strong>
+              {entry.commune}
+              <br />
+              <strong>Bundesland: </strong>
+              {entry.countryState}
+              <br />
+              <strong>MaßnahmenTyp: </strong>
+              {entry.subcategory}
+            </P>
             <Prose
               className="line-clamp-4"
               markdownHTML={entry.description.data.childMarkdownRemark.html}
