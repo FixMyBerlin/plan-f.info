@@ -18,7 +18,7 @@ export const CardImageAndTextResponsive: React.FC<Props> = ({
     <Link
       button="card"
       className={clsx(
-        'flex h-full flex-col gap-3 rounded-b-3xl bg-white p-6 sm:flex-row sm:items-center sm:gap-6',
+        'flex h-full flex-col gap-3 rounded-b-3xl bg-white p-6 pt-4 sm:flex-row sm:items-center sm:gap-6',
         className
       )}
       href={link}

@@ -25,7 +25,7 @@ export const CardImageAndTextVertical: React.FC<Props> = ({
           image={image}
         />
       )}
-      <div className="p-4">{children}</div>
+      <div className="p-6 pt-4">{children}</div>
     </Link>
   );
 };

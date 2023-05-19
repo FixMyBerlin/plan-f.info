@@ -40,7 +40,7 @@ export const H3: React.FC<Props> = ({ id, className, children }) => {
     <h3
       id={id}
       className={clsx(
-        'mb-3 mt-2 text-lg font-bold text-black md:mb-6 md:mt-4 md:text-xl ',
+        'mb-3 mt-2 text-lg font-bold text-black md:text-xl ',
         className
       )}
     >

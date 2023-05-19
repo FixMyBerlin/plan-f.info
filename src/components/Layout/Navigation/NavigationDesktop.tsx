@@ -24,7 +24,9 @@ export const NavigationDesktop: React.FC<Props> = ({ path, className }) => {
               href={menuItems[key]}
               className={clsx(
                 '!text-sm',
-                `${menuItems[key]}/` === path && 'font-bold'
+                `${menuItems[key]}/` === path
+                  ? 'font-bold text-black'
+                  : 'text-gray-600 decoration-gray-600'
               )}
             >
               {key}

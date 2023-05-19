@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
     <>
       <Fundings />
       <footer
-        className="z-0 bg-black px-10 py-10 sm:px-12"
+        className="z-0 bg-black p-10 sm:px-12"
         aria-labelledby="footer-heading"
       >
         <ul
@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
             </li>
           ))}
         </ul>
-        <div className="flex flex-col justify-between gap-8 border-t border-gray-400  py-6 text-sm sm:flex-row">
+        <div className="flex flex-col justify-between gap-8 border-t border-gray-400 pt-8 text-sm sm:flex-row">
           <div className="flex flex-col justify-between gap-8">
             <Link href="/">
               <LogoNegative height={48} width={127} />

@@ -29,6 +29,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
     centrality: 'Lage',
     commune: 'Kommune',
   };
+  console.log(example.sources.data.childMarkdownRemark.html);
   const { communityEntries } = example.measure;
   return (
     <>
@@ -73,35 +74,62 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
               />
             </ImageWithCopyright>
           )}
-          <div className="mt-8 rounded-br-3xl rounded-tl-3xl bg-lime-200 p-4 py-6">
-            <H2 className="">{example.commune}</H2>
-            {Object.keys(steckbiref).map((key) => (
-              <div
-                className="grid grid-cols-1 text-sm md:grid-cols-2 md:flex-row"
-                key={key}
-              >
-                <P className="whitespace-nowrap font-bold uppercase">
-                  {steckbiref[key]}
-                </P>
-                <Prose markdownHTML={example[key]} />
-              </div>
-            ))}
-
-            <P className="whitespace-nowrap font-bold uppercase">
-              Zuständige Abteilung
-            </P>
-            <Prose
-              markdownHTML={example.relatedOffice.data.childMarkdownRemark.html}
-            />
-            <P className="whitespace-nowrap font-bold uppercase">
-              Lokale Herausforderungen
-            </P>
-            <Prose
-              markdownHTML={
-                example.localChallenges.data.childMarkdownRemark.html
-              }
-            />
+          <div className="mt-8 rounded-br-3xl rounded-tl-3xl bg-lime-200 p-5 py-6 md:p-10">
+            <H2>{example.commune}</H2>
+            <table className="table-auto">
+              <tbody className="flex flex-col gap-2">
+                {Object.keys(steckbiref).map((key) => (
+                  <tr
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                    key={key}
+                  >
+                    <td>
+                      <P className="!mb-0 whitespace-nowrap font-bold uppercase">
+                        {steckbiref[key]}
+                      </P>
+                    </td>
+                    <td>
+                      <Prose
+                        className="lg:col-span-2"
+                        markdownHTML={example[key]}
+                      />
+                    </td>
+                  </tr>
+                ))}
+                <tr className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                  <td>
+                    <P className="!mb-0 whitespace-nowrap font-bold uppercase">
+                      Zuständige Abteilung
+                    </P>
+                  </td>
+                  <td>
+                    <Prose
+                      className="lg:col-span-2"
+                      markdownHTML={
+                        example.relatedOffice.data.childMarkdownRemark.html
+                      }
+                    />
+                  </td>
+                </tr>
+                <tr className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                  <td>
+                    <P className="!mb-0 whitespace-nowrap pr-12 font-bold uppercase">
+                      Lokale Herausforderungen
+                    </P>
+                  </td>
+                  <td>
+                    <Prose
+                      className="lg:col-span-2"
+                      markdownHTML={
+                        example.localChallenges.data.childMarkdownRemark.html
+                      }
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
+
           <div className="mt-12">
             <H2>Maßnahmenbeschreibung</H2>
             <Prose
@@ -139,7 +167,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
             <H2>Auszeichnungen</H2>
             {example.awards.map((award) => (
               <div
-                className="flex gap-2 md:gap-6"
+                className="mt-8 flex gap-2 md:gap-6"
                 key={award.description.data.id}
               >
                 {award.award?.logo && (
@@ -179,8 +207,8 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
             <Prose markdownHTML={example.notes.data.childMarkdownRemark.html} />
           </div>
           {example.sources && (
-            <div className="mt-12">
-              <P>Quelle:</P>
+            <div className="mt-12 flex items-start">
+              <Prose className="mr-1" markdownHTML="<p>Quelle: </p>" />
               <Prose
                 markdownHTML={example.sources.data.childMarkdownRemark.html}
               />

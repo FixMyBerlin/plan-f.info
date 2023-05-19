@@ -23,7 +23,7 @@ export const CardImageAndTextResponsiveImgFull: React.FC<Props> = ({
           alt={`Titelbild ${link}`}
           image={image}
         />
-        <div className="px-6 pb-6 sm:pl-0">{children}</div>
+        <div className="p-6 pt-4 sm:pl-0">{children}</div>
       </div>
     );
   return (
@@ -40,7 +40,7 @@ export const CardImageAndTextResponsiveImgFull: React.FC<Props> = ({
         alt={`Titelbild ${link}`}
         image={image}
       />
-      <div className="px-6 pb-6 sm:pl-0">{children}</div>
+      <div className="p-6 pt-4 sm:pl-0">{children}</div>
     </Link>
   );
 };

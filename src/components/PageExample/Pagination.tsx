@@ -22,11 +22,11 @@ export const Pagination: React.FC<PaginationProps> = ({
     <div
       className={clsx(
         sectionPosition === 'top' ? 'rounded-t-3xl' : 'rounded-b-3xl',
-        'flex w-full items-center justify-center bg-gray-100 p-4 text-sm md:justify-between'
+        'flex w-full items-center justify-between bg-gray-100 p-5 text-sm lg:p-10'
       )}
     >
       <P className="hidden md:block">Blättern</P>
-      <div className="flex items-center gap-3">
+      <div className="flex w-full items-center justify-between gap-3 md:w-auto">
         <Link
           button
           className="flex items-center gap-2 text-sm"

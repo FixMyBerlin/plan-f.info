@@ -96,7 +96,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicAndExampleOverviewQuery>> = ({
             <CardImageAndTextHorizontal
               key={topic.slug}
               link={topic.slug}
-              image={topic.image && getImage(topic.image.localFile as any)}
+              image={topic.image && topic.image.url}
             >
               <H3>{topic.name}</H3>
             </CardImageAndTextHorizontal>
