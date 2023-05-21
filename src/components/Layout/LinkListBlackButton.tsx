@@ -29,7 +29,7 @@ export const LinkListBlackButton: React.FC<Props> = ({
         {!titleMono ? <H3 className="uppercase">{title}</H3> : <H2>{title}</H2>}
         <div className="flex flex-col items-start gap-5">
           {links.map((resource) => (
-            <LinkButtonWithArrow href={resource.url} key={resource.url}>
+            <LinkButtonWithArrow blank href={resource.url} key={resource.url}>
               {resource.display || resource.url}
             </LinkButtonWithArrow>
           ))}
@@ -42,7 +42,7 @@ export const LinkListBlackButton: React.FC<Props> = ({
       {!titleMono ? <H3 className="uppercase">{title}</H3> : <H2>{title}</H2>}
       <div className="flex flex-col items-start gap-5">
         {links.slice(0, 2).map((resource) => (
-          <LinkButtonWithArrow href={resource.url} key={resource.url}>
+          <LinkButtonWithArrow blank href={resource.url} key={resource.url}>
             {resource.display || resource.url}
           </LinkButtonWithArrow>
         ))}

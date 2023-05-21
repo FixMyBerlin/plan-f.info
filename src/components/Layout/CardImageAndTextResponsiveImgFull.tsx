@@ -28,6 +28,7 @@ export const CardImageAndTextResponsiveImgFull: React.FC<Props> = ({
     );
   return (
     <Link
+      blank
       button="card"
       className={clsx(
         'flex h-full flex-col gap-3 rounded-b-3xl bg-white sm:flex-row sm:items-center sm:gap-6',
