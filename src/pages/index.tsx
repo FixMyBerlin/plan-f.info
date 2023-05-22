@@ -21,7 +21,7 @@ export const query = graphql`
         }
       }
     }
-    measures: allStrapiMeasure(limit: 3) {
+    measures: allStrapiMeasure {
       nodes {
         examples {
           slug
@@ -46,7 +46,13 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
   data: { topics, measures },
 }) => {
   const title = 'Impulse für die fahrradfreundliche Kommune';
-  const examples = [...measures.nodes].map((measure) => measure.examples[1]);
+  const examples = [...measures.nodes]
+    .sort(() => 0.5 - Math.random())
+    .slice(0, 3)
+    .map(
+      (measure) =>
+        measure.examples[Math.floor(Math.random() * measure.examples.length)]
+    );
 
   return (
     <>
