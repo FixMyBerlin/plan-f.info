@@ -8,11 +8,12 @@ import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
 import { PageHeader } from '~/components/Layout/PageHeader';
 import { Section } from '~/components/Layout/Section';
 import { H2, H3, P } from '~/components/Text';
-import { wikiColors } from '~/components/utils';
+import { wikiColors, sortByPosition } from '~/components/utils';
 
 const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
   data: { topic },
 }) => {
+  const measures = sortByPosition(topic.measures);
   return (
     <>
       <HelmetSeo title={topic.name} />
@@ -47,21 +48,18 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
           gehören, dort finden Sie auch viele Praxisbeispiele
         </P>
         <CardWrapperTopicPage className="mt-12">
-          {topic.measures &&
-            topic.measures.map((measure) => (
-              <CardImageAndTextResponsive
-                key={measure.slug}
-                link={measure.slug || '/'} // This is only quick fix - slug should be Pflichtfpeld
-              >
-                <H3>{measure.name}</H3>
-                <Prose
-                  className="line-clamp-4"
-                  markdownHTML={
-                    measure.description.data.childMarkdownRemark.html
-                  }
-                />
-              </CardImageAndTextResponsive>
-            ))}
+          {measures.map((measure) => (
+            <CardImageAndTextResponsive
+              key={measure.slug}
+              link={measure.slug || '/'} // This is only quick fix - slug should be Pflichtfpeld
+            >
+              <H3>{measure.name}</H3>
+              <Prose
+                className="line-clamp-4"
+                markdownHTML={measure.description.data.childMarkdownRemark.html}
+              />
+            </CardImageAndTextResponsive>
+          ))}
         </CardWrapperTopicPage>
       </Section>
     </>
@@ -95,6 +93,7 @@ export const query = graphql`
       measures {
         name
         slug
+        position
         description {
           data {
             childMarkdownRemark {

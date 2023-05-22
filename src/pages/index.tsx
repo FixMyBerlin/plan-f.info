@@ -11,7 +11,7 @@ import { LinkButtonWithArrow } from '~/components/PageTopic/LinkButtonWithArrow'
 import { H2, H3, P } from '~/components/Text';
 
 export const query = graphql`
-  query TopicAndExampleOverview {
+  query TopicOverview {
     topics: allStrapiTopic {
       nodes {
         slug
@@ -21,19 +21,18 @@ export const query = graphql`
         }
       }
     }
-    examples: allStrapiExample {
+    measures: allStrapiMeasure {
       nodes {
-        slug
-        title
-        shortDescription
-        measure {
-          id
-        }
-        image {
+        examples {
+          slug
+          title
+          shortDescription
           image {
-            localFile {
-              childImageSharp {
-                gatsbyImageData
+            image {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData
+                }
               }
             }
           }
@@ -43,30 +42,17 @@ export const query = graphql`
   }
 `;
 
-const IndexPage: React.FC<PageProps<Queries.TopicAndExampleOverviewQuery>> = ({
-  data: { topics, examples },
+const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
+  data: { topics, measures },
 }) => {
   const title = 'Impulse für die fahrradfreundliche Kommune';
-
-  // get three example nodes - from distinct measures
-
-  const uniqueMeasureIds = new Set();
-
-  // Filter example nodes to get unique measure IDs
-  const filteredExamples = examples.nodes.filter((example) => {
-    if (!uniqueMeasureIds.has(example.measure.id)) {
-      uniqueMeasureIds.add(example.measure.id);
-      return true;
-    }
-    return false;
-  });
-
-  // Select the first three nodes from the filtered list
-  // in case the list is shorter than three, simply take the first three example nodes
-  const selectedFilteredExamples =
-    filteredExamples.length < 3
-      ? examples.nodes.slice(0, 3)
-      : filteredExamples.slice(0, 3);
+  const examples = [...measures.nodes]
+    .sort(() => 0.5 - Math.random())
+    .slice(0, 3)
+    .map(
+      (measure) =>
+        measure.examples[Math.floor(Math.random() * measure.examples.length)]
+    );
 
   return (
     <>
@@ -96,7 +82,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicAndExampleOverviewQuery>> = ({
             <CardImageAndTextHorizontal
               key={topic.slug}
               link={topic.slug}
-              image={topic.image && topic.image.url}
+              image={topic.image.url}
             >
               <H3>{topic.name}</H3>
             </CardImageAndTextHorizontal>
@@ -110,7 +96,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicAndExampleOverviewQuery>> = ({
           umgesetzt haben.
         </P>
         <CardWrapperMeasurePage className="mt-12">
-          {selectedFilteredExamples.map((example) => (
+          {examples.map((example) => (
             <CardImageAndTextVertical
               key={example.slug}
               link={example.slug}

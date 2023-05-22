@@ -11,7 +11,7 @@ import { wikiColors } from '~/components/utils';
 
 export const query = graphql`
   query TopicTeasers {
-    topics: allStrapiTopic {
+    topics: allStrapiTopic(sort: { position: ASC }) {
       nodes {
         slug
         name
