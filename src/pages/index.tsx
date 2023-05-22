@@ -12,7 +12,7 @@ import { H2, H3, P } from '~/components/Text';
 
 export const query = graphql`
   query TopicOverview {
-    topics: allStrapiTopic {
+    topics: allStrapiTopic(sort: { position: ASC }) {
       nodes {
         slug
         name
