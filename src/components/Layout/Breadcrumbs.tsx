@@ -22,8 +22,9 @@ export const Breadcrumbs: React.FC<Props> = ({ names = [], prefix = './' }) => {
   //   'Mon, AusflügeMobilitätsbildunFahrradkurse, Fahrradflotten, Ausflüg',
   //   'MobilitätsbildunFahrradkurse, Fahrradflotten, Ausflüge',
   // ];
+  const isLastItem = (key: number) => names.length - 1 === key;
   return (
-    <nav className="" aria-label="Breadcrumb">
+    <nav className="py-4" aria-label="Breadcrumb">
       <ol className="flex flex-wrap gap-2">
         <li>
           <div className="flex items-center">
@@ -41,12 +42,15 @@ export const Breadcrumbs: React.FC<Props> = ({ names = [], prefix = './' }) => {
             <div className="flex items-center gap-2">
               <div
                 className={clsx(
-                  'h-4 w-[6px] border border-black',
-                  wikiColorsArray[i]
+                  'h-4 w-[4px] ',
+                  // the current breadcrumb has a lighter color
+                  isLastItem(i) ? 'bg-white/40' : wikiColorsArray[i]
                 )}
               />
               <Link
-                className="max-w-[9rem] truncate text-sm no-underline md:max-w-[12rem] lg:max-w-none"
+                className={clsx(
+                  'max-w-[9rem] truncate text-sm no-underline md:max-w-[12rem] lg:max-w-none'
+                )}
                 href={prefix + '../'.repeat(n - i - 1)}
               >
                 {name}

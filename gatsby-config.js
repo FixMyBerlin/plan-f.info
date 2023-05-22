@@ -97,6 +97,7 @@ module.exports = {
                 guidelines: { populate: '*' },
                 fundings: { populate: '*' },
                 examples: { populate: '*' },
+                communityEntries: { populate: '*' },
               },
             },
           },
@@ -117,6 +118,7 @@ module.exports = {
             queryParams: {
               populate: {
                 image: { populate: '*' },
+                description: { populate: '*' },
                 website: { populate: '*' },
               },
             },

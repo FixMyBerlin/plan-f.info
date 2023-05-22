@@ -10,7 +10,7 @@ export type LinkProps = {
   /** @default `false` */
   blank?: boolean;
   /** @desc Style Link as Button */
-  button?: true | 'white' | 'black';
+  button?: true | 'white' | 'black' | 'card';
   children: React.ReactNode;
 } & Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'>;
 

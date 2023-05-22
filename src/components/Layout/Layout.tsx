@@ -14,20 +14,16 @@ type Props = {
 const Layout: React.FC<
   Props &
     PageProps<
-      | Queries.ExampleDetailsAndCommunityEntriesQuery
-      | Queries.MeasureDetailsAndCommunityEntriesQuery
+      | Queries.ExampleDetailsQuery
+      | Queries.MeasureDetailsQuery
       | Queries.TopicDetailsQuery
     >
 > = ({ data, path, children }) => {
   const isTopic = (x: any): x is Queries.TopicDetailsQuery =>
     Object.hasOwn(x, 'topic');
-  const isMeasure = (
-    x: any
-  ): x is Queries.MeasureDetailsAndCommunityEntriesQuery =>
+  const isMeasure = (x: any): x is Queries.MeasureDetailsQuery =>
     Object.hasOwn(x, 'measure');
-  const isExample = (
-    x: any
-  ): x is Queries.ExampleDetailsAndCommunityEntriesQuery =>
+  const isExample = (x: any): x is Queries.ExampleDetailsQuery =>
     Object.hasOwn(x, 'example');
   const breadcrumbs = ['Wissensspeicher'];
 
@@ -53,7 +49,7 @@ const Layout: React.FC<
 
   return (
     <div className="relative flex h-full flex-col overflow-x-hidden bg-gray-200">
-      <div className="relative mx-auto w-full max-w-[1440px] bg-white">
+      <div className="relative mx-auto w-full max-w-[1366px] bg-white">
         <ScrollTopLink />
         <NavigationDesktopAndMobile path={path} bgColor={bgColor}>
           {isWiki(path) && <Breadcrumbs names={breadcrumbs} />}

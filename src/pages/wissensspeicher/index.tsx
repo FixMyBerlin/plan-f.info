@@ -1,5 +1,4 @@
 import { PageProps, graphql } from 'gatsby';
-import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
 import { Article } from '~/components/Layout/Article';
@@ -13,16 +12,12 @@ import { wikiColors } from '~/components/utils';
 
 export const query = graphql`
   query TopicTeasers {
-    topics: allStrapiTopic {
+    topics: allStrapiTopic(sort: { position: ASC }) {
       nodes {
         slug
         name
         image {
-          localFile {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
+          url
         }
         description {
           data {
@@ -86,7 +81,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
               <CardImageAndTextResponsive
                 key={topic.slug}
                 link={topic.slug}
-                image={topic.image && getImage(topic.image.localFile as any)}
+                image={topic.image && topic.image.url}
               >
                 <H3>{topic.name}</H3>
                 {topic.description?.data?.childMarkdownRemark.html && (

@@ -12,7 +12,7 @@ export const Prose: React.FC<Props> = ({ markdownHTML, className }) => {
       className={clsx(
         className,
         'max-w-full', // We always wrap Prose in Section containers, which bring their own max-width
-        'text-black',
+        'text-gray-700',
         'prose-h1:text-lg', // h1 size
         'prose-h2:text-base', // h2 size
         'prose-h3:text-base', // h3 size

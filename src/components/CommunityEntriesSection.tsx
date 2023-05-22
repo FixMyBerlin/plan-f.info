@@ -6,7 +6,7 @@ import { H2, H3, P } from './Text';
 import { Prose } from './core/Prose';
 
 type Props = {
-  communityEntries: Queries.MeasureDetailsAndCommunityEntriesQuery['communityEntries'];
+  communityEntries: Queries.MeasureDetailsQuery['measure']['communityEntries'];
 };
 
 export const CommunityEntriesSection: React.FC<Props> = ({
@@ -20,13 +20,23 @@ export const CommunityEntriesSection: React.FC<Props> = ({
         Community.
       </P>
       <div className="mt-12 flex flex-col gap-5">
-        {communityEntries.nodes.map((entry) => (
+        {communityEntries.map((entry) => (
           <CardImageAndTextResponsiveImgFull
             key={entry.title}
-            link={entry.website.length && entry.website[0].url}
+            link={entry.website?.url && entry.website.url}
             image={entry.image && getImage(entry.image.image.localFile as any)}
           >
             <H3>{entry.title}</H3>
+            <P className="uppercase">
+              <strong>Stadt: </strong>
+              {entry.commune}
+              <br />
+              <strong>Bundesland: </strong>
+              {entry.countryState}
+              <br />
+              <strong>MaßnahmenTyp: </strong>
+              {entry.subcategory}
+            </P>
             <Prose
               className="line-clamp-4"
               markdownHTML={entry.description.data.childMarkdownRemark.html}

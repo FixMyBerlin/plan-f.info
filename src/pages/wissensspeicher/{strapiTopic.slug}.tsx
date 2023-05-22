@@ -1,19 +1,19 @@
 import { graphql, PageProps } from 'gatsby';
-import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { Prose } from '~/components/core/Prose';
 import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
 import { CardImageAndTextResponsive } from '~/components/Layout/CardImageAndTextResponsive';
 import { CardWrapperTopicPage } from '~/components/Layout/CardWrapperTopicPage';
 import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
-import { PageHeaderTextAndImage } from '~/components/Layout/PageHeaderTextAndImage';
+import { PageHeader } from '~/components/Layout/PageHeader';
 import { Section } from '~/components/Layout/Section';
 import { H2, H3, P } from '~/components/Text';
-import { wikiColors } from '~/components/utils';
+import { wikiColors, sortByPosition } from '~/components/utils';
 
 const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
   data: { topic },
 }) => {
+  const measures = sortByPosition(topic.measures);
   return (
     <>
       <HelmetSeo title={topic.name} />
@@ -24,12 +24,9 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
         breadcrumbs={<Breadcrumbs names={['Wissensspeicher', topic.name]} />}
       />
 
-      <PageHeaderTextAndImage
-        image={topic.image && getImage(topic.image.localFile as any)}
-        markdownHTML={
-          topic.description?.data?.childMarkdownRemark?.html &&
-          topic.description.data.childMarkdownRemark.html
-        }
+      <PageHeader
+        image={topic.image.url}
+        markdownHTML={topic.description.data.childMarkdownRemark.html}
       />
 
       <Section className="mb-20 flex flex-col  gap-10 sm:flex-row sm:gap-20">
@@ -51,21 +48,18 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
           gehören, dort finden Sie auch viele Praxisbeispiele
         </P>
         <CardWrapperTopicPage className="mt-12">
-          {topic.measures &&
-            topic.measures.map((measure) => (
-              <CardImageAndTextResponsive
-                key={measure.slug}
-                link={measure.slug || '/'} // This is only quick fix - slug should be Pflichtfpeld
-              >
-                <H3>{measure.name}</H3>
-                <Prose
-                  className="line-clamp-4"
-                  markdownHTML={
-                    measure.description.data.childMarkdownRemark.html
-                  }
-                />
-              </CardImageAndTextResponsive>
-            ))}
+          {measures.map((measure) => (
+            <CardImageAndTextResponsive
+              key={measure.slug}
+              link={measure.slug || '/'} // This is only quick fix - slug should be Pflichtfpeld
+            >
+              <H3>{measure.name}</H3>
+              <Prose
+                className="line-clamp-4"
+                markdownHTML={measure.description.data.childMarkdownRemark.html}
+              />
+            </CardImageAndTextResponsive>
+          ))}
         </CardWrapperTopicPage>
       </Section>
     </>
@@ -79,11 +73,7 @@ export const query = graphql`
     topic: strapiTopic(id: { eq: $id }) {
       name
       image {
-        localFile {
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
+        url
       }
       additionalResources {
         display
@@ -103,6 +93,7 @@ export const query = graphql`
       measures {
         name
         slug
+        position
         description {
           data {
             childMarkdownRemark {

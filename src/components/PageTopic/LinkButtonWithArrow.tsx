@@ -6,17 +6,26 @@ import { Link, LinkProps } from '../core/links/Link';
 type Props = {
   children?: ReactNode;
   className?: string;
+  truncate?: boolean;
 } & LinkProps;
 
 export const LinkButtonWithArrow: React.FC<Props> = ({
   children,
   className,
+  truncate = true,
   ...props
 }) => {
   return (
-    <Link className={clsx(className, 'pr-3')} {...props} button="black">
+    <Link className={clsx(className, 'flex pr-5')} {...props}>
       <ArrowUpRightIcon className="mr-2 h-6 w-6 flex-shrink-0" />
-      {children}
+      <div
+        className={clsx(
+          'nowrap max-w-[200px] whitespace-nowrap',
+          truncate && 'truncate'
+        )}
+      >
+        {children}
+      </div>
     </Link>
   );
 };
