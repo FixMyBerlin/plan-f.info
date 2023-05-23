@@ -7618,7 +7618,7 @@ type TopicMeasureTreeQuery = { readonly nestedMeasures: { readonly nodes: Readon
 type TopicOverviewQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type TopicOverviewQuery = { readonly topics: { readonly nodes: ReadonlyArray<{ readonly slug: string | null, readonly name: string | null, readonly image: { readonly url: string | null } | null }> }, readonly measures: { readonly nodes: ReadonlyArray<{ readonly examples: ReadonlyArray<{ readonly slug: string | null, readonly title: string | null, readonly shortDescription: string | null, readonly image: { readonly image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null } | null> | null }> } };
+type TopicOverviewQuery = { readonly topics: { readonly nodes: ReadonlyArray<{ readonly slug: string | null, readonly name: string | null, readonly image: { readonly url: string | null } | null }> }, readonly measures: { readonly nodes: ReadonlyArray<{ readonly slug: string | null, readonly topic: { readonly slug: string | null } | null, readonly examples: ReadonlyArray<{ readonly slug: string | null, readonly title: string | null, readonly shortDescription: string | null, readonly image: { readonly image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null } | null> | null }> } };
 
 type TopicTeasersQueryVariables = Exact<{ [key: string]: never; }>;
 

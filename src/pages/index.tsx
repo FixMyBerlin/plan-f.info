@@ -7,6 +7,7 @@ import { CardImageAndTextVertical } from '~/components/Layout/CardImageAndTextVe
 import { CardWrapperMeasurePage } from '~/components/Layout/CardWrapperMeasurePage';
 import { Section } from '~/components/Layout/Section';
 import { LinkButtonWithArrow } from '~/components/PageTopic/LinkButtonWithArrow';
+import { wikiPath } from '~/components/utils';
 
 import { H2, H3, P } from '~/components/Text';
 
@@ -23,6 +24,10 @@ export const query = graphql`
     }
     measures: allStrapiMeasure {
       nodes {
+        slug
+        topic {
+          slug
+        }
         examples {
           slug
           title
@@ -49,10 +54,16 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
   const examples = [...measures.nodes]
     .sort(() => 0.5 - Math.random())
     .slice(0, 3)
-    .map(
-      (measure) =>
-        measure.examples[Math.floor(Math.random() * measure.examples.length)]
-    );
+    .map((measure) => {
+      const example =
+        measure.examples[Math.floor(Math.random() * measure.examples.length)];
+      return {
+        ...example,
+        path: [wikiPath, measure.topic.slug, measure.slug, example.slug].join(
+          '/'
+        ),
+      };
+    });
 
   return (
     <>
@@ -81,7 +92,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
           {topics.nodes.map((topic) => (
             <CardImageAndTextHorizontal
               key={topic.slug}
-              link={topic.slug}
+              link={`${wikiPath}/${topic.slug}`}
               image={topic.image.url}
             >
               <H3>{topic.name}</H3>
@@ -98,8 +109,8 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
         <CardWrapperMeasurePage className="mt-12">
           {examples.map((example) => (
             <CardImageAndTextVertical
-              key={example.slug}
-              link={example.slug}
+              key={example.path}
+              link={example.path}
               image={
                 example.image && getImage(example.image.image.localFile as any)
               }

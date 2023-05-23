@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import { graphql, useStaticQuery } from 'gatsby';
 import React, { Fragment, ReactNode } from 'react';
 import Logo from '~/components/Layout/assets/Logo.svg';
+import { wikiPath } from '~/components/utils';
 import { Link } from '../../core/links/Link';
 import { NavigationMobileDisclosure } from './NavigationMobileDisclosure';
 import { menuItems } from './menuItems';
@@ -17,7 +18,7 @@ export const NavigationMobile: React.FC<Props> = ({
   path,
   className,
 }) => {
-  const basePath = '/wissensspeicher';
+  const basePath = `/${wikiPath}`;
   const {
     nestedMeasures: { nodes },
   }: Queries.TopicMeasureTreeQuery = useStaticQuery(graphql`
