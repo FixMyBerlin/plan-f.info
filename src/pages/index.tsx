@@ -10,6 +10,7 @@ import { LinkButtonWithArrow } from '~/components/PageTopic/LinkButtonWithArrow'
 import { wikiPath } from '~/components/utils';
 
 import { H2, H3, P } from '~/components/Text';
+import { SearchBar } from '~/components/SearchBar';
 
 export const query = graphql`
   query TopicOverview {
@@ -79,7 +80,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
             <H2>Plan F</H2>
             <H3>{title}</H3>
           </div>
-          <p>SUCHE TODO</p>
+          <SearchBar />
         </div>
       </Section>
       <Section className="-mt-6 !rounded-none bg-purple-300 pt-12 md:pt-16">
