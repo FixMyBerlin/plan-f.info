@@ -18,19 +18,19 @@ const categoryMeta: categoryMeta[] = [
   { key: 'topic', name: 'HANDLUNGSFELDER' },
 ];
 
-const defaultDisplayValue = 'Suche im Wissensspeicher';
-
 export const SearchBar = () => {
   const [searchResults, setSearchResults] = useState(undefined);
   const [resultHeader, setResultHeader] = useState<string>('');
-  const [displayVal, setDisplayVal] = useState<string>(defaultDisplayValue);
+  const [searchQuery, setSearchQuery] = useState<string>('');
   const [controller, setController] = useState<AbortController>(
     new AbortController()
   );
+
+  // search API logic:
   const search = (event: ChangeEvent<HTMLInputElement>) => {
     controller.abort();
     const query = event.target.value;
-    setDisplayVal(query);
+    setSearchQuery(query);
     if (query === '') {
       setSearchResults(undefined);
       return;
@@ -65,51 +65,40 @@ export const SearchBar = () => {
   return (
     <Combobox
       as="div"
-      value={displayVal}
-      onChange={(path: string) => {
-        setSearchResults(undefined);
-        if (path) {
-          navigate(path);
-        }
-      }}
-      onFocus={() => setDisplayVal('')}
-      onBlur={() => {
-        setDisplayVal(defaultDisplayValue);
-      }}
+      value={searchQuery}
+      onChange={(path: string) => navigate(path)}
     >
       <div className="relative mt-2 w-80">
         <Combobox.Input
+          placeholder="Suche im Wissensspeicher"
           className="h-10 w-full rounded-md border-0 bg-white py-1.5 pl-10 pr-12  text-gray-500 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-purple-600 sm:text-sm sm:leading-6"
           onChange={search}
         />
-        <SearchIcon className="absolute left-4 top-3 flex h-4 w-4" />
-        {!{ [defaultDisplayValue]: true, '': true }[displayVal] && (
-          <Combobox.Button>
-            <CancelIcon className="absolute right-4 top-4 flex h-2.5 w-2.5" />
+        <SearchIcon className="absolute left-4 top-3 h-4 w-4" />
+        {searchQuery.length > 0 && (
+          <Combobox.Button
+            className="absolute right-4 top-4"
+            onClick={() => {
+              setSearchQuery('');
+              setSearchResults('');
+            }}
+          >
+            <CancelIcon className="h-2.5 w-2.5" />
           </Combobox.Button>
         )}
         {searchResults && (
           <Combobox.Options className="max-h-120 absolute z-10 mt-4 w-full overflow-auto rounded-md bg-white py-2 pl-4 pr-9 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-            <Combobox.Option
-              key="header"
-              value={null}
-              className="relative cursor-default select-none py-2 font-bold text-gray-700"
-            >
+            <div className="relative cursor-default select-none py-2 font-bold text-gray-700">
               {resultHeader}
-            </Combobox.Option>
+            </div>
             {categoryMeta.map(({ key, name }) => {
               const results = searchResults[key];
               return (
                 results.length > 0 && (
                   <div key={key}>
-                    <Combobox.Option
-                      key={key}
-                      value={null}
-                      className="relative cursor-default select-none py-3 text-gray-700"
-                    >
+                    <div className="relative cursor-default select-none py-3 text-gray-700">
                       {name}
-                    </Combobox.Option>
-
+                    </div>
                     {results.map(({ title, path }) => {
                       return (
                         <Combobox.Option
