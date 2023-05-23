@@ -7,7 +7,6 @@ import { CardWrapperWissensspeicherPage } from '~/components/Layout/CardWrapperW
 import { Section } from '~/components/Layout/Section';
 import { H2, H3, P } from '~/components/Text';
 import { Prose } from '~/components/core/Prose';
-import { SearchBar } from '~/components/SearchBar';
 import { wikiColors } from '~/components/utils';
 
 export const query = graphql`
@@ -44,7 +43,6 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
         breadcrumbs={<Breadcrumbs names={['Wissensspeicher']} />}
       />
       <Section className="mb-12">
-        <SearchBar />
         <Article>
           <P>
             Kommunikation und Öffentlichkeitsarbeit sind ein zentrales

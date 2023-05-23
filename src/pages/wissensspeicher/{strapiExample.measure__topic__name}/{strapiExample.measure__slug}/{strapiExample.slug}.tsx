@@ -10,7 +10,7 @@ import { CardText } from '~/components/PageExample/CardText';
 import { SectionWithPagination } from '~/components/PageExample/SectionWithPagination';
 import { H2, H3, P } from '~/components/Text';
 import { Prose } from '~/components/core/Prose';
-import { wikiColors, sortByPosition } from '~/components/utils';
+import { wikiColors, sortByPosition, wikiPath } from '~/components/utils';
 
 const steckbiref = {
   subcategory: 'Maßnahmentyp',
@@ -51,7 +51,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
         breadcrumbs={
           <Breadcrumbs
             names={[
-              'Wissensspeicher',
+              wikiPath,
               example.measure.topic.name,
               example.measure.name,
               example.title,

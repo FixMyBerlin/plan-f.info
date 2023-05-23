@@ -1,3 +1,5 @@
+import { wikiPath } from '../utils';
+
 const SEARCH_QUERY = `
   query Search($query: String!) {
     search(query: $query) {
@@ -53,7 +55,6 @@ const SEARCH_QUERY = `
 type SearchResult = { title: string; path: string };
 
 function buildPaths({ examples, topics, measures }) {
-  const wikiPath = '/wissensspeicher';
   // format examples
   const example: SearchResult[] = examples.data.map((x) => {
     const exampleAttributes = x.attributes;
