@@ -1,28 +1,33 @@
+import clsx from 'clsx';
 import React, { ReactNode } from 'react';
-import { Link } from 'gatsby';
-import Logo from './assets/Logo.svg';
-import { Content } from './Content';
+import { H2 } from '../Text';
 
 type Props = {
   title: string;
   children?: ReactNode;
+  breadcrumbs?: ReactNode;
+  className?: string;
+  bgColor?: string;
 };
 
-// TODO: Maybe we need to prevent the layout from unmounting, see https://www.gatsbyjs.com/docs/how-to/routing/layout-components/#how-to-prevent-layout-components-from-unmounting
-export const Hero: React.FC<Props> = ({ title, children }) => {
+export const Hero: React.FC<Props> = ({
+  breadcrumbs,
+  className,
+  title,
+  children,
+  bgColor = 'bg-white',
+}) => {
   return (
-    <div className="bg-gradient-to-b from-lemon-yellow to-lime-green pt-20 pb-12">
-      <Content>
-        <Link to="/">
-          <Logo />
-        </Link>
-        <div className="mt-6 lg:w-1/2">
-          <h1 className="font-apercuMono text-[24px] leading-[33px]">
-            {title}
-          </h1>
-        </div>
-        <div className="mt-10">{children}</div>
-      </Content>
-    </div>
+    <section
+      className={clsx(
+        'relative mb-12 flex flex-col justify-center gap-4 rounded-b-3xl px-5 pb-8 pt-36 md:px-10 md:pb-16',
+        className,
+        bgColor
+      )}
+    >
+      {breadcrumbs && <div className="hidden md:block">{breadcrumbs}</div>}
+      <div>{children}</div>
+      <H2>{title}</H2>
+    </section>
   );
 };

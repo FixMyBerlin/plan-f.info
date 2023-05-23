@@ -1,4 +1,4 @@
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
@@ -6,5 +6,5 @@ exports.onCreateWebpackConfig = ({ actions }) => {
       // @ts-ignore
       plugins: [new TsconfigPathsPlugin()],
     },
-  })
-}
+  });
+};

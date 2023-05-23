@@ -20,5 +20,9 @@
     }
   },
   "exclude": ["node_modules"],
-  "include": ["./src/**/*", "./__helpers__/*"]
+  "include": [
+    "./src/**/*",
+    "./__helpers__/*",
+    "src/pages/handlungsfelder/{strapiMeasure.topic}/.tsx"
+  ]
 }

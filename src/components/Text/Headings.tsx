@@ -1,5 +1,5 @@
+import clsx from 'clsx';
 import React, { ReactNode } from 'react';
-import { classNames } from '../utils';
 
 type Props = {
   id?: string;
@@ -11,8 +11,8 @@ export const H1: React.FC<Props> = ({ id, className, children }) => {
   return (
     <h1
       id={id}
-      className={classNames(
-        'pb-4 font-apercuMono text-[32px] leading-[44px]',
+      className={clsx(
+        'mb-3 text-3xl font-bold text-black md:mb-6 md:text-4xl',
         className
       )}
     >
@@ -25,8 +25,8 @@ export const H2: React.FC<Props> = ({ id, className, children }) => {
   return (
     <h2
       id={id}
-      className={classNames(
-        'pb-2 font-apercu text-[32px] font-bold text-dark-gray',
+      className={clsx(
+        'mb-3 mt-0.5 font-mono text-xl font-normal text-black md:mb-6 md:mt-1 md:text-3xl',
         className
       )}
     >
@@ -39,12 +39,38 @@ export const H3: React.FC<Props> = ({ id, className, children }) => {
   return (
     <h3
       id={id}
-      className={classNames(
-        'pb-1 font-apercu text-[24px] font-bold text-dark-gray',
+      className={clsx(
+        'mb-3 mt-2 text-lg font-bold text-black md:text-xl ',
         className
       )}
     >
       {children}
     </h3>
+  );
+};
+export const P: React.FC<Props> = ({ id, className, children }) => {
+  return (
+    <p
+      id={id}
+      className={clsx(
+        'mb-2 mt-1 text-sm leading-relaxed text-gray-700 md:mb-3 md:mt-2 md:text-base',
+        className
+      )}
+    >
+      {children}
+    </p>
+  );
+};
+export const Caption: React.FC<Props> = ({ id, className, children }) => {
+  return (
+    <p
+      id={id}
+      className={clsx(
+        'mb-2 mt-1 text-xs leading-relaxed text-gray-700 md:mb-3 md:mt-2',
+        className
+      )}
+    >
+      {children}
+    </p>
   );
 };

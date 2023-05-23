@@ -1,4 +1,13 @@
+require('dotenv').config({
+  path: `.env`,
+});
+
 module.exports = {
+  // Allows the use of JSX without having to import React
+  // Docs https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/#jsxruntime
+  jsxRuntime: 'automatic',
+
+  graphqlTypegen: true,
   // Required by 'gatsby-plugin-sitemap' Plugin
   siteMetadata: {
     title: 'Plan F',
@@ -14,11 +23,8 @@ module.exports = {
     // Test with `npm run build && npm run serve` to validate server side rendering (with rehydration)
     'gatsby-plugin-react-helmet',
     // Docs https://www.gatsbyjs.com/plugins/gatsby-plugin-image/
-    `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
     // TailwindCSS needs PostCSS, https://tailwindcss.com/docs/guides/gatsby
     'gatsby-plugin-postcss',
-    'gatsby-transformer-sharp',
     {
       // Docs https://www.gatsbyjs.com/plugins/gatsby-plugin-sitemap/
       resolve: 'gatsby-plugin-sitemap',
@@ -53,11 +59,84 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-strapi`,
+      options: {
+        // in ENV verschieben, da pro Dev unterschiedlich
+        apiURL: process.env.GATSBY_BACKEND_URL,
+        // in ENV verschieben, da pro Dev unterschiedlich und geheim seien sollte
+        accessToken: process.env.STRAPI_TOKEN,
+        // Hier die Content types angeben, die wir in Gatsby verfügbar haben wollen.
+        // collection = array, single = ein object
+        collectionTypes: [
+          {
+            singularName: 'award',
+            queryParams: {
+              populate: {
+                logo: { populate: '*' },
+              },
+            },
+          },
+          {
+            singularName: 'topic',
+            queryParams: {
+              populate: {
+                measures: { populate: '*' },
+                additionalResources: { populate: '*' },
+                guidelines: { populate: '*' },
+                image: { populate: '*' },
+              },
+            },
+          },
+          {
+            singularName: 'measure',
+            queryParams: {
+              populate: {
+                topic: { populate: '*' },
+                image: { populate: '*' },
+                additionalResources: { populate: '*' },
+                guidelines: { populate: '*' },
+                fundings: { populate: '*' },
+                examples: { populate: '*' },
+                communityEntries: { populate: '*' },
+              },
+            },
+          },
+          {
+            singularName: 'example',
+            queryParams: {
+              populate: {
+                links: { populate: '*' },
+                measure: { populate: '*' },
+                image: { populate: '*' },
+                awards: { populate: '*' },
+                relatedTopic: { populate: '*' },
+              },
+            },
+          },
+          {
+            singularName: 'community-entry',
+            queryParams: {
+              populate: {
+                image: { populate: '*' },
+                description: { populate: '*' },
+                website: { populate: '*' },
+              },
+            },
+          },
+        ],
+        singleTypes: [],
+      },
+    },
+    {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
         siteUrl: `https://plan-f.info`,
         stripQueryString: true,
       },
     },
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    'gatsby-transformer-sharp',
+    'gatsby-transformer-remark',
   ],
 };

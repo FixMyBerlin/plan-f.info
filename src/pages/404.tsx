@@ -1,20 +1,20 @@
 import React from 'react';
-import { Content, Layout, HelmetSeo } from '~/components/Layout';
-import { Link } from '~/components/Link';
-import { H1, H2 } from '~/components/Text';
+import { Content, HelmetSeo } from '~/components/Layout';
 import Logo from '~/components/Layout/assets/Logo.svg';
+import { H1, H2 } from '~/components/Text/Headings';
+import { Link } from '~/components/core/links/Link';
 
 const NotFound: React.FC = () => {
   return (
-    <Layout>
+    <>
       <HelmetSeo noindex />
-      <div className="flex h-full flex-col bg-pastel-purple">
-        <div className="bg-dark-green pt-20 pb-12">
+      <div className="flex h-full flex-col bg-purple-300">
+        <div className="bg-green-500 pb-12 pt-20">
           <Content>
-            <Link to="/">
+            <Link href="/">
               <Logo />
             </Link>
-            <H2 className="!font-apercuMono">404</H2>
+            <H2 className="!font-mono">404</H2>
           </Content>
         </div>
         <div className="flex-grow  py-16">
@@ -23,12 +23,12 @@ const NotFound: React.FC = () => {
               Diese Seite gibt es leider nicht (mehr)
             </H1>
             <div className="mt-10">
-              Hier kommst du zur <Link to="/">Startseite</Link>
+              Hier kommst du zur <Link href="/">Startseite</Link>
             </div>
           </Content>
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 
