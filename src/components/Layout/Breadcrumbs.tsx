@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import { wikiColors } from '~/components/utils';
 import { Link } from '../core/links/Link';
 
-type Props = { names: string[]; prefix?: string };
+type Props = { names?: string[]; prefix?: string };
 
 export const Breadcrumbs: React.FC<Props> = ({ names = [], prefix = './' }) => {
   const n = names.length;
