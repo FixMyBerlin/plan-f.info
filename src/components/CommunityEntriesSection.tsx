@@ -4,6 +4,7 @@ import { CardImageAndTextResponsiveImgFull } from './Layout/CardImageAndTextResp
 import { Section } from './Layout/Section';
 import { H2, H3, P } from './Text';
 import { Prose } from './core/Prose';
+import { MailLink } from './core/links';
 
 type Props = {
   communityEntries: Queries.MeasureDetailsQuery['measure']['communityEntries'];
@@ -14,11 +15,36 @@ export const CommunityEntriesSection: React.FC<Props> = ({
 }) => {
   return (
     <Section className="bg-gray-300">
-      <H2>Weitere Beiträge</H2>
+      <H2>Weitere Praxisbeispiele</H2>
       <P>
         Hier finden Sie eine Reihe an weiteren nenneswerten Beiträge aus der
         Community.
       </P>
+      <MailLink
+        button
+        mailto="kontakt@plan-f.info"
+        subject="Vorschlag für ein weiteres Praxisbeispiel"
+        body={`Liebes Plan F Team,
+
+für die Kategorie Weitere Praxisbeispiele möchte ich folgenden Inhalt vorschlagen:
+
+    - Titel des Beispiels
+    - Stadt / Kommune
+    - Bundesland
+    - (optional) Maßnahmentyp (Auf dieser Seite finden Sie eine Liste mit Maßnahmentypen, von denen Sie einen auswählen können)
+    - Link zu einer Website
+    - (Optional) Bild zur Illustration des Beispiels im Anhang (jpg. Oder png. Mindestens 400 px hoch, max 5 MB) (Wenn kein Bild eingesendet wird, wird ein Screenshot der Website als Bild ausgegeben)
+    - Attribution zum Bild (Was soll unter dem Bild stehen, z.B. Quelle / Autor )
+
+Hinweis: Mit dem Zusenden eines Bildes bestätigen Sie, dieses frei von Rechten dritter ist und auf plan-f.info veröffentlicht werden darf
+
+    - Beschreibungstext Text (max. 300 Zeichen)
+    - (optional) Autor dieses Beitrags (Wenn Sie hier genannt werden möchten, dann bitte Ihren Namen angeben)
+`}
+        type="button"
+      >
+        Neuen Vorschlag einreichen
+      </MailLink>
       <div className="mt-12 flex flex-col gap-5">
         {communityEntries.map((entry) => (
           <CardImageAndTextResponsiveImgFull
