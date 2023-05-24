@@ -18,9 +18,17 @@ export const CommunityEntriesSection: React.FC<Props> = ({
       <H2>Weitere Praxisbeispiele</H2>
       <P>
         Hier finden Sie eine Reihe an weiteren nenneswerten Beiträge aus der
-        Community.
+        Community.{' '}
+      </P>
+      <P>
+        Wenn Sie ein vorbildhaftes Praxisbeispiel kennen, das sich noch nicht im
+        Plan F Wissensspeicher befindet, können Sie uns dieses zuschicken und
+        wir prüfen eine Veröffentlichung. Für das Zusenden von Vorschlägen
+        benötigen Sie eine kurze Beschreibung, einen Link zu einer Website, auf
+        der das Beispiel vorgestellt wird und ggf. ein Foto.
       </P>
       <MailLink
+        className="mt-4"
         button
         mailto="kontakt@plan-f.info"
         subject="Vorschlag für ein weiteres Praxisbeispiel"
