@@ -58,13 +58,17 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
     .map((measure) => {
       const example =
         measure.examples[Math.floor(Math.random() * measure.examples.length)];
-      return {
-        ...example,
-        path: [wikiPath, measure.topic.slug, measure.slug, example.slug].join(
-          '/'
-        ),
-      };
-    });
+      if (example) {
+        return {
+          ...example,
+          path: [wikiPath, measure.topic.slug, measure.slug, example.slug].join(
+            '/'
+          ),
+        };
+      }
+      return null;
+    })
+    .filter((e) => e);
 
   return (
     <>
@@ -108,20 +112,22 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
           umgesetzt haben.
         </P>
         <CardWrapperMeasurePage className="mt-12">
-          {examples.map((example) => (
-            <CardImageAndTextVertical
-              key={example.path}
-              link={example.path}
-              image={
-                example.image && getImage(example.image.image.localFile as any)
-              }
-            >
-              <H3>{example.title}</H3>
-              <div className="line-clamp-4">
-                <P>{example.shortDescription}</P>
-              </div>
-            </CardImageAndTextVertical>
-          ))}
+          {examples?.length &&
+            examples.map((example) => (
+              <CardImageAndTextVertical
+                key={example.path}
+                link={example.path}
+                image={
+                  example.image &&
+                  getImage(example.image.image.localFile as any)
+                }
+              >
+                <H3>{example.title}</H3>
+                <div className="line-clamp-4">
+                  <P>{example.shortDescription}</P>
+                </div>
+              </CardImageAndTextVertical>
+            ))}
         </CardWrapperMeasurePage>
       </Section>
       <Section>
