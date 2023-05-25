@@ -44,6 +44,14 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-matomo',
+      options: {
+        siteId: '10',
+        matomoUrl: 'https://s.fixmycity.de',
+        siteUrl: 'https://plan-f.info',
+      },
+    },
+    {
       // Docs https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/
       resolve: 'gatsby-plugin-manifest',
       options: {
