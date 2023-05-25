@@ -25,7 +25,7 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
       />
 
       <PageHeader
-        image={topic.image.url}
+        image={topic.image?.url && topic.image.url}
         markdownHTML={topic.description.data.childMarkdownRemark.html}
       />
 
