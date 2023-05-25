@@ -75,7 +75,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
       <HelmetSeo title={title} />
       <Section className="relative flex flex-col items-start justify-between gap-4 !bg-green-500 px-5 !pt-32 pb-8 md:flex-row-reverse md:pb-16 md:pl-8 lg:px-10">
         <div className="flex w-full justify-end">
-          <LinkButtonWithArrow button="black" href="/">
+          <LinkButtonWithArrow button="black" href="/about">
             Was ist Plan F
           </LinkButtonWithArrow>
         </div>
@@ -141,7 +141,11 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
             gekürt und auf der Fahrradkommunalkonferenz 2022 in Aachen geehrt.
             Mehr zu dem Award hier:
           </P>
-          <LinkButtonWithArrow className="mt-8" truncate={false} href="/award">
+          <LinkButtonWithArrow
+            className="mt-8"
+            truncate={false}
+            href="/award/plan-f-award-2022/"
+          >
             Zur Plan F Award Seite
           </LinkButtonWithArrow>
           <P className="mt-20 md:mt-20">
