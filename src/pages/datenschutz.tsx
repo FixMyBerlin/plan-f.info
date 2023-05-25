@@ -1,749 +1,495 @@
+import { PageProps } from 'gatsby';
+import React from 'react';
 import { Content, HelmetSeo, Hero } from '~/components/Layout';
 import { Section } from '~/components/Layout/Section';
-import { H1, H2, H3 } from '~/components/Text/Headings';
-import { Link } from '~/components/core/links/Link';
+import { Link, MailLink, TelLink } from '~/components/core/links';
 
-const DatenschutzPage = () => {
+const MatomoIframe = () => {
+  return (
+    <iframe
+      title="Matomo Opt Out Tracking"
+      className="h-60 w-full border bg-[#f0fdf4] p-2"
+      src="https://s.fixmycity.de/index.php?module=CoreAdminHome&action=optOut&language=de&backgroundColor=f0fdf4&fontColor=000000&fontSize=1rem&fontFamily=Arial&applyStyling=1&showIntro=1"
+    />
+  );
+};
+
+const DatenschutzPage: React.FC<PageProps> = () => {
   const title = 'Datenschutz';
   return (
     <>
       <HelmetSeo noindex title={title} />
       <Hero className="!bg-green-500" title={title} />
-      <Section>
+      <Section className="prose max-w-none prose-h2:mb-3 prose-h2:mt-6 prose-h2:font-mono prose-h2:text-xl prose-h2:font-normal prose-h2:text-black prose-h2:md:mb-6 prose-h2:md:mt-14 prose-h2:md:text-3xl">
         <Content>
-          <div className="mt-16">
-            <H1>Datenschutzvereinbarung</H1>
-          </div>
-          <div className="mt-8">
-            <H2>Einleitung</H2>
-            <p>
-              Mit der folgenden Datenschutzerklärung möchten wir Sie darüber
-              aufklären, welche Arten Ihrer personenbezogenen Daten (nachfolgend
-              auch kurz als “Daten” bezeichnet) wir zu welchen Zwecken und in
-              welchem Umfang verarbeiten. Die Datenschutzerklärung gilt für alle
-              von uns durchgeführten Verarbeitungen personenbezogener Daten,
-              sowohl im Rahmen der Erbringung unserer Leistungen als auch
-              insbesondere auf unseren Webseiten, in mobilen Applikationen sowie
-              innerhalb externer Onlinepräsenzen, wie z.B. unserer
-              Social-Media-Profile (nachfolgend zusammenfassend bezeichnet als
-              “Onlineangebot”.
-            </p>
-            <p className="mt-2">
-              Die verwendeten Begriffe sind nicht geschlechtsspezifisch.
-            </p>
-            <p className="mt-2">Stand: 22. Juni 2022</p>
-          </div>
-          <div className="mt-8">
-            <H2>Verantwortliche Person</H2>
-            <p>
-              Verantwortlicher im Sinne der Datenschutzgesetze, insbesondere der
-              EU-Datenschutzgrundverordnung (DSGVO), ist:
-            </p>
-            <p className="font-bold">Fair Spaces GmbH</p>
-            <p className="mt-2">
-              Impressum:&nbsp;
-              <Link href="http://fair-spaces.de/home/impressum/">
-                www.fair-spaces.de
-              </Link>
-            </p>
-          </div>
-          <div className="mt-8">
-            <H2>Ihre Betroffenenrechte</H2>
-            <p>
-              Unter den angegebenen Kontaktdaten unseres Datenschutzbeauftragten
-              können Sie jederzeit folgende Rechte ausüben:
-            </p>
-            <ul className="mt-2 list-disc pl-4">
-              <li>
-                Auskunft über Ihre bei uns gespeicherten Daten und deren
-                Verarbeitung (Art. 15 DSGVO),
-              </li>
-              <li>
-                Berichtigung unrichtiger personenbezogener Daten (Art. 16
-                DSGVO),
-              </li>
-              <li>
-                Löschung Ihrer bei uns gespeicherten Daten (Art. 17 DSGVO),
-              </li>
-              <li>
-                Einschränkung der Datenverarbeitung, sofern wir Ihre Daten
-                aufgrund gesetzlicher Pflichten noch nicht löschen dürfen (Art.
-                18 DSGVO),
-              </li>
-              <li>
-                Widerspruch gegen die Verarbeitung Ihrer Daten bei uns (Art. 21
-                DSGVO) und Datenübertragbarkeit, sofern Sie in die
-                Datenverarbeitung eingewilligt haben oder einen Vertrag mit uns
-                abgeschlossen haben (Art. 20 DSGVO).
-              </li>
-            </ul>
-            <p className="mt-2">
-              Sofern Sie uns eine Einwilligung erteilt haben, können Sie diese
-              jederzeit mit Wirkung für die Zukunft widerrufen.
-            </p>
-            <p className="mt-2">
-              Sie können sich jederzeit mit einer Beschwerde an eine
-              Aufsichtsbehörde wenden, z. B. an die zuständige Aufsichtsbehörde
-              des Bundeslands Ihres Wohnsitzes oder an die für uns als
-              verantwortliche Stelle zuständige Behörde.
-            </p>
-            <p className="mt-2">
-              Eine Liste der Aufsichtsbehörden (für den nichtöffentlichen
-              Bereich) mit Anschrift finden Sie unter:&nbsp;
-              <Link href="https://www.bfdi.bund.de/DE/Service/Anschriften/Laender/Laender-node.html">
-                bfdi.bund.de
-              </Link>
-            </p>
-          </div>
-          <div className="mt-8">
-            <H2>Übersicht der Verarbeitungen</H2>
-            <p>
-              Die nachfolgende Übersicht fasst die Arten der verarbeiteten Daten
-              und die Zwecke ihrer Verarbeitung zusammen und verweist auf die
-              betroffenen Personen.
-            </p>
-            <div className="mt-6">
-              <H3>Arten der verarbeiteten Daten</H3>
-              <ul className="mt-2 list-disc pl-4">
-                <li>Bestandsdaten.</li>
-                <li>Kontaktdaten.</li>
-                <li>Inhaltsdaten.</li>
-                <li>Nutzungsdaten.</li>
-                <li>Meta-/Kommunikationsdaten.</li>
-              </ul>
-            </div>
-            <div className="mt-6">
-              <H3>Kategorien betroffener Personen</H3>
-              <ul className="mt-2 list-disc pl-4">
-                <li>Kommunikationspartner*innen.</li>
-                <li>Nutzer*innen.</li>
-              </ul>
-            </div>
-            <div className="mt-6">
-              <H3>Zwecke der Verarbeitung</H3>
-              <ul className="mt-2 list-disc pl-4">
-                <li>Erbringung vertraglicher Leistungen und Kundenservice.</li>
-                <li>Kontaktanfragen und Kommunikation.</li>
-                <li>Direktmarketing.</li>
-                <li>Reichweitenmessung.</li>
-                <li>Profile mit nutzerbezogenen Informationen.</li>
-                <li>
-                  Bereitstellung unseres Onlineangebotes und
-                  Nutzerfreundlichkeit.
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-6">
-            <H3>Maßgebliche Rechtsgrundlagen</H3>
-            <p>
-              Im Folgenden erhalten Sie eine Übersicht der Rechtsgrundlagen der
-              DSGVO, auf deren Basis wir personenbezogene Daten verarbeiten.
-              Bitte nehmen Sie zur Kenntnis, dass neben den Regelungen der DSGVO
-              nationale Datenschutzvorgaben in Ihrem bzw. unserem Wohn- oder
-              Sitzland gelten können. Sollten ferner im Einzelfall speziellere
-              Rechtsgrundlagen maßgeblich sein, teilen wir Ihnen diese in der
-              Datenschutzerklärung mit.
-            </p>
-            <ul className="mt-2 list-disc pl-4">
-              <li>
-                <span className="font-bold">
-                  Einwilligung (Art. 6 Abs. 1 S. 1 lit. a. DSGVO)
-                </span>
-                &nbsp;- Die betroffene Person hat ihre Einwilligung in die
-                Verarbeitung der sie betreffenden personenbezogenen Daten für
-                einen spezifischen Zweck oder mehrere bestimmte Zwecke gegeben.
-              </li>
-              <li>
-                <span className="font-bold">
-                  Vertragserfüllung und vorvertragliche Anfragen (Art. 6 Abs. 1
-                  S. 1 lit. b. DSGVO)
-                </span>
-                &nbsp;- Die Verarbeitung ist für die Erfüllung eines Vertrags,
-                dessen Vertragspartei die betroffene Person ist, oder zur
-                Durchführung vorvertraglicher Maßnahmen erforderlich, die auf
-                Anfrage der betroffenen Person erfolgen.
-              </li>
-              <li>
-                <span className="font-bold">
-                  Rechtliche Verpflichtung (Art. 6 Abs. 1 S. 1 lit. c. DSGVO)
-                </span>
-                &nbsp;- Die Verarbeitung ist zur Erfüllung einer rechtlichen
-                Verpflichtung erforderlich, der der Verantwortliche unterliegt.
-              </li>
-              <li>
-                <span className="font-bold">
-                  Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f. DSGVO)
-                </span>
-                &nbsp;- Die Verarbeitung ist zur Wahrung der berechtigten
-                Interessen des Verantwortlichen oder eines Dritten erforderlich,
-                sofern nicht die Interessen oder Grundrechte und Grundfreiheiten
-                der betroffenen Person, die den Schutz personenbezogener Daten
-                erfordern, überwiegen.
-              </li>
-            </ul>
-            <p className="mt-2">
-              Zusätzlich zu den Datenschutzregelungen der
-              Datenschutz-Grundverordnung gelten nationale Regelungen zum
-              Datenschutz in Deutschland. Hierzu gehört insbesondere das Gesetz
-              zum Schutz vor Missbrauch personenbezogener Daten bei der
-              Datenverarbeitung (Bundesdatenschutzgesetz – BDSG). Das BDSG
-              enthält insbesondere Spezialregelungen zum Recht auf Auskunft, zum
-              Recht auf Löschung, zum Widerspruchsrecht, zur Verarbeitung
-              besonderer Kategorien personenbezogener Daten, zur Verarbeitung
-              für andere Zwecke und zur Übermittlung sowie automatisierten
-              Entscheidungsfindung im Einzelfall einschließlich Profiling. Des
-              Weiteren regelt es die Datenverarbeitung für Zwecke des
-              Beschäftigungsverhältnisses (§ 26 BDSG), insbesondere im Hinblick
-              auf die Begründung, Durchführung oder Beendigung von
-              Beschäftigungsverhältnissen sowie die Einwilligung von
-              Beschäftigten. Ferner können Landesdatenschutzgesetze der
-              einzelnen Bundesländer zur Anwendung gelangen.
-            </p>
-          </div>
-          <div className="mt-8">
-            <H2>Sicherheitsmaßnahmen</H2>
-            <p>
-              Wir treffen nach Maßgabe der gesetzlichen Vorgaben unter
-              Berücksichtigung des Stands der Technik, der
-              Implementierungskosten und der Art, des Umfangs, der Umstände und
-              der Zwecke der Verarbeitung sowie der unterschiedlichen
-              Eintrittswahrscheinlichkeiten und des Ausmaßes der Bedrohung der
-              Rechte und Freiheiten natürlicher Personen geeignete technische
-              und organisatorische Maßnahmen, um ein dem Risiko angemessenes
-              Schutzniveau zu gewährleisten.
-            </p>
-            <p className="mt-2">
-              Zu den Maßnahmen gehören insbesondere die Sicherung der
-              Vertraulichkeit, Integrität und Verfügbarkeit von Daten durch
-              Kontrolle des physischen und elektronischen Zugangs zu den Daten
-              als auch des sie betreffenden Zugriffs, der Eingabe, der
-              Weitergabe, der Sicherung der Verfügbarkeit und ihrer Trennung.
-              Des Weiteren haben wir Verfahren eingerichtet, die eine
-              Wahrnehmung von Betroffenenrechten, die Löschung von Daten und
-              Reaktionen auf die Gefährdung der Daten gewährleisten. Ferner
-              berücksichtigen wir den Schutz personenbezogener Daten bereits bei
-              der Entwicklung bzw. Auswahl von Hardware, Software sowie
-              Verfahren entsprechend dem Prinzip des Datenschutzes, durch
-              Technikgestaltung und durch datenschutzfreundliche
-              Voreinstellungen.
-            </p>
-          </div>
-          <div className="mt-8">
-            <H2>Übermittlung von personenbezogenen Daten</H2>
-            <p>
-              Im Rahmen unserer Verarbeitung von personenbezogenen Daten kommt
-              es vor, dass die Daten an andere Stellen, Unternehmen, rechtlich
-              selbstständige Organisationseinheiten oder Personen übermittelt
-              oder sie ihnen gegenüber offengelegt werden. Zu den Empfängern
-              dieser Daten können z.B. mit IT-Aufgaben beauftragte Dienstleister
-              oder Anbieter von Diensten und Inhalten, die in eine Webseite
-              eingebunden werden, gehören. In solchen Fall beachten wir die
-              gesetzlichen Vorgaben und schließen insbesondere entsprechende
-              Verträge bzw. Vereinbarungen, die dem Schutz Ihrer Daten dienen,
-              mit den Empfängern Ihrer Daten ab.
-            </p>
-          </div>
-          <div className="mt-8">
-            <H2>Datenverarbeitung in Drittländern</H2>
-            <p className="mt-2">
-              Sofern wir Daten in einem Drittland (d.h., außerhalb der
-              Europäischen Union (EU), des Europäischen Wirtschaftsraums (EWR))
-              verarbeiten oder die Verarbeitung im Rahmen der Inanspruchnahme
-              von Diensten Dritter oder der Offenlegung bzw. Übermittlung von
-              Daten an andere Personen, Stellen oder Unternehmen stattfindet,
-              erfolgt dies nur im Einklang mit den gesetzlichen Vorgaben.
-            </p>
-            <p className="mt-2">
-              Vorbehaltlich ausdrücklicher Einwilligung oder vertraglich oder
-              gesetzlich erforderlicher Übermittlung verarbeiten oder lassen wir
-              die Daten nur in Drittländern mit einem anerkannten
-              Datenschutzniveau, vertraglichen Verpflichtung durch sogenannte
-              Standardschutzklauseln der EU-Kommission, beim Vorliegen von
-              Zertifizierungen oder verbindlicher internen
-              Datenschutzvorschriften verarbeiten (Art. 44 bis 49 DSGVO,{' '}
-              <Link href="https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection_de">
-                Informationsseite
-              </Link>{' '}
-              der EU-Kommission.
-            </p>
-          </div>
-          <div className="mt-8">
-            <H2>Löschung von Daten</H2>
-            <p>
-              Die von uns verarbeiteten Daten werden nach Maßgabe der
-              gesetzlichen Vorgaben gelöscht, sobald deren zur Verarbeitung
-              erlaubten Einwilligungen widerrufen werden oder sonstige
-              Erlaubnisse entfallen (z.B. wenn der Zweck der Verarbeitung dieser
-              Daten entfallen ist oder sie für den Zweck nicht erforderlich
-              sind).
-            </p>
-            <p className="mt-2">
-              Sofern die Daten nicht gelöscht werden, weil sie für andere und
-              gesetzlich zulässige Zwecke erforderlich sind, wird deren
-              Verarbeitung auf diese Zwecke beschränkt. D.h., die Daten werden
-              gesperrt und nicht für andere Zwecke verarbeitet. Das gilt z.B.
-              für Daten, die aus handels- oder steuerrechtlichen Gründen
-              aufbewahrt werden müssen oder deren Speicherung zur
-              Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen
-              oder zum Schutz der Rechte einer anderen natürlichen oder
-              juristischen Person erforderlich ist.
-            </p>
-            <p className="mt-2">
-              Unsere Datenschutzhinweise können ferner weitere Angaben zu der
-              Aufbewahrung und Löschung von Daten beinhalten, die für die
-              jeweiligen Verarbeitungen vorrangig gelten.
-            </p>
-          </div>
-          <div className="mt-8">
-            <H2>Bereitstellung des Onlineangebotes und Webhosting</H2>
-            <p>
-              Um unser Onlineangebot sicher und effizient bereitstellen zu
-              können, nehmen wir die Leistungen von einem oder mehreren
-              Webhosting-Anbietern in Anspruch, von deren Servern (bzw. von
-              ihnen verwalteten Servern) das Onlineangebot abgerufen werden
-              kann. Zu diesen Zwecken können wir Infrastruktur- und
-              Plattformdienstleistungen, Rechenkapazität, Speicherplatz und
-              Datenbankdienste sowie Sicherheitsleistungen und technische
-              Wartungsleistungen in Anspruch nehmen.
-            </p>
-            <p className="mt-2">
-              Zu den im Rahmen der Bereitstellung des Hostingangebotes
-              verarbeiteten Daten können alle die Nutzer unseres Onlineangebotes
-              betreffenden Angaben gehören, die im Rahmen der Nutzung und der
-              Kommunikation anfallen. Hierzu gehören regelmäßig die IP-Adresse,
-              die notwendig ist, um die Inhalte von Onlineangeboten an Browser
-              ausliefern zu können, und alle innerhalb unseres Onlineangebotes
-              oder von Webseiten getätigten Eingaben.
-            </p>
-            <ul className="mt-2 list-disc pl-4">
-              <li>
-                <span className="font-bold">Verarbeitete Datenarten:</span>
-                &nbsp;Inhaltsdaten (z.B. Eingaben in Onlineformularen);
-                Nutzungsdaten (z.B. besuchte Webseiten, Interesse an Inhalten,
-                Zugriffszeiten); Meta-/Kommunikationsdaten (z.B.
-                Geräte-Informationen, IP-Adressen).
-              </li>
-              <li>
-                <span className="font-bold">Betroffene Personen:</span>
-                &nbsp;Nutzer (z.B. Webseitenbesucher, Nutzer von
-                Onlinediensten).
-              </li>
-              <li>
-                <span className="font-bold">Zwecke der Verarbeitung:</span>
-                &nbsp;Bereitstellung unseres Onlineangebotes und
-                Nutzerfreundlichkeit.
-              </li>
-              <li>
-                <span className="font-bold">Rechtsgrundlagen:</span>
-                &nbsp;Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f. DSGVO).
-              </li>
-            </ul>
-            <p className="mt-2 font-bold">
-              Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und
-              Diensten:
-            </p>
-            <ul className="mt-2 list-disc pl-4">
-              <li>
-                <span className="font-bold">Kontaktformular:</span>&nbsp;Wenn
-                Nutzer über unser Kontaktformular, E-Mail oder andere
-                Kommunikationswege mit uns in Kontakt treten, verarbeiten wir
-                die uns in diesem Zusammenhang mitgeteilten Daten zur
-                Bearbeitung des mitgeteilten Anliegens. Zu diesem Zweck
-                verarbeiten wir personenbezogene Daten im Rahmen
-                vorvertraglicher und vertraglicher Geschäftsbeziehungen, soweit
-                dies zu deren Erfüllung erforderlich ist und im Übrigen auf
-                Grundlage unserer berechtigten Interessen sowie der Interessen
-                der Kommunikationspartner an der Beantwortung der Anliegen und
-                unserer gesetzlichen Aufbewahrungspflichten.
-              </li>
-            </ul>
-          </div>
-          <div className="mt-8">
-            <H2>Newsletter</H2>
-            <div className="mt-6">
-              <H3>Art und Zweck der Verarbeitung:</H3>
-              <p>
-                Für die Zustellung unseres Newsletters erheben wir
-                personenbezogene Daten, die über eine Eingabemaske an uns
-                übermittelt werden.
-              </p>
-              <p className="mt-2">
-                Für eine wirksame Registrierung benötigen wir eine valide
-                E-Mail-Adresse. Um zu überprüfen, dass eine Anmeldung
-                tatsächlich durch den Inhaber*in einer E-Mail-Adresse erfolgt,
-                setzen wir das „Double-Opt-in“-Verfahren ein. Hierzu
-                protokollieren wir die Anmeldung zum Newsletter, den Versand
-                einer Bestätigungsmail und den Eingang der hiermit angeforderten
-                Antwort. Weitere Daten werden nicht erhoben.
-              </p>
-            </div>
-            <div className="mt-6">
-              <H3>Rechtsgrundlage:</H3>
-              <p>
-                Auf Grundlage Ihrer ausdrücklich erteilten Einwilligung (Art. 6
-                Abs. 1 lit. a DSGVO), übersenden wir Ihnen regelmäßig unseren
-                Newsletter bzw. vergleichbare Informationen per E-Mail an Ihre
-                angegebene E-Mail-Adresse.
-              </p>
-              <p className="mt-2">
-                Die Einwilligung zur Speicherung Ihrer persönlichen Daten und
-                ihrer Nutzung für den Newsletterversand können Sie jederzeit mit
-                Wirkung für die Zukunft widerrufen. In jedem Newsletter findet
-                sich dazu ein entsprechender Link. Außerdem können Sie sich
-                jederzeit auch direkt auf dieser Website abmelden oder uns Ihren
-                Widerruf über die am Ende dieser Datenschutzhinweise angegebene
-                Kontaktmöglichkeit mitteilen.
-              </p>
-            </div>
-            <div className="mt-6">
-              <H3>Empfänger*in:</H3>
-              <p>
-                Empfänger*innen der Daten sind ggf. Auftragsverarbeiter*innen.
-              </p>
-            </div>
-            <div className="mt-6">
-              <H3>Speicherdauer:</H3>
-              <p>
-                Die Daten werden in diesem Zusammenhang nur verarbeitet, solange
-                die entsprechende Einwilligung vorliegt. Danach werden sie
-                gelöscht.
-              </p>
-            </div>
-            <div className="mt-6">
-              <H3>Bereitstellung vorgeschrieben oder erforderlich:</H3>
-              <p>
-                Die Bereitstellung Ihrer personenbezogenen Daten erfolgt
-                freiwillig, allein auf Basis Ihrer Einwilligung. Ohne bestehende
-                Einwilligung können wir Ihnen unseren Newsletter leider nicht
-                zusenden.
-              </p>
-            </div>
-            <div className="mt-6">
-              <H3>Widerruf der Einwilligung:</H3>
-              <p>
-                Die Einwilligung zur Speicherung Ihrer persönlichen Daten und
-                ihrer Nutzung für den Newsletterversand können Sie jederzeit mit
-                Wirkung für die Zukunft widerrufen. Die Abmeldung kann über den
-                in jeder E-Mail enthaltenen Link oder beim unten aufgeführten
-                Datenschutzbeauftragte*n bzw. der für den Datenschutz
-                zuständigen Person beantragt werden.
-              </p>
-            </div>
-            <div className="mt-8">
-              <H2>Heyflow.</H2>
-              <p>
-                Wir verwenden interaktive Anfrageformulare, sogenannte „Flows“,
-                um gute Maßnahmen für die kommunale Radverkehrsförderung von
-                Kommunen zu erhalten. Wir verarbeiten hierbei personenbezogene
-                Daten, die über Flows erhoben und anschließend verarbeitet
-                werden. Rechtsgrundlage für die Datenverarbeitung ist
-                [Rechtsgrundlage, z. B. Art. 6 Abs. 1 UAbs. 1 Buchst. a
-                (Einwilligung der betroffenen Person) oder Art. 6 Abs. 1 UAbs. 1
-                Buchst. f (Wahrung der berechtigten Interessen des
-                Verantwortlichen)]
-              </p>
-              <p className="mt-2">
-                Für das Erstellen und den Einsatz von Flows nutzen wir die
-                Dienste der Heyflow GmbH, Jungfernstieg 49, 20354 Hamburg,
-                Deutschland („Heyflow“). Heyflow verarbeitet über Flows erhobene
-                personenbezogene Daten ausschließlich in unserem Auftrag und
-                nach unseren Weisungen auf der Grundlage eines
-                Auftragsverarbeitungsvertrags. Heyflow nutzt den
-                Server-Hosting-Dienst „Google Cloud Platform“ der Google LLC;
-                die Heyflow Dienste einschließlich der über Flows erhobenen
-                personenbezogenen Daten werden ausschließlich auf Servern in der
-                EU gehostet.
-              </p>
-              <p className="mt-2">
-                Näheres zur Datenverarbeitung mittels Heyflow findet sich
-                auf:&nbsp;
-                <Link href="https://heyflow.app/de/datenschutz?">
-                  heyflow.app
-                </Link>
-              </p>
-            </div>
-            <div className="mt-8">
-              <H2>Webanalyse, Monitoring und Optimierung</H2>
-              <p>
-                Die Webanalyse (auch als “Reichweitenmessung” bezeichnet) dient
-                der Auswertung der Besucherströme unseres Onlineangebotes und
-                kann Verhalten, Interessen oder demographische Informationen zu
-                den Besuchern, wie z.B. das Alter oder das Geschlecht, als
-                pseudonyme Werte umfassen. Mit Hilfe der Reichweitenanalyse
-                können wir z.B. erkennen, zu welcher Zeit unser Onlineangebot
-                oder dessen Funktionen oder Inhalte am häufigsten genutzt werden
-                oder zur Wiederverwendung einladen. Ebenso können wir
-                nachvollziehen, welche Bereiche der Optimierung bedürfen.
-              </p>
-              <p className="mt-2">
-                Neben der Webanalyse können wir auch Testverfahren einsetzen, um
-                z.B. unterschiedliche Versionen unseres Onlineangebotes oder
-                seiner Bestandteile zu testen und optimieren.
-              </p>
-              <p className="mt-2">
-                Sofern nachfolgend nicht anders angegeben, können zu diesen
-                Zwecken Profile, d.h. zu einem Nutzungsvorgang zusammengefasste
-                Daten angelegt und Informationen in einem Browser, bzw. in einem
-                Endgerät gespeichert und aus diesem ausgelesen werden. Zu den
-                erhobenen Angaben gehören insbesondere besuchte Webseiten und
-                dort genutzte Elemente sowie technische Angaben, wie der
-                verwendete Browser, das verwendete Computersystem sowie Angaben
-                zu Nutzungszeiten. Sofern Nutzer in die Erhebung ihrer
-                Standortdaten uns gegenüber oder gegenüber den Anbietern der von
-                uns eingesetzten Dienste einverstanden erklärt haben, können
-                auch Standortdaten verarbeitet werden.
-              </p>
-              <p className="mt-2">
-                Es werden ebenfalls die IP-Adressen der Nutzer gespeichert.
-                Jedoch nutzen wir ein IP-Masking-Verfahren (d.h.,
-                Pseudonymisierung durch Kürzung der IP-Adresse) zum Schutz der
-                Nutzer. Generell werden die im Rahmen von Webanalyse,
-                A/B-Testings und Optimierung keine Klardaten der Nutzer (wie
-                z.B. E-Mail-Adressen oder Namen) gespeichert, sondern
-                Pseudonyme. D.h., wir als auch die Anbieter der eingesetzten
-                Software kennen nicht die tatsächliche Identität der Nutzer,
-                sondern nur den für Zwecke der jeweiligen Verfahren in deren
-                Profilen gespeicherten Angaben.
-              </p>
-              <p className="mt-2">
-                <span className="font-bold">Hinweise zu Rechtsgrundlagen:</span>
-                &nbsp; Sofern wir die Nutzer um deren Einwilligung in den
-                Einsatz der Drittanbieter bitten, ist die Rechtsgrundlage der
-                Verarbeitung von Daten die Einwilligung. Ansonsten werden die
-                Daten der Nutzer auf Grundlage unserer berechtigten Interessen
-                (d.h. Interesse an effizienten, wirtschaftlichen und
-                empfängerfreundlichen Leistungen) verarbeitet. In diesem
-                Zusammenhang möchten wir Sie auch auf die Informationen zur
-                Verwendung von Cookies in dieser Datenschutzerklärung hinweisen.
-              </p>
-              <ul className="mt-2 list-disc pl-4">
-                <li>
-                  <span className="font-bold">Verarbeitete Datenarten:</span>
-                  &bsp;Nutzungsdaten (z.B. besuchte Webseiten, Interesse an
-                  Inhalten, Zugriffszeiten); Meta-/Kommunikationsdaten (z.B.
-                  Geräte-Informationen, IP-Adressen).
-                </li>
-                <li>
-                  <span className="font-bold">Betroffene Personen:</span>
-                  &nbsp;Nutzer (z.B. Webseitenbesucher, Nutzer von
-                  Onlinediensten).
-                </li>
-                <li>
-                  <span className="font-bold">Zwecke der Verarbeitung:</span>
-                  &nbsp;Reichweitenmessung (z.B. Zugriffsstatistiken, Erkennung
-                  wiederkehrender Besucher); Profile mit nutzerbezogenen
-                  Informationen (Erstellen von Nutzerprofilen).
-                </li>
-                <li>
-                  <span className="font-bold">Sicherheitsmaßnahmen:</span>
-                  &nbsp;IP-Masking (Pseudonymisierung der IP-Adresse).
-                </li>
-                <li>
-                  <span className="font-bold">Rechtsgrundlagen:</span>
-                  &nbsp;Einwilligung (Art. 6 Abs. 1 S. 1 lit. a. DSGVO);
-                  Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f. DSGVO).
-                </li>
-              </ul>
-              <p className="mt-2 font-bold">
-                Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und
-                Diensten:
-              </p>
-              <ul className="mt-2 list-disc pl-4">
-                <li>
-                  <span className="font-bold">Matomo (ohne Cookies):</span>
-                  &nbsp;Bei Matomo handelt es sich um eine
-                  datenschutzfreundliche Webanalysesoftware, die ohne Cookies
-                  eingesetzt wird und bei der die Erkennnung wiederkehrender
-                  Nutzer mit Hilfe eines so genannten “digitalen Fingerabdrucks”
-                  erfolgt, der anonymisiert gespeichert und alle 24 Stunden
-                  geändert wird; Beim “digitalen Fingerabdruck” werden
-                  Nutzerbewegungen innerhalb unseres Onlineangebotes mit Hilfe
-                  von pseudonymisierten IP-Adressen in Kombination mit
-                  nutzerseitige Browsereinstellungen so erfasst, dass
-                  Rückschlüsse auf die Identität einzelner Nutzer nicht möglich
-                  sind. Die im Rahmen der Nutzung von Matomo erhobenen Daten der
-                  Nutzer werden nur von uns verarbeitet und nicht mit Dritten
-                  geteilt; Website: matomo.org.
-                </li>
-              </ul>
-            </div>
-            <div className="mt-8">
-              <H2>Änderung und Aktualisierung der Datenschutzerklärung</H2>
-              <p>
-                Wir bitten Sie, sich regelmäßig über den Inhalt unserer
-                Datenschutzerklärung zu informieren. Wir passen die
-                Datenschutzerklärung an, sobald die Änderungen der von uns
-                durchgeführten Datenverarbeitungen dies erforderlich machen. Wir
-                informieren Sie, sobald durch die Änderungen eine
-                Mitwirkungshandlung Ihrerseits (z.B. Einwilligung) oder eine
-                sonstige individuelle Benachrichtigung erforderlich wird.
-              </p>
-              <p className="mt-2">
-                Sofern wir in dieser Datenschutzerklärung Adressen und
-                Kontaktinformationen von Unternehmen und Organisationen angeben,
-                bitten wir zu beachten, dass die Adressen sich über die Zeit
-                ändern können und bitten die Angaben vor Kontaktaufnahme zu
-                prüfen.
-              </p>
-            </div>
-            <div className="mt-8">
-              <H2>Rechte der betroffenen Personen</H2>
-              <p>
-                Ihnen stehen als Betroffene nach der DSGVO verschiedene Rechte
-                zu, die sich insbesondere aus Art. 15 bis 21 DSGVO ergeben:
-              </p>
-              <ul className="mt-2 list-disc pl-4">
-                <li>
-                  <span className="font-bold">Widerspruchsrecht:</span>&nbsp;Sie
-                  haben das Recht, aus Gründen, die sich aus Ihrer besonderen
-                  Situation ergeben, jederzeit gegen die Verarbeitung der Sie
-                  betreffenden personenbezogenen Daten, die aufgrund von Art. 6
-                  Abs. 1 lit. e oder f DSGVO erfolgt, Widerspruch einzulegen;
-                  dies gilt auch für ein auf diese Bestimmungen gestütztes
-                  Profiling. Werden die Sie betreffenden personenbezogenen Daten
-                  verarbeitet, um Direktwerbung zu betreiben, haben Sie das
-                  Recht, jederzeit Widerspruch gegen die Verarbeitung der Sie
-                  betreffenden personenbezogenen Daten zum Zwecke derartiger
-                  Werbung einzulegen; dies gilt auch für das Profiling, soweit
-                  es mit solcher Direktwerbung in Verbindung steht.
-                </li>
-                <li>
-                  <span className="font-bold">
-                    Widerrufsrecht bei Einwilligungen:
-                  </span>
-                  &nbsp;Sie haben das Recht, erteilte Einwilligungen jederzeit
-                  zu widerrufen.
-                </li>
-                <li>
-                  <span className="font-bold">Auskunftsrecht:</span>&nbsp;Sie
-                  haben das Recht, eine Bestätigung darüber zu verlangen, ob
-                  betreffende Daten verarbeitet werden und auf Auskunft über
-                  diese Daten sowie auf weitere Informationen und Kopie der
-                  Daten entsprechend den gesetzlichen Vorgaben.
-                </li>
-                <li>
-                  <span className="font-bold">Recht auf Berichtigung:</span>
-                  &nbsp;Sie haben entsprechend den gesetzlichen Vorgaben das
-                  Recht, die Vervollständigung der Sie betreffenden Daten oder
-                  die Berichtigung der Sie betreffenden unrichtigen Daten zu
-                  verlangen.
-                </li>
-                <li>
-                  <span className="font-bold">
-                    Recht auf Löschung und Einschränkung der Verarbeitung:
-                  </span>
-                  &nbsp;Sie haben nach Maßgabe der gesetzlichen Vorgaben das
-                  Recht, zu verlangen, dass Sie betreffende Daten unverzüglich
-                  gelöscht werden, bzw. alternativ nach Maßgabe der gesetzlichen
-                  Vorgaben eine Einschränkung der Verarbeitung der Daten zu
-                  verlangen.
-                </li>
-                <li>
-                  <span className="font-bold">
-                    Recht auf Datenübertragbarkeit:
-                  </span>
-                  &nbsp;Sie haben das Recht, Sie betreffende Daten, die Sie uns
-                  bereitgestellt haben, nach Maßgabe der gesetzlichen Vorgaben
-                  in einem strukturierten, gängigen und maschinenlesbaren Format
-                  zu erhalten oder deren Übermittlung an einen anderen
-                  Verantwortlichen zu fordern.
-                </li>
-                <li>
-                  <span className="font-bold">
-                    Beschwerde bei Aufsichtsbehörde:
-                  </span>
-                  &nbsp;Sie haben unbeschadet eines anderweitigen
-                  verwaltungsrechtlichen oder gerichtlichen Rechtsbehelfs das
-                  Recht auf Beschwerde bei einer Aufsichtsbehörde, insbesondere
-                  in dem Mitgliedstaat ihres gewöhnlichen Aufenthaltsorts, ihres
-                  Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes, wenn
-                  Sie der Ansicht sind, dass die Verarbeitung der Sie
-                  betreffenden personenbezogenen Daten gegen die Vorgaben der
-                  DSGVO verstößt.
-                </li>
-              </ul>
-            </div>
-            <div className="mb-20 mt-8">
-              <H2>Begriffsdefinitionen</H2>
-              <p>
-                In diesem Abschnitt erhalten Sie eine Übersicht über die in
-                dieser Datenschutzerklärung verwendeten Begrifflichkeiten. Viele
-                der Begriffe sind dem Gesetz entnommen und vor allem im Art. 4
-                DSGVO definiert. Die gesetzlichen Definitionen sind verbindlich.
-                Die nachfolgenden Erläuterungen sollen dagegen vor allem dem
-                Verständnis dienen. Die Begriffe sind alphabetisch sortiert.
-              </p>
-              <ul className="mt-2 list-disc pl-4">
-                <li>
-                  <span className="font-bold">Personenbezogene Daten:</span>
-                  &nbsp;“Personenbezogene Daten” sind alle Informationen, die
-                  sich auf eine identifizierte oder identifizierbare natürliche
-                  Person (im Folgenden “betroffene Person” beziehen; als
-                  identifizierbar wird eine natürliche Person angesehen, die
-                  direkt oder indirekt, insbesondere mittels Zuordnung zu einer
-                  Kennung wie einem Namen, zu einer Kennnummer, zu
-                  Standortdaten, zu einer Online-Kennung (z.B. Cookie) oder zu
-                  einem oder mehreren besonderen Merkmalen identifiziert werden
-                  kann, die Ausdruck der physischen, physiologischen,
-                  genetischen, psychischen, wirtschaftlichen, kulturellen oder
-                  sozialen Identität dieser natürlichen Person sind.
-                </li>
-                <li>
-                  <span className="font-bold">
-                    Profile mit nutzerbezogenen Informationen:
-                  </span>
-                  &nbsp;Die Verarbeitung von “Profilen mit nutzerbezogenen
-                  Informationen”, bzw. kurz “Profilen” umfasst jede Art der
-                  automatisierten Verarbeitung personenbezogener Daten, die
-                  darin besteht, dass diese personenbezogenen Daten verwendet
-                  werden, um bestimmte persönliche Aspekte, die sich auf eine
-                  natürliche Person beziehen (je nach Art der Profilbildung
-                  können dazu unterschiedliche Informationen betreffend die
-                  Demographie, Verhalten und Interessen, wie z.B. die
-                  Interaktion mit Webseiten und deren Inhalten, etc.) zu
-                  analysieren, zu bewerten oder, um sie vorherzusagen (z.B. die
-                  Interessen an bestimmten Inhalten oder Produkten, das
-                  Klickverhalten auf einer Webseite oder den Aufenthaltsort). Zu
-                  Zwecken des Profilings werden häufig Cookies und Web-Beacons
-                  eingesetzt.
-                </li>
-                <li>
-                  <span className="font-bold">Reichweitenmessung:</span>
-                  &nbsp;Die Reichweitenmessung (auch als Web Analytics
-                  bezeichnet) dient der Auswertung der Besucherströme eines
-                  Onlineangebotes und kann das Verhalten oder Interessen der
-                  Besucher an bestimmten Informationen, wie z.B. Inhalten von
-                  Webseiten, umfassen. Mit Hilfe der Reichweitenanalyse können
-                  Webseiteninhaber z.B. erkennen, zu welcher Zeit Besucher ihre
-                  Webseite besuchen und für welche Inhalte sie sich
-                  interessieren. Dadurch können sie z.B. die Inhalte der
-                  Webseite besser an die Bedürfnisse ihrer Besucher anpassen. Zu
-                  Zwecken der Reichweitenanalyse werden häufig pseudonyme
-                  Cookies und Web-Beacons eingesetzt, um wiederkehrende Besucher
-                  zu erkennen und so genauere Analysen zur Nutzung eines
-                  Onlineangebotes zu erhalten.
-                </li>
-                <li>
-                  <span className="font-bold">Verantwortlicher:</span>&nbsp;Als
-                  “Verantwortlicher” wird die natürliche oder juristische
-                  Person, Behörde, Einrichtung oder andere Stelle, die allein
-                  oder gemeinsam mit anderen über die Zwecke und Mittel der
-                  Verarbeitung von personenbezogenen Daten entscheidet,
-                  bezeichnet.
-                </li>
-                <li>
-                  <span className="font-bold">Verarbeitung:</span>
-                  &nbsp;“Verarbeitung” ist jeder mit oder ohne Hilfe
-                  automatisierter Verfahren ausgeführte Vorgang oder jede solche
-                  Vorgangsreihe im Zusammenhang mit personenbezogenen Daten. Der
-                  Begriff reicht weit und umfasst praktisch jeden Umgang mit
-                  Daten, sei es das Erheben, das Auswerten, das Speichern, das
-                  Übermitteln oder das Löschen.
-                </li>
-              </ul>
-            </div>
-          </div>
+          <p>
+            Mit den nachfolgenden Informationen wollen wir Ihnen einen Überblick
+            über die Verarbeitung Ihrer personenbezogenen Daten auf unserer
+            Website plan-f.info (nachfolgend „Website“ genannt) geben. Wir
+            wollen Sie ebenfalls über Ihre Rechte aus dem Datenschutzrecht
+            informieren. Die Verarbeitung Ihrer personenbezogenen Daten durch
+            uns erfolgt stets im Einklang mit der Datenschutzgrundverordnung
+            (nachfolgend „DSGVO“ genannt) sowie allen geltenden
+            landesspezifischen Datenschutzbestimmungen.
+          </p>
+          <h2 id="thirdparty">Verantwortlichkeit</h2>
+          <h3>Verantwortlich im Sinne der DSGVO</h3>
+          <p>
+            <strong>Fair Spaces GmbH</strong>
+            <br />
+            c/o Impact Hub Berlin
+            <br />
+            Rollbergstraße 28a
+            <br />
+            12053 Berlin
+            <br />
+            E-Mail: <MailLink>kontakt@fair-spaces.de</MailLink>
+            <br />
+            Telefon: <TelLink>+49 176 8071 2212</TelLink>
+          </p>
+          <h3>Datenschutzbeauftragter</h3>
+          <p>Unsere Datenschutzbeauftragten erreichen Sie wie folgt:</p>
+          <p>
+            <strong>Fair Spaces GmbH</strong>
+            <br />
+            Carolin Kruse
+            <br />
+            c/o Impact Hub Berlin
+            <br />
+            Rollbergstraße 28a
+            <br />
+            12053 Berlin
+            <br />
+            E-Mail: <MailLink>kontakt@fair-spaces.de</MailLink>
+            <br />
+            Telefon: <TelLink>+49 176 8071 2212</TelLink>
+          </p>
+          <p>
+            Sie können sich jederzeit bei allen Fragen und Anregungen zum
+            Datenschutz sowie zur Ausübung Ihrer Rechte direkt an unsere
+            Datenschutzbeauftragten wenden.
+          </p>
+          <h3>Einsatz von Drittdiensten</h3>
+          <p>
+            Für bestimmte Funktionen und Services auf unserer Website setzen wir
+            Dienste von Drittanbietern ein. Die konkreten Dienste können jeweils
+            den entsprechenden Kapiteln entnommen werden.
+          </p>
+          <p>
+            Teilweise setzen wir Dienstleister ein, die ihren Sitz in einem
+            Drittland haben, also außerhalb der EU. Wir übermitteln Daten nur in
+            ein Drittland, in dem ein angemessenes Datenschutzniveau bzw.
+            geeignete Garantien i. S. d. Art. 44-49 DSGVO vorliegen. Sie haben
+            das Recht, eine Kopie der von uns getroffenen geeigneten Garantien
+            anzufordern. Schreiben Sie uns dazu gerne eine E-Mail an die in
+            diesen Datenschutzhinweisen genannte E-Mail-Adresse.
+          </p>
+          <h2 id="hosting">Bereitstellung der Website</h2>
+          <h3>Allgemeine Informationen</h3>
+          <p>
+            Bei Besuch unserer Website werden automatisch Daten verarbeitet, die
+            Ihr Browser an unseren Server übermittelt. Diese allgemeinen Daten
+            und Informationen werden in den Logfiles des Servers gespeichert (in
+            sog. &bdquo;Server-Logfiles&ldquo;). Erfasst werden können die
+          </p>
+          <ul>
+            <li>Browsertyp und Browserversion</li>
+            <li>verwendetes Betriebssystem</li>
+            <li>Referrer URL (zuvor besuchte Website)</li>
+            <li>Hostname des zugreifenden Rechners</li>
+            <li>Datum und Uhrzeit der Serveranfrage</li>
+            <li>IP-Adresse</li>
+          </ul>
+          <h3>Zweck der Verarbeitung</h3>
+          <p>
+            Bei der Nutzung dieser allgemeinen Daten und Informationen ziehen
+            wir keine Rückschlüsse auf Ihre Person. Zu den von uns verfolgten
+            Zwecken gehört insbesondere:
+          </p>
+          <ul>
+            <li>
+              die Gewährleistung eines reibungslosen Verbindungsaufbaus der
+              Website,
+            </li>
+            <li>die Aufklärung von Missbrauchs- oder Betrugshandlungen,</li>
+            <li>Problemanalysen im Netzwerk, sowie</li>
+            <li>die Auswertung der Systemsicherheit und -stabilität.</li>
+          </ul>
+          <h3>Rechtsgrundlage</h3>
+          <p>
+            Die Rechtsgrundlage für die Datenverarbeitung ist unser berechtigtes
+            Interesse im Sinne des Art. 6 Abs. 1 S. 1 lit. f DSGVO. Wir haben
+            ein überwiegendes berechtigtes Interesse daran, unser Angebot
+            technisch einwandfrei anbieten zu können.
+          </p>
+          <h3>Speicherdauer</h3>
+          <p>
+            Die Logfiles werden aus Sicherheitsgründen (z.B. zur Aufklärung von
+            Missbrauchs- oder Betrugshandlungen) für die Dauer von maximal 30
+            Tagen gespeichert und danach gelöscht. Daten, deren weitere
+            Aufbewahrung zu Beweiszwecken erforderlich ist, werden bis zur
+            endgültigen Klärung der Angelegenheit aufbewahrt.
+          </p>
+          <h3>Empfänger personenbezogener Daten</h3>
+          <p>Wir setzen folgende Dienstleister ein:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Anbieter</th>
+                <th>Anschrift</th>
+                <th>Drittland</th>
+                <th>Geeignete Garantie</th>
+                <th>Zweck</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th className="align-text-top">FixMyCity GmbH</th>
+                <td>Karlsgartenstraße 12, 12049 Berlin</td>
+                <td>-</td>
+                <td>-</td>
+                <td>Bereitstellung und Entwicklung des Dienstes</td>
+              </tr>
+              <tr>
+                <th className="align-text-top">IONOS SE</th>
+                <td>Elgendorfer Str. 57, 56410 Montabaur, Deutschland</td>
+                <td>-</td>
+                <td>-</td>
+                <td>Hosting der Website und Bereitstellung der Inhalte</td>
+              </tr>
+              <tr>
+                <th className="align-text-top">SCALEWAY</th>
+                <td>
+                  8 rue de la Ville l&lsquo;Ev&ecirc;que, 75008 Paris,
+                  Frankreich
+                </td>
+                <td>-</td>
+                <td>-</td>
+                <td>Backup</td>
+              </tr>
+              <tr>
+                <th className="align-text-top">Amazon Web Services, Inc.</th>
+                <td>38 Avenue John F. Kennedy, L-1855 Luxembourg</td>
+                <td>Nein, Serverstandort Frankfurt</td>
+                <td>-</td>
+                <td>Bereitstellung der Suchergebnisse</td>
+              </tr>
+            </tbody>
+          </table>
+          <h2 id="analytics">Webanalyse</h2>
+          <p>
+            Zusätzlich zu den oben genannten Datenverarbeitungen nutzen wir ein
+            Statistiksystem, das keine personenbezogenen Daten verarbeitet. Aus
+            Fairness- und Transparenzgründen haben wir uns dennoch entschieden,
+            die entsprechenden Details dazu offenzulegen:
+          </p>
+          <p>
+            Wir nutzen Matomo für statistische Zwecke, zur Verbesserung unserer
+            Seite und zur Erkennung und Unterbindung von Missbrauch. Das Hosting
+            für das Tool übernehmen wir selbst. Matomo ist so konfiguriert, dass
+            nur die folgenden technische Daten erfasst werden: Die Website, von
+            der aus Sie uns besuchen, die Seiten unserer Website, die Sie
+            besuchen, das Datum und die Dauer Ihres Besuchs, Ihre anonymisierte
+            (also gekürzte) IP-Adresse und einzelne Informationen über das von
+            Ihnen verwendete Endgeräte (Gerätetyp, Betriebssystem,
+            Bildschirmauflösung, Sprache, Land, in dem Sie sich befinden, und
+            Webbrowser-Typ). Der Datensatz, anhand dessen zusammengehörige
+            Seitenaufrufe anonymisiert gruppiert werden, wird 30 Minuten nach
+            Ende des Besuchs gelöscht.
+          </p>
+          <p>
+            Die Kombination der oben aufgeführten Datenpunkte dürfte nicht
+            genügen, um einen eindeutigen Bezug zu einer bestimmten Person
+            herzustellen. Sie können trotzdem die Verwendung von Matomo während
+            Ihres Besuchs durch Abwahl des folgenden Hakens unterbinden:
+          </p>
+          <MatomoIframe />
+          <h2 id="youtube">YouTube</h2>
+          <h3>Allgemeine Information</h3>
+          <p>
+            Wir binden Videos auf unserer Plattform ein, die bei YouTube
+            gespeichert sind. Diese sind jedoch nicht automatisch verfügbar,
+            sondern müssen erst durch aktive Bestätigung durch Sie freigegeben
+            werden. Dabei können personenbezogene Daten an Google übertragen
+            werden, beispielsweise Ihre IP-Adresse und weitere Nutzungsdaten.
+          </p>
+          <h3>Zweck der Verarbeitung</h3>
+          <p>
+            Der Zweck der Verarbeitung ist die Anzeige von Videos, die zum einen
+            über das Angebot informieren und zum anderen die Nutzung des
+            Angebots erklären sollen.
+          </p>
+          <h3>Rechtsgrundlage</h3>
+          <p>
+            Die Rechtsgrundlage für die Datenverarbeitung ist Ihre Einwilligung
+            gem. Art. 6 Abs. 1 S. 1 lit. a DSGVO.
+          </p>
+          <h3>Empfänger</h3>
+          <p>
+            Google Cloud EMEA Limited, 70 Sir John Rogerson’s Quay, Dublin 2,
+            Irland.{' '}
+            <Link href="https://policies.google.com/privacy?hl=de" blank>
+              Weiter Informationen erhalten Sie in der Datenschutzerklärung von
+              Google
+            </Link>
+            .
+          </p>
+          <h2 id="contact">Kontaktmöglichkeiten</h2>
+          <h3>Allgemeine Informationen</h3>
+          <p>
+            Über unsere Website weisen wir auf die Möglichkeit hin, uns per
+            E-Mail zu kontaktieren.Im Rahmen der Kontaktaufnahme und
+            Beantwortung Ihrer Anfrage verarbeiten wir folgende personenbezogene
+            Daten von Ihnen:
+          </p>
+          <ul>
+            <li>Name</li>
+            <li>E-Mail</li>
+            <li>Datum und Zeit der Anfrage</li>
+            <li>Meta-Daten der E-Mail</li>
+            <li>
+              Weitere personenbezogene Daten, die Sie uns im Rahmen der
+              Kontaktaufnahme mitteilen.
+            </li>
+          </ul>
+          <h3>Zweck der Verarbeitung</h3>
+          <p>
+            Wir verarbeiten Ihre Daten zur Beantwortung Ihrer Anfrage sowie
+            andere daraus resultierende Sachverhalte.
+          </p>
+          <h3>Rechtsgrundlage</h3>
+          <p>
+            Wenn Ihre Anfrage unabhängig von vertraglichen oder vorvertraglichen
+            Maßnahmen erfolgt, stellen unsere überwiegenden berechtigten
+            Interessen gem. Art. 6 Abs. 1 S. 1 lit. f DSGVO die Rechtsgrundlage
+            dar. Das überwiegende berechtigte Interesse liegt in der
+            Notwendigkeit, geschäftliche Korrespondenz zu beantworten.
+          </p>
+          <h3>Speicherdauer</h3>
+          <p>
+            Wir löschen Ihre personenbezogenen Daten, sobald sie für die
+            Erreichung des Zweckes der Erhebung nicht mehr erforderlich sind. Im
+            Rahmen von Kontaktanfragen ist dies grundsätzlich dann der Fall,
+            wenn sich aus den Umständen ergibt, dass der konkrete Sachverhalt
+            abschließend bearbeitet ist. Darüber hinaus speichern wir E-Mails,
+            sofern und solange sie gesetzlichen Aufbewahrungsfristen
+            unterliegen.
+          </p>
+          <h2 id="newsletter">Newsletter</h2>
+          <h3>Allgemeine Informationen</h3>
+          <p>
+            Wir bieten Ihnen die Möglichkeit, einen Newsletter zu erhalten. Mit
+            unserem Newsletter informieren wir Kund*innen und
+            Geschäftspartner*innen in regelmäßigen Abständen über die
+            Aktualisierung unseres Projektes. Im Rahmen des Newsletterversands
+            verarbeiten wir folgende personenbezogene Daten:
+          </p>
+          <ul>
+            <li>E-Mail-Adresse</li>
+            <li>Vor- und Nachname</li>
+            <li>
+              Metadaten (z. B. Geräteinformationen, IP-Adresse, Datum- und
+              Uhrzeit der Anmeldung)
+            </li>
+          </ul>
+          <h3>Newsletteranmeldung</h3>
+          <p>
+            Wenn Sie sich über unsere Website für den Newsletter anmelden,
+            senden wir an die von Ihnen erstmalig für den Newsletterversand
+            eingetragene E-Mail-Adresse eine Bestätigungsmail im
+            Double-Opt-In-Verfahren. Diese Bestätigungsmail dient der
+            Überprüfung, ob Sie als Inhaber der E-Mail-Adresse den Empfang des
+            Newsletters autorisiert haben. Dabei wird die Anmeldung zum
+            Newsletter protokolliert.
+          </p>
+          <h3>Newsletterversand an Bestandskund*innen</h3>
+          <p>
+            Wenn Sie uns Ihre E-Mail-Adresse beim Kauf von Waren oder
+            Dienstleistungen zur Verfügung gestellt haben, behalten wir uns vor,
+            Ihnen regelmäßig Angebote zu ähnlichen Waren oder Dienstleistungen,
+            wie den bereits gekauften, aus unserem Sortiment per E-Mail
+            zuzusenden. Hierfür müssen wir gem. § 7 Abs. 3 UWG keine gesonderte
+            Einwilligung von Ihnen einholen.
+          </p>
+          <h3>Newsletter-Tracking</h3>
+          <p>
+            Unsere Newsletter enthalten sog. Zählpixel. Dabei handelt es sich um
+            eine Miniaturgrafik, die in E-Mails eingebettet wird. So können wir
+            z. B. nachvollziehen, ob und wann eine E-Mail von Ihnen geöffnet
+            wurde und welche in der E-Mail befindlichen Links von Ihnen
+            aufgerufen wurden. Dadurch sind wir in der Lage, Erfolg oder
+            Misserfolg von Online-Marketing-Kampagnen statistisch auszuwerten.
+            Die durch die Zählpixel erhobenen personenbezogenen Daten, werden
+            von uns gespeichert und ausgewertet, um den Newsletterversand zu
+            optimieren und den Inhalt zukünftiger Newsletter noch besser Ihren
+            Interessen anzupassen.
+          </p>
+          <h3>Zweck der Verarbeitung</h3>
+          <p>
+            Wir verarbeiten Ihre personenbezogenen Daten für folgende Zwecke:
+          </p>
+          <ul>
+            <li>Newsletterversand: Durchführung von Marketingmaßnahmen.</li>
+            <li>
+              Double-Opt-In-Verfahren: Erfüllung unserer gesetzlichen
+              Nachweispflichten.
+            </li>
+            <li>
+              Newsletter-Tracking: Einblendung personalisierter Werbung,
+              Marktforschung, Erfolgsmessung.
+            </li>
+          </ul>
+          <h3>Rechtsgrundlage</h3>
+          <p>
+            Die Rechtsgrundlage für die Verarbeitung Ihrer personenbezogenen
+            Daten im Rahmen des:
+          </p>
+          <ul>
+            <li>
+              Newsletter-Abonnements ist Ihre Einwilligung gem. Art. 6 Abs. 1 S.
+              1 lit. a DSGVO,
+            </li>
+            <li>
+              sowie Newsletter-Trackings ist Ihre Einwilligung gem. Art. 6 Abs.
+              1 S. 1 lit. a DSGVO.
+            </li>
+          </ul>
+          <h3>Speicherdauer</h3>
+          <p>
+            Wir löschen Ihre personenbezogenen Daten, sobald sie für die
+            Erreichung des Zweckes der Erhebung nicht mehr erforderlich sind. Im
+            Rahmen des Newslettersversand ist dies grundsätzlich dann der Fall,
+            wenn Sie Ihre Einwilligung widerrufen oder Sie der Verarbeitung
+            widersprechen.In jedem Newsletter befindet sich daher ein
+            entsprechender Opt-Out-Link. Zusätzlich besteht die Möglichkeit,
+            sich jederzeit auch auf unserer Internetseite vom Newsletterversand
+            abzumelden oder uns dies auf andere Weise mitzuteilen. Eine
+            Abmeldung vom Erhalt des Newsletters deuten wir automatisch als
+            Widerruf oder Widerruf.
+          </p>
+          <h3>Empfänger personenbezogener Daten</h3>
+          <p>Wir setzen folgende Dienstleister ein:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Anbieter</th>
+                <th>Anschrift</th>
+                <th>Drittland</th>
+                <th>Geeignete Garantie</th>
+                <th>Weitere Informationen</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sendinblue GmbH</td>
+                <td>Köpenicker Straße 126, 10179 Berlin</td>
+                <td>-</td>
+                <td>Standarddatenschutzklauseln</td>
+                <td>
+                  <Link blank href="https://de.sendinblue.com/dsgvo/">
+                    sendinblue.com/dsgvo
+                  </Link>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <h2 id="rights">Ihre Rechte</h2>
+          <h3>Recht auf Bestätigung</h3>
+          <p>
+            Sie haben das Recht, von uns eine Bestätigung darüber zu verlangen,
+            ob Sie betreffende personenbezogene Daten verarbeitet werden.
+          </p>
+          <h3>Auskunft (Art. 15 DSGVO)</h3>
+          <p>
+            Sie haben das Recht, jederzeit von uns unentgeltliche Auskunft über
+            die zu Ihrer Person gespeicherten personenbezogenen Daten sowie eine
+            Kopie dieser Daten nach Maßgabe der gesetzlichen Bestimmungen zu
+            erhalten.
+          </p>
+          <h3>Berichtigung (Art. 16 DSGVO)</h3>
+          <p>
+            Sie haben das Recht, die Berichtigung Sie betreffender unrichtiger
+            personenbezogener Daten zu verlangen. Ferner steht Ihnen das Recht
+            zu, unter Berücksichtigung der Zwecke der Verarbeitung, die
+            Vervollständigung unvollständiger personenbezogener Daten zu
+            verlangen.
+          </p>
+          <h3>Löschung (Art. 17 DSGVO)</h3>
+          <p>
+            Sie haben das Recht, von uns zu verlangen, dass die
+            personenbezogenen Daten, die sie betreffen, unverzüglich gelöscht
+            werden, wenn einer der gesetzlich vorgesehenen Gründe zutrifft und
+            soweit die Verarbeitung bzw. Speicherung nicht erforderlich ist.
+          </p>
+          <h3>Einschränkung der Verarbeitung (Art. 18 DSGVO)</h3>
+          <p>
+            Sie haben das Recht, von uns die Einschränkung der Verarbeitung zu
+            verlangen, wenn eine der gesetzlichen Voraussetzungen gegeben ist.
+          </p>
+          <h3>Datenübertragbarkeit (Art. 20 DSGVO)</h3>
+          <p>
+            Sie haben das Recht, die Sie betreffenden personenbezogenen Daten,
+            die Sie uns bereitgestellt haben, in einem strukturierten, gängigen
+            und maschinenlesbaren Format zu erhalten. Weiterhin haben Sie das
+            Recht, diese Daten einem anderen Verantwortlichen ohne Behinderung
+            durch uns, dem die personenbezogenen Daten bereitgestellt wurden, zu
+            übermitteln, sofern die Verarbeitung auf der Einwilligung gem. Art.
+            6 Abs. 1 S. 1 lit. a DSGVO oder Art. 9 Abs. 2 lit. a DSGVO oder auf
+            einem Vertrag gem. Art. 6 Abs. 1 S. 1 lit. b DSGVO beruht und die
+            Verarbeitung mithilfe automatisierter Verfahren erfolgt, sofern die
+            Verarbeitung nicht für die Wahrnehmung einer Aufgabe erforderlich
+            ist, die im öffentlichen Interesse liegt oder in Ausübung
+            öffentlicher Gewalt erfolgt, welche uns übertragen wurde.Zudem haben
+            Sie bei der Ausübung Ihres Rechts auf Datenübertragbarkeit gem. Art.
+            20 Abs. 1 DSGVO das Recht, zu erwirken, dass die personenbezogenen
+            Daten direkt von einem Verantwortlichen an einen anderen
+            Verantwortlichen übermittelt werden, soweit dies technisch machbar
+            ist und sofern hiervon nicht die Rechte und Freiheiten anderer
+            Personen beeinträchtigt werden.
+          </p>
+          <h3>Widerspruch (Art. 21 DSGVO)</h3>
+          <p>
+            <strong>
+              Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen
+              Situation ergeben, jederzeit gegen die Verarbeitung Sie
+              betreffender personenbezogener Daten, die aufgrund einer
+              Datenverarbeitung im öffentlichen Interesse gem. Art. 6 Abs. 1 S.
+              1 lit. e DSGVO oder auf Grundlage unseres berechtigten Interesses
+              gem. Art. 6 Abs. 1 S. 1 lit. f DSGVO erfolgt, Widerspruch
+              einzulegen
+            </strong>
+            . Legen Sie Widerspruch ein, werden wir Ihre personenbezogenen Daten
+            nicht mehr verarbeiten, es sei denn, wir können zwingende
+            berechtigte Gründe für die Verarbeitung nachweisen, die Ihre
+            Interessen, Rechte und Freiheiten überwiegen, oder die Verarbeitung
+            dient der Geltendmachung, Ausübung oder Verteidigung von
+            Rechtsansprüchen.
+          </p>
+          <h3>Widerruf einer datenschutzrechtlichen Einwilligung</h3>
+          <p>
+            Sie haben das Recht, Ihre Einwilligung zur Verarbeitung
+            personenbezogener Daten jederzeit mit Wirkung für die Zukunft zu
+            widerrufen.
+          </p>
+          <h3>Beschwerde bei einer Aufsichtsbehörde</h3>
+          <p>
+            Sie haben das Recht, sich bei einer für Datenschutz zuständigen
+            Aufsichtsbehörde über unsere Verarbeitung personenbezogener Daten zu
+            beschweren.
+          </p>
+          <h2 id="updates">
+            Aktualität und Änderungen der Datenschutzhinweise
+          </h2>
+          <p>
+            Diese Datenschutzhinweise sind aktuell gültig und haben den
+            folgenden Stand: Mai 2023.
+          </p>
+          <p>
+            Wenn wir unsere Website und unsere Angebote weiterentwickeln oder
+            sich gesetzliche oder behördliche Vorgaben ändern, kann es notwendig
+            sein, diese Datenschutzhinweise zu ändern. Die jeweils aktuellen
+            Datenschutzhinweise können Sie jederzeit hier abrufen.
+          </p>
         </Content>
       </Section>
     </>
