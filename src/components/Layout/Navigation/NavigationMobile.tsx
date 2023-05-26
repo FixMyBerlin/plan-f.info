@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import { graphql, useStaticQuery } from 'gatsby';
 import React, { Fragment, ReactNode } from 'react';
 import Logo from '~/components/Layout/assets/Logo.svg';
+import { SearchBar } from '~/components/SearchBar';
 import { wikiPath } from '~/components/utils';
 import { Link } from '../../core/links/Link';
 import { NavigationMobileDisclosure } from './NavigationMobileDisclosure';
@@ -76,7 +77,8 @@ export const NavigationMobile: React.FC<Props> = ({
             leaveTo="transform scale-95 opacity-0"
           >
             <Disclosure.Panel>
-              <div className="flex flex-col divide-y border bg-white px-4 py-8 font-bold">
+              <div className="flex flex-col divide-y border bg-white px-4 py-4 font-bold">
+                <SearchBar className="mb-4 w-full" />
                 {Object.keys(menuItems).map((key) => (
                   // eslint-disable-next-line react/jsx-no-useless-fragment
                   <Fragment key={key}>
