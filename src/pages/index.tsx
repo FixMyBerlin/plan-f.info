@@ -58,17 +58,16 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
     .map((measure) => {
       const example =
         measure.examples[Math.floor(Math.random() * measure.examples.length)];
-      if (example) {
-        return {
-          ...example,
-          path: [wikiPath, measure.topic.slug, measure.slug, example.slug].join(
-            '/'
-          ),
-        };
-      }
-      return null;
+      if (!example) return null;
+
+      return {
+        ...example,
+        path: [wikiPath, measure.topic.slug, measure.slug, example.slug].join(
+          '/'
+        ),
+      };
     })
-    .filter((e) => e);
+    .filter(Boolean);
 
   return (
     <>
