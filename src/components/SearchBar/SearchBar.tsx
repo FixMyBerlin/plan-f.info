@@ -7,6 +7,10 @@ import { getSearchResults } from './getSearchResults';
 import SearchIcon from './assets/SearchIcon.svg';
 import CancelIcon from './assets/CancelIcon.svg';
 
+type Props = {
+  className?: string;
+};
+
 type categoryMeta = {
   key: string;
   name: string;
@@ -18,7 +22,7 @@ const categoryMeta: categoryMeta[] = [
   { key: 'topic', name: 'HANDLUNGSFELDER' },
 ];
 
-export const SearchBar = () => {
+export const SearchBar: React.FC<Props> = ({ className }) => {
   const [searchResults, setSearchResults] = useState(undefined);
   const [resultHeader, setResultHeader] = useState<string>('');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -65,13 +69,14 @@ export const SearchBar = () => {
   return (
     <Combobox
       as="div"
+      className={clsx('w-80', className)}
       value={searchQuery}
-      onChange={(path: string) => navigate(path)}
+      onChange={(path: string) => navigate(`/${path}`)}
     >
-      <div className="relative mt-2 w-80">
+      <div className="relative mt-2 w-full">
         <Combobox.Input
           placeholder="Suche im Wissensspeicher"
-          className="h-10 w-full rounded-md border-0 bg-white py-1.5 pl-10 pr-12  text-gray-500 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-purple-600 sm:text-sm sm:leading-6"
+          className="h-10 w-full rounded-md border-0 bg-white py-1.5 pl-10 pr-8  text-gray-500 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-purple-600 sm:text-sm sm:leading-6"
           onChange={search}
         />
         <SearchIcon className="absolute left-4 top-3 h-4 w-4" />
