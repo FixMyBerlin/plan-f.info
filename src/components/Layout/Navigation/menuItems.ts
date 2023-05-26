@@ -10,13 +10,17 @@ export const menuItems = {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const menuItemsWithChildren = {
-  Artikel: {
-    'Alle Artikel': '/artikel',
-    'Wie werde ich eine Fahrradfreundliche Kommune?':
-      '/artikel/wie-werde-ich-eine-fahrradfreundliche-kommune',
-    'Warum ist Beteiligung wichtig?': '/artikel/warum-ist-beteiligung-wichtig',
-  },
+export const menuItemsWithChildren = {
+  Artikel: [
+    {
+      display: 'Wie werde ich eine Fahrradfreundliche Kommune?',
+      path: '/wie-werde-ich-eine-fahrradfreundliche-kommune',
+    },
+    {
+      display: 'Warum ist Beteiligung wichtig?',
+      path: '/warum-ist-beteiligung-wichtig',
+    },
+  ],
   Award: {
     'Plan F Award 2022': '/award/plan-f-award-2022',
   },
