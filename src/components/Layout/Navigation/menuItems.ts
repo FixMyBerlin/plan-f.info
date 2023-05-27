@@ -20,6 +20,11 @@ export const menuItemsWithChildren = {
       display: 'Warum ist Beteiligung wichtig?',
       path: '/warum-ist-beteiligung-wichtig',
     },
+    {
+      display:
+        'Welche Motive für die Nutzung bzw. Nicht-Nutzung des Fahrrads gibt es?',
+      path: '/welche-motive-fur-die-nutzung-bzw-nicht-nutzung-des-fahrrads-gibt-es',
+    },
   ],
   Award: {
     'Plan F Award 2022': '/award/plan-f-award-2022',
