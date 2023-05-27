@@ -25,6 +25,11 @@ export const menuItemsWithChildren = {
         'Welche Motive für die Nutzung bzw. Nicht-Nutzung des Fahrrads gibt es?',
       path: '/welche-motive-fur-die-nutzung-bzw-nicht-nutzung-des-fahrrads-gibt-es',
     },
+    {
+      display:
+        'Welches Budget sollte ich für die Förderung der Fahrradmobilität ansetzen?',
+      path: '/welches-budget-sollte-ich-fur-die-forderung-der-fahrradmobilitat-ansetzen',
+    },
   ],
   Award: {
     'Plan F Award 2022': '/award/plan-f-award-2022',
