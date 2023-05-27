@@ -30,6 +30,11 @@ export const menuItemsWithChildren = {
         'Welches Budget sollte ich für die Förderung der Fahrradmobilität ansetzen?',
       path: '/welches-budget-sollte-ich-fur-die-forderung-der-fahrradmobilitat-ansetzen',
     },
+    {
+      display:
+        'Warum soll ich den Radverkehr in meiner Kommune fördern? Was sind die positiven Effekte?',
+      path: '/warum-soll-ich-den-radverkehr-in-meiner-kommune-fordern-was-sind-die-positiven-effekte',
+    },
   ],
   Award: {
     'Plan F Award 2022': '/award/plan-f-award-2022',
