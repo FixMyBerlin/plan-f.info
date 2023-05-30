@@ -4,7 +4,7 @@ export const menuItems = {
   Wissensspeicher: `/${wikiPath}/`,
   'Weitere Angebote': '/weitere-angebote/',
   Artikel: '/artikel/',
-  About: '/about/',
+  Über: '/ueber/',
   Award: '/award/plan-f-award-2022/',
 };
 
