@@ -1,5 +1,6 @@
 import { Content, HelmetSeo, Hero } from '~/components/Layout';
 import { Section } from '~/components/Layout/Section';
+import { articleProseClasses } from '~/components/core/articleProseClasses';
 import { MailLink, TelLink } from '~/components/core/links';
 
 const ImpressumPage = () => {
@@ -8,7 +9,7 @@ const ImpressumPage = () => {
     <>
       <HelmetSeo noindex title={title} />
       <Hero bgColor="bg-green-500" title={title} />
-      <Section className="prose max-w-none prose-h2:mb-3 prose-h2:mt-6 prose-h2:font-mono prose-h2:text-xl prose-h2:font-normal prose-h2:text-black prose-h2:md:mb-6 prose-h2:md:mt-14 prose-h2:md:text-3xl">
+      <Section className={articleProseClasses}>
         <Content>
           <h2>Angaben gemäß § 5 TMG</h2>
           <p>Fair Spaces GmbH</p>
