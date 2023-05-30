@@ -1,17 +1,37 @@
 import clsx from 'clsx';
-import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
+import React, { Fragment } from 'react';
 import Logo from '~/components/Layout/assets/Logo.svg';
 import { SearchBar } from '~/components/SearchBar';
 import {
   menuLinkActiveStyles,
   menuLinkStylesDefault,
 } from '~/components/core/links';
+import { wikiPath } from '~/components/utils';
 import { Link } from '../../core/links/Link';
+import { NavigationDesktopDropdown } from './NavigationDesktopDropdown';
 import { menuItems } from './menuItems';
 
 type Props = { path: string; className?: string };
 
 export const NavigationDesktop: React.FC<Props> = ({ path, className }) => {
+  const basePath = `/${wikiPath}`;
+  const {
+    nestedMeasures: { nodes },
+  }: Queries.TopicMeasureTreeQuery = useStaticQuery(graphql`
+    query TopicMeasureTree {
+      nestedMeasures: allStrapiTopic {
+        nodes {
+          name
+          slug
+          measures {
+            name
+            slug
+          }
+        }
+      }
+    }
+  `);
   return (
     <nav
       className={clsx(
@@ -24,19 +44,42 @@ export const NavigationDesktop: React.FC<Props> = ({ path, className }) => {
       </Link>
       <ul className={clsx('flex flex-row items-center gap-4')}>
         {Object.keys(menuItems).map((key) => (
-          <li key={key}>
-            <Link
-              href={menuItems[key]}
-              className={clsx(
-                '!text-sm',
-                path.startsWith(menuItems[key])
-                  ? menuLinkActiveStyles
-                  : menuLinkStylesDefault
-              )}
-            >
-              {key}
-            </Link>
-          </li>
+          // eslint-disable-next-line react/jsx-no-useless-fragment, react/jsx-fragments
+          <Fragment>
+            {key === 'Wissensspeicher' ? (
+              <NavigationDesktopDropdown
+                // Inner Disclosure Button
+                button={
+                  <p
+                    className={clsx(
+                      'whitespace-nowrap !text-sm',
+                      path.startsWith(basePath)
+                        ? menuLinkActiveStyles
+                        : menuLinkStylesDefault
+                    )}
+                  >
+                    {key}
+                  </p>
+                }
+                menuItems={nodes}
+                basePath={menuItems[key]}
+              />
+            ) : (
+              <li key={key}>
+                <Link
+                  href={menuItems[key]}
+                  className={clsx(
+                    '!text-sm',
+                    path.startsWith(menuItems[key])
+                      ? menuLinkActiveStyles
+                      : menuLinkStylesDefault
+                  )}
+                >
+                  {key}
+                </Link>
+              </li>
+            )}
+          </Fragment>
         ))}
         <SearchBar className="!w-60" />
       </ul>
