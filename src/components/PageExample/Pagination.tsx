@@ -1,7 +1,6 @@
 import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import React from 'react';
-import { P } from '../Text';
 import { Link } from '../core/links/Link';
 
 export type PaginationProps = {
@@ -22,10 +21,10 @@ export const Pagination: React.FC<PaginationProps> = ({
     <div
       className={clsx(
         className,
-        'flex w-full items-center justify-between bg-white/50 p-5 text-sm lg:px-10'
+        'flex w-full flex-col items-center justify-between gap-2 bg-white/50 p-5 text-sm sm:flex-row lg:px-10'
       )}
     >
-      <p className="hidden md:block">Praxisbeispiele blättern</p>
+      <p>Praxisbeispiele blättern</p>
       <div className="flex w-full items-center justify-between gap-3 md:w-auto">
         <Link
           button
