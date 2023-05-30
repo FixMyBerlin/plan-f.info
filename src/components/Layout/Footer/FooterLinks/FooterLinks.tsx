@@ -13,7 +13,7 @@ type Props = {
 
 export const FooterLinks: React.FC<Props> = ({ className }) => {
   return (
-    <ul className={clsx('flex justify-start gap-4  sm:justify-end', className)}>
+    <ul className={clsx('flex justify-start gap-4 sm:justify-end', className)}>
       {legal.map((item) => (
         <li key={item.name}>
           <Link href={item.to} className="text-gray-400 !decoration-gray-400">
