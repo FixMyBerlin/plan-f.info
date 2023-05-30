@@ -22,15 +22,18 @@ const IndexPage = () => {
       <Section>
         <Content>
           <div className="flex flex-col gap-10">
-            {Object.keys(menuItemsWithChildren.Artikel).map((key, index) => (
-              <ArticleTeaserCard
-                key={key}
-                title={key}
-                link={menuItemsWithChildren[key]}
-              >
-                {articleTeaserTexts[index]}
-              </ArticleTeaserCard>
-            ))}
+            {Object.keys(menuItemsWithChildren.Artikel).map((key, index) => {
+              if (key === 'Alle Artikel') return null;
+              return (
+                <ArticleTeaserCard
+                  key={key}
+                  title={key}
+                  link={`/${menuItemsWithChildren.Artikel[key]}`}
+                >
+                  {articleTeaserTexts[index]}
+                </ArticleTeaserCard>
+              );
+            })}
           </div>
         </Content>
       </Section>

@@ -5,6 +5,10 @@ import { graphql, useStaticQuery } from 'gatsby';
 import React, { Fragment, ReactNode } from 'react';
 import Logo from '~/components/Layout/assets/Logo.svg';
 import { SearchBar } from '~/components/SearchBar';
+import {
+  menuLinkActiveStyles,
+  menuLinkStylesDefault,
+} from '~/components/core/links';
 import { wikiPath } from '~/components/utils';
 import { Link } from '../../core/links/Link';
 import { NavigationMobileDisclosure } from './NavigationMobileDisclosure';
@@ -90,10 +94,10 @@ export const NavigationMobile: React.FC<Props> = ({
                           <p
                             className={clsx(
                               'whitespace-nowrap',
-                              '!text-sm  !no-underline',
+                              '!text-sm',
                               path.startsWith(basePath)
-                                ? 'text-purple-500'
-                                : 'text-black'
+                                ? menuLinkActiveStyles
+                                : menuLinkStylesDefault
                             )}
                           >
                             {key}
@@ -105,10 +109,10 @@ export const NavigationMobile: React.FC<Props> = ({
                         <Link
                           href={menuItems[key]}
                           className={clsx(
-                            '!text-sm  !no-underline',
+                            '!text-sm',
                             menuItems[key] === path
-                              ? 'text-purple-500'
-                              : 'text-gray-500'
+                              ? menuLinkActiveStyles
+                              : menuLinkStylesDefault
                           )}
                         >
                           {key}
@@ -119,10 +123,10 @@ export const NavigationMobile: React.FC<Props> = ({
                             <Link
                               href={`${menuItems[key]}${topic.slug}`}
                               className={clsx(
-                                '!text-sm !no-underline',
+                                '!text-sm',
                                 path === `${menuItems[key]}${topic.slug}/`
-                                  ? 'text-purple-500'
-                                  : 'text-gray-500'
+                                  ? menuLinkActiveStyles
+                                  : menuLinkStylesDefault
                               )}
                             >
                               {topic.name}
@@ -141,10 +145,10 @@ export const NavigationMobile: React.FC<Props> = ({
                               <p
                                 className={clsx(
                                   'whitespace-nowrap',
-                                  '!text-sm  !no-underline',
+                                  '!text-sm',
                                   path.startsWith(`${menuItems[key]}/`)
-                                    ? 'text-purple-500'
-                                    : 'text-black'
+                                    ? menuLinkActiveStyles
+                                    : menuLinkStylesDefault
                                 )}
                               >
                                 {key}
@@ -162,11 +166,11 @@ export const NavigationMobile: React.FC<Props> = ({
                                   <Link
                                     href={`${menuItems[key]}${menuItemsWithChildren[key][childKey]}`}
                                     className={clsx(
-                                      '!text-sm !no-underline',
+                                      '!text-sm',
                                       path ===
                                         `${menuItems[key]}${menuItemsWithChildren[key][childKey]}`
-                                        ? 'text-purple-500'
-                                        : 'text-gray-500'
+                                        ? menuLinkActiveStyles
+                                        : menuLinkStylesDefault
                                     )}
                                   >
                                     {childKey}
@@ -179,10 +183,10 @@ export const NavigationMobile: React.FC<Props> = ({
                           <Link
                             href={menuItems[key]}
                             className={clsx(
-                              'py-3 !text-sm !no-underline',
+                              'py-3 !text-sm',
                               `${menuItems[key]}` === path
-                                ? 'text-purple-500'
-                                : 'text-black'
+                                ? menuLinkActiveStyles
+                                : menuLinkStylesDefault
                             )}
                           >
                             {key}

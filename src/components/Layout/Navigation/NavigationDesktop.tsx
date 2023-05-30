@@ -2,6 +2,10 @@ import clsx from 'clsx';
 import React from 'react';
 import Logo from '~/components/Layout/assets/Logo.svg';
 import { SearchBar } from '~/components/SearchBar';
+import {
+  menuLinkActiveStyles,
+  menuLinkStylesDefault,
+} from '~/components/core/links';
 import { Link } from '../../core/links/Link';
 import { menuItems } from './menuItems';
 
@@ -25,9 +29,9 @@ export const NavigationDesktop: React.FC<Props> = ({ path, className }) => {
               href={menuItems[key]}
               className={clsx(
                 '!text-sm',
-                `${menuItems[key]}/` === path
-                  ? 'font-bold text-black'
-                  : 'text-gray-600 decoration-gray-600'
+                path.startsWith(menuItems[key])
+                  ? menuLinkActiveStyles
+                  : menuLinkStylesDefault
               )}
             >
               {key}

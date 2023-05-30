@@ -3,6 +3,10 @@ import clsx from 'clsx';
 import { graphql, useStaticQuery } from 'gatsby';
 import React, { useState } from 'react';
 import Logo from '~/components/Layout/assets/Logo.svg';
+import {
+  menuLinkActiveStyles,
+  menuLinkStylesDefault,
+} from '~/components/core/links';
 import { wikiPath } from '~/components/utils';
 import { Link } from '../../core/links/Link';
 
@@ -51,8 +55,10 @@ export const SideNavigation: React.FC<Props> = ({ path }) => {
                   <Link
                     href={`${basePath}/${topic.slug}`}
                     className={clsx(
-                      '!text-sm !no-underline',
-                      path === `${basePath}/${topic.slug}/` && 'font-bold'
+                      '!text-sm font-bold',
+                      path === `${basePath}/${topic.slug}/`
+                        ? menuLinkActiveStyles
+                        : menuLinkStylesDefault
                     )}
                   >
                     {topic.name}
@@ -64,10 +70,12 @@ export const SideNavigation: React.FC<Props> = ({ path }) => {
                           <Link
                             href={`${basePath}/${topic.slug}/${measure.slug}`}
                             className={clsx(
-                              'block pl-3.5 !text-sm text-gray-600 !no-underline',
+                              'block pl-3.5 !text-sm',
                               path.startsWith(
                                 `${basePath}/${topic.slug}/${measure.slug}/`
-                              ) && 'font-bold'
+                              )
+                                ? menuLinkActiveStyles
+                                : menuLinkStylesDefault
                             )}
                           >
                             {measure.name}
