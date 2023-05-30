@@ -21,8 +21,8 @@ export const MailLink: React.FC<Props> = ({
   children,
   ...props
 }) => {
-  const subjectPart = `subject=${encodeURIComponent(subject)}`;
-  const bodyPart = `body=${encodeURIComponent(body)}`;
+  const subjectPart = `subject=${encodeURIComponent(subject || '')}`;
+  const bodyPart = `body=${encodeURIComponent(body || '')}`;
   const fullEmailString = `mailto:${
     mailto || children
   }?${subjectPart}&${bodyPart}`;
