@@ -5,27 +5,27 @@ import { P } from '../Text';
 import { Link } from '../core/links/Link';
 
 export type PaginationProps = {
-  sectionPosition: 'top' | 'bottom';
   pos: number;
   prevSlug: string;
   nextSlug: string;
   total: number;
+  className?: string;
 };
 export const Pagination: React.FC<PaginationProps> = ({
   pos,
   prevSlug,
   nextSlug,
-  sectionPosition,
   total,
+  className,
 }) => {
   return (
     <div
       className={clsx(
-        sectionPosition === 'top' ? 'rounded-t-3xl' : 'rounded-b-3xl',
-        'flex w-full items-center justify-between bg-gray-100 p-5 text-sm lg:p-10'
+        className,
+        'flex w-full items-center justify-between bg-white/50 p-5 text-sm lg:px-10'
       )}
     >
-      <P className="hidden md:block">Blättern</P>
+      <p className="hidden md:block">Praxisbeispiele blättern</p>
       <div className="flex w-full items-center justify-between gap-3 md:w-auto">
         <Link
           button
@@ -35,7 +35,7 @@ export const Pagination: React.FC<PaginationProps> = ({
           <ArrowLeftIcon className="h-4" />
           zurück
         </Link>
-        {total} / {pos + 1}
+        {pos + 1}/{total}
         <Link
           button
           className="flex items-center gap-2 text-sm"

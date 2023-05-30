@@ -7,10 +7,10 @@ import { ImageWithCopyright } from '~/components/Layout/ImageWithCopyright';
 import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
 import { Section } from '~/components/Layout/Section';
 import { CardText } from '~/components/PageExample/CardText';
-import { SectionWithPagination } from '~/components/PageExample/SectionWithPagination';
+import { Pagination } from '~/components/PageExample/Pagination';
 import { H2, H3, P } from '~/components/Text';
 import { Prose } from '~/components/core/Prose';
-import { wikiColors, sortByPosition, wikiPath } from '~/components/utils';
+import { sortByPosition, wikiColors, wikiPath } from '~/components/utils';
 
 const steckbiref = {
   subcategory: 'Maßnahmentyp',
@@ -47,7 +47,6 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
       <Hero
         className="!mb-0 rounded-b-none"
         bgColor={wikiColors.example}
-        title={example.title}
         breadcrumbs={
           <Breadcrumbs
             names={[
@@ -60,17 +59,16 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
         }
       />
 
-      <Section className="mb-12 bg-lime-300 pt-6">
-        <SectionWithPagination
-          className="bg-white"
-          pagination={{
-            pos,
-            prevSlug,
-            nextSlug,
-            total: example.measure.examples.length,
-          }}
-        >
-          <H2>{example.title}</H2>
+      <Section className="mb-12 rounded-b-none bg-lime-300 pt-0 md:pt-0">
+        <Pagination
+          pos={pos}
+          prevSlug={prevSlug}
+          nextSlug={nextSlug}
+          total={example.measure.examples.length}
+          className="mb-5"
+        />
+        <Section className="rounded-3xl bg-white">
+          <H2 className="!md:mt-0 !mt-0">{example.title}</H2>
           <Prose markdownHTML={example.shortDescription} />
           {example.image && (
             <ImageWithCopyright
@@ -224,7 +222,14 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
               />
             </div>
           )}
-        </SectionWithPagination>
+        </Section>
+        <Pagination
+          pos={pos}
+          prevSlug={prevSlug}
+          nextSlug={nextSlug}
+          total={example.measure.examples.length}
+          className="mt-5"
+        />
       </Section>
 
       {communityEntries && (
