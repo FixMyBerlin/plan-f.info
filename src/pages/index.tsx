@@ -54,20 +54,18 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
   const title = 'Impulse für die fahrradfreundliche Kommune';
   const examples = [...measures.nodes]
     .sort(() => 0.5 - Math.random())
+    .filter((measure) => measure.examples.length > 0)
     .slice(0, 3)
     .map((measure) => {
       const example =
         measure.examples[Math.floor(Math.random() * measure.examples.length)];
-      if (!example) return null;
-
       return {
         ...example,
         path: [wikiPath, measure.topic.slug, measure.slug, example.slug].join(
           '/'
         ),
       };
-    })
-    .filter(Boolean);
+    });
 
   return (
     <>
