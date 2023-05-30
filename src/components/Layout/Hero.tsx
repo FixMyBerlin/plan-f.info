@@ -22,7 +22,7 @@ export const Hero: React.FC<Props> = ({
   return (
     <section
       className={clsx(
-        'relative mb-16 flex flex-col justify-center gap-4 rounded-b-3xl px-5 pb-8 pt-36 md:px-10 md:pb-16',
+        'relative mb-4 flex flex-col justify-center gap-4 rounded-b-3xl px-5 pb-8 pt-36 md:mb-6 md:px-10 md:pb-16',
         className,
         bgColor
       )}

@@ -63,10 +63,7 @@ const motivationArticle = () => {
             Verkehrssysteme zu erhalten, kann sich hier informieren:
           </P>
           <H3>BMDV (2023): Förderung und Finanzierung des Radverkehrs: </H3>
-          <LinkButtonWithArrow
-            button
-            href="https://bmdv.bund.de/SharedDocs/DE/Artikel/StV/Radverkehr/finanzielle-foerderung-des-radverkehrs.html"
-          >
+          <LinkButtonWithArrow href="https://bmdv.bund.de/SharedDocs/DE/Artikel/StV/Radverkehr/finanzielle-foerderung-des-radverkehrs.html">
             BMDV (2023)
           </LinkButtonWithArrow>
           <H3>
@@ -74,10 +71,7 @@ const motivationArticle = () => {
             Verkehrssysteme (CostTool):
           </H3>
 
-          <LinkButtonWithArrow
-            button
-            href="https://www.uni-kassel.de/fb14bau/institute/institut-fuer-verkehrswesen-ifv/verkehrsplanung-und-verkehrssysteme/forschung/it-gestuetzte-tools/costtool"
-          >
+          <LinkButtonWithArrow href="https://www.uni-kassel.de/fb14bau/institute/institut-fuer-verkehrswesen-ifv/verkehrsplanung-und-verkehrssysteme/forschung/it-gestuetzte-tools/costtool">
             Universität Kassel (2018)
           </LinkButtonWithArrow>
         </Content>

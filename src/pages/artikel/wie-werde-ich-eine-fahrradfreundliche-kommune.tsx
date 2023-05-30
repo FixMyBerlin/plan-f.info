@@ -185,11 +185,11 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
           {topics &&
             topics.nodes.map((topic) => (
               <CardImageAndTextResponsive
+                title={topic.name}
                 key={topic.slug}
                 link={topic.slug}
                 image={topic.image && topic.image.url}
               >
-                <H3>{topic.name}</H3>
                 {topic.description?.data?.childMarkdownRemark.html && (
                   <Prose
                     className="line-clamp-4"

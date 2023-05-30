@@ -2,7 +2,7 @@ import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { CardImageAndTextResponsiveImgFull } from './Layout/CardImageAndTextResponsiveImgFull';
 import { Section } from './Layout/Section';
-import { H2, H3, P } from './Text';
+import { H2, P } from './Text';
 import { Prose } from './core/Prose';
 import { MailLink } from './core/links';
 
@@ -57,10 +57,10 @@ Hinweis: Mit dem Zusenden eines Bildes bestätigen Sie, dieses frei von Rechten 
         {communityEntries.map((entry) => (
           <CardImageAndTextResponsiveImgFull
             key={entry.title}
+            title={entry.title}
             link={entry.website?.url && entry.website.url}
             image={entry.image && getImage(entry.image.image.localFile as any)}
           >
-            <H3>{entry.title}</H3>
             <P className="uppercase">
               <strong>Stadt: </strong>
               {entry.commune}

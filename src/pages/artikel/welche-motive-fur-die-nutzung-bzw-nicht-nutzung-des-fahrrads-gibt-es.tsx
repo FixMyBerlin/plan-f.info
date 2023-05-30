@@ -107,20 +107,27 @@ const motivationArticle = () => {
             entgegenzuwirken.
           </P>
           <H3>Motive für die Nutzung des Fahrrads können sein:</H3>
-          {motivationCardTexts.map(({ cardTitle, content }) => (
-            <CardText title={cardTitle}>
-              <P>{content}</P>
-            </CardText>
-          ))}
+
+          <div className="flex flex-col gap-6">
+            {motivationCardTexts.map(({ cardTitle, content }) => (
+              <CardText title={cardTitle}>
+                <P>{content}</P>
+              </CardText>
+            ))}
+          </div>
+
           <H3>
             Motive, weshalb Personen das Fahrrad nicht als Verkehrsmittel im
             Alltag nutzen, können sein:
           </H3>
-          {negativeMotivationCardTexts.map(({ cardTitle, content }) => (
-            <CardText title={cardTitle}>
-              <P>{content}</P>
-            </CardText>
-          ))}
+
+          <div className="flex flex-col gap-6">
+            {negativeMotivationCardTexts.map(({ cardTitle, content }) => (
+              <CardText title={cardTitle}>
+                <P>{content}</P>
+              </CardText>
+            ))}
+          </div>
           <P>
             Die Radverkehrsförderung an die Motive der Radnutzung bzw.
             Nicht-Nutzung anzupassen, ist zielführend. Kommunen sollen

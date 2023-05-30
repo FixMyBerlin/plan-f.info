@@ -7,8 +7,8 @@ import { CardWrapperTopicPage } from '~/components/Layout/CardWrapperTopicPage';
 import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
 import { PageHeader } from '~/components/Layout/PageHeader';
 import { Section } from '~/components/Layout/Section';
-import { H2, H3, P } from '~/components/Text';
-import { wikiColors, sortByPosition } from '~/components/utils';
+import { H2, P } from '~/components/Text';
+import { sortByPosition, wikiColors } from '~/components/utils';
 
 const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
   data: { topic },
@@ -50,10 +50,10 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
         <CardWrapperTopicPage className="mt-12">
           {measures.map((measure) => (
             <CardImageAndTextResponsive
+              title={measure.name}
               key={measure.slug}
               link={measure.slug || '/'} // This is only quick fix - slug should be Pflichtfpeld
             >
-              <H3>{measure.name}</H3>
               <Prose
                 className="line-clamp-4"
                 markdownHTML={measure.description.data.childMarkdownRemark.html}

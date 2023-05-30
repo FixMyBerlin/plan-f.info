@@ -40,12 +40,13 @@ const ParticipationArticle = () => {
       <Hero bgColor="bg-green-500" title={title} />
       <Section>
         <Content>
-          {participationCardTexts.map(({ cardTitle, content }) => (
-            <CardText title={cardTitle}>
-              <P>{content}</P>
-            </CardText>
-          ))}
-
+          <div className="flex flex-col gap-6">
+            {participationCardTexts.map(({ cardTitle, content }) => (
+              <CardText title={cardTitle}>
+                <P>{content}</P>
+              </CardText>
+            ))}
+          </div>
           <P>
             Zusammenfassend kann die Beteiligung von Menschen in der
             Radverkehrsförderung dazu beitragen, passgenaue Maßnahmen zu

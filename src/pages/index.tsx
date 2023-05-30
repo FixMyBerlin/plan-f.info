@@ -115,13 +115,13 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
             examples.map((example) => (
               <CardImageAndTextVertical
                 key={example.path}
+                title={example.title}
                 link={example.path}
                 image={
                   example.image &&
                   getImage(example.image.image.localFile as any)
                 }
               >
-                <H3>{example.title}</H3>
                 <div className="line-clamp-4">
                   <P>{example.shortDescription}</P>
                 </div>

@@ -3,10 +3,10 @@ import { wikiPath } from '~/components/utils';
 export const menuItems = {
   Wissensspeicher: `/${wikiPath}/`,
   'Plan F Check': '/plan-f-check/',
-  About: '/about/',
-  Artikel: '/artikel/',
-  Award: '/award/plan-f-award-2022/',
   'Weitere Angebote': '/weitere-angebote/',
+  Artikel: '/artikel/',
+  About: '/about/',
+  Award: '/award/plan-f-award-2022/',
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

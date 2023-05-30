@@ -56,11 +56,13 @@ const SupportArticle = () => {
             das Fahrrad nutzen. Ähnliche Faktoren gelten auch für Kommunen.
             Diese sind:
           </P>
-          {supportCardTexts.map(({ cardTitle, content }) => (
-            <CardText title={cardTitle}>
-              <P>{content}</P>
-            </CardText>
-          ))}
+          <div className="flex flex-col gap-6">
+            {supportCardTexts.map(({ cardTitle, content }) => (
+              <CardText title={cardTitle}>
+                <P>{content}</P>
+              </CardText>
+            ))}
+          </div>
           <P>
             Eine gut ausgebaute Radverkehrsinfrastruktur kann also dazu
             beitragen, dass eine Stadt oder Gemeinde umweltfreundlicher,

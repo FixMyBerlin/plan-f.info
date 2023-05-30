@@ -1,11 +1,10 @@
 import { PageProps, graphql } from 'gatsby';
 import React from 'react';
-import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
-import { Article } from '~/components/Layout/Article';
+import { Breadcrumbs, Content, HelmetSeo, Hero } from '~/components/Layout';
 import { CardImageAndTextResponsive } from '~/components/Layout/CardImageAndTextResponsive';
 import { CardWrapperWissensspeicherPage } from '~/components/Layout/CardWrapperWissensspeicherPage';
 import { Section } from '~/components/Layout/Section';
-import { H2, H3, P } from '~/components/Text';
+import { H2, P } from '~/components/Text';
 import { Prose } from '~/components/core/Prose';
 import { wikiColors } from '~/components/utils';
 
@@ -42,8 +41,8 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
         bgColor={wikiColors.root}
         breadcrumbs={<Breadcrumbs names={['Wissensspeicher']} />}
       />
-      <Section className="mb-12">
-        <Article>
+      <Section>
+        <Content>
           <P>
             Kommunikation und Öffentlichkeitsarbeit sind ein zentrales
             Handlungsfeld der Radverkehrsförderung, welches insbesondere
@@ -65,7 +64,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
             beitragen, den Radverkehr zu fördern. Wichtige Leitfäden und
             Literaturtipps unterstützen Sie in der Umsetzung.
           </P>
-        </Article>
+        </Content>
       </Section>
       <Section className="bg-purple-300">
         <H2>Handlungsfelder</H2>
@@ -77,11 +76,11 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
           {topics &&
             topics.nodes.map((topic) => (
               <CardImageAndTextResponsive
+                title={topic.name}
                 key={topic.slug}
                 link={topic.slug}
                 image={topic.image && topic.image.url}
               >
-                <H3>{topic.name}</H3>
                 {topic.description?.data?.childMarkdownRemark.html && (
                   <Prose
                     className="line-clamp-4"
