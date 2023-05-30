@@ -44,6 +44,14 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-matomo',
+      options: {
+        siteId: '10',
+        matomoUrl: 'https://s.fixmycity.de',
+        siteUrl: 'https://plan-f.info',
+      },
+    },
+    {
       // Docs https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -61,9 +69,7 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        // in ENV verschieben, da pro Dev unterschiedlich
         apiURL: process.env.GATSBY_BACKEND_URL,
-        // in ENV verschieben, da pro Dev unterschiedlich und geheim seien sollte
         accessToken: process.env.STRAPI_TOKEN,
         // Hier die Content types angeben, die wir in Gatsby verfügbar haben wollen.
         // collection = array, single = ein object

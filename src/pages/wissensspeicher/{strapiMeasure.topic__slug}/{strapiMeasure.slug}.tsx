@@ -8,7 +8,7 @@ import { CardWrapperMeasurePage } from '~/components/Layout/CardWrapperMeasurePa
 import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
 import { PageHeader } from '~/components/Layout/PageHeader';
 import { Section } from '~/components/Layout/Section';
-import { H2, H3, P } from '~/components/Text';
+import { H2, P } from '~/components/Text';
 import { sortByPosition, wikiColors } from '~/components/utils';
 
 const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
@@ -59,13 +59,13 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
         <CardWrapperMeasurePage className="mt-12">
           {examples.map((example) => (
             <CardImageAndTextVertical
+              title={example.slug}
               key={example.slug}
               link={example.slug}
               image={
                 example.image && getImage(example.image.image.localFile as any)
               }
             >
-              <H3>{example.title}</H3>
               <div className="line-clamp-4">
                 <P>{example.shortDescription}</P>
               </div>

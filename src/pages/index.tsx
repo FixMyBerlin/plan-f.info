@@ -58,20 +58,23 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
     .map((measure) => {
       const example =
         measure.examples[Math.floor(Math.random() * measure.examples.length)];
+      if (!example) return null;
+
       return {
         ...example,
         path: [wikiPath, measure.topic.slug, measure.slug, example.slug].join(
           '/'
         ),
       };
-    });
+    })
+    .filter(Boolean);
 
   return (
     <>
       <HelmetSeo title={title} />
       <Section className="relative flex flex-col items-start justify-between gap-4 !bg-green-500 px-5 !pt-32 pb-8 md:flex-row-reverse md:pb-16 md:pl-8 lg:px-10">
         <div className="flex w-full justify-end">
-          <LinkButtonWithArrow button="black" href="/">
+          <LinkButtonWithArrow button="black" href="/about">
             Was ist Plan F
           </LinkButtonWithArrow>
         </div>
@@ -108,20 +111,22 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
           umgesetzt haben.
         </P>
         <CardWrapperMeasurePage className="mt-12">
-          {examples.map((example) => (
-            <CardImageAndTextVertical
-              key={example.path}
-              link={example.path}
-              image={
-                example.image && getImage(example.image.image.localFile as any)
-              }
-            >
-              <H3>{example.title}</H3>
-              <div className="line-clamp-4">
-                <P>{example.shortDescription}</P>
-              </div>
-            </CardImageAndTextVertical>
-          ))}
+          {examples?.length &&
+            examples.map((example) => (
+              <CardImageAndTextVertical
+                key={example.path}
+                title={example.title}
+                link={example.path}
+                image={
+                  example.image &&
+                  getImage(example.image.image.localFile as any)
+                }
+              >
+                <div className="line-clamp-4">
+                  <P>{example.shortDescription}</P>
+                </div>
+              </CardImageAndTextVertical>
+            ))}
         </CardWrapperMeasurePage>
       </Section>
       <Section>
@@ -135,7 +140,11 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
             gekürt und auf der Fahrradkommunalkonferenz 2022 in Aachen geehrt.
             Mehr zu dem Award hier:
           </P>
-          <LinkButtonWithArrow className="mt-8" truncate={false} href="/award">
+          <LinkButtonWithArrow
+            className="mt-8"
+            truncate={false}
+            href="/award/plan-f-award-2022/"
+          >
             Zur Plan F Award Seite
           </LinkButtonWithArrow>
           <P className="mt-20 md:mt-20">

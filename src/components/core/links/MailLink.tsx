@@ -6,6 +6,7 @@ type Props = {
   className?: string;
   mailto?: string;
   subject?: string;
+  body?: string;
   /** @desc Style Link as Button */
   button?: LinkProps['button'];
   children: React.ReactNode;
@@ -15,18 +16,20 @@ export const MailLink: React.FC<Props> = ({
   className,
   mailto,
   subject,
+  body,
   button,
   children,
   ...props
 }) => {
-  const url = new URL(`mailto:${mailto || children}`);
-  if (subject) {
-    url.searchParams.append('subject', subject);
-  }
+  const subjectPart = `subject=${encodeURIComponent(subject || '')}`;
+  const bodyPart = `body=${encodeURIComponent(body || '')}`;
+  const fullEmailString = `mailto:${
+    mailto || children
+  }?${subjectPart}&${bodyPart}`;
 
   return (
     <a
-      href={url.href}
+      href={fullEmailString}
       className={selectLinkStyle(button, className)}
       {...props}
     >
