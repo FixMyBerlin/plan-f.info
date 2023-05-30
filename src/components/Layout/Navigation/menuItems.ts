@@ -35,6 +35,11 @@ export const menuItemsWithChildren = {
         'Warum soll ich den Radverkehr in meiner Kommune fördern? Was sind die positiven Effekte?',
       path: '/warum-soll-ich-den-radverkehr-in-meiner-kommune-fordern-was-sind-die-positiven-effekte',
     },
+    {
+      display:
+        'Stellen und Organisationen für weitere Informationen zur Radverkehrsförderung, Fahrradmobilität und Fortbildung',
+      path: '/stellen-und-organisationen-fur-weitere-informationen-zur-radverkehrsforderung-fahrradmobilitat-und-fortbildung',
+    },
   ],
   Award: {
     'Plan F Award 2022': '/award/plan-f-award-2022',
