@@ -17,7 +17,7 @@ export const CardText: React.FC<Props> = ({
 }) => {
   return (
     <div className={clsx(className, 'rounded-b-3xl bg-gray-50')}>
-      <H3 className="mb-0 mt-0 bg-lime-200 p-4 md:mb-0 md:mt-0">{title}</H3>
+      <H3 className="!md:mb-0 !md:mt-0 !mb-0 !mt-0 bg-lime-200 p-4">{title}</H3>
       <div className="p-4">
         {markdownHTML && <Prose markdownHTML={markdownHTML} />}
         {children && children}

@@ -45,7 +45,7 @@ export const CardImageAndTextResponsiveImgFull: React.FC<Props> = ({
         image={image}
       />
       <div className="p-6 sm:pl-0">
-        <H3 className="mb-0 mt-0 md:mb-0 md:mt-0">{title}</H3>
+        <H3 className="!md:mb-0 !md:mt-0 !mb-0 !mt-0">{title}</H3>
         {children}
       </div>
     </Link>
