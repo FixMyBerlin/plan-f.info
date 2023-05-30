@@ -5,7 +5,7 @@ const PlanFCheckPage = () => {
   const title = 'Plan F Check';
   return (
     <>
-      <HelmetSeo noindex title={title} />
+      <HelmetSeo title={title} />
       <Hero bgColor="bg-green-500" title={title} />
       <Section>
         <Content>d</Content>

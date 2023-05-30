@@ -9,7 +9,7 @@ const motivationArticle = () => {
 
   return (
     <>
-      <HelmetSeo noindex title={title} />
+      <HelmetSeo title={title} />
       <Hero bgColor="bg-green-500" title={title} />
       <Section>
         <Content>
