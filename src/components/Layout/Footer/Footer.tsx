@@ -31,7 +31,7 @@ export const Footer: React.FC = () => {
         <div className="flex flex-col justify-between gap-8 border-t border-gray-400 pt-8 text-sm sm:flex-row">
           <div className="flex flex-col justify-between gap-8">
             <Link href="/">
-              <LogoNegative height={48} width={127} />
+              <LogoNegative height={35} width={100} />
             </Link>
             <SocialMediaLinks />
           </div>
