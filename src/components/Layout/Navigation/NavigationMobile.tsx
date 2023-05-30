@@ -8,7 +8,7 @@ import { SearchBar } from '~/components/SearchBar';
 import { wikiPath } from '~/components/utils';
 import { Link } from '../../core/links/Link';
 import { NavigationMobileDisclosure } from './NavigationMobileDisclosure';
-import { menuItems } from './menuItems';
+import { menuItems, menuItemsWithChildren } from './menuItems';
 
 type Props = { path: string; className?: string; children?: ReactNode };
 
@@ -91,8 +91,8 @@ export const NavigationMobile: React.FC<Props> = ({
                             className={clsx(
                               'whitespace-nowrap',
                               '!text-sm  !no-underline',
-                              path.startsWith(`${basePath}/`)
-                                ? 'text-purple-500 before:bg-purple-500'
+                              path.startsWith(basePath)
+                                ? 'text-purple-500'
                                 : 'text-black'
                             )}
                           >
@@ -106,8 +106,8 @@ export const NavigationMobile: React.FC<Props> = ({
                           href={menuItems[key]}
                           className={clsx(
                             '!text-sm  !no-underline',
-                            `${basePath}/` === path
-                              ? 'text-purple-500 before:bg-purple-500'
+                            menuItems[key] === path
+                              ? 'text-purple-500'
                               : 'text-gray-500'
                           )}
                         >
@@ -117,11 +117,11 @@ export const NavigationMobile: React.FC<Props> = ({
                         {nodes.map((topic) => (
                           <li className="list-none" key={topic.name}>
                             <Link
-                              href={`${menuItems[key]}/${topic.slug}`}
+                              href={`${menuItems[key]}${topic.slug}`}
                               className={clsx(
                                 '!text-sm !no-underline',
-                                path === `${basePath}/${topic.slug}/`
-                                  ? 'text-purple-500 before:bg-purple-500'
+                                path === `${menuItems[key]}${topic.slug}/`
+                                  ? 'text-purple-500'
                                   : 'text-gray-500'
                               )}
                             >
@@ -132,17 +132,63 @@ export const NavigationMobile: React.FC<Props> = ({
                       </NavigationMobileDisclosure>
                     ) : (
                       // End of Inner Disclosure
-                      <Link
-                        href={menuItems[key]}
-                        className={clsx(
-                          'py-3 !text-sm !no-underline',
-                          `${menuItems[key]}/` === path
-                            ? 'text-purple-500 before:bg-purple-500'
-                            : 'text-black'
+                      // eslint-disable-next-line react/jsx-no-useless-fragment
+                      <>
+                        {key in menuItemsWithChildren ? (
+                          <NavigationMobileDisclosure
+                            // Inner Disclosure Button
+                            button={
+                              <p
+                                className={clsx(
+                                  'whitespace-nowrap',
+                                  '!text-sm  !no-underline',
+                                  path.startsWith(`${menuItems[key]}/`)
+                                    ? 'text-purple-500'
+                                    : 'text-black'
+                                )}
+                              >
+                                {key}
+                              </p>
+                            }
+                          >
+                            {/* children: Inner Disclosure Panel */}
+                            {/* List of all children */}
+                            {Object.keys(menuItemsWithChildren[key]).map(
+                              (childKey) => (
+                                <li
+                                  className="list-none"
+                                  key={menuItemsWithChildren[key][childKey]}
+                                >
+                                  <Link
+                                    href={`${menuItems[key]}${menuItemsWithChildren[key][childKey]}`}
+                                    className={clsx(
+                                      '!text-sm !no-underline',
+                                      path ===
+                                        `${menuItems[key]}${menuItemsWithChildren[key][childKey]}`
+                                        ? 'text-purple-500'
+                                        : 'text-gray-500'
+                                    )}
+                                  >
+                                    {childKey}
+                                  </Link>
+                                </li>
+                              )
+                            )}
+                          </NavigationMobileDisclosure>
+                        ) : (
+                          <Link
+                            href={menuItems[key]}
+                            className={clsx(
+                              'py-3 !text-sm !no-underline',
+                              `${menuItems[key]}` === path
+                                ? 'text-purple-500'
+                                : 'text-black'
+                            )}
+                          >
+                            {key}
+                          </Link>
                         )}
-                      >
-                        {key}
-                      </Link>
+                      </>
                     )}
                   </Fragment>
                 ))}
