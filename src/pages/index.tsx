@@ -141,6 +141,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
           <LinkButtonWithArrow
             className="mt-8"
             truncate={false}
+            button="black"
             href="/award/plan-f-award-2022/"
           >
             Zur Plan F Award Seite
