@@ -22,8 +22,12 @@ const IndexPage = () => {
       <Section>
         <Content>
           <div className="flex flex-col gap-10">
-            {menuItemsWithChildren.Artikel.map(({ display, path }, index) => (
-              <ArticleTeaserCard title={display} link={path}>
+            {Object.keys(menuItemsWithChildren.Artikel).map((key, index) => (
+              <ArticleTeaserCard
+                key={key}
+                title={key}
+                link={menuItemsWithChildren[key]}
+              >
                 {articleTeaserTexts[index]}
               </ArticleTeaserCard>
             ))}
