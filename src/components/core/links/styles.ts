@@ -3,7 +3,12 @@ import { LinkProps } from './Link';
 
 // LINK
 export const linkStyles =
-  'underline decoration-black hover:font-bold active:decoration-purple-600 underline-offset-2 active:decoration-2';
+  'underline hover:decoration-purple-600 hover:text-purple-600 active:decoration-purple-600 underline-offset-2 active:decoration-2';
+
+export const menuLinkStylesDefault =
+  'no-underline hover:underline hover:decoration-purple-600 text-black';
+export const menuLinkActiveStyles =
+  'decoration-purple-600 decoration-2 text-black';
 
 const buttonBase = 'inline-flex py-1.5';
 

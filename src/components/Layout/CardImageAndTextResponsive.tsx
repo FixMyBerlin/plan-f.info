@@ -34,7 +34,7 @@ export const CardImageAndTextResponsive: React.FC<Props> = ({
         />
       )}
       <div>
-        <H3 className="mt-0 md:mt-0">{title}</H3>
+        <H3 className="!md:mt-0 !mt-0">{title}</H3>
         {children}
       </div>
     </Link>

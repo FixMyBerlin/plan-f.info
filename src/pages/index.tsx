@@ -54,27 +54,25 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
   const title = 'Impulse für die fahrradfreundliche Kommune';
   const examples = [...measures.nodes]
     .sort(() => 0.5 - Math.random())
+    .filter((measure) => measure.examples.length > 0)
     .slice(0, 3)
     .map((measure) => {
       const example =
         measure.examples[Math.floor(Math.random() * measure.examples.length)];
-      if (!example) return null;
-
       return {
         ...example,
         path: [wikiPath, measure.topic.slug, measure.slug, example.slug].join(
           '/'
         ),
       };
-    })
-    .filter(Boolean);
+    });
 
   return (
     <>
       <HelmetSeo title={title} />
       <Section className="relative flex flex-col items-start justify-between gap-4 !bg-green-500 px-5 !pt-32 pb-8 md:flex-row-reverse md:pb-16 md:pl-8 lg:px-10">
         <div className="flex w-full justify-end">
-          <LinkButtonWithArrow button="black" href="/about">
+          <LinkButtonWithArrow button="black" href="/ueber">
             Was ist Plan F
           </LinkButtonWithArrow>
         </div>
@@ -143,6 +141,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
           <LinkButtonWithArrow
             className="mt-8"
             truncate={false}
+            button="black"
             href="/award/plan-f-award-2022/"
           >
             Zur Plan F Award Seite

@@ -3,7 +3,7 @@ import React, { ReactNode } from 'react';
 import { H2, H3 } from '../Text';
 
 type Props = {
-  title: string;
+  title?: string;
   children?: ReactNode;
   breadcrumbs?: ReactNode;
   className?: string;
@@ -28,11 +28,13 @@ export const Hero: React.FC<Props> = ({
       )}
     >
       {breadcrumbs && <div className="hidden md:block">{breadcrumbs}</div>}
-      <div>{children}</div>
-      <div>
-        <H2>{title}</H2>
-        {subtitle && <H3>{subtitle}</H3>}
-      </div>
+      {children && <div>children</div>}
+      {(title || subtitle) && (
+        <div>
+          {title && <H2>{title}</H2>}
+          {subtitle && <H3>{subtitle}</H3>}
+        </div>
+      )}
     </section>
   );
 };
