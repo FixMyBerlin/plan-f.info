@@ -59,7 +59,7 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
         <CardWrapperMeasurePage className="mt-12">
           {examples.map((example) => (
             <CardImageAndTextVertical
-              title={example.slug}
+              title={example.title}
               key={example.slug}
               link={example.slug}
               image={
