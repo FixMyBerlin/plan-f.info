@@ -43,7 +43,7 @@ export const NavigationMobile: React.FC<Props> = ({
   return (
     <Disclosure
       as="nav"
-      className={clsx(className, 'fixed z-10 w-full bg-white')}
+      className={clsx(className, 'fixed z-10 w-full  bg-white')}
     >
       {({ open }) => (
         <>
@@ -81,7 +81,7 @@ export const NavigationMobile: React.FC<Props> = ({
             leaveTo="transform scale-95 opacity-0"
           >
             <Disclosure.Panel>
-              <div className="flex flex-col divide-y border bg-white px-4 py-4 font-bold">
+              <div className="flex h-[90vh] flex-col divide-y overflow-y-auto border bg-white px-4 py-4 pb-[25vh] font-bold">
                 <SearchBar className="mb-4 w-full" />
                 {Object.keys(menuItems).map((key) => (
                   // eslint-disable-next-line react/jsx-no-useless-fragment
