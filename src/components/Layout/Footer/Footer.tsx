@@ -8,7 +8,6 @@ import { FooterLinks } from './FooterLinks/FooterLinks';
 import { SocialMediaLinks } from './SocialMediaLinks/SocialMediaLinks';
 
 export const Footer: React.FC = () => {
-
   return (
     <>
       <Fundings />
