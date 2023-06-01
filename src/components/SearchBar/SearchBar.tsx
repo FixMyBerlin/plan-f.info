@@ -6,6 +6,7 @@ import { wikiColors } from '../utils';
 import { getSearchResults } from './getSearchResults';
 import SearchIcon from './assets/SearchIcon.svg';
 import CancelIcon from './assets/CancelIcon.svg';
+import { trackSearch } from '../matomo/trackSearch';
 
 type Props = {
   className?: string;
@@ -57,6 +58,11 @@ export const SearchBar: React.FC<Props> = ({ className }) => {
         } else {
           setResultHeader(`Keine Ergebnisse gefunden für „${query}“`);
         }
+        trackSearch({
+          searchterm: query,
+          category: 'Suche (alle Kategorien)',
+          results: nResults,
+        });
       })
       .catch((e) => {
         // we only abort errors pass
