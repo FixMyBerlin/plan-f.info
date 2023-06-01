@@ -44,11 +44,15 @@ module.exports = {
       },
     },
     {
+      // Docs https://www.gatsbyjs.com/plugins/gatsby-plugin-matomo/
       resolve: 'gatsby-plugin-matomo',
       options: {
         siteId: '10',
         matomoUrl: 'https://s.fixmycity.de',
         siteUrl: 'https://plan-f.info',
+        disableCookies: true,
+        respectDnt: false, // We track very privacy friendly, so the tiny bits we are tracking, we actually want to track
+        // dev: true,
       },
     },
     {
