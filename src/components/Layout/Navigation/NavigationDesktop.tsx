@@ -44,8 +44,7 @@ export const NavigationDesktop: React.FC<Props> = ({ path, className }) => {
       </Link>
       <ul className={clsx('flex flex-row items-center gap-4')}>
         {Object.keys(menuItems).map((key) => (
-          // eslint-disable-next-line react/jsx-no-useless-fragment, react/jsx-fragments
-          <Fragment>
+          <Fragment key={key}>
             {key === 'Wissensspeicher' ? (
               <NavigationDesktopDropdown
                 // Inner Disclosure Button

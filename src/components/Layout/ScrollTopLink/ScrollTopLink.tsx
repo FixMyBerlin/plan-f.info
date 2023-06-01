@@ -1,6 +1,7 @@
 import { Transition } from '@headlessui/react';
 import { ArrowUpIcon } from '@heroicons/react/24/outline';
 import React, { useEffect, useState } from 'react';
+import { trackEvent } from '~/components/matomo/trackEvent';
 
 export const ScrollTopLink: React.FC = () => {
   const [visible, setVisible] = useState(false);
@@ -13,6 +14,15 @@ export const ScrollTopLink: React.FC = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, [visible]);
 
+  const handleClick = () => {
+    window.scrollTo(0, 0);
+    trackEvent({
+      category: 'Back To Top Button',
+      action: 'Click',
+      label: `Page: ${window.location.pathname}`,
+    });
+  };
+
   return (
     <Transition
       show={visible}
@@ -23,12 +33,8 @@ export const ScrollTopLink: React.FC = () => {
       leaveFrom="opacity-100"
       leaveTo="opacity-0"
     >
-      <button
-        type="button"
-        onClick={() => window.scrollTo(0, 0)}
-        className="flex"
-      >
-        <ArrowUpIcon className="hover:text-puple-400 fixed bottom-16 right-8 z-40 w-8 rounded-full border-2 border-gray-400 bg-white p-1 text-gray-400 md:bottom-52" />
+      <button type="button" onClick={handleClick} className="flex">
+        <ArrowUpIcon className="fixed bottom-16 right-8 z-40 w-8 rounded-full border-2 border-gray-400 bg-white p-1 text-gray-400 hover:border-purple-300 hover:text-purple-400 md:bottom-52" />
       </button>
     </Transition>
   );

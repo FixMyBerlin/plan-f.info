@@ -42,7 +42,7 @@ export const SideNavigation: React.FC<Props> = ({ path }) => {
             <ul
               className={clsx(
                 sidePanelWidthClassName,
-                'shadow-r h-full bg-gray-100 px-4 py-3 pr-8'
+                'shadow-r h-full overflow-y-auto bg-gray-100 px-4 py-3 pr-8'
               )}
             >
               <li className="mb-16 px-4">
@@ -50,41 +50,46 @@ export const SideNavigation: React.FC<Props> = ({ path }) => {
                   <Logo className="h-8 w-auto shrink-0" />
                 </Link>
               </li>
-              {nodes.map((topic) => (
-                <li key={topic.name}>
-                  <Link
-                    href={`${basePath}/${topic.slug}`}
-                    className={clsx(
-                      '!text-sm font-bold',
-                      path === `${basePath}/${topic.slug}/`
-                        ? menuLinkActiveStyles
-                        : menuLinkStylesDefault
-                    )}
-                  >
-                    {topic.name}
-                  </Link>
-                  <ul className="my-3 flex flex-col gap-2">
-                    {Boolean(topic.measures?.length) &&
-                      topic.measures.map((measure) => (
-                        <li key={measure.name} className="relative">
-                          <Link
-                            href={`${basePath}/${topic.slug}/${measure.slug}`}
-                            className={clsx(
-                              'block pl-3.5 !text-sm',
-                              path.startsWith(
-                                `${basePath}/${topic.slug}/${measure.slug}/`
-                              )
-                                ? menuLinkActiveStyles
-                                : menuLinkStylesDefault
-                            )}
-                          >
-                            {measure.name}
-                          </Link>
-                        </li>
-                      ))}
-                  </ul>
-                </li>
-              ))}
+              <div
+                style={{ scrollbarWidth: 'none' }}
+                className="overflow-y-auto"
+              >
+                {nodes.map((topic) => (
+                  <li key={topic.name} className="">
+                    <Link
+                      href={`${basePath}/${topic.slug}`}
+                      className={clsx(
+                        '!text-sm font-bold',
+                        path === `${basePath}/${topic.slug}/`
+                          ? menuLinkActiveStyles
+                          : menuLinkStylesDefault
+                      )}
+                    >
+                      {topic.name}
+                    </Link>
+                    <ul className="my-3 flex flex-col gap-2">
+                      {Boolean(topic.measures?.length) &&
+                        topic.measures.map((measure) => (
+                          <li key={measure.name} className="relative">
+                            <Link
+                              href={`${basePath}/${topic.slug}/${measure.slug}`}
+                              className={clsx(
+                                'block pl-3.5 !text-sm',
+                                path.startsWith(
+                                  `${basePath}/${topic.slug}/${measure.slug}/`
+                                )
+                                  ? menuLinkActiveStyles
+                                  : menuLinkStylesDefault
+                              )}
+                            >
+                              {measure.name}
+                            </Link>
+                          </li>
+                        ))}
+                    </ul>
+                  </li>
+                ))}
+              </div>
             </ul>
           ) : (
             <div className="shadow-r h-full w-[6px] bg-gray-100" />

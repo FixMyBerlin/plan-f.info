@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import React, { useState } from 'react';
 import { LinkButtonWithArrow } from '../PageTopic/LinkButtonWithArrow';
 import { H2, H3 } from '../Text';
+import { trackEvent } from '../matomo/trackEvent';
 
 type Props = {
   links: readonly {
@@ -22,6 +23,17 @@ export const LinkListBlackButton: React.FC<Props> = ({
 }) => {
   const [isExpand, setIsExpand] = useState(false);
   if (!links.length) return null;
+
+  const toggleExpanded = () => {
+    setIsExpand((prev) => {
+      trackEvent({
+        category: `Show more "${title}" on ${window.location.pathname}`,
+        action: prev ? 'Click show more' : 'Click show less',
+        label: `List has ${links.length} items`,
+      });
+      return !prev;
+    });
+  };
 
   if (links.length < 3)
     return (
@@ -54,6 +66,7 @@ export const LinkListBlackButton: React.FC<Props> = ({
           leave="transition duration-75 ease-out"
           leaveFrom="transform scale-100 opacity-100"
           leaveTo="transform scale-95 opacity-0"
+          className="flex flex-col items-start gap-5"
         >
           {links.slice(2).map((resource) => (
             <LinkButtonWithArrow href={resource.url} key={resource.url}>
@@ -65,14 +78,14 @@ export const LinkListBlackButton: React.FC<Props> = ({
         <button
           className="flex items-center gap-2"
           type="button"
-          onClick={() => setIsExpand(!isExpand)}
+          onClick={() => toggleExpanded()}
         >
           {isExpand ? (
             <MinusIcon className="h-8 rounded-full border border-black p-1" />
           ) : (
             <PlusIcon className="h-8 rounded-full border border-black p-1" />
           )}
-          <p className=" whitespace-nowrap">{`${
+          <p className="whitespace-nowrap">{`${
             isExpand ? 'Weniger' : 'Mehr'
           } anzeigen`}</p>
         </button>

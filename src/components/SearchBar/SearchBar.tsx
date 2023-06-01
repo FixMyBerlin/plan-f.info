@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState, ChangeEvent, Fragment } from 'react';
 import { navigate } from 'gatsby';
 import { Combobox } from '@headlessui/react';
 import clsx from 'clsx';
@@ -6,6 +6,7 @@ import { wikiColors } from '../utils';
 import { getSearchResults } from './getSearchResults';
 import SearchIcon from './assets/SearchIcon.svg';
 import CancelIcon from './assets/CancelIcon.svg';
+import { trackSearch } from '../matomo/trackSearch';
 
 type Props = {
   className?: string;
@@ -57,6 +58,11 @@ export const SearchBar: React.FC<Props> = ({ className }) => {
         } else {
           setResultHeader(`Keine Ergebnisse gefunden für „${query}“`);
         }
+        trackSearch({
+          searchterm: query,
+          category: 'Suche (alle Kategorien)',
+          results: nResults,
+        });
       })
       .catch((e) => {
         // we only abort errors pass
@@ -92,45 +98,47 @@ export const SearchBar: React.FC<Props> = ({ className }) => {
           </Combobox.Button>
         )}
         {searchResults && (
-          <Combobox.Options className="max-h-120 absolute z-10 mt-4 w-full overflow-auto rounded-md bg-white py-2 pl-4 pr-9 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-            <div className="relative cursor-default select-none py-2 font-bold text-gray-700">
+          <Combobox.Options
+            as="section"
+            className="max-h-120 absolute z-10 mt-4 w-full overflow-auto rounded-md bg-white px-2 py-2 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
+          >
+            <h2 className="relative cursor-default select-none px-2 py-2 font-bold text-gray-700">
               {resultHeader}
-            </div>
+            </h2>
             {categoryMeta.map(({ key, name }) => {
               const results = searchResults[key];
+              if (!results.length) return null;
+
               return (
-                results.length > 0 && (
-                  <div key={key}>
-                    <div className="relative cursor-default select-none py-3 text-gray-700">
-                      {name}
-                    </div>
-                    {results.map(({ title, path }) => {
-                      return (
-                        <Combobox.Option
-                          key={path}
-                          value={path}
-                          className={({ active }) =>
-                            clsx(
-                              'relative cursor-default select-none py-2',
-                              active && 'bg-gray-50'
-                            )
-                          }
-                        >
-                          <div className="flex items-center">
-                            <span
-                              className={clsx(
-                                'inline-block h-5 w-5 flex-shrink-0 rounded-full',
-                                wikiColors[key]
-                              )}
-                              aria-hidden="true"
-                            />
-                            <span className="ml-3 truncate">{title}</span>
-                          </div>
-                        </Combobox.Option>
-                      );
-                    })}
-                  </div>
-                )
+                <Fragment key={key}>
+                  <h3 className="relative select-none px-2 py-3 text-gray-700">
+                    {name}
+                  </h3>
+                  {results.map(({ title, path }) => {
+                    return (
+                      <Combobox.Option
+                        key={path}
+                        value={path}
+                        as="div"
+                        className={({ active }) =>
+                          clsx(
+                            'relative flex cursor-pointer select-none items-center gap-3 rounded px-2 py-2',
+                            active && 'bg-gray-100'
+                          )
+                        }
+                      >
+                        <span
+                          className={clsx(
+                            'inline-block h-5 w-5 flex-none rounded-full',
+                            wikiColors[key]
+                          )}
+                          aria-hidden="true"
+                        />
+                        <span className="truncate">{title}</span>
+                      </Combobox.Option>
+                    );
+                  })}
+                </Fragment>
               );
             })}
           </Combobox.Options>
