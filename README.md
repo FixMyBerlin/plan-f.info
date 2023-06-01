@@ -13,6 +13,12 @@ If you find any bugs, feel free to open an issue.
 - Use `npm run mobile` to test the side with your mobile phone; more at https://github.com/gatsbyjs/gatsby/issues/5801
 - Use `npx eslint --print-config .eslintrc` to check the `.eslintrc` for errors
 
+## Glossary
+
+- `example` – Praxisbeispiele
+- `measure` – Maßnahmen
+- `topic` – Handlungsfelder
+
 ## License
 
 This project is licensed under the AGPL-3.0 License - see the [LICENSE.md](LICENSE.md) file for more information.
