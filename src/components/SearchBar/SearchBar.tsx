@@ -96,18 +96,18 @@ export const SearchBar: React.FC<Props> = ({ className }) => {
             as="section"
             className="max-h-120 absolute z-10 mt-4 w-full overflow-auto rounded-md bg-white px-2 py-2 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
           >
-            <div className="relative cursor-default select-none px-2 py-2 font-bold text-gray-700">
-              <strong>{resultHeader}</strong>
-            </div>
+            <h2 className="relative cursor-default select-none px-2 py-2 font-bold text-gray-700">
+              {resultHeader}
+            </h2>
             {categoryMeta.map(({ key, name }) => {
               const results = searchResults[key];
               if (!results.length) return null;
 
               return (
                 <Fragment key={key}>
-                  <div className="relative select-none px-2 py-3 text-gray-700">
-                    <em>{name}</em>
-                  </div>
+                  <h3 className="relative select-none px-2 py-3 text-gray-700">
+                    {name}
+                  </h3>
                   {results.map(({ title, path }) => {
                     return (
                       <Combobox.Option
