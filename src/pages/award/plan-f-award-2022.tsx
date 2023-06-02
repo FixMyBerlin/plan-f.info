@@ -205,9 +205,9 @@ const awardWinnerTopics = {
           </p>
           <blockquote>
             Die Verbandsgemeinde Wallmerod ist belegt mit dem Wäller-ALLEnweg
-            den 1. Platz (Gesamtwertung) des Plan F Awards 2022 und hat das Plan
-            F Audit gewonnen, welches vom 17. – 21. Oktober vor Ort durchgeführt
-            wurde.
+            den 1. Platz (Gesamtwertung) des Plan F Awards 2022 und hat das{' '}
+            <a href="#erster">Plan F Audit</a> gewonnen, welches vom 17. – 21.
+            Oktober vor Ort durchgeführt wurde.
           </blockquote>
           <p>
             In einem kurzen Video beantwortet die Verbandsgemeinde die drei
@@ -284,7 +284,7 @@ const awardWinnerTopics = {
           <blockquote>
             Die Stadt Aachen belegt mit der Kommunikation rund um den
             Radentscheid den 2. Platz (Gesamtwertung) des Plan F Awards 2022 und
-            hat das Plan F Online-Audit gewonnen.
+            hat das <a href="#zweiter">Plan F Online-Audit</a> gewonnen.
           </blockquote>
           <p>
             Das Video zur Jahresveranstaltung Radentscheid 2022 gibt es hier:{' '}
