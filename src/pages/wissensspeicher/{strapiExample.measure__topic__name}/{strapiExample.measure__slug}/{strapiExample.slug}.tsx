@@ -8,7 +8,7 @@ import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
 import { Section } from '~/components/Layout/Section';
 import { CardText } from '~/components/PageExample/CardText';
 import { Pagination } from '~/components/PageExample/Pagination';
-import { H2, H3, P } from '~/components/Text';
+import { H2, H3 } from '~/components/Text';
 import { Prose } from '~/components/core/Prose';
 import { sortByPosition, wikiColors, wikiPath } from '~/components/utils';
 
@@ -88,13 +88,11 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
               <tbody className="flex flex-col gap-2">
                 {Object.keys(steckbiref).map((key) => (
                   <tr
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                    className="grid grid-cols-1 text-gray-700 md:grid-cols-2 lg:grid-cols-3"
                     key={key}
                   >
-                    <td>
-                      <P className="!mb-0 whitespace-nowrap font-bold uppercase">
-                        {steckbiref[key]}
-                      </P>
+                    <td className="whitespace-nowrap font-bold uppercase text-gray-700">
+                      {steckbiref[key]}
                     </td>
                     <td>
                       <Prose
@@ -105,10 +103,8 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
                   </tr>
                 ))}
                 <tr className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                  <td>
-                    <P className="!mb-0 whitespace-nowrap font-bold uppercase">
-                      Zuständige Abteilung
-                    </P>
+                  <td className="whitespace-nowrap font-bold uppercase text-gray-700">
+                    Zuständige Abteilung
                   </td>
                   <td>
                     <Prose
@@ -120,10 +116,8 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
                   </td>
                 </tr>
                 <tr className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                  <td>
-                    <P className="!mb-0 whitespace-nowrap pr-12 font-bold uppercase">
-                      Lokale Herausforderungen
-                    </P>
+                  <td className="whitespace-nowrap font-bold uppercase text-gray-700">
+                    Lokale Herausforderungen
                   </td>
                   <td>
                     <Prose
