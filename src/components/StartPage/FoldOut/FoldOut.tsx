@@ -4,15 +4,17 @@ import MinusIcon from './assets/MinusIcon.svg';
 
 type Props = {
   children: ReactNode;
-  previewMode?: null | 'blend' | 'clamp';
+  previewMode?: null | 'blend' | 'clamp' | 'headline';
   foldedText?: string;
   unfoldedText?: string;
   className?: string;
+  headline?: ReactNode;
 };
 
 export const FoldOut: React.FC<Props> = ({
   children,
   previewMode,
+  headline,
   foldedText = 'Mehr erfahren',
   unfoldedText = 'Weniger Details',
   className,
@@ -40,6 +42,35 @@ export const FoldOut: React.FC<Props> = ({
       break;
   }
 
+  if (headline) {
+    preview = (
+      <div className="line-clamp-3">
+        <div>{headline}</div>
+      </div>
+    );
+  }
+
+  if (headline)
+    return (
+      <div className={className}>
+        <div className="flex items-center justify-between gap-3">
+          {preview}
+          <button
+            type="button"
+            className="p-1"
+            onClick={() => setFolded(!folded)}
+          >
+            {folded ? (
+              <PlusIcon className="h-6 w-6 rounded-full border border-black p-1" />
+            ) : (
+              <MinusIcon className="h-6  w-6 rounded-full border border-black p-1" />
+            )}
+          </button>
+        </div>
+        {!folded && children}
+      </div>
+    );
+
   return (
     <div className={className}>
       <div>{folded ? preview : children}</div>
@@ -49,9 +80,12 @@ export const FoldOut: React.FC<Props> = ({
         className="flex flex-row items-center font-sans text-[16px] font-bold  hover:cursor-pointer"
         onClick={() => setFolded(!folded)}
       >
-        <div className="mr-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-green-500">
-          {folded ? <PlusIcon /> : <MinusIcon />}
-        </div>
+        {folded ? (
+          <PlusIcon className="mr-2  h-6 w-6 rounded-full border border-black p-1" />
+        ) : (
+          <MinusIcon className="mr-2  h-6 w-6 rounded-full border border-black p-1" />
+        )}
+
         {folded ? foldedText : unfoldedText}
       </button>
     </div>
