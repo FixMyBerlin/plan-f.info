@@ -1,10 +1,10 @@
 import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
+import SendCommunityEntryLink from './CommunityEntries/SendCommunityEntryLink';
 import { CardImageAndTextResponsiveImgFull } from './Layout/CardImageAndTextResponsiveImgFull';
 import { Section } from './Layout/Section';
 import { H2, P } from './Text';
 import { Prose } from './core/Prose';
-import { MailLink } from './core/links';
 
 type Props = {
   communityEntries: Queries.MeasureDetailsQuery['measure']['communityEntries'];
@@ -27,32 +27,7 @@ export const CommunityEntriesSection: React.FC<Props> = ({
         benötigen Sie eine kurze Beschreibung, einen Link zu einer Website, auf
         der das Beispiel vorgestellt wird und ggf. ein Foto.
       </P>
-      <MailLink
-        className="mt-4"
-        button
-        mailto="kontakt@plan-f.info"
-        subject="Vorschlag für ein weiteres Praxisbeispiel"
-        body={`Liebes Plan F Team,
-
-für die Kategorie Weitere Praxisbeispiele möchte ich folgenden Inhalt vorschlagen:
-
-    - Titel des Beispiels
-    - Stadt / Kommune
-    - Bundesland
-    - (optional) Maßnahmentyp (Auf dieser Seite finden Sie eine Liste mit Maßnahmentypen, von denen Sie einen auswählen können)
-    - Link zu einer Website
-    - (Optional) Bild zur Illustration des Beispiels im Anhang (jpg. Oder png. Mindestens 400 px hoch, max 5 MB) (Wenn kein Bild eingesendet wird, wird ein Screenshot der Website als Bild ausgegeben)
-    - Attribution zum Bild (Was soll unter dem Bild stehen, z.B. Quelle / Autor )
-
-Hinweis: Mit dem Zusenden eines Bildes bestätigen Sie, dieses frei von Rechten dritter ist und auf plan-f.info veröffentlicht werden darf
-
-    - Beschreibungstext Text (max. 300 Zeichen)
-    - (optional) Autor dieses Beitrags (Wenn Sie hier genannt werden möchten, dann bitte Ihren Namen angeben)
-`}
-        type="button"
-      >
-        Neuen Vorschlag einreichen
-      </MailLink>
+      <SendCommunityEntryLink />
       <div className="mt-12 flex flex-col gap-5">
         {communityEntries.map((entry) => (
           <CardImageAndTextResponsiveImgFull
