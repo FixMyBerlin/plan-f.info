@@ -1,7 +1,7 @@
 import React from 'react';
 import { ProfileData } from 'src/types/ProfileData';
-import { Profile } from './Profile';
 import { QuoteBox } from '../QuoteBox';
+import { Profile } from './Profile';
 
 type Props = {
   profiles: ProfileData[];
