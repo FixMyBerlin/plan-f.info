@@ -25,10 +25,10 @@ export const NavigationMobile: React.FC<Props> = ({
 }) => {
   const basePath = `/${wikiPath}`;
   const {
-    nestedMeasures: { nodes },
+    allStrapiTopic: { nodes },
   }: Queries.TopicMeasureTreeQuery = useStaticQuery(graphql`
     query TopicMeasureTree {
-      nestedMeasures: allStrapiTopic {
+      allStrapiTopic {
         nodes {
           name
           slug

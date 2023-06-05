@@ -17,10 +17,10 @@ type Props = { path: string; className?: string };
 export const NavigationDesktop: React.FC<Props> = ({ path, className }) => {
   const basePath = `/${wikiPath}`;
   const {
-    nestedMeasures: { nodes },
+    allStrapiTopic: { nodes },
   }: Queries.TopicMeasureTreeQuery = useStaticQuery(graphql`
     query TopicMeasureTree {
-      nestedMeasures: allStrapiTopic {
+      allStrapiTopic {
         nodes {
           name
           slug
@@ -32,6 +32,7 @@ export const NavigationDesktop: React.FC<Props> = ({ path, className }) => {
       }
     }
   `);
+
   return (
     <nav
       className={clsx(
