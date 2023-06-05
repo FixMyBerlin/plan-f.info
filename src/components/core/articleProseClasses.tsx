@@ -13,6 +13,8 @@ export const articleProseClasses = clsx(
 export const planfProseClasses = clsx(
   // Basis
   'prose max-w-none prose-img:mt-0 prose-img:mb-0 prose-div:mx-0 prose-div:mt-0',
+  // div / img
+  'prose-img:mt-0 prose-img:mb-0 prose-div:mx-0 prose-div:mt-0',
   // P
   'prose-p:mb-4 prose-p:mt-4 prose-p:text-sm prose-p:text-gray-700 prose-p:md:mb-6 prose-p:md:mt-6 prose-p:md:text-base',
   // H1
@@ -22,7 +24,7 @@ export const planfProseClasses = clsx(
   // H3
   'prose-h3:mb-4 prose-h3:mt-8 prose-h3:text-lg prose-h3:font-bold prose-h3:text-black prose-h3:md:mb-6 prose-h3:md:mt-10 prose-h3:md:text-xl',
   // Caption / <figcaption>
-  'prose-figcaption:mb-4 mt-4 prose-figcaption:text-xs prose-figcaption:text-gray-700 prose-figcaption:md:mb-6 prose-figcaption:md:mt-6',
+  'prose-figcaption:text-xs prose-figcaption:text-gray-700',
   // Link / <a>
   'prose-a:underline prose-a:hover:decoration-purple-600 prose-a:hover:text-purple-600 prose-a:active:decoration-purple-600 prose-a:underline-offset-2 prose-a:active:decoration-2',
   // <blockquote> / Quotebox

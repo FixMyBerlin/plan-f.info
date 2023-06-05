@@ -7,7 +7,7 @@ export const FotoCopyright: React.FC<Props> = ({
   preload = true,
 }) => {
   return (
-    <div className="pt-4">
+    <div className="py-4">
       <img
         src={src}
         alt={`Foto von ${copyright}`}
