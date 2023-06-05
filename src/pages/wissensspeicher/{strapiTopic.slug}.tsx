@@ -54,10 +54,7 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
               key={measure.slug}
               link={measure.slug || '/'} // This is only quick fix - slug should be Pflichtfpeld
             >
-              <Prose
-                className="line-clamp-4"
-                markdownHTML={measure.description.data.childMarkdownRemark.html}
-              />
+              <Prose markdownHTML={measure.shortDescription} />
             </CardImageAndTextResponsive>
           ))}
         </CardWrapperTopicPage>
@@ -94,13 +91,7 @@ export const query = graphql`
         name
         slug
         position
-        description {
-          data {
-            childMarkdownRemark {
-              html
-            }
-          }
-        }
+        shortDescription
       }
     }
   }

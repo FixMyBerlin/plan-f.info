@@ -7618,7 +7618,7 @@ type TopicDetailsQueryVariables = Exact<{
 }>;
 
 
-type TopicDetailsQuery = { readonly topic: { readonly name: string | null, readonly image: { readonly url: string | null } | null, readonly additionalResources: ReadonlyArray<{ readonly display: string | null, readonly url: string | null } | null> | null, readonly description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly guidelines: ReadonlyArray<{ readonly display: string | null, readonly url: string | null } | null> | null, readonly measures: ReadonlyArray<{ readonly name: string | null, readonly slug: string | null, readonly position: number | null, readonly description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } | null> | null } | null };
+type TopicDetailsQuery = { readonly topic: { readonly name: string | null, readonly image: { readonly url: string | null } | null, readonly additionalResources: ReadonlyArray<{ readonly display: string | null, readonly url: string | null } | null> | null, readonly description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly guidelines: ReadonlyArray<{ readonly display: string | null, readonly url: string | null } | null> | null, readonly measures: ReadonlyArray<{ readonly name: string | null, readonly slug: string | null, readonly position: number | null, readonly shortDescription: string | null } | null> | null } | null };
 
 type TopicMeasureTreeQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -7633,7 +7633,7 @@ type TopicOverviewQuery = { readonly topics: { readonly nodes: ReadonlyArray<{ r
 type TopicTeasersQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type TopicTeasersQuery = { readonly topics: { readonly nodes: ReadonlyArray<{ readonly slug: string | null, readonly name: string | null, readonly image: { readonly url: string | null } | null, readonly description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null }> } };
+type TopicTeasersQuery = { readonly topics: { readonly nodes: ReadonlyArray<{ readonly slug: string | null, readonly name: string | null, readonly shortDescription: string | null, readonly image: { readonly url: string | null } | null }> } };
 
 
 }
