@@ -7623,7 +7623,7 @@ type TopicDetailsQuery = { readonly topic: { readonly name: string | null, reado
 type TopicMeasureTreeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type TopicMeasureTreeQuery = { readonly nestedMeasures: { readonly nodes: ReadonlyArray<{ readonly name: string | null, readonly slug: string | null, readonly measures: ReadonlyArray<{ readonly name: string | null, readonly slug: string | null } | null> | null }> } };
+type TopicMeasureTreeQuery = { readonly allStrapiTopic: { readonly nodes: ReadonlyArray<{ readonly position: number | null, readonly name: string | null, readonly slug: string | null, readonly measures: ReadonlyArray<{ readonly position: number | null, readonly name: string | null, readonly slug: string | null } | null> | null }> } };
 
 type TopicOverviewQueryVariables = Exact<{ [key: string]: never; }>;
 
