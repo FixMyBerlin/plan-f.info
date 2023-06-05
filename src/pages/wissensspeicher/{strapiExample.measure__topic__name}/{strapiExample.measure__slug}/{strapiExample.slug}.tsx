@@ -41,6 +41,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
     example.slug
   );
   const { communityEntries } = example.measure;
+  // console.log(pos);
   return (
     <>
       <HelmetSeo title={example.measure.name} />
