@@ -7,7 +7,7 @@ export type LinkProps = {
   className?: string;
   activeClassName?: string;
   classNameOverwrites?: string;
-  /** @default `false` */
+  /** @default `false` for internal links, @default `true` for external links */
   blank?: boolean;
   /** @desc Style Link as Button */
   button?: true | 'white' | 'black' | 'card';
@@ -25,7 +25,7 @@ export const Link: React.FC<LinkProps> = forwardRef<
       activeClassName,
       classNameOverwrites,
       children,
-      blank = true,
+      blank = undefined,
       button,
       ...props
     },
@@ -39,7 +39,7 @@ export const Link: React.FC<LinkProps> = forwardRef<
           href={href}
           className={classNameOverwrites || selectLinkStyle(button, className)}
           rel="noopener noreferrer"
-          {...{ target: blank ? '_blank' : undefined }}
+          {...{ target: blank === false ? undefined : '_blank' }}
           {...props}
         >
           {children}
@@ -53,7 +53,7 @@ export const Link: React.FC<LinkProps> = forwardRef<
         // @ts-ignore
         ref={ref}
         to={href}
-        {...{ target: blank ? '_blank' : undefined }}
+        {...{ target: blank === true ? '_blank' : undefined }}
         className={classNameOverwrites || selectLinkStyle(button, className)}
         activeClassName={activeClassName}
         {...props}
