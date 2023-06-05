@@ -632,7 +632,7 @@ const awardWinner2022 = [
   },
 ];
 
-const AwardPageOldVersion: React.FC = () => {
+const AwardPage: React.FC = () => {
   const title = 'Plan F Award 2022';
   return (
     <>
@@ -671,11 +671,15 @@ const AwardPageOldVersion: React.FC = () => {
 
           <div className="divide mt-8 flex flex-col gap-5 divide-y-2 border-b-2 border-t-2 py-4">
             {Object.keys(awardWinnerTopics).map((topic) => (
-              <div>
+              <div key={topic}>
                 <h2>{topic}</h2>
                 {awardWinnerTopics[topic].map(
                   ({ cardTitle, media, foldOut }) => (
-                    <AwardWinnerCard title={cardTitle} media={media}>
+                    <AwardWinnerCard
+                      key={cardTitle}
+                      title={cardTitle}
+                      media={media}
+                    >
                       {foldOut}
                     </AwardWinnerCard>
                   )
@@ -793,7 +797,9 @@ const AwardPageOldVersion: React.FC = () => {
         <Content>
           {/* 2. und 3. Platz */}
           {awardWinner2022.map(({ foldOut, cardTitle, id }) => (
-            <FoldOut headline={<H3 id={id}>{cardTitle}</H3>}>{foldOut}</FoldOut>
+            <FoldOut key={id} headline={<H3 id={id}>{cardTitle}</H3>}>
+              {foldOut}
+            </FoldOut>
           ))}
           <h2>Plan F Audit: Mehrwert für alle Beteiligten </h2>
           <p>
@@ -883,4 +889,4 @@ const AwardPageOldVersion: React.FC = () => {
   );
 };
 
-export default AwardPageOldVersion;
+export default AwardPage;

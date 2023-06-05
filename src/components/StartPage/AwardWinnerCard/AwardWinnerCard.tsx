@@ -23,7 +23,8 @@ export const AwardWinnerCard: React.FC<Props> = ({
       >
         <>
           {children}
-          {media?.length && media.map((m) => <FotoCopyright data={m} />)}
+          {media?.length &&
+            media.map((m) => <FotoCopyright key={m.src} data={m} />)}
         </>
       </FoldOut>
     </div>
