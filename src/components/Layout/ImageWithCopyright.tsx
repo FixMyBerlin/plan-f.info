@@ -15,7 +15,7 @@ export const ImageWithCopyright: React.FC<Props> = ({
   return (
     <div className={clsx(className, '')}>
       {children}
-      <Caption>{`Copyright: ${copyright}`}</Caption>
+      <Caption>{copyright}</Caption>
     </div>
   );
 };
