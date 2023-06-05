@@ -1,7 +1,6 @@
 import { Disclosure, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
-import { graphql, useStaticQuery } from 'gatsby';
 import React, { Fragment, ReactNode } from 'react';
 import Logo from '~/components/Layout/assets/Logo.svg';
 import { SearchBar } from '~/components/SearchBar';
@@ -13,6 +12,7 @@ import { wikiPath } from '~/components/utils';
 import { Link } from '../../core/links/Link';
 import { NavigationMobileDisclosure } from './NavigationMobileDisclosure';
 import { menuItems, menuItemsWithChildren } from './menuItems';
+import { useTopicNavigationData } from './utils/useTopicNavigationData';
 
 type Props = { path: string; className?: string; children?: ReactNode };
 
@@ -24,22 +24,8 @@ export const NavigationMobile: React.FC<Props> = ({
   className,
 }) => {
   const basePath = `/${wikiPath}`;
-  const {
-    allStrapiTopic: { nodes },
-  }: Queries.TopicMeasureTreeQuery = useStaticQuery(graphql`
-    query TopicMeasureTree {
-      allStrapiTopic {
-        nodes {
-          name
-          slug
-          measures {
-            name
-            slug
-          }
-        }
-      }
-    }
-  `);
+  const topicNavigationData = useTopicNavigationData();
+
   return (
     <Disclosure
       as="nav"
@@ -118,7 +104,7 @@ export const NavigationMobile: React.FC<Props> = ({
                           {key}
                         </Link>
                         {/* List of all topics */}
-                        {nodes.map((topic) => (
+                        {topicNavigationData.map((topic) => (
                           <li className="list-none" key={topic.name}>
                             <Link
                               href={`${menuItems[key]}${topic.slug}`}

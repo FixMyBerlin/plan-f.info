@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import { graphql, useStaticQuery } from 'gatsby';
 import React, { Fragment } from 'react';
 import Logo from '~/components/Layout/assets/Logo.svg';
 import { SearchBar } from '~/components/SearchBar';
@@ -11,27 +10,13 @@ import { wikiPath } from '~/components/utils';
 import { Link } from '../../core/links/Link';
 import { NavigationDesktopDropdown } from './NavigationDesktopDropdown';
 import { menuItems } from './menuItems';
+import { useTopicNavigationData } from './utils/useTopicNavigationData';
 
 type Props = { path: string; className?: string };
 
 export const NavigationDesktop: React.FC<Props> = ({ path, className }) => {
   const basePath = `/${wikiPath}`;
-  const {
-    allStrapiTopic: { nodes },
-  }: Queries.TopicMeasureTreeQuery = useStaticQuery(graphql`
-    query TopicMeasureTree {
-      allStrapiTopic {
-        nodes {
-          name
-          slug
-          measures {
-            name
-            slug
-          }
-        }
-      }
-    }
-  `);
+  const topicNavigationData = useTopicNavigationData();
 
   return (
     <nav
@@ -61,7 +46,7 @@ export const NavigationDesktop: React.FC<Props> = ({ path, className }) => {
                     {key}
                   </p>
                 }
-                menuItems={nodes}
+                menuItems={topicNavigationData}
                 basePath={menuItems[key]}
               />
             ) : (
