@@ -1,6 +1,5 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
-import { graphql, useStaticQuery } from 'gatsby';
 import React, { useState } from 'react';
 import Logo from '~/components/Layout/assets/Logo.svg';
 import {
@@ -9,6 +8,7 @@ import {
 } from '~/components/core/links';
 import { wikiPath } from '~/components/utils';
 import { Link } from '../../core/links/Link';
+import { useTopicNavigationData } from './utils/useTopicNavigationData';
 
 type Props = { path: string };
 
@@ -16,22 +16,7 @@ export const sidePanelWidthClassName = 'w-72';
 
 export const SideNavigation: React.FC<Props> = ({ path }) => {
   const basePath = `/${wikiPath}`;
-  const {
-    nestedMeasures: { nodes },
-  }: Queries.TopicMeasureTreeQuery = useStaticQuery(graphql`
-    query TopicMeasureTree {
-      nestedMeasures: allStrapiTopic {
-        nodes {
-          name
-          slug
-          measures {
-            name
-            slug
-          }
-        }
-      }
-    }
-  `);
+  const topicNavigationData = useTopicNavigationData();
 
   const [folded, setFolded] = useState(true);
   return (
@@ -54,7 +39,7 @@ export const SideNavigation: React.FC<Props> = ({ path }) => {
                 style={{ scrollbarWidth: 'none' }}
                 className="overflow-y-auto"
               >
-                {nodes.map((topic) => (
+                {topicNavigationData.map((topic) => (
                   <li key={topic.name} className="">
                     <Link
                       href={`${basePath}/${topic.slug}`}

@@ -7,15 +7,13 @@ export const FotoCopyright: React.FC<Props> = ({
   preload = true,
 }) => {
   return (
-    <div className="pt-4">
+    <div className="py-4">
       <img
         src={src}
         alt={`Foto von ${copyright}`}
         loading={preload ? 'eager' : 'lazy'}
       />
-      <div className="mt-auto flex-none text-sm">
-        Foto:&nbsp;&copy;&nbsp;{copyright}
-      </div>
+      <figcaption>Foto:&nbsp;&copy;&nbsp;{copyright}</figcaption>
     </div>
   );
 };

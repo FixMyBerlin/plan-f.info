@@ -1,4 +1,4 @@
-import { Disclosure, Transition } from '@headlessui/react';
+import { Menu, Transition } from '@headlessui/react';
 import clsx from 'clsx';
 import React, { ReactNode } from 'react';
 import { Link } from '~/components/core/links';
@@ -15,11 +15,10 @@ export const NavigationDesktopDropdown: React.FC<Props> = ({
   basePath,
 }) => {
   return (
-    <Disclosure>
+    <Menu>
       {() => (
         <div className="relative">
-          {/* Mobile menu button */}
-          <Disclosure.Button className="relative">{button}</Disclosure.Button>
+          <Menu.Button className="relative">{button}</Menu.Button>
 
           <Transition
             enter="transition duration-100 ease-out"
@@ -29,32 +28,31 @@ export const NavigationDesktopDropdown: React.FC<Props> = ({
             leaveFrom="transform scale-100 opacity-100"
             leaveTo="transform scale-95 opacity-0"
           >
-            <Disclosure.Panel className="absolute mt-2 flex flex-col gap-4 rounded border-2 bg-white px-5 py-4 shadow">
+            <Menu.Items className="absolute mt-2 flex flex-col gap-4 rounded border-2 bg-white px-5 py-4 shadow">
               <>
-                <Disclosure.Button
+                <Menu.Item
                   as={Link}
                   href={basePath}
                   className={clsx('whitespace-nowrap !text-sm no-underline')}
                 >
                   Wissensspeicher
-                </Disclosure.Button>
+                </Menu.Item>
                 {menuItems.map((topic) => (
-                  <Disclosure.Button
-                    key={topic.slug}
-                    as={Link}
-                    href={`${basePath}${topic.slug}`}
-                    className={clsx(
-                      'whitespace-nowrap !text-sm no-underline hover:underline'
-                    )}
-                  >
-                    {topic.name}
-                  </Disclosure.Button>
+                  <Menu.Item key={topic.slug} as={React.Fragment}>
+                    <Link
+                      href={`${basePath}${topic.slug}`}
+                      activeClassName="font-bold"
+                      className="whitespace-nowrap !text-sm no-underline hover:underline"
+                    >
+                      {topic.name}
+                    </Link>
+                  </Menu.Item>
                 ))}
               </>
-            </Disclosure.Panel>
+            </Menu.Items>
           </Transition>
         </div>
       )}
-    </Disclosure>
+    </Menu>
   );
 };

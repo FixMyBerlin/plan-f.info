@@ -51,7 +51,7 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
       </Section>
 
       <Section className="mb-12 bg-lime-300">
-        <H2>Praxisbeispiele</H2>
+        <H2>Praxisbeispiele ({examples.length})</H2>
         <P>
           Schau was andere Kommunen zu diesem Thema bereits für Maßnahmen
           umgesetzt haben.

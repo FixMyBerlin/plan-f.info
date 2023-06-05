@@ -10,6 +10,9 @@ export const menuLinkStylesDefault =
 export const menuLinkActiveStyles =
   'decoration-purple-600 decoration-2 text-black';
 
+export const buttonStylesForDeactivatedLinkElement =
+  'bg-gray-300 text-white hover:translate-0 transition-none hover:shadow-none ';
+
 const buttonBase = 'inline-flex py-1.5';
 
 const hoverTranslateClassNames =

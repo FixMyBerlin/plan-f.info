@@ -79,7 +79,7 @@ export const SearchBar: React.FC<Props> = ({ className }) => {
       value={searchQuery}
       onChange={(path: string) => navigate(`/${path}`)}
     >
-      <div className="relative mt-2 w-full">
+      <div className="relative w-full">
         <Combobox.Input
           placeholder="Suche im Wissensspeicher"
           className="h-10 w-full rounded-md border-0 bg-white py-1.5 pl-10 pr-8  text-gray-500 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-purple-600 sm:text-sm sm:leading-6"

@@ -1,5 +1,9 @@
 # Plan F
 
+plan-f.info is a content page that showcases bike friendly projects. It is statically build using GatsbyJS and Strapi ([FixMyBerlin/plan-f-backend](https://github.com/FixMyBerlin/plan-f-backend)).
+
+## Contributions
+
 If you find any bugs, feel free to open an issue.
 
 ## Develop
@@ -8,6 +12,12 @@ If you find any bugs, feel free to open an issue.
 - Use `npm run` to see a list of commands like `npm run start`
 - Use `npm run mobile` to test the side with your mobile phone; more at https://github.com/gatsbyjs/gatsby/issues/5801
 - Use `npx eslint --print-config .eslintrc` to check the `.eslintrc` for errors
+
+## Glossary
+
+- `example` – Praxisbeispiele
+- `measure` – Maßnahmen
+- `topic` – Handlungsfelder
 
 ## License
 

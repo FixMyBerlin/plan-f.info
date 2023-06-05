@@ -8,6 +8,7 @@ import { CardText } from '~/components/PageExample/CardText';
 import { Caption, H2, H3, P } from '~/components/Text';
 import { Prose } from '~/components/core/Prose';
 import { Link } from '~/components/core/links';
+import { wikiPath } from '~/components/utils';
 
 export const query = graphql`
   query TopicTeasers {
@@ -147,6 +148,7 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
   data: { topics },
 }) => {
   const title = 'Wie werde ich eine Fahrradfreundliche Kommune?';
+  const basePath = `/${wikiPath}`;
 
   return (
     <>
@@ -187,7 +189,7 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
               <CardImageAndTextResponsive
                 title={topic.name}
                 key={topic.slug}
-                link={topic.slug}
+                link={`${basePath}/${topic.slug}`}
                 image={topic.image && topic.image.url}
               >
                 {topic.description?.data?.childMarkdownRemark.html && (

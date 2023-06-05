@@ -78,7 +78,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
         <div className="flex-col justify-center gap-8 md:gap-16">
           <div>
             <H2>Plan F</H2>
-            <H3>Impulse für die fahrradfreundliche Kommune</H3>
+            <H3>Impulse für die kommunale Fahrradmobilität</H3>
           </div>
           <SearchBar />
         </div>

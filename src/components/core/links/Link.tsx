@@ -25,7 +25,7 @@ export const Link: React.FC<LinkProps> = forwardRef<
       activeClassName,
       classNameOverwrites,
       children,
-      blank = false,
+      blank = true,
       button,
       ...props
     },
