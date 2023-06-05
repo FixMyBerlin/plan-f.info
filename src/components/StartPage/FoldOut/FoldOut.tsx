@@ -1,6 +1,6 @@
 import React, { ReactNode, useState } from 'react';
-import PlusIcon from './assets/PlusIcon.svg';
 import MinusIcon from './assets/MinusIcon.svg';
+import PlusIcon from './assets/PlusIcon.svg';
 
 type Props = {
   children: ReactNode;
@@ -43,23 +43,15 @@ export const FoldOut: React.FC<Props> = ({
   }
 
   if (headline) {
-    preview = (
-      <div className="line-clamp-3">
-        <div>{headline}</div>
-      </div>
-    );
+    preview = <div>{headline}</div>;
   }
 
   if (headline)
     return (
       <div className={className}>
-        <div className="flex items-center justify-between gap-3">
+        <div className="flex items-center justify-between gap-3 py-3">
           {preview}
-          <button
-            type="button"
-            className="p-1"
-            onClick={() => setFolded(!folded)}
-          >
+          <button type="button" onClick={() => setFolded(!folded)}>
             {folded ? (
               <PlusIcon className="h-6 w-6 rounded-full border border-black p-1" />
             ) : (
@@ -81,9 +73,9 @@ export const FoldOut: React.FC<Props> = ({
         onClick={() => setFolded(!folded)}
       >
         {folded ? (
-          <PlusIcon className="mr-2  h-6 w-6 rounded-full border border-black p-1" />
+          <PlusIcon className="mr-2  h-6 w-6 rounded-full border border-black" />
         ) : (
-          <MinusIcon className="mr-2  h-6 w-6 rounded-full border border-black p-1" />
+          <MinusIcon className="mr-2  h-6 w-6 rounded-full border border-black" />
         )}
 
         {folded ? foldedText : unfoldedText}
