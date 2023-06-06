@@ -57,7 +57,7 @@ const Layout: React.FC<
         <div className="mx-auto w-full bg-white">
           <div className="flex w-full flex-row">
             {isWiki(path) && (
-              <div className="hidden xl:block">
+              <div>
                 <SideNavigation path={path} />
               </div>
             )}

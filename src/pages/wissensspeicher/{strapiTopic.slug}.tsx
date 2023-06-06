@@ -29,7 +29,7 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
         markdownHTML={topic.description.data.childMarkdownRemark.html}
       />
 
-      <Section className="mb-20 flex flex-col  gap-10 sm:flex-row sm:gap-20">
+      <Section className="mb-20 grid gap-10 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
         {topic.guidelines && (
           <LinkListBlackButton links={topic.guidelines} title="Leitfäden" />
         )}
@@ -37,6 +37,12 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
           <LinkListBlackButton
             links={topic.additionalResources}
             title="weitere Hinweise"
+          />
+        )}
+        {topic.fundings && (
+          <LinkListBlackButton
+            links={topic.fundings}
+            title="Fördermöglichkeiten"
           />
         )}
       </Section>
@@ -54,10 +60,7 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
               key={measure.slug}
               link={measure.slug || '/'} // This is only quick fix - slug should be Pflichtfpeld
             >
-              <Prose
-                className="line-clamp-4"
-                markdownHTML={measure.description.data.childMarkdownRemark.html}
-              />
+              <Prose markdownHTML={measure.shortDescription} />
             </CardImageAndTextResponsive>
           ))}
         </CardWrapperTopicPage>
@@ -72,6 +75,10 @@ export const query = graphql`
   query TopicDetails($id: String!) {
     topic: strapiTopic(id: { eq: $id }) {
       name
+      fundings {
+        display
+        url
+      }
       image {
         url
       }
@@ -94,13 +101,7 @@ export const query = graphql`
         name
         slug
         position
-        description {
-          data {
-            childMarkdownRemark {
-              html
-            }
-          }
-        }
+        shortDescription
       }
     }
   }

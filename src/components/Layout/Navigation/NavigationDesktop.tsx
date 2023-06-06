@@ -1,23 +1,17 @@
 import clsx from 'clsx';
-import React, { Fragment } from 'react';
+import React from 'react';
 import Logo from '~/components/Layout/assets/Logo.svg';
 import { SearchBar } from '~/components/SearchBar';
 import {
   menuLinkActiveStyles,
   menuLinkStylesDefault,
 } from '~/components/core/links';
-import { wikiPath } from '~/components/utils';
 import { Link } from '../../core/links/Link';
-import { NavigationDesktopDropdown } from './NavigationDesktopDropdown';
 import { menuItems } from './menuItems';
-import { useTopicNavigationData } from './utils/useTopicNavigationData';
 
 type Props = { path: string; className?: string };
 
 export const NavigationDesktop: React.FC<Props> = ({ path, className }) => {
-  const basePath = `/${wikiPath}`;
-  const topicNavigationData = useTopicNavigationData();
-
   return (
     <nav
       className={clsx(
@@ -30,41 +24,19 @@ export const NavigationDesktop: React.FC<Props> = ({ path, className }) => {
       </Link>
       <ul className={clsx('flex flex-row items-center gap-4')}>
         {Object.keys(menuItems).map((key) => (
-          <Fragment key={key}>
-            {key === 'Wissensspeicher' ? (
-              <NavigationDesktopDropdown
-                // Inner Disclosure Button
-                button={
-                  <p
-                    className={clsx(
-                      'whitespace-nowrap !text-sm',
-                      path.startsWith(basePath)
-                        ? menuLinkActiveStyles
-                        : menuLinkStylesDefault
-                    )}
-                  >
-                    {key}
-                  </p>
-                }
-                menuItems={topicNavigationData}
-                basePath={menuItems[key]}
-              />
-            ) : (
-              <li key={key}>
-                <Link
-                  href={menuItems[key]}
-                  className={clsx(
-                    '!text-sm',
-                    path.startsWith(menuItems[key])
-                      ? menuLinkActiveStyles
-                      : menuLinkStylesDefault
-                  )}
-                >
-                  {key}
-                </Link>
-              </li>
-            )}
-          </Fragment>
+          <li key={key}>
+            <Link
+              href={menuItems[key]}
+              className={clsx(
+                '!text-sm',
+                path.startsWith(menuItems[key])
+                  ? menuLinkActiveStyles
+                  : menuLinkStylesDefault
+              )}
+            >
+              {key}
+            </Link>
+          </li>
         ))}
         <SearchBar className="!w-60" />
       </ul>

@@ -73,9 +73,9 @@ export const FoldOut: React.FC<Props> = ({
         onClick={() => setFolded(!folded)}
       >
         {folded ? (
-          <PlusIcon className="mr-2  h-6 w-6 rounded-full border border-black" />
+          <PlusIcon className="mr-2  h-6 w-6 rounded-full border border-black p-1" />
         ) : (
-          <MinusIcon className="mr-2  h-6 w-6 rounded-full border border-black" />
+          <MinusIcon className="mr-2  h-6 w-6 rounded-full border border-black p-1" />
         )}
 
         {folded ? foldedText : unfoldedText}

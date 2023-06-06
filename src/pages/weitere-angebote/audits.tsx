@@ -1,4 +1,6 @@
+import { StaticImage } from 'gatsby-plugin-image';
 import { Content, HelmetSeo, Hero } from '~/components/Layout';
+import { ImageWithCopyright } from '~/components/Layout/ImageWithCopyright';
 import { Section } from '~/components/Layout/Section';
 import { articleProseClasses } from '~/components/core/articleProseClasses';
 import { MailLink } from '~/components/core/links';
@@ -32,6 +34,15 @@ const AuditsPage = () => {
             Kommune? Dann sprechen Sie uns an unter{' '}
             <MailLink>kontakt@plan-f.info</MailLink>.
           </p>
+          <ImageWithCopyright
+            className="mt-8"
+            copyright="Quelle: Audit: Carolin Kruse"
+          >
+            <StaticImage
+              src="./../../components/WeitereAngebote/assets/planf-audit.jpg"
+              alt="Audit: Carolin Kruse"
+            />
+          </ImageWithCopyright>
         </Content>
       </Section>
     </>
