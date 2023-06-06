@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import React, { ReactNode } from 'react';
 import { Caption } from '../Text';
 
@@ -13,7 +12,7 @@ export const ImageWithCopyright: React.FC<Props> = ({
   copyright,
 }) => {
   return (
-    <div className={clsx(className, '')}>
+    <div className={className}>
       {children}
       <Caption>{copyright}</Caption>
     </div>
