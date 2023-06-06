@@ -19,13 +19,7 @@ export const query = graphql`
         image {
           url
         }
-        description {
-          data {
-            childMarkdownRemark {
-              html
-            }
-          }
-        }
+        shortDescription
       }
     }
   }
@@ -192,12 +186,10 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
                 link={`${basePath}/${topic.slug}`}
                 image={topic.image && topic.image.url}
               >
-                {topic.description?.data?.childMarkdownRemark.html && (
+                {topic.shortDescription && (
                   <Prose
                     className="line-clamp-4"
-                    markdownHTML={
-                      topic.description.data.childMarkdownRemark.html
-                    }
+                    markdownHTML={topic.shortDescription}
                   />
                 )}
               </CardImageAndTextResponsive>
