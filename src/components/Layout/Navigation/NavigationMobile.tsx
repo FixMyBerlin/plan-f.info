@@ -22,10 +22,16 @@ export const NavigationMobile: React.FC<Props> = ({
   className,
 }) => {
   return (
-    <Menu as="nav" className={clsx(className, 'fixed z-10 w-full  bg-white')}>
+    <Menu>
       {({ open }) => (
-        <>
-          <div className={clsx('mx-auto px-4 pb-2 sm:px-6 lg:px-8')}>
+        <nav
+          className={clsx(
+            className,
+            open ? 'z-30' : 'z-10 ',
+            'fixed w-full bg-white'
+          )}
+        >
+          <div className={clsx('z-30 mx-auto px-4 pb-2 sm:px-6 lg:px-8')}>
             <div className="flex h-16 justify-between">
               <Link className="flex flex-col justify-center" href="/">
                 <Logo className="h-8 w-auto shrink-0" />
@@ -114,7 +120,7 @@ export const NavigationMobile: React.FC<Props> = ({
               </div>
             </Menu.Items>
           </Transition>
-        </>
+        </nav>
       )}
     </Menu>
   );
