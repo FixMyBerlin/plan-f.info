@@ -97,9 +97,11 @@ export const SideNavigation: React.FC<Props> = ({ path }) => {
       </div>
       {/* div pushes main to the side */}
       {!folded ? (
-        <div className={clsx(sidePanelWidthClassName, 'z-10')} />
+        <div
+          className={clsx(sidePanelWidthClassName, 'z-10 hidden xl:block')}
+        />
       ) : (
-        <div className="shadow-r h-full w-[6px] bg-gray-100" />
+        <div className="shadow-r hidden h-full w-[6px] bg-gray-100 xl:block" />
       )}
     </>
   );
