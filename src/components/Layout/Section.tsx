@@ -7,7 +7,7 @@ type Props = {
 };
 export const Section: React.FC<Props> = ({ children, className }) => {
   return (
-    <section className={clsx('rounded-b-3xl p-5 md:p-10', className)}>
+    <section className={clsx('rounded-b-3xl p-8 md:p-12', className)}>
       {children}
     </section>
   );
