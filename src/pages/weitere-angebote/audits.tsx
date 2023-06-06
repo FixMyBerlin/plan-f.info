@@ -39,7 +39,7 @@ const AuditsPage = () => {
             copyright="Quelle: Audit: Carolin Kruse"
           >
             <StaticImage
-              src="./../../WeitereAngebote/assets/planf-audit.jpg"
+              src="./../../components/WeitereAngebote/assets/planf-audit.jpg"
               alt="Audit: Carolin Kruse"
             />
           </ImageWithCopyright>
