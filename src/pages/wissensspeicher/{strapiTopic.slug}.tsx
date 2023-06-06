@@ -39,6 +39,12 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
             title="weitere Hinweise"
           />
         )}
+        {topic.fundings && (
+          <LinkListBlackButton
+            links={topic.fundings}
+            title="Fördermöglichkeiten"
+          />
+        )}
       </Section>
 
       <Section className="bg-green-500">
@@ -69,6 +75,10 @@ export const query = graphql`
   query TopicDetails($id: String!) {
     topic: strapiTopic(id: { eq: $id }) {
       name
+      fundings {
+        display
+        url
+      }
       image {
         url
       }

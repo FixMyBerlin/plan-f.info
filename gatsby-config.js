@@ -93,6 +93,7 @@ module.exports = {
                 measures: { populate: '*' },
                 additionalResources: { populate: '*' },
                 guidelines: { populate: '*' },
+                fundings: { populate: '*' },
                 image: { populate: '*' },
               },
             },
