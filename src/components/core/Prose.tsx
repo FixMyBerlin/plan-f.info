@@ -6,20 +6,21 @@ type Props = {
   className?: string;
 };
 
+export const planFMarkdownProseClasses = clsx(
+  'max-w-full', // We always wrap Prose in Section containers, which bring their own max-width
+  'text-gray-700',
+  'prose-h1:text-lg', // h1 size
+  'prose-h2:text-base', // h2 size
+  'prose-h3:text-base', // h3 size
+  'prose prose-sm md:prose-base', // responsive sizes
+  'prose-h3:m1-1 prose-h1:mb-2 prose-h2:mb-2 prose-h2:mt-1 prose-h3:mb-2 prose-p:mb-2 prose-p:mt-1',
+  'prose-li:m-0 prose-li:p-0'
+);
+
 export const Prose: React.FC<Props> = ({ markdownHTML, className }) => {
   return (
     <div
-      className={clsx(
-        className,
-        'max-w-full', // We always wrap Prose in Section containers, which bring their own max-width
-        'text-gray-700',
-        'prose-h1:text-lg', // h1 size
-        'prose-h2:text-base', // h2 size
-        'prose-h3:text-base', // h3 size
-        'prose prose-sm md:prose-base', // responsive sizes
-        'prose-h3:m1-1 prose-h1:mb-2 prose-h2:mb-2 prose-h2:mt-1 prose-h3:mb-2 prose-p:mb-2 prose-p:mt-1',
-        'prose-li:m-0 prose-li:p-0'
-      )}
+      className={clsx(className, planFMarkdownProseClasses)}
       // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{ __html: markdownHTML }}
     />

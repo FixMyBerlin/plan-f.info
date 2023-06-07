@@ -1,8 +1,8 @@
 import { ArrowRightIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 import React, { ReactNode } from 'react';
-import { H2 } from '../Text';
-import { Link } from '../core/links';
+import { H2 } from './Text';
+import { Link } from './core/links';
 
 type Props = {
   title: string;
@@ -11,7 +11,7 @@ type Props = {
   className?: string;
 };
 
-export const ArticleTeaserCard: React.FC<Props> = ({
+export const PageTeaserCard: React.FC<Props> = ({
   className,
   link,
   title,
@@ -24,7 +24,7 @@ export const ArticleTeaserCard: React.FC<Props> = ({
       <Link
         className="mt-10 flex items-center gap-2"
         button="black"
-        href={`/artikel${link}`}
+        href={link}
       >
         <ArrowRightIcon className="h-5 w-5 " />
         Weiterlesen
