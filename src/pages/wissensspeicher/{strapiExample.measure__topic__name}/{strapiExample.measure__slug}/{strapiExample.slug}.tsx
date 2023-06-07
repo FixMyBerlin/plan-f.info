@@ -140,7 +140,6 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
             />
           </div>
           <div className="mt-12">
-            <H2>Auswertung Praxisbeispiel</H2>
             <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
               <CardText
                 title="Ziele"
@@ -156,7 +155,37 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
               />
               <CardText
                 title="Kosten / Mittelherkunft"
-                markdownHTML={example.goals.data.childMarkdownRemark.html}
+                markdownHTML={example.funding.data.childMarkdownRemark.html}
+              >
+                <p>{example.costs} €</p>
+              </CardText>
+              <CardText
+                title="Personeller Aufwand"
+                markdownHTML={
+                  example.personnelExpenses.data.childMarkdownRemark.html
+                }
+              />
+              <CardText
+                title="Beteiligte Ämter (intern)"
+                markdownHTML={example.authorities.data.childMarkdownRemark.html}
+              />
+              {example.stakeholders && (
+                <CardText
+                  title="Beteiligte Akteur*innen (extern)"
+                  markdownHTML={
+                    example.stakeholders.data.childMarkdownRemark.html
+                  }
+                />
+              )}
+              <CardText
+                title="Kommunikation der Maßnahme"
+                markdownHTML={
+                  example.communication.data.childMarkdownRemark.html
+                }
+              />
+              <CardText
+                title="Herausforderungen"
+                markdownHTML={example.challenges.data.childMarkdownRemark.html}
               />
             </div>
           </div>
@@ -240,14 +269,63 @@ export const query = graphql`
   query ExampleDetails($id: String!) {
     example: strapiExample(id: { eq: $id }) {
       title
-      subcategory
+      description {
+        data {
+          childMarkdownRemark {
+            html
+          }
+        }
+      }
       shortDescription
+      period
+      stakeholders {
+        data {
+          childMarkdownRemark {
+            html
+          }
+        }
+      }
+      links {
+        url
+        display
+      }
+      relatedOffice {
+        data {
+          childMarkdownRemark {
+            html
+          }
+        }
+      }
       countryState
       commune
-      title
-      centrality
-      population
       spatialStructure
+      awards {
+        award {
+          logo {
+            image {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
+            }
+            copyright
+          }
+          name
+        }
+        description {
+          data {
+            childMarkdownRemark {
+              html
+            }
+            id
+          }
+        }
+      }
+      centrality
+      subcategory
+      population
+      costs
       localChallenges {
         data {
           childMarkdownRemark {
@@ -262,8 +340,28 @@ export const query = graphql`
           }
         }
       }
-      period
       funding {
+        data {
+          childMarkdownRemark {
+            html
+          }
+        }
+      }
+      personnelExpenses {
+        data {
+          childMarkdownRemark {
+            html
+          }
+        }
+      }
+      challenges {
+        data {
+          childMarkdownRemark {
+            html
+          }
+        }
+      }
+      authorities {
         data {
           childMarkdownRemark {
             html
@@ -339,54 +437,6 @@ export const query = graphql`
           }
         }
         copyright
-      }
-      description {
-        data {
-          childMarkdownRemark {
-            html
-          }
-        }
-      }
-      relatedOffice {
-        data {
-          childMarkdownRemark {
-            html
-          }
-        }
-      }
-      stakeholders {
-        data {
-          childMarkdownRemark {
-            html
-          }
-        }
-      }
-      awards {
-        award {
-          logo {
-            image {
-              localFile {
-                childImageSharp {
-                  gatsbyImageData
-                }
-              }
-            }
-            copyright
-          }
-          name
-        }
-        description {
-          data {
-            childMarkdownRemark {
-              html
-            }
-            id
-          }
-        }
-      }
-      links {
-        url
-        display
       }
       measure {
         name
