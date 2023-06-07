@@ -1,6 +1,9 @@
-import { ArticleTeaserCard } from '~/components/ArtikelPages/ArticleTeaserCard';
+import { PageTeaserCard } from '~/components/PageTeaserCard';
 import { Content, HelmetSeo, Hero } from '~/components/Layout';
-import { menuItemsWithChildren } from '~/components/Layout/Navigation/menuItems';
+import {
+  menuItems,
+  menuItemsWithChildren,
+} from '~/components/Layout/Navigation/menuItems';
 import { Section } from '~/components/Layout/Section';
 
 const IndexPage = () => {
@@ -35,13 +38,13 @@ const IndexPage = () => {
             {Object.keys(menuItemsWithChildren.Artikel).map((key) => {
               if (key === 'Alle Artikel') return null;
               return (
-                <ArticleTeaserCard
+                <PageTeaserCard
                   key={key}
                   title={key}
-                  link={`/${menuItemsWithChildren.Artikel[key]}`}
+                  link={`${menuItems.Artikel}${menuItemsWithChildren.Artikel[key]}`}
                 >
                   {articleTeaserTexts[key]}
-                </ArticleTeaserCard>
+                </PageTeaserCard>
               );
             })}
           </div>
