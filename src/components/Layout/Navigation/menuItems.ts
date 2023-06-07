@@ -27,7 +27,7 @@ export const menuItemsWithChildren = {
 
   'Weitere Angebote': {
     'Plan F Handbuch': 'handbuch/',
-    Audits: 'audits/',
-    'E-Learning': 'e-learning/',
+    'Plan F Audit': 'audits/',
+    'Plan F E-Learning': 'e-learning/',
   },
 };
