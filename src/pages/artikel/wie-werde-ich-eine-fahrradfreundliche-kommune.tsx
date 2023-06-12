@@ -130,11 +130,11 @@ const planningCardTexts = [
         Hierzu können beispielsweise Interviews und Umfragen zur Zufriedenheit
         der Nutzenden, Verkehrszählungen, Luft- und Lärmmessungen, Audits
         Sicherheit, Umsetzungsstand, s. auch{' '}
-        <Link href="/weitere-">Plan F Audit</Link> genutzt werden, um den
-        Fortschritt zu messen und festzustellen, ob weitere Anpassungen oder
-        Verbesserungen notwendig sind. Die Art der Evaluation hängt von den
-        definierten Zielen ab. In unserem Plan F speicher befinden sich gute
-        Praxisbeispiele zu Evaluationsmaßnahmen.
+        <Link href="/weitere-angebote/audits">Plan F Audit</Link> genutzt
+        werden, um den Fortschritt zu messen und festzustellen, ob weitere
+        Anpassungen oder Verbesserungen notwendig sind. Die Art der Evaluation
+        hängt von den definierten Zielen ab. In unserem Plan F speicher befinden
+        sich gute Praxisbeispiele zu Evaluationsmaßnahmen.
       </P>
     ),
   },
@@ -198,7 +198,7 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
       <Section>
         <Content>
           <H2>Systematisierung</H2>
-          Bild TODO
+          {/* <StaticImage src={''} alt={''} /> */}
           <Caption>Grafik Systematisierung</Caption>
           <H3>Zielformulierung</H3>
           <P>
@@ -283,14 +283,14 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
               <li>Erhöhung der sozialen /subjektiven Sicherheit </li>
               <li>Fahrradnutzung wird praktischer </li>
               <li>Radverkehrsanteil wird erhöht </li>
-              <li>Komfort und Fahrspaß werdenverbessert </li>
+              <li>Komfort und Fahrspaß werden verbessert</li>
               <li>
-                Zielt auf Lebensumbruchphasen ab (Kinder aus dem Haus,Umzug,
+                Zielt auf Lebensumbruchphasen ab (Kinder aus dem Haus, Umzug,
                 neue Arbeitsstelle, von Grundschule zu weiterführende Schule)
               </li>
               <li>
-                Fahrrad steigt in der Wahrnehmung (Statussymbol / hipp
-                /Fahrradkultur)
+                Fahrrad steigt in der Wahrnehmung (Statussymbol / hipp /
+                Fahrradkultur)
               </li>
             </ul>
           </div>
@@ -299,7 +299,7 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
           >
             <p>
               <strong>
-                2. Ermittlung des Aufwands/ Bereitstellung der Mittel:
+                2. Ermittlung des Aufwands / Bereitstellung der Mittel:
               </strong>
             </p>
             <ul>
