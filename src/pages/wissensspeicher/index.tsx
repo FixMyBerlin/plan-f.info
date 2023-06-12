@@ -38,25 +38,29 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
       <Section>
         <Content>
           <P>
-            Kommunikation und Öffentlichkeitsarbeit sind ein zentrales
-            Handlungsfeld der Radverkehrsförderung, welches insbesondere
-            Personen, die (noch) nicht Fahrrad fahren, adressiert und erreichen
-            möchte. Neben Maßnahmen im Bereich #Marketing und Kommunikation
-            können auch #Innovationen und #Modellprojekte einen wichtigen
-            Beitrag dazu leisten, dass das Fahrrad als Mobilitätsmittel beworben
-            und die Bevölkerung zum Radfahren motiviert wird. Darüber hinaus ist
-            es wichtig, dass Kommunen selbst als #Vorbild auftreten und den
-            Radverkehr in der eigenen Verwaltung fördern. Ein positives Framing
-            des Fahrradfahrens durch gute Öffentlichkeitsarbeit zielt darauf ab,
-            das Fahrrad als Alltagsverkehrsmittel zu „normalisieren“.
-            Gleichzeitig ist die Verbreitung wichtiger Informationen, zum
-            Beispiel über radverkehrsbezogene Angebote und Möglichkeiten in
-            Ihrer Kommune, ein wichtiger Baustein, um mehr Menschen das
-            Radfahren zugänglich zu machen. Gute Praxisbeispiele zeigen auf, wie
-            verschiedene Maßnahmen aus dem Handlungsfeld Kommunikation und
-            Öffentlichkeitsarbeit in den Kommunen umgesetzt wurden und dazu
-            beitragen, den Radverkehr zu fördern. Wichtige Leitfäden und
-            Literaturtipps unterstützen Sie in der Umsetzung.
+            Das Herzstück von Plan F ist die Systematisierung von
+            Praxisbeispielen, Leitfäden, Fördermöglichkeiten und weitere
+            Hinweise. Diese sind in dem Wissensspeicher strukturiert
+            aufbereitet.
+          </P>
+          <P>
+            Der Wissensspeicher ist einfach zu bedienen und schafft eine
+            strukturierte Übersicht zu Handlungsmöglichkeiten der kommunalen
+            Radverkehrsförderung. Der Wissensspeicher ist nach neun
+            Handlungsfeldern gegliedert, welche verschiedene Maßnahmen und
+            Praxisbeispiele enthalten. Relevante Leitfäden, Fördermöglichkeiten,
+            weitere Hinweise sind den Handlungsfeldern und Maßnahmen zugeordnet.
+            <br />
+            Es ist möglich, sich durch die verschiedenen Handlungsfelder zu
+            klicken, um die verschiedenen Informationen zu erhalten. Darüber
+            hinaus bietet die Suchfunktion einen schnellen Zugang zu den
+            Handlungsfeldern, verschiedenen Maßnahmen und Praxisbeispielen.
+          </P>
+          <P>
+            Für eine ganzheitliche Radverkehrsförderung ist es notwendig,
+            Maßnahmen in verschiedenen Handlungsfeldern umzusetzen. Ein schlauer
+            und passgenauer Maßnahmenmix trägt dazu bei, den Radverkehrsanteil
+            in deutschen Kommunen zu steigern.
           </P>
         </Content>
       </Section>
