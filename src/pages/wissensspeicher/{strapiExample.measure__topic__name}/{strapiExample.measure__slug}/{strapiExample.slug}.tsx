@@ -42,6 +42,11 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
   );
   const { communityEntries } = example.measure;
 
+  // eslint-disable-next-line no-param-reassign
+  example = {
+    ...example,
+    population: Number(example.population).toLocaleString(),
+  };
   return (
     <>
       <HelmetSeo title={example.measure.name} />
