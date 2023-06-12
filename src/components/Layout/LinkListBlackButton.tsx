@@ -43,7 +43,7 @@ export const LinkListBlackButton: React.FC<Props> = ({
           {links.map((resource) => (
             <LinkButtonWithArrow
               blank
-              className="max-w-[250px] md:max-w-none"
+              className="w-full max-w-[250px] md:max-w-none"
               href={resource.url}
               key={resource.url}
             >
@@ -61,7 +61,7 @@ export const LinkListBlackButton: React.FC<Props> = ({
         {links.slice(0, 2).map((resource) => (
           <LinkButtonWithArrow
             blank
-            className="max-w-[250px] md:max-w-none"
+            className="w-full max-w-[250px] md:max-w-none"
             href={resource.url}
             key={resource.url}
           >
