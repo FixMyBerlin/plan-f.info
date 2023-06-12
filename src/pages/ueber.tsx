@@ -39,9 +39,9 @@ const AboutPage = () => {
           <P>
             Plan F ist ein gemeinsames Projekt von{' '}
             <Link href="https://fair-spaces.de/">Fair Spaces</Link> und{' '}
-            <Link href="https://www.fixmycity.de/">FixMyCity</Link>
-            und wird vom Bundesministerium für Digitales und Verkehr (BMDV) im
-            Rahmen des Nationalen Radverkehrsplan (NRVP) gefördert.
+            <Link href="https://www.fixmycity.de/">FixMyCity</Link> und wird vom
+            Bundesministerium für Digitales und Verkehr (BMDV) im Rahmen des
+            Nationalen Radverkehrsplan (NRVP) gefördert.
           </P>
           <H3>Benutzung dieser Seite</H3>
           <P>
@@ -62,7 +62,7 @@ const AboutPage = () => {
           <P>
             Auch wird auf Besonderheiten eingegangen, wie durchgeführte
             Evaluation, Beteiligung, interkommunale Maßnahme, temporäre oder
-            Einsteigermaßnahmen. Über die intelligente Suche kann nach
+            Einsteiger*innenmaßnahmen. Über die intelligente Suche kann nach
             verschiedenen Stichpunkten gesucht werden.
           </P>
           <P>
@@ -70,18 +70,17 @@ const AboutPage = () => {
             Handlungsfeldern und Maßnahmen zugeordnet.
           </P>
           <P>
-            Zudem befindet sich unter weitere Angebote:
+            Unter weitere Angebote befindet sich:
             <ul className="ml-2 list-disc pl-2">
-              <li>
-                Ergänzende Informationen und Empfehlungen zur kommunalen
-                Radverkehrsförderung
-              </li>
-              <li>Stellen und Organisationen für weitere Informationen</li>
-              <li>
-                Informationen zum gedruckten Handbuch und dem E-Learningkurs
-              </li>
+              <li>Plan F Handbuch</li>
+              <li>Plan F E-Learning</li>
               <li>Plan F Audit</li>
             </ul>
+          </P>
+          <P>
+            Unter Artikel befinden sich ergänzende Informationen und
+            Empfehlungen zur kommunalen Radverkehrsförderung sowie Stellen und
+            Organisationen für weitere Informationen.
           </P>
           <P>
             Über den Plan F Check (coming soon) erhalten Kommunen passgenaue
