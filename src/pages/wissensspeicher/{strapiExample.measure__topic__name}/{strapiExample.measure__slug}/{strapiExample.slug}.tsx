@@ -231,19 +231,25 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
               </div>
             ))}
           </div>
-          <div className="mt-12">
-            <H2>Besonderheiten</H2>
-            <Prose
-              markdownHTML={
-                example.particularities.data.childMarkdownRemark.html
-              }
-            />
-          </div>
-          <div className="mt-12">
-            <H2>Anmerkungen</H2>
-            <Prose markdownHTML={example.notes.data.childMarkdownRemark.html} />
-          </div>
-          {example.sources && (
+          {example.particularities.data.particularities && (
+            <div className="mt-12">
+              <H2>Besonderheiten</H2>
+              <Prose
+                markdownHTML={
+                  example.particularities.data.childMarkdownRemark.html
+                }
+              />
+            </div>
+          )}
+          {example.notes.data.notes && (
+            <div className="mt-12">
+              <H2>Anmerkungen</H2>
+              <Prose
+                markdownHTML={example.notes.data.childMarkdownRemark.html}
+              />
+            </div>
+          )}
+          {example.sources.data.sources && (
             <div className="mt-12 flex items-start">
               <Prose className="mr-1" markdownHTML="<p>Quelle: </p>" />
               <Prose
