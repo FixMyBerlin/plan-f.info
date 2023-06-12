@@ -171,12 +171,12 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
                 }
               />
               <CardText
-                title="Beteiligte Ämter (intern)"
+                title="Beteiligte Ämter"
                 markdownHTML={example.authorities.data.childMarkdownRemark.html}
               />
               {example.stakeholders && (
                 <CardText
-                  title="Beteiligte Akteur*innen (extern)"
+                  title="Beteiligte Akteur*innen"
                   markdownHTML={
                     example.stakeholders.data.childMarkdownRemark.html
                   }
@@ -192,6 +192,14 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
                 title="Herausforderungen"
                 markdownHTML={example.challenges.data.childMarkdownRemark.html}
               />
+              {example.particularities.data.particularities && (
+                <CardText
+                  title="Besonderheiten"
+                  markdownHTML={
+                    example.particularities.data.childMarkdownRemark.html
+                  }
+                />
+              )}
             </div>
           </div>
           <LinkListBlackButton
@@ -231,16 +239,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
               ))}
             </div>
           )}
-          {example.particularities.data.particularities && (
-            <div className="mt-12">
-              <H2>Besonderheiten</H2>
-              <Prose
-                markdownHTML={
-                  example.particularities.data.childMarkdownRemark.html
-                }
-              />
-            </div>
-          )}
+
           {example.notes.data.notes && (
             <div className="mt-12">
               <H2>Anmerkungen</H2>
