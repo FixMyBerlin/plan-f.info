@@ -50,7 +50,7 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
       <Section className="bg-green-500">
         <H2>Maßnahmen im Handlungsfeld {topic.name}</H2>
         <P>
-          Entdecken Sie die Verschiedenen Maßnahmen, die zu diesem Handlungsfeld
+          Entdecken Sie die verschiedenen Maßnahmen, die zu diesem Handlungsfeld
           gehören, dort finden Sie auch viele Praxisbeispiele
         </P>
         <CardWrapperTopicPage className="mt-12">
