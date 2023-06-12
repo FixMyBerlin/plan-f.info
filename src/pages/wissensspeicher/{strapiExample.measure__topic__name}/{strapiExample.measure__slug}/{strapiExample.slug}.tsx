@@ -41,7 +41,6 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
     example.slug
   );
   const { communityEntries } = example.measure;
-
   // eslint-disable-next-line no-param-reassign
   example = {
     ...example,
@@ -92,22 +91,25 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
             <H2>{example.commune}</H2>
             <table className="table-auto">
               <tbody className="flex flex-col gap-2">
-                {Object.keys(steckbiref).map((key) => (
-                  <tr
-                    className="grid grid-cols-1 text-gray-700 md:grid-cols-2 lg:grid-cols-3"
-                    key={key}
-                  >
-                    <td className="whitespace-nowrap font-bold uppercase text-gray-700">
-                      {steckbiref[key]}
-                    </td>
-                    <td>
-                      <Prose
-                        className="prose-p:mt-0 lg:col-span-2"
-                        markdownHTML={example[key]}
-                      />
-                    </td>
-                  </tr>
-                ))}
+                {Object.keys(steckbiref).map((key) => {
+                  if (!example[key]) return null;
+                  return (
+                    <tr
+                      className="grid grid-cols-1 text-gray-700 md:grid-cols-2 lg:grid-cols-3"
+                      key={key}
+                    >
+                      <td className="whitespace-nowrap font-bold uppercase text-gray-700">
+                        {steckbiref[key]}
+                      </td>
+                      <td>
+                        <Prose
+                          className="prose-p:mt-0 lg:col-span-2"
+                          markdownHTML={example[key]}
+                        />
+                      </td>
+                    </tr>
+                  );
+                })}
                 <tr className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                   <td className="whitespace-nowrap font-bold uppercase text-gray-700">
                     Zuständige Abteilung
@@ -162,7 +164,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
                 title="Kosten / Mittelherkunft"
                 markdownHTML={example.funding.data.childMarkdownRemark.html}
               >
-                <p>{example.costs} €</p>
+                {example.costs && <p>{example.costs} €</p>}
               </CardText>
               <CardText
                 title="Personeller Aufwand"
