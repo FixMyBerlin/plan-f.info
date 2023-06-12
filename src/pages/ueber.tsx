@@ -27,14 +27,14 @@ const AboutPage = () => {
             Das Herzstück von Plan F ist die Systematisierung mit den
             Praxisbeispielen und Leitfäden. Durch die strukturierte Aufarbeitung
             der Materialien nach neun Handlungsfeldern ist eine zielorientierte
-            und übersichtliche Maßnahmensammlung, welche die Akteur*innen in den
-            Kommunen einfach bedienen und damit ihre Lücke in der
-            Radverkehrsförderung schließen können, entstanden. Für eine
-            ganzheitliche Radverkehrsförderung ist es notwendig, Maßnahmen in
-            verschiedenen Handlungsfeldern umzusetzen. Durch einen schlauen und
-            passgenauen Maßnahmenmix kann die Fahrradkultur und der
-            Radverkehrsanteil in deutschen Kommunen gesteigert und die
-            Radverkehrsförderung effizienter werden.
+            und übersichtliche Maßnahmensammlung entstanden, welcher sich die
+            Akteur*innen in den Kommunen einfach bedienen, um ihre Lücke in der
+            Radverkehrsförderung schließen zu können. Für eine ganzheitliche
+            Radverkehrsförderung ist es notwendig, Maßnahmen in verschiedenen
+            Handlungsfeldern umzusetzen. Durch einen schlauen und passgenauen
+            Maßnahmenmix können die Fahrradkultur und der Radverkehrsanteil in
+            deutschen Kommunen gesteigert und die Radverkehrsförderung
+            effizienter werden.
           </P>
           <P>
             Plan F ist ein gemeinsames Projekt von{' '}
@@ -45,8 +45,15 @@ const AboutPage = () => {
           </P>
           <H3>Benutzung dieser Seite</H3>
           <P>
+            Diese Webseite gibt einen Überblick über die neun Handlungsfeldern
+            der kommunalen Fahrradmobilität. In den verschiedenen
+            Handlungsfeldern werden unterschiedliche Praxisbeispiele aufgezeigt,
+            die Impulse für die Umsetzung vielfältiger Maßnahmen der
+            Radverkehrsförderung geben sollen.
+          </P>
+          <P>
             In jedem Praxisbeispiel werden die Kommunen, welche die Maßnahmen
-            umgesetzt haben, (mit Größe, Lage, lokalen Herausforderungen) kurz
+            umgesetzt haben, kurz (mit Größe, Lage, lokalen Herausforderungen)
             beschrieben. Die Maßnahmen und der Umsetzungsprozess werden u. a.
             anhand der angesprochenen Zielgruppen, Einbindung der Bevölkerung,
             Ziele, Kosten, Nutzung von Fördermitteln, Kommunikation und
@@ -57,6 +64,10 @@ const AboutPage = () => {
             Evaluation, Beteiligung, interkommunale Maßnahme, temporäre oder
             Einsteigermaßnahmen. Über die intelligente Suche kann nach
             verschiedenen Stichpunkten gesucht werden.
+          </P>
+          <P>
+            Relevante Leitfäden, Förderprogramme und weitere Hinweise sind den
+            Handlungsfeldern und Maßnahmen zugeordnet.
           </P>
           <P>
             Zudem befindet sich unter weitere Angebote:
