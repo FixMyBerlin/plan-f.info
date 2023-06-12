@@ -127,8 +127,8 @@ const planningCardTexts = [
         bewerten, ist es wichtig, regelmäßige Evaluierungen durchzuführen.
         Hierzu können beispielsweise Interviews und Umfragen zur Zufriedenheit
         der Nutzenden, Verkehrszählungen, Luft- und Lärmmessungen, Audits
-        (Sicherheit, Umsetzungsstand, s. auch{' '}
-        <Link href="/weitere-">Plan F Audit</Link>) genutzt werden, um den
+        Sicherheit, Umsetzungsstand, s. auch{' '}
+        <Link href="/weitere-">Plan F Audit</Link> genutzt werden, um den
         Fortschritt zu messen und festzustellen, ob weitere Anpassungen oder
         Verbesserungen notwendig sind. Die Art der Evaluation hängt von den
         definierten Zielen ab. In unserem Plan F speicher befinden sich gute
