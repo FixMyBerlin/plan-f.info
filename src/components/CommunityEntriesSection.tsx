@@ -24,7 +24,7 @@ export const CommunityEntriesSection: React.FC<Props> = ({
         Wenn Sie ein vorbildhaftes Praxisbeispiel kennen, das sich noch nicht im
         Plan F Wissensspeicher befindet, können Sie uns dieses zuschicken und
         wir prüfen eine Veröffentlichung. Für das Zusenden von Vorschlägen
-        benötigen Sie eine kurze Beschreibung, einen Link zu einer Website, auf
+        benötigen wir eine kurze Beschreibung, einen Link zu einer Website, auf
         der das Beispiel vorgestellt wird und ggf. ein Foto.
       </P>
       <SendCommunityEntryLink />
