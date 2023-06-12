@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { PageProps, graphql } from 'gatsby';
 import React from 'react';
 import { Content, HelmetSeo, Hero } from '~/components/Layout';
@@ -7,6 +8,7 @@ import { Section } from '~/components/Layout/Section';
 import { CardText } from '~/components/PageExample/CardText';
 import { Caption, H2, H3, P } from '~/components/Text';
 import { Prose } from '~/components/core/Prose';
+import { planfProseClasses } from '~/components/core/articleProseClasses';
 import { Link } from '~/components/core/links';
 import { wikiPath } from '~/components/utils';
 
@@ -112,8 +114,8 @@ const planningCardTexts = [
         Plakate oder Broschüren, Kommunikation über Social Media als auch
         zielgruppenorientierte Kommunikation an z. B. Schulen oder Unternehmen
         eingesetzt werden.{' '}
-        <Link href="/speicher">
-          Maßnahmen auch nachzulesen in unserem speicher
+        <Link href="/wissensspeicher">
+          Maßnahmen auch nachzulesen in unserem Wissensspeicher
         </Link>
         .
       </P>
@@ -187,10 +189,7 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
                 image={topic.image && topic.image.url}
               >
                 {topic.shortDescription && (
-                  <Prose
-                    className="line-clamp-4"
-                    markdownHTML={topic.shortDescription}
-                  />
+                  <Prose markdownHTML={topic.shortDescription} />
                 )}
               </CardImageAndTextResponsive>
             ))}
@@ -266,92 +265,115 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
           müssen für Ihre Maßnahme relevant sein.
         </P>
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
-          <div className="rounded-b-3xl bg-white p-6">
-            <P>
+          <div
+            className={clsx('rounded-b-3xl bg-white px-6', planfProseClasses)}
+          >
+            <p>
               <strong>1. Definition von Zielen der Maßnahme, z. B. </strong>
-            </P>
-            <li>
-              Mobilitätsarmut wirdreduziert und gesellschaftliche Teilhabe
-              erhöht{' '}
-            </li>
-            <li>Menschen mitkörperlichen Einschränkungen werden erreicht </li>
-            <li>Erhöhung derobjektiven Sicherheit (weniger Unfälle) </li>
-            <li>Erhöhung der sozialen /subjektiven Sicherheit </li>
-            <li>Fahrradnutzung wird praktischer </li>
-            <li>Radverkehrsanteil wird erhöht </li>
-            <li>Komfort und Fahrspaß werdenverbessert </li>
-            <li>
-              Zielt auf Lebensumbruchphasen ab (Kinder aus dem Haus,Umzug, neue
-              Arbeitsstelle, von Grundschule zu weiterführende Schule)
-            </li>
-
-            <li>
-              Fahrrad steigt in der Wahrnehmung (Statussymbol / hipp
-              /Fahrradkultur)
-            </li>
+            </p>
+            <ul>
+              <li>
+                Mobilitätsarmut wird reduziert und gesellschaftliche Teilhabe
+                erhöht
+              </li>
+              <li>
+                Menschen mit körperlichen Einschränkungen werden erreicht{' '}
+              </li>
+              <li>Erhöhung der objektiven Sicherheit (weniger Unfälle) </li>
+              <li>Erhöhung der sozialen /subjektiven Sicherheit </li>
+              <li>Fahrradnutzung wird praktischer </li>
+              <li>Radverkehrsanteil wird erhöht </li>
+              <li>Komfort und Fahrspaß werdenverbessert </li>
+              <li>
+                Zielt auf Lebensumbruchphasen ab (Kinder aus dem Haus,Umzug,
+                neue Arbeitsstelle, von Grundschule zu weiterführende Schule)
+              </li>
+              <li>
+                Fahrrad steigt in der Wahrnehmung (Statussymbol / hipp
+                /Fahrradkultur)
+              </li>
+            </ul>
           </div>
-          <div className="rounded-b-3xl bg-white p-6">
-            <P>
+          <div
+            className={clsx('rounded-b-3xl bg-white px-6', planfProseClasses)}
+          >
+            <p>
               <strong>
                 2. Ermittlung des Aufwands/ Bereitstellung der Mittel:
               </strong>
-            </P>
-            <li>Personelle Mittel sind verfügbar</li>
-            <li>Erhöhung derobjektiven Sicherheit (weniger Unfälle)</li>
-            <li>Einsatz von Fördermitteln prüfen</li>
-            <li>Zeitaufwand </li>
-            <li>Ggf. Durchführung Kosten-Nutzen Analyse</li>
-            <li>Radverkehrsanteil wird erhöht </li>
+            </p>
+            <ul>
+              <li>Personelle Mittel sind verfügbar</li>
+              <li>Erhöhung der objektiven Sicherheit (weniger Unfälle)</li>
+              <li>Einsatz von Fördermitteln prüfen</li>
+              <li>Zeitaufwand </li>
+              <li>Ggf. Durchführung Kosten-Nutzen Analyse</li>
+              <li>Radverkehrsanteil wird erhöht </li>
+            </ul>
           </div>
-          <div className="rounded-b-3xl bg-white p-6">
-            <P>
+          <div
+            className={clsx('rounded-b-3xl bg-white px-6', planfProseClasses)}
+          >
+            <p>
               <strong>3. Integration von Partizipation / Vernetzung:</strong>
-            </P>
-            <li> Interdisziplinäre Gestaltung</li>
-            <li>
-              Einbindung / Beteiligung verschiedener Akteur*innen im
-              Gestaltungsprozess
-            </li>
-            <li>
-              Maßnahme verfolgt einen partizipativen, geschlechter-paritätischen
-              und inklusiven Ansatz
-            </li>
+            </p>
+            <ul>
+              <li> Interdisziplinäre Gestaltung</li>
+              <li>
+                Einbindung / Beteiligung verschiedener Akteur*innen im
+                Gestaltungsprozess
+              </li>
+              <li>
+                Maßnahme verfolgt einen partizipativen,
+                geschlechter-paritätischen und inklusiven Ansatz
+              </li>
+            </ul>
           </div>
-          <div className="rounded-b-3xl bg-white p-6">
-            <P>
+          <div
+            className={clsx('rounded-b-3xl bg-white px-6', planfProseClasses)}
+          >
+            <p>
               <strong>
                 4. Maßnahme trägt zur Lösung anderer kommunalen
                 Problemstellungen bei (indirekt)
               </strong>
-            </P>
-            <li>
-              Klimaresiliente Städte (z. B. mehr Grünflächen, geringer
-              Versiegelungsgrad, effiziente Flächennutzung)
-            </li>
-            <li>gerechterer Mobilitätszugang</li>
-            <li>Förderung des Umweltverbundes</li>
-            <li>Reduzierung des CO2 Ausstoßes</li>
-            <li>Verbesserung der Luftqualität</li>
-            <li>Verminderung der Lärmbelastung</li>
-            <li>Verbesserung der Aufenthaltsqualität</li>
+            </p>
+            <ul>
+              <li>
+                Klimaresiliente Städte (z. B. mehr Grünflächen, geringer
+                Versiegelungsgrad, effiziente Flächennutzung)
+              </li>
+              <li>gerechterer Mobilitätszugang</li>
+              <li>Förderung des Umweltverbundes</li>
+              <li>Reduzierung des CO2 Ausstoßes</li>
+              <li>Verbesserung der Luftqualität</li>
+              <li>Verminderung der Lärmbelastung</li>
+              <li>Verbesserung der Aufenthaltsqualität</li>
+            </ul>
           </div>
-          <div className="rounded-b-3xl bg-white p-6">
-            <P>
+          <div
+            className={clsx('rounded-b-3xl bg-white px-6', planfProseClasses)}
+          >
+            <p>
               <strong>
                 5. Evaluation / Formulierung von Indikatoren und messbaren
                 Zielen
               </strong>
-            </P>
+            </p>
           </div>
-          <div className="rounded-b-3xl bg-white p-6">
-            <P>
+          <div
+            className={clsx('rounded-b-3xl bg-white px-6', planfProseClasses)}
+          >
+            <p>
               <strong>6. Übertragbarkeit</strong>
-            </P>
-            <li>
+            </p>
+            <ul>
               <li>Wiederholungen sind möglich</li>
-              Maßnahme ist in anderen Stadtteilen (innerstädtisch) anwendbar
-            </li>
-            <li>Maßnahme ist auf andere deutsche Städte übertragbar</li>
+              <li>
+                Maßnahme ist in anderen Stadtteilen (innerstädtisch) anwendbar
+              </li>
+              <li>Maßnahme ist auf andere deutsche Städte übertragbar</li>
+            </ul>
           </div>
         </div>
       </Section>
