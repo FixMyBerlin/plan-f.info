@@ -41,7 +41,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
     example.slug
   );
   const { communityEntries } = example.measure;
-  // console.log(pos);
+
   return (
     <>
       <HelmetSeo title={example.measure.name} />
@@ -97,7 +97,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
                     </td>
                     <td>
                       <Prose
-                        className="lg:col-span-2"
+                        className="prose-p:mt-0 lg:col-span-2"
                         markdownHTML={example[key]}
                       />
                     </td>
@@ -109,7 +109,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
                   </td>
                   <td>
                     <Prose
-                      className="lg:col-span-2"
+                      className="prose-p:mt-0 lg:col-span-2"
                       markdownHTML={
                         example.relatedOffice.data.childMarkdownRemark.html
                       }
@@ -122,7 +122,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
                   </td>
                   <td>
                     <Prose
-                      className="lg:col-span-2"
+                      className="prose-p:mt-0 lg:col-span-2"
                       markdownHTML={
                         example.localChallenges.data.childMarkdownRemark.html
                       }
