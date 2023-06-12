@@ -200,37 +200,37 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
             titleMono
             title="Links"
           />
-          <div className="mt-12">
-            <H2>Auszeichnungen</H2>
-            {example.awards.map((award) => (
-              <div
-                className="mt-8 flex gap-2 md:gap-6"
-                key={award.description.data.id}
-              >
-                {award.award?.logo && (
-                  <ImageWithCopyright copyright={award.award.logo.copyright}>
-                    <GatsbyImage
-                      className="h-20 w-20 flex-shrink-0 md:h-36 md:w-36"
-                      image={
-                        award.award?.logo?.image &&
-                        getImage(award.award?.logo.image.localFile as any)
+          {!!example.awards.length && (
+            <div className="mt-12">
+              <H2>Auszeichnungen</H2>
+              {example.awards.map((award) => (
+                <div
+                  className="mt-8 flex gap-3 md:gap-6"
+                  key={award.description.data.id}
+                >
+                  {award.award?.logo && (
+                    <ImageWithCopyright copyright={award.award.logo.copyright}>
+                      <img
+                        src={award.award.logo.image.url}
+                        alt={award.award.name}
+                      />
+                    </ImageWithCopyright>
+                  )}
+                  <div className="flex flex-col justify-start">
+                    {award.award?.name && (
+                      <H3 className="mt-0 md:mt-0">{award.award.name}</H3>
+                    )}
+                    <Prose
+                      className="line-clamp-4"
+                      markdownHTML={
+                        award.description.data.childMarkdownRemark.html
                       }
-                      alt="Titelbild"
                     />
-                  </ImageWithCopyright>
-                )}
-                <div className="flex flex-col justify-start">
-                  {award.award?.name && <H3>{award.award.name}</H3>}
-                  <Prose
-                    className="line-clamp-4"
-                    markdownHTML={
-                      award.description.data.childMarkdownRemark.html
-                    }
-                  />
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
           {example.particularities.data.particularities && (
             <div className="mt-12">
               <H2>Besonderheiten</H2>
@@ -314,11 +314,7 @@ export const query = graphql`
         award {
           logo {
             image {
-              localFile {
-                childImageSharp {
-                  gatsbyImageData
-                }
-              }
+              url
             }
             copyright
           }
