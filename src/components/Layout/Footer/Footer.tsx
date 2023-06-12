@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import React, { Fragment } from 'react';
-import { Fundings } from '~/components/StartPage';
+import { Fundings } from '~/components/AwardPage';
 import { Link } from '~/components/core/links/Link';
 import { menuItems, menuItemsWithChildren } from '../Navigation/menuItems';
 import LogoNegative from '../assets/LogoNegative.svg';
