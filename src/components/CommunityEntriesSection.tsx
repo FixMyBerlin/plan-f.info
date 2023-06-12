@@ -42,9 +42,13 @@ export const CommunityEntriesSection: React.FC<Props> = ({
               <br />
               <strong>Bundesland: </strong>
               {entry.countryState}
-              <br />
-              <strong>MaßnahmenTyp: </strong>
-              {entry.subcategory}
+              {entry.subcategory && (
+                <>
+                  <br />
+                  <strong>MaßnahmenTyp: </strong>
+                  {entry.subcategory}
+                </>
+              )}
             </P>
             <Prose
               className="line-clamp-4"
