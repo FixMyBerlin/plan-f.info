@@ -1,7 +1,6 @@
 import { Content, HelmetSeo, Hero } from '~/components/Layout';
 import { Section } from '~/components/Layout/Section';
 import { articleProseClasses } from '~/components/core/articleProseClasses';
-import { Link } from '~/components/core/links';
 
 const ManualPage = () => {
   const title = 'Plan F Handbuch';
@@ -16,14 +15,8 @@ const ManualPage = () => {
             Angebote komprimiert und übersichtlich zusammengefasst.
           </p>
           <p>
-            <Link button="black" href="#TODO">
-              Handbuch als PDF downloaden
-            </Link>
-          </p>
-          <p>
-            Printversion: Die ersten 200 Exemplare können kostenlos bestellt
-            werden. Hiernach kostet es xx € / Exemplar. Nutzen Sie dafür das
-            Formular.
+            Die ersten 200 Exemplare können kostenlos bestellt werden. Hiernach
+            kostet es 25 € / Exemplar. Nutzen Sie dafür das Formular.
           </p>
         </Content>
       </Section>
