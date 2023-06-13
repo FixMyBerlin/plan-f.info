@@ -7,6 +7,8 @@ import { planfProseClasses } from '~/components/core/articleProseClasses';
 
 const ReleasePage: React.FC<PageProps> = ({ pageContext }) => {
   const title = 'Plan F Release Page';
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const { GITHUB_ACTION_URL, GITHUB_TOKEN } = pageContext;
   function triggerBuild() {
     fetch(GITHUB_ACTION_URL, {
