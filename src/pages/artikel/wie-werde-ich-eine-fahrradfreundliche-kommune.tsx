@@ -280,7 +280,7 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
                 Menschen mit körperlichen Einschränkungen werden erreicht{' '}
               </li>
               <li>Erhöhung der objektiven Sicherheit (weniger Unfälle) </li>
-              <li>Erhöhung der sozialen /subjektiven Sicherheit </li>
+              <li>Erhöhung der sozialen / subjektiven Sicherheit </li>
               <li>Fahrradnutzung wird praktischer </li>
               <li>Radverkehrsanteil wird erhöht </li>
               <li>Komfort und Fahrspaß werden verbessert</li>
