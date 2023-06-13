@@ -24,7 +24,6 @@ export const Footer: React.FC = () => {
             // eslint-disable-next-line react/jsx-no-useless-fragment
             <Fragment key={key}>
               {key === 'Wissensspeicher' ? (
-                // Inner Disclosure
                 <div className="flex flex-col gap-3">
                   {/* First Link: Wissensspeicher */}
                   <p className="text-sm uppercase text-gray-400">{key}</p>
