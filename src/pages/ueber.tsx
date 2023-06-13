@@ -1,6 +1,7 @@
 import { Content, HelmetSeo, Hero } from '~/components/Layout';
 import { Section } from '~/components/Layout/Section';
 import { Caption, H2, H3, P } from '~/components/Text';
+import { planFMarkdownProseClasses } from '~/components/core/Prose';
 import { Link, MailLink } from '~/components/core/links';
 
 const AboutPage = () => {
@@ -69,14 +70,14 @@ const AboutPage = () => {
             Relevante Leitfäden, Förderprogramme und weitere Hinweise sind den
             Handlungsfeldern und Maßnahmen zugeordnet.
           </P>
-          <P>
-            Unter weitere Angebote befindet sich:
+          <div className={planFMarkdownProseClasses}>
+            <p>Unter weitere Angebote befindet sich:</p>
             <ul className="ml-2 list-disc pl-2">
               <li>Plan F Handbuch</li>
               <li>Plan F E-Learning</li>
               <li>Plan F Audit</li>
             </ul>
-          </P>
+          </div>
           <P>
             Unter Artikel befinden sich ergänzende Informationen und
             Empfehlungen zur kommunalen Radverkehrsförderung sowie Stellen und
