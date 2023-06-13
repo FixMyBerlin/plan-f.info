@@ -24,7 +24,7 @@ const ReleasePage: React.FC<PageProps> = ({ pageContext }) => {
 
   return (
     <>
-      <HelmetSeo title={title} />
+      <HelmetSeo noindex title={title} />
       <Hero bgColor="bg-green-500" title={title} />
       <Section className={planfProseClasses}>
         <Content>
