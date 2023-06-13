@@ -72,7 +72,7 @@ const FurtherInformationArticle = () => {
           </P>
           <P>
             Der Allgemeine Deutsche Fahrrad-Club e.V. (ADFC) ist die
-            Interessensvertretung für Radfahrende und informiert über
+            Interessenvertretung für Radfahrende und informiert über
             verschiedene Positionspapiere und Fachveröffentlichungen:
           </P>
           <LinkButtonWithArrow
@@ -94,7 +94,7 @@ const FurtherInformationArticle = () => {
           </LinkButtonWithArrow>
           <P>
             Changing Cities e.V. ist ein spendenfinanzierter, unabhängiger
-            Verein. Changing Cities setzen sich für lebenswerte Städte, die für
+            Verein. Changing Cities setzt sich für lebenswerte Städte, die für
             alle gleichermaßen offen, sicher und gesund sind, ein:
           </P>
           <LinkButtonWithArrow
@@ -104,8 +104,8 @@ const FurtherInformationArticle = () => {
             Changing Cities
           </LinkButtonWithArrow>
           <P>
-            Wer einen Blick in unser Nachbarland die Niederlande wagen möchte,
-            kann sich bei Fietsberaad, dem Wissenszentrum für den Radverkehr der
+            Wer einen Blick in unser Nachbarland Niederlande wagen möchte, kann
+            sich bei Fietsberaad, dem Wissenszentrum für den Radverkehr der
             niederländischen Behörden, über gute Beispiele und Leitfäden
             informieren:{' '}
           </P>

@@ -51,12 +51,12 @@ const planningCardTexts = [
     cardTitle: 'Budget & Personal',
     content: (
       <P>
-        Das Budget ist zu definieren. Zudem ist es notwendig die involvierten
-        Ämter, Planungsbehörden und ggf. Interessensgruppen zu koordinieren.
-        Eine koordinierte Verwaltungstätigkeit ist notwendig, um einen
-        reibungslosen Planungs- und Umsetzungsprozess zu gewährleisten. Hierbei
-        sollten klare Verantwortlichkeiten definiert und eine verantwortliche
-        Person für die Maßnahmensteuerung benannt werden.
+        Budget & Personal: Das Budget ist zu definieren. Zudem ist es notwendig,
+        die involvierten Ämter, Planungsbehörden und ggf. Interessengruppen zu
+        koordinieren. Eine koordinierte Verwaltungstätigkeit ist unerlässlich,
+        um einen reibungslosen Planungs- und Umsetzungsprozess zu gewährleisten.
+        Hierbei sollten klare Verantwortlichkeiten definiert und eine
+        verantwortliche Person für die Maßnahmensteuerung benannt werden.
       </P>
     ),
   },
@@ -75,13 +75,13 @@ const planningCardTexts = [
     cardTitle: 'Priorisierung',
     content: (
       <P>
-        Der Verkehr und Mobilitätssektor ist ein bedeutender Bereich für unser
-        Leben in der Stadt und auf dem Land. Dieser steht in Zusammenhang mit
-        vielen verschiedenen Bereichen und Aufgaben, z. B. kann die Luftqualität
-        durch die Erhöhung des Radverkehrsanteils mit gleichzeitiger Minderung
-        von Kfz-Verkehren verbessert werden. In einem Projektplan sollten auch
-        diese Effekte berücksichtigt werden. Hierdurch können bessere
-        strategische Entscheidungen und Priorisierungen getroffen werden.
+        Der Verkehrs- und Mobilitätssektor ist ein bedeutender Bereich für unser
+        Leben in der Stadt und auf dem Land. Er steht in Zusammenhang mit vielen
+        verschiedenen Bereichen und Aufgaben, z. B. kann die Luftqualität durch
+        die Erhöhung des Radverkehrsanteils mit gleichzeitiger Minderung von
+        Kfz-Verkehren verbessert werden. In einem Projektplan sollten auch diese
+        Effekte berücksichtigt werden. Hierdurch können bessere strategische
+        Entscheidungen und Priorisierungen getroffen werden.
       </P>
     ),
   },
@@ -89,10 +89,10 @@ const planningCardTexts = [
     cardTitle: 'Beteiligung',
     content: (
       <P>
-        Eine erfolgreiche Umsetzung erfordert häufig eine breite Beteiligung
-        aller Akteur*innen. Es ist daher wichtig, die Interessen und Bedürfnisse
-        der Bevölkerung (auch von Kindern), Interessensverbände und der lokalen
-        Unternehmen zu identifizieren. Hierzu können öffentliche
+        Beteiligung: Eine erfolgreiche Umsetzung erfordert häufig eine breite
+        Beteiligung aller Akteur*innen. Es ist daher wichtig, die Interessen und
+        Bedürfnisse der Bevölkerung (auch von Kindern), der Interessenverbände
+        und der lokalen Unternehmen zu identifizieren. Hierzu können öffentliche
         Veranstaltungen, Workshops, Arbeitskreise, Online-Foren oder Umfragen
         genutzt werden, um die Meinungen und Wünsche der verschiedenen
         Interessengruppen zu sammeln und zu berücksichtigen (mehr zu
@@ -104,12 +104,12 @@ const planningCardTexts = [
     cardTitle: 'Kommunikation',
     content: (
       <P>
-        Damit die Maßnahme nach Umsetzung Bekanntheit erfährt und genutzt wird,
-        ist es notwendig, diese zu kommunizieren. Entweder nach Umsetzung oder
-        auch schon im Prozess. Über Maßnahmen schon im Prozess zu informieren,
-        erhöht die Akzeptanz der Maßnahmen, mindert Rückfragen der Bevölkerung
+        Kommunikation: Damit die Maßnahme nach Umsetzung Bekanntheit erfährt und
+        genutzt wird, ist es notwendig, diese zu kommunizieren. Entweder nach
+        Umsetzung oder auch schon im Prozess. Über Maßnahmen schon im Prozess zu
+        informieren, erhöht ihre Akzeptanz, mindert Rückfragen der Bevölkerung
         zum Umsetzungsstand, stärkt das Vertrauen in die Verwaltung und kann
-        notwendig sein, wenn im Planungs- und Gestaltungsprozess die Bevölkerung
+        notwendig sein, wenn die Bevölkerung am Planungs- und Gestaltungsprozess
         beteiligt wird. Hierbei sollten sowohl klassische Werbemaßnahmen wie
         Plakate oder Broschüren, Kommunikation über Social Media als auch
         zielgruppenorientierte Kommunikation an z. B. Schulen oder Unternehmen
@@ -203,12 +203,12 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
           <H3>Zielformulierung</H3>
           <P>
             Als Erstes sollten klare und messbare Ziele formuliert werden, die
-            das Ziel haben, das Radfahren in der Kommune zu fördern. Zum
+            den Zweck haben, das Radfahren in der Kommune zu fördern. Zum
             Beispiel könnte ein Ziel sein, den Anteil des Fahrradverkehrs am
             Gesamtverkehrsaufkommen zu erhöhen, die Anzahl der
             Fahrradabstellanlagen auszubauen, die Sicherheit für Radfahrende zu
-            verbessern oder über Dienstleistungen und Förderprogrammen den
-            Zugang zum Fahrrad zu erleitern. Diese Ziele sollten mit den lokalen
+            verbessern oder über Dienstleistungen und Förderprogramme den Zugang
+            zum Fahrrad zu erleichtern. Diese Ziele sollten mit den lokalen
             Bedürfnissen und Gegebenheiten im Einklang stehen.
           </P>
           <H3>Radverkehrskonzept</H3>
@@ -228,7 +228,7 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
           </P>
           <P>
             Ein gutes Radverkehrskonzept sollte realistische und praktikable
-            Ziele setzen, die in Zusammenarbeit mit den Bürger*innen,
+            Ziele setzen, die in Zusammenarbeit mit den Bürger*innen, den
             Interessengruppen und der Wirtschaft erreicht werden können (s.
             „Zielformulierung“). Dabei sollten auch die langfristigen
             Entwicklungen in der Stadt- und Verkehrsplanung berücksichtigt
@@ -238,8 +238,8 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
           <H3>Projektplan</H3>
           <P>
             Das Radverkehrskonzept besteht aus vielen verschiedenen Maßnahmen.
-            Es ist notwendig für jede Maßnahme oder jedes Maßnahmenbündel einen
-            Projektplan anzufertigen, der alle notwendigen Schritte und
+            Es ist notwendig, für jede Maßnahme oder jedes Maßnahmenbündel einen
+            Projektplan anzufertigen, der alle erforderlichen Schritte und
             Maßnahmen zur Umsetzung umfasst.
           </P>
           <P>Der Projektplan sollte aus diesen Punkten bestehen:</P>
@@ -261,8 +261,8 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
         <H2>Checkliste für die Planung und Umsetzung von Maßnahmen</H2>
         <P>
           Eine Checkliste für die Maßnahmen zu erstellen hilft, um
-          sicherzugehen, dass sie den gewünschten Effekt hat. Nicht alle Punkte
-          müssen für Ihre Maßnahme relevant sein.
+          sicherzugehen, dass sie den gewünschten Effekt haben. Nicht alle
+          Punkte müssen für Ihre Maßnahme relevant sein.
         </P>
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
           <div
@@ -286,7 +286,7 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
               <li>Komfort und Fahrspaß werden verbessert</li>
               <li>
                 Zielt auf Lebensumbruchphasen ab (Kinder aus dem Haus, Umzug,
-                neue Arbeitsstelle, von Grundschule zu weiterführende Schule)
+                neue Arbeitsstelle, von Grundschule zu weiterführender Schule)
               </li>
               <li>
                 Fahrrad steigt in der Wahrnehmung (Statussymbol / hipp /
@@ -299,7 +299,7 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
           >
             <p>
               <strong>
-                2. Ermittlung des Aufwands / Bereitstellung der Mittel:
+                2. Ermittlung des Aufwands / Bereitstellung der Mittel
               </strong>
             </p>
             <ul>
@@ -307,7 +307,7 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
               <li>Erhöhung der objektiven Sicherheit (weniger Unfälle)</li>
               <li>Einsatz von Fördermitteln prüfen</li>
               <li>Zeitaufwand </li>
-              <li>Ggf. Durchführung Kosten-Nutzen Analyse</li>
+              <li>Ggf. Durchführung Kosten-Nutzen-Analyse</li>
               <li>Radverkehrsanteil wird erhöht </li>
             </ul>
           </div>
@@ -315,7 +315,7 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
             className={clsx('rounded-b-3xl bg-white px-6', planfProseClasses)}
           >
             <p>
-              <strong>3. Integration von Partizipation / Vernetzung:</strong>
+              <strong>3. Integration von Partizipation / Vernetzung</strong>
             </p>
             <ul>
               <li> Interdisziplinäre Gestaltung</li>
@@ -325,7 +325,7 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
               </li>
               <li>
                 Maßnahme verfolgt einen partizipativen,
-                geschlechter-paritätischen und inklusiven Ansatz
+                geschlechterparitätischen und inklusiven Ansatz
               </li>
             </ul>
           </div>
@@ -343,9 +343,9 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
                 Klimaresiliente Städte (z. B. mehr Grünflächen, geringer
                 Versiegelungsgrad, effiziente Flächennutzung)
               </li>
-              <li>gerechterer Mobilitätszugang</li>
+              <li>Gerechterer Mobilitätszugang</li>
               <li>Förderung des Umweltverbundes</li>
-              <li>Reduzierung des CO2 Ausstoßes</li>
+              <li>Reduzierung des CO²-Ausstoßes</li>
               <li>Verbesserung der Luftqualität</li>
               <li>Verminderung der Lärmbelastung</li>
               <li>Verbesserung der Aufenthaltsqualität</li>
