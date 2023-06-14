@@ -4,9 +4,9 @@ import { domain } from '~/domain';
 
 // FYI, https://www.gatsbyjs.com/docs/add-seo-component/ suggest to use useStaticQuery but I don't see why, yet
 const seoDefaultValues = {
-  defaultTitle: 'Plan-F.info',
+  defaultTitle: 'Plan F – Impulse für die fahrradfreundliche Kommune',
   defaultDescription:
-    'Jetzt sind Ihre Projekte gefragt für den #PlanfAward Wenn Sie in Ihrer Kommune aktuell ein Projekt zur Radverkehrsförderung umgesetzt haben, dann bewerben Sie sich bis zum 10. September 2022 um den Plan F Award.',
+    'Einen Plan zu haben, ist gut. Plan F zu haben, ist sehr gut. F wie Fahrrad, Fortschritt und Fachthemen. Plan F unterstützt Kommunen bei der Förderung des Radverkehrs. Dafür strukturieren wir bestehendes Wissen, Praxisbeispiele, Maßnahmen und Leitfäden zur Fahrradmobilität und zeigen notwendige Handlungsfelder auf.',
 };
 
 type Props = {
@@ -29,7 +29,7 @@ export const HelmetSeo: React.FC<Props> = ({
   const seo = {
     title: (title && `${title} | ${defaultTitle}`) || defaultTitle,
     description: description || defaultDescription,
-    image: image || `${domain() || ''}/social-sharing/default.png`,
+    image: image || `${domain() || ''}/social-sharing/default.jpg`,
   };
 
   if (noindex === true) {

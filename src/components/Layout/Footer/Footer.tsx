@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import React, { Fragment } from 'react';
-import { Fundings } from '~/components/StartPage';
+import { Fundings } from '~/components/AwardPage';
 import { Link } from '~/components/core/links/Link';
 import { menuItems, menuItemsWithChildren } from '../Navigation/menuItems';
 import LogoNegative from '../assets/LogoNegative.svg';
@@ -24,7 +24,6 @@ export const Footer: React.FC = () => {
             // eslint-disable-next-line react/jsx-no-useless-fragment
             <Fragment key={key}>
               {key === 'Wissensspeicher' ? (
-                // Inner Disclosure
                 <div className="flex flex-col gap-3">
                   {/* First Link: Wissensspeicher */}
                   <p className="text-sm uppercase text-gray-400">{key}</p>

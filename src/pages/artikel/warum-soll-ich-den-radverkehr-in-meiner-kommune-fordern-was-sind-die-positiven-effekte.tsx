@@ -21,7 +21,7 @@ const SupportArticle = () => {
     {
       cardTitle: 'Platzersparnis',
       content:
-        'Im Vergleich zu Autos benötigen Fahrräder weniger Platz auf der Straße und beim Parken. Das schafft Raum für andere Nutzungen und Verkehrsteilnehmer*innen und auch für eine attraktive Gestaltung des öffentlichen Raums.',
+        'Im Vergleich zu Autos benötigen Fahrräder weniger Platz auf der Straße und beim Parken. Das schafft Raum für andere Nutzungen und Verkehrsteilnehmenden und auch für eine attraktive Gestaltung des öffentlichen Raums.',
     },
     {
       cardTitle: 'Entlastung',

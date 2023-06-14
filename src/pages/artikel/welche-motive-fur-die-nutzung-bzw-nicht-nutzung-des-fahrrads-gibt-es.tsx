@@ -11,17 +11,17 @@ const motivationArticle = () => {
     {
       cardTitle: 'Praktisch',
       content:
-        'Das Fahrrad ist für viele Menschen ein praktisches Verkehrsmittel. Auf Strecken von bis ca. fünf Kilometer ist das Fahrrad oftmals das schnellste Verkehrsmittel, zugleich bietet es hohe Flexibilität und ist kostengünstig.',
+        'Das Fahrrad ist für viele Menschen ein praktisches Verkehrsmittel. Auf Strecken bis ca. fünf Kilometer ist das Fahrrad oftmals das schnellste Verkehrsmittel, zugleich bietet es hohe Flexibilität und ist kostengünstig.',
     },
     {
-      cardTitle: 'Spaß/ Freizeit',
+      cardTitle: 'Spaß/Freizeit',
       content:
         'Für viele Menschen ist das Fahrradfahren ein Vergnügen. Manche nutzen es nur oder vorrangig zu Freizeitzwecken.',
     },
     {
       cardTitle: 'Gesundheit',
       content:
-        'Fahrradfahren ist eine großartige Möglichkeit, um körperlich aktiv zu sein und einen gesunden Lebensstil zu fördern. Viele Menschen nutzen das Fahrrad als tägliche Bewegungsform, um ihre Gesundheit und Fitness zu verbessern.',
+        'Fahrradfahren ist eine großartige Möglichkeit, körperlich aktiv zu sein und einen gesunden Lebensstil zu fördern. Viele Menschen nutzen das Fahrrad als tägliche Bewegungsform, um ihre Gesundheit und Fitness zu verbessern.',
     },
     {
       cardTitle: 'Nachhaltigkeit',
@@ -31,19 +31,19 @@ const motivationArticle = () => {
     {
       cardTitle: 'Statussymbol',
       content:
-        'Insbesondere in den großen Metropolen hat sich das Fahrrad zu einem Statussymbol entwickelt und das Radfahren wird in einigen Milieus als hipp/ cool angesehen.',
+        'Insbesondere in den großen Metropolen hat sich das Fahrrad zu einem Statussymbol entwickelt und das Radfahren wird in einigen Milieus als hipp/cool angesehen.',
     },
   ];
   const negativeMotivationCardTexts = [
     {
       cardTitle: 'Anstrengung und fehlender Komfort:',
       content:
-        'Das Radfahren wird von einigen Personen als unkomfortabel und anstrengend empfunden, z. B., wenn es besondere topographische Herausforderungen gibt.',
+        'Das Radfahren wird von einigen Personen als unkomfortabel und anstrengend empfunden, z. B. wenn es besondere topographische Herausforderungen gibt.',
     },
     {
       cardTitle: 'Soziales Umfeld',
       content:
-        'Das soziale Umfeld hat einen großen Einfluss über die Fahrradnutzung. Es kann motivieren, wenn viele Personen im sozialen Umfeld Fahrrad fahren, aber auch von der Nutzung abhalten, wenn das Fahrrad von sozialen Kontakten nicht als Alltagsverkehrsmittel genutzt wird. Kinder, deren Eltern nicht Rad fahren, fahren später selbst selten mit dem Rad.',
+        'Das soziale Umfeld hat einen großen Einfluss auf die Fahrradnutzung. Es kann motivieren, wenn viele Personen im sozialen Umfeld Fahrrad fahren, aber auch von der Nutzung abhalten, wenn das Fahrrad von sozialen Kontakten nicht als Alltagsverkehrsmittel genutzt wird. Kinder, deren Eltern nicht Rad fahren, fahren später selbst selten mit dem Rad.',
     },
     {
       cardTitle: 'Sicherheitsbedenken',
@@ -102,7 +102,7 @@ const motivationArticle = () => {
             In der Radverkehrsförderung ist eine zielgruppenspezifische
             Ansprache sinnvoll, um möglichst viele Personen erreichen zu können.
             Personen haben verschiedene Motive, weshalb sie das Fahrrad als
-            Verkehrsmittel nutzen oder auch nicht nutzen. Diese gilt es zu
+            Verkehrsmittel nutzen oder auch nicht nutzen. Sie gilt es zu
             verstehen und Treiber entsprechend zu fördern sowie Hindernissen
             entgegenzuwirken.
           </P>

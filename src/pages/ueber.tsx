@@ -1,14 +1,14 @@
 import { Content, HelmetSeo, Hero } from '~/components/Layout';
 import { Section } from '~/components/Layout/Section';
 import { Caption, H2, H3, P } from '~/components/Text';
+import { planFMarkdownProseClasses } from '~/components/core/Prose';
 import { Link, MailLink } from '~/components/core/links';
 
 const AboutPage = () => {
-  const title = 'Über Plan F';
   return (
     <>
-      <HelmetSeo title={title} />
-      <Hero bgColor="bg-green-500" title={title} />
+      <HelmetSeo title="Über Plan F" />
+      <Hero bgColor="bg-green-500" title="Über Plan F" />
       <Section>
         <Content>
           <H2>Was ist Plan F? </H2>
@@ -27,26 +27,33 @@ const AboutPage = () => {
             Das Herzstück von Plan F ist die Systematisierung mit den
             Praxisbeispielen und Leitfäden. Durch die strukturierte Aufarbeitung
             der Materialien nach neun Handlungsfeldern ist eine zielorientierte
-            und übersichtliche Maßnahmensammlung, welche die Akteur*innen in den
-            Kommunen einfach bedienen und damit ihre Lücke in der
-            Radverkehrsförderung schließen können, entstanden. Für eine
-            ganzheitliche Radverkehrsförderung ist es notwendig, Maßnahmen in
-            verschiedenen Handlungsfeldern umzusetzen. Durch einen schlauen und
-            passgenauen Maßnahmenmix kann die Fahrradkultur und der
-            Radverkehrsanteil in deutschen Kommunen gesteigert und die
-            Radverkehrsförderung effizienter werden.
+            und übersichtliche Maßnahmensammlung entstanden, welcher sich die
+            Akteur*innen in den Kommunen einfach bedienen, um ihre Lücke in der
+            Radverkehrsförderung schließen zu können. Für eine ganzheitliche
+            Radverkehrsförderung ist es notwendig, Maßnahmen in verschiedenen
+            Handlungsfeldern umzusetzen. Durch einen schlauen und passgenauen
+            Maßnahmenmix können die Fahrradkultur und der Radverkehrsanteil in
+            deutschen Kommunen gesteigert und die Radverkehrsförderung
+            effizienter werden.
           </P>
           <P>
             Plan F ist ein gemeinsames Projekt von{' '}
             <Link href="https://fair-spaces.de/">Fair Spaces</Link> und{' '}
-            <Link href="https://www.fixmycity.de/">FixMyCity</Link>
-            und wird vom Bundesministerium für Digitales und Verkehr (BMDV) im
-            Rahmen des Nationalen Radverkehrsplan (NRVP) gefördert.
+            <Link href="https://www.fixmycity.de/">FixMyCity</Link> und wird vom
+            Bundesministerium für Digitales und Verkehr (BMDV) im Rahmen des
+            Nationalen Radverkehrsplan (NRVP) gefördert.
           </P>
           <H3>Benutzung dieser Seite</H3>
           <P>
+            Diese Webseite gibt einen Überblick über die neun Handlungsfeldern
+            der kommunalen Fahrradmobilität. In den verschiedenen
+            Handlungsfeldern werden unterschiedliche Praxisbeispiele aufgezeigt,
+            die Impulse für die Umsetzung vielfältiger Maßnahmen der
+            Radverkehrsförderung geben sollen.
+          </P>
+          <P>
             In jedem Praxisbeispiel werden die Kommunen, welche die Maßnahmen
-            umgesetzt haben, (mit Größe, Lage, lokalen Herausforderungen) kurz
+            umgesetzt haben, kurz (mit Größe, Lage, lokalen Herausforderungen)
             beschrieben. Die Maßnahmen und der Umsetzungsprozess werden u. a.
             anhand der angesprochenen Zielgruppen, Einbindung der Bevölkerung,
             Ziele, Kosten, Nutzung von Fördermitteln, Kommunikation und
@@ -55,22 +62,25 @@ const AboutPage = () => {
           <P>
             Auch wird auf Besonderheiten eingegangen, wie durchgeführte
             Evaluation, Beteiligung, interkommunale Maßnahme, temporäre oder
-            Einsteigermaßnahmen. Über die intelligente Suche kann nach
+            Einsteiger*innenmaßnahmen. Über die intelligente Suche kann nach
             verschiedenen Stichpunkten gesucht werden.
           </P>
           <P>
-            Zudem befindet sich unter weitere Angebote:
+            Relevante Leitfäden, Förderprogramme und weitere Hinweise sind den
+            Handlungsfeldern und Maßnahmen zugeordnet.
+          </P>
+          <div className={planFMarkdownProseClasses}>
+            <p>Unter weitere Angebote befindet sich:</p>
             <ul className="ml-2 list-disc pl-2">
-              <li>
-                Ergänzende Informationen und Empfehlungen zur kommunalen
-                Radverkehrsförderung
-              </li>
-              <li>Stellen und Organisationen für weitere Informationen</li>
-              <li>
-                Informationen zum gedruckten Handbuch und dem E-Learningkurs
-              </li>
+              <li>Plan F Handbuch</li>
+              <li>Plan F E-Learning</li>
               <li>Plan F Audit</li>
             </ul>
+          </div>
+          <P>
+            Unter Artikel befinden sich ergänzende Informationen und
+            Empfehlungen zur kommunalen Radverkehrsförderung sowie Stellen und
+            Organisationen für weitere Informationen.
           </P>
           <P>
             Über den Plan F Check (coming soon) erhalten Kommunen passgenaue

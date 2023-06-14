@@ -12,11 +12,13 @@ import {
   ProfileGrid,
   fotos,
   jury,
-} from '~/components/StartPage';
-import { AwardWinnerCard } from '~/components/StartPage/AwardWinnerCard/AwardWinnerCard';
+} from '~/components/AwardPage';
+import { AwardWinnerCard } from '~/components/AwardPage/AwardWinnerCard/AwardWinnerCard';
 import { H3 } from '~/components/Text';
 import { planfProseClasses } from '~/components/core/articleProseClasses';
 import { Link } from '~/components/core/links/Link';
+import { YouTubePreview } from '~/components/core/links/YouTubePreview';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const awardWinnerTopics = {
   Governance: [
@@ -761,7 +763,6 @@ const AwardPage: React.FC = () => {
             zukunftsfähigen Radverkehr in der ländlichen Gemeinde in
             Rheinland-Pfalz sind.
           </p>
-          {/* className="list-square my-6 ml-16 list-inside " */}
           <ul>
             <li>Radwegenetz</li>
             <li>Radweg Wallmerod-Hundsangen</li>
@@ -791,6 +792,16 @@ const AwardPage: React.FC = () => {
             Maßnahmenempfehlungen zur Verbesserung der Radmobilität in Wallmerod
             enthält.
           </p>
+          <YouTubePreview
+            link="https://www.youtube.com/watch?v=pqtAmXkCeEU"
+            image={
+              <StaticImage
+                src="./../../components/AwardPage/assets/planf-award-video.jpg"
+                alt="Video: Plan F Audit für die Verbandsgemeinde Wallmerod"
+                className="aspect-video"
+              />
+            }
+          />
         </Content>
       </Section>
       <Section className={clsx(planfProseClasses)}>

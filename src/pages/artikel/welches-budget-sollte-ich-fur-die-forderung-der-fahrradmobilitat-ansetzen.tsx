@@ -33,18 +33,18 @@ const motivationArticle = () => {
             </li>
             <li>
               Der Allgemeine Deutsche Fahrrad-Club (ADFC) empfiehlt, mindestens
-              10 Prozent des Verkehrsbudgets für den Ausbau der Radinfrastruktur
-              auszugeben.
+              zehn Prozent des Verkehrsbudgets für den Ausbau der
+              Radinfrastruktur auszugeben.
             </li>
             <li>
               Beispiele von bestimmten Städten (Ausgaben in Euro pro
               Einwohner*in (Statista, 2018; Agora Verkehrswende, 2022))
               <ul className="ml-6 flex list-disc flex-col gap-2 pl-2">
                 <li className="mt-4">München: 2,30 Euro (Jahr: 2018)</li>
-                <li>Aachen: 88,5 Euro (Jahr: 2022)</li>
                 <li>Berlin: 4,70 Euro (Jahr: 2018)</li>
-                <li>Amsterdam: 11 Euro (Jahr: 2018)</li>
-                <li>Kopenhagen: 35 Euro (Jahr: 2018)</li>
+                <li>Amsterdam: 11,00 Euro (Jahr: 2018)</li>
+                <li>Kopenhagen: 35,00 Euro (Jahr: 2018)</li>
+                <li>Aachen: 88,50 Euro (Jahr: 2022)</li>
               </ul>
             </li>
           </ul>
@@ -55,7 +55,7 @@ const motivationArticle = () => {
             und eine regelmäßige Evaluation der umgesetzten Maßnahmen sind
             ebenso entscheidend für eine erfolgreiche Radverkehrsförderung.
             Zudem sind in Städten mit gut ausgebauter Radverkehrsinfrastruktur
-            hohe Budgets, allein durch schon den Unterhalt, unumgänglich.
+            hohe Budgets, allein schon durch den Unterhalt, unumgänglich.
           </P>
           <P>
             Wer Interesse hat, weitere Hintergrundinformationen zu den

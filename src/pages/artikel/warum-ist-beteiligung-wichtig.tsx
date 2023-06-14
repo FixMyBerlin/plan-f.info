@@ -15,7 +15,7 @@ const ParticipationArticle = () => {
     {
       cardTitle: 'Akzeptanz und Unterstützung',
       content:
-        'Wenn Menschen in den Planungsprozess einbezogen werden, fühlen sie sich eher mit den Ergebnissen verbunden und unterstützen die Maßnahmen zur Förderung des Radverkehrs. Dies kann dazu beitragen, dass die Maßnahmen erfolgreich umgesetzt werden und mehr Menschen dazu motivieren, das Fahrrad als Verkehrsmittel zu nutzen.',
+        'Wenn Menschen in den Planungsprozess einbezogen werden, fühlen sie sich eher mit den Ergebnissen verbunden und unterstützen die Maßnahmen zur Förderung des Radverkehrs. Dies kann dazu beitragen, dass die Maßnahmen erfolgreich umgesetzt werden, und mehr Menschen dazu motivieren, das Fahrrad als Verkehrsmittel zu nutzen.',
     },
     {
       cardTitle: 'Wissensaustausch',
@@ -25,12 +25,12 @@ const ParticipationArticle = () => {
     {
       cardTitle: 'Demokratische Teilhabe',
       content:
-        'Die Beteiligung von Menschen in der Radverkehrsförderung ist ein wichtiger Bestandteil einer demokratischen Gesellschaft. Es ermöglicht den Menschen, ihre Meinungen und Bedürfnisse in Bezug auf die Gestaltung ihres öffentlichen Raums auszudrücken und Einfluss auf die Entscheidungen zu nehmen, die ihr tägliches Leben beeinflussen.',
+        'Die Beteiligung von Menschen in der Radverkehrsförderung ist ein wichtiger Bestandteil einer demokratischen Gesellschaft. Es ermöglicht den Menschen, ihre Meinungen und Bedürfnisse in Bezug auf die Gestaltung ihres öffentlichen Raums auszudrücken und Einfluss auf die Entscheidungen zu nehmen, auf ihr tägliches Leben.',
     },
     {
       cardTitle: 'Innovationsförderung',
       content:
-        'Durch die Beteiligung von Menschen in der Radverkehrsförderung können neue und innovative Ideen und Ansätze für die Verbesserung des Radverkehrs entstehen. Beispielsweise können Fahrrad-Communities Ideen für neue Infrastruktur oder Programme entwickeln, die für den Radverkehr förderlich sind.',
+        'Durch die Beteiligung von Menschen in der Radverkehrsförderung können neue und innovative Ideen und Ansätze für die Verbesserung des Radverkehrs entstehen. Beispielsweise können Fahrrad-Communitys Ideen für neue Infrastruktur oder Programme entwickeln, die für den Radverkehr förderlich sind.',
     },
   ];
 
@@ -48,7 +48,7 @@ const ParticipationArticle = () => {
             ))}
           </div>
           <P>
-            Zusammenfassend kann die Beteiligung von Menschen in der
+            Auf den Punkt gebracht kann die Beteiligung von Menschen in der
             Radverkehrsförderung dazu beitragen, passgenaue Maßnahmen zu
             etablieren und den Radverkehr zielgerichtet zu fördern.
           </P>

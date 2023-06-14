@@ -41,10 +41,15 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
     example.slug
   );
   const { communityEntries } = example.measure;
-  // console.log(pos);
+  // eslint-disable-next-line no-param-reassign
+  example = {
+    ...example,
+    population: Number(example.population).toLocaleString(),
+  };
+
   return (
     <>
-      <HelmetSeo title={example.measure.name} />
+      <HelmetSeo title={`${example.measure.name} | Plan F`} />
       <Hero
         className="!mb-0 rounded-b-none"
         bgColor={wikiColors.example}
@@ -87,29 +92,32 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
             <H2>{example.commune}</H2>
             <table className="table-auto">
               <tbody className="flex flex-col gap-2">
-                {Object.keys(steckbiref).map((key) => (
-                  <tr
-                    className="grid grid-cols-1 text-gray-700 md:grid-cols-2 lg:grid-cols-3"
-                    key={key}
-                  >
-                    <td className="whitespace-nowrap font-bold uppercase text-gray-700">
-                      {steckbiref[key]}
-                    </td>
-                    <td>
-                      <Prose
-                        className="lg:col-span-2"
-                        markdownHTML={example[key]}
-                      />
-                    </td>
-                  </tr>
-                ))}
+                {Object.keys(steckbiref).map((key) => {
+                  if (!example[key]) return null;
+                  return (
+                    <tr
+                      className="grid grid-cols-1 text-gray-700 md:grid-cols-2 lg:grid-cols-3"
+                      key={key}
+                    >
+                      <td className="whitespace-nowrap font-bold uppercase text-gray-700">
+                        {steckbiref[key]}
+                      </td>
+                      <td>
+                        <Prose
+                          className="prose-p:mt-0 lg:col-span-2"
+                          markdownHTML={example[key]}
+                        />
+                      </td>
+                    </tr>
+                  );
+                })}
                 <tr className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                   <td className="whitespace-nowrap font-bold uppercase text-gray-700">
                     Zuständige Abteilung
                   </td>
                   <td>
                     <Prose
-                      className="lg:col-span-2"
+                      className="prose-p:mt-0 lg:col-span-2"
                       markdownHTML={
                         example.relatedOffice.data.childMarkdownRemark.html
                       }
@@ -122,7 +130,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
                   </td>
                   <td>
                     <Prose
-                      className="lg:col-span-2"
+                      className="prose-p:mt-0 lg:col-span-2"
                       markdownHTML={
                         example.localChallenges.data.childMarkdownRemark.html
                       }
@@ -157,7 +165,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
                 title="Kosten / Mittelherkunft"
                 markdownHTML={example.funding.data.childMarkdownRemark.html}
               >
-                <p>{example.costs} €</p>
+                {example.costs && <p>{example.costs} €</p>}
               </CardText>
               <CardText
                 title="Personeller Aufwand"
@@ -166,12 +174,12 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
                 }
               />
               <CardText
-                title="Beteiligte Ämter (intern)"
+                title="Beteiligte Ämter"
                 markdownHTML={example.authorities.data.childMarkdownRemark.html}
               />
               {example.stakeholders && (
                 <CardText
-                  title="Beteiligte Akteur*innen (extern)"
+                  title="Beteiligte Akteur*innen"
                   markdownHTML={
                     example.stakeholders.data.childMarkdownRemark.html
                   }
@@ -187,6 +195,14 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
                 title="Herausforderungen"
                 markdownHTML={example.challenges.data.childMarkdownRemark.html}
               />
+              {example.particularities.data.particularities && (
+                <CardText
+                  title="Besonderheiten"
+                  markdownHTML={
+                    example.particularities.data.childMarkdownRemark.html
+                  }
+                />
+              )}
             </div>
           </div>
           <LinkListBlackButton
@@ -195,50 +211,47 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
             titleMono
             title="Links"
           />
-          <div className="mt-12">
-            <H2>Auszeichnungen</H2>
-            {example.awards.map((award) => (
-              <div
-                className="mt-8 flex gap-2 md:gap-6"
-                key={award.description.data.id}
-              >
-                {award.award?.logo && (
-                  <ImageWithCopyright copyright={award.award.logo.copyright}>
-                    <GatsbyImage
-                      className="h-20 w-20 flex-shrink-0 md:h-36 md:w-36"
-                      image={
-                        award.award?.logo?.image &&
-                        getImage(award.award?.logo.image.localFile as any)
+          {!!example.awards.length && (
+            <div className="mt-12">
+              <H2>Auszeichnungen</H2>
+              {example.awards.map((award) => (
+                <div
+                  className="mt-8 flex gap-3 md:gap-6"
+                  key={award.description.data.id}
+                >
+                  {award.award?.logo && (
+                    <ImageWithCopyright copyright={award.award.logo.copyright}>
+                      <img
+                        src={award.award.logo.image.url}
+                        alt={award.award.name}
+                      />
+                    </ImageWithCopyright>
+                  )}
+                  <div className="flex flex-col justify-start">
+                    {award.award?.name && (
+                      <H3 className="mt-0 md:mt-0">{award.award.name}</H3>
+                    )}
+                    <Prose
+                      className="line-clamp-4"
+                      markdownHTML={
+                        award.description.data.childMarkdownRemark.html
                       }
-                      alt="Titelbild"
                     />
-                  </ImageWithCopyright>
-                )}
-                <div className="flex flex-col justify-start">
-                  {award.award?.name && <H3>{award.award.name}</H3>}
-                  <Prose
-                    className="line-clamp-4"
-                    markdownHTML={
-                      award.description.data.childMarkdownRemark.html
-                    }
-                  />
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-12">
-            <H2>Besonderheiten</H2>
-            <Prose
-              markdownHTML={
-                example.particularities.data.childMarkdownRemark.html
-              }
-            />
-          </div>
-          <div className="mt-12">
-            <H2>Anmerkungen</H2>
-            <Prose markdownHTML={example.notes.data.childMarkdownRemark.html} />
-          </div>
-          {example.sources && (
+              ))}
+            </div>
+          )}
+
+          {example.notes.data.notes && (
+            <div className="mt-12">
+              <H2>Anmerkungen</H2>
+              <Prose
+                markdownHTML={example.notes.data.childMarkdownRemark.html}
+              />
+            </div>
+          )}
+          {example.sources.data.sources && (
             <div className="mt-12 flex items-start">
               <Prose className="mr-1" markdownHTML="<p>Quelle: </p>" />
               <Prose
@@ -303,11 +316,7 @@ export const query = graphql`
         award {
           logo {
             image {
-              localFile {
-                childImageSharp {
-                  gatsbyImageData
-                }
-              }
+              url
             }
             copyright
           }

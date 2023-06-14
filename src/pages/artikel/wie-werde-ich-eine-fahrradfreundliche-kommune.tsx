@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { PageProps, graphql } from 'gatsby';
 import React from 'react';
 import { Content, HelmetSeo, Hero } from '~/components/Layout';
@@ -7,6 +8,7 @@ import { Section } from '~/components/Layout/Section';
 import { CardText } from '~/components/PageExample/CardText';
 import { Caption, H2, H3, P } from '~/components/Text';
 import { Prose } from '~/components/core/Prose';
+import { planfProseClasses } from '~/components/core/articleProseClasses';
 import { Link } from '~/components/core/links';
 import { wikiPath } from '~/components/utils';
 
@@ -49,12 +51,12 @@ const planningCardTexts = [
     cardTitle: 'Budget & Personal',
     content: (
       <P>
-        Das Budget ist zu definieren. Zudem ist es notwendig die involvierten
-        Ämter, Planungsbehörden und ggf. Interessensgruppen zu koordinieren.
-        Eine koordinierte Verwaltungstätigkeit ist notwendig, um einen
-        reibungslosen Planungs- und Umsetzungsprozess zu gewährleisten. Hierbei
-        sollten klare Verantwortlichkeiten definiert und eine verantwortliche
-        Person für die Maßnahmensteuerung benannt werden.
+        Budget & Personal: Das Budget ist zu definieren. Zudem ist es notwendig,
+        die involvierten Ämter, Planungsbehörden und ggf. Interessengruppen zu
+        koordinieren. Eine koordinierte Verwaltungstätigkeit ist unerlässlich,
+        um einen reibungslosen Planungs- und Umsetzungsprozess zu gewährleisten.
+        Hierbei sollten klare Verantwortlichkeiten definiert und eine
+        verantwortliche Person für die Maßnahmensteuerung benannt werden.
       </P>
     ),
   },
@@ -73,13 +75,13 @@ const planningCardTexts = [
     cardTitle: 'Priorisierung',
     content: (
       <P>
-        Der Verkehr und Mobilitätssektor ist ein bedeutender Bereich für unser
-        Leben in der Stadt und auf dem Land. Dieser steht in Zusammenhang mit
-        vielen verschiedenen Bereichen und Aufgaben, z. B. kann die Luftqualität
-        durch die Erhöhung des Radverkehrsanteils mit gleichzeitiger Minderung
-        von Kfz-Verkehren verbessert werden. In einem Projektplan sollten auch
-        diese Effekte berücksichtigt werden. Hierdurch können bessere
-        strategische Entscheidungen und Priorisierungen getroffen werden.
+        Der Verkehrs- und Mobilitätssektor ist ein bedeutender Bereich für unser
+        Leben in der Stadt und auf dem Land. Er steht in Zusammenhang mit vielen
+        verschiedenen Bereichen und Aufgaben, z. B. kann die Luftqualität durch
+        die Erhöhung des Radverkehrsanteils mit gleichzeitiger Minderung von
+        Kfz-Verkehren verbessert werden. In einem Projektplan sollten auch diese
+        Effekte berücksichtigt werden. Hierdurch können bessere strategische
+        Entscheidungen und Priorisierungen getroffen werden.
       </P>
     ),
   },
@@ -87,10 +89,10 @@ const planningCardTexts = [
     cardTitle: 'Beteiligung',
     content: (
       <P>
-        Eine erfolgreiche Umsetzung erfordert häufig eine breite Beteiligung
-        aller Akteur*innen. Es ist daher wichtig, die Interessen und Bedürfnisse
-        der Bevölkerung (auch von Kindern), Interessensverbände und der lokalen
-        Unternehmen zu identifizieren. Hierzu können öffentliche
+        Beteiligung: Eine erfolgreiche Umsetzung erfordert häufig eine breite
+        Beteiligung aller Akteur*innen. Es ist daher wichtig, die Interessen und
+        Bedürfnisse der Bevölkerung (auch von Kindern), der Interessenverbände
+        und der lokalen Unternehmen zu identifizieren. Hierzu können öffentliche
         Veranstaltungen, Workshops, Arbeitskreise, Online-Foren oder Umfragen
         genutzt werden, um die Meinungen und Wünsche der verschiedenen
         Interessengruppen zu sammeln und zu berücksichtigen (mehr zu
@@ -102,18 +104,18 @@ const planningCardTexts = [
     cardTitle: 'Kommunikation',
     content: (
       <P>
-        Damit die Maßnahme nach Umsetzung Bekanntheit erfährt und genutzt wird,
-        ist es notwendig, diese zu kommunizieren. Entweder nach Umsetzung oder
-        auch schon im Prozess. Über Maßnahmen schon im Prozess zu informieren,
-        erhöht die Akzeptanz der Maßnahmen, mindert Rückfragen der Bevölkerung
+        Kommunikation: Damit die Maßnahme nach Umsetzung Bekanntheit erfährt und
+        genutzt wird, ist es notwendig, diese zu kommunizieren. Entweder nach
+        Umsetzung oder auch schon im Prozess. Über Maßnahmen schon im Prozess zu
+        informieren, erhöht ihre Akzeptanz, mindert Rückfragen der Bevölkerung
         zum Umsetzungsstand, stärkt das Vertrauen in die Verwaltung und kann
-        notwendig sein, wenn im Planungs- und Gestaltungsprozess die Bevölkerung
+        notwendig sein, wenn die Bevölkerung am Planungs- und Gestaltungsprozess
         beteiligt wird. Hierbei sollten sowohl klassische Werbemaßnahmen wie
         Plakate oder Broschüren, Kommunikation über Social Media als auch
         zielgruppenorientierte Kommunikation an z. B. Schulen oder Unternehmen
         eingesetzt werden.{' '}
-        <Link href="/speicher">
-          Maßnahmen auch nachzulesen in unserem speicher
+        <Link href="/wissensspeicher">
+          Maßnahmen auch nachzulesen in unserem Wissensspeicher
         </Link>
         .
       </P>
@@ -127,12 +129,12 @@ const planningCardTexts = [
         bewerten, ist es wichtig, regelmäßige Evaluierungen durchzuführen.
         Hierzu können beispielsweise Interviews und Umfragen zur Zufriedenheit
         der Nutzenden, Verkehrszählungen, Luft- und Lärmmessungen, Audits
-        (Sicherheit, Umsetzungsstand, s. auch{' '}
-        <Link href="/weitere-">Plan F Audit</Link>) genutzt werden, um den
-        Fortschritt zu messen und festzustellen, ob weitere Anpassungen oder
-        Verbesserungen notwendig sind. Die Art der Evaluation hängt von den
-        definierten Zielen ab. In unserem Plan F speicher befinden sich gute
-        Praxisbeispiele zu Evaluationsmaßnahmen.
+        Sicherheit, Umsetzungsstand, s. auch{' '}
+        <Link href="/weitere-angebote/audits">Plan F Audit</Link> genutzt
+        werden, um den Fortschritt zu messen und festzustellen, ob weitere
+        Anpassungen oder Verbesserungen notwendig sind. Die Art der Evaluation
+        hängt von den definierten Zielen ab. In unserem Plan F speicher befinden
+        sich gute Praxisbeispiele zu Evaluationsmaßnahmen.
       </P>
     ),
   },
@@ -187,10 +189,7 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
                 image={topic.image && topic.image.url}
               >
                 {topic.shortDescription && (
-                  <Prose
-                    className="line-clamp-4"
-                    markdownHTML={topic.shortDescription}
-                  />
+                  <Prose markdownHTML={topic.shortDescription} />
                 )}
               </CardImageAndTextResponsive>
             ))}
@@ -199,17 +198,17 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
       <Section>
         <Content>
           <H2>Systematisierung</H2>
-          Bild TODO
+          {/* <StaticImage src={''} alt={''} /> */}
           <Caption>Grafik Systematisierung</Caption>
           <H3>Zielformulierung</H3>
           <P>
             Als Erstes sollten klare und messbare Ziele formuliert werden, die
-            das Ziel haben, das Radfahren in der Kommune zu fördern. Zum
+            den Zweck haben, das Radfahren in der Kommune zu fördern. Zum
             Beispiel könnte ein Ziel sein, den Anteil des Fahrradverkehrs am
             Gesamtverkehrsaufkommen zu erhöhen, die Anzahl der
             Fahrradabstellanlagen auszubauen, die Sicherheit für Radfahrende zu
-            verbessern oder über Dienstleistungen und Förderprogrammen den
-            Zugang zum Fahrrad zu erleitern. Diese Ziele sollten mit den lokalen
+            verbessern oder über Dienstleistungen und Förderprogramme den Zugang
+            zum Fahrrad zu erleichtern. Diese Ziele sollten mit den lokalen
             Bedürfnissen und Gegebenheiten im Einklang stehen.
           </P>
           <H3>Radverkehrskonzept</H3>
@@ -229,7 +228,7 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
           </P>
           <P>
             Ein gutes Radverkehrskonzept sollte realistische und praktikable
-            Ziele setzen, die in Zusammenarbeit mit den Bürger*innen,
+            Ziele setzen, die in Zusammenarbeit mit den Bürger*innen, den
             Interessengruppen und der Wirtschaft erreicht werden können (s.
             „Zielformulierung“). Dabei sollten auch die langfristigen
             Entwicklungen in der Stadt- und Verkehrsplanung berücksichtigt
@@ -239,8 +238,8 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
           <H3>Projektplan</H3>
           <P>
             Das Radverkehrskonzept besteht aus vielen verschiedenen Maßnahmen.
-            Es ist notwendig für jede Maßnahme oder jedes Maßnahmenbündel einen
-            Projektplan anzufertigen, der alle notwendigen Schritte und
+            Es ist notwendig, für jede Maßnahme oder jedes Maßnahmenbündel einen
+            Projektplan anzufertigen, der alle erforderlichen Schritte und
             Maßnahmen zur Umsetzung umfasst.
           </P>
           <P>Der Projektplan sollte aus diesen Punkten bestehen:</P>
@@ -262,96 +261,119 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
         <H2>Checkliste für die Planung und Umsetzung von Maßnahmen</H2>
         <P>
           Eine Checkliste für die Maßnahmen zu erstellen hilft, um
-          sicherzugehen, dass sie den gewünschten Effekt hat. Nicht alle Punkte
-          müssen für Ihre Maßnahme relevant sein.
+          sicherzugehen, dass sie den gewünschten Effekt haben. Nicht alle
+          Punkte müssen für Ihre Maßnahme relevant sein.
         </P>
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
-          <div className="rounded-b-3xl bg-white p-6">
-            <P>
+          <div
+            className={clsx('rounded-b-3xl bg-white px-6', planfProseClasses)}
+          >
+            <p>
               <strong>1. Definition von Zielen der Maßnahme, z. B. </strong>
-            </P>
-            <li>
-              Mobilitätsarmut wirdreduziert und gesellschaftliche Teilhabe
-              erhöht{' '}
-            </li>
-            <li>Menschen mitkörperlichen Einschränkungen werden erreicht </li>
-            <li>Erhöhung derobjektiven Sicherheit (weniger Unfälle) </li>
-            <li>Erhöhung der sozialen /subjektiven Sicherheit </li>
-            <li>Fahrradnutzung wird praktischer </li>
-            <li>Radverkehrsanteil wird erhöht </li>
-            <li>Komfort und Fahrspaß werdenverbessert </li>
-            <li>
-              Zielt auf Lebensumbruchphasen ab (Kinder aus dem Haus,Umzug, neue
-              Arbeitsstelle, von Grundschule zu weiterführende Schule)
-            </li>
-
-            <li>
-              Fahrrad steigt in der Wahrnehmung (Statussymbol / hipp
-              /Fahrradkultur)
-            </li>
+            </p>
+            <ul>
+              <li>
+                Mobilitätsarmut wird reduziert und gesellschaftliche Teilhabe
+                erhöht
+              </li>
+              <li>
+                Menschen mit körperlichen Einschränkungen werden erreicht{' '}
+              </li>
+              <li>Erhöhung der objektiven Sicherheit (weniger Unfälle) </li>
+              <li>Erhöhung der sozialen / subjektiven Sicherheit </li>
+              <li>Fahrradnutzung wird praktischer </li>
+              <li>Radverkehrsanteil wird erhöht </li>
+              <li>Komfort und Fahrspaß werden verbessert</li>
+              <li>
+                Zielt auf Lebensumbruchphasen ab (Kinder aus dem Haus, Umzug,
+                neue Arbeitsstelle, von Grundschule zu weiterführender Schule)
+              </li>
+              <li>
+                Fahrrad steigt in der Wahrnehmung (Statussymbol / hipp /
+                Fahrradkultur)
+              </li>
+            </ul>
           </div>
-          <div className="rounded-b-3xl bg-white p-6">
-            <P>
+          <div
+            className={clsx('rounded-b-3xl bg-white px-6', planfProseClasses)}
+          >
+            <p>
               <strong>
-                2. Ermittlung des Aufwands/ Bereitstellung der Mittel:
+                2. Ermittlung des Aufwands / Bereitstellung der Mittel
               </strong>
-            </P>
-            <li>Personelle Mittel sind verfügbar</li>
-            <li>Erhöhung derobjektiven Sicherheit (weniger Unfälle)</li>
-            <li>Einsatz von Fördermitteln prüfen</li>
-            <li>Zeitaufwand </li>
-            <li>Ggf. Durchführung Kosten-Nutzen Analyse</li>
-            <li>Radverkehrsanteil wird erhöht </li>
+            </p>
+            <ul>
+              <li>Personelle Mittel sind verfügbar</li>
+              <li>Erhöhung der objektiven Sicherheit (weniger Unfälle)</li>
+              <li>Einsatz von Fördermitteln prüfen</li>
+              <li>Zeitaufwand </li>
+              <li>Ggf. Durchführung Kosten-Nutzen-Analyse</li>
+              <li>Radverkehrsanteil wird erhöht </li>
+            </ul>
           </div>
-          <div className="rounded-b-3xl bg-white p-6">
-            <P>
-              <strong>3. Integration von Partizipation / Vernetzung:</strong>
-            </P>
-            <li> Interdisziplinäre Gestaltung</li>
-            <li>
-              Einbindung / Beteiligung verschiedener Akteur*innen im
-              Gestaltungsprozess
-            </li>
-            <li>
-              Maßnahme verfolgt einen partizipativen, geschlechter-paritätischen
-              und inklusiven Ansatz
-            </li>
+          <div
+            className={clsx('rounded-b-3xl bg-white px-6', planfProseClasses)}
+          >
+            <p>
+              <strong>3. Integration von Partizipation / Vernetzung</strong>
+            </p>
+            <ul>
+              <li> Interdisziplinäre Gestaltung</li>
+              <li>
+                Einbindung / Beteiligung verschiedener Akteur*innen im
+                Gestaltungsprozess
+              </li>
+              <li>
+                Maßnahme verfolgt einen partizipativen,
+                geschlechterparitätischen und inklusiven Ansatz
+              </li>
+            </ul>
           </div>
-          <div className="rounded-b-3xl bg-white p-6">
-            <P>
+          <div
+            className={clsx('rounded-b-3xl bg-white px-6', planfProseClasses)}
+          >
+            <p>
               <strong>
                 4. Maßnahme trägt zur Lösung anderer kommunalen
                 Problemstellungen bei (indirekt)
               </strong>
-            </P>
-            <li>
-              Klimaresiliente Städte (z. B. mehr Grünflächen, geringer
-              Versiegelungsgrad, effiziente Flächennutzung)
-            </li>
-            <li>gerechterer Mobilitätszugang</li>
-            <li>Förderung des Umweltverbundes</li>
-            <li>Reduzierung des CO2 Ausstoßes</li>
-            <li>Verbesserung der Luftqualität</li>
-            <li>Verminderung der Lärmbelastung</li>
-            <li>Verbesserung der Aufenthaltsqualität</li>
+            </p>
+            <ul>
+              <li>
+                Klimaresiliente Städte (z. B. mehr Grünflächen, geringer
+                Versiegelungsgrad, effiziente Flächennutzung)
+              </li>
+              <li>Gerechterer Mobilitätszugang</li>
+              <li>Förderung des Umweltverbundes</li>
+              <li>Reduzierung des CO²-Ausstoßes</li>
+              <li>Verbesserung der Luftqualität</li>
+              <li>Verminderung der Lärmbelastung</li>
+              <li>Verbesserung der Aufenthaltsqualität</li>
+            </ul>
           </div>
-          <div className="rounded-b-3xl bg-white p-6">
-            <P>
+          <div
+            className={clsx('rounded-b-3xl bg-white px-6', planfProseClasses)}
+          >
+            <p>
               <strong>
                 5. Evaluation / Formulierung von Indikatoren und messbaren
                 Zielen
               </strong>
-            </P>
+            </p>
           </div>
-          <div className="rounded-b-3xl bg-white p-6">
-            <P>
+          <div
+            className={clsx('rounded-b-3xl bg-white px-6', planfProseClasses)}
+          >
+            <p>
               <strong>6. Übertragbarkeit</strong>
-            </P>
-            <li>
+            </p>
+            <ul>
               <li>Wiederholungen sind möglich</li>
-              Maßnahme ist in anderen Stadtteilen (innerstädtisch) anwendbar
-            </li>
-            <li>Maßnahme ist auf andere deutsche Städte übertragbar</li>
+              <li>
+                Maßnahme ist in anderen Stadtteilen (innerstädtisch) anwendbar
+              </li>
+              <li>Maßnahme ist auf andere deutsche Städte übertragbar</li>
+            </ul>
           </div>
         </div>
       </Section>

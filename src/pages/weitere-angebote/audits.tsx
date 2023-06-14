@@ -6,32 +6,35 @@ import { articleProseClasses } from '~/components/core/articleProseClasses';
 import { MailLink } from '~/components/core/links';
 
 const AuditsPage = () => {
-  const title = 'Plan F Audit';
   return (
     <>
-      <HelmetSeo title={title} />
-      <Hero bgColor="bg-green-500" title={title} />
+      <HelmetSeo title="Plan F Audit" />
+      <Hero bgColor="bg-green-500" title="Plan F Audit" />
       <Section className={articleProseClasses}>
         <Content>
+          <p>
+            Im Plan F Audit wird der derzeitige Stand Ihrer Aktivitäten in der
+            Radverkehrsförderung anhand der Plan F Systematisierung ermittelt
+            und weitere Maßnahmen erarbeitet und diskutiert.
+          </p>
           <p>
             Durch das Plan F Audit entsteht ein deutlicher Mehrwert für alle
             Beteiligten - Ihre Kommune erhält innovative und fachliche
             Unterstützung und wird so in kurzer Zeit (noch) fahrradfreundlicher.
-            Die Studierenden wiederum lernen aus der kommunalen Praxis und
-            erproben gleichzeitig die Anwendung der Systematisierung von Plan F
-            - die besten Voraussetzungen also für einen gemeinsamen neuen Weg
-            der kommunalen Radverkehrsförderung.
+            Häufig arbeiten wir mit Studierenden zusammen, die wiederum aus der
+            kommunalen Praxis lernen.
           </p>
           <p>
             Das Plan F Audit ist angelehnt an das NRVP-Projekt FreshBrains.
             Studierende aus Deutschland und den Niederlanden haben im Rahmen
             dieses Projekts bereits in Kassel, Chemnitz, Mönchengladbach,
             Wuppertal, Bonn, und Dortmund ein Fahrradaudit durchgeführt.
-            Weiterführende Informationen zu dem Projekt finden Sie hier.
+            Weiterführende Informationen zu dem Projekt FreshBrains finden Sie
+            hier.
           </p>
           <p>
-            Haben Sie auch Interesse an einem solchen Audit bei sich in der
-            Kommune? Dann sprechen Sie uns an unter{' '}
+            Haben Sie auch Interesse an einem Plan F Audit bei sich in der
+            Kommune? Dann sprechen Sie uns an unter:{' '}
             <MailLink>kontakt@plan-f.info</MailLink>.
           </p>
           <ImageWithCopyright

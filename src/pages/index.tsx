@@ -104,8 +104,8 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
       <Section className="mb-12 !rounded-none bg-lime-300">
         <H2>Praxisbeispiele</H2>
         <P>
-          Schau was andere Kommunen zu diesem Thema bereits für Maßnahmen
-          umgesetzt haben.
+          Tauchen Sie in unsere Praxisbeispiele ein und sehen Sie, was andere
+          Kommunen bereits für Maßnahmen umgesetzt haben.
         </P>
         <CardWrapperMeasurePage className="mt-12">
           {examples?.length &&

@@ -7218,13 +7218,7 @@ declare namespace Queries {
           readonly name: string | null;
           readonly logo: {
             readonly copyright: string | null;
-            readonly image: {
-              readonly localFile: {
-                readonly childImageSharp: {
-                  readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData;
-                } | null;
-              } | null;
-            } | null;
+            readonly image: { readonly url: string | null } | null;
           } | null;
         } | null;
         readonly description: {

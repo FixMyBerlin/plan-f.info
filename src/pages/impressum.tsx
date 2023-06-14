@@ -4,11 +4,10 @@ import { articleProseClasses } from '~/components/core/articleProseClasses';
 import { MailLink, TelLink } from '~/components/core/links';
 
 const ImpressumPage = () => {
-  const title = 'Impressum';
   return (
     <>
-      <HelmetSeo noindex title={title} />
-      <Hero bgColor="bg-green-500" title={title} />
+      <HelmetSeo noindex title="Impressum | Plan F" />
+      <Hero bgColor="bg-green-500" title="Impressum" />
       <Section className={articleProseClasses}>
         <Content>
           <h2>Angaben gemäß § 5 TMG</h2>

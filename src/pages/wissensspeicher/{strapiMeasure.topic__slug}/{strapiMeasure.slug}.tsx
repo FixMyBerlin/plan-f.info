@@ -18,7 +18,7 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
   const examples = sortByPosition(measure.examples);
   return (
     <>
-      <HelmetSeo title={measure.name} />
+      <HelmetSeo title={`${measure.name} | Plan F`} />
       <Hero
         title={measure.name}
         bgColor={wikiColors.measure}
@@ -53,8 +53,8 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
       <Section className="mb-12 bg-lime-300">
         <H2>Praxisbeispiele ({examples.length})</H2>
         <P>
-          Schau was andere Kommunen zu diesem Thema bereits für Maßnahmen
-          umgesetzt haben.
+          Tauchen Sie in unsere Praxisbeispiele ein und sehen Sie, was andere
+          Kommunen bereits für Maßnahmen umgesetzt haben.
         </P>
         <CardWrapperMeasurePage className="mt-12">
           {examples.map((example) => (
