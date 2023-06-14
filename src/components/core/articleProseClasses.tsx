@@ -29,6 +29,6 @@ export const planfProseClasses = clsx(
   'prose-a:underline hover:prose-a:decoration-purple-600 hover:prose-a:text-purple-600 active:prose-a:decoration-purple-600 prose-a:underline-offset-2 active:prose-a:decoration-2',
   // <blockquote> / Quotebox
   'prose-blockquote:rounded-tr-[6rem] prose-blockquote:lg:rounded-tr-[10rem] prose-blockquote:rounded-tl-sm prose-blockquote:bg-purple-100 prose-blockquote:text-left prose-blockquote:mt-8 prose-blockquote:w-fit prose-blockquote:min-w-min prose-blockquote:rounded-b-[6rem] prose-blockquote:font-mono prose-blockquote:lg:rounded-b-[10rem] prose-blockquote:p-8 prose-blockquote:lg:p-16 prose-blockquote:not-italic prose-blockquote:border-l-0',
-  // ul
-  'prose-ul:list-disc prose-ul:my-6'
+  // ul li
+  'prose-ul:list-disc prose-ul:my-6 prose-li:text-sm prose-li:md:text-base prose-li:text-gray-700'
 );
