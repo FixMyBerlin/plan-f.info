@@ -25,11 +25,12 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
       />
 
       <PageHeader
+        className="-mb-10"
         image={topic.image?.url && topic.image.url}
         markdownHTML={topic.description.data.childMarkdownRemark.html}
       />
 
-      <Section className="mb-20 grid gap-10 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
+      <Section className="mb-12 grid gap-10 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
         {topic.guidelines && (
           <LinkListBlackButton links={topic.guidelines} title="Leitfäden" />
         )}

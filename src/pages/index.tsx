@@ -80,7 +80,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
             <H2>Plan F</H2>
             <H3>Impulse für die kommunale Fahrradmobilität</H3>
           </div>
-          <SearchBar />
+          <SearchBar className="pb-12" />
         </div>
       </Section>
       <Section className="-mt-6 !rounded-none bg-purple-300 pt-12 md:pt-16">

@@ -73,7 +73,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
           total={example.measure.examples.length}
           className="mb-5"
         />
-        <Section className="rounded-3xl bg-white">
+        <section className="rounded-3xl bg-white px-4 py-8 md:p-12 md:py-12">
           <H2 className="!md:mt-0 !mt-0">{example.title}</H2>
           <Prose markdownHTML={example.shortDescription} />
           {example.image && (
@@ -253,13 +253,16 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
           )}
           {example.sources.data.sources && (
             <div className="mt-12 flex items-start">
-              <Prose className="mr-1" markdownHTML="<p>Quelle: </p>" />
+              <Prose
+                className="mr-1"
+                markdownHTML="<p>Quelle des Praxisbeispiels: </p>"
+              />
               <Prose
                 markdownHTML={example.sources.data.childMarkdownRemark.html}
               />
             </div>
           )}
-        </Section>
+        </section>
         <Pagination
           pos={pos}
           prevSlug={prevSlug}

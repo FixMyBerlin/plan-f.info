@@ -28,7 +28,7 @@ export const H2: React.FC<Props> = ({ id, className, children }) => {
     <h2
       id={id}
       className={clsx(
-        'mb-5 mt-8 font-mono text-xl font-normal text-black md:mb-10 md:mt-10 md:text-3xl',
+        '!leading:snug mb-2 mt-8 font-mono text-xl font-normal text-black md:mb-5 md:mt-10 md:text-3xl md:!leading-normal',
         className
       )}
     >
