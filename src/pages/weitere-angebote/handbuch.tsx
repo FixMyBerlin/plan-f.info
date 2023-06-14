@@ -4,11 +4,10 @@ import { articleProseClasses } from '~/components/core/articleProseClasses';
 import { MailLink } from '~/components/core/links';
 
 const ManualPage = () => {
-  const title = 'Plan F Handbuch';
   return (
     <>
-      <HelmetSeo title={title} />
-      <Hero bgColor="bg-green-500" title={title} />
+      <HelmetSeo title="Plan F Handbuch" />
+      <Hero bgColor="bg-green-500" title="Plan F Handbuch" />
       <Section className={articleProseClasses}>
         <Content>
           <p>

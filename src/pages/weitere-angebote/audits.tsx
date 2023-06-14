@@ -6,11 +6,10 @@ import { articleProseClasses } from '~/components/core/articleProseClasses';
 import { MailLink } from '~/components/core/links';
 
 const AuditsPage = () => {
-  const title = 'Plan F Audit';
   return (
     <>
-      <HelmetSeo title={title} />
-      <Hero bgColor="bg-green-500" title={title} />
+      <HelmetSeo title="Plan F Audit" />
+      <Hero bgColor="bg-green-500" title="Plan F Audit" />
       <Section className={articleProseClasses}>
         <Content>
           <p>

@@ -16,11 +16,10 @@ const MatomoIframe = () => {
 };
 
 const DatenschutzPage: React.FC<PageProps> = () => {
-  const title = 'Datenschutz';
   return (
     <>
-      <HelmetSeo noindex title={title} />
-      <Hero className="!bg-green-500" title={title} />
+      <HelmetSeo noindex title="Datenschutz | Plan F" />
+      <Hero className="!bg-green-500" title="Datenschutz" />
       <Section className={articleProseClasses}>
         <Content>
           <p>

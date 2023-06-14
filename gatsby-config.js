@@ -12,7 +12,8 @@ module.exports = {
   siteMetadata: {
     title: 'Plan F',
     siteUrl: 'https://plan-f.de',
-    description: 'TODO siteMeta.description',
+    description:
+      'Plan F unterstützt Kommunen bei der Förderung des Radverkehrs. Dafür strukturieren wir bestehendes Wissen, Praxisbeispiele, Maßnahmen und Leitfäden zur Fahrradmobilität und zeigen notwendige Handlungsfelder auf.',
   },
 
   // Since `gatsby-plugin-typescript` is automatically included in Gatsby you
@@ -59,8 +60,8 @@ module.exports = {
       // Docs https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Plan-F.info',
-        short_name: 'Plan-F.info',
+        name: 'Plan F – Impulse für die fahrradfreundliche Kommune',
+        short_name: 'Plan F',
         start_url: '/',
         background_color: 'white',
         theme_color: '#fff8e8',

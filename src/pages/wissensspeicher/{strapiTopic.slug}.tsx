@@ -16,7 +16,7 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
   const measures = sortByPosition(topic.measures);
   return (
     <>
-      <HelmetSeo title={topic.name} />
+      <HelmetSeo title={`${topic.name} | Plan F`} />
 
       <Hero
         title={topic.name}

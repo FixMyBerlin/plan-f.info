@@ -7,8 +7,6 @@ import {
 import { Section } from '~/components/Layout/Section';
 
 const IndexPage = () => {
-  const title = 'Alle Artikel';
-
   const articleTeaserTexts = {
     'Wie werde ich eine Fahrradfreundliche Kommune?':
       'Eine fahrradfreundliche Kommune konzentriert sich darauf, das Radfahren als eine attraktive, sichere, umweltfreundliche und gleichberechtigte Form der Mobilität zu fördern. Es ist wichtig viele verschiedene Maßnahmen umzusetzen, Ziele zu formulieren, ein Radverkehrskonzept und einen Projektplan aufzustellen.',
@@ -26,10 +24,10 @@ const IndexPage = () => {
 
   return (
     <>
-      <HelmetSeo noindex title={title} />
+      <HelmetSeo noindex title="Alle Artikel | Plan F" />
       <Hero
         bgColor="bg-green-500"
-        title={title}
+        title="Alle Artikel"
         subtitle="Ergänzende Informationen und Empfehlungen für die kommunale Radverkehrsförderung"
       />
       <Section>

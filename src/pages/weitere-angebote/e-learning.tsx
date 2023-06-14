@@ -5,11 +5,10 @@ import { articleProseClasses } from '~/components/core/articleProseClasses';
 import { MailLink } from '~/components/core/links';
 
 const ELearningPage = () => {
-  const title = 'E-Learning';
   return (
     <>
-      <HelmetSeo title={title} />
-      <Hero bgColor="bg-green-500" title={title} />
+      <HelmetSeo title="E-Learning | Plan F" />
+      <Hero bgColor="bg-green-500" title="E-Learning" />
       <Section className={articleProseClasses}>
         <Content>
           <p>

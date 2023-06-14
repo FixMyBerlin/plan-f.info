@@ -7,7 +7,7 @@ import { Link } from '~/components/core/links/Link';
 const NotFound: React.FC = () => {
   return (
     <>
-      <HelmetSeo noindex />
+      <HelmetSeo noindex title="Seite nicht gefunden | Plan F" />
       <div className="flex h-full flex-col bg-purple-300">
         <div className="bg-green-500 pb-12 pt-20">
           <Content>

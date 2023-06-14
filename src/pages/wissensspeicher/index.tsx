@@ -26,12 +26,11 @@ export const query = graphql`
 const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
   data: { topics },
 }) => {
-  const title = 'Wissensspeicher';
   return (
     <>
-      <HelmetSeo title={title} />
+      <HelmetSeo title="Wissensspeicher | Plan F" />
       <Hero
-        title={title}
+        title="Wissensspeicher"
         bgColor={wikiColors.root}
         breadcrumbs={<Breadcrumbs names={['Wissensspeicher']} />}
       />

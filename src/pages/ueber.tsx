@@ -5,11 +5,10 @@ import { planFMarkdownProseClasses } from '~/components/core/Prose';
 import { Link, MailLink } from '~/components/core/links';
 
 const AboutPage = () => {
-  const title = 'Über Plan F';
   return (
     <>
-      <HelmetSeo title={title} />
-      <Hero bgColor="bg-green-500" title={title} />
+      <HelmetSeo title="Über Plan F" />
+      <Hero bgColor="bg-green-500" title="Über Plan F" />
       <Section>
         <Content>
           <H2>Was ist Plan F? </H2>

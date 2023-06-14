@@ -46,9 +46,10 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
     ...example,
     population: Number(example.population).toLocaleString(),
   };
+
   return (
     <>
-      <HelmetSeo title={example.measure.name} />
+      <HelmetSeo title={`${example.measure.name} | Plan F`} />
       <Hero
         className="!mb-0 rounded-b-none"
         bgColor={wikiColors.example}

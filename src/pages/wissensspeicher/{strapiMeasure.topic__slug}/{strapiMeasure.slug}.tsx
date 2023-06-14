@@ -18,7 +18,7 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
   const examples = sortByPosition(measure.examples);
   return (
     <>
-      <HelmetSeo title={measure.name} />
+      <HelmetSeo title={`${measure.name} | Plan F`} />
       <Hero
         title={measure.name}
         bgColor={wikiColors.measure}
