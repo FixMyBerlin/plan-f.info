@@ -2,6 +2,7 @@ import React from 'react';
 import { P } from '~/components/Text';
 import BMDVLogo from './assets/bmdv.svg';
 import FairSpacesLogo from './assets/fairspaces.svg';
+import FMCLogo from './assets/FixMyCity_positiv.svg';
 
 export const Fundings: React.FC = () => {
   return (
@@ -13,8 +14,9 @@ export const Fundings: React.FC = () => {
         </div>
         <div className="flex flex-col justify-between">
           <P>Ein Projekt von:</P>
-          <div className="py-6">
+          <div className="flex items-center gap-4 md:gap-6">
             <FairSpacesLogo width={160} />
+            <FMCLogo width={80} />
           </div>
         </div>
       </div>
