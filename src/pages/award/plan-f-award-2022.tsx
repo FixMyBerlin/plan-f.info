@@ -797,7 +797,7 @@ const AwardPage: React.FC = () => {
             link="https://www.youtube.com/watch?v=pqtAmXkCeEU"
             image={
               <StaticImage
-                src="./../../components/AwardPage/assets/planf-award-video.jpg"
+                src="./../../components/AwardPage/assets/award/planf-award-video.jpg"
                 alt="Video: Plan F Audit für die Verbandsgemeinde Wallmerod"
                 className="aspect-video"
               />
