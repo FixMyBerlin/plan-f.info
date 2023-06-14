@@ -128,17 +128,19 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
         </CardWrapperMeasurePage>
       </Section>
       <Section>
-        <H2>Video: Was ist Plan F?</H2>
-        <YouTubePreview
-          link="https://youtu.be/FcD_Se-F5LY"
-          image={
-            <StaticImage
-              src="./../components/StartPage/ErklaervideoPlanF.png"
-              alt="Video: Was ist Plan F?"
-              className="aspect-video"
-            />
-          }
-        />
+        <Content>
+          <H2>Video: Was ist Plan F?</H2>
+          <YouTubePreview
+            link="https://youtu.be/FcD_Se-F5LY"
+            image={
+              <StaticImage
+                src="./../components/StartPage/ErklaervideoPlanF.png"
+                alt="Video: Was ist Plan F?"
+                className="aspect-video"
+              />
+            }
+          />
+        </Content>
       </Section>
       <Section>
         <Content>
