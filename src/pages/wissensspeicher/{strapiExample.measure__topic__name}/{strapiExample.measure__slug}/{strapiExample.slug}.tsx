@@ -114,7 +114,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
                               </div>
                             }
                           >
-                            <Caption>
+                            <Caption className="text-white">
                               Für die Einteilung der Raumtypen Besiedlung und
                               Lage nutzen wir die Daten des BBSR „Raumtypen
                               2010“ der Laufenden Raumbeobachtung –

@@ -11,7 +11,7 @@ export const InfoPopover: React.FC<Props> = ({ children, button }) => {
     <Popover className="relative">
       <Popover.Button>{button}</Popover.Button>
 
-      <Popover.Panel className="absolute z-[30] w-full rounded-lg bg-white px-4 sm:ml-8">
+      <Popover.Panel className="absolute z-[30] w-full bg-black px-4 sm:ml-8">
         {children}
       </Popover.Panel>
     </Popover>
