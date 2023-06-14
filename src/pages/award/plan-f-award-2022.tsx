@@ -709,7 +709,7 @@ const AwardPage: React.FC = () => {
               zum herunterladen:
             </h3>
           </div>
-          <Link button="black" href={projectPdf}>
+          <Link blank button="black" href={projectPdf}>
             <span className="flex gap-2">
               <ArrowRightIcon className="h4 w-4" />
               Projektmappe herunterladen
