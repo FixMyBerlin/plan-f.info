@@ -37,6 +37,21 @@ const ELearningPage = () => {
           >
             edu.fair-spaces.de
           </LinkButtonWithArrow>
+          <div>
+            <MailLink
+              className="mt-6"
+              button
+              mailto="kontakt@plan-f.info"
+              subject="Anmeldung Plan F E-Learning"
+              body={`Name:
+Kommune / Organisation:
+Adresse:
+`}
+              type="button"
+            >
+              Anmeldung
+            </MailLink>
+          </div>
           <p>
             Für Rückfragen bitte <MailLink>kontakt@plan-f.info</MailLink>{' '}
             kontaktieren.

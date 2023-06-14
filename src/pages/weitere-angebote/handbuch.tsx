@@ -1,6 +1,7 @@
 import { Content, HelmetSeo, Hero } from '~/components/Layout';
 import { Section } from '~/components/Layout/Section';
 import { articleProseClasses } from '~/components/core/articleProseClasses';
+import { MailLink } from '~/components/core/links';
 
 const ManualPage = () => {
   const title = 'Plan F Handbuch';
@@ -16,8 +17,22 @@ const ManualPage = () => {
           </p>
           <p>
             Die ersten 200 Exemplare können kostenlos bestellt werden. Hiernach
-            kostet es 25 € / Exemplar. Nutzen Sie dafür das Formular.
+            kostet es 25 € / Exemplar.
           </p>
+          <MailLink
+            className="mt-4"
+            button
+            mailto="kontakt@plan-f.info"
+            subject="Bestellung Handbuch"
+            body={`Vorname, Name
+Adresse
+Gewünschte Anzahl
+optional: E-Mail Adresse und Telefonnummer für Rückfragen
+`}
+            type="button"
+          >
+            Plan F Handbuch bestellen
+          </MailLink>
         </Content>
       </Section>
     </>
