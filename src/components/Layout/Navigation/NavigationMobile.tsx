@@ -28,7 +28,7 @@ export const NavigationMobile: React.FC<Props> = ({
           className={clsx(
             className,
             open ? 'z-30' : 'z-10 ',
-            'fixed w-full bg-white'
+            'fixed w-full bg-green-500'
           )}
         >
           <div className={clsx('z-30 mx-auto px-4 pb-2 sm:px-6 lg:px-8')}>

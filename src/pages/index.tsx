@@ -1,5 +1,5 @@
 import { PageProps, graphql } from 'gatsby';
-import { getImage } from 'gatsby-plugin-image';
+import { StaticImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { Content, HelmetSeo } from '~/components/Layout';
 import { CardImageAndTextHorizontal } from '~/components/Layout/CardImageAndTextHorizontal';
@@ -11,6 +11,7 @@ import { wikiPath } from '~/components/utils';
 
 import { H2, H3, P } from '~/components/Text';
 import { SearchBar } from '~/components/SearchBar';
+import { YouTubePreview } from '~/components/core/links/YouTubePreview';
 
 export const query = graphql`
   query TopicOverview {
@@ -80,7 +81,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
             <H2>Plan F</H2>
             <H3>Impulse für die kommunale Fahrradmobilität</H3>
           </div>
-          <SearchBar />
+          <SearchBar className="pb-12" />
         </div>
       </Section>
       <Section className="-mt-6 !rounded-none bg-purple-300 pt-12 md:pt-16">
@@ -125,6 +126,21 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
               </CardImageAndTextVertical>
             ))}
         </CardWrapperMeasurePage>
+      </Section>
+      <Section>
+        <Content>
+          <H2>Video: Was ist Plan F?</H2>
+          <YouTubePreview
+            link="https://youtu.be/FcD_Se-F5LY"
+            image={
+              <StaticImage
+                src="./../components/StartPage/ErklaervideoPlanF.png"
+                alt="Video: Was ist Plan F?"
+                className="aspect-video"
+              />
+            }
+          />
+        </Content>
       </Section>
       <Section>
         <Content>

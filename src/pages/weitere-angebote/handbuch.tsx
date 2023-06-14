@@ -1,4 +1,6 @@
+import { StaticImage } from 'gatsby-plugin-image';
 import { Content, HelmetSeo, Hero } from '~/components/Layout';
+import { ImageWithCopyright } from '~/components/Layout/ImageWithCopyright';
 import { Section } from '~/components/Layout/Section';
 import { articleProseClasses } from '~/components/core/articleProseClasses';
 import { MailLink } from '~/components/core/links';
@@ -24,14 +26,21 @@ const ManualPage = () => {
             mailto="kontakt@plan-f.info"
             subject="Bestellung Handbuch"
             body={`Vorname, Name
-Adresse
-Gewünschte Anzahl
-optional: E-Mail Adresse und Telefonnummer für Rückfragen
-`}
+            Adresse
+            Gewünschte Anzahl
+            optional: E-Mail Adresse und Telefonnummer für Rückfragen
+            `}
             type="button"
           >
             Plan F Handbuch bestellen
           </MailLink>
+          <ImageWithCopyright copyright="Plan F Handbuch">
+            <StaticImage
+              src="./../../components/WeitereAngebotePages/assets/MockUp_Handbuch.jpg"
+              className="mt-12 w-full overflow-hidden"
+              alt="Plan F Handbuch"
+            />
+          </ImageWithCopyright>
         </Content>
       </Section>
     </>

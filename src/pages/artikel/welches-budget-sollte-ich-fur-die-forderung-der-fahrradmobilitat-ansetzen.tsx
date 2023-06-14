@@ -2,6 +2,7 @@ import { Content, HelmetSeo, Hero } from '~/components/Layout';
 import { Section } from '~/components/Layout/Section';
 import { LinkButtonWithArrow } from '~/components/PageTopic/LinkButtonWithArrow';
 import { H3, P } from '~/components/Text';
+import { planfProseClasses } from '~/components/core/articleProseClasses';
 
 const motivationArticle = () => {
   const title =
@@ -24,30 +25,32 @@ const motivationArticle = () => {
             Als grobe Orientierung können folgende Empfehlungen herangezogen
             werden:
           </P>
-          <ul className="ml-6 flex list-disc flex-col gap-4 pl-2">
-            <li>
-              Das Bundesministerium für Digitales und Verkehr (BMDV) empfiehlt
-              im Nationalen Radverkehrsplan 3.0 einen Durchschnittswert von 30
-              Euro pro Person und Jahr. Dieser Wert gilt als gemeinsamer
-              Zielwert von Bund, Ländern und Kommunen.
-            </li>
-            <li>
-              Der Allgemeine Deutsche Fahrrad-Club (ADFC) empfiehlt, mindestens
-              zehn Prozent des Verkehrsbudgets für den Ausbau der
-              Radinfrastruktur auszugeben.
-            </li>
-            <li>
-              Beispiele von bestimmten Städten (Ausgaben in Euro pro
-              Einwohner*in (Statista, 2018; Agora Verkehrswende, 2022))
-              <ul className="ml-6 flex list-disc flex-col gap-2 pl-2">
-                <li className="mt-4">München: 2,30 Euro (Jahr: 2018)</li>
-                <li>Berlin: 4,70 Euro (Jahr: 2018)</li>
-                <li>Amsterdam: 11,00 Euro (Jahr: 2018)</li>
-                <li>Kopenhagen: 35,00 Euro (Jahr: 2018)</li>
-                <li>Aachen: 88,50 Euro (Jahr: 2022)</li>
-              </ul>
-            </li>
-          </ul>
+          <div className={planfProseClasses}>
+            <ul>
+              <li>
+                Das Bundesministerium für Digitales und Verkehr (BMDV) empfiehlt
+                im Nationalen Radverkehrsplan 3.0 einen Durchschnittswert von 30
+                Euro pro Person und Jahr. Dieser Wert gilt als gemeinsamer
+                Zielwert von Bund, Ländern und Kommunen.
+              </li>
+              <li>
+                Der Allgemeine Deutsche Fahrrad-Club (ADFC) empfiehlt,
+                mindestens zehn Prozent des Verkehrsbudgets für den Ausbau der
+                Radinfrastruktur auszugeben.
+              </li>
+              <li>
+                Beispiele von bestimmten Städten (Ausgaben in Euro pro
+                Einwohner*in (Statista, 2018; Agora Verkehrswende, 2022))
+                <ul>
+                  <li className="mt-4">München: 2,30 Euro (Jahr: 2018)</li>
+                  <li>Berlin: 4,70 Euro (Jahr: 2018)</li>
+                  <li>Amsterdam: 11,00 Euro (Jahr: 2018)</li>
+                  <li>Kopenhagen: 35,00 Euro (Jahr: 2018)</li>
+                  <li>Aachen: 88,50 Euro (Jahr: 2022)</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
           <P>
             Es ist jedoch wichtig zu betonen, dass die Höhe des Budgets nicht
             allein ausschlaggebend für den Erfolg der Radverkehrsplanung ist.

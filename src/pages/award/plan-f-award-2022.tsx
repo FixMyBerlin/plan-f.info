@@ -5,6 +5,7 @@ import SendCommunityEntryLink from '~/components/CommunityEntries/SendCommunityE
 import { Content, HelmetSeo, Hero } from '~/components/Layout';
 import { Section } from '~/components/Layout/Section';
 
+import { StaticImage } from 'gatsby-plugin-image';
 import {
   CEO,
   FoldOut,
@@ -18,7 +19,7 @@ import { H3 } from '~/components/Text';
 import { planfProseClasses } from '~/components/core/articleProseClasses';
 import { Link } from '~/components/core/links/Link';
 import { YouTubePreview } from '~/components/core/links/YouTubePreview';
-import { StaticImage } from 'gatsby-plugin-image';
+import projectPdf from './Projektmappe_PlanfAward.pdf';
 
 const awardWinnerTopics = {
   Governance: [
@@ -708,7 +709,7 @@ const AwardPage: React.FC = () => {
               zum herunterladen:
             </h3>
           </div>
-          <Link button="black" href="/TODO">
+          <Link blank button="black" href={projectPdf}>
             <span className="flex gap-2">
               <ArrowRightIcon className="h4 w-4" />
               Projektmappe herunterladen
@@ -796,7 +797,7 @@ const AwardPage: React.FC = () => {
             link="https://www.youtube.com/watch?v=pqtAmXkCeEU"
             image={
               <StaticImage
-                src="./../../components/AwardPage/assets/planf-award-video.jpg"
+                src="./../../components/AwardPage/assets/award/planf-award-video.jpg"
                 alt="Video: Plan F Audit für die Verbandsgemeinde Wallmerod"
                 className="aspect-video"
               />

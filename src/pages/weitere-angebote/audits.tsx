@@ -42,7 +42,7 @@ const AuditsPage = () => {
             copyright="Präsentation Plan F Audit in Wallmerod, Urheberin: Carolin Kruse"
           >
             <StaticImage
-              src="./../../components/WeitereAngebote/assets/planf-audit.jpg"
+              src="./../../components/WeitereAngebotePages/assets/planf-audit.jpg"
               alt="Audit: Carolin Kruse"
             />
           </ImageWithCopyright>

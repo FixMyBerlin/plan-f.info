@@ -15,13 +15,19 @@ export const PageHeader: React.FC<Props> = ({
   image,
 }) => {
   return (
-    <Section className={clsx('flex flex-col gap-10 lg:flex-row', className)}>
+    <Section className={clsx('flex flex-col gap-12 lg:flex-row', className)}>
       <Article>
         <Prose markdownHTML={markdownHTML} />
       </Article>
-      {image && (
-        <img className="h-72 w-72 flex-shrink-0" src={image} alt="Titelbild" />
-      )}
+      <div className="flex-shrink-0 px-10">
+        {image && (
+          <img
+            className="h-72 w-72 flex-shrink-0"
+            src={image}
+            alt="Titelbild"
+          />
+        )}
+      </div>
     </Section>
   );
 };
