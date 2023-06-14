@@ -10,7 +10,7 @@ import { Section } from '~/components/Layout/Section';
 import { CardText } from '~/components/PageExample/CardText';
 import { Pagination } from '~/components/PageExample/Pagination';
 import { InfoPopover } from '~/components/PageExample/InfoPopover';
-import { Caption, H2, H3 } from '~/components/Text';
+import { Caption, H2, H3, P } from '~/components/Text';
 import { Prose } from '~/components/core/Prose';
 import { Link } from '~/components/core/links';
 import { sortByPosition, wikiColors } from '~/components/utils';
@@ -48,6 +48,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
   example = {
     ...example,
     population: Number(example.population).toLocaleString(),
+    costs: Number(example.costs).toLocaleString(),
   };
 
   return (
@@ -99,7 +100,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
                   if (!example[key]) return null;
                   return (
                     <tr
-                      className="grid grid-cols-1 text-gray-700 md:grid-cols-2 lg:grid-cols-3"
+                      className="grid grid-cols-1 gap-3 text-gray-700 md:grid-cols-2 lg:grid-cols-3"
                       key={key}
                     >
                       <td>
@@ -135,35 +136,35 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
                           </p>
                         )}
                       </td>
-                      <td>
+                      <td className="col-span-2">
                         <Prose
-                          className="prose-p:mt-0 lg:col-span-2"
+                          className="prose-p:mt-0"
                           markdownHTML={example[key]}
                         />
                       </td>
                     </tr>
                   );
                 })}
-                <tr className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                  <td className="whitespace-nowrap font-bold uppercase text-gray-700">
-                    Zuständige Abteilung
+                <tr className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
+                  <td className="prose whitespace-nowrap font-bold uppercase text-gray-700">
+                    <p>Zuständige Abteilung</p>
                   </td>
-                  <td>
+                  <td className="col-span-2">
                     <Prose
-                      className="prose-p:mt-0 lg:col-span-2"
+                      className="prose-p:!mt-0"
                       markdownHTML={
                         example.relatedOffice.data.childMarkdownRemark.html
                       }
                     />
                   </td>
                 </tr>
-                <tr className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                  <td className="whitespace-nowrap font-bold uppercase text-gray-700">
+                <tr className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
+                  <td className="font-bold uppercase text-gray-700">
                     Lokale Herausforderungen
                   </td>
-                  <td>
+                  <td className="col-span-2">
                     <Prose
-                      className="prose-p:mt-0 lg:col-span-2"
+                      className="prose-p:!mt-0"
                       markdownHTML={
                         example.localChallenges.data.childMarkdownRemark.html
                       }
