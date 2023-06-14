@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { PageProps, graphql } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { Content, HelmetSeo, Hero } from '~/components/Layout';
 import { CardImageAndTextResponsive } from '~/components/Layout/CardImageAndTextResponsive';
@@ -196,10 +197,16 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
         </CardWrapperWissensspeicherPage>
       </Section>
       <Section>
+        <H2>Systematisierung</H2>
+        <StaticImage
+          src="./../../components/ArtikelPages/assets/Systematisierung_planF_1-9_2000px.jpg"
+          className="-mx-4 w-full overflow-hidden"
+          alt="Plan F Systematisierung"
+        />
+        <Caption>Grafik Systematisierung</Caption>
+      </Section>
+      <Section>
         <Content>
-          <H2>Systematisierung</H2>
-          {/* <StaticImage src={''} alt={''} /> */}
-          <Caption>Grafik Systematisierung</Caption>
           <H3>Zielformulierung</H3>
           <P>
             Als Erstes sollten klare und messbare Ziele formuliert werden, die
