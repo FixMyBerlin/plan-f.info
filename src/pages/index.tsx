@@ -1,5 +1,5 @@
 import { PageProps, graphql } from 'gatsby';
-import { getImage } from 'gatsby-plugin-image';
+import { StaticImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { Content, HelmetSeo } from '~/components/Layout';
 import { CardImageAndTextHorizontal } from '~/components/Layout/CardImageAndTextHorizontal';
@@ -11,6 +11,7 @@ import { wikiPath } from '~/components/utils';
 
 import { H2, H3, P } from '~/components/Text';
 import { SearchBar } from '~/components/SearchBar';
+import { YouTubePreview } from '~/components/core/links/YouTubePreview';
 
 export const query = graphql`
   query TopicOverview {
@@ -125,6 +126,19 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
               </CardImageAndTextVertical>
             ))}
         </CardWrapperMeasurePage>
+      </Section>
+      <Section>
+        <H2>Video: Was ist Plan F?</H2>
+        <YouTubePreview
+          link="https://youtu.be/FcD_Se-F5LY"
+          image={
+            <StaticImage
+              src="./../components/StartPage/ErklaervideoPlanF.png"
+              alt="Video: Was ist Plan F?"
+              className="aspect-video"
+            />
+          }
+        />
       </Section>
       <Section>
         <Content>
