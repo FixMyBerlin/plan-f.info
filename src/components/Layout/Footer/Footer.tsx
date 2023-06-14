@@ -60,11 +60,10 @@ export const Footer: React.FC = () => {
                   ) : (
                     <div className="flex flex-col gap-3">
                       <p className="!text-sm uppercase !text-gray-400">{key}</p>
-                      <Link
-                        href={menuItems[key]}
-                        className="!text-sm !text-gray-400"
-                      >
+                      <Link href={menuItems[key]} className="!text-sm">
                         {key}
+                        {key === 'Über' && ' Plan F / Presse'}
+                        {key === 'Award' && ' Plan F 2022'}
                       </Link>
                     </div>
                   )}
