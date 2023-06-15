@@ -14,7 +14,7 @@ export const Fundings: React.FC = () => {
         </div>
         <div className="flex flex-col justify-between">
           <P>Ein Projekt von:</P>
-          <div className="flex items-center gap-4 md:gap-6">
+          <div className="flex items-center gap-8 md:gap-10">
             <FairSpacesLogo width={160} />
             <FMCLogo width={80} />
           </div>
