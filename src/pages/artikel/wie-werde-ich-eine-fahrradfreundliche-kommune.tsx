@@ -203,7 +203,7 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
           className="-mx-4 w-full overflow-hidden"
           alt="Plan F Systematisierung"
         />
-        <Caption>Grafik Systematisierung</Caption>
+        <Caption>Urheber: Fair Spaces</Caption>
       </Section>
       <Section>
         <Content>
