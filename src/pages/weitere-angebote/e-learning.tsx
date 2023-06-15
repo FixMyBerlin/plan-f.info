@@ -1,4 +1,6 @@
+import { StaticImage } from 'gatsby-plugin-image';
 import { Content, HelmetSeo, Hero } from '~/components/Layout';
+import { ImageWithCopyright } from '~/components/Layout/ImageWithCopyright';
 import { Section } from '~/components/Layout/Section';
 import { LinkButtonWithArrow } from '~/components/PageTopic/LinkButtonWithArrow';
 import { articleProseClasses } from '~/components/core/articleProseClasses';
@@ -82,6 +84,13 @@ Adresse:
             </MailLink>{' '}
             anmelden mit Betreff “Online Termin und Datum des Termins”.
           </p>
+          <ImageWithCopyright copyright="Abbildung: Lernplattform Plan F">
+            <StaticImage
+              src="./../../components/WeitereAngebotePages/assets/E-Learning.jpg"
+              className="mt-6 w-full overflow-hidden"
+              alt="Abbildung: Lernplattform Plan F"
+            />
+          </ImageWithCopyright>
         </Content>
       </Section>
     </>

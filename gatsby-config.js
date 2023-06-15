@@ -11,7 +11,7 @@ module.exports = {
   // Required by 'gatsby-plugin-sitemap' Plugin
   siteMetadata: {
     title: 'Plan F',
-    siteUrl: 'https://plan-f.de',
+    siteUrl: 'https://plan-f.info',
     description:
       'Plan F unterstützt Kommunen bei der Förderung des Radverkehrs. Dafür strukturieren wir bestehendes Wissen, Praxisbeispiele, Maßnahmen und Leitfäden zur Fahrradmobilität und zeigen notwendige Handlungsfelder auf.',
   },
@@ -28,9 +28,11 @@ module.exports = {
     'gatsby-plugin-postcss',
     {
       // Docs https://www.gatsbyjs.com/plugins/gatsby-plugin-sitemap/
+      // https://plan-f.netlify.app/sitemap-index.xml
+      // https://plan-f.netlify.app/sitemap-0.xml
       resolve: 'gatsby-plugin-sitemap',
       options: {
-        excludes: ['/kontakt/', '/datenschutz/'],
+        excludes: ['/impressum/', '/datenschutz/'],
       },
     },
     {
