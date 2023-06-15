@@ -27,7 +27,7 @@ export const CardImageAndTextResponsiveImgFull: React.FC<Props> = ({
       <div className="flex h-full flex-col gap-3 rounded-b-3xl bg-white sm:flex-row sm:gap-6 ">
         <GatsbyImage
           className="w-full overflow-hidden sm:h-72 sm:w-1/3 sm:shrink-0 sm:rounded-bl-3xl"
-          alt={`Titelbild ${link}`}
+          alt=""
           image={image}
         />
         <div className="p-6 sm:pl-0">{children}</div>
@@ -46,14 +46,14 @@ export const CardImageAndTextResponsiveImgFull: React.FC<Props> = ({
       {image ? (
         <GatsbyImage
           className="w-full overflow-hidden sm:h-72 sm:w-1/3 sm:shrink-0 sm:rounded-bl-3xl"
-          alt={`Titelbild ${link}`}
+          alt=""
           image={image}
         />
       ) : (
         <StaticImage
           src="./../CommunityEntries/assets/planf-placeholder.jpg"
           className="w-full overflow-hidden sm:h-72 sm:w-1/3 sm:shrink-0 sm:rounded-bl-3xl"
-          alt="Fahrrad"
+          alt=""
         />
       )}
       <div className="p-6 sm:pl-0">
