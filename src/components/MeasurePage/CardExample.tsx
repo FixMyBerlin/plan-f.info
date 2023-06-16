@@ -1,7 +1,6 @@
-import React, { ReactNode } from 'react';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import React, { ReactNode } from 'react';
 import { Link } from '../core/links/Link';
-import { H3 } from '../Text';
 
 type Props = {
   link: string;
@@ -9,7 +8,7 @@ type Props = {
   children: ReactNode;
   title: string;
 };
-export const CardImageAndTextVertical: React.FC<Props> = ({
+export const CardExample: React.FC<Props> = ({
   children,
   link,
   image,
@@ -28,8 +27,10 @@ export const CardImageAndTextVertical: React.FC<Props> = ({
           image={image}
         />
       )}
-      <div className="p-6 pb-2">
-        <H3 className="!md:mb-0 !md:mt-0 !mb-0 !mt-0">{title}</H3>
+      <div className="p-6">
+        <h3 className="mb-3 text-lg font-bold text-black md:text-xl">
+          {title}
+        </h3>
         {children}
       </div>
     </Link>

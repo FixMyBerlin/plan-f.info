@@ -9,7 +9,7 @@ type Props = {
   className?: string;
   title: string;
 };
-export const CardImageAndTextResponsive: React.FC<Props> = ({
+export const CardTopic: React.FC<Props> = ({
   className,
   children,
   link,
@@ -20,7 +20,7 @@ export const CardImageAndTextResponsive: React.FC<Props> = ({
     <Link
       button="card"
       className={clsx(
-        'flex h-full flex-col gap-3 rounded-b-3xl bg-white p-6 sm:flex-row sm:items-center sm:gap-6',
+        'flex h-full flex-col gap-3 rounded-b-3xl bg-white p-6 sm:flex-row sm:gap-6',
         className
       )}
       href={link}

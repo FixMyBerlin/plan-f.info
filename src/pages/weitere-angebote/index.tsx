@@ -1,4 +1,4 @@
-import { PageTeaserCard } from '~/components/PageTeaserCard';
+import { PageTeaserCard } from '~/components/Layout/CardPageTeaser';
 import { Content, HelmetSeo, Hero } from '~/components/Layout';
 import {
   menuItems,

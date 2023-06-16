@@ -1,10 +1,10 @@
 import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
-import SendCommunityEntryLink from './CommunityEntries/SendCommunityEntryLink';
-import { CardImageAndTextResponsiveImgFull } from './Layout/CardImageAndTextResponsiveImgFull';
-import { Section } from './Layout/Section';
-import { P } from './Text';
-import { Prose } from './core/Prose';
+import SendCommunityEntryLink from './SendCommunityEntryLink';
+import { CardCommunityEntry } from './CardCommunityEntry';
+import { Section } from '../Layout/Section';
+import { P } from '../Text';
+import { Prose } from '../core/Prose';
 
 type Props = {
   communityEntries: Queries.MeasureDetailsQuery['measure']['communityEntries'];
@@ -35,7 +35,7 @@ export const CommunityEntriesSection: React.FC<Props> = ({
         {communityEntries
           .filter((entry) => entry.title !== 'PLACEHOLDER_TO_AVOID_TYPEERROR')
           .map((entry) => (
-            <CardImageAndTextResponsiveImgFull
+            <CardCommunityEntry
               key={entry.title}
               title={entry.title}
               link={entry.website?.url && entry.website.url}
@@ -68,7 +68,7 @@ export const CommunityEntriesSection: React.FC<Props> = ({
                   </p>
                 )}
               </div>
-            </CardImageAndTextResponsiveImgFull>
+            </CardCommunityEntry>
           ))}
       </div>
     </Section>

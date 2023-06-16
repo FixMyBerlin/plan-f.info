@@ -6,15 +6,11 @@ type Props = {
   image: string;
   children: ReactNode;
 };
-export const CardImageAndTextHorizontal: React.FC<Props> = ({
-  children,
-  link,
-  image,
-}) => {
+export const CardTopicTitle: React.FC<Props> = ({ children, link, image }) => {
   return (
     <Link
       button="card"
-      className="flex items-center justify-start gap-4 rounded-b-3xl bg-white p-6 pt-4"
+      className="flex items-center justify-start gap-1 rounded-b-3xl bg-white p-6 pt-4"
       href={link}
     >
       {image && (

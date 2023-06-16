@@ -1,11 +1,11 @@
 import { PageProps, graphql } from 'gatsby';
 import React from 'react';
 import { Breadcrumbs, Content, HelmetSeo, Hero } from '~/components/Layout';
-import { CardImageAndTextResponsive } from '~/components/Layout/CardImageAndTextResponsive';
-import { CardWrapperWissensspeicherPage } from '~/components/Layout/CardWrapperWissensspeicherPage';
-import { Section } from '~/components/Layout/Section';
+import { CardTopic } from '~/components/WissensspeicherStartPage/CardTopic';
+import { CardWrapperWissensspeicherStartPage } from '~/components/WissensspeicherStartPage/CardWrapperWissensspeicherStartPage';
 import { H2, P } from '~/components/Text';
 import { wikiColors } from '~/components/utils';
+import { Section } from '~/components/Layout/Section';
 
 export const query = graphql`
   query TopicTeasers {
@@ -68,10 +68,10 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
           Entdecken Sie die verschiedenen Handlungsfelder. Dort finden Sie
           Maßnahmen und deren zugehörigen Praxisbeispiele
         </P>
-        <CardWrapperWissensspeicherPage className="mt-10">
+        <CardWrapperWissensspeicherStartPage className="mt-10">
           {topics &&
             topics.nodes.map((topic) => (
-              <CardImageAndTextResponsive
+              <CardTopic
                 title={topic.name}
                 key={topic.slug}
                 link={topic.slug}
@@ -82,9 +82,9 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
                     {topic.shortDescription}
                   </p>
                 )}
-              </CardImageAndTextResponsive>
+              </CardTopic>
             ))}
-        </CardWrapperWissensspeicherPage>
+        </CardWrapperWissensspeicherStartPage>
       </Section>
     </>
   );

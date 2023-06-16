@@ -2,7 +2,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { Content, HelmetSeo, Hero } from '~/components/Layout';
 import { ImageWithCopyright } from '~/components/Layout/ImageWithCopyright';
 import { Section } from '~/components/Layout/Section';
-import { LinkButtonWithArrow } from '~/components/PageTopic/LinkButtonWithArrow';
+import { LinkButtonWithArrow } from '~/components/TopicPage/LinkButtonWithArrow';
 import { articleProseClasses } from '~/components/core/articleProseClasses';
 import { MailLink } from '~/components/core/links';
 

@@ -2,7 +2,7 @@ import { Transition } from '@headlessui/react';
 import { MinusIcon, PlusIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 import React, { useState } from 'react';
-import { LinkButtonWithArrow } from '../PageTopic/LinkButtonWithArrow';
+import { LinkButtonWithArrow } from '../TopicPage/LinkButtonWithArrow';
 import { H2, H3 } from '../Text';
 import { trackEvent } from '../matomo/trackEvent';
 

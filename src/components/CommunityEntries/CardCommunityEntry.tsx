@@ -14,7 +14,7 @@ type Props = {
   className?: string;
   title: string;
 };
-export const CardImageAndTextResponsiveImgFull: React.FC<Props> = ({
+export const CardCommunityEntry: React.FC<Props> = ({
   className,
   children,
   link,

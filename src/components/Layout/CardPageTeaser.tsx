@@ -1,8 +1,8 @@
 import { ArrowRightIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 import React, { ReactNode } from 'react';
-import { H2 } from './Text';
-import { Link } from './core/links';
+import { H2 } from '../Text';
+import { Link } from '../core/links';
 
 type Props = {
   title: string;

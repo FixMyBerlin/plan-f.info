@@ -1,6 +1,6 @@
 import { Content, HelmetSeo, Hero } from '~/components/Layout';
 import { Section } from '~/components/Layout/Section';
-import { LinkButtonWithArrow } from '~/components/PageTopic/LinkButtonWithArrow';
+import { LinkButtonWithArrow } from '~/components/TopicPage/LinkButtonWithArrow';
 import { H3, P } from '~/components/Text';
 import { planfProseClasses } from '~/components/core/articleProseClasses';
 

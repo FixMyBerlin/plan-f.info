@@ -2,16 +2,17 @@ import { PageProps, graphql } from 'gatsby';
 import { StaticImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { Content, HelmetSeo } from '~/components/Layout';
-import { CardImageAndTextHorizontal } from '~/components/Layout/CardImageAndTextHorizontal';
-import { CardImageAndTextVertical } from '~/components/Layout/CardImageAndTextVertical';
-import { CardWrapperMeasurePage } from '~/components/Layout/CardWrapperMeasurePage';
-import { Section } from '~/components/Layout/Section';
-import { LinkButtonWithArrow } from '~/components/PageTopic/LinkButtonWithArrow';
+import { CardTopicTitle } from '~/components/StartPage/CardTopicTitle';
+import { CardExample } from '~/components/MeasurePage/CardExample';
+import { CardWrapperMeasurePage } from '~/components/MeasurePage/CardWrapperMeasurePage';
+import { LinkButtonWithArrow } from '~/components/TopicPage/LinkButtonWithArrow';
 import { wikiPath } from '~/components/utils';
 
 import { H2, H3, P } from '~/components/Text';
 import { SearchBar } from '~/components/SearchBar';
 import { YouTubePreview } from '~/components/core/links/YouTubePreview';
+import { CardWrapperTopicsLandingPage } from '~/components/StartPage/CardWrapperTopicsStartPage';
+import { Section } from '~/components/Layout/Section';
 
 export const query = graphql`
   query TopicOverview {
@@ -90,17 +91,19 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
           Entdecken Sie die verschiedenen Handlungsfelder. Dort finden Sie
           Maßnahmen und deren zugehörigen Praxisbeispiele
         </P>
-        <CardWrapperMeasurePage className="mt-10">
+        <CardWrapperTopicsLandingPage className="mt-10">
           {topics.nodes.map((topic) => (
-            <CardImageAndTextHorizontal
+            <CardTopicTitle
               key={topic.slug}
               link={`${wikiPath}/${topic.slug}`}
               image={topic.image.url}
             >
-              <H3>{topic.name}</H3>
-            </CardImageAndTextHorizontal>
+              <h3 className="text-lg font-bold text-black md:text-xl">
+                {topic.name}
+              </h3>
+            </CardTopicTitle>
           ))}
-        </CardWrapperMeasurePage>
+        </CardWrapperTopicsLandingPage>
       </Section>
       <Section className="mb-12 !rounded-none bg-lime-300">
         <H2>Praxisbeispiele</H2>
@@ -111,19 +114,18 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
         <CardWrapperMeasurePage className="mt-12">
           {examples?.length &&
             examples.map((example) => (
-              <CardImageAndTextVertical
-                key={example.path}
+              <CardExample
                 title={example.title}
+                key={example.path}
                 link={example.path}
-                image={
-                  example.image &&
-                  getImage(example.image.image.localFile as any)
-                }
+                image={example.image}
               >
-                <div className="line-clamp-4">
-                  <P>{example.shortDescription}</P>
+                <div>
+                  <p className="text-sm text-gray-700 md:text-base">
+                    {example.shortDescription}
+                  </p>
                 </div>
-              </CardImageAndTextVertical>
+              </CardExample>
             ))}
         </CardWrapperMeasurePage>
       </Section>
@@ -134,7 +136,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
             link="https://youtu.be/FcD_Se-F5LY"
             image={
               <StaticImage
-                src="./../components/StartPage/ErklaervideoPlanF.png"
+                src="./../components/StartPage/assets/ErklaervideoPlanF.png"
                 alt="Video: Was ist Plan F?"
                 className="aspect-video"
               />

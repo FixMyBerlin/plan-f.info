@@ -1,6 +1,6 @@
 import { Content, HelmetSeo, Hero } from '~/components/Layout';
 import { Section } from '~/components/Layout/Section';
-import { CardText } from '~/components/PageExample/CardText';
+import { CardText } from '~/components/Layout/CardText';
 import { P } from '~/components/Text';
 
 const ParticipationArticle = () => {
