@@ -31,10 +31,10 @@ export const CommunityEntriesSection: React.FC<Props> = ({
       </P>
       <SendCommunityEntryLink />
       <div className="mt-12 flex flex-col gap-5">
-        {communityEntries.map((entry) => {
-          console.log(entry);
-          if (entry.title === 'PLACEHOLDER_TO_AVOID_TYPEERROR') return null;
-          return (
+        {/* 'PLACEHOLDER_TO_AVOID_TYPEERROR' entry (and this filter) can be deleted in Strapi when fields are filled out by editors */}
+        {communityEntries
+          .filter((entry) => entry.title !== 'PLACEHOLDER_TO_AVOID_TYPEERROR')
+          .map((entry) => (
             <CardImageAndTextResponsiveImgFull
               key={entry.title}
               title={entry.title}
@@ -62,8 +62,7 @@ export const CommunityEntriesSection: React.FC<Props> = ({
                 markdownHTML={entry.description.data.childMarkdownRemark.html}
               />
             </CardImageAndTextResponsiveImgFull>
-          );
-        })}
+          ))}
       </div>
     </Section>
   );
