@@ -8,7 +8,6 @@ import { CardWrapperWissensspeicherPage } from '~/components/Layout/CardWrapperW
 import { Section } from '~/components/Layout/Section';
 import { CardText } from '~/components/PageExample/CardText';
 import { Caption, H2, H3, P } from '~/components/Text';
-import { Prose } from '~/components/core/Prose';
 import { planfProseClasses } from '~/components/core/articleProseClasses';
 import { Link } from '~/components/core/links';
 import { wikiPath } from '~/components/utils';
@@ -190,7 +189,9 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
                 image={topic.image && topic.image.url}
               >
                 {topic.shortDescription && (
-                  <Prose markdownHTML={topic.shortDescription} />
+                  <p className="text-sm text-gray-700 md:text-base">
+                    {topic.shortDescription}
+                  </p>
                 )}
               </CardImageAndTextResponsive>
             ))}

@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import React, { ReactNode } from 'react';
 import { Link } from '../core/links/Link';
-import { H3 } from '../Text';
 
 type Props = {
   link: string;
@@ -21,7 +20,7 @@ export const CardImageAndTextResponsive: React.FC<Props> = ({
     <Link
       button="card"
       className={clsx(
-        'flex h-full flex-col gap-3 rounded-b-3xl bg-white p-6 sm:flex-row sm:gap-6',
+        'flex h-full flex-col gap-3 rounded-b-3xl bg-white p-6 sm:flex-row sm:items-center sm:gap-6',
         className
       )}
       href={link}
@@ -34,7 +33,7 @@ export const CardImageAndTextResponsive: React.FC<Props> = ({
         />
       )}
       <div>
-        <H3 className="!md:mt-0 !mt-0">{title}</H3>
+        <h3 className="text-blackmd:text-xl mb-2 text-lg font-bold">{title}</h3>
         {children}
       </div>
     </Link>

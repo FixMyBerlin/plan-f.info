@@ -5,7 +5,6 @@ import { CardImageAndTextResponsive } from '~/components/Layout/CardImageAndText
 import { CardWrapperWissensspeicherPage } from '~/components/Layout/CardWrapperWissensspeicherPage';
 import { Section } from '~/components/Layout/Section';
 import { H2, P } from '~/components/Text';
-import { Prose } from '~/components/core/Prose';
 import { wikiColors } from '~/components/utils';
 
 export const query = graphql`
@@ -79,7 +78,9 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
                 image={topic.image && topic.image.url}
               >
                 {topic.shortDescription && (
-                  <Prose markdownHTML={topic.shortDescription} />
+                  <p className="text-sm text-gray-700 md:text-base">
+                    {topic.shortDescription}
+                  </p>
                 )}
               </CardImageAndTextResponsive>
             ))}
