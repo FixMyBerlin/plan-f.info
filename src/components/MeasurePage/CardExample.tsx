@@ -1,10 +1,10 @@
-import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React, { ReactNode } from 'react';
 import { Link } from '../core/links/Link';
 
 type Props = {
   link: string;
-  image: IGatsbyImageData | null;
+  image: any;
   children: ReactNode;
   title: string;
 };
@@ -21,11 +21,18 @@ export const CardExample: React.FC<Props> = ({
       href={link}
     >
       {image && (
-        <GatsbyImage
-          className="h-52 w-full overflow-hidden"
-          alt={`Titelbild ${link}`}
-          image={image}
-        />
+        <>
+          <GatsbyImage
+            className="h-52 w-full overflow-hidden"
+            alt=""
+            image={getImage(image.image.localFile as any)}
+          />
+          {image.copyright && (
+            <p className="px-5 pt-2 text-right text-xs text-gray-700">
+              Abbildung: {image.copyright}
+            </p>
+          )}
+        </>
       )}
       <div className="p-6">
         <h3 className="mb-3 text-lg font-bold text-black md:text-xl">

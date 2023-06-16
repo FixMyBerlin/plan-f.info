@@ -1,5 +1,4 @@
 import { graphql, PageProps } from 'gatsby';
-import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { CommunityEntriesSection } from '~/components/CommunityEntries/CommunityEntriesSection';
 import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
@@ -63,9 +62,7 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
               title={example.title}
               key={example.slug}
               link={example.slug}
-              image={
-                example.image && getImage(example.image.image.localFile as any)
-              }
+              image={example.image}
             >
               <div>
                 <p className="text-sm text-gray-700 md:text-base">

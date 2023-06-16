@@ -1,18 +1,18 @@
 import { PageProps, graphql } from 'gatsby';
-import { StaticImage, getImage } from 'gatsby-plugin-image';
+import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { Content, HelmetSeo } from '~/components/Layout';
-import { CardTopicTitle } from '~/components/StartPage/CardTopicTitle';
 import { CardExample } from '~/components/MeasurePage/CardExample';
 import { CardWrapperMeasurePage } from '~/components/MeasurePage/CardWrapperMeasurePage';
+import { CardTopicTitle } from '~/components/StartPage/CardTopicTitle';
 import { LinkButtonWithArrow } from '~/components/TopicPage/LinkButtonWithArrow';
 import { wikiPath } from '~/components/utils';
 
-import { H2, H3, P } from '~/components/Text';
-import { SearchBar } from '~/components/SearchBar';
-import { YouTubePreview } from '~/components/core/links/YouTubePreview';
-import { CardWrapperTopicsLandingPage } from '~/components/StartPage/CardWrapperTopicsStartPage';
 import { Section } from '~/components/Layout/Section';
+import { SearchBar } from '~/components/SearchBar';
+import { CardWrapperTopicsLandingPage } from '~/components/StartPage/CardWrapperTopicsStartPage';
+import { H2, H3, P } from '~/components/Text';
+import { YouTubePreview } from '~/components/core/links/YouTubePreview';
 
 export const query = graphql`
   query TopicOverview {
