@@ -43,24 +43,31 @@ export const CommunityEntriesSection: React.FC<Props> = ({
                 entry.image && getImage(entry.image.image.localFile as any)
               }
             >
-              <p className="uppercase">
-                <strong>Stadt: </strong>
-                {entry.commune}
-                <br />
-                <strong>Bundesland: </strong>
-                {entry.countryState}
-                {entry.subcategory && (
-                  <>
-                    <br />
-                    <strong>MaßnahmenTyp: </strong>
-                    {entry.subcategory}
-                  </>
+              <div className="flex flex-col gap-2">
+                <p className="text-sm uppercase text-gray-700 md:text-base">
+                  <strong>Stadt: </strong>
+                  {entry.commune}
+                  <br />
+                  <strong>Bundesland: </strong>
+                  {entry.countryState}
+                  {entry.subcategory && (
+                    <>
+                      <br />
+                      <strong>MaßnahmenTyp: </strong>
+                      {entry.subcategory}
+                    </>
+                  )}
+                </p>
+                <Prose
+                  className="line-clamp-4 prose-p:leading-normal"
+                  markdownHTML={entry.description.data.childMarkdownRemark.html}
+                />
+                {entry.image?.copyright && (
+                  <p className="mt-2 text-xs text-gray-700">
+                    Abbildung: {entry.image.copyright}
+                  </p>
                 )}
-              </p>
-              <Prose
-                className="line-clamp-4"
-                markdownHTML={entry.description.data.childMarkdownRemark.html}
-              />
+              </div>
             </CardImageAndTextResponsiveImgFull>
           ))}
       </div>
