@@ -28,8 +28,8 @@ module.exports = {
     'gatsby-plugin-postcss',
     {
       // Docs https://www.gatsbyjs.com/plugins/gatsby-plugin-sitemap/
-      // https://plan-f.netlify.app/sitemap-index.xml
-      // https://plan-f.netlify.app/sitemap-0.xml
+      // https://plan-f.info/sitemap-index.xml
+      // https://plan-f.info/sitemap-0.xml
       resolve: 'gatsby-plugin-sitemap',
       options: {
         excludes: ['/impressum/', '/datenschutz/'],

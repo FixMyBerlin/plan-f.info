@@ -24,6 +24,15 @@ jobs:
 
       - run: npm ci
 
+      - name: Create .env with Github Secrets and run script
+        run: |
+          touch .env
+          echo GATSBY_BACKEND_URL=$GATSBY_BACKEND_URL >> .env
+          echo STRAPI_TOKEN=$STRAPI_TOKEN >> .env
+        env:
+          GATSBY_BACKEND_URL: "https://backend.plan-f.info"
+          STRAPI_TOKEN: ${{ secrets.STRAPI_TOKEN }}
+
       - run: npm run build
 
       - name: Install SSH Key

@@ -1,12 +1,12 @@
 import { graphql, PageProps } from 'gatsby';
-import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
-import { CommunityEntriesSection } from '~/components/CommunityEntriesSection';
+import { CommunityEntriesSection } from '~/components/CommunityEntries/CommunityEntriesSection';
 import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
-import { CardImageAndTextVertical } from '~/components/Layout/CardImageAndTextVertical';
-import { CardWrapperMeasurePage } from '~/components/Layout/CardWrapperMeasurePage';
 import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
-import { PageHeader } from '~/components/Layout/PageHeader';
+import { PageIntro } from '~/components/Layout/PageIntro';
+import { CardExample } from '~/components/MeasurePage/CardExample';
+import { CardWrapperMeasurePage } from '~/components/MeasurePage/CardWrapperMeasurePage';
+
 import { Section } from '~/components/Layout/Section';
 import { H2, P } from '~/components/Text';
 import { sortByPosition, wikiColors } from '~/components/utils';
@@ -28,7 +28,7 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
           />
         }
       />
-      <PageHeader
+      <PageIntro
         markdownHTML={measure.description.data.childMarkdownRemark.html}
       />
 
@@ -58,18 +58,18 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
         </P>
         <CardWrapperMeasurePage className="mt-12">
           {examples.map((example) => (
-            <CardImageAndTextVertical
+            <CardExample
               title={example.title}
               key={example.slug}
               link={example.slug}
-              image={
-                example.image && getImage(example.image.image.localFile as any)
-              }
+              image={example.image}
             >
-              <div className="line-clamp-4">
-                <P>{example.shortDescription}</P>
+              <div>
+                <p className="text-sm text-gray-700 md:text-base">
+                  {example.shortDescription}
+                </p>
               </div>
-            </CardImageAndTextVertical>
+            </CardExample>
           ))}
         </CardWrapperMeasurePage>
       </Section>

@@ -1,13 +1,12 @@
 import { graphql, PageProps } from 'gatsby';
 import React from 'react';
-import { Prose } from '~/components/core/Prose';
 import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
-import { CardImageAndTextResponsive } from '~/components/Layout/CardImageAndTextResponsive';
-import { CardWrapperTopicPage } from '~/components/Layout/CardWrapperTopicPage';
 import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
-import { PageHeader } from '~/components/Layout/PageHeader';
+import { PageIntro } from '~/components/Layout/PageIntro';
 import { Section } from '~/components/Layout/Section';
 import { H2, P } from '~/components/Text';
+import { CardMeasure } from '~/components/TopicPage/CardMeasure';
+import { CardWrapperTopicPage } from '~/components/TopicPage/CardWrapperTopicPage';
 import { sortByPosition, wikiColors } from '~/components/utils';
 
 const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
@@ -24,7 +23,7 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
         breadcrumbs={<Breadcrumbs names={['Wissensspeicher', topic.name]} />}
       />
 
-      <PageHeader
+      <PageIntro
         className="-mb-10"
         image={topic.image?.url && topic.image.url}
         markdownHTML={topic.description.data.childMarkdownRemark.html}
@@ -56,13 +55,15 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
         </P>
         <CardWrapperTopicPage className="mt-12">
           {measures.map((measure) => (
-            <CardImageAndTextResponsive
+            <CardMeasure
               title={measure.name}
               key={measure.slug}
               link={measure.slug || '/'} // This is only quick fix - slug should be Pflichtfpeld
             >
-              <Prose markdownHTML={measure.shortDescription} />
-            </CardImageAndTextResponsive>
+              <p className="text-sm text-gray-700 md:text-base">
+                {measure.shortDescription}
+              </p>
+            </CardMeasure>
           ))}
         </CardWrapperTopicPage>
       </Section>

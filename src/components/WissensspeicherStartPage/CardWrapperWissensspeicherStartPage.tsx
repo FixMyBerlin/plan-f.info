@@ -6,7 +6,7 @@ type Props = {
   className?: string;
   // breakpoint?: 'md:grid-cols-2' | 'lg:grid-cols-2'; // breakpoint - for 2 cols
 };
-export const CardWrapperWissensspeicherPage: React.FC<Props> = ({
+export const CardWrapperWissensspeicherStartPage: React.FC<Props> = ({
   children,
   className,
   // breakpoint = 'md:grid-cols-2',

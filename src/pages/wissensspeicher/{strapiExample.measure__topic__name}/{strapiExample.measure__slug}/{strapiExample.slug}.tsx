@@ -2,18 +2,18 @@ import { InformationCircleIcon } from '@heroicons/react/20/solid';
 import { PageProps, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
-import { CommunityEntriesSection } from '~/components/CommunityEntriesSection';
+import { CommunityEntriesSection } from '~/components/CommunityEntries/CommunityEntriesSection';
 import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
 import { ImageWithCopyright } from '~/components/Layout/ImageWithCopyright';
 import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
-import { Section } from '~/components/Layout/Section';
-import { CardText } from '~/components/PageExample/CardText';
-import { InfoPopover } from '~/components/PageExample/InfoPopover';
-import { Pagination } from '~/components/PageExample/Pagination';
+import { CardText } from '~/components/Layout/CardText';
+import { InfoPopover } from '~/components/ExamplePage/InfoPopover';
+import { Pagination } from '~/components/ExamplePage/Pagination';
 import { Caption, H2, H3 } from '~/components/Text';
 import { Prose } from '~/components/core/Prose';
 import { Link } from '~/components/core/links';
 import { sortByPosition, wikiColors } from '~/components/utils';
+import { Section } from '~/components/Layout/Section';
 
 const steckbiref = {
   subcategory: 'Maßnahmentyp',

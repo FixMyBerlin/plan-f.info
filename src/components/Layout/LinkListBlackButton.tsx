@@ -2,7 +2,7 @@ import { Transition } from '@headlessui/react';
 import { MinusIcon, PlusIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 import React, { useState } from 'react';
-import { LinkButtonWithArrow } from '../PageTopic/LinkButtonWithArrow';
+import { LinkButtonWithArrow } from '../TopicPage/LinkButtonWithArrow';
 import { H2, H3 } from '../Text';
 import { trackEvent } from '../matomo/trackEvent';
 
@@ -42,7 +42,6 @@ export const LinkListBlackButton: React.FC<Props> = ({
         <div className="flex flex-col items-start gap-5">
           {links.map((resource) => (
             <LinkButtonWithArrow
-              blank
               className="w-full max-w-[250px] md:max-w-none"
               href={resource.url}
               key={resource.url}
@@ -60,7 +59,6 @@ export const LinkListBlackButton: React.FC<Props> = ({
       <div className="flex flex-col items-start gap-5">
         {links.slice(0, 2).map((resource) => (
           <LinkButtonWithArrow
-            blank
             className="w-full max-w-[250px] md:max-w-none"
             href={resource.url}
             key={resource.url}
@@ -76,10 +74,14 @@ export const LinkListBlackButton: React.FC<Props> = ({
           leave="transition duration-75 ease-out"
           leaveFrom="transform scale-100 opacity-100"
           leaveTo="transform scale-95 opacity-0"
-          className="flex flex-col items-start gap-5"
+          className="flex w-[250px] flex-col items-start gap-5"
         >
           {links.slice(2).map((resource) => (
-            <LinkButtonWithArrow href={resource.url} key={resource.url}>
+            <LinkButtonWithArrow
+              className="w-full max-w-[250px] md:max-w-none"
+              href={resource.url}
+              key={resource.url}
+            >
               {resource.display || resource.url}
             </LinkButtonWithArrow>
           ))}

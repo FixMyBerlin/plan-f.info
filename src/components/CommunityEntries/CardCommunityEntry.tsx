@@ -6,7 +6,6 @@ import {
 } from 'gatsby-plugin-image';
 import React, { ReactNode } from 'react';
 import { Link } from '../core/links/Link';
-import { H3 } from '../Text';
 
 type Props = {
   link: string | null;
@@ -15,7 +14,7 @@ type Props = {
   className?: string;
   title: string;
 };
-export const CardImageAndTextResponsiveImgFull: React.FC<Props> = ({
+export const CardCommunityEntry: React.FC<Props> = ({
   className,
   children,
   link,
@@ -27,7 +26,7 @@ export const CardImageAndTextResponsiveImgFull: React.FC<Props> = ({
       <div className="flex h-full flex-col gap-3 rounded-b-3xl bg-white sm:flex-row sm:gap-6 ">
         <GatsbyImage
           className="w-full overflow-hidden sm:h-72 sm:w-1/3 sm:shrink-0 sm:rounded-bl-3xl"
-          alt={`Titelbild ${link}`}
+          alt=""
           image={image}
         />
         <div className="p-6 sm:pl-0">{children}</div>
@@ -38,26 +37,28 @@ export const CardImageAndTextResponsiveImgFull: React.FC<Props> = ({
       blank
       button="card"
       className={clsx(
-        'flex h-full flex-col gap-3 rounded-b-3xl bg-white sm:flex-row sm:gap-6',
+        'flex h-full flex-col items-stretch gap-1 rounded-b-3xl bg-white sm:flex-row sm:gap-6',
         className
       )}
       href={link}
     >
       {image ? (
         <GatsbyImage
-          className="w-full overflow-hidden sm:h-72 sm:w-1/3 sm:shrink-0 sm:rounded-bl-3xl"
-          alt={`Titelbild ${link}`}
+          className="overflow-hidden sm:w-[300px] sm:shrink-0 sm:rounded-bl-3xl lg:w-[400px] xl:w-[450px]"
+          alt=""
           image={image}
         />
       ) : (
         <StaticImage
           src="./../CommunityEntries/assets/planf-placeholder.jpg"
-          className="w-full overflow-hidden sm:h-72 sm:w-1/3 sm:shrink-0 sm:rounded-bl-3xl"
-          alt="Fahrrad"
+          className="overflow-hidden sm:w-[300px] sm:shrink-0 sm:rounded-bl-3xl lg:w-[400px] xl:w-[450px]"
+          alt=""
         />
       )}
       <div className="p-6 sm:pl-0">
-        <H3 className="!md:mb-0 !md:mt-0 !mb-0 !mt-0">{title}</H3>
+        <h3 className="mb-3 text-lg font-bold text-black md:text-xl">
+          {title}
+        </h3>
         {children}
       </div>
     </Link>
