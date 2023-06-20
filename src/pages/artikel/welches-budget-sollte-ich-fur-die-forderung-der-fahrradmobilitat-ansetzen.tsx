@@ -1,16 +1,16 @@
-import { Content, HelmetSeo, Hero } from '~/components/Layout';
+import { Content, MetaTags, Hero } from '~/components/Layout';
 import { Section } from '~/components/Layout/Section';
 import { LinkButtonWithArrow } from '~/components/TopicPage/LinkButtonWithArrow';
 import { H3, P } from '~/components/Text';
 import { planfProseClasses } from '~/components/core/articleProseClasses';
+import { HeadFC } from 'gatsby';
+
+const title =
+  'Welches Budget sollte ich für die Förderung der Fahrradmobilität ansetzen?';
 
 const motivationArticle = () => {
-  const title =
-    'Welches Budget sollte ich für die Förderung der Fahrradmobilität ansetzen?';
-
   return (
     <>
-      <HelmetSeo title={title} />
       <Hero bgColor="bg-green-500" title={title} />
       <Section>
         <Content>
@@ -84,3 +84,5 @@ const motivationArticle = () => {
 };
 
 export default motivationArticle;
+
+export const Head: HeadFC = () => <MetaTags title={title} />;

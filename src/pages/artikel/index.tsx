@@ -1,10 +1,13 @@
+import { HeadFC } from 'gatsby';
+import { Content, MetaTags, Hero } from '~/components/Layout';
 import { PageTeaserCard } from '~/components/Layout/CardPageTeaser';
-import { Content, HelmetSeo, Hero } from '~/components/Layout';
 import {
   menuItems,
   menuItemsWithChildren,
 } from '~/components/Layout/Navigation/menuItems';
 import { Section } from '~/components/Layout/Section';
+
+const title = 'Alle Artikel';
 
 const IndexPage = () => {
   const articleTeaserTexts = {
@@ -24,10 +27,9 @@ const IndexPage = () => {
 
   return (
     <>
-      <HelmetSeo noindex title="Alle Artikel | Plan F" />
       <Hero
         bgColor="bg-green-500"
-        title="Alle Artikel"
+        title={title}
         subtitle="Ergänzende Informationen und Empfehlungen für die kommunale Radverkehrsförderung"
       />
       <Section>
@@ -53,3 +55,5 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
+
+export const Head: HeadFC = () => <MetaTags noindex title={title} />;

@@ -1,6 +1,6 @@
-import { PageProps, graphql } from 'gatsby';
+import { HeadFC, PageProps, graphql } from 'gatsby';
 import React from 'react';
-import { Breadcrumbs, Content, HelmetSeo, Hero } from '~/components/Layout';
+import { Breadcrumbs, Content, MetaTags, Hero } from '~/components/Layout';
 import { CardTopic } from '~/components/WissensspeicherStartPage/CardTopic';
 import { CardWrapperWissensspeicherStartPage } from '~/components/WissensspeicherStartPage/CardWrapperWissensspeicherStartPage';
 import { H2, P } from '~/components/Text';
@@ -22,14 +22,15 @@ export const query = graphql`
   }
 `;
 
+const title = 'Wissensspeicher';
+
 const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
   data: { topics },
 }) => {
   return (
     <>
-      <HelmetSeo title="Wissensspeicher | Plan F" />
       <Hero
-        title="Wissensspeicher"
+        title={title}
         bgColor={wikiColors.root}
         breadcrumbs={<Breadcrumbs names={['Wissensspeicher']} />}
       />
@@ -91,3 +92,5 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
 };
 
 export default IndexPage;
+
+export const Head: HeadFC = () => <MetaTags title={title} />;

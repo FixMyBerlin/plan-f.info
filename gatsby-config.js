@@ -20,9 +20,6 @@ module.exports = {
   // don't need to define it here (just if you need to change the options)
 
   plugins: [
-    // Docs https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet/
-    // Test with `npm run build && npm run serve` to validate server side rendering (with rehydration)
-    'gatsby-plugin-react-helmet',
     // Docs https://www.gatsbyjs.com/plugins/gatsby-plugin-image/
     // TailwindCSS needs PostCSS, https://tailwindcss.com/docs/guides/gatsby
     'gatsby-plugin-postcss',

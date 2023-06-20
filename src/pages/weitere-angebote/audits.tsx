@@ -1,15 +1,17 @@
+import { HeadFC } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
-import { Content, HelmetSeo, Hero } from '~/components/Layout';
+import { Content, Hero, MetaTags } from '~/components/Layout';
 import { ImageWithCopyright } from '~/components/Layout/ImageWithCopyright';
 import { Section } from '~/components/Layout/Section';
 import { articleProseClasses } from '~/components/core/articleProseClasses';
 import { MailLink } from '~/components/core/links';
 
+const title = 'Plan F Audit';
+
 const AuditsPage = () => {
   return (
     <>
-      <HelmetSeo title="Plan F Audit" />
-      <Hero bgColor="bg-green-500" title="Plan F Audit" />
+      <Hero bgColor="bg-green-500" title={title} />
       <Section className={articleProseClasses}>
         <Content>
           <p>
@@ -53,3 +55,5 @@ const AuditsPage = () => {
 };
 
 export default AuditsPage;
+
+export const Head: HeadFC = () => <MetaTags title={title} />;

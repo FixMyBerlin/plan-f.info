@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { domain } from '~/domain';
 
 // FYI, https://www.gatsbyjs.com/docs/add-seo-component/ suggest to use useStaticQuery but I don't see why, yet
@@ -17,7 +16,7 @@ type Props = {
   article?: boolean;
 };
 
-export const HelmetSeo: React.FC<Props> = ({
+export const MetaTags: React.FC<Props> = ({
   noindex = false,
   title,
   description,
@@ -34,25 +33,19 @@ export const HelmetSeo: React.FC<Props> = ({
 
   if (noindex === true) {
     return (
-      <Helmet
-        htmlAttributes={{
-          lang: 'de',
-        }}
-      >
+      <>
+        <html lang="de" />
         <title>{seo.title}</title>
         <meta name="robots" content="noindex" />
-      </Helmet>
+      </>
     );
   }
 
   // FYI, we do not inlcude the url meta tags since there was an issue with specs and `useLocation`.
   //  Since we do not need this field, its OK to remove it.
   return (
-    <Helmet
-      htmlAttributes={{
-        lang: 'de',
-      }}
-    >
+    <>
+      <html lang="de" />
       <title>{seo.title}</title>
       <meta property="og:title" content={seo.title} />
       <meta name="twitter:title" content={seo.title} />
@@ -69,6 +62,6 @@ export const HelmetSeo: React.FC<Props> = ({
       <meta name="twitter:card" content="summary_large_image" />
 
       <meta name="theme-color" content="#34d399" />
-    </Helmet>
+    </>
   );
 };

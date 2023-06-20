@@ -46,7 +46,6 @@
     "gatsby-plugin-image": "^3.9",
     "gatsby-plugin-manifest": "^5.9",
     "gatsby-plugin-matomo": "^0.15.2",
-    "gatsby-plugin-react-helmet": "^6.9",
     "gatsby-plugin-react-svg": "^3.3",
     "gatsby-plugin-sharp": "^5.9",
     "gatsby-plugin-sitemap": "^6.9",
@@ -57,7 +56,6 @@
     "query-string": "^7.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-helmet": "^6.1.0",
     "react-hook-form": "^7.43.9",
     "tsconfig-paths-webpack-plugin": "^3.5.2"
   },

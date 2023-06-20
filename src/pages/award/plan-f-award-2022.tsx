@@ -2,9 +2,10 @@ import { ArrowRightIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 import React from 'react';
 import SendCommunityEntryLink from '~/components/CommunityEntries/SendCommunityEntryLink';
-import { Content, HelmetSeo, Hero } from '~/components/Layout';
+import { Content, Hero, MetaTags } from '~/components/Layout';
 import { Section } from '~/components/Layout/Section';
 
+import { HeadFC } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import {
   CEO,
@@ -635,11 +636,11 @@ const awardWinner2022 = [
   },
 ];
 
+const title = 'Plan F Award 2022';
+
 const AwardPage: React.FC = () => {
-  const title = 'Plan F Award 2022';
   return (
     <>
-      <HelmetSeo title={title} />
       <Hero bgColor="bg-green-500" title={title} />
       <Section className={planfProseClasses}>
         <Content>
@@ -902,3 +903,5 @@ const AwardPage: React.FC = () => {
 };
 
 export default AwardPage;
+
+export const Head: HeadFC = () => <MetaTags title={title} />;

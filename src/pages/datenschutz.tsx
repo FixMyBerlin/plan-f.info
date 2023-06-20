@@ -1,9 +1,11 @@
-import { PageProps } from 'gatsby';
+import { HeadFC, PageProps } from 'gatsby';
 import React from 'react';
-import { Content, HelmetSeo, Hero } from '~/components/Layout';
+import { Content, MetaTags, Hero } from '~/components/Layout';
 import { Section } from '~/components/Layout/Section';
 import { articleProseClasses } from '~/components/core/articleProseClasses';
 import { Link, MailLink, TelLink } from '~/components/core/links';
+
+const title = 'Datenschutz';
 
 const MatomoIframe = () => {
   return (
@@ -18,8 +20,7 @@ const MatomoIframe = () => {
 const DatenschutzPage: React.FC<PageProps> = () => {
   return (
     <>
-      <HelmetSeo noindex title="Datenschutz | Plan F" />
-      <Hero className="!bg-green-500" title="Datenschutz" />
+      <Hero className="!bg-green-500" title={title} />
       <Section className={articleProseClasses}>
         <Content>
           <p>
@@ -497,3 +498,5 @@ const DatenschutzPage: React.FC<PageProps> = () => {
 };
 
 export default DatenschutzPage;
+
+export const Head: HeadFC = () => <MetaTags noindex title={title} />;

@@ -1,14 +1,16 @@
-import { Content, HelmetSeo, Hero } from '~/components/Layout';
+import { HeadFC } from 'gatsby';
+import { Content, Hero, MetaTags } from '~/components/Layout';
 import { Section } from '~/components/Layout/Section';
 import { Caption, H2, H3, P } from '~/components/Text';
 import { planFMarkdownProseClasses } from '~/components/core/Prose';
 import { Link, MailLink } from '~/components/core/links';
 
+const title = 'Über Plan F';
+
 const AboutPage = () => {
   return (
     <>
-      <HelmetSeo title="Über Plan F" />
-      <Hero bgColor="bg-green-500" title="Über Plan F" />
+      <Hero bgColor="bg-green-500" title={title} />
       <Section>
         <Content>
           <H2>Was ist Plan F? </H2>
@@ -103,3 +105,5 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
+
+export const Head: HeadFC = () => <MetaTags title={title} />;
