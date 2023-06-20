@@ -15,10 +15,11 @@ const ReleasePage: React.FC<PageProps> = ({ pageContext }) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'X-GitHub-Api-Version': '2022-11-28',
         Accept: 'application/vnd.github+json',
-        Authorization: GITHUB_TOKEN,
+        Authorization: `Bearer ${GITHUB_TOKEN}`,
       },
-      body: JSON.stringify({ ref: 'main' }), // body data type must match "Content-Type" header
+      body: JSON.stringify({ ref: 'main' }),
     });
   }
 
@@ -28,13 +29,13 @@ const ReleasePage: React.FC<PageProps> = ({ pageContext }) => {
       <Hero bgColor="bg-green-500" title={title} />
       <Section className={planfProseClasses}>
         <Content>
-          <p>release info text:</p>
+          <p>Click the button bellow to update the sites new content</p>
           <button
-            className="shadow-r bg-pruple-700 rounded-br-lg rounded-tr-lg py-10"
+            className="h-20 w-40 rounded-xl bg-purple-300 font-bold text-white shadow"
             type="button"
             onClick={triggerBuild}
           >
-            Inhalte Updaten
+            Update Content
           </button>
         </Content>
       </Section>
