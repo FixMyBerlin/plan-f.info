@@ -16,7 +16,7 @@ export const planfProseClasses = clsx(
   // div / img
   'prose-img:mt-0 prose-img:mb-0 prose-div:mx-0 prose-div:mt-0',
   // P
-  'prose-p:mb-4 prose-p:leading-loose prose-p:mt-4 prose-p:text-sm prose-p:text-gray-700 prose-p:md:mb-6 prose-p:md:mt-6 prose-p:md:text-base',
+  'prose-p:mb-4 prose-p:leading-[1.8rem] prose-p:md:leading-[1.8rem] prose-p:mt-4 prose-p:text-sm prose-p:text-gray-700 prose-p:md:mb-6 prose-p:md:mt-6 prose-p:md:text-base',
   // H1
   'prose-h1:mb-5 prose-h1:text-3xl prose-h1:font-bold prose-h1:text-black prose-h1:md:mb-10 prose-h1:md:text-4xl',
   // H2
