@@ -9,15 +9,15 @@ const ReleasePage: React.FC<PageProps> = ({ pageContext }) => {
   const title = 'Plan F Release Page';
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  const { GITHUB_ACTION_URL, GITHUB_TOKEN } = pageContext;
+  const { GH_ACTION_URL, GH_TOKEN } = pageContext;
   function triggerBuild() {
-    fetch(GITHUB_ACTION_URL, {
+    fetch(GH_ACTION_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'X-GitHub-Api-Version': '2022-11-28',
         Accept: 'application/vnd.github+json',
-        Authorization: `Bearer ${GITHUB_TOKEN}`,
+        Authorization: `Bearer ${GH_TOKEN}`,
       },
       body: JSON.stringify({ ref: 'main' }),
     });

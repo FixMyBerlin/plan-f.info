@@ -21,13 +21,13 @@ exports.createPages = async ({ actions }) => {
   const pageComponent = path.resolve(
     `src/components/ReleasePage/ReleasePage.tsx`
   );
-  const { GITHUB_ACTION_URL, GITHUB_TOKEN } = process.env;
+  const { GH_ACTION_URL, GH_TOKEN } = process.env;
   createPage({
     path: `/release-${process.env.RELEASE_SECRET}`,
     component: pageComponent,
     context: {
-      GITHUB_ACTION_URL,
-      GITHUB_TOKEN,
+      GH_ACTION_URL,
+      GH_TOKEN,
     },
   });
 };
