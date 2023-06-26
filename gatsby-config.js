@@ -13,7 +13,7 @@ module.exports = {
     title: 'Plan F',
     siteUrl: 'https://plan-f.info',
     description:
-      'Plan F unterstützt Kommunen bei der Förderung des Radverkehrs. Dafür strukturieren wir bestehendes Wissen, Praxisbeispiele, Maßnahmen und Leitfäden zur Fahrradmobilität und zeigen notwendige Handlungsfelder auf.',
+      'Einen Plan zu haben, ist gut. Plan F zu haben, ist sehr gut. F wie Fahrrad, Fortschritt und Fachthemen. Plan F unterstützt Kommunen bei der Förderung des Radverkehrs. Dafür strukturieren wir bestehendes Wissen, Praxisbeispiele, Maßnahmen und Leitfäden zur Fahrradmobilität und zeigen notwendige Handlungsfelder auf.',
   },
 
   // Since `gatsby-plugin-typescript` is automatically included in Gatsby you
