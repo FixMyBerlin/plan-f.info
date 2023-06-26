@@ -179,4 +179,4 @@ const FurtherInformationArticle = () => {
 
 export default FurtherInformationArticle;
 
-export const Head: HeadFC = () => <MetaTags noindex title={title} />;
+export const Head: HeadFC = () => <MetaTags title={title} />;
