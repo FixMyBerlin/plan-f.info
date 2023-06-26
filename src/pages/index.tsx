@@ -1,7 +1,7 @@
-import { PageProps, graphql } from 'gatsby';
+import { HeadFC, PageProps, graphql } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
-import { Content, HelmetSeo } from '~/components/Layout';
+import { Content, MetaTags } from '~/components/Layout';
 import { CardExample } from '~/components/MeasurePage/CardExample';
 import { CardWrapperMeasurePage } from '~/components/MeasurePage/CardWrapperMeasurePage';
 import { CardTopicTitle } from '~/components/StartPage/CardTopicTitle';
@@ -50,6 +50,8 @@ export const query = graphql`
   }
 `;
 
+const title = 'Impulse für die kommunale Fahrradmobilität';
+
 const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
   data: { topics, measures },
 }) => {
@@ -70,7 +72,6 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
 
   return (
     <>
-      <HelmetSeo title="Plan F – Impulse für die fahrradfreundliche Kommune" />
       <Section className="relative flex flex-col items-start justify-between gap-4 !bg-green-500 px-5 !pt-32 pb-8 md:flex-row-reverse md:pb-16 md:pl-8 lg:px-10">
         <div className="flex w-full justify-end">
           <LinkButtonWithArrow button="black" href="/ueber">
@@ -80,7 +81,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
         <div className="flex-col justify-center gap-8 md:gap-16">
           <div>
             <H2>Plan F</H2>
-            <H3>Impulse für die kommunale Fahrradmobilität</H3>
+            <H3>{title}</H3>
           </div>
           <SearchBar className="pb-12" />
         </div>
@@ -175,3 +176,5 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
 };
 
 export default IndexPage;
+
+export const Head: HeadFC = () => <MetaTags />;

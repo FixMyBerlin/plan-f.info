@@ -1,12 +1,13 @@
-import { Content, HelmetSeo, Hero } from '~/components/Layout';
+import { Content, MetaTags, Hero } from '~/components/Layout';
 import { Section } from '~/components/Layout/Section';
 import { CardText } from '~/components/Layout/CardText';
 import { H3, P } from '~/components/Text';
+import { HeadFC } from 'gatsby';
+
+const title =
+  'Welche Motive für die Nutzung bzw. Nicht-Nutzung des Fahrrads gibt es?';
 
 const motivationArticle = () => {
-  const title =
-    'Welche Motive für die Nutzung bzw. Nicht-Nutzung des Fahrrads gibt es?';
-
   const motivationCardTexts = [
     {
       cardTitle: 'Praktisch',
@@ -94,7 +95,6 @@ const motivationArticle = () => {
 
   return (
     <>
-      <HelmetSeo title={title} />
       <Hero bgColor="bg-green-500" title={title} />
       <Section>
         <Content>
@@ -142,3 +142,5 @@ const motivationArticle = () => {
 };
 
 export default motivationArticle;
+
+export const Head: HeadFC = () => <MetaTags title={title} />;

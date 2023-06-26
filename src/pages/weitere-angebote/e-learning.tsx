@@ -1,16 +1,18 @@
+import { HeadFC } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
-import { Content, HelmetSeo, Hero } from '~/components/Layout';
+import { Content, Hero, MetaTags } from '~/components/Layout';
 import { ImageWithCopyright } from '~/components/Layout/ImageWithCopyright';
 import { Section } from '~/components/Layout/Section';
 import { LinkButtonWithArrow } from '~/components/TopicPage/LinkButtonWithArrow';
 import { articleProseClasses } from '~/components/core/articleProseClasses';
 import { MailLink } from '~/components/core/links';
 
+const title = 'E-Learning';
+
 const ELearningPage = () => {
   return (
     <>
-      <HelmetSeo title="E-Learning | Plan F" />
-      <Hero bgColor="bg-green-500" title="E-Learning" />
+      <Hero bgColor="bg-green-500" title={title} />
       <Section className={articleProseClasses}>
         <Content>
           <p>
@@ -98,3 +100,5 @@ Adresse:
 };
 
 export default ELearningPage;
+
+export const Head: HeadFC = () => <MetaTags title={title} />;

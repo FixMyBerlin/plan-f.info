@@ -1,6 +1,6 @@
-import { graphql, PageProps } from 'gatsby';
+import { graphql, HeadFC, PageProps } from 'gatsby';
 import React from 'react';
-import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
+import { Breadcrumbs, Hero, MetaTags } from '~/components/Layout';
 import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
 import { PageIntro } from '~/components/Layout/PageIntro';
 import { Section } from '~/components/Layout/Section';
@@ -15,8 +15,6 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
   const measures = sortByPosition(topic.measures);
   return (
     <>
-      <HelmetSeo title={`${topic.name} | Plan F`} />
-
       <Hero
         title={topic.name}
         bgColor={wikiColors.topic}
@@ -72,6 +70,10 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
 };
 
 export default TopicDetails;
+
+export const Head: HeadFC<Queries.TopicDetailsQuery> = ({
+  data: { topic },
+}) => <MetaTags title={topic.name} />;
 
 export const query = graphql`
   query TopicDetails($id: String!) {

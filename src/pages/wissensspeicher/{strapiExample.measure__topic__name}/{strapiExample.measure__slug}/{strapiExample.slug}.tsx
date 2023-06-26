@@ -1,9 +1,9 @@
 import { InformationCircleIcon } from '@heroicons/react/20/solid';
-import { PageProps, graphql } from 'gatsby';
+import { HeadFC, PageProps, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { CommunityEntriesSection } from '~/components/CommunityEntries/CommunityEntriesSection';
-import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
+import { Breadcrumbs, MetaTags, Hero } from '~/components/Layout';
 import { ImageWithCopyright } from '~/components/Layout/ImageWithCopyright';
 import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
 import { CardText } from '~/components/Layout/CardText';
@@ -53,7 +53,6 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
 
   return (
     <>
-      <HelmetSeo title={`${example.measure.name} | Plan F`} />
       <Hero
         className="!mb-0 rounded-b-none"
         bgColor={wikiColors.example}
@@ -314,6 +313,10 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
 };
 
 export default ExampleDetails;
+
+export const Head: HeadFC<Queries.ExampleDetailsQuery> = ({
+  data: { example },
+}) => <MetaTags title={example.title} />;
 
 export const query = graphql`
   query ExampleDetails($id: String!) {

@@ -1,7 +1,7 @@
-import { graphql, PageProps } from 'gatsby';
+import { graphql, HeadFC, PageProps } from 'gatsby';
 import React from 'react';
 import { CommunityEntriesSection } from '~/components/CommunityEntries/CommunityEntriesSection';
-import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
+import { Breadcrumbs, MetaTags, Hero } from '~/components/Layout';
 import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
 import { PageIntro } from '~/components/Layout/PageIntro';
 import { CardExample } from '~/components/MeasurePage/CardExample';
@@ -18,7 +18,6 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
   const examples = sortByPosition(measure.examples);
   return (
     <>
-      <HelmetSeo title={`${measure.name} | Plan F`} />
       <Hero
         title={measure.name}
         bgColor={wikiColors.measure}
@@ -81,6 +80,10 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
 };
 
 export default MeasureDetails;
+
+export const Head: HeadFC<Queries.MeasureDetailsQuery> = ({
+  data: { measure },
+}) => <MetaTags title={measure.name} />;
 
 export const query = graphql`
   query MeasureDetails($id: String!) {

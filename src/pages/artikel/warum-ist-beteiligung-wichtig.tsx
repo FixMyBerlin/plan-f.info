@@ -1,11 +1,12 @@
-import { Content, HelmetSeo, Hero } from '~/components/Layout';
+import { Content, MetaTags, Hero } from '~/components/Layout';
 import { Section } from '~/components/Layout/Section';
 import { CardText } from '~/components/Layout/CardText';
 import { P } from '~/components/Text';
+import { HeadFC } from 'gatsby';
+
+const title = 'Warum ist Beteiligung wichtig?';
 
 const ParticipationArticle = () => {
-  const title = 'Warum ist Beteiligung wichtig?';
-
   const participationCardTexts = [
     {
       cardTitle: 'Berücksichtigung von Bedürfnissen und Wünschen',
@@ -36,7 +37,6 @@ const ParticipationArticle = () => {
 
   return (
     <>
-      <HelmetSeo title={title} />
       <Hero bgColor="bg-green-500" title={title} />
       <Section>
         <Content>
@@ -59,3 +59,5 @@ const ParticipationArticle = () => {
 };
 
 export default ParticipationArticle;
+
+export const Head: HeadFC = () => <MetaTags title={title} />;

@@ -1,8 +1,8 @@
 import clsx from 'clsx';
-import { PageProps, graphql } from 'gatsby';
+import { HeadFC, PageProps, graphql } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
-import { Content, HelmetSeo, Hero } from '~/components/Layout';
+import { Content, MetaTags, Hero } from '~/components/Layout';
 import { CardTopic } from '~/components/WissensspeicherStartPage/CardTopic';
 import { CardWrapperWissensspeicherStartPage } from '~/components/WissensspeicherStartPage/CardWrapperWissensspeicherStartPage';
 import { Section } from '~/components/Layout/Section';
@@ -140,15 +140,15 @@ const planningCardTexts = [
   },
 ];
 
+const title = 'Wie werde ich eine Fahrradfreundliche Kommune?';
+
 const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
   data: { topics },
 }) => {
-  const title = 'Wie werde ich eine Fahrradfreundliche Kommune?';
   const basePath = `/${wikiPath}`;
 
   return (
     <>
-      <HelmetSeo title={title} />
       <Hero bgColor="bg-green-500" title={title} />
       <Section>
         <Content>
@@ -394,3 +394,5 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
 };
 
 export default BikeFriendlyArticle;
+
+export const Head: HeadFC = () => <MetaTags title={title} />;

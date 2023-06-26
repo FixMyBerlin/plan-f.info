@@ -1,10 +1,13 @@
 import { PageTeaserCard } from '~/components/Layout/CardPageTeaser';
-import { Content, HelmetSeo, Hero } from '~/components/Layout';
+import { Content, MetaTags, Hero } from '~/components/Layout';
 import {
   menuItems,
   menuItemsWithChildren,
 } from '~/components/Layout/Navigation/menuItems';
 import { Section } from '~/components/Layout/Section';
+import { HeadFC } from 'gatsby';
+
+const title = 'Weitere Angebote';
 
 const MiscIndexPage = () => {
   const moreOffersTeaserTexts = {
@@ -18,8 +21,7 @@ const MiscIndexPage = () => {
 
   return (
     <>
-      <HelmetSeo noindex title="Weitere Angebote | Plan F" />
-      <Hero bgColor="bg-green-500" title="Weitere Angebote" />
+      <Hero bgColor="bg-green-500" title={title} />
       <Section>
         <Content>
           <div className="flex flex-col gap-10">
@@ -44,3 +46,5 @@ const MiscIndexPage = () => {
 };
 
 export default MiscIndexPage;
+
+export const Head: HeadFC = () => <MetaTags noindex title={title} />;

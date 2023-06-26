@@ -13,16 +13,13 @@ module.exports = {
     title: 'Plan F',
     siteUrl: 'https://plan-f.info',
     description:
-      'Plan F unterstützt Kommunen bei der Förderung des Radverkehrs. Dafür strukturieren wir bestehendes Wissen, Praxisbeispiele, Maßnahmen und Leitfäden zur Fahrradmobilität und zeigen notwendige Handlungsfelder auf.',
+      'Einen Plan zu haben, ist gut. Plan F zu haben, ist sehr gut. F wie Fahrrad, Fortschritt und Fachthemen. Plan F unterstützt Kommunen bei der Förderung des Radverkehrs. Dafür strukturieren wir bestehendes Wissen, Praxisbeispiele, Maßnahmen und Leitfäden zur Fahrradmobilität und zeigen notwendige Handlungsfelder auf.',
   },
 
   // Since `gatsby-plugin-typescript` is automatically included in Gatsby you
   // don't need to define it here (just if you need to change the options)
 
   plugins: [
-    // Docs https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet/
-    // Test with `npm run build && npm run serve` to validate server side rendering (with rehydration)
-    'gatsby-plugin-react-helmet',
     // Docs https://www.gatsbyjs.com/plugins/gatsby-plugin-image/
     // TailwindCSS needs PostCSS, https://tailwindcss.com/docs/guides/gatsby
     'gatsby-plugin-postcss',
@@ -62,7 +59,7 @@ module.exports = {
       // Docs https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Plan F – Impulse für die fahrradfreundliche Kommune',
+        name: 'Plan F – Impulse für die kommunale Fahrradmobilität',
         short_name: 'Plan F',
         start_url: '/',
         background_color: 'white',
