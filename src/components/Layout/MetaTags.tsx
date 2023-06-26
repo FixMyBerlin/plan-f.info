@@ -3,7 +3,7 @@ import { domain } from '~/domain';
 
 // FYI, https://www.gatsbyjs.com/docs/add-seo-component/ suggest to use useStaticQuery but I don't see why, yet
 const seoDefaultValues = {
-  defaultTitle: 'Plan F – Impulse für die fahrradfreundliche Kommune',
+  defaultTitle: 'Plan F – Impulse für die kommunale Fahrradmobilität',
   defaultDescription:
     'Einen Plan zu haben, ist gut. Plan F zu haben, ist sehr gut. F wie Fahrrad, Fortschritt und Fachthemen. Plan F unterstützt Kommunen bei der Förderung des Radverkehrs. Dafür strukturieren wir bestehendes Wissen, Praxisbeispiele, Maßnahmen und Leitfäden zur Fahrradmobilität und zeigen notwendige Handlungsfelder auf.',
 };

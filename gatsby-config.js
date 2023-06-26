@@ -59,7 +59,7 @@ module.exports = {
       // Docs https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Plan F – Impulse für die fahrradfreundliche Kommune',
+        name: 'Plan F – Impulse für die kommunale Fahrradmobilität',
         short_name: 'Plan F',
         start_url: '/',
         background_color: 'white',
