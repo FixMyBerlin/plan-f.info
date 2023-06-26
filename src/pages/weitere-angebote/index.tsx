@@ -47,4 +47,4 @@ const MiscIndexPage = () => {
 
 export default MiscIndexPage;
 
-export const Head: HeadFC = () => <MetaTags noindex title={title} />;
+export const Head: HeadFC = () => <MetaTags title={title} />;

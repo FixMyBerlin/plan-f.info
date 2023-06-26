@@ -56,4 +56,4 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <MetaTags noindex title={title} />;
+export const Head: HeadFC = () => <MetaTags title={title} />;
