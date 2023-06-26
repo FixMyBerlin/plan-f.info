@@ -7,7 +7,7 @@ import {
 import { Section } from '~/components/Layout/Section';
 import { HeadFC } from 'gatsby';
 
-const title = 'Weitere Angebote | Plan F';
+const title = 'Weitere Angebote';
 
 const MiscIndexPage = () => {
   const moreOffersTeaserTexts = {
