@@ -44,12 +44,12 @@ export const Breadcrumbs: React.FC<Props> = ({ names = [], prefix = './' }) => {
                 className={clsx(
                   'h-4 w-[4px] ',
                   // the current breadcrumb has a lighter color
-                  isLastItem(i) ? 'bg-white/40' : wikiColorsArray[i]
+                  isLastItem(i) ? 'bg-white/40' : wikiColorsArray[i],
                 )}
               />
               <Link
                 className={clsx(
-                  'max-w-[9rem] truncate text-sm no-underline md:max-w-[12rem] lg:max-w-none'
+                  'max-w-[9rem] truncate text-sm no-underline md:max-w-[12rem] lg:max-w-none',
                 )}
                 href={prefix + '../'.repeat(n - i - 1)}
               >
