@@ -686,7 +686,7 @@ const AwardPage: React.FC = () => {
                     >
                       {foldOut}
                     </AwardWinnerCard>
-                  )
+                  ),
                 )}
               </div>
             ))}

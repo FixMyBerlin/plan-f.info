@@ -21,7 +21,7 @@ export const Pagination: React.FC<PaginationProps> = ({
     <div
       className={clsx(
         className,
-        'flex w-full flex-col items-center justify-between gap-2 bg-white/50 p-5 text-sm sm:flex-row lg:px-10'
+        'flex w-full flex-col items-center justify-between gap-2 bg-white/50 p-5 text-sm sm:flex-row lg:px-10',
       )}
     >
       <p>Praxisbeispiele blättern</p>

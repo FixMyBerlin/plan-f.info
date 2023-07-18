@@ -38,7 +38,7 @@ export const CardCommunityEntry: React.FC<Props> = ({
       button="card"
       className={clsx(
         'flex h-full flex-col items-stretch gap-1 rounded-b-3xl bg-white sm:flex-row sm:gap-6',
-        className
+        className,
       )}
       href={link}
     >
