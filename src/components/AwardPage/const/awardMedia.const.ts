@@ -16,6 +16,7 @@ import t2 from '../assets/award/t2.jpg';
 import v1 from '../assets/award/v1.jpg';
 import v2 from '../assets/award/v2.jpg';
 import s1 from '../assets/award/s1.jpg';
+import s2 from '../assets/award/s2.jpg';
 import s3 from '../assets/award/s3.jpg';
 import m1 from '../assets/award/m1.jpg';
 import m2 from '../assets/award/m2.jpg';
@@ -35,6 +36,7 @@ export const fotos = {
   k2: { src: k2, copyright: 'Stadt Oberursel' },
   k3: { src: k3, copyright: 'Deutsche Bahn' },
   s1: { src: s1, copyright: 'Caroline Seidel' },
+  s2: { src: s2, copyright: 'Gemeinde Adelsdorf' },
   s3: { src: s3, copyright: 'Gemeinde Kaufungen' },
   m1: { src: m1, copyright: 'Peter D. Hartung' },
   m2: { src: m2, copyright: 'VRN GmbH' },
