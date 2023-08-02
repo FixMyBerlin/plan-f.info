@@ -21,7 +21,7 @@ export const YouTubePreview: React.FC<Props> = ({
       className={clsx(
         'group relative flex aspect-video w-full items-center justify-center overflow-clip rounded-md',
         { 'my-8': !marginClass },
-        marginClass
+        marginClass,
       )}
     >
       <div className="z-[1] flex h-20 w-20 items-center justify-center rounded-full bg-white/70 shadow backdrop-blur-md transition-all duration-300 group-hover:h-24 group-hover:w-24">

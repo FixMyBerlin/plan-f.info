@@ -42,7 +42,7 @@ const Layout: React.FC<
       breadcrumbs.push(
         data.example.measure.topic.name,
         data.example.measure.name,
-        data.example.title
+        data.example.title,
       );
     }
   }
