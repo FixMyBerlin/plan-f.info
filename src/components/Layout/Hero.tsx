@@ -24,7 +24,7 @@ export const Hero: React.FC<Props> = ({
       className={clsx(
         'relative mb-4 flex flex-col justify-center gap-4 rounded-b-3xl px-8 pb-8 pt-36 md:mb-6 md:px-12 md:pb-16',
         className,
-        bgColor,
+        bgColor
       )}
     >
       {breadcrumbs && <div className="hidden md:block">{breadcrumbs}</div>}

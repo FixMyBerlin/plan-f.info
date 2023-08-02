@@ -16,7 +16,7 @@ export const NavigationDesktop: React.FC<Props> = ({ path, className }) => {
     <nav
       className={clsx(
         className,
-        'fixed z-10 flex w-full max-w-[1366px] items-center justify-between gap-8 bg-green-500 px-8 py-3',
+        'fixed z-10 flex w-full max-w-[1366px] items-center justify-between gap-8 bg-green-500 px-8 py-3'
       )}
     >
       <Link href="/">
@@ -31,7 +31,7 @@ export const NavigationDesktop: React.FC<Props> = ({ path, className }) => {
                 '!text-sm',
                 path.startsWith(menuItems[key])
                   ? menuLinkActiveStyles
-                  : menuLinkStylesDefault,
+                  : menuLinkStylesDefault
               )}
             >
               {key}

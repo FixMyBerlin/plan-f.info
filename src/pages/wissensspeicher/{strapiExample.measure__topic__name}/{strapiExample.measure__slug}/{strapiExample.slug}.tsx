@@ -26,7 +26,7 @@ const steckbiref = {
 };
 const adjacentSlugs = (
   examples: Queries.ExampleDetailsQuery['example']['measure']['examples'],
-  current: string,
+  current: string
 ) => {
   const sortedExamples = sortByPosition(examples);
   const slugList = sortedExamples.map(({ slug }) => slug);
@@ -41,7 +41,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
 }) => {
   const { prevSlug, nextSlug, pos } = adjacentSlugs(
     example.measure.examples,
-    example.slug,
+    example.slug
   );
   const { communityEntries } = example.measure;
   // eslint-disable-next-line no-param-reassign

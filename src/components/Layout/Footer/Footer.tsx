@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
       >
         <ul
           className={clsx(
-            'grid grid-cols-2 gap-10 pb-6 text-sm text-gray-400 sm:grid-cols-3 md:flex md:flex-row md:justify-between',
+            'grid grid-cols-2 gap-10 pb-6 text-sm text-gray-400 sm:grid-cols-3 md:flex md:flex-row md:justify-between'
           )}
         >
           {Object.keys(menuItems).map((key) => (
@@ -54,7 +54,7 @@ export const Footer: React.FC = () => {
                               {childKey}
                             </Link>
                           </li>
-                        ),
+                        )
                       )}
                     </div>
                   ) : (

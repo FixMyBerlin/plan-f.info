@@ -13,7 +13,7 @@ export const CardWrapperMeasurePage: React.FC<Props> = ({
     <div
       className={clsx(
         className,
-        'grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3',
+        'grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3'
       )}
     >
       {children}

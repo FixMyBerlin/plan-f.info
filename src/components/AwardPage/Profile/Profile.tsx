@@ -22,7 +22,7 @@ export const Profile: React.FC<Props> = ({
       <img
         className={clsx(
           mirror ? 'float-right ml-4' : 'float-left mr-4',
-          'h-24 w-24 rounded-full lg:h-40 lg:w-40',
+          'h-24 w-24 rounded-full lg:h-40 lg:w-40'
         )}
         src={src}
         alt={`profilfoto ${name}`}

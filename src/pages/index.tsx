@@ -65,7 +65,7 @@ const IndexPage: React.FC<PageProps<Queries.TopicOverviewQuery>> = ({
       return {
         ...example,
         path: [wikiPath, measure.topic.slug, measure.slug, example.slug].join(
-          '/',
+          '/'
         ),
       };
     });

@@ -36,7 +36,7 @@ const MiscIndexPage = () => {
                     {moreOffersTeaserTexts[key]}
                   </PageTeaserCard>
                 );
-              },
+              }
             )}
           </div>
         </Content>

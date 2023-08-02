@@ -27,7 +27,7 @@ export const SideNavigation: React.FC<Props> = ({ path }) => {
             <ul
               className={clsx(
                 sidePanelWidthClassName,
-                'shadow-r h-full overflow-y-auto bg-gray-100 px-4 py-3 pr-8',
+                'shadow-r h-full overflow-y-auto bg-gray-100 px-4 py-3 pr-8'
               )}
             >
               <li className="mb-16 px-4">
@@ -47,7 +47,7 @@ export const SideNavigation: React.FC<Props> = ({ path }) => {
                         '!text-sm font-bold',
                         path === `${basePath}/${topic.slug}/`
                           ? menuLinkActiveStyles
-                          : menuLinkStylesDefault,
+                          : menuLinkStylesDefault
                       )}
                     >
                       {topic.name}
@@ -61,10 +61,10 @@ export const SideNavigation: React.FC<Props> = ({ path }) => {
                               className={clsx(
                                 'block pl-3.5 !text-sm',
                                 path.startsWith(
-                                  `${basePath}/${topic.slug}/${measure.slug}/`,
+                                  `${basePath}/${topic.slug}/${measure.slug}/`
                                 )
                                   ? menuLinkActiveStyles
-                                  : menuLinkStylesDefault,
+                                  : menuLinkStylesDefault
                               )}
                             >
                               {measure.name}

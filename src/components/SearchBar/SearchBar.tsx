@@ -28,7 +28,7 @@ export const SearchBar: React.FC<Props> = ({ className }) => {
   const [resultHeader, setResultHeader] = useState<string>('');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [controller, setController] = useState<AbortController>(
-    new AbortController(),
+    new AbortController()
   );
 
   // search API logic:
@@ -49,7 +49,7 @@ export const SearchBar: React.FC<Props> = ({ className }) => {
         setSearchResults(results);
         const nResults = Object.values(results).reduce(
           (acc, cur) => acc + cur.length,
-          0,
+          0
         );
         if (nResults > 1) {
           setResultHeader(`Die ${nResults} besten Ergebnisse für „${query}“`);
@@ -123,14 +123,14 @@ export const SearchBar: React.FC<Props> = ({ className }) => {
                         className={({ active }) =>
                           clsx(
                             'relative flex cursor-pointer select-none items-center gap-3 rounded px-2 py-2',
-                            active && 'bg-gray-100',
+                            active && 'bg-gray-100'
                           )
                         }
                       >
                         <span
                           className={clsx(
                             'inline-block h-5 w-5 flex-none rounded-full',
-                            wikiColors[key],
+                            wikiColors[key]
                           )}
                           aria-hidden="true"
                         />
