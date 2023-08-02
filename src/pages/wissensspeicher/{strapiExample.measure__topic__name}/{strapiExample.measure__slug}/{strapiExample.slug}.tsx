@@ -198,7 +198,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
                 title="Kosten / Mittelherkunft"
                 markdownHTML={example.funding.data.childMarkdownRemark.html}
               >
-                {example.costs && <p>{example.costs} €</p>}
+                {example.costs && <p>{example.costs} Euro</p>}
               </CardText>
               <CardText
                 title="Personeller Aufwand"
