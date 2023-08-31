@@ -1,4 +1,3 @@
-import { assert } from 'console';
 import {
   allQuestions,
   Topic,
@@ -8,7 +7,9 @@ import {
 } from './questions.const';
 
 export const calculateScore = (answers: number[], questions: Question[]) => {
-  assert(answers.length === questions.length);
+  if (answers.length !== questions.length) {
+    throw Error("lengths of answers and questions don't match");
+  }
   const topicScores: Record<Topic, number> = Object.create(null);
   const measureScores: Record<Measure, number> = Object.create(null);
   const measureTypeScores: Record<MeasureType, number> = Object.create(null);
