@@ -86,7 +86,7 @@ export type Measure =
   | 'Parkraummanagement'
   | 'Reduzierung des innerstädtischen Kfz-Verkehrs';
 
-type Topic =
+export type Topic =
   | 'Governance'
   | 'Bildung und Training'
   | 'Infrastruktur'
