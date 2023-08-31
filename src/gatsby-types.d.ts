@@ -7628,7 +7628,7 @@ type TopicDetailsQuery = { readonly topic: { readonly name: string | null, reado
 type TopicMeasureExamplesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type TopicMeasureExamplesQuery = { readonly topics: { readonly nodes: ReadonlyArray<{ readonly name: string | null, readonly shortDescription: string | null, readonly slug: string | null, readonly measures: ReadonlyArray<{ readonly name: string | null, readonly slug: string | null, readonly shortDescription: string | null, readonly examples: ReadonlyArray<{ readonly title: string | null, readonly shortDescription: string | null } | null> | null } | null> | null }> } };
+type TopicMeasureExamplesQuery = { readonly topics: { readonly nodes: ReadonlyArray<{ readonly name: string | null, readonly shortDescription: string | null, readonly slug: string | null, readonly measures: ReadonlyArray<{ readonly name: string | null, readonly slug: string | null, readonly shortDescription: string | null, readonly examples: ReadonlyArray<{ readonly title: string | null, readonly shortDescription: string | null, readonly subcategory: string | null } | null> | null } | null> | null }> } };
 
 type TopicMeasureTreeQueryVariables = Exact<{ [key: string]: never; }>;
 

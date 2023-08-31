@@ -19,6 +19,26 @@ const FahrradcheckPage: React.FC<
   const answers: number[] = result.split('').map((x) => parseInt(x, 10));
   const { totalScore, topicScores, measureScores, measureTypeScores } =
     calculateScore(answers, allQuestions);
+  const topicsSorted = Array.from(topics.nodes).sort(
+    (a, b) => topicScores[a.name] - topicScores[b.name],
+  );
+  topicsSorted.map((topic) => {
+    const topicMutable = Object.assign(topic);
+    topicMutable.measures = Array.from(topicMutable.measures);
+    topicMutable.measures.sort(
+      (a, b) => measureScores[a.name] - measureScores[b.name],
+    );
+    topicMutable.measures.map((measure) => {
+      const measureMutable = Object.assign(measure);
+      measureMutable.examples = Array.from(measureMutable.examples);
+      measureMutable.examples.sort(
+        (a, b) =>
+          measureTypeScores[a.subcategory] - measureTypeScores[b.subcategory],
+      );
+      return measureMutable;
+    });
+    return topicMutable;
+  });
   return (
     <>
       <Hero bgColor="bg-green-500" title={result} />
@@ -31,13 +51,7 @@ const FahrradcheckPage: React.FC<
           <p>{JSON.stringify(measureScores)}</p>
           <p>{JSON.stringify(measureTypeScores)}</p>
         </Content>
-        <Content>
-          {JSON.stringify(
-            Array.from(topics.nodes).sort(
-              (a, b) => topicScores[a.name] - topicScores[b.name],
-            ),
-          )}
-        </Content>
+        <Content>{JSON.stringify(topicsSorted)}</Content>
       </Section>
     </>
   );
@@ -61,6 +75,7 @@ export const query = graphql`
           examples {
             title
             shortDescription
+            subcategory
           }
         }
       }
