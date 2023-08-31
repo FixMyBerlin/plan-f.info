@@ -1,4 +1,4 @@
-type MeasureType =
+export type MeasureType =
   | 'Finanzierung'
   | 'Personal'
   | 'Förderungen und Förderprogramme'
@@ -38,7 +38,7 @@ type MeasureType =
   | 'Veranstaltungen und Beratungsangebote'
   | 'Flächen zur Verfügung stellen';
 
-type Measure =
+export type Measure =
   | 'Verwaltung & Politik'
   | 'Konzepte und Organisation'
   | 'Information, Austausch und Beteiligung'
@@ -97,7 +97,7 @@ type Topic =
   | 'Tourismus'
   | 'Verkehrsberuhigung';
 
-type Question = {
+export type Question = {
   question: string;
   explanation: string;
   topics: Topic[];
