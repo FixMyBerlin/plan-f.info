@@ -1,42 +1,13 @@
-export type MeasureType =
-  | 'Finanzierung'
-  | 'Personal'
-  | 'Förderungen und Förderprogramme'
-  | 'Rechtliche Grundlagen'
-  | 'Verkehrspolitik, Siedlungspolitik und kommunalpolitische Zielsetzung'
-  | 'Konzepte und Pläne'
-  | 'Förderung sozialer Projekte und Engagement'
-  | 'Teilnahme Modell- und Forschungsprojekte'
-  | 'Koordination und Organisation Radverkehr'
-  | 'Daten'
-  | 'Partizipation (Bürger*innen)'
-  | 'Akteur*innen-Vernetzung'
-  | 'Organisierter Austausch mit Privatwirtschaft und Tourismus'
-  | 'Kooperation mit Universitäten und Forschungseinrichtungen'
-  | 'Modal Split'
-  | 'Maßnahmenevaluierung'
-  | 'Fahrradzählungen'
-  | 'Evaluation der Radverkehrsförderung'
-  | 'Mobilitätsbildung für Schüler*innen'
-  | 'Fahrradkurse'
-  | 'Fahrradflotte'
-  | 'Aktionen'
-  | 'Netzmerkmale: Komfort, Netzwerk, Direktheit, Sicherheit, Attraktivität'
-  | 'Wegweisung'
-  | 'Abstellanlagen im öffentlichen Raum'
-  | 'Abstellanlagen an öffentlichen Einrichtungen'
-  | 'Abstellanlagen für "Spezialfahrräder"'
-  | 'Kampagnen'
-  | 'Veranstaltungen und Aktionen'
-  | 'Fahrradmarke und Branding'
-  | 'Informationen'
-  | 'Zertifizierung Fahrradfreundlicher Arbeitgeber'
-  | 'Fahrradleasing und Fahrradflotte'
-  | 'Fahrräder gegen Nutzungsgebühr'
-  | 'Lastenfahrräder (gebührenpflichtig/als Teil des ÖPNVs)'
-  | 'Kostenfreie kommunale Lastenfahrräder'
-  | 'Veranstaltungen und Beratungsangebote'
-  | 'Flächen zur Verfügung stellen';
+export type Topic =
+  | 'Governance'
+  | 'Bildung und Training'
+  | 'Infrastruktur'
+  | 'Kommunikation und Öffentlichkeitsarbeit'
+  | 'Services'
+  | 'Multimodalität'
+  | 'Wirtschaft'
+  | 'Tourismus'
+  | 'Verkehrsberuhigung';
 
 export type Measure =
   | 'Verwaltung & Politik'
@@ -86,16 +57,45 @@ export type Measure =
   | 'Parkraummanagement'
   | 'Reduzierung des innerstädtischen Kfz-Verkehrs';
 
-export type Topic =
-  | 'Governance'
-  | 'Bildung und Training'
-  | 'Infrastruktur'
-  | 'Kommunikation und Öffentlichkeitsarbeit'
-  | 'Services'
-  | 'Multimodalität'
-  | 'Wirtschaft'
-  | 'Tourismus'
-  | 'Verkehrsberuhigung';
+export type MeasureType =
+  | 'Finanzierung'
+  | 'Personal'
+  | 'Förderungen und Förderprogramme'
+  | 'Rechtliche Grundlagen'
+  | 'Verkehrspolitik, Siedlungspolitik und kommunalpolitische Zielsetzung'
+  | 'Konzepte und Pläne'
+  | 'Förderung sozialer Projekte und Engagement'
+  | 'Teilnahme Modell- und Forschungsprojekte'
+  | 'Koordination und Organisation Radverkehr'
+  | 'Daten'
+  | 'Partizipation (Bürger*innen)'
+  | 'Akteur*innen-Vernetzung'
+  | 'Organisierter Austausch mit Privatwirtschaft und Tourismus'
+  | 'Kooperation mit Universitäten und Forschungseinrichtungen'
+  | 'Modal Split'
+  | 'Maßnahmenevaluierung'
+  | 'Fahrradzählungen'
+  | 'Evaluation der Radverkehrsförderung'
+  | 'Mobilitätsbildung für Schüler*innen'
+  | 'Fahrradkurse'
+  | 'Fahrradflotte'
+  | 'Aktionen'
+  | 'Netzmerkmale: Komfort, Netzwerk, Direktheit, Sicherheit, Attraktivität'
+  | 'Wegweisung'
+  | 'Abstellanlagen im öffentlichen Raum'
+  | 'Abstellanlagen an öffentlichen Einrichtungen'
+  | 'Abstellanlagen für "Spezialfahrräder"'
+  | 'Kampagnen'
+  | 'Veranstaltungen und Aktionen'
+  | 'Fahrradmarke und Branding'
+  | 'Informationen'
+  | 'Zertifizierung Fahrradfreundlicher Arbeitgeber'
+  | 'Fahrradleasing und Fahrradflotte'
+  | 'Fahrräder gegen Nutzungsgebühr'
+  | 'Lastenfahrräder (gebührenpflichtig/als Teil des ÖPNVs)'
+  | 'Kostenfreie kommunale Lastenfahrräder'
+  | 'Veranstaltungen und Beratungsangebote'
+  | 'Flächen zur Verfügung stellen';
 
 export type Question = {
   question: string;
@@ -170,7 +170,6 @@ export const questionBlocks: QuestionBlock[] = [
         measureTypes: ['Daten'],
         options: defaultOptions,
       },
-
       {
         question:
           'Wie viel Geld wird jährlich pro Einwohner*in für den Radverkehr ausgegeben?',
