@@ -8,7 +8,9 @@ import {
 
 export const calculateScore = (answers: number[], questions: Question[]) => {
   if (answers.length !== questions.length) {
-    throw Error("lengths of answers and questions don't match");
+    throw Error(
+      `lengths of answers (${answers.length}) and questions (${questions.length}) don't match`,
+    );
   }
   const topicScores: Record<Topic, number> = Object.create(null);
   const measureScores: Record<Measure, number> = Object.create(null);
@@ -30,7 +32,7 @@ export const calculateScore = (answers: number[], questions: Question[]) => {
       key: T,
       val: number,
     ) => {
-      if (obj[key] != null) {
+      if (obj[key] == null) {
         // eslint-disable-next-line no-param-reassign
         obj[key] = val;
       } else {
@@ -58,7 +60,7 @@ export const calculateScore = (answers: number[], questions: Question[]) => {
   Object.keys(measureScores).forEach((measure: Measure) => {
     measureScores[measure] /= measureMaxScores[measure];
   });
-  Object.keys(measureScores).forEach((measureType: MeasureType) => {
+  Object.keys(measureTypeScores).forEach((measureType: MeasureType) => {
     measureTypeScores[measureType] /= measureTypeMaxScores[measureType];
   });
   return {
