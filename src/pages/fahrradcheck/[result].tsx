@@ -7,18 +7,14 @@ import { articleProseClasses } from '~/components/core/articleProseClasses';
 
 const title = 'Fahrradcheck';
 
-const FahrradcheckPage: React.FC<
-  PageProps<Queries.TopicMeasureExamplesQuery>
-> = ({ params, data: { topics } }) => {
-  const { result } = params;
-  if (result.length !== allQuestions.length) {
-    useEffect(() => {
-      navigate('/404', { replace: true });
-    });
-  }
-  const answers: number[] = result.split('').map((x) => parseInt(x, 10));
-  const { totalScore, topicScores, measureScores, measureTypeScores } =
-    calculateScore(answers, allQuestions);
+// Sort topics, measures and examples by corresponding scores
+const sortByScores = (
+  topics: Queries.TopicMeasureExamplesQuery['topics'],
+  topicScores,
+  measureScores,
+  measureTypeScores,
+) => {
+  // we need to copy the elements, due to parameters beeing imutable
   const topicsSorted = Array.from(topics.nodes).sort(
     (a, b) => topicScores[a.name] - topicScores[b.name],
   );
@@ -39,6 +35,28 @@ const FahrradcheckPage: React.FC<
     });
     return topicMutable;
   });
+  return topicsSorted;
+};
+
+const FahrradcheckPage: React.FC<
+  PageProps<Queries.TopicMeasureExamplesQuery>
+> = ({ params, data: { topics } }) => {
+  const { result } = params;
+  if (result.length !== allQuestions.length) {
+    useEffect(() => {
+      navigate('/404', { replace: true });
+    });
+    return <div />;
+  }
+  const answers: number[] = result.split('').map((x) => parseInt(x, 10));
+  const { totalScore, topicScores, measureScores, measureTypeScores } =
+    calculateScore(answers, allQuestions);
+  const topicsSorted = sortByScores(
+    topics,
+    topicScores,
+    measureScores,
+    measureTypeScores,
+  );
   return (
     <>
       <Hero bgColor="bg-green-500" title={result} />
