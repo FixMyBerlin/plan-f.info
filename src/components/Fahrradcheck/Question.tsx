@@ -1,27 +1,33 @@
 import { RadioGroup } from '@headlessui/react';
 import clsx from 'clsx';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Question } from './questions.const';
 
 type Props = {
   question: Question;
+  setSurveyResult: any;
+  surveyResult: any;
 };
 
-const QuestionItem: React.FC<Props> = ({ question }) => {
+const QuestionItem: React.FC<Props> = ({
+  question,
+  setSurveyResult,
+  surveyResult,
+}) => {
   const [questionResult, setQuestionResult] = useState(null);
-  useEffect(() => {
-    console.log(questionResult);
-  }, [questionResult]);
 
   return (
     <>
       <h3>
         {question.id + 1}. {question.question}
       </h3>
-
       <RadioGroup
         value={questionResult}
-        onChange={setQuestionResult}
+        onChange={(x) => {
+          setQuestionResult(x);
+          setSurveyResult({ ...surveyResult, [question.id]: x });
+          console.log({ surveyResult });
+        }}
         className="mt-2"
       >
         <div className="grid grid-cols-3 gap-3 sm:grid-cols-5">
