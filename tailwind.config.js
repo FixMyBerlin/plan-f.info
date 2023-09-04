@@ -24,6 +24,7 @@ module.exports = {
     },
     colors: {
       white: colors.white,
+      red: colors.red,
       black: colors.black,
       gray: colors.gray,
       rose: colors.rose, // default rose 500
