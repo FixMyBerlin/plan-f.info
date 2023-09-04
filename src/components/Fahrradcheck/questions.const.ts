@@ -1,16 +1,16 @@
 export type Topic =
   | 'Governance'
-  | 'Bildung und Training'
+  | 'Bildung und Trainings'
   | 'Infrastruktur'
   | 'Kommunikation und Öffentlichkeitsarbeit'
   | 'Services'
-  | 'Multimodalität'
+  | 'Multimodalität und Nahmobilität'
   | 'Wirtschaft'
-  | 'Tourismus'
+  | 'Tourismus und Freizeit'
   | 'Verkehrsberuhigung';
 
 export type Measure =
-  | 'Verwaltung & Politik'
+  | 'Verwaltung und Politik'
   | 'Konzepte und Organisation'
   | 'Information, Austausch und Beteiligung'
   | 'Monitoring und Evaluation'
@@ -23,7 +23,7 @@ export type Measure =
   | 'Bauliche Radwege'
   | 'Radfahrstreifen'
   | 'Radschnellverbindungen, Radschnellwege und Premiumrouten'
-  | 'Fahrradbrücken und -unterführungen'
+  | 'Fahrradbrücken und Unterführungen'
   | 'Temporäre Radfahrstreifen'
   | 'Verkehrsfluss'
   | 'Beleuchtung'
@@ -129,7 +129,7 @@ export const questionBlocks: QuestionBlock[] = [
           'Manche Kommunen haben aufgrund ihrer Größe keinen Radverkehrsbeauftragen. Falls es aber Personen aus der Verwaltung und Politik gibt, die sich für den Radverkehr engangieren oder es eine*n Ansprechpartner*in gibt, kann auch mit "ja" geantwortet werden.',
         weight: 3,
         topics: ['Governance'],
-        measures: ['Verwaltung & Politik', 'Konzepte und Organisation'],
+        measures: ['Verwaltung und Politik', 'Konzepte und Organisation'],
         measureTypes: ['Personal', 'Koordination und Organisation Radverkehr'],
         options: [
           { text: 'ja', weight: 3 },
@@ -142,7 +142,7 @@ export const questionBlocks: QuestionBlock[] = [
           'Hiermit meinen wir Mobilitätskonzepte, Radverkehrskonzepte, Klimaschutzkonzepte usw. sowie festgeschriebene Ziele, Leitbilder und / oder Visionen.',
         weight: 3,
         topics: ['Governance'],
-        measures: ['Verwaltung & Politik', 'Konzepte und Organisation'],
+        measures: ['Verwaltung und Politik', 'Konzepte und Organisation'],
         measureTypes: [
           'Konzepte und Pläne',
           'Verkehrspolitik, Siedlungspolitik und kommunalpolitische Zielsetzung',
@@ -156,7 +156,7 @@ export const questionBlocks: QuestionBlock[] = [
           's. auch: https://plan-f.info/wissensspeicher/governance/verwaltung-und-politik/',
         weight: 2,
         topics: ['Governance'],
-        measures: ['Verwaltung & Politik'],
+        measures: ['Verwaltung und Politik'],
         measureTypes: ['Rechtliche Grundlagen'],
         options: defaultOptions,
       },
@@ -177,7 +177,7 @@ export const questionBlocks: QuestionBlock[] = [
           's. auch: https://plan-f.info/artikel/welches-budget-sollte-ich-fur-die-forderung-der-fahrradmobilitat-ansetzen/',
         weight: 2,
         topics: ['Governance'],
-        measures: ['Verwaltung & Politik'],
+        measures: ['Verwaltung und Politik'],
         measureTypes: ['Finanzierung'],
         options: [
           { text: '> 30€/Person', weight: 3 },
@@ -207,9 +207,9 @@ export const questionBlocks: QuestionBlock[] = [
           'Es gibt finanzielle Förderungen, zum Beispiel für (Lasten-)fahrräder und Fahrradinitiativen.',
         explanation: '',
         weight: 2,
-        topics: ['Governance', 'Services', 'Multimodalität'],
+        topics: ['Governance', 'Services', 'Multimodalität und Nahmobilität'],
         measures: [
-          'Verwaltung & Politik',
+          'Verwaltung und Politik',
           'Konzepte und Organisation',
           'Mobility Hubs an Wohnanlagen',
           'Kurierdienste',
@@ -250,7 +250,7 @@ export const questionBlocks: QuestionBlock[] = [
         explanation:
           'Mit Sicherheit meinen wir die objektive Sicherheit (Unfallzahlen) und wie es subjektiv wahrgenommen wird (hierzu zählen die Verkehrssicherheit und soziale Sicherheit).',
         weight: 3,
-        topics: ['Infrastruktur', 'Tourismus'],
+        topics: ['Infrastruktur', 'Tourismus und Freizeit'],
         measures: [
           'Fahrradnetz',
           'Radschnellverbindungen, Radschnellwege und Premiumrouten',
@@ -267,7 +267,7 @@ export const questionBlocks: QuestionBlock[] = [
         question: 'Das Fahrradnetz ist intuiitiv und gut beschildert.',
         explanation: '',
         weight: 1,
-        topics: ['Infrastruktur', 'Tourismus'],
+        topics: ['Infrastruktur', 'Tourismus und Freizeit'],
         measures: ['Fahrradnetz', 'Beschilderung und Infotafeln'],
         measureTypes: ['Wegweisung'],
         options: defaultOptions,
@@ -285,7 +285,7 @@ export const questionBlocks: QuestionBlock[] = [
           'Geschützte Radfahrstreifen',
           'Bauliche Radwege',
           'Radfahrstreifen',
-          'Fahrradbrücken und -unterführungen',
+          'Fahrradbrücken und Unterführungen',
           'Temporäre Radfahrstreifen',
           'Beleuchtung',
           'Gestaltungselemente',
@@ -303,9 +303,9 @@ export const questionBlocks: QuestionBlock[] = [
         topics: [
           'Infrastruktur',
           'Governance',
-          'Bildung und Training',
-          'Multimodalität',
-          'Tourismus',
+          'Bildung und Trainings',
+          'Multimodalität und Nahmobilität',
+          'Tourismus und Freizeit',
         ],
         measures: [
           'Fahrradstraßen und -zonen',
@@ -313,7 +313,7 @@ export const questionBlocks: QuestionBlock[] = [
           'Geschützte Radfahrstreifen',
           'Bauliche Radwege',
           'Radfahrstreifen',
-          'Fahrradbrücken und -unterführungen',
+          'Fahrradbrücken und Unterführungen',
           'Temporäre Radfahrstreifen',
           'Beleuchtung',
           'Gestaltungselemente',
@@ -368,7 +368,11 @@ export const questionBlocks: QuestionBlock[] = [
         explanation:
           'Kurierdienste können von der Kommune eingesetzt werden, um z. B. Personlausweise auszuliefern oder für die Beförderung von Personen eingesetzt werden (insbesondere interessant in großen Städten und z. B. in städtischen Senior*innenheimen).',
         weight: 2,
-        topics: ['Services', 'Multimodalität', 'Tourismus'],
+        topics: [
+          'Services',
+          'Multimodalität und Nahmobilität',
+          'Tourismus und Freizeit',
+        ],
         measures: [
           'Reparaturservice',
           'Fahrradverleihsysteme',
@@ -392,7 +396,7 @@ export const questionBlocks: QuestionBlock[] = [
           'In Kitas, Schulen und Horts wird das Fahrradfahren gefördert.',
         explanation: '',
         weight: 3,
-        topics: ['Bildung und Training'],
+        topics: ['Bildung und Trainings'],
         measures: [
           'Radverkehr in Schulen, Kinder- und Jugendclubs und Kindergärten',
         ],
@@ -427,7 +431,7 @@ export const questionBlocks: QuestionBlock[] = [
         topics: [
           'Governance',
           'Kommunikation und Öffentlichkeitsarbeit',
-          'Tourismus',
+          'Tourismus und Freizeit',
         ],
         measures: [
           'Konzepte und Organisation',
@@ -450,7 +454,7 @@ export const questionBlocks: QuestionBlock[] = [
         topics: [
           'Governance',
           'Kommunikation und Öffentlichkeitsarbeit',
-          'Tourismus',
+          'Tourismus und Freizeit',
         ],
         measures: [
           'Konzepte und Organisation',
@@ -495,7 +499,10 @@ export const questionBlocks: QuestionBlock[] = [
         explanation:
           'Wenn Sie sich hier unsicher sind, dann tauschen Sie sich hierzu mit Kolleg*innen aus.',
         weight: 3,
-        topics: ['Kommunikation und Öffentlichkeitsarbeit', 'Tourismus'],
+        topics: [
+          'Kommunikation und Öffentlichkeitsarbeit',
+          'Tourismus und Freizeit',
+        ],
         measures: [
           'Marketing und Kommunikation',
           'Kommunalverwaltung als Vorbild',
