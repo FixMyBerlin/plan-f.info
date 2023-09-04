@@ -56,12 +56,17 @@ export const calculateScore = (answers: number[], questions: Question[]) => {
   totalScore /= totalMaxScore;
   Object.keys(topicScores).forEach((topic: Topic) => {
     topicScores[topic] /= topicMaxScores[topic];
+    topicScores[topic] = Math.round(topicScores[topic] * 100);
   });
   Object.keys(measureScores).forEach((measure: Measure) => {
     measureScores[measure] /= measureMaxScores[measure];
+    measureScores[measure] = Math.round(measureScores[measure] * 100);
   });
   Object.keys(measureTypeScores).forEach((measureType: MeasureType) => {
     measureTypeScores[measureType] /= measureTypeMaxScores[measureType];
+    measureTypeScores[measureType] = Math.round(
+      measureTypeScores[measureType] * 100,
+    );
   });
   return {
     totalScore,
