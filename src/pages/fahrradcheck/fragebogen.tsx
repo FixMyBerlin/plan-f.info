@@ -1,10 +1,14 @@
 /* eslint-disable react/jsx-fragments */
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import clsx from 'clsx';
 import { HeadFC, PageProps, navigate } from 'gatsby';
 import { Fragment, useState } from 'react';
 import { allQuestions, questionBlocks } from '~/components/Fahrradcheck';
 import QuestionItem from '~/components/Fahrradcheck/Question';
 import { Content, Hero, MetaTags } from '~/components/Layout';
 import { Section } from '~/components/Layout/Section';
+import { H1, H2, P } from '~/components/Text';
+import { blackButtonStyles } from '~/components/core/links';
 
 const title = 'Fahrradcheck-Fragebogen';
 
@@ -23,14 +27,33 @@ const FahrradcheckPage: React.FC<PageProps> = () => {
 
   return (
     <>
-      <Hero bgColor="bg-green-500" title={title} />
-      <Section>
-        <Content>
-          <h2>Fragen zur Fahrradfreundlichkeit</h2>
-
+      <Hero bgColor="bg-green-500" title="Plan F Check" />
+      <div className="bg-gray-200 -mt-10">
+        <Section className="">
+          <Content>
+            <H1 className="font-mono pt-10 break-words">
+              Fragen zur Fahrrad-freundlichkeit
+            </H1>
+            <H2>
+              Fragen zum Status-Quo der Radverkehrsförderung in Ihrer Kommune
+            </H2>
+            <P>
+              Die folgenden Fragen des Plan F Checks sind eine Selbstevaluation
+              der Fahrradfreundlichkeit in Ihrer Kommune. Anhand Ihrer Aussagen
+              wird bewertet, in welchen Handlungsfeldern der
+              Radverkehrsförderung Ihre Kommune schon weit fortgeschritten ist
+              und wo es noch Verbesserungsbedarf gibt.
+              <br />
+              <br />* Das Beantworten aller Fragen ist verpflichtend!
+            </P>
+          </Content>
+        </Section>
+        <div className="">
           {questionBlocks.map((block) => (
-            <div className="mt-8" key={block.title}>
-              <h2>{block.title}</h2>
+            <div className="" key={block.title}>
+              <Section>
+                <H2 className="mx-auto max-w-3xl">{block.title}</H2>
+              </Section>
               {block.questions.map((question) => (
                 <QuestionItem
                   className="mt-4"
@@ -43,18 +66,30 @@ const FahrradcheckPage: React.FC<PageProps> = () => {
               ))}
             </div>
           ))}
-          <button type="button" onClick={handleSubmit}>
-            Plan F Check abschließen & auswerten
-          </button>
-          {isSubmit && !surveyResult.every((value) => value !== null) && (
-            <p className="text-red-500 text-xs mt-4">
-              * Das Beantworten aller Fragen ist verpflichtend, um den
-              Fragebogen abschließen zu können. Bitte wählen Sie eine Antwort
-              auf diese Frage!
-            </p>
-          )}
-        </Content>
-      </Section>
+        </div>
+        <Section>
+          <Content>
+            <button
+              className={clsx(
+                'flex items-center gap-2 mt-20',
+                blackButtonStyles,
+              )}
+              type="button"
+              onClick={handleSubmit}
+            >
+              <ArrowRightIcon className="h-5 w-5 " />
+              Plan F Check abschließen & auswerten
+            </button>
+            {isSubmit && !surveyResult.every((value) => value !== null) && (
+              <p className="text-red-500 text-xs mt-4">
+                * Das Beantworten aller Fragen ist verpflichtend, um den
+                Fragebogen abschließen zu können. Bitte wählen Sie eine Antwort
+                auf diese Frage!
+              </p>
+            )}
+          </Content>
+        </Section>
+      </div>
     </>
   );
 };
