@@ -98,6 +98,7 @@ export type MeasureType =
   | 'Flächen zur Verfügung stellen';
 
 export type Question = {
+  id: number;
   question: string;
   explanation: string;
   topics: Topic[];
@@ -124,6 +125,7 @@ export const questionBlocks: QuestionBlock[] = [
     title: 'Governance: Politik, Konzepte, Strukturen',
     questions: [
       {
+        id: 0,
         question: 'Es gibt eine*n Radverkehrsbeauftragte*n.',
         explanation:
           'Manche Kommunen haben aufgrund ihrer Größe keinen Radverkehrsbeauftragen. Falls es aber Personen aus der Verwaltung und Politik gibt, die sich für den Radverkehr engangieren oder es eine*n Ansprechpartner*in gibt, kann auch mit "ja" geantwortet werden.',
@@ -137,6 +139,7 @@ export const questionBlocks: QuestionBlock[] = [
         ],
       },
       {
+        id: 1,
         question: 'Es gibt Konzept(e) und Zielsetzungen für den Radverkehr.',
         explanation:
           'Hiermit meinen wir Mobilitätskonzepte, Radverkehrskonzepte, Klimaschutzkonzepte usw. sowie festgeschriebene Ziele, Leitbilder und / oder Visionen.',
@@ -150,6 +153,7 @@ export const questionBlocks: QuestionBlock[] = [
         options: defaultOptions,
       },
       {
+        id: 2,
         question:
           'Es gibt eigene rechtliche Grundlagen zur Planung des Radverkehrs, wie Radverkehrsgesetze, Stellplatzsatzungen und eigene Planungsstandards.',
         explanation:
@@ -161,6 +165,7 @@ export const questionBlocks: QuestionBlock[] = [
         options: defaultOptions,
       },
       {
+        id: 3,
         question:
           'Es gibt einen aktuellen Datenstand zur Radverkehrsinfrastruktur / zu den Radverkehrsmaßnahmen.',
         explanation: '',
@@ -170,7 +175,9 @@ export const questionBlocks: QuestionBlock[] = [
         measureTypes: ['Daten'],
         options: defaultOptions,
       },
+
       {
+        id: 4,
         question:
           'Wie viel Geld wird jährlich pro Einwohner*in für den Radverkehr ausgegeben?',
         explanation:
@@ -187,6 +194,7 @@ export const questionBlocks: QuestionBlock[] = [
         ],
       },
       {
+        id: 5,
         question:
           'Es werden regelmäßig Maßnahmen evaluiert, Radverkehre gezählt und der Modal Split erhoben.',
         explanation:
@@ -203,6 +211,7 @@ export const questionBlocks: QuestionBlock[] = [
         options: defaultOptions,
       },
       {
+        id: 6,
         question:
           'Es gibt finanzielle Förderungen, zum Beispiel für (Lasten-)fahrräder und Fahrradinitiativen.',
         explanation: '',
@@ -221,6 +230,7 @@ export const questionBlocks: QuestionBlock[] = [
         options: defaultOptions,
       },
       {
+        id: 7,
         question:
           'Es gibt einen regelmäßigen Austausch mit relevanten Stakeholdern des Radverkehrs.',
         explanation: '',
@@ -245,6 +255,7 @@ export const questionBlocks: QuestionBlock[] = [
     title: 'Infrastruktur & Sicherheit',
     questions: [
       {
+        id: 8,
         question:
           'Es gibt ein durchgängiges, hochwertiges, komfortables und sicheres Fahrradnetz.',
         explanation:
@@ -264,6 +275,7 @@ export const questionBlocks: QuestionBlock[] = [
         options: defaultOptions,
       },
       {
+        id: 9,
         question: 'Das Fahrradnetz ist intuiitiv und gut beschildert.',
         explanation: '',
         weight: 1,
@@ -273,6 +285,7 @@ export const questionBlocks: QuestionBlock[] = [
         options: defaultOptions,
       },
       {
+        id: 10,
         question:
           'Es gibt weniger Radfahrende, die einen Helm und/oder eine Warnweste tragen, als solche, die dies nicht tun.',
         explanation:
@@ -295,6 +308,7 @@ export const questionBlocks: QuestionBlock[] = [
         options: defaultOptions,
       },
       {
+        id: 11,
         question:
           'Unter den Radfahrenden sind mehr Frauen und Kinder als Männer.',
         explanation:
@@ -327,6 +341,7 @@ export const questionBlocks: QuestionBlock[] = [
         options: defaultOptions,
       },
       {
+        id: 12,
         question:
           'Es werden Maßnahmen umgesetzt, die den Autoverkehr (sog. MIV - motorisierten Individualverkehr) reduzieren.',
         explanation:
@@ -343,6 +358,7 @@ export const questionBlocks: QuestionBlock[] = [
         options: defaultOptions,
       },
       {
+        id: 13,
         question:
           'Es gibt ausreichend Fahrradabstellplätze für Radfahrende mit hoher Qualität.',
         explanation:
@@ -363,6 +379,7 @@ export const questionBlocks: QuestionBlock[] = [
     title: 'Dienstleistungen & Bildung',
     questions: [
       {
+        id: 14,
         question:
           'Es gibt radverkehrsbezogene Dienstleistungen wie einen Fahrradverleih, Reparaturangebote oder Kurierdienste.',
         explanation:
@@ -392,6 +409,7 @@ export const questionBlocks: QuestionBlock[] = [
         options: defaultOptions,
       },
       {
+        id: 15,
         question:
           'In Kitas, Schulen und Horts wird das Fahrradfahren gefördert.',
         explanation: '',
@@ -414,6 +432,7 @@ export const questionBlocks: QuestionBlock[] = [
     title: 'Kommunikation & Beteiligung',
     questions: [
       {
+        id: 16,
         question: 'Die Mehrheit der Einwohner*innen kennt das Fahrradnetz.',
         explanation:
           'Denken sie an Veranstaltungen und Begegnungen mit Bürger*innen: Hatten Sie das Gefühl, dass viele das Radverkehrsnetz kannten?',
@@ -424,6 +443,7 @@ export const questionBlocks: QuestionBlock[] = [
         options: defaultOptions,
       },
       {
+        id: 17,
         question:
           'Regelmäßig und umfassend werden Bürger*innen zu Radverkehrsvorhaben beteiligt und informiert.',
         explanation: '',
@@ -447,6 +467,7 @@ export const questionBlocks: QuestionBlock[] = [
         options: defaultOptions,
       },
       {
+        id: 18,
         question:
           'Im Rahmen von Kampagnen oder Veranstaltungen wird regelmäßig über das Radverkehrsangebot informiert. ',
         explanation: '',
@@ -470,6 +491,7 @@ export const questionBlocks: QuestionBlock[] = [
         options: defaultOptions,
       },
       {
+        id: 19,
         question:
           'Die Wirtschaft, wie z. B. der Einzelhandel, wird ermutigt, sich an der Radverkehrsförderung zu beteiligen.',
         explanation: '',
@@ -495,6 +517,7 @@ export const questionBlocks: QuestionBlock[] = [
         options: defaultOptions,
       },
       {
+        id: 20,
         question: 'Fahrradfahren wird positiv wahrgenommen.',
         explanation:
           'Wenn Sie sich hier unsicher sind, dann tauschen Sie sich hierzu mit Kolleg*innen aus.',
