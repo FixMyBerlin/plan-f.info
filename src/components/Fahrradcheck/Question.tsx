@@ -36,10 +36,10 @@ const QuestionItem: React.FC<Props> = ({
         }}
       >
         <div className="grid grid-cols-3 gap-3 sm:grid-cols-5">
-          {question.options.map((option) => (
+          {question.options.map((option, i) => (
             <RadioGroup.Option
               key={option.text}
-              value={option.weight}
+              value={i}
               className={({ active, checked }) =>
                 clsx(
                   active ? 'ring-2 ring-indigo-600 ring-offset-2' : '',
