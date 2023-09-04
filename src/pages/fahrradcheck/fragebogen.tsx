@@ -10,8 +10,16 @@ const title = 'Fahrradcheck-Fragebogen';
 
 const initialState = [...Array(allQuestions.length)].map(() => null);
 
-const FahrradcheckPage = () => {
+const FahrradcheckPage: React.FC<PageProps> = () => {
   const [surveyResult, setSurveyResult] = useState(initialState);
+  const [isSubmit, setIsSubmit] = useState(false);
+
+  const handleSubmit = () => {
+    setIsSubmit(true);
+    const surveyResultSlug = surveyResult.join('');
+    if (surveyResult.every((value) => value !== null))
+      navigate(`/fahrradcheck/${surveyResultSlug}`);
+  };
 
   return (
     <>
@@ -35,6 +43,16 @@ const FahrradcheckPage = () => {
               ))}
             </div>
           ))}
+          <button type="button" onClick={handleSubmit}>
+            Plan F Check abschließen & auswerten
+          </button>
+          {isSubmit && !surveyResult.every((value) => value !== null) && (
+            <p className="text-red-500 text-xs mt-4">
+              * Das Beantworten aller Fragen ist verpflichtend, um den
+              Fragebogen abschließen zu können. Bitte wählen Sie eine Antwort
+              auf diese Frage!
+            </p>
+          )}
         </Content>
       </Section>
     </>
