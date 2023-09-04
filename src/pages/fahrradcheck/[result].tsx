@@ -99,27 +99,27 @@ const FahrradcheckPage: React.FC<
                   Angaben zu ihrer Kommune besonders relevant sind:
                 </p>
                 <CardWrapperMeasurePage>
-                  {topic.examples.map((example) => {
-                    if (measureTypeScores[example.subcategory] === undefined) {
-                      return undefined;
-                    }
-                    return (
-                      <CardExample
-                        title={`${example.title} (${example.subcategory}): ${
-                          measureTypeScores[example.subcategory]
-                        }`}
-                        key={example.slug}
-                        link={`/${wikiPath}/${topic.slug}/${example.measure.slug}/${example.slug}`}
-                        image={example.image}
-                      >
-                        <div>
-                          <p className="text-sm text-gray-700 md:text-base">
-                            {example.shortDescription}
-                          </p>
-                        </div>
-                      </CardExample>
-                    );
-                  })}
+                  {topic.examples
+                    .filter((example) => measureTypeScores[example.subcategory])
+                    .slice(0, 3)
+                    .map((example) => {
+                      return (
+                        <CardExample
+                          title={`${example.title} (${example.subcategory}): ${
+                            measureTypeScores[example.subcategory]
+                          }`}
+                          key={example.slug}
+                          link={`/${wikiPath}/${topic.slug}/${example.measure.slug}/${example.slug}`}
+                          image={example.image}
+                        >
+                          <div>
+                            <p className="text-sm text-gray-700 md:text-base">
+                              {example.shortDescription}
+                            </p>
+                          </div>
+                        </CardExample>
+                      );
+                    })}
                 </CardWrapperMeasurePage>
               </div>
             );
