@@ -12,7 +12,7 @@ type Props = {
   question: Question;
   setSurveyResult: any;
   surveyResult: any;
-  className: string;
+  className?: string;
   isSubmit: boolean;
 };
 
@@ -29,12 +29,13 @@ const QuestionItem: React.FC<Props> = ({
     <Section
       className={clsx(
         className,
-        'mt-4 pt-10 pb-20 md:pb-20 group hover:bg-white hover:shadow-xl rounded-b-none',
+        'py-10 md:py-16',
+        'mt-4 group hover:bg-white hover:shadow-xl rounded-b-none',
       )}
     >
       <Content>
-        <div className="flex justify-between items-center">
-          <H3>
+        <div className="flex justify-between items-center mb-4">
+          <H3 className="!mt-0 !md:mt-0">
             {question.id + 1}. {question.question}
           </H3>
           {question.explanation && (
@@ -64,22 +65,25 @@ const QuestionItem: React.FC<Props> = ({
                 value={i}
                 className={({ active, checked }) =>
                   clsx(
-                    active ? 'ring-2 ring-purple-600 ring-offset-2' : '',
+                    active ? 'ring-2 ring-purple-300 ring-offset-2' : '',
                     checked
-                      ? 'bg-purple-200 hover:bg-purple-500'
-                      : 'ring-1 ring-inset ring-gray-300 bg-white text-gray-900 hover:bg-gray-50',
-                    'mt-4 flex items-center justify-center rounded-md py-3 px-3 text-sm font-semibold uppercase sm:flex-1',
+                      ? 'bg-purple-200 hover:bg-purple-300'
+                      : 'ring-1 ring-inset ring-gray-300 bg-white text-gray-900 hover:bg-gray-100',
+                    'flex items-center justify-center rounded-md py-3 px-3 text-sm font-semibold uppercase sm:flex-1 hover:cursor-pointer',
                   )
                 }
               >
-                <RadioGroup.Label className="lowercase" as="span">
+                <RadioGroup.Label
+                  className="lowercase whitespace-nowrap text-xs md:text-sm"
+                  as="span"
+                >
                   {option.text}
                 </RadioGroup.Label>
               </RadioGroup.Option>
             ))}
           </div>
           {isSubmit && questionResult === null && (
-            <p className="text-red-500 text-xs mt-4">
+            <p className="text-red-500 text-xs mt-4 pt-3">
               * Das Beantworten aller Fragen ist verpflichtend, um den
               Fragebogen abschließen zu können. Bitte wählen Sie eine Antwort
               auf diese Frage!

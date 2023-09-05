@@ -28,7 +28,7 @@ const FahrradcheckPage: React.FC<PageProps> = () => {
   return (
     <>
       <Hero bgColor="bg-green-500" title="Plan F Check" />
-      <div className="bg-gray-200 -mt-10">
+      <div className="bg-gray-300 -mt-10">
         <Section className="">
           <Content>
             <H1 className="font-mono pt-10 break-words">
@@ -51,12 +51,12 @@ const FahrradcheckPage: React.FC<PageProps> = () => {
         <div className="">
           {questionBlocks.map((block) => (
             <div className="" key={block.title}>
-              <Section>
+              <div className="p-8 md:p-12">
                 <H2 className="mx-auto max-w-3xl">{block.title}</H2>
-              </Section>
+              </div>
+
               {block.questions.map((question) => (
                 <QuestionItem
-                  className="mt-4"
                   key={question.id}
                   isSubmit={isSubmit}
                   question={question}
@@ -71,7 +71,7 @@ const FahrradcheckPage: React.FC<PageProps> = () => {
           <Content>
             <button
               className={clsx(
-                'flex items-center gap-2 mt-20',
+                'flex items-center gap-2 mt-8 md:mt-20',
                 blackButtonStyles,
               )}
               type="button"
