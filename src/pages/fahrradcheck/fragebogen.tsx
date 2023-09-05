@@ -2,7 +2,7 @@
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import { HeadFC, PageProps, navigate } from 'gatsby';
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 import { allQuestions, questionBlocks } from '~/components/Fahrradcheck';
 import QuestionItem from '~/components/Fahrradcheck/Question';
 import { Content, Hero, MetaTags } from '~/components/Layout';
@@ -83,8 +83,8 @@ const FahrradcheckPage: React.FC<PageProps> = () => {
             {isSubmit && !surveyResult.every((value) => value !== null) && (
               <p className="text-red-500 text-xs mt-4">
                 * Das Beantworten aller Fragen ist verpflichtend, um den
-                Fragebogen abschließen zu können. Bitte wählen Sie eine Antwort
-                auf diese Frage!
+                Fragebogen abschließen zu können. Bitte wählen Sie bei allen
+                Fragen eine Antwort.
               </p>
             )}
           </Content>

@@ -2,11 +2,13 @@ import { RadioGroup } from '@headlessui/react';
 import { InformationCircleIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import React, { useState } from 'react';
-import { InfoPopover } from '../ExamplePage/InfoPopover';
 import { Content } from '../Layout';
 import { Section } from '../Layout/Section';
 import { Caption, H3 } from '../Text';
 import { Question } from './questions.const';
+import { Popover } from '../Layout/Popover';
+import { InfoPopover } from '../ExamplePage/InfoPopover';
+import { Prose } from '../core/Prose';
 
 type Props = {
   question: Question;
@@ -34,18 +36,12 @@ const QuestionItem: React.FC<Props> = ({
       )}
     >
       <Content>
-        <div className="flex justify-between items-center mb-4">
+        <div className="flex justify-between items-start mb-4 gap-4">
           <H3 className="!mt-0 !md:mt-0">
             {question.id + 1}. {question.question}
           </H3>
           {question.explanation && (
-            <InfoPopover
-              button={
-                <InformationCircleIcon className="h-4 w-4 text-gray-700" />
-              }
-            >
-              <Caption className="text-white">{question.explanation}</Caption>
-            </InfoPopover>
+            <InfoPopover label={<p>{question.explanation}</p>} />
           )}
         </div>
         <RadioGroup
