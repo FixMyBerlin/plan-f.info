@@ -110,7 +110,7 @@ const FahrradcheckPage: React.FC<
         </Content>
       </Section>
       <Section className="bg-purple-100 max-w-full">
-        <H1 className="font-mono pt-4 md:pt-10 break-words max-w-full">
+        <H1 className="font-mono pt-8 md:pt-16 break-words max-w-full">
           Handlungsempfehlungen für Ihre Kommune
         </H1>
         <P>

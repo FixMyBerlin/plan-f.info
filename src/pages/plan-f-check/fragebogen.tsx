@@ -31,7 +31,7 @@ const FahrradcheckPage: React.FC<PageProps> = () => {
       <div className="bg-gray-300 -mt-10">
         <Section>
           <Content>
-            <H1 className="font-mono pt-4 md:pt-10 break-words">
+            <H1 className="font-mono pt-8 md:pt-16 break-words">
               Fragen zum Status-Quo der Radverkehrsförderung in Ihrer Kommune
             </H1>
             <P>
@@ -45,10 +45,10 @@ const FahrradcheckPage: React.FC<PageProps> = () => {
             </P>
           </Content>
         </Section>
-        <div className="">
+        <div>
           {questionBlocks.map((block) => (
             <div key={block.title}>
-              <div className="p-8 md:p-12">
+              <div className="p-8 py-0 md:p-12 md:py-12">
                 <H2 className="mx-auto max-w-3xl">{block.title}</H2>
               </div>
 

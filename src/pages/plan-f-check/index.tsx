@@ -14,7 +14,7 @@ const FahrradcheckPage = () => {
       <Hero bgColor="bg-green-500" title={title} />
       <Section className="mb-10">
         <Content>
-          <H1 className="font-mono pt-4 md:pt-10">
+          <H1 className="font-mono pt-8 md:pt-16">
             Willkommen beim Plan F Check
           </H1>
           <P>
