@@ -80,12 +80,9 @@ const FahrradcheckPage: React.FC<
     );
   };
   const handlePrintButtonClick = () => {
-    try {
-      // Print for Safari browser
-      document.execCommand('print', false, null);
-    } catch {
-      window.print();
-    }
+    window.print();
+    // Print for Safari browser
+    document.execCommand('print', false, null);
   };
   return (
     <>
@@ -109,7 +106,7 @@ const FahrradcheckPage: React.FC<
           )}% der möglichen Punkte.`}</h3>
         </Content>
       </Section>
-      <Section className="bg-purple-100 max-w-full">
+      <Section className="bg-purple-100 max-w-full rounded-b-none">
         <H1 className="font-mono pt-8 md:pt-16 break-words max-w-full">
           Handlungsempfehlungen für Ihre Kommune
         </H1>
@@ -149,6 +146,7 @@ const FahrradcheckPage: React.FC<
                   </b>
                 </P>
                 <CardTopic
+                  className="mb-8 md:mb-12"
                   title={topic.name}
                   key={topic.slug}
                   link={`/${wikiPath}/${topic.slug}`}
