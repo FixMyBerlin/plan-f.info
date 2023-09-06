@@ -10,7 +10,7 @@ import { Section } from '~/components/Layout/Section';
 import { H1, H2, P } from '~/components/Text';
 import { blackButtonStyles } from '~/components/core/links';
 
-const title = 'Fahrradcheck-Fragebogen';
+const title = 'Plan F Check - Fragebogen';
 
 const initialState = [...Array(allQuestions.length)].map(() => null);
 
@@ -22,21 +22,18 @@ const FahrradcheckPage: React.FC<PageProps> = () => {
     setIsSubmit(true);
     const surveyResultSlug = surveyResult.join('');
     if (surveyResult.every((value) => value !== null))
-      navigate(`/fahrradcheck/${surveyResultSlug}`);
+      navigate(`/plan-f-check/${surveyResultSlug}`);
   };
 
   return (
     <>
       <Hero bgColor="bg-green-500" title="Plan F Check" />
       <div className="bg-gray-300 -mt-10">
-        <Section className="">
+        <Section>
           <Content>
-            <H1 className="font-mono pt-10 break-words">
-              Fragen zur Fahrrad-freundlichkeit
-            </H1>
-            <H2>
+            <H1 className="font-mono pt-4 md:pt-10 break-words">
               Fragen zum Status-Quo der Radverkehrsförderung in Ihrer Kommune
-            </H2>
+            </H1>
             <P>
               Die folgenden Fragen des Plan F Checks sind eine Selbstevaluation
               der Fahrradfreundlichkeit in Ihrer Kommune. Anhand Ihrer Aussagen
@@ -50,7 +47,7 @@ const FahrradcheckPage: React.FC<PageProps> = () => {
         </Section>
         <div className="">
           {questionBlocks.map((block) => (
-            <div className="" key={block.title}>
+            <div key={block.title}>
               <div className="p-8 md:p-12">
                 <H2 className="mx-auto max-w-3xl">{block.title}</H2>
               </div>

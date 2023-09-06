@@ -3,7 +3,7 @@ import { HeadFC } from 'gatsby';
 import { Content, Hero, MetaTags } from '~/components/Layout';
 import { LinkButtonWithArrowBlack } from '~/components/Layout/LinkButtonWithArrowBlack';
 import { Section } from '~/components/Layout/Section';
-import { H2, H3, P } from '~/components/Text';
+import { H1, H2, H3, P } from '~/components/Text';
 import { Link } from '~/components/core/links';
 
 const title = 'Plan F Check';
@@ -14,7 +14,9 @@ const FahrradcheckPage = () => {
       <Hero bgColor="bg-green-500" title={title} />
       <Section className="mb-10">
         <Content>
-          <H2>Willkommen beim Plan F Check</H2>
+          <H1 className="font-mono pt-4 md:pt-10">
+            Willkommen beim Plan F Check
+          </H1>
           <P>
             Herzlich willkommen beim Plan F Check! Der Plan F Check ist eine
             Selbstevaluation des Status quo der Radverkehrsförderung in Ihrer
@@ -26,7 +28,7 @@ const FahrradcheckPage = () => {
           </P>
           <LinkButtonWithArrowBlack
             className="mb-10"
-            href="/fahrradcheck/fragebogen"
+            href="/plan-f-check/fragebogen"
           >
             Direkt zum Plan F Check
           </LinkButtonWithArrowBlack>
@@ -73,9 +75,7 @@ const FahrradcheckPage = () => {
             href="/artikel/wie-werde-ich-eine-fahrradfreundliche-kommune"
           >
             <ArrowUpRightIcon className="mr-2 h-6 w-6 flex-shrink-0" />
-            <span>
-              {`"Wie werde ich eine Fahrradfreundliche Kommune?" Artikel`}
-            </span>
+            <span>Artikel: Wie werde ich eine Fahrradfreundliche Kommune?</span>
           </Link>
         </Content>
       </Section>
@@ -86,8 +86,8 @@ const FahrradcheckPage = () => {
             {`Klicken Sie auf 'Plan F Check starten', um direkt mit dem Plan F
             Check zu beginnen.`}
           </P>
-          <LinkButtonWithArrowBlack href="/fahrradcheck/fragebogen">
-            Direkt zum Plan F Check
+          <LinkButtonWithArrowBlack href="/plan-f-check/fragebogen">
+            Plan F Check starten
           </LinkButtonWithArrowBlack>
         </Content>
       </Section>
