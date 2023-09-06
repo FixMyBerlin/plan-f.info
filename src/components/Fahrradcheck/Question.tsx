@@ -1,14 +1,11 @@
 import { RadioGroup } from '@headlessui/react';
-import { InformationCircleIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import React, { useState } from 'react';
 import { Content } from '../Layout';
 import { Section } from '../Layout/Section';
-import { Caption, H3 } from '../Text';
+import { H3 } from '../Text';
 import { Question } from './questions.const';
-import { Popover } from '../Layout/Popover';
 import { InfoPopover } from '../ExamplePage/InfoPopover';
-import { Prose } from '../core/Prose';
 
 type Props = {
   question: Question;
