@@ -7575,7 +7575,10 @@ declare namespace Queries {
             readonly shortDescription: string | null;
             readonly subcategory: string | null;
             readonly slug: string | null;
-            readonly measure: { readonly slug: string | null } | null;
+            readonly measure: {
+              readonly name: string | null;
+              readonly slug: string | null;
+            } | null;
             readonly image: {
               readonly copyright: string | null;
               readonly image: {

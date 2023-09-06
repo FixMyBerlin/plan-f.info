@@ -35,10 +35,13 @@ const sortByScores = (
     topicMutable.measures.forEach((measure) => {
       topicMutable.examples = [...topicMutable.examples, ...measure.examples];
     });
-    topicMutable.examples.sort(
-      (a, b) =>
-        measureTypeScores[a.subcategory] - measureTypeScores[b.subcategory],
-    );
+    topicMutable.examples.sort((a, b) => {
+      const scoreA =
+        measureTypeScores[a.subcategory] || measureScores[a.measure.name];
+      const scoreB =
+        measureTypeScores[b.subcategory] || measureScores[b.measure.name];
+      return scoreA - scoreB;
+    });
     return topicMutable;
   });
   return topicsSorted;
@@ -48,7 +51,7 @@ const FahrradcheckPage: React.FC<
   PageProps<Queries.TopicMeasureExamplesQuery>
 > = ({ params, data: { topics } }) => {
   const { result } = params;
-  if (result.length !== allQuestions.length) {
+  if (result === undefined || result.length !== allQuestions.length) {
     useEffect(() => {
       navigate('/404', { replace: true });
     });
@@ -99,27 +102,25 @@ const FahrradcheckPage: React.FC<
                   Angaben zu ihrer Kommune besonders relevant sind:
                 </p>
                 <CardWrapperMeasurePage>
-                  {topic.examples
-                    .filter((example) => measureTypeScores[example.subcategory])
-                    .slice(0, 3)
-                    .map((example) => {
-                      return (
-                        <CardExample
-                          title={`${example.title} (${example.subcategory}): ${
-                            measureTypeScores[example.subcategory]
-                          }`}
-                          key={example.slug}
-                          link={`/${wikiPath}/${topic.slug}/${example.measure.slug}/${example.slug}`}
-                          image={example.image}
-                        >
-                          <div>
-                            <p className="text-sm text-gray-700 md:text-base">
-                              {example.shortDescription}
-                            </p>
-                          </div>
-                        </CardExample>
-                      );
-                    })}
+                  {topic.examples.slice(0, -1).map((example) => {
+                    return (
+                      <CardExample
+                        title={`${example.title}: ${
+                          measureTypeScores[example.subcategory] ||
+                          measureScores[example.measure.name]
+                        }`}
+                        key={example.slug}
+                        link={`/${wikiPath}/${topic.slug}/${example.measure.slug}/${example.slug}`}
+                        image={example.image}
+                      >
+                        <div>
+                          <p className="text-sm text-gray-700 md:text-base">
+                            {example.shortDescription}
+                          </p>
+                        </div>
+                      </CardExample>
+                    );
+                  })}
                 </CardWrapperMeasurePage>
               </div>
             );
@@ -167,6 +168,7 @@ export const query = graphql`
             subcategory
             slug
             measure {
+              name
               slug
             }
             image {
