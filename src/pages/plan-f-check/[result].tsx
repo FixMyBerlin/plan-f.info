@@ -90,7 +90,7 @@ const FahrradcheckPage: React.FC<
       {/* TODO remove result from hero */}
       <Section className={articleProseClasses}>
         <Content>
-          <h1 className="font-mono pt-4 md:pt-10">
+          <h1 className="font-mono pt-4 md:pt-10 text-3xl md:text-4xl mb-5 md:mb-10">
             Ergebnis des Plan F Checks für Ihre Kommune
           </h1>
           <p>

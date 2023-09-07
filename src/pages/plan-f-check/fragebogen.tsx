@@ -31,7 +31,7 @@ const FahrradcheckPage: React.FC<PageProps> = () => {
       <div className="bg-gray-300 -mt-10">
         <Section>
           <Content>
-            <H1 className="font-mono pt-8 md:pt-16 break-words">
+            <H1 className="font-mono pt-8 md:pt-16 break-words text-3xl md:text-4xl mb-5 md:mb-10">
               Fragen zum Status-Quo der Radverkehrsförderung in Ihrer Kommune
             </H1>
             <P>

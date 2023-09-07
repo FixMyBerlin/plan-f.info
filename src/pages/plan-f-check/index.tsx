@@ -3,7 +3,7 @@ import { HeadFC } from 'gatsby';
 import { Content, Hero, MetaTags } from '~/components/Layout';
 import { LinkButtonWithArrowBlack } from '~/components/Layout/LinkButtonWithArrowBlack';
 import { Section } from '~/components/Layout/Section';
-import { H1, H2, H3, P } from '~/components/Text';
+import { H2, H3, P } from '~/components/Text';
 import { Link } from '~/components/core/links';
 
 const title = 'Plan F Check';
@@ -14,9 +14,9 @@ const FahrradcheckPage = () => {
       <Hero bgColor="bg-green-500" title={title} />
       <Section className="mb-10">
         <Content>
-          <H1 className="font-mono pt-8 md:pt-16">
+          <h1 className="font-mono pt-8 md:pt-16 text-3xl md:text-4xl mb-5 md:mb-10">
             Willkommen beim Plan F Check
-          </H1>
+          </h1>
           <P>
             Herzlich willkommen beim Plan F Check! Der Plan F Check ist eine
             Selbstevaluation des Status quo der Radverkehrsförderung in Ihrer
