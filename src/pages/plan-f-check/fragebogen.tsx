@@ -8,7 +8,7 @@ import { Content, Hero, MetaTags } from '~/components/Layout';
 import { Section } from '~/components/Layout/Section';
 import { allQuestions, questionBlocks } from '~/components/PlanFCheck';
 import QuestionItem from '~/components/PlanFCheck/Question';
-import { H1, H2, P } from '~/components/Text';
+import { H2, P } from '~/components/Text';
 import { blackButtonStyles } from '~/components/core/links';
 
 const title = 'Plan F Check - Fragebogen';
@@ -32,9 +32,9 @@ const PlanFCheckSurveyPage: React.FC<PageProps> = () => {
       <div className="bg-gray-300 -mt-10">
         <Section>
           <Content>
-            <H1 className="font-mono pt-8 md:pt-16 break-words text-3xl md:text-4xl mb-5 md:mb-10">
+            <h1 className="font-mono pt-8 md:pt-16 break-words text-3xl md:text-4xl mb-5 md:mb-10">
               Fragen zum Status-Quo der Radverkehrsförderung in Ihrer Kommune
-            </H1>
+            </h1>
             <P>
               Die folgenden Fragen des Plan F Checks sind eine Selbstevaluation
               der Fahrradfreundlichkeit in Ihrer Kommune. Anhand Ihrer Aussagen

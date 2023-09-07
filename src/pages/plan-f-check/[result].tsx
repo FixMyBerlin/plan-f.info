@@ -10,7 +10,7 @@ import { CardWrapperMeasurePage } from '~/components/MeasurePage/CardWrapperMeas
 import { allQuestions, calculateScore } from '~/components/PlanFCheck';
 import { CardTopicPlanFCheck } from '~/components/PlanFCheck/CardTopicPlanFCheckPage';
 import { topicTexts } from '~/components/PlanFCheck/topicTexts.const';
-import { H1, H2, H3, P } from '~/components/Text';
+import { H2, H3, P } from '~/components/Text';
 import { LinkButtonWithArrow } from '~/components/TopicPage/LinkButtonWithArrow';
 import { articleProseClasses } from '~/components/core/articleProseClasses';
 import { Link, blackButtonStyles } from '~/components/core/links';
@@ -107,9 +107,9 @@ const PlanFCheckResultPage: React.FC<
         </Content>
       </Section>
       <Section className="bg-purple-100 max-w-full rounded-b-none">
-        <H1 className="font-mono pt-8 md:pt-16 break-words max-w-full">
+        <h1 className="font-mono pt-8 md:pt-10 text-3xl md:text-4xl mb-5 md:mb-10 break-words max-w-full">
           Handlungsempfehlungen für Ihre Kommune
-        </H1>
+        </h1>
         <P>
           Auf Grundlage Ihrer Antworten wurden Empfehlungen für folgende
           Handlungsfelder und Praxisbeispiele berechnet. Je geringer die
@@ -207,9 +207,9 @@ const PlanFCheckResultPage: React.FC<
       </Section>
       <Section>
         <Content>
-          <H1 className="font-mono pt-4 md:pt-10">
+          <h1 className="font-mono pt-4 md:pt-10 text-3xl md:text-4xl mb-5 md:mb-10">
             Zusammenfassung der Plan F Check Eingaben für Ihre Kommune
-          </H1>
+          </h1>
           <P>
             Vielen Dank für Ihre Teilnahme am Plan F Check, hier ist eine
             Zusammenfassung Ihrer Eingaben.
