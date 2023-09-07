@@ -36,7 +36,9 @@ export const CardTopic: React.FC<Props> = ({
         />
       )}
       <div>
-        <h3 className="text-blackmd:text-xl mb-2 text-lg font-bold">{title}</h3>
+        <h3 className="text-black md:text-xl mb-2 text-lg font-bold">
+          {title}
+        </h3>
         {children}
       </div>
     </Link>
