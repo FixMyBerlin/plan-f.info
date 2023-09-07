@@ -8,7 +8,7 @@ import { Link } from '~/components/core/links';
 
 const title = 'Plan F Check';
 
-const FahrradcheckPage = () => {
+const PlanFCheckIndexPage = () => {
   return (
     <>
       <Hero bgColor="bg-green-500" title={title} />
@@ -95,6 +95,6 @@ const FahrradcheckPage = () => {
   );
 };
 
-export default FahrradcheckPage;
+export default PlanFCheckIndexPage;
 
 export const Head: HeadFC = () => <MetaTags noindex title={title} />;

@@ -3,10 +3,11 @@ import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import { HeadFC, PageProps, navigate } from 'gatsby';
 import { useState } from 'react';
-import { allQuestions, questionBlocks } from '~/components/Fahrradcheck';
-import QuestionItem from '~/components/Fahrradcheck/Question';
+
 import { Content, Hero, MetaTags } from '~/components/Layout';
 import { Section } from '~/components/Layout/Section';
+import { allQuestions, questionBlocks } from '~/components/PlanFCheck';
+import QuestionItem from '~/components/PlanFCheck/Question';
 import { H1, H2, P } from '~/components/Text';
 import { blackButtonStyles } from '~/components/core/links';
 
@@ -14,7 +15,7 @@ const title = 'Plan F Check - Fragebogen';
 
 const initialState = [...Array(allQuestions.length)].map(() => null);
 
-const FahrradcheckPage: React.FC<PageProps> = () => {
+const PlanFCheckSurveyPage: React.FC<PageProps> = () => {
   const [surveyResult, setSurveyResult] = useState(initialState);
   const [isSubmit, setIsSubmit] = useState(false);
 
@@ -91,6 +92,6 @@ const FahrradcheckPage: React.FC<PageProps> = () => {
   );
 };
 
-export default FahrradcheckPage;
+export default PlanFCheckSurveyPage;
 
 export const Head: HeadFC = () => <MetaTags noindex title={title} />;

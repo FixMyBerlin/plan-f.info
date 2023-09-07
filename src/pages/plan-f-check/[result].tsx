@@ -1,17 +1,17 @@
-import { PrinterIcon, ShareIcon } from '@heroicons/react/24/outline';
+import { ShareIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import { HeadFC, PageProps, graphql, navigate } from 'gatsby';
 import { Fragment, useEffect } from 'react';
-import { allQuestions, calculateScore } from '~/components/Fahrradcheck';
-import { topicTexts } from '~/components/Fahrradcheck/topicTexts.const';
-import { Content, MetaTags, Hero } from '~/components/Layout';
+import { Content, Hero, MetaTags } from '~/components/Layout';
 import { menuItemsWithChildren } from '~/components/Layout/Navigation/menuItems';
 import { Section } from '~/components/Layout/Section';
 import { CardExample } from '~/components/MeasurePage/CardExample';
 import { CardWrapperMeasurePage } from '~/components/MeasurePage/CardWrapperMeasurePage';
+import { allQuestions, calculateScore } from '~/components/PlanFCheck';
+import { CardTopicPlanFCheck } from '~/components/PlanFCheck/CardTopicPlanFCheckPage';
+import { topicTexts } from '~/components/PlanFCheck/topicTexts.const';
 import { H1, H2, H3, P } from '~/components/Text';
 import { LinkButtonWithArrow } from '~/components/TopicPage/LinkButtonWithArrow';
-import { CardTopic } from '~/components/WissensspeicherStartPage/CardTopic';
 import { articleProseClasses } from '~/components/core/articleProseClasses';
 import { Link, blackButtonStyles } from '~/components/core/links';
 import { domain, wikiPath } from '~/components/utils';
@@ -53,7 +53,7 @@ const sortByScores = (
   return topicsSorted;
 };
 
-const FahrradcheckPage: React.FC<
+const PlanFCheckResultPage: React.FC<
   PageProps<Queries.TopicMeasureExamplesQuery>
 > = ({ params, data: { topics } }) => {
   const { result } = params;
@@ -79,11 +79,11 @@ const FahrradcheckPage: React.FC<
       `${currentDomain}/plan-f-check/${result}`,
     );
   };
-  const handlePrintButtonClick = () => {
-    window.print();
-    // Print for Safari browser
-    document.execCommand('print', false, null);
-  };
+  // const handlePrintButtonClick = () => {
+  //   window.print();
+  //   // Print for Safari browser
+  //   document.execCommand('print', false, null);
+  // };
   return (
     <>
       <Hero bgColor="bg-green-500" title="Plan F Check" />
@@ -124,11 +124,11 @@ const FahrradcheckPage: React.FC<
                 <H2 className="!mt-0 md:!mt-0">{`${index + 1}. Handlungsfeld: ${
                   topic.name
                 } `}</H2>
-                <H3 className="!mt-2 !md:mt-4">
+                <H3 className="!mt-2 !md:mt-4 !mb-0">
                   {`Hier erreichen Sie ${topicScores[topic.name]}% der möglichen
                 Punkte.`}
                 </H3>
-                <P>
+                <P className="mt-1 md:mt-2">
                   Folgende Maßnahmen gehören zu diesem Handlungsfeld:{' '}
                   <b>
                     {topic.measures.map((measure) => {
@@ -146,7 +146,7 @@ const FahrradcheckPage: React.FC<
                     })}
                   </b>
                 </P>
-                <CardTopic
+                <CardTopicPlanFCheck
                   linkExternal
                   className="mb-8 md:mb-12"
                   title={topic.name}
@@ -155,11 +155,11 @@ const FahrradcheckPage: React.FC<
                   image={topic.image && topic.image.url}
                 >
                   {topicTexts[topic.name] && (
-                    <p className="text-sm text-gray-700 md:text-base">
+                    <p className="text-sm text-gray-700 md:text-base max-w-2xl">
                       {topicTexts[topic.name]}
                     </p>
                   )}
-                </CardTopic>
+                </CardTopicPlanFCheck>
                 <P>
                   Praxisbeispiele die in diesem Handlungsfeld auf Grund den
                   Angaben zu ihrer Kommune besonders relevant sind:
@@ -222,14 +222,14 @@ const FahrradcheckPage: React.FC<
             als Link zu teilen.
           </P>
           <div className="flex flex-col items-start sm:flex-row gap-8 mt-8 md:mt-10">
-            <button
+            {/* <button
               onClick={handlePrintButtonClick}
               type="button"
               className={clsx('flex gap-2 items-center', blackButtonStyles)}
             >
               <PrinterIcon className="w-5" />
               Seite drucken
-            </button>
+            </button> */}
             <button
               onClick={handleCopyButtonClick}
               type="button"
@@ -256,7 +256,7 @@ const FahrradcheckPage: React.FC<
   );
 };
 
-export default FahrradcheckPage;
+export default PlanFCheckResultPage;
 
 export const Head: HeadFC = () => <MetaTags noindex title={title} />;
 
