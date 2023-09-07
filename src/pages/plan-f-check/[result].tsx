@@ -135,6 +135,7 @@ const FahrradcheckPage: React.FC<
                       return (
                         <Fragment key={measure.slug}>
                           <Link
+                            external
                             href={`/${wikiPath}/${topic.slug}/${measure.slug}`}
                           >
                             {measure.name}
@@ -146,6 +147,7 @@ const FahrradcheckPage: React.FC<
                   </b>
                 </P>
                 <CardTopic
+                  linkExternal
                   className="mb-8 md:mb-12"
                   title={topic.name}
                   key={topic.slug}
@@ -166,6 +168,7 @@ const FahrradcheckPage: React.FC<
                   {topic.examples.slice(0, -1).map((example) => {
                     return (
                       <CardExample
+                        linkExternal
                         title={`${example.title}: ${
                           measureTypeScores[example.subcategory] ||
                           measureScores[example.measure.name]

@@ -7,15 +7,18 @@ type Props = {
   image: any;
   children: ReactNode;
   title: string;
+  linkExternal?: boolean;
 };
 export const CardExample: React.FC<Props> = ({
   children,
   link,
   image,
   title,
+  linkExternal,
 }) => {
   return (
     <Link
+      external={linkExternal}
       button="card"
       className="flex h-full flex-col rounded-b-3xl bg-white"
       href={link}
