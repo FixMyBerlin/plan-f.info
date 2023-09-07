@@ -156,8 +156,7 @@ export const questionBlocks: QuestionBlock[] = [
         id: 2,
         question:
           'Es gibt eigene rechtliche Grundlagen zur Planung des Radverkehrs, wie Radverkehrsgesetze, Stellplatzsatzungen und eigene Planungsstandards.',
-        explanation:
-          's. auch: https://plan-f.info/wissensspeicher/governance/verwaltung-und-politik/',
+        explanation: '',
         weight: 2,
         topics: ['Governance'],
         measures: ['Verwaltung und Politik'],
@@ -180,8 +179,7 @@ export const questionBlocks: QuestionBlock[] = [
         id: 4,
         question:
           'Wie viel Geld wird jährlich pro Einwohner*in für den Radverkehr ausgegeben?',
-        explanation:
-          's. auch: https://plan-f.info/artikel/welches-budget-sollte-ich-fur-die-forderung-der-fahrradmobilitat-ansetzen/',
+        explanation: '',
         weight: 2,
         topics: ['Governance'],
         measures: ['Verwaltung und Politik'],
