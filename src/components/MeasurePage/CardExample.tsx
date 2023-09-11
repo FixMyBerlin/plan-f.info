@@ -7,15 +7,18 @@ type Props = {
   image: any;
   children: ReactNode;
   title: string;
+  linkExternal?: boolean;
 };
 export const CardExample: React.FC<Props> = ({
   children,
   link,
   image,
   title,
+  linkExternal,
 }) => {
   return (
     <Link
+      external={linkExternal}
       button="card"
       className="flex h-full flex-col rounded-b-3xl bg-white"
       href={link}
@@ -28,7 +31,7 @@ export const CardExample: React.FC<Props> = ({
             image={getImage(image.image.localFile as any)}
           />
           {image.copyright && (
-            <p className="px-5 pt-2 text-right text-xs text-gray-700">
+            <p className="px-5 pt-2 text-right text-xs text-gray-400">
               Abbildung: {image.copyright}
             </p>
           )}
