@@ -12,7 +12,6 @@ import { CardTopicPlanFCheck } from '~/components/PlanFCheck/CardTopicPlanFCheck
 import { topicTexts } from '~/components/PlanFCheck/topicTexts.const';
 import { H2, H3, P } from '~/components/Text';
 import { LinkButtonWithArrow } from '~/components/TopicPage/LinkButtonWithArrow';
-import { articleProseClasses } from '~/components/core/articleProseClasses';
 import { Link, blackButtonStyles } from '~/components/core/links';
 import { domain, wikiPath } from '~/components/utils';
 
@@ -88,22 +87,28 @@ const PlanFCheckResultPage: React.FC<
     <>
       <Hero bgColor="bg-green-500" title="Plan F Check" />
       {/* TODO remove result from hero */}
-      <Section className={articleProseClasses}>
+      <Section>
         <Content>
           <h1 className="font-mono pt-4 md:pt-10 text-3xl md:text-4xl mb-5 md:mb-10">
             Ergebnis des Plan F Checks für Ihre Kommune
           </h1>
-          <p>
-            Herzlichen Glückwunsch! Sie haben den Plan F Check erfolgreich
-            durchgeführt.
-          </p>
-          <p>
-            Die Gesamtbewertung zeigt, in welchen Handlungsfeldern Ihre Kommune
-            bereits fortgeschritten ist und wo noch Verbesserungsbedarf besteht.
-          </p>
-          <h3>{`Insgesamt erreichen Sie ${Math.round(
-            totalScore * 100,
-          )}% der möglichen Punkte.`}</h3>
+          <div className="flex flex-col gap-6">
+            <p>
+              Herzlichen Glückwunsch! Sie haben den Plan F Check erfolgreich
+              durchgeführt.
+            </p>
+            <p>
+              Die Gesamtbewertung zeigt, in welchen Handlungsfeldern Ihre
+              Kommune bereits fortgeschritten ist und wo noch
+              Verbesserungsbedarf besteht.
+            </p>
+            <div className="flex justify-start items-center gap-6">
+              <p className="text-5xl">🏆</p>
+              <p className="text-xl font-bold">{`Insgesamt erreichen Sie ${Math.round(
+                totalScore * 100,
+              )}% der möglichen Punkte.`}</p>
+            </div>
+          </div>
         </Content>
       </Section>
       <Section className="bg-purple-100 max-w-full rounded-b-none">
