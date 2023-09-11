@@ -7,7 +7,8 @@ import { useState } from 'react';
 import { Content, Hero, MetaTags } from '~/components/Layout';
 import { Section } from '~/components/Layout/Section';
 import { allQuestions, questionBlocks } from '~/components/PlanFCheck';
-import QuestionItem from '~/components/PlanFCheck/Question';
+import { QuestionItem } from '~/components/PlanFCheck/Question';
+
 import { H2, P } from '~/components/Text';
 import { blackButtonStyles } from '~/components/core/links';
 

@@ -15,7 +15,7 @@ type Props = {
   isSubmit: boolean;
 };
 
-const QuestionItem: React.FC<Props> = ({
+export const QuestionItem: React.FC<Props> = ({
   question,
   setSurveyResult,
   surveyResult,
@@ -87,5 +87,3 @@ const QuestionItem: React.FC<Props> = ({
     </Section>
   );
 };
-
-export default QuestionItem;
