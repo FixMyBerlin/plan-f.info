@@ -1,7 +1,8 @@
+import { ArrowRightIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 import React, { ReactNode } from 'react';
 import { H2, P } from '../Text';
-import { LinkButtonWithArrowBlack } from './LinkButtonWithArrowBlack';
+import { Link } from '../core/links';
 
 type Props = {
   title: string;
@@ -20,9 +21,10 @@ export const PageTeaserCard: React.FC<Props> = ({
     <section className={clsx('bg-gray-50 p-5', className)}>
       <H2 className="!mt-0">{title}</H2>
       <P>{children}</P>
-      <LinkButtonWithArrowBlack href={link}>
+      <Link className="mt-6 flex items-center gap-2" button="black" href={link}>
+        <ArrowRightIcon className="h-5 w-5 " />
         Weiterlesen
-      </LinkButtonWithArrowBlack>
+      </Link>
     </section>
   );
 };

@@ -2,7 +2,6 @@ import { wikiPath } from '~/components/utils';
 
 export const menuItems = {
   Wissensspeicher: `/${wikiPath}/`,
-  'Plan F Check': `/plan-f-check/`,
   'Weitere Angebote': '/weitere-angebote/',
   Artikel: '/artikel/',
   Über: '/ueber/',

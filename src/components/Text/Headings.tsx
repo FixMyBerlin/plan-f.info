@@ -66,15 +66,15 @@ export const P: React.FC<Props> = ({ id, className, children }) => {
 };
 export const Caption: React.FC<Props> = ({ id, className, children }) => {
   return (
-    <figcaption
+    <p
       id={id}
       className={clsx(
-        'mt-3 text-xs text-gray-400',
+        'mb-4 mt-4 text-xs text-gray-700 md:mb-6 md:mt-6',
         leadingClassName,
         className,
       )}
     >
       {children}
-    </figcaption>
+    </p>
   );
 };

@@ -13,7 +13,7 @@ export const planFMarkdownProseClasses = clsx(
   'prose-h2:text-base', // h2 size
   'prose-h3:text-base', // h3 size
   'prose prose-sm md:prose-base', // responsive sizes
-  'prose-h3:mt-1 prose-h1:mb-2 prose-h2:mb-2 prose-h2:mt-1 prose-h3:mb-2 prose-p:mb-2 prose-p:mt-1',
+  'prose-h3:m1-1 prose-h1:mb-2 prose-h2:mb-2 prose-h2:mt-1 prose-h3:mb-2 prose-p:mb-2 prose-p:mt-1',
   'prose-li:m-0 prose-li:p-0',
 );
 

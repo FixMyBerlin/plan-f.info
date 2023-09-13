@@ -774,7 +774,7 @@ const AwardPage: React.FC = () => {
             enthält.
           </p>
           <YouTubePreview
-            link="https://www.youtube.com/watch?v=VlCcjdvUxsk&ab_channel=FairSpaces"
+            link="https://www.youtube.com/watch?v=pqtAmXkCeEU"
             image={
               <StaticImage
                 src="./../../components/AwardPage/assets/award/planf-award-video.jpg"

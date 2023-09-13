@@ -8,7 +8,6 @@ type Props = {
   children: ReactNode;
   className?: string;
   title: string;
-  linkExternal?: boolean;
 };
 export const CardTopic: React.FC<Props> = ({
   className,
@@ -16,11 +15,9 @@ export const CardTopic: React.FC<Props> = ({
   link,
   image,
   title,
-  linkExternal,
 }) => {
   return (
     <Link
-      external={linkExternal}
       button="card"
       className={clsx(
         'flex h-full flex-col gap-3 rounded-b-3xl bg-white p-6 sm:flex-row sm:gap-6',
@@ -36,9 +33,7 @@ export const CardTopic: React.FC<Props> = ({
         />
       )}
       <div>
-        <h3 className="text-black md:text-xl mb-2 text-lg font-bold">
-          {title}
-        </h3>
+        <h3 className="text-blackmd:text-xl mb-2 text-lg font-bold">{title}</h3>
         {children}
       </div>
     </Link>

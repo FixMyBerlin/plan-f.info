@@ -4,7 +4,6 @@ import { selectLinkStyle } from './styles';
 
 export type LinkProps = {
   href: string;
-  external?: boolean;
   className?: string;
   activeClassName?: string;
   classNameOverwrites?: string;
@@ -26,7 +25,6 @@ export const Link: React.FC<LinkProps> = forwardRef<
       activeClassName,
       classNameOverwrites,
       children,
-      external,
       blank = undefined,
       button,
       ...props
@@ -34,7 +32,7 @@ export const Link: React.FC<LinkProps> = forwardRef<
     ref,
   ) => {
     // external link
-    if (external || href.startsWith('http')) {
+    if (href.startsWith('http')) {
       return (
         <a
           ref={ref}
@@ -55,6 +53,7 @@ export const Link: React.FC<LinkProps> = forwardRef<
         // @ts-ignore
         ref={ref}
         to={href}
+        {...{ target: blank === true ? '_blank' : undefined }}
         className={classNameOverwrites || selectLinkStyle(button, className)}
         activeClassName={activeClassName}
         {...props}
