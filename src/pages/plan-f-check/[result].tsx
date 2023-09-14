@@ -9,6 +9,7 @@ import { CardExample } from '~/components/MeasurePage/CardExample';
 import { CardWrapperMeasurePage } from '~/components/MeasurePage/CardWrapperMeasurePage';
 import { allQuestions, calculateScore } from '~/components/PlanFCheck';
 import { CardTopicPlanFCheck } from '~/components/PlanFCheck/CardTopicPlanFCheckPage';
+import { SmileyScore } from '~/components/PlanFCheck/ResultSmiley';
 import { topicTexts } from '~/components/PlanFCheck/topicTexts.const';
 import { H2, H3, P } from '~/components/Text';
 import { LinkButtonWithArrow } from '~/components/TopicPage/LinkButtonWithArrow';
@@ -123,16 +124,19 @@ const PlanFCheckResultPage: React.FC<
           Ihnen, Maßnahmen insbesondere in diesem Handlungsfeld zu ergreifen.
         </P>
         <div className="flex divide-y divide-black flex-col">
-          {topicsSorted.map((topic, index) => {
+          {topicsSorted.map((topic) => {
             return (
               <div className="py-8 md:py-16" key={topic.name}>
-                <H2 className="!mt-0 md:!mt-0">{`${index + 1}. Handlungsfeld: ${
-                  topic.name
-                } `}</H2>
-                <H3 className="!mt-2 !md:mt-4 !mb-0">
-                  {`Hier erreichen Sie ${topicScores[topic.name]}% der möglichen
+                <H2 className="!mt-0 md:!mt-0">{`Handlungsfeld: ${topic.name} `}</H2>
+                <div className="flex gap-2 items-center my-5">
+                  <SmileyScore score={topicScores[topic.name]} />
+                  <p className="text-lg font-bold text-black md:text-xl">
+                    {`Hier erreichen Sie ${
+                      topicScores[topic.name]
+                    }% der möglichen
                 Punkte.`}
-                </H3>
+                  </p>
+                </div>
                 <CardTopicPlanFCheck
                   linkExternal
                   className="mb-8 md:mb-12"
@@ -147,10 +151,10 @@ const PlanFCheckResultPage: React.FC<
                     </p>
                   )}
                 </CardTopicPlanFCheck>
-                <P>
+                <p className="text-lg font-bold text-black md:text-xl mb-5">
                   Praxisbeispiele die in diesem Handlungsfeld auf Grund den
                   Angaben zu ihrer Kommune besonders relevant sind:
-                </P>
+                </p>
                 <CardWrapperMeasurePage>
                   {topic.examples.slice(0, 6).map((example) => {
                     return (
