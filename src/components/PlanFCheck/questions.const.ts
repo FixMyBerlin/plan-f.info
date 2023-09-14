@@ -185,10 +185,10 @@ export const questionBlocks: QuestionBlock[] = [
         measures: ['Verwaltung und Politik'],
         measureTypes: ['Finanzierung'],
         options: [
-          { text: '> 30€/Person', weight: 3 },
-          { text: '10-30€/Person', weight: 2 },
-          { text: '5-10€/Person', weight: 1 },
           { text: '< 5€/Person', weight: 0 },
+          { text: '5-10€/Person', weight: 1 },
+          { text: '10-30€/Person', weight: 2 },
+          { text: '> 30€/Person', weight: 3 },
         ],
       },
       {
