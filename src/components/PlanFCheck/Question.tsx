@@ -62,12 +62,12 @@ export const QuestionItem: React.FC<Props> = ({
                     checked
                       ? 'bg-purple-200 hover:bg-purple-300'
                       : 'ring-1 ring-inset ring-gray-300 bg-white text-gray-900 hover:bg-gray-100',
-                    'flex items-center justify-center rounded-md py-3 px-3 text-sm font-semibold uppercase sm:flex-1 hover:cursor-pointer',
+                    'flex items-center justify-center rounded-md py-3 px-3 text-sm font-semibold sm:flex-1 hover:cursor-pointer',
                   )
                 }
               >
                 <RadioGroup.Label
-                  className="lowercase whitespace-nowrap text-xs md:text-sm"
+                  className="whitespace-nowrap text-xs md:text-sm"
                   as="span"
                 >
                   {option.text}
