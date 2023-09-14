@@ -152,7 +152,7 @@ const PlanFCheckResultPage: React.FC<
                   Angaben zu ihrer Kommune besonders relevant sind:
                 </P>
                 <CardWrapperMeasurePage>
-                  {topic.examples.slice(0, -1).map((example) => {
+                  {topic.examples.slice(0, 6).map((example) => {
                     return (
                       <CardExample
                         linkExternal
