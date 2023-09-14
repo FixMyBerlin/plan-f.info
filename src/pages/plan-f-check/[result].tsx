@@ -1,7 +1,7 @@
 import { ShareIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import { HeadFC, PageProps, graphql, navigate } from 'gatsby';
-import { Fragment, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Content, Hero, MetaTags } from '~/components/Layout';
 import { menuItemsWithChildren } from '~/components/Layout/Navigation/menuItems';
 import { Section } from '~/components/Layout/Section';
@@ -12,7 +12,7 @@ import { CardTopicPlanFCheck } from '~/components/PlanFCheck/CardTopicPlanFCheck
 import { topicTexts } from '~/components/PlanFCheck/topicTexts.const';
 import { H2, H3, P } from '~/components/Text';
 import { LinkButtonWithArrow } from '~/components/TopicPage/LinkButtonWithArrow';
-import { Link, blackButtonStyles } from '~/components/core/links';
+import { blackButtonStyles } from '~/components/core/links';
 import { domain, wikiPath } from '~/components/utils';
 
 const title = 'Plan F Check - Ergebnisse';
@@ -133,24 +133,6 @@ const PlanFCheckResultPage: React.FC<
                   {`Hier erreichen Sie ${topicScores[topic.name]}% der möglichen
                 Punkte.`}
                 </H3>
-                <P className="mt-1 md:mt-2">
-                  Folgende Maßnahmen gehören zu diesem Handlungsfeld:{' '}
-                  <b>
-                    {topic.measures.map((measure) => {
-                      return (
-                        <Fragment key={measure.slug}>
-                          <Link
-                            external
-                            href={`/${wikiPath}/${topic.slug}/${measure.slug}`}
-                          >
-                            {measure.name}
-                          </Link>{' '}
-                          {`(${measureScores[measure.name]}%)`}{' '}
-                        </Fragment>
-                      );
-                    })}
-                  </b>
-                </P>
                 <CardTopicPlanFCheck
                   linkExternal
                   className="mb-8 md:mb-12"
