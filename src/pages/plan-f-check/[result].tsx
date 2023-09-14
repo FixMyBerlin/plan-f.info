@@ -159,11 +159,9 @@ const PlanFCheckResultPage: React.FC<
                   {topic.examples.slice(0, 6).map((example) => {
                     return (
                       <CardExample
+                        measure={example.measure.name}
                         linkExternal
-                        title={`${example.title}: ${
-                          measureTypeScores[example.subcategory] ||
-                          measureScores[example.measure.name]
-                        }`}
+                        title={example.title}
                         key={example.slug}
                         link={`/${wikiPath}/${topic.slug}/${example.measure.slug}/${example.slug}`}
                         image={example.image}
