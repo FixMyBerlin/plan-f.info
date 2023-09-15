@@ -146,7 +146,7 @@ const DatenschutzPage: React.FC<PageProps> = () => {
             <tbody>
               <tr>
                 <th className="align-text-top">FixMyCity GmbH</th>
-                <td>Karlsgartenstraße 12, 12049 Berlin</td>
+                <td>Oberlandstraße 26-35, 12099 Berlin</td>
                 <td>-</td>
                 <td>-</td>
                 <td>Bereitstellung und Entwicklung des Dienstes</td>
