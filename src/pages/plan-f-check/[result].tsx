@@ -113,9 +113,7 @@ const PlanFCheckResultPage: React.FC<
       `${currentDomain}/plan-f-check/${result}`,
     );
   };
-  const filteredExamples = filterExamples(topicsSorted[1].examples);
 
-  console.log({ filteredExamples });
   // const handlePrintButtonClick = () => {
   //   window.print();
   //   // Print for Safari browser
@@ -161,11 +159,11 @@ const PlanFCheckResultPage: React.FC<
           Ihnen, Maßnahmen insbesondere in diesem Handlungsfeld zu ergreifen.
         </P>
         {/* Filter Results section */}
-        <div className="bg-white p-4 flex flex-col gap-4">
+        <div className="bg-white p-6 flex flex-col gap-4">
           <p className="text-lg font-bold text-black md:text-xl">
             Filtern Sie die Praxisbeispiele nach ihrem Kommunentyp:
           </p>
-          <div className="flex flex-col md:flex-row gap-2 lg:gap-6 justify-between">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 lg:gap-4 justify-between">
             {Object.keys(filterCategories).map((category) => (
               <FilterItem
                 categoryName={category}
@@ -208,25 +206,30 @@ const PlanFCheckResultPage: React.FC<
                   Praxisbeispiele die in diesem Handlungsfeld auf Grund den
                   Angaben zu ihrer Kommune besonders relevant sind:
                 </p>
+                {filterExamples(topic.examples).length === 0 && (
+                  <P>keine Ergebnisse</P>
+                )}
                 <CardWrapperMeasurePage>
-                  {topic.examples.slice(0, 6).map((example) => {
-                    return (
-                      <CardExample
-                        measure={example.measure.name}
-                        linkExternal
-                        title={example.title}
-                        key={example.slug}
-                        link={`/${wikiPath}/${topic.slug}/${example.measure.slug}/${example.slug}`}
-                        image={example.image}
-                      >
-                        <div>
-                          <p className="text-sm text-gray-700 md:text-base">
-                            {example.shortDescription}
-                          </p>
-                        </div>
-                      </CardExample>
-                    );
-                  })}
+                  {filterExamples(topic.examples)
+                    .slice(0, 6)
+                    .map((example) => {
+                      return (
+                        <CardExample
+                          measure={example.measure.name}
+                          linkExternal
+                          title={example.title}
+                          key={example.slug}
+                          link={`/${wikiPath}/${topic.slug}/${example.measure.slug}/${example.slug}`}
+                          image={example.image}
+                        >
+                          <div>
+                            <p className="text-sm text-gray-700 md:text-base">
+                              {example.shortDescription}
+                            </p>
+                          </div>
+                        </CardExample>
+                      );
+                    })}
                 </CardWrapperMeasurePage>
               </div>
             );
