@@ -119,8 +119,8 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
                                   Informationen zu den Daten finden Sie unter
                                   BBSR – Raumbeobachtung – Laufende
                                   Raumbeobachtung – Raumabgrenzungen (
-                                  <Link href="https://verwaltung.bund.de/">
-                                    bund
+                                  <Link href="https://www.bbsr.bund.de/BBSR/DE/forschung/raumbeobachtung/Raumabgrenzungen/deutschland/gemeinden/Raumtypen2010_vbg/Raumtypen2010_LageSied.html;jsessionid=8D851F8ECAFACA91FD6F226E7E7EC3CF.live11312">
+                                    BBSR
                                   </Link>
                                   ).
                                 </p>
