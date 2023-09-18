@@ -1,7 +1,7 @@
 import { ShareIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import { HeadFC, PageProps, graphql, navigate } from 'gatsby';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Content, Hero, MetaTags } from '~/components/Layout';
 import { menuItemsWithChildren } from '~/components/Layout/Navigation/menuItems';
 import { Section } from '~/components/Layout/Section';
@@ -9,7 +9,9 @@ import { CardExample } from '~/components/MeasurePage/CardExample';
 import { CardWrapperMeasurePage } from '~/components/MeasurePage/CardWrapperMeasurePage';
 import { allQuestions, calculateScore } from '~/components/PlanFCheck';
 import { CardTopicPlanFCheck } from '~/components/PlanFCheck/CardTopicPlanFCheckPage';
+import { FilterItem } from '~/components/PlanFCheck/FilterItem';
 import { SmileyScore } from '~/components/PlanFCheck/ResultSmiley';
+import { filterCategories } from '~/components/PlanFCheck/filterCategories.const';
 import { topicTexts } from '~/components/PlanFCheck/topicTexts.const';
 import { H2, H3, P } from '~/components/Text';
 import { LinkButtonWithArrow } from '~/components/TopicPage/LinkButtonWithArrow';
@@ -57,12 +59,45 @@ const PlanFCheckResultPage: React.FC<
   PageProps<Queries.TopicMeasureExamplesQuery>
 > = ({ params, data: { topics } }) => {
   const { result } = params;
+
   if (result === undefined || result.length !== allQuestions.length) {
     useEffect(() => {
       navigate('/404', { replace: true });
     });
     return <div />;
   }
+
+  const [filter, setFilter] = useState({
+    financiallyWeak: 'all',
+    beginnerFrie: 'all',
+    population: 'all',
+    spatialStructure: 'all',
+    countryState: 'all',
+  });
+
+  const filterExamples = (examples) => {
+    let filteredExamples = examples;
+    Object.keys(filter).forEach((filterKey) => {
+      if (filter[filterKey] === 'all') return filteredExamples;
+      if (filterKey === 'population') {
+        filteredExamples = filteredExamples.filter((example) => {
+          const min = Number(filter.population.split('-')[0]);
+          const max = Number(filter.population.split('-')[1]);
+          return (
+            min < Number(example.population) &&
+            Number(example.population) <= max
+          );
+        });
+      } else {
+        filteredExamples = filteredExamples.filter(
+          (example) => String(example[filterKey]) === filter[filterKey],
+        );
+      }
+      return filteredExamples;
+    });
+    return filteredExamples;
+  };
+
   const answers: number[] = result.split('').map((x) => parseInt(x, 10));
   const { totalScore, topicScores, measureScores, measureTypeScores } =
     calculateScore(answers, allQuestions);
@@ -72,13 +107,15 @@ const PlanFCheckResultPage: React.FC<
     measureScores,
     measureTypeScores,
   );
-
   const handleCopyButtonClick = async () => {
     const currentDomain = domain();
     await navigator.clipboard.writeText(
       `${currentDomain}/plan-f-check/${result}`,
     );
   };
+  const filteredExamples = filterExamples(topicsSorted[1].examples);
+
+  console.log({ filteredExamples });
   // const handlePrintButtonClick = () => {
   //   window.print();
   //   // Print for Safari browser
@@ -123,6 +160,22 @@ const PlanFCheckResultPage: React.FC<
           Handlungsfeld. Um den Radverkehr gezielt zu fördern, empfehlen wir
           Ihnen, Maßnahmen insbesondere in diesem Handlungsfeld zu ergreifen.
         </P>
+        {/* Filter Results section */}
+        <div className="bg-white p-4 flex flex-col gap-4">
+          <p className="text-lg font-bold text-black md:text-xl">
+            Filtern Sie die Praxisbeispiele nach ihrem Kommunentyp:
+          </p>
+          <div className="flex flex-col md:flex-row gap-2 lg:gap-6 justify-between">
+            {Object.keys(filterCategories).map((category) => (
+              <FilterItem
+                categoryName={category}
+                category={filterCategories[category]}
+                filter={filter}
+                setFilter={setFilter}
+              />
+            ))}
+          </div>
+        </div>
         <div className="flex divide-y divide-black flex-col">
           {topicsSorted.map((topic) => {
             return (
@@ -179,20 +232,6 @@ const PlanFCheckResultPage: React.FC<
             );
           })}
         </div>
-
-        {/* <Content>
-          <H1>Praxisbeispiel ohne Massnahmentyp oder Bewertung:</H1>
-          {topicsSorted.map((topic) => {
-            return topic.examples.map((example) => {
-              if (measureTypeScores[example.subcategory] === undefined) {
-                return (
-                  <p>{`name: ${example.title} massnahmentyp: ${example.subcategory}`}</p>
-                );
-              }
-              return undefined;
-            });
-          })}
-        </Content> */}
       </Section>
       <Section>
         <Content>
@@ -268,6 +307,11 @@ export const query = graphql`
             shortDescription
             subcategory
             slug
+            financiallyWeak
+            beginnerFriendly
+            population
+            spatialStructure
+            countryState
             measure {
               name
               slug
