@@ -133,11 +133,11 @@ const PlanFCheckResultPage: React.FC<
               Herzlichen Glückwunsch! Sie haben den Plan F Check erfolgreich
               durchgeführt.
             </p>
-            <p>
+            {/* <p>
               Die Gesamtbewertung zeigt, in welchen Handlungsfeldern Ihre
               Kommune bereits fortgeschritten ist und wo noch
               Verbesserungsbedarf besteht.
-            </p>
+            </p> */}
             <div className="flex justify-start items-center gap-6">
               <p className="text-5xl">🏆</p>
               <p className="text-xl font-bold">{`Insgesamt erreichen Sie ${Math.round(
@@ -149,19 +149,21 @@ const PlanFCheckResultPage: React.FC<
       </Section>
       <Section className="bg-purple-100 max-w-full rounded-b-none">
         <h1 className="font-mono pt-8 md:pt-10 text-3xl md:text-4xl mb-5 md:mb-10 break-words max-w-full">
-          Handlungsempfehlungen für Ihre Kommune
+          Ausgewählte Praxisbeispiele sortiert nach Handlungsfeldern
         </h1>
         <P>
           Auf Grundlage Ihrer Antworten wurden Empfehlungen für folgende
           Handlungsfelder und Praxisbeispiele berechnet. Je geringer die
-          Prozentzahl, desto weniger aktiv sind Sie bisher in diesem
+          Prozentzahl, desto weniger aktiv sind Sie bisher in dem jeweiligen
           Handlungsfeld. Um den Radverkehr gezielt zu fördern, empfehlen wir
-          Ihnen, Maßnahmen insbesondere in diesem Handlungsfeld zu ergreifen.
+          Ihnen, Maßnahmen insbesondere in den Handlungsfeldern mit niedriger
+          Prozentzahl zu ergreifen.
         </P>
         {/* Filter Results section */}
         <div className="bg-white p-6 flex flex-col gap-4">
           <p className="text-lg font-bold text-black md:text-xl">
-            Filtern Sie die Praxisbeispiele nach ihrem Kommunentyp:
+            Optional: Filtern Sie die ausgewählten Praxisbeispiele weiter nach
+            Kommunenmerkmalen
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 lg:gap-4 justify-between">
             {Object.keys(filterCategories).map((category) => (
@@ -177,20 +179,12 @@ const PlanFCheckResultPage: React.FC<
         <div className="flex divide-y divide-black flex-col">
           {topicsSorted.map((topic) => {
             return (
-              <div className="py-8 md:py-16" key={topic.name}>
+              <div className="pt-8 md:pt-16 pb-9 md:pb-20" key={topic.name}>
                 <H2 className="!mt-0 md:!mt-0">{`Handlungsfeld: ${topic.name} `}</H2>
-                <div className="flex gap-2 items-center my-5">
-                  <SmileyScore score={topicScores[topic.name]} />
-                  <p className="text-lg font-bold text-black md:text-xl">
-                    {`Hier erreichen Sie ${
-                      topicScores[topic.name]
-                    }% der möglichen
-                Punkte.`}
-                  </p>
-                </div>
+
                 <CardTopicPlanFCheck
                   linkExternal
-                  className="mb-8 md:mb-12"
+                  className="mb-4 md:mb-6"
                   title={topic.name}
                   key={topic.slug}
                   link={`/${wikiPath}/${topic.slug}`}
@@ -202,9 +196,18 @@ const PlanFCheckResultPage: React.FC<
                     </p>
                   )}
                 </CardTopicPlanFCheck>
-                <p className="text-lg font-bold text-black md:text-xl mb-5">
-                  Praxisbeispiele die in diesem Handlungsfeld auf Grund den
-                  Angaben zu ihrer Kommune besonders relevant sind:
+                <div className="flex gap-4 items-center my-4 md:my-6 md:mb-10">
+                  <SmileyScore score={topicScores[topic.name]} />
+                  <p className="text-lg font-bold text-black md:text-xl">
+                    {`Hier erreichen Sie ${
+                      topicScores[topic.name]
+                    }% der möglichen
+                Punkte.`}
+                  </p>
+                </div>
+                <p className="text-lgå text-black md:text-xl mb-5">
+                  Praxisbeispiele, die in diesem Handlungsfeld auf Grund Ihrer
+                  Eingaben besonders relevant sind:
                 </p>
                 {filterExamples(topic.examples).length === 0 && (
                   <P>keine Ergebnisse</P>
@@ -239,12 +242,8 @@ const PlanFCheckResultPage: React.FC<
       <Section>
         <Content>
           <h1 className="font-mono pt-4 md:pt-10 text-3xl md:text-4xl mb-5 md:mb-10">
-            Zusammenfassung der Plan F Check Eingaben für Ihre Kommune
+            Vielen Dank für Ihre Teilnahme am Plan F Check
           </h1>
-          <P>
-            Vielen Dank für Ihre Teilnahme am Plan F Check, hier ist eine
-            Zusammenfassung Ihrer Eingaben.
-          </P>
           <P>
             Wir hoffen, dass Ihnen diese Handlungsempfehlungen und
             Praxisbeispiele dabei helfen, die Radverkehrsförderung in Ihrer
