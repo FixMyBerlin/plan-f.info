@@ -75,6 +75,26 @@ const PlanFCheckResultPage: React.FC<
     countryState: 'all',
   });
 
+  // Only for debugging: Examples which have another spatialStructure than defined catgeories
+  // const filterExamplesNoMatchingSpatialStructure = (examples) => {
+  //   let examplesNoMatchingSpatialStructure = examples;
+  //   [
+  //     'Überwiegend städtisch',
+  //     'Teilweise städtisch',
+  //     'Überwiegend ländlich',
+  //     'Städtischer Kreis',
+  //     'Ländlicher Kreis mit Verdichtungsansätzen',
+  //     'Dünn besiedelter ländlicher Kreis',
+  //   ].forEach((cat) => {
+  //     examplesNoMatchingSpatialStructure =
+  //       examplesNoMatchingSpatialStructure.filter(
+  //         (example) => example.spatialStructure.trim() !== cat,
+  //       );
+  //   });
+
+  //   return { examplesNoMatchingSpatialStructure };
+  // };
+
   const filterExamples = (examples) => {
     let filteredExamples = examples;
     Object.keys(filter).forEach((filterKey) => {
@@ -90,7 +110,7 @@ const PlanFCheckResultPage: React.FC<
         });
       } else {
         filteredExamples = filteredExamples.filter(
-          (example) => String(example[filterKey]) === filter[filterKey],
+          (example) => String(example[filterKey]).trim() === filter[filterKey],
         );
       }
       return filteredExamples;
@@ -119,11 +139,28 @@ const PlanFCheckResultPage: React.FC<
   //   // Print for Safari browser
   //   document.execCommand('print', false, null);
   // };
+
+  // const exampleList = topicsSorted.map((topic) => {
+  //   return {
+  //     Handlungsfeld: topic.name,
+  //     'Praxisbeispiele ohne passende Kategorie':
+  //       filterExamplesNoMatchingSpatialStructure(
+  //         topic.examples,
+  //       ).examplesNoMatchingSpatialStructure.map((e) => {
+  //         return { position: e.position, Besiedlungstyp: e.spatialStructure };
+  //       }),
+  //     'Anzahl Praxisbeispiele ohne passende Kategorie':
+  //       filterExamplesNoMatchingSpatialStructure(topic.examples)
+  //         .examplesNoMatchingSpatialStructure.length,
+  //   };
+  // });
+
   return (
     <>
       <Hero bgColor="bg-green-500" title="Plan F Check" />
       {/* TODO remove result from hero */}
       <Section>
+        {/* <code>{JSON.stringify(exampleList)}</code> */}
         <Content>
           <h1 className="font-mono pt-4 md:pt-10 text-3xl md:text-4xl mb-5 md:mb-10">
             Ergebnis des Plan F Checks für Ihre Kommune
@@ -305,6 +342,7 @@ export const query = graphql`
           slug
           shortDescription
           examples {
+            position
             title
             shortDescription
             subcategory
