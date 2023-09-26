@@ -90,7 +90,7 @@ const PlanFCheckResultPage: React.FC<
         });
       } else {
         filteredExamples = filteredExamples.filter(
-          (example) => String(example[filterKey]) === filter[filterKey],
+          (example) => String(example[filterKey]).trim() === filter[filterKey],
         );
       }
       return filteredExamples;
