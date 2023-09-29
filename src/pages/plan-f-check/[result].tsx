@@ -69,7 +69,7 @@ const PlanFCheckResultPage: React.FC<
 
   const [filter, setFilter] = useState({
     financiallyWeak: 'all',
-    beginnerFrie: 'all',
+    beginnerFriendly: 'all',
     population: 'all',
     spatialStructure: 'all',
     countryState: 'all',
@@ -93,6 +93,22 @@ const PlanFCheckResultPage: React.FC<
   //   });
 
   //   return { examplesNoMatchingSpatialStructure };
+  // };
+
+  // Only for debugging: Examples which have financiallyWeak or beginnerFriendly true
+  // const filterExamplesBeginnerFriendlyOrFinanciallyWeak = (examples) => {
+  //   const examplesFiltered = examples
+  //     .filter((example) => example.beginnerFriendly || example.financiallyWeak)
+  //     .map((e) => {
+  //       return {
+  //         position: e.position,
+  //         title: e.title,
+  //         zutreffend: `${e.beginnerFriendly ? ' Einsteiger ' : ''} ${
+  //           e.financiallyWeak ? ' Finanzschwach' : ''
+  //         }`,
+  //       };
+  //     });
+  //   return examplesFiltered;
   // };
 
   const filterExamples = (examples) => {
@@ -140,6 +156,7 @@ const PlanFCheckResultPage: React.FC<
   //   document.execCommand('print', false, null);
   // };
 
+  // debugging
   // const exampleList = topicsSorted.map((topic) => {
   //   return {
   //     Handlungsfeld: topic.name,
@@ -154,12 +171,21 @@ const PlanFCheckResultPage: React.FC<
   //         .examplesNoMatchingSpatialStructure.length,
   //   };
   // });
+  // debugging
+  // const exampleList = topicsSorted.map((topic) => {
+  //   return {
+  //     Handlungsfeld: topic.name,
+  //     "Praxisbeispiele, bei denen midestens eine (oder beide) Kategorien, 'Finanzschwache Kommune', 'Einsteiger*innenmaßnahmen' ausgewählt sind":
+  //       filterExamplesBeginnerFriendlyOrFinanciallyWeak(topic.examples),
+  //   };
+  // });
 
   return (
     <>
       <Hero bgColor="bg-green-500" title="Plan F Check" />
       {/* TODO remove result from hero */}
       <Section>
+        {/* debugging */}
         {/* <code>{JSON.stringify(exampleList)}</code> */}
         <Content>
           <h1 className="font-mono pt-4 md:pt-10 text-3xl md:text-4xl mb-5 md:mb-10">
