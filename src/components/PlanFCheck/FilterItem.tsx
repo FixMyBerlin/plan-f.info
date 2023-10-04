@@ -4,6 +4,8 @@ import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import React, { Fragment, useState } from 'react';
 import { FilterCategory } from './filterCategories.const';
+import { InfoPopover } from '../ExamplePage/InfoPopover';
+import { Link } from '../core/links';
 
 type Props = {
   category: FilterCategory;
@@ -30,9 +32,28 @@ export const FilterItem: React.FC<Props> = ({
       }}
     >
       {({ open }) => (
-        <div className="flex flex-col flex-grow">
+        <div className="flex flex-col flex-grow justify-end">
           <Listbox.Label className="block text-sm font-medium leading-6 text-gray-900">
             {category.label}
+            {category.label === 'Besiedlungstyp' && (
+              <InfoPopover
+                label={
+                  <p>
+                    Für die Einteilung der Raumtypen Besiedlung und Lage nutzen
+                    wir die Daten des BBSR „Raumtypen 2010“ der Laufenden
+                    Raumbeobachtung – Raumabgrenzungen. Für die Definition sind
+                    die zwei räumlichen Strukturmerkmale, Dichte und Lage
+                    ausschlaggebend. Weitere Informationen zu den Daten finden
+                    Sie unter BBSR – Raumbeobachtung – Laufende Raumbeobachtung
+                    – Raumabgrenzungen (
+                    <Link href="https://www.bbsr.bund.de/BBSR/DE/forschung/raumbeobachtung/Raumabgrenzungen/deutschland/gemeinden/Raumtypen2010_vbg/Raumtypen2010_LageSied.html;jsessionid=8D851F8ECAFACA91FD6F226E7E7EC3CF.live11312">
+                      BBSR
+                    </Link>
+                    ).
+                  </p>
+                }
+              />
+            )}
           </Listbox.Label>
           <div className="relative mt-2">
             <Listbox.Button className="relative w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset focus:outline-none focus:ring-2 sm:text-sm sm:leading-6 ring-gray-900">
@@ -79,7 +100,7 @@ export const FilterItem: React.FC<Props> = ({
                           <span
                             className={clsx(
                               // selected ? 'font-bold' : 'font-normal',
-                              'block truncate',
+                              'block',
                             )}
                           >
                             {optionLabel}

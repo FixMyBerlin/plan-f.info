@@ -109,7 +109,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
                             </p>
                             <InfoPopover
                               label={
-                                <p className="text-white">
+                                <p>
                                   Für die Einteilung der Raumtypen Besiedlung
                                   und Lage nutzen wir die Daten des BBSR
                                   „Raumtypen 2010“ der Laufenden Raumbeobachtung

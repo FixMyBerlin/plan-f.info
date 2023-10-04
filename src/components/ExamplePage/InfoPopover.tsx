@@ -10,7 +10,7 @@ export const InfoPopover: React.FC<Props> = ({ label }) => {
     <Popover
       button={<InformationCircleIcon className="h-6 w-6 text-gray-900" />}
       label={
-        <div className="p-4 bg-black text-white leading-snug max-w-sm text-sm m-2 ml-6">
+        <div className="p-4 bg-white text-black border border-black leading-snug max-w-sm text-sm m-2 ml-6">
           {label}
         </div>
       }
