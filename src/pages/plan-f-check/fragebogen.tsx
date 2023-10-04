@@ -50,8 +50,10 @@ const PlanFCheckSurveyPage: React.FC<PageProps> = () => {
         <div>
           {questionBlocks.map((block) => (
             <div key={block.title}>
-              <div className="p-8 py-0 md:p-12 md:py-12">
-                <H2 className="mx-auto max-w-3xl">{block.title}</H2>
+              <div className="p-8 py-0 md:p-12 md:py-10">
+                <H2 className="mx-auto max-w-3xl md:!mb-0 underline underline-offset-8  decoration-purple-600">
+                  {block.title}
+                </H2>
               </div>
 
               {block.questions.map((question) => (
