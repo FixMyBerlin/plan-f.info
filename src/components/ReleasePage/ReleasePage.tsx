@@ -1,12 +1,13 @@
-import { PageProps } from 'gatsby';
+import { PageProps, HeadFC } from 'gatsby';
 import React from 'react';
-import { Content, HelmetSeo, Hero } from '~/components/Layout';
+import { Content, Hero, MetaTags } from '~/components/Layout';
 import { Section } from '~/components/Layout/Section';
 
 import { planfProseClasses } from '~/components/core/articleProseClasses';
 
+const title = 'Plan F Release Page';
+
 const ReleasePage: React.FC<PageProps> = ({ pageContext }) => {
-  const title = 'Plan F Release Page';
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   const { GH_ACTION_URL, GH_TOKEN } = pageContext;
@@ -25,7 +26,6 @@ const ReleasePage: React.FC<PageProps> = ({ pageContext }) => {
 
   return (
     <>
-      <HelmetSeo noindex title={title} />
       <Hero bgColor="bg-green-500" title={title} />
       <Section className={planfProseClasses}>
         <Content>
@@ -44,3 +44,5 @@ const ReleasePage: React.FC<PageProps> = ({ pageContext }) => {
 };
 
 export default ReleasePage;
+
+export const Head: HeadFC = () => <MetaTags noindex title={title} />;
