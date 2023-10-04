@@ -81,7 +81,9 @@ const PlanFCheckIndexPage = () => {
       </Section>
       <Section className="bg-purple-300 rounded-b-none">
         <Content>
-          <H2 className="!mt-0">Bereit, den Plan F Check zu starten?</H2>
+          <H2 className="!mt-0">
+            Sind Sie bereit den Plan F Check zu starten?
+          </H2>
           <P>
             {`Klicken Sie auf 'Plan F Check starten', um direkt mit dem Plan F
             Check zu beginnen.`}
