@@ -35,13 +35,12 @@ export const filterCategories: Record<string, FilterCategory> = {
     label: 'Besiedlungstyp',
     options: {
       all: 'kein Filter',
-      'Überwiegend städtisch': 'Überwiegend städtisch',
-      'Teilweise städtisch': 'Teilweise städtisch',
-      'Überwiegend ländlich': 'Überwiegend ländlich',
-      'Städtischer Kreis': 'Städtischer Kreis',
-      'Ländlicher Kreis mit Verdichtungsansätzen':
-        'Ländlicher Kreis mit Verdichtungsansätzen',
-      'Dünn besiedelter ländlicher Kreis': 'Dünn besiedelter ländlicher Kreis',
+      'Überwiegend städtisch,Städtischer Kreis':
+        'Überwiegend städtisch, Städtischer Kreis',
+      'Teilweise städtisch,Ländlicher Kreis mit Verdichtungsansätzen':
+        'Teilweise städtisch, Ländlicher Kreis mit Verdichtungsansätzen',
+      'Dünn besiedelter ländlicher Kreis,Überwiegend ländlich':
+        'Dünn besiedelter ländlicher Kreis, Überwiegend ländlich',
     },
   },
   countryState: {

@@ -69,7 +69,7 @@ const PlanFCheckResultPage: React.FC<
 
   const [filter, setFilter] = useState({
     financiallyWeak: 'all',
-    beginnerFrie: 'all',
+    beginnerFriendly: 'all',
     population: 'all',
     spatialStructure: 'all',
     countryState: 'all',
@@ -89,8 +89,11 @@ const PlanFCheckResultPage: React.FC<
           );
         });
       } else {
-        filteredExamples = filteredExamples.filter(
-          (example) => String(example[filterKey]).trim() === filter[filterKey],
+        filteredExamples = filteredExamples.filter((example) =>
+          filter[filterKey]
+            .toLowerCase()
+            .split(',')
+            .includes(String(example[filterKey]).toLowerCase().trim()),
         );
       }
       return filteredExamples;
@@ -214,7 +217,7 @@ const PlanFCheckResultPage: React.FC<
                 )}
                 <CardWrapperMeasurePage>
                   {filterExamples(topic.examples)
-                    .slice(0, 6)
+                    .slice(0, -1)
                     .map((example) => {
                       return (
                         <CardExample
@@ -226,6 +229,22 @@ const PlanFCheckResultPage: React.FC<
                           image={example.image}
                         >
                           <div>
+                            <code>
+                              <br />
+                              beginnerFriendly:
+                              {JSON.stringify(example.beginnerFriendly)}
+                              <br />
+                              financiallyWeak:
+                              {JSON.stringify(example.financiallyWeak)}
+                              <br />
+                              spatialStructure:
+                              {JSON.stringify(example.spatialStructure)}
+                              <br />
+                              population:
+                              {JSON.stringify(example.population)}
+                              <br />
+                              <br />
+                            </code>
                             <p className="text-sm text-gray-700 md:text-base">
                               {example.shortDescription}
                             </p>
