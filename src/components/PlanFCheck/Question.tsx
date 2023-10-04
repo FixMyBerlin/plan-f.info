@@ -51,7 +51,7 @@ export const QuestionItem: React.FC<Props> = ({
             console.log({ newSurveResult });
           }}
         >
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:grid-cols-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:grid-cols-4">
             {question.options.map((option, i) => (
               <RadioGroup.Option
                 key={option.text}
@@ -62,7 +62,7 @@ export const QuestionItem: React.FC<Props> = ({
                     checked
                       ? 'bg-purple-200 hover:bg-purple-300'
                       : 'ring-1 ring-inset ring-gray-300 bg-white text-gray-900 hover:bg-gray-100',
-                    'flex items-center justify-center rounded-md py-3 px-3 text-sm font-semibold sm:flex-1 hover:cursor-pointer',
+                    'flex items-center justify-center rounded-md py-3 px-4 text-sm font-semibold sm:flex-1 hover:cursor-pointer',
                   )
                 }
               >
