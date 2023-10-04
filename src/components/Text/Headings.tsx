@@ -15,7 +15,7 @@ export const H1: React.FC<Props> = ({ id, className, children }) => {
       id={id}
       className={clsx(
         'mb-5 text-3xl font-bold text-black md:mb-10 md:text-4xl',
-        className
+        className,
       )}
     >
       {children}
@@ -28,8 +28,8 @@ export const H2: React.FC<Props> = ({ id, className, children }) => {
     <h2
       id={id}
       className={clsx(
-        'mb-5 mt-8 font-mono text-xl font-normal text-black md:mb-10 md:mt-10 md:text-3xl',
-        className
+        '!leading:snug mb-2 mt-8 font-mono text-xl font-normal text-black md:mb-5 md:mt-10 md:text-3xl md:!leading-normal',
+        className,
       )}
     >
       {children}
@@ -43,7 +43,7 @@ export const H3: React.FC<Props> = ({ id, className, children }) => {
       id={id}
       className={clsx(
         'mb-4 mt-8 text-lg font-bold text-black md:mb-6 md:mt-10 md:text-xl',
-        className
+        className,
       )}
     >
       {children}
@@ -57,7 +57,7 @@ export const P: React.FC<Props> = ({ id, className, children }) => {
       className={clsx(
         'mb-4 mt-4 text-sm text-gray-700 md:mb-6 md:mt-6 md:text-base',
         leadingClassName,
-        className
+        className,
       )}
     >
       {children}
@@ -71,7 +71,7 @@ export const Caption: React.FC<Props> = ({ id, className, children }) => {
       className={clsx(
         'mb-4 mt-4 text-xs text-gray-700 md:mb-6 md:mt-6',
         leadingClassName,
-        className
+        className,
       )}
     >
       {children}

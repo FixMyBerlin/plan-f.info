@@ -1,15 +1,15 @@
-import { Content, HelmetSeo, Hero } from '~/components/Layout';
+import { Content, MetaTags, Hero } from '~/components/Layout';
 import { Section } from '~/components/Layout/Section';
-import { LinkButtonWithArrow } from '~/components/PageTopic/LinkButtonWithArrow';
+import { LinkButtonWithArrow } from '~/components/TopicPage/LinkButtonWithArrow';
 import { H3, P } from '~/components/Text';
+import { HeadFC } from 'gatsby';
+
+const title =
+  'Stellen und Organisationen für weitere Informationen zur Radverkehrsförderung, Fahrradmobilität und Fortbildung';
 
 const FurtherInformationArticle = () => {
-  const title =
-    'Stellen und Organisationen für weitere Informationen zur Radverkehrsförderung, Fahrradmobilität und Fortbildung';
-
   return (
     <>
-      <HelmetSeo noindex title={title} />
       <Hero bgColor="bg-green-500" title={title} />
       <Section>
         <Content>
@@ -178,3 +178,5 @@ const FurtherInformationArticle = () => {
 };
 
 export default FurtherInformationArticle;
+
+export const Head: HeadFC = () => <MetaTags title={title} />;

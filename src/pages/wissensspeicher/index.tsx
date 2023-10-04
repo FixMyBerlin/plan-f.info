@@ -1,12 +1,11 @@
-import { PageProps, graphql } from 'gatsby';
+import { HeadFC, PageProps, graphql } from 'gatsby';
 import React from 'react';
-import { Breadcrumbs, Content, HelmetSeo, Hero } from '~/components/Layout';
-import { CardImageAndTextResponsive } from '~/components/Layout/CardImageAndTextResponsive';
-import { CardWrapperWissensspeicherPage } from '~/components/Layout/CardWrapperWissensspeicherPage';
-import { Section } from '~/components/Layout/Section';
+import { Breadcrumbs, Content, MetaTags, Hero } from '~/components/Layout';
+import { CardTopic } from '~/components/WissensspeicherStartPage/CardTopic';
+import { CardWrapperWissensspeicherStartPage } from '~/components/WissensspeicherStartPage/CardWrapperWissensspeicherStartPage';
 import { H2, P } from '~/components/Text';
-import { Prose } from '~/components/core/Prose';
 import { wikiColors } from '~/components/utils';
+import { Section } from '~/components/Layout/Section';
 
 export const query = graphql`
   query TopicTeasers {
@@ -23,13 +22,13 @@ export const query = graphql`
   }
 `;
 
+const title = 'Wissensspeicher';
+
 const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
   data: { topics },
 }) => {
-  const title = 'Wissensspeicher';
   return (
     <>
-      <HelmetSeo title={title} />
       <Hero
         title={title}
         bgColor={wikiColors.root}
@@ -70,24 +69,28 @@ const IndexPage: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
           Entdecken Sie die verschiedenen Handlungsfelder. Dort finden Sie
           Maßnahmen und deren zugehörigen Praxisbeispiele
         </P>
-        <CardWrapperWissensspeicherPage className="mt-10">
+        <CardWrapperWissensspeicherStartPage className="mt-10">
           {topics &&
             topics.nodes.map((topic) => (
-              <CardImageAndTextResponsive
+              <CardTopic
                 title={topic.name}
                 key={topic.slug}
                 link={topic.slug}
                 image={topic.image && topic.image.url}
               >
                 {topic.shortDescription && (
-                  <Prose markdownHTML={topic.shortDescription} />
+                  <p className="text-sm text-gray-700 md:text-base">
+                    {topic.shortDescription}
+                  </p>
                 )}
-              </CardImageAndTextResponsive>
+              </CardTopic>
             ))}
-        </CardWrapperWissensspeicherPage>
+        </CardWrapperWissensspeicherStartPage>
       </Section>
     </>
   );
 };
 
 export default IndexPage;
+
+export const Head: HeadFC = () => <MetaTags title={title} />;

@@ -1,15 +1,16 @@
+import { HeadFC } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
-import { Content, HelmetSeo, Hero } from '~/components/Layout';
+import { Content, Hero, MetaTags } from '~/components/Layout';
 import { ImageWithCopyright } from '~/components/Layout/ImageWithCopyright';
 import { Section } from '~/components/Layout/Section';
 import { articleProseClasses } from '~/components/core/articleProseClasses';
 import { MailLink } from '~/components/core/links';
 
+const title = 'Plan F Audit';
+
 const AuditsPage = () => {
-  const title = 'Plan F Audit';
   return (
     <>
-      <HelmetSeo title={title} />
       <Hero bgColor="bg-green-500" title={title} />
       <Section className={articleProseClasses}>
         <Content>
@@ -43,7 +44,7 @@ const AuditsPage = () => {
             copyright="Präsentation Plan F Audit in Wallmerod, Urheberin: Carolin Kruse"
           >
             <StaticImage
-              src="./../../components/WeitereAngebote/assets/planf-audit.jpg"
+              src="./../../components/WeitereAngebotePages/assets/planf-audit.jpg"
               alt="Audit: Carolin Kruse"
             />
           </ImageWithCopyright>
@@ -54,3 +55,5 @@ const AuditsPage = () => {
 };
 
 export default AuditsPage;
+
+export const Head: HeadFC = () => <MetaTags title={title} />;

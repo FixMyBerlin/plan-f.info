@@ -1,13 +1,14 @@
-import { Content, HelmetSeo, Hero } from '~/components/Layout';
+import { HeadFC } from 'gatsby';
+import { Content, MetaTags, Hero } from '~/components/Layout';
 import { Section } from '~/components/Layout/Section';
 import { articleProseClasses } from '~/components/core/articleProseClasses';
 import { MailLink, TelLink } from '~/components/core/links';
 
+const title = 'Impressum';
+
 const ImpressumPage = () => {
-  const title = 'Impressum';
   return (
     <>
-      <HelmetSeo noindex title={title} />
       <Hero bgColor="bg-green-500" title={title} />
       <Section className={articleProseClasses}>
         <Content>
@@ -72,3 +73,5 @@ const ImpressumPage = () => {
 };
 
 export default ImpressumPage;
+
+export const Head: HeadFC = () => <MetaTags noindex title={title} />;

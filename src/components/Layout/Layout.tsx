@@ -28,7 +28,7 @@ const Layout: React.FC<
   const breadcrumbs = ['Wissensspeicher'];
 
   // find names for breadcrumbs of layers from data depending on layer
-  let bgColor = 'bg-white';
+  let bgColor = 'bg-green-500';
   if (data && isWiki(path)) {
     bgColor = wikiColors.root;
     if (isTopic(data)) {
@@ -42,7 +42,7 @@ const Layout: React.FC<
       breadcrumbs.push(
         data.example.measure.topic.name,
         data.example.measure.name,
-        data.example.title
+        data.example.title,
       );
     }
   }

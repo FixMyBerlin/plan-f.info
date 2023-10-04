@@ -1,12 +1,12 @@
-import { graphql, PageProps } from 'gatsby';
-import { getImage } from 'gatsby-plugin-image';
+import { graphql, HeadFC, PageProps } from 'gatsby';
 import React from 'react';
-import { CommunityEntriesSection } from '~/components/CommunityEntriesSection';
-import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
-import { CardImageAndTextVertical } from '~/components/Layout/CardImageAndTextVertical';
-import { CardWrapperMeasurePage } from '~/components/Layout/CardWrapperMeasurePage';
+import { CommunityEntriesSection } from '~/components/CommunityEntries/CommunityEntriesSection';
+import { Breadcrumbs, MetaTags, Hero } from '~/components/Layout';
 import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
-import { PageHeader } from '~/components/Layout/PageHeader';
+import { PageIntro } from '~/components/Layout/PageIntro';
+import { CardExample } from '~/components/MeasurePage/CardExample';
+import { CardWrapperMeasurePage } from '~/components/MeasurePage/CardWrapperMeasurePage';
+
 import { Section } from '~/components/Layout/Section';
 import { H2, P } from '~/components/Text';
 import { sortByPosition, wikiColors } from '~/components/utils';
@@ -18,7 +18,6 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
   const examples = sortByPosition(measure.examples);
   return (
     <>
-      <HelmetSeo title={measure.name} />
       <Hero
         title={measure.name}
         bgColor={wikiColors.measure}
@@ -28,7 +27,7 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
           />
         }
       />
-      <PageHeader
+      <PageIntro
         markdownHTML={measure.description.data.childMarkdownRemark.html}
       />
 
@@ -51,25 +50,25 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
       </Section>
 
       <Section className="mb-12 bg-lime-300">
-        <H2>Praxisbeispiele ({examples.length})</H2>
+        <H2>Praxisbeispiele</H2>
         <P>
           Tauchen Sie in unsere Praxisbeispiele ein und sehen Sie, was andere
           Kommunen bereits für Maßnahmen umgesetzt haben.
         </P>
         <CardWrapperMeasurePage className="mt-12">
           {examples.map((example) => (
-            <CardImageAndTextVertical
+            <CardExample
               title={example.title}
               key={example.slug}
               link={example.slug}
-              image={
-                example.image && getImage(example.image.image.localFile as any)
-              }
+              image={example.image}
             >
-              <div className="line-clamp-4">
-                <P>{example.shortDescription}</P>
+              <div>
+                <p className="text-sm text-gray-700 md:text-base">
+                  {example.shortDescription}
+                </p>
               </div>
-            </CardImageAndTextVertical>
+            </CardExample>
           ))}
         </CardWrapperMeasurePage>
       </Section>
@@ -81,6 +80,10 @@ const MeasureDetails: React.FC<PageProps<Queries.MeasureDetailsQuery>> = ({
 };
 
 export default MeasureDetails;
+
+export const Head: HeadFC<Queries.MeasureDetailsQuery> = ({
+  data: { measure },
+}) => <MetaTags title={measure.name} />;
 
 export const query = graphql`
   query MeasureDetails($id: String!) {

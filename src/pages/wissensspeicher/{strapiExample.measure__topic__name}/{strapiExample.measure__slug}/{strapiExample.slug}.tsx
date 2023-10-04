@@ -1,16 +1,19 @@
-import { PageProps, graphql } from 'gatsby';
+import { InformationCircleIcon } from '@heroicons/react/20/solid';
+import { HeadFC, PageProps, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
-import { CommunityEntriesSection } from '~/components/CommunityEntriesSection';
-import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
+import { CommunityEntriesSection } from '~/components/CommunityEntries/CommunityEntriesSection';
+import { Breadcrumbs, MetaTags, Hero } from '~/components/Layout';
 import { ImageWithCopyright } from '~/components/Layout/ImageWithCopyright';
 import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
-import { Section } from '~/components/Layout/Section';
-import { CardText } from '~/components/PageExample/CardText';
-import { Pagination } from '~/components/PageExample/Pagination';
-import { H2, H3 } from '~/components/Text';
+import { CardText } from '~/components/Layout/CardText';
+import { InfoPopover } from '~/components/ExamplePage/InfoPopover';
+import { Pagination } from '~/components/ExamplePage/Pagination';
+import { Caption, H2, H3 } from '~/components/Text';
 import { Prose } from '~/components/core/Prose';
+import { Link } from '~/components/core/links';
 import { sortByPosition, wikiColors } from '~/components/utils';
+import { Section } from '~/components/Layout/Section';
 
 const steckbiref = {
   subcategory: 'Maßnahmentyp',
@@ -23,7 +26,7 @@ const steckbiref = {
 };
 const adjacentSlugs = (
   examples: Queries.ExampleDetailsQuery['example']['measure']['examples'],
-  current: string
+  current: string,
 ) => {
   const sortedExamples = sortByPosition(examples);
   const slugList = sortedExamples.map(({ slug }) => slug);
@@ -38,17 +41,18 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
 }) => {
   const { prevSlug, nextSlug, pos } = adjacentSlugs(
     example.measure.examples,
-    example.slug
+    example.slug,
   );
   const { communityEntries } = example.measure;
   // eslint-disable-next-line no-param-reassign
   example = {
     ...example,
     population: Number(example.population).toLocaleString(),
+    costs: Number(example.costs).toLocaleString(),
   };
+
   return (
     <>
-      <HelmetSeo title={example.measure.name} />
       <Hero
         className="!mb-0 rounded-b-none"
         bgColor={wikiColors.example}
@@ -72,7 +76,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
           total={example.measure.examples.length}
           className="mb-5"
         />
-        <Section className="rounded-3xl bg-white">
+        <section className="rounded-3xl bg-white px-4 py-8 md:p-12 md:py-12">
           <H2 className="!md:mt-0 !mt-0">{example.title}</H2>
           <Prose markdownHTML={example.shortDescription} />
           {example.image && (
@@ -95,41 +99,71 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
                   if (!example[key]) return null;
                   return (
                     <tr
-                      className="grid grid-cols-1 text-gray-700 md:grid-cols-2 lg:grid-cols-3"
+                      className="grid grid-cols-1 gap-3 text-gray-700 md:grid-cols-2 lg:grid-cols-3"
                       key={key}
                     >
-                      <td className="whitespace-nowrap font-bold uppercase text-gray-700">
-                        {steckbiref[key]}
-                      </td>
                       <td>
+                        {key === 'centrality' || key === 'spatialStructure' ? (
+                          <InfoPopover
+                            button={
+                              <div className="flex gap-1">
+                                <p className="relative whitespace-nowrap font-bold uppercase text-gray-700">
+                                  {steckbiref[key]}
+                                </p>
+                                <InformationCircleIcon className="h-4 w-4 text-gray-700" />
+                              </div>
+                            }
+                          >
+                            <Caption className="text-white">
+                              Für die Einteilung der Raumtypen Besiedlung und
+                              Lage nutzen wir die Daten des BBSR „Raumtypen
+                              2010“ der Laufenden Raumbeobachtung –
+                              Raumabgrenzungen. Für die Definition sind die zwei
+                              räumlichen Strukturmerkmale, Dichte und Lage
+                              ausschlaggebend. Weitere Informationen zu den
+                              Daten finden Sie unter BBSR – Raumbeobachtung –
+                              Laufende Raumbeobachtung – Raumabgrenzungen (
+                              <Link href="https://www.bbsr.bund.de/BBSR/DE/forschung/raumbeobachtung/Raumabgrenzungen/deutschland/gemeinden/Raumtypen2010_vbg/Raumtypen2010_LageSied.html;jsessionid=8D851F8ECAFACA91FD6F226E7E7EC3CF.live11312">
+                                BBSR
+                              </Link>
+                              ).
+                            </Caption>
+                          </InfoPopover>
+                        ) : (
+                          <p className="whitespace-nowrap font-bold uppercase text-gray-700">
+                            {steckbiref[key]}
+                          </p>
+                        )}
+                      </td>
+                      <td className="col-span-2">
                         <Prose
-                          className="prose-p:mt-0 lg:col-span-2"
+                          className="prose-p:mt-0"
                           markdownHTML={example[key]}
                         />
                       </td>
                     </tr>
                   );
                 })}
-                <tr className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                  <td className="whitespace-nowrap font-bold uppercase text-gray-700">
-                    Zuständige Abteilung
+                <tr className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
+                  <td className="prose whitespace-nowrap font-bold uppercase text-gray-700">
+                    <p>Zuständige Abteilung</p>
                   </td>
-                  <td>
+                  <td className="col-span-2">
                     <Prose
-                      className="prose-p:mt-0 lg:col-span-2"
+                      className="prose-p:!mt-0"
                       markdownHTML={
                         example.relatedOffice.data.childMarkdownRemark.html
                       }
                     />
                   </td>
                 </tr>
-                <tr className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                  <td className="whitespace-nowrap font-bold uppercase text-gray-700">
+                <tr className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
+                  <td className="font-bold uppercase text-gray-700">
                     Lokale Herausforderungen
                   </td>
-                  <td>
+                  <td className="col-span-2">
                     <Prose
-                      className="prose-p:mt-0 lg:col-span-2"
+                      className="prose-p:!mt-0"
                       markdownHTML={
                         example.localChallenges.data.childMarkdownRemark.html
                       }
@@ -164,7 +198,7 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
                 title="Kosten / Mittelherkunft"
                 markdownHTML={example.funding.data.childMarkdownRemark.html}
               >
-                {example.costs && <p>{example.costs} €</p>}
+                {example.costs && <p>{example.costs} Euro</p>}
               </CardText>
               <CardText
                 title="Personeller Aufwand"
@@ -252,13 +286,16 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
           )}
           {example.sources.data.sources && (
             <div className="mt-12 flex items-start">
-              <Prose className="mr-1" markdownHTML="<p>Quelle: </p>" />
+              <Prose
+                className="mr-1"
+                markdownHTML="<p>Quelle des Praxisbeispiels: </p>"
+              />
               <Prose
                 markdownHTML={example.sources.data.childMarkdownRemark.html}
               />
             </div>
           )}
-        </Section>
+        </section>
         <Pagination
           pos={pos}
           prevSlug={prevSlug}
@@ -276,6 +313,10 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
 };
 
 export default ExampleDetails;
+
+export const Head: HeadFC<Queries.ExampleDetailsQuery> = ({
+  data: { example },
+}) => <MetaTags title={example.title} />;
 
 export const query = graphql`
   query ExampleDetails($id: String!) {

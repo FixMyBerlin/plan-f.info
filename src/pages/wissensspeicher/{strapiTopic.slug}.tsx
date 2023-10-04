@@ -1,13 +1,12 @@
-import { graphql, PageProps } from 'gatsby';
+import { graphql, HeadFC, PageProps } from 'gatsby';
 import React from 'react';
-import { Prose } from '~/components/core/Prose';
-import { Breadcrumbs, HelmetSeo, Hero } from '~/components/Layout';
-import { CardImageAndTextResponsive } from '~/components/Layout/CardImageAndTextResponsive';
-import { CardWrapperTopicPage } from '~/components/Layout/CardWrapperTopicPage';
+import { Breadcrumbs, Hero, MetaTags } from '~/components/Layout';
 import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
-import { PageHeader } from '~/components/Layout/PageHeader';
+import { PageIntro } from '~/components/Layout/PageIntro';
 import { Section } from '~/components/Layout/Section';
 import { H2, P } from '~/components/Text';
+import { CardMeasure } from '~/components/TopicPage/CardMeasure';
+import { CardWrapperTopicPage } from '~/components/TopicPage/CardWrapperTopicPage';
 import { sortByPosition, wikiColors } from '~/components/utils';
 
 const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
@@ -16,20 +15,19 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
   const measures = sortByPosition(topic.measures);
   return (
     <>
-      <HelmetSeo title={topic.name} />
-
       <Hero
         title={topic.name}
         bgColor={wikiColors.topic}
         breadcrumbs={<Breadcrumbs names={['Wissensspeicher', topic.name]} />}
       />
 
-      <PageHeader
+      <PageIntro
+        className="-mb-10"
         image={topic.image?.url && topic.image.url}
         markdownHTML={topic.description.data.childMarkdownRemark.html}
       />
 
-      <Section className="mb-20 grid gap-10 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
+      <Section className="mb-12 grid gap-10 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
         {topic.guidelines && (
           <LinkListBlackButton links={topic.guidelines} title="Leitfäden" />
         )}
@@ -55,13 +53,15 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
         </P>
         <CardWrapperTopicPage className="mt-12">
           {measures.map((measure) => (
-            <CardImageAndTextResponsive
+            <CardMeasure
               title={measure.name}
               key={measure.slug}
               link={measure.slug || '/'} // This is only quick fix - slug should be Pflichtfpeld
             >
-              <Prose markdownHTML={measure.shortDescription} />
-            </CardImageAndTextResponsive>
+              <p className="text-sm text-gray-700 md:text-base">
+                {measure.shortDescription}
+              </p>
+            </CardMeasure>
           ))}
         </CardWrapperTopicPage>
       </Section>
@@ -70,6 +70,10 @@ const TopicDetails: React.FC<PageProps<Queries.TopicDetailsQuery>> = ({
 };
 
 export default TopicDetails;
+
+export const Head: HeadFC<Queries.TopicDetailsQuery> = ({
+  data: { topic },
+}) => <MetaTags title={topic.name} />;
 
 export const query = graphql`
   query TopicDetails($id: String!) {

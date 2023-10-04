@@ -1,16 +1,16 @@
 import clsx from 'clsx';
-import { PageProps, graphql } from 'gatsby';
+import { HeadFC, PageProps, graphql } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
-import { Content, HelmetSeo, Hero } from '~/components/Layout';
-import { CardImageAndTextResponsive } from '~/components/Layout/CardImageAndTextResponsive';
-import { CardWrapperWissensspeicherPage } from '~/components/Layout/CardWrapperWissensspeicherPage';
+import { Content, MetaTags, Hero } from '~/components/Layout';
+import { CardTopic } from '~/components/WissensspeicherStartPage/CardTopic';
+import { CardWrapperWissensspeicherStartPage } from '~/components/WissensspeicherStartPage/CardWrapperWissensspeicherStartPage';
 import { Section } from '~/components/Layout/Section';
-import { CardText } from '~/components/PageExample/CardText';
+import { CardText } from '~/components/Layout/CardText';
 import { Caption, H2, H3, P } from '~/components/Text';
-import { Prose } from '~/components/core/Prose';
-import { planfProseClasses } from '~/components/core/articleProseClasses';
 import { Link } from '~/components/core/links';
 import { wikiPath } from '~/components/utils';
+import { planfProseClasses } from '~/components/core/articleProseClasses';
 
 export const query = graphql`
   query TopicTeasers {
@@ -140,15 +140,15 @@ const planningCardTexts = [
   },
 ];
 
+const title = 'Wie werde ich eine Fahrradfreundliche Kommune?';
+
 const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
   data: { topics },
 }) => {
-  const title = 'Wie werde ich eine Fahrradfreundliche Kommune?';
   const basePath = `/${wikiPath}`;
 
   return (
     <>
-      <HelmetSeo title={title} />
       <Hero bgColor="bg-green-500" title={title} />
       <Section>
         <Content>
@@ -179,27 +179,35 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
           Entdecken Sie die verschiedenen Handlungsfelder. Dort finden Sie
           Maßnahmen und deren zugehörigen Praxisbeispiele
         </P>
-        <CardWrapperWissensspeicherPage className="mt-10">
+        <CardWrapperWissensspeicherStartPage className="mt-10">
           {topics &&
             topics.nodes.map((topic) => (
-              <CardImageAndTextResponsive
+              <CardTopic
                 title={topic.name}
                 key={topic.slug}
                 link={`${basePath}/${topic.slug}`}
                 image={topic.image && topic.image.url}
               >
                 {topic.shortDescription && (
-                  <Prose markdownHTML={topic.shortDescription} />
+                  <p className="text-sm text-gray-700 md:text-base">
+                    {topic.shortDescription}
+                  </p>
                 )}
-              </CardImageAndTextResponsive>
+              </CardTopic>
             ))}
-        </CardWrapperWissensspeicherPage>
+        </CardWrapperWissensspeicherStartPage>
+      </Section>
+      <Section>
+        <H2>Systematisierung</H2>
+        <StaticImage
+          src="./../../components/ArticlePages/assets/Systematisierung_planF_1-9_2000px.jpg"
+          className="-mx-4 w-full overflow-hidden"
+          alt="Plan F Systematisierung"
+        />
+        <Caption>Urheber: Fair Spaces</Caption>
       </Section>
       <Section>
         <Content>
-          <H2>Systematisierung</H2>
-          {/* <StaticImage src={''} alt={''} /> */}
-          <Caption>Grafik Systematisierung</Caption>
           <H3>Zielformulierung</H3>
           <P>
             Als Erstes sollten klare und messbare Ziele formuliert werden, die
@@ -245,7 +253,11 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
           <P>Der Projektplan sollte aus diesen Punkten bestehen:</P>
           <ol className="flex flex-col gap-3">
             {planningCardTexts.map(({ cardTitle, content }) => {
-              return <CardText title={cardTitle}>{content}</CardText>;
+              return (
+                <CardText key={cardTitle} title={cardTitle}>
+                  {content}
+                </CardText>
+              );
             })}
           </ol>
           <P>
@@ -382,3 +394,5 @@ const BikeFriendlyArticle: React.FC<PageProps<Queries.TopicTeasersQuery>> = ({
 };
 
 export default BikeFriendlyArticle;
+
+export const Head: HeadFC = () => <MetaTags title={title} />;

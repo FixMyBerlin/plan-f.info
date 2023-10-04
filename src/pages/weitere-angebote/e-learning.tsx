@@ -1,14 +1,17 @@
-import { Content, HelmetSeo, Hero } from '~/components/Layout';
+import { HeadFC } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
+import { Content, Hero, MetaTags } from '~/components/Layout';
+import { ImageWithCopyright } from '~/components/Layout/ImageWithCopyright';
 import { Section } from '~/components/Layout/Section';
-import { LinkButtonWithArrow } from '~/components/PageTopic/LinkButtonWithArrow';
+import { LinkButtonWithArrow } from '~/components/TopicPage/LinkButtonWithArrow';
 import { articleProseClasses } from '~/components/core/articleProseClasses';
 import { MailLink } from '~/components/core/links';
 
+const title = 'E-Learning';
+
 const ELearningPage = () => {
-  const title = 'E-Learning';
   return (
     <>
-      <HelmetSeo title={title} />
       <Hero bgColor="bg-green-500" title={title} />
       <Section className={articleProseClasses}>
         <Content>
@@ -37,6 +40,21 @@ const ELearningPage = () => {
           >
             edu.fair-spaces.de
           </LinkButtonWithArrow>
+          <div>
+            <MailLink
+              className="mt-6"
+              button
+              mailto="kontakt@plan-f.info"
+              subject="Anmeldung Plan F E-Learning"
+              body={`Name:
+Kommune / Organisation:
+Adresse:
+`}
+              type="button"
+            >
+              Anmeldung
+            </MailLink>
+          </div>
           <p>
             Für Rückfragen bitte <MailLink>kontakt@plan-f.info</MailLink>{' '}
             kontaktieren.
@@ -68,6 +86,13 @@ const ELearningPage = () => {
             </MailLink>{' '}
             anmelden mit Betreff “Online Termin und Datum des Termins”.
           </p>
+          <ImageWithCopyright copyright="Abbildung: Lernplattform Plan F">
+            <StaticImage
+              src="./../../components/WeitereAngebotePages/assets/E-Learning.jpg"
+              className="mt-6 w-full overflow-hidden"
+              alt="Abbildung: Lernplattform Plan F"
+            />
+          </ImageWithCopyright>
         </Content>
       </Section>
     </>
@@ -75,3 +100,5 @@ const ELearningPage = () => {
 };
 
 export default ELearningPage;
+
+export const Head: HeadFC = () => <MetaTags title={title} />;

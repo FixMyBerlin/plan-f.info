@@ -2,9 +2,11 @@ import { ArrowRightIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 import React from 'react';
 import SendCommunityEntryLink from '~/components/CommunityEntries/SendCommunityEntryLink';
-import { Content, HelmetSeo, Hero } from '~/components/Layout';
+import { Content, Hero, MetaTags } from '~/components/Layout';
 import { Section } from '~/components/Layout/Section';
 
+import { HeadFC } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 import {
   CEO,
   FoldOut,
@@ -18,7 +20,7 @@ import { H3 } from '~/components/Text';
 import { planfProseClasses } from '~/components/core/articleProseClasses';
 import { Link } from '~/components/core/links/Link';
 import { YouTubePreview } from '~/components/core/links/YouTubePreview';
-import { StaticImage } from 'gatsby-plugin-image';
+import projectPdf from './Projektmappe_PlanfAward.pdf';
 
 const awardWinnerTopics = {
   Governance: [
@@ -381,6 +383,7 @@ const awardWinnerTopics = {
           </p>
         </>
       ),
+      media: [fotos.s2],
     },
     {
       cardTitle: '3. Kaufungen: E-Lastenradverleihsystem',
@@ -413,77 +416,52 @@ const awardWinnerTopics = {
   ],
   'Multimodalität und Nahmobilität': [
     {
-      cardTitle: '1. Gelsenkirchen: Fahrradservicestationen',
+      specialText:
+        'Im Handlungsfeld Multimodalität und Nahmobilität gab es leider keinen ersten Platz. Unsere Jury hat jedoch zwei zweite Plätze ausgewählt. Für den ersten Platz hat es bei beiden Projekten noch an kleineren Punkten gefehlt.',
+    },
+    {
+      cardTitle: '2. Fellbach: Automatisiertes Fahrradparkhaus',
       foldOut: (
-        <>
-          <p>
-            Die Stadt hat insgesamt 50 Fahrradservicestationen eingerichtet,
-            welche Radfahrende unterwegs die Möglichkeit geben, kleine
-            Reparaturen an ihren Fahrrädern zu erledigen. Die kleinen
-            Do-it-yourself-Stationen bieten Werkzeuge, eine Luftpumpe und eine
-            Fahrradhalterung. Die Gelsenkirchener*innen können diese
-            Servicestationen an fast sämtlichen Tankstellen im Stadtgebiet sowie
-            weiteren Standorten finden.
-          </p>
-          <p>
-            Um sicherzustellen, dass die Fahrradservicestationen laufend ihrem
-            Qualitätsstandard entsprechen und Nutzer*innen kein kaputtes oder
-            fehlendes Werkzeug vorfinden, wurde die Wartung dieser vertraglich
-            vereinbart. Zusätzlich gibt es einen Mängelmelder der Stadt
-            Gelsenkirchen, sodass Schadensmeldungen unkompliziert und direkt bei
-            den zuständigen Stellen eingehen und Mängel schnell behoben werden
-            können.
-          </p>
-        </>
+        <p>
+          Das Fahrradparkhaus vereint bewährte Paternoster-Technik mit
+          ansprechender Architektur bei geringem Platzverbrauch und mit einem
+          innovativen Zugangssystem per App. Einfach und unkompliziert, ohne
+          große Suche nach einem Parkplatz, ganz ohne Fahrradschloss und
+          trotzdem gut gesichert: So können Fahrräder und Pedelecs seit Dezember
+          2021 am Fellbacher Bahnhof abgestellt werden. Denn in der
+          „Fellbach.go! radbox“, dem neuen Fahrradparkhaus, finden 76 Räder
+          einen trockenen Abstellplatz – und das ganz automatisch. Nutzer*innen
+          müssen dafür nur die App auf ihrem Smartphone bedienen. Das Projekt
+          wurde mit Mitteln des Europäischen Fonds für Regionalentwicklung
+          (EFRE) und des Landes Baden-Württemberg gefördert. Kooperationspartner
+          im Rahmen des RegioWIN-Projekts „Regionale Mobilitätspunkte“ sind der
+          Verband Region Stuttgart (VRS), der Verkehrsverbund Stuttgart (VVS)
+          und die Stadt Fellbach.
+        </p>
       ),
       media: [fotos.m1],
     },
     {
-      cardTitle: '2. Adelsdorf: Mängelerkennung Radwegweisung',
+      cardTitle: '2. Verkehrsverbund Rhein-Neckar GmbH: VRNradbox',
       foldOut: (
         <>
           <p>
-            Radwegweiser werden leider nicht regelmäßig gewartet – das führt zu
-            Fehlinformationen für Radfahrende!
+            Hochwertige und sichere Fahrradabstellanlagen an ÖPNV-Haltestellen
+            sowie Bahnhöfen sind zentral, um die Verknüpfung zwischen Fahrrad
+            und öffentlichen Verkehrsmitteln zu fördern und intermodale
+            Wegeketten zu stärken.
           </p>
           <p>
-            Um dem entgegenzuwirken und Radfahrende in Adelsdorf nicht auf eine
-            falsche Fährte zu leiten, hat die Kommune an jedem Radwegweiser
-            einen Aufkleber mit einem QR-Code angebracht. Radfahrende können so
-            unkompliziert per Smartphone Mängel melden, welche die Gemeinde
-            direkt an die entsprechende Dienststelle weiterleitet, damit diese
-            schnellst behoben werden.
+            Der Verkehrsverbund Rhein-Neckar hat eigene abschließbare
+            Fahrradboxen inklusive Ladevorrichtung für E-Bikes aufgestellt. Die
+            VRNradboxen sollen künftig auf das gesamte VRN-Gebiet ausgeweitet
+            werden. Nutzende werden online über die aktuelle Auslastung
+            informiert, der Zugang erfolgt über ein eigenes Buchungssystem. So
+            kann das Fahrrad trocken und sicher am Bahnhof abgestellt werden.
           </p>
         </>
       ),
       media: [fotos.m2],
-    },
-    {
-      cardTitle: '3. Kaufungen: E-Lastenradverleihsystem',
-      foldOut: (
-        <>
-          <p>
-            Das Kaufunger E-Lastenradverleihsystem ist in den Probebetrieb
-            gestartet! Alle Kaufunger*innen können sich nun kostenlos eines der
-            17 Lastenräder ausleihen und damit alles Mögliche transportieren:
-            Kinder, Großeltern, Waschmaschine, den Flohmarktstand, den
-            Wocheneinkauf, die Werkzeugkiste, Papierakten/Ordner oder oder oder…
-          </p>
-          <p>
-            Alle Kaufunger*innen können sich kostenlos E-Lastenräder ausleihen
-            und umweltfreundlich und kräfteschonend Einkäufe und kleinere und
-            größere Transporte erledigen oder Kinder und sogar Erwachsene
-            chauffieren!
-          </p>
-          <p>
-            Die Flotte besteht aus: 10 einspurigen Lastenrädern, 3 dreispurigen
-            Schwerlastenrädern, 2 Rikschas, 1 zweisitziges vierrädriges
-            Schwerlastenrad (noch nicht im Verleih), 1 Gespann bestehend aus
-            einspurigem Lastenrad und einem dreispurigen Schwerlast-Anhänger
-            (Der Anhänger kann auch als Handwagen genutzt werden.)
-          </p>
-        </>
-      ),
     },
   ],
   'Tourismus und Freizeitverkehr': [
@@ -595,6 +573,12 @@ const awardWinnerTopics = {
       media: [fotos.v2],
     },
   ],
+  Wirtschaft: [
+    {
+      specialText:
+        'Im Handlungsfeld Wirtschaft haben wir keine Einreichung erhalten, die unsere Jury mit dem Plan F Award auszeichnen wollte.',
+    },
+  ],
 };
 
 const awardWinner2022 = [
@@ -634,11 +618,11 @@ const awardWinner2022 = [
   },
 ];
 
+const title = 'Plan F Award 2022';
+
 const AwardPage: React.FC = () => {
-  const title = 'Plan F Award 2022';
   return (
     <>
-      <HelmetSeo title={title} />
       <Hero bgColor="bg-green-500" title={title} />
       <Section className={planfProseClasses}>
         <Content>
@@ -676,25 +660,22 @@ const AwardPage: React.FC = () => {
               <div key={topic}>
                 <h2>{topic}</h2>
                 {awardWinnerTopics[topic].map(
-                  ({ cardTitle, media, foldOut }) => (
-                    <AwardWinnerCard
-                      key={cardTitle}
-                      title={cardTitle}
-                      media={media}
-                    >
-                      {foldOut}
-                    </AwardWinnerCard>
-                  )
+                  ({ cardTitle, media, foldOut, specialText }) => {
+                    if (specialText) return <p>{specialText}</p>;
+                    return (
+                      <AwardWinnerCard
+                        key={cardTitle}
+                        title={cardTitle}
+                        media={media}
+                      >
+                        {foldOut}
+                      </AwardWinnerCard>
+                    );
+                  },
                 )}
               </div>
             ))}
           </div>
-
-          <h2>Wirtschaft</h2>
-          <p>
-            Im Handlungsfeld Wirtschaft haben wir keine Einreichung erhalten,
-            die unsere Jury mit dem Plan F Award auszeichnen wollte.
-          </p>
         </Content>
       </Section>
 
@@ -708,7 +689,7 @@ const AwardPage: React.FC = () => {
               zum herunterladen:
             </h3>
           </div>
-          <Link button="black" href="/TODO">
+          <Link blank button="black" href={projectPdf}>
             <span className="flex gap-2">
               <ArrowRightIcon className="h4 w-4" />
               Projektmappe herunterladen
@@ -793,10 +774,10 @@ const AwardPage: React.FC = () => {
             enthält.
           </p>
           <YouTubePreview
-            link="https://www.youtube.com/watch?v=pqtAmXkCeEU"
+            link="https://www.youtube.com/watch?v=VlCcjdvUxsk&ab_channel=FairSpaces"
             image={
               <StaticImage
-                src="./../../components/AwardPage/assets/planf-award-video.jpg"
+                src="./../../components/AwardPage/assets/award/planf-award-video.jpg"
                 alt="Video: Plan F Audit für die Verbandsgemeinde Wallmerod"
                 className="aspect-video"
               />
@@ -901,3 +882,5 @@ const AwardPage: React.FC = () => {
 };
 
 export default AwardPage;
+
+export const Head: HeadFC = () => <MetaTags title={title} />;

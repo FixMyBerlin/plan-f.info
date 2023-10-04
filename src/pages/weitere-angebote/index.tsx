@@ -1,13 +1,15 @@
-import { PageTeaserCard } from '~/components/PageTeaserCard';
-import { Content, HelmetSeo, Hero } from '~/components/Layout';
+import { PageTeaserCard } from '~/components/Layout/CardPageTeaser';
+import { Content, MetaTags, Hero } from '~/components/Layout';
 import {
   menuItems,
   menuItemsWithChildren,
 } from '~/components/Layout/Navigation/menuItems';
 import { Section } from '~/components/Layout/Section';
+import { HeadFC } from 'gatsby';
+
+const title = 'Weitere Angebote';
 
 const MiscIndexPage = () => {
-  const title = 'Weitere Angebote';
   const moreOffersTeaserTexts = {
     'Plan F Handbuch':
       'Im Handbuch sind die Inhalte des Wissensspeichers und weitere Angebote komprimiert und übersichtlich zusammengefasst. Das Handbuch kann als Printversion bestellt werden. Weiterlesen',
@@ -19,7 +21,6 @@ const MiscIndexPage = () => {
 
   return (
     <>
-      <HelmetSeo noindex title={title} />
       <Hero bgColor="bg-green-500" title={title} />
       <Section>
         <Content>
@@ -35,7 +36,7 @@ const MiscIndexPage = () => {
                     {moreOffersTeaserTexts[key]}
                   </PageTeaserCard>
                 );
-              }
+              },
             )}
           </div>
         </Content>
@@ -45,3 +46,5 @@ const MiscIndexPage = () => {
 };
 
 export default MiscIndexPage;
+
+export const Head: HeadFC = () => <MetaTags title={title} />;

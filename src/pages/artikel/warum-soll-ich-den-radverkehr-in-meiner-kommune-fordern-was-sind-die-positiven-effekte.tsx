@@ -1,12 +1,13 @@
-import { Content, HelmetSeo, Hero } from '~/components/Layout';
+import { Content, MetaTags, Hero } from '~/components/Layout';
 import { Section } from '~/components/Layout/Section';
-import { CardText } from '~/components/PageExample/CardText';
+import { CardText } from '~/components/Layout/CardText';
 import { P } from '~/components/Text';
+import { HeadFC } from 'gatsby';
+
+const title =
+  'Warum soll ich den Radverkehr in meiner Kommune fördern? Was sind die positiven Effekte?';
 
 const SupportArticle = () => {
-  const title =
-    'Warum soll ich den Radverkehr in meiner Kommune fördern? Was sind die positiven Effekte?';
-
   const supportCardTexts = [
     {
       cardTitle: 'Klimaschutz',
@@ -47,7 +48,6 @@ const SupportArticle = () => {
 
   return (
     <>
-      <HelmetSeo title={title} />
       <Hero bgColor="bg-green-500" title={title} />
       <Section>
         <Content>
@@ -77,3 +77,5 @@ const SupportArticle = () => {
 };
 
 export default SupportArticle;
+
+export const Head: HeadFC = () => <MetaTags title={title} />;
