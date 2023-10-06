@@ -61,8 +61,8 @@ const Layout: React.FC<
                 <SideNavigation path={path} />
               </div>
             )}
-            <div className="flex-grow">
-              <main>{children}</main>
+            <div className="flex-grow max-w-full">
+              <main className="max-w-full">{children}</main>
               <Footer />
             </div>
           </div>

@@ -1,19 +1,19 @@
-import { Popover } from '@headlessui/react';
-import { ReactNode } from 'react';
+import { InformationCircleIcon } from '@heroicons/react/24/outline';
+import { Popover } from '../Layout/Popover';
 
 type Props = {
-  children: any;
-  button: ReactNode;
+  label: React.ReactNode;
 };
 
-export const InfoPopover: React.FC<Props> = ({ children, button }) => {
+export const InfoPopover: React.FC<Props> = ({ label }) => {
   return (
-    <Popover className="relative">
-      <Popover.Button>{button}</Popover.Button>
-
-      <Popover.Panel className="absolute z-[1] w-full bg-black px-4 sm:ml-8">
-        {children}
-      </Popover.Panel>
-    </Popover>
+    <Popover
+      button={<InformationCircleIcon className="h-6 w-6 text-gray-900" />}
+      label={
+        <div className="p-4 bg-white text-black border border-black leading-snug max-w-sm text-sm m-2 ml-6">
+          {label}
+        </div>
+      }
+    />
   );
 };
