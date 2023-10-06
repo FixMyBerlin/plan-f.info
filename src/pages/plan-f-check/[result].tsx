@@ -217,7 +217,7 @@ const PlanFCheckResultPage: React.FC<
                 )}
                 <CardWrapperMeasurePage>
                   {filterExamples(topic.examples)
-                    // .slice(0, 6)
+                    .slice(0, 6)
                     .map((example) => {
                       return (
                         <CardExample
