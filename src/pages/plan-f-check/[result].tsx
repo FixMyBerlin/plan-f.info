@@ -217,7 +217,7 @@ const PlanFCheckResultPage: React.FC<
                 )}
                 <CardWrapperMeasurePage>
                   {filterExamples(topic.examples)
-                    .slice(0, -1)
+                    // .slice(0, 6)
                     .map((example) => {
                       return (
                         <CardExample
@@ -229,7 +229,8 @@ const PlanFCheckResultPage: React.FC<
                           image={example.image}
                         >
                           <div>
-                            <code>
+                            {/* testing */}
+                            {/* <code>
                               <br />
                               beginnerFriendly:
                               {JSON.stringify(example.beginnerFriendly)}
@@ -243,8 +244,11 @@ const PlanFCheckResultPage: React.FC<
                               population:
                               {JSON.stringify(example.population)}
                               <br />
+                              Bundesland:
+                              {JSON.stringify(example.countryState)}
                               <br />
-                            </code>
+                              <br />
+                            </code> */}
                             <p className="text-sm text-gray-700 md:text-base">
                               {example.shortDescription}
                             </p>
