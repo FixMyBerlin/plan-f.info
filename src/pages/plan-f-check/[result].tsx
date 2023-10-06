@@ -165,8 +165,8 @@ const PlanFCheckResultPage: React.FC<
         {/* Filter Results section */}
         <div className="bg-white p-6 flex flex-col gap-4">
           <p className="text-lg font-bold text-black md:text-xl">
-            Optional: Filtern Sie die ausgewählten Praxisbeispiele weiter nach
-            Kommunenmerkmalen
+            Optionale Möglichkeit: Filtern Sie die ausgewählten Praxisbeispiele
+            weiter nach Kommunenmerkmalen
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 lg:gap-4 justify-between">
             {Object.keys(filterCategories).map((category) => (

@@ -12,7 +12,7 @@ export const filterCategories: Record<string, FilterCategory> = {
     },
   },
   beginnerFriendly: {
-    label: 'Einsteigerkommune',
+    label: 'Einsteiger*innenkommune',
     options: {
       all: 'kein Filter',
       true: 'Ja',
