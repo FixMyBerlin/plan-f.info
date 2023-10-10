@@ -10,7 +10,7 @@ type Props = {
   title: string;
   linkExternal?: boolean;
 };
-export const CardTopic: React.FC<Props> = ({
+export const CardTopicPlanFCheck: React.FC<Props> = ({
   className,
   children,
   link,
@@ -23,7 +23,7 @@ export const CardTopic: React.FC<Props> = ({
       external={linkExternal}
       button="card"
       className={clsx(
-        'flex h-full flex-col gap-3 rounded-b-3xl bg-white p-6 sm:flex-row sm:gap-6',
+        'flex h-full flex-col gap-3 rounded-b-3xl bg-white p-6 sm:flex-row sm:gap-12',
         className,
       )}
       href={link}
@@ -31,7 +31,7 @@ export const CardTopic: React.FC<Props> = ({
       {image && (
         <img
           src={image}
-          className="h-36 w-36 flex-shrink-0 overflow-hidden"
+          className="h-24 w-24 flex-shrink-0 overflow-hidden"
           alt={`Titelbild ${link}`}
         />
       )}

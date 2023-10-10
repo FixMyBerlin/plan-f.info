@@ -1,19 +1,18 @@
-import { InformationCircleIcon } from '@heroicons/react/20/solid';
 import { HeadFC, PageProps, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { CommunityEntriesSection } from '~/components/CommunityEntries/CommunityEntriesSection';
-import { Breadcrumbs, MetaTags, Hero } from '~/components/Layout';
-import { ImageWithCopyright } from '~/components/Layout/ImageWithCopyright';
-import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
-import { CardText } from '~/components/Layout/CardText';
 import { InfoPopover } from '~/components/ExamplePage/InfoPopover';
 import { Pagination } from '~/components/ExamplePage/Pagination';
-import { Caption, H2, H3 } from '~/components/Text';
+import { Breadcrumbs, Hero, MetaTags } from '~/components/Layout';
+import { CardText } from '~/components/Layout/CardText';
+import { ImageWithCopyright } from '~/components/Layout/ImageWithCopyright';
+import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton';
+import { Section } from '~/components/Layout/Section';
+import { H2, H3 } from '~/components/Text';
 import { Prose } from '~/components/core/Prose';
 import { Link } from '~/components/core/links';
 import { sortByPosition, wikiColors } from '~/components/utils';
-import { Section } from '~/components/Layout/Section';
 
 const steckbiref = {
   subcategory: 'Maßnahmentyp',
@@ -104,31 +103,30 @@ const ExampleDetails: React.FC<PageProps<Queries.ExampleDetailsQuery>> = ({
                     >
                       <td>
                         {key === 'centrality' || key === 'spatialStructure' ? (
-                          <InfoPopover
-                            button={
-                              <div className="flex gap-1">
-                                <p className="relative whitespace-nowrap font-bold uppercase text-gray-700">
-                                  {steckbiref[key]}
+                          <div className="flex gap-1">
+                            <p className="relative whitespace-nowrap font-bold uppercase text-gray-700">
+                              {steckbiref[key]}
+                            </p>
+                            <InfoPopover
+                              label={
+                                <p>
+                                  Für die Einteilung der Raumtypen Besiedlung
+                                  und Lage nutzen wir die Daten des BBSR
+                                  „Raumtypen 2010“ der Laufenden Raumbeobachtung
+                                  – Raumabgrenzungen. Für die Definition sind
+                                  die zwei räumlichen Strukturmerkmale, Dichte
+                                  und Lage ausschlaggebend. Weitere
+                                  Informationen zu den Daten finden Sie unter
+                                  BBSR – Raumbeobachtung – Laufende
+                                  Raumbeobachtung – Raumabgrenzungen (
+                                  <Link href="https://www.bbsr.bund.de/BBSR/DE/forschung/raumbeobachtung/Raumabgrenzungen/deutschland/gemeinden/Raumtypen2010_vbg/Raumtypen2010_LageSied.html;jsessionid=8D851F8ECAFACA91FD6F226E7E7EC3CF.live11312">
+                                    BBSR
+                                  </Link>
+                                  ).
                                 </p>
-                                <InformationCircleIcon className="h-4 w-4 text-gray-700" />
-                              </div>
-                            }
-                          >
-                            <Caption className="text-white">
-                              Für die Einteilung der Raumtypen Besiedlung und
-                              Lage nutzen wir die Daten des BBSR „Raumtypen
-                              2010“ der Laufenden Raumbeobachtung –
-                              Raumabgrenzungen. Für die Definition sind die zwei
-                              räumlichen Strukturmerkmale, Dichte und Lage
-                              ausschlaggebend. Weitere Informationen zu den
-                              Daten finden Sie unter BBSR – Raumbeobachtung –
-                              Laufende Raumbeobachtung – Raumabgrenzungen (
-                              <Link href="https://www.bbsr.bund.de/BBSR/DE/forschung/raumbeobachtung/Raumabgrenzungen/deutschland/gemeinden/Raumtypen2010_vbg/Raumtypen2010_LageSied.html;jsessionid=8D851F8ECAFACA91FD6F226E7E7EC3CF.live11312">
-                                BBSR
-                              </Link>
-                              ).
-                            </Caption>
-                          </InfoPopover>
+                              }
+                            />
+                          </div>
                         ) : (
                           <p className="whitespace-nowrap font-bold uppercase text-gray-700">
                             {steckbiref[key]}
