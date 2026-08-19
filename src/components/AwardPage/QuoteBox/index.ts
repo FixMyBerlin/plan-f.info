@@ -1,1 +1,1 @@
-export * from './QuoteBox';
+export * from './QuoteBox'

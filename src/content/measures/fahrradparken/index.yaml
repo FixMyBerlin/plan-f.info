@@ -1,0 +1,48 @@
+name: Fahrradparken
+position: 315
+topic: infrastruktur
+shortDescription: Für den ruhenden Radverkehr braucht es ausreichend gute
+  Abstellanlagen, damit Personen ihr Fahrrad geschützt vor Witterung und sicher
+  vor Diebstahl abstellen können, denn dann sind Menschen eher bereit, mit dem
+  Fahrrad unterwegs zu sein.
+description: Für den ruhenden Radverkehr, dem Fahrradparken, braucht es gute
+  Abstellanlagen, damit Personen ihr Fahrrad geschützt vor Witterung und sicher
+  vor Diebstahl abstellen können. Wenn es genügend Abstellmöglichkeiten gibt,
+  sind Menschen eher bereit, mit dem Fahrrad unterwegs zu sein. Kommunen müssen
+  ausreichende und hochwertige Fahrradabstellanlagen sowohl in öffentlichen
+  Räumen als auch an öffentlichen Einrichtungen schaffen. Durch die wachsende
+  Zahl an Spezialfährrädern, wie z. B. Lastenrädern oder Fahrrädern mit
+  Anhängern, sollten Kommunen auch dies im Blick bei der Errichtung von
+  Abstellanlagen haben. Durch Stellplatzsatzungen können Kommunen auch direkt
+  auf sichere Abstellanlagen an Wohngebäuden und am Arbeitsplatz einwirken.
+additionalResources:
+  - display: bike + ride offensive
+    url: https://www1.deutschebahn.com/bikeandride
+  - display: Fahrradabstellplätze bei Wohngebäuden Ein Leitfaden für die Wohnungs-
+      und Immobilienwirtschaft
+    url: https://www.mobil-potsdam.de/fileadmin/user_upload/bicycle/documents/Leitfaden_Fahrradabstellplaetze.pdf
+  - display: Fahrradparken mit System für urbane Zentren. Radabstellanlagen als
+      Baustein einer urbanen Mobilitätskultur in multifunktionalen Zentren.
+    url: https://www.ils-forschung.de/files_publikationen/pdfs/ILS-IMPULSE-1.21_Fahrradparksysteme_ONLINE.pdf
+guidelines:
+  - display: 'ALADIN: Planungshilfe für Abstellanlagen von Lastenfahrrädern im
+      öffentlichen Raum'
+    url: https://www.wohin-mit-dem-lastenrad.de/_files/ugd/27c440_6a573a0920004b5bb311bf0cbc88fb1a.pdf
+  - display: 'ALADIN: Muster für kommunale Fahrradabstellplatzsatzungen '
+    url: https://www.wohin-mit-dem-lastenrad.de/_files/ugd/27c440_15e20abe1a6f41e09af64717debcfe67.pdf
+  - display: Fahrradparken an ÖV-Haltepunkten. Leitfaden Betreiberkonzepte für
+      Fahrradstationen, Sammelschließanlagen und Fahrradboxen.
+    url: http://fr.team-red.de/fileadmin/produkte/downloads/Radverkehr/LeitfadenRadstationTeamred.pdf
+  - display: 'Bike+Ride: Erfolgreiche Verknüpfung von Öffentlichem Verkehr und Fahrrad.'
+    url: https://vm.baden-wuerttemberg.de/fileadmin/redaktion/m-mvi/intern/Dateien/Brosch%C3%BCren_Publikationen/Rad_Bike-Ride_Leitfaden_191115.pdf
+  - display: Fahrradabstellanlagen
+    url: https://www.nahmobil-hessen.de/wp-content/uploads/2020/05/200504_Leitfaden_Fahrradabstellanlagen_RZ_web_Einzelseiten.pdf
+  - display: Fahrradparken im Quartier
+    url: https://www.hamburg.de/contentblob/14908662/f273a7c45bb2481ae4ad5bb324fba535/data/leitfaden-fahrradparken-im-quartier-empfehlungen-fuer-die-planung-von-fahrradabstellanlagen-auf-privaten-flaechen.pdf
+  - display: Parken am Bahnhof
+    url: https://www.vbb.de/fileadmin/user_upload/VBB/Dokumente/Kompetenzstelle_Bahnhof/leitfaden-parken-am-bahnhof-2020.pdf
+  - display: Regelplan Lastenfahrradparkplatz
+    url: https://www.berlin.de/sen/uvk/presse/pressemitteilungen/2019/pressemitteilung.863628.php
+fundings:
+  - display: Förderfibel Mobilitätsforum Bund
+    url: https://www.mobilitaetsforum.bund.de/SiteGlobals/Forms/Suche/Foerderfibel_Formular.html?queryResultId=null&pageNo=0

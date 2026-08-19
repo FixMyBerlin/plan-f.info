@@ -1,0 +1,252 @@
+---
+import type { GetStaticPaths } from 'astro'
+import {
+  CommunityEntriesSection,
+  type CommunityEntryItem,
+} from '~/components/CommunityEntries/CommunityEntriesSection'
+import { Pagination } from '~/components/ExamplePage/Pagination'
+import { SpatialStructureInfoPopover } from '~/components/ExamplePage/SpatialStructureInfoPopover'
+import { CardText } from '~/components/Layout/CardText'
+import { ImageWithCopyright } from '~/components/Layout/ImageWithCopyright'
+import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton'
+import { Section } from '~/components/Layout/Section'
+import { WikiHero } from '~/components/Layout/WikiHero'
+import { H2, H3 } from '~/components/Text'
+import { Prose } from '~/components/core/Prose'
+import { wikiColors } from '~/components/utils'
+import { getCollection } from 'astro:content'
+import { examplesForMeasure, getSideNavTree, getSortedExamples } from '~/lib/content'
+import { renderMarkdown } from '~/lib/markdown'
+import Layout from '~/layouts/Layout.astro'
+
+export const getStaticPaths = (async () => {
+  const [examples, measures, topics] = await Promise.all([
+    getSortedExamples(),
+    getCollection('measures'),
+    getCollection('topics'),
+  ])
+  const measureById = new Map(measures.map((m) => [m.id, m]))
+  const topicById = new Map(topics.map((t) => [t.id, t]))
+
+  return Promise.all(
+    examples.map(async (example) => {
+      const measure = measureById.get(example.data.measure)
+      const topicSlug = measure?.data.topic ?? ''
+      const topic = topicById.get(topicSlug)
+
+      const siblings = await examplesForMeasure(example.data.measure)
+      const slugList = siblings.map((e) => e.id)
+      const pos = slugList.indexOf(example.id)
+      const prevSlug = slugList[pos - 1] || slugList[slugList.length - 1]
+      const nextSlug = slugList[pos + 1] || slugList[0]
+
+      const communityEntries = (await getCollection('communityEntries')).filter(
+        (c) => c.data.measure === example.data.measure,
+      )
+
+      return {
+        params: { topic: topicSlug, measure: example.data.measure, example: example.id },
+        props: {
+          example,
+          measureName: measure?.data.name ?? '',
+          topicName: topic?.data.name ?? '',
+          pagination: { pos, prevSlug, nextSlug, total: slugList.length },
+          communityEntries,
+        },
+      }
+    }),
+  )
+}) satisfies GetStaticPaths
+
+const { example, measureName, topicName, pagination, communityEntries } = Astro.props
+const sideNav = await getSideNavTree()
+const d = example.data
+
+// Steckbrief: label → display value. Mirrors the Gatsby `steckbiref` map order.
+const steckbrief: { key: string; label: string; value: string; withInfo?: boolean }[] = [
+  { key: 'subcategory', label: 'Maßnahmentyp', value: d.subcategory },
+  { key: 'title', label: 'Name des Projektes', value: d.title },
+  { key: 'countryState', label: 'Bundesland', value: d.countryState },
+  { key: 'population', label: 'Einwohner*innen', value: Number(d.population).toLocaleString('de-DE') },
+  { key: 'spatialStructure', label: 'Besiedelung', value: d.spatialStructure, withInfo: true },
+  { key: 'centrality', label: 'Lage', value: d.centrality, withInfo: true },
+  { key: 'commune', label: 'Kommune', value: d.commune },
+].filter((row) => row.value !== undefined && row.value !== '')
+
+const costsFormatted = d.costs !== undefined ? Number(d.costs).toLocaleString('de-DE') : undefined
+
+const communityEntryItems: CommunityEntryItem[] = communityEntries.map((entry) => ({
+  title: entry.data.title,
+  url: entry.data.website?.[0]?.url,
+  image: entry.data.image
+    ? { src: entry.data.image.image, copyright: entry.data.image.copyright }
+    : undefined,
+  commune: entry.data.commune,
+  countryState: entry.data.countryState,
+  subcategory: entry.data.subcategory,
+  descriptionHTML: renderMarkdown(entry.data.description),
+}))
+---
+
+<Layout
+  title={d.title}
+  description={d.shortDescription}
+  bgColor={wikiColors.example}
+  breadcrumbs={['Wissensspeicher', topicName, measureName, d.title]}
+  sideNav={sideNav}
+>
+  <WikiHero
+    className="!mb-0 rounded-b-none"
+    bgColor={wikiColors.example}
+    breadcrumbNames={['Wissensspeicher', topicName, measureName, d.title]}
+  />
+  <Section className="mb-12 rounded-b-none bg-lime-300 pt-0 md:pt-0">
+    <Pagination
+      pos={pagination.pos}
+      prevSlug={pagination.prevSlug}
+      nextSlug={pagination.nextSlug}
+      total={pagination.total}
+      className="mb-5"
+    />
+    <section class="rounded-3xl bg-white px-4 py-8 md:p-12 md:py-12">
+      <H2 className="!md:mt-0 !mt-0">{d.title}</H2>
+      {/* shortDescription is a plain Strapi string (not richtext) → render raw, not via
+          renderMarkdown, otherwise gender-stars like "Radfahrer*innen" would be italicized. */}
+      <Prose markdownHTML={d.shortDescription} />
+      {
+        d.image?.image && (
+          <ImageWithCopyright className="mt-8" copyright={d.image.copyright}>
+            <img src={d.image.image} alt="Titelbild" />
+          </ImageWithCopyright>
+        )
+      }
+      <div class="mt-8 rounded-br-3xl rounded-tl-3xl bg-lime-200 p-5 py-6 md:p-10">
+        <H2>{d.commune}</H2>
+        <table class="table-auto">
+          <tbody class="flex flex-col gap-2">
+            {
+              steckbrief.map((row) => (
+                <tr class="grid grid-cols-1 gap-3 text-gray-700 md:grid-cols-2 lg:grid-cols-3">
+                  <td>
+                    {row.withInfo ? (
+                      <div class="flex gap-1">
+                        <p class="relative whitespace-nowrap font-bold uppercase text-gray-700">
+                          {row.label}
+                        </p>
+                        <SpatialStructureInfoPopover client:visible />
+                      </div>
+                    ) : (
+                      <p class="whitespace-nowrap font-bold uppercase text-gray-700">{row.label}</p>
+                    )}
+                  </td>
+                  <td class="col-span-2">
+                    <p class="text-gray-700">{row.value}</p>
+                  </td>
+                </tr>
+              ))
+            }
+            <tr class="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
+              <td class="prose whitespace-nowrap font-bold uppercase text-gray-700">
+                <p>Zuständige Abteilung</p>
+              </td>
+              <td class="col-span-2">
+                <Prose className="prose-p:!mt-0" markdownHTML={renderMarkdown(d.relatedOffice)} />
+              </td>
+            </tr>
+            <tr class="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
+              <td class="font-bold uppercase text-gray-700">Lokale Herausforderungen</td>
+              <td class="col-span-2">
+                <Prose className="prose-p:!mt-0" markdownHTML={renderMarkdown(d.localChallenges)} />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-12">
+        <H2>Maßnahmenbeschreibung</H2>
+        <Prose markdownHTML={renderMarkdown(d.description)} />
+      </div>
+      <div class="mt-12">
+        <div class="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
+          <CardText title="Ziele" markdownHTML={renderMarkdown(d.goals)} />
+          <CardText title="Ergebnisse" markdownHTML={renderMarkdown(d.results)} />
+          <CardText title="Dauer: Planung und Umsetzung" markdownHTML={d.period} />
+          <CardText title="Kosten / Mittelherkunft" markdownHTML={renderMarkdown(d.funding)}>
+            {costsFormatted && <p>{costsFormatted} Euro</p>}
+          </CardText>
+          <CardText
+            title="Personeller Aufwand"
+            markdownHTML={renderMarkdown(d.personnelExpenses)}
+          />
+          <CardText title="Beteiligte Ämter" markdownHTML={renderMarkdown(d.authorities)} />
+          {
+            d.stakeholders && (
+              <CardText
+                title="Beteiligte Akteur*innen"
+                markdownHTML={renderMarkdown(d.stakeholders)}
+              />
+            )
+          }
+          <CardText
+            title="Kommunikation der Maßnahme"
+            markdownHTML={renderMarkdown(d.communication)}
+          />
+          <CardText title="Herausforderungen" markdownHTML={renderMarkdown(d.challenges)} />
+          {
+            d.particularities && (
+              <CardText title="Besonderheiten" markdownHTML={renderMarkdown(d.particularities)} />
+            )
+          }
+        </div>
+      </div>
+      <LinkListBlackButton client:visible className="mt-12" links={d.links} titleMono title="Links" />
+      {
+        d.awards.length > 0 && (
+          <div class="mt-12">
+            <H2>Auszeichnungen</H2>
+            {d.awards.map((award) => (
+              <div class="mt-8 flex gap-3 md:gap-6">
+                {award.logo && (
+                  <ImageWithCopyright copyright={award.logoCopyright}>
+                    <img src={award.logo} alt={award.name} />
+                  </ImageWithCopyright>
+                )}
+                <div class="flex flex-col justify-start">
+                  {award.name && <H3 className="mt-0 md:mt-0">{award.name}</H3>}
+                  <Prose className="line-clamp-4" markdownHTML={renderMarkdown(award.description)} />
+                </div>
+              </div>
+            ))}
+          </div>
+        )
+      }
+
+      {
+        d.notes && (
+          <div class="mt-12">
+            <H2>Anmerkungen</H2>
+            <Prose markdownHTML={renderMarkdown(d.notes)} />
+          </div>
+        )
+      }
+      {
+        d.sources && (
+          <div class="mt-12 flex items-start">
+            <Prose className="mr-1" markdownHTML="<p>Quelle des Praxisbeispiels: </p>" />
+            <Prose markdownHTML={renderMarkdown(d.sources)} />
+          </div>
+        )
+      }
+    </section>
+    <Pagination
+      pos={pagination.pos}
+      prevSlug={pagination.prevSlug}
+      nextSlug={pagination.nextSlug}
+      total={pagination.total}
+      className="mt-5"
+    />
+  </Section>
+
+  {communityEntryItems.length > 0 && <CommunityEntriesSection communityEntries={communityEntryItems} />}
+</Layout>

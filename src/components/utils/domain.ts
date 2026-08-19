@@ -1,19 +1,8 @@
-// Docs:
-// Using Environment Variables https://www.netlify.com/blog/2021/07/05/easy-access-environment-variables/#using-environment-variables
-// CONTEXT https://docs.netlify.com/configure-builds/environment-variables/#build-metadata
-// URL vs. DEPLOY_PRIME_URL https://docs.netlify.com/configure-builds/environment-variables/#deploy-urls-and-metadata
-// NETLIFY https://docs.netlify.com/configure-builds/environment-variables/#build-metadata
+// Canonical site origin. On the client we prefer the live origin (so absolute URLs
+// also work on preview/deploy domains); during SSR/SSG we fall back to production.
+const SITE_URL = 'https://plan-f.info'
 
 export const domain = () => {
-  const ssrDomain =
-    process.env.CONTEXT === 'production'
-      ? process.env.URL
-      : process.env.DEPLOY_PRIME_URL;
-  const ssrFallback = 'https://radwege-check.de';
-
-  // We do this, to get the SSR domain. However, rehydration will use this utility as well,
-  // so for that case, we need to take the current hostname.
-  const browserDomain = typeof window !== 'undefined' && window.location.origin;
-
-  return browserDomain || ssrDomain || ssrFallback;
-};
+  const browserDomain = typeof window !== 'undefined' && window.location.origin
+  return browserDomain || SITE_URL
+}

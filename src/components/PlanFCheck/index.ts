@@ -1,2 +1,2 @@
-export * from './calculateScore';
-export * from './questions.const';
+export * from './calculateScore'
+export * from './questions.const'

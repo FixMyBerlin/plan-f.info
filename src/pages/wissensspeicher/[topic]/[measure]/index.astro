@@ -1,0 +1,104 @@
+---
+import type { GetStaticPaths } from 'astro'
+import { getCollection } from 'astro:content'
+import {
+  CommunityEntriesSection,
+  type CommunityEntryItem,
+} from '~/components/CommunityEntries/CommunityEntriesSection'
+import { Section } from '~/components/Layout/Section'
+import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton'
+import { PageIntro } from '~/components/Layout/PageIntro'
+import { WikiHero } from '~/components/Layout/WikiHero'
+import { CardExample } from '~/components/MeasurePage/CardExample'
+import { CardWrapperMeasurePage } from '~/components/MeasurePage/CardWrapperMeasurePage'
+import { H2, P } from '~/components/Text'
+import { wikiColors, wikiPath } from '~/components/utils'
+import {
+  examplesForMeasure,
+  getSideNavTree,
+  getSortedMeasures,
+  getSortedTopics,
+} from '~/lib/content'
+import { renderMarkdown } from '~/lib/markdown'
+import Layout from '~/layouts/Layout.astro'
+
+export const getStaticPaths = (async () => {
+  const [measures, topics] = await Promise.all([getSortedMeasures(), getSortedTopics()])
+  const topicById = new Map(topics.map((t) => [t.id, t]))
+  const communityEntries = await getCollection('communityEntries')
+  return Promise.all(
+    measures.map(async (measure) => ({
+      params: { topic: measure.data.topic, measure: measure.id },
+      props: {
+        measure,
+        topic: topicById.get(measure.data.topic),
+        examples: await examplesForMeasure(measure.id),
+        communityEntries: communityEntries.filter((c) => c.data.measure === measure.id),
+      },
+    })),
+  )
+}) satisfies GetStaticPaths
+
+const { measure, topic, examples, communityEntries } = Astro.props
+const sideNav = await getSideNavTree()
+const topicName = topic?.data.name ?? ''
+const descriptionHTML = renderMarkdown(measure.data.description)
+
+const communityEntryItems: CommunityEntryItem[] = communityEntries.map((entry) => ({
+  title: entry.data.title,
+  url: entry.data.website?.[0]?.url,
+  image: entry.data.image
+    ? { src: entry.data.image.image, copyright: entry.data.image.copyright }
+    : undefined,
+  commune: entry.data.commune,
+  countryState: entry.data.countryState,
+  subcategory: entry.data.subcategory,
+  descriptionHTML: renderMarkdown(entry.data.description),
+}))
+---
+
+<Layout
+  title={measure.data.name}
+  description={measure.data.shortDescription}
+  bgColor={wikiColors.measure}
+  breadcrumbs={['Wissensspeicher', topicName, measure.data.name]}
+  sideNav={sideNav}
+>
+  <WikiHero
+    title={measure.data.name}
+    bgColor={wikiColors.measure}
+    breadcrumbNames={['Wissensspeicher', topicName, measure.data.name]}
+  />
+  <PageIntro markdownHTML={descriptionHTML} />
+
+  <Section className="mb-20 grid gap-10 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
+    <LinkListBlackButton client:visible links={measure.data.guidelines} title="Leitfäden" />
+    <LinkListBlackButton client:visible links={measure.data.additionalResources} title="weitere Hinweise" />
+    <LinkListBlackButton client:visible links={measure.data.fundings} title="Fördermöglichkeiten" />
+  </Section>
+
+  <Section className="mb-12 bg-lime-300">
+    <H2>Praxisbeispiele</H2>
+    <P>
+      Tauchen Sie in unsere Praxisbeispiele ein und sehen Sie, was andere Kommunen bereits für
+      Maßnahmen umgesetzt haben.
+    </P>
+    <CardWrapperMeasurePage className="mt-12">
+      {
+        examples.map((example) => (
+          <CardExample
+            title={example.data.title}
+            link={`/${wikiPath}/${measure.data.topic}/${measure.id}/${example.id}/`}
+            image={{ src: example.data.image.image, copyright: example.data.image.copyright }}
+          >
+            <div>
+              <p class="text-sm text-gray-700 md:text-base">{example.data.shortDescription}</p>
+            </div>
+          </CardExample>
+        ))
+      }
+    </CardWrapperMeasurePage>
+  </Section>
+
+  {communityEntryItems.length > 0 && <CommunityEntriesSection communityEntries={communityEntryItems} />}
+</Layout>

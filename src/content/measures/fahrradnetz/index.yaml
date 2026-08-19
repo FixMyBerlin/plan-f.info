@@ -1,0 +1,25 @@
+name: Fahrradnetz
+position: 331
+topic: infrastruktur
+shortDescription: Wichtige Merkmale für die Planung guter Fahrradnetze sind
+  Komfort, Netzwerk, Direktheit, Sicherheit und Attraktivität.
+description: Wichtige Merkmale für die Planung guter Fahrradnetze sind Komfort,
+  Netzwerk, Direktheit, Sicherheit und Attraktivität. Ein Fahrradnetz besteht
+  aus Radwegen, Fahrradstraßen und anderen Verkehrsanlagen, die darauf abzielen,
+  die Sicherheit und Bequemlichkeit des Radverkehrs zu erhöhen und die
+  Attraktivität des Radfahrens als Fortbewegungsmittel zu steigern. Die
+  Wegweisung ist zudem ein zentraler Bestandteil eines guten Fahrradnetzes.
+additionalResources: []
+guidelines:
+  - display: 'Fahrradwegweisung in Baden-Württemberg: Standards Wegweisende
+      Beschilderung für den Radverkehr'
+    url: https://vm.baden-wuerttemberg.de/fileadmin/redaktion/m-mvi/intern/Dateien/MobiZ/Az_4-3800_0-01-336.pdf
+  - display: Handbuch zur Radwegeweisung in Hessen. Grundsätze für den Alltags- und
+      Freizeitradverkehr
+    url: https://www.mobileshessen2030.de/mm/HB-RWW-2017_komprimiert.pdf
+  - display: Einladende Radverkehrsnetze - Begleitbroschüre zum Sonderprogramm
+      „Stadt und Land"
+    url: https://bmdv.bund.de/SharedDocs/DE/Publikationen/StV/einladende-radverkehrsnetze.pdf?__blob=publicationFile
+fundings:
+  - display: Förderfibel Mobilitätsforum Bund
+    url: https://www.mobilitaetsforum.bund.de/SiteGlobals/Forms/Suche/Foerderfibel_Formular.html?queryResultId=null&pageNo=0

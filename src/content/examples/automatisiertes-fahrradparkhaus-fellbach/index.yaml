@@ -1,0 +1,125 @@
+title: Automatisiertes Fahrradparkhaus Fellbach
+position: 1345
+measure: kombination-fahrrad-und-oe-pnv
+relatedTopic: infrastruktur
+image:
+  image: /content-images/examples/automatisiertes-fahrradparkhaus-fellbach.jpeg
+  copyright: 'Vollautomatisiertes Fahrradparkhauses, Urheber: Jan Potente'
+shortDescription: Bau und Betrieb eines vollautomatisierten Fahrradparkhauses
+  inklusive Entwicklung Prototyp App-Zugang.
+subcategory: Kombination Fahrrad und ÖPNV
+commune: Fellbach
+countryState: Baden-Württemberg
+spatialStructure: Überwiegend städtisch
+centrality: Sehr zentral
+period: 01/2016 – 12/2021
+population: 45141
+costs: 1160000
+financiallyWeak: false
+beginnerFriendly: false
+description: >-
+  Erste Überlegungen zu einem automatisierten Fahrradparkhaus gab es bereits im
+  Jahr 2013 im Rahmen der Konzeption „Bahnhof der Zukunft“. Konkretisierung im
+  Zuge des RegioWin-Projekts „Regionale Mobilitätspunkte“ des Verbands Region
+  Stuttgart (2014-2020) - Leuchtturmprojekt „Automatisches Fahrradparkhaus“ als
+  Teilbeitrag. 
+
+
+  Projektinhalt und -ziele:  
+
+  - Schaffung von regionalen Mobilitätspunkten als Drehscheibe für
+  unterschiedliche Verkehrsarten mit großem Mobilitätsangebot sowie guten
+  Abstellmöglichkeiten insbesondere für Fahrräder; Steigerung der Attraktivität
+  eines Umstieges auf den ÖPNV und Förderung des Radverkehrs in der Region
+  Stuttgart; Förderung von Multimodalität   
+
+  - Städtebauliche Aufwertung des Fellbacher Bahnhofsbereiches sowie Gestaltung
+  der Freiflächen; Förderung nachhaltiger Mobilität (insbesondere
+  Berufspendler\*innen)  
+
+
+  1. Entwurf und Bau eines oberirdischen vollautomatisierten Fahrradparkhauses
+  am Fellbacher Bahnhof: Paternoster-Anlage mit 79 Stellplätzen (vier Module à
+  19 Gondeln auf einer Grundfläche von 533m x 574m) 
+   
+  2. Entwicklung einer App zur Abwicklung von Buchungs- und Bezahlvorgängen:
+  Managementsystem für Tages- Kurz- und Langzeitmieten inkl. Reservierungs- und
+  Bezahlmöglichkeiten via betreiberseitigem Stripe Account  
+
+
+  3. Integration PolygoCard (VVS Stuttgart) als Zugangskarte zum
+  Fahrradparkhaus 
+goals: |-
+  - Sicherheit 
+  - Komfort und Fahrspaß 
+  - Überwindung weiter Distanzen 
+  - Mehr Personen fahren Fahrrad 
+  - Stärkung Umweltverbund und Multimodalität
+localChallenges: Flächenkonflikte
+particularities: |-
+  - Evaluation
+  - Spezifische Zielgruppe: Pendler\*innen, Schüler\*innen, Tourist\*innen
+results: >-
+  - Erfolgreicher Betrieb eines automatisierten Fahrradparkhauses (79
+  Stellplätze) mit App-Zugang und flexibler Nutzungsmöglichkeit (Abos
+  Tagesparken)  
+
+  - sichere und zugleich kostengünstige (gleiche Preise wie Fellbacher
+  Radstation) Abstellmöglichkeit an zentralem Verkehrsknotenpunkt insbesondere
+  für hochwertige Fahrräder und Pedelecs  
+
+  - Schaffung einer attraktiven Lösung für Pendler\*innen, aber auch für
+  Freizeitradelnde und Tourist\*innen (24 Stunden zugängliches Fahrradparkhaus,
+  Zugriffzeit 15 - maximal 35 Sekunden) 
+challenges: "Insbesondere Pandemie als Faktor, der zu zeitlichen Verzögerungen
+  beim Abschluss des Bauvorhabens geführt hat (unter anderem Einreise der
+  Monteur\\*innen aus der Schweiz zeitweise nicht möglich); Pilotprojekt
+  automatisiertes Fahrradparkhaus mit App-Lösung zum Ein- und Ausparken
+  insgesamt herausfordernd (Stichwort Definition Leistungskatalog App;
+  Kombinierbarkeit/Integration bestehender regionaler Mobilitätsangebote -
+  VVSPolygo-Karte)  "
+communication: 'Presseberichte, Flyer, Webseiten (Stadt Fellbach und VVS),
+  Aktionen vor Ort (Infoveranstaltungen, Gutschein- und sonstige
+  Marketingaktionen) '
+funding: >-
+  - Eigenmittel: 30 Prozent 
+
+  - Landesmittel: 20 Prozent (Landesministerium für Ernährung, Ländlichen Raum
+  und Verbraucherschutz) 
+
+  - 50 Prozent Europäischer Fond für regionale Entwicklung (EFRE) im Rahmen des
+  RegioWIN-Projekts „Regionale Mobilitätspunkte“ (Teil des operationellen
+  Programms EFRE RegioWIN 2014-2020 „Innovation und Energiewende“),
+  Kooperationspartner\*innen sind der Verband Region Stuttgart (VRS) und der
+  Verkehrsverbund Stuttgart (VVS)
+personnelExpenses: "Je ein\\*e Projektleiter\\*in bei Stadtplanungsamt (im
+  Projektverlauf Übergabe an Stabsstelle Radmobilität), Tiefbau und Hochbau "
+authorities: 'Stadt Fellbach (Stadtplanungsamt, Amt für Hochbau und
+  Gebäudemanagement, Tiefbauamt, Stabsstelle Radmobilität): Planung und
+  Projektkoordination '
+stakeholders: >-
+  Verband Region Stuttgart (VRS); Verkehrsverbund Stuttgart (VVS); 
+
+
+  Koch & Partner Bike Parking Systems AG (ehemals Firma Klausner-Wetter AG)
+  sowie Dienstleistende: Fahrradparkhausherstellende (Entwurf und Bau
+  Fahrradparkhaus Konzeption und Umsetzung App); diverse beteiligte Ingenieur-
+  und Architekturbüros sowie Gutachter\*innen: u.a. Tragwerksplanung,
+  Fachplanung, Planung Freianlagen, Erstellung notwendiger Gutachten etc.;
+  Designbüro Gold & Wirtschaftswunder Stuttgart: Entwurf CI „Fellbach.go!
+  radbox“ 
+relatedOffice: 'Julia Dickow, julia.dickow@fellbach.de '
+sources: Stadt Fellbach
+notes: ''
+links:
+  - display: 'Stadt Fellbach: Fellbach.go! radbox'
+    url: https://www.fellbach.de/de/Leben-in-Fellbach/Mobilitaet/Fellbach.go-radbox
+  - display: 'Stadt Fellbach: Videopräsentation Fellbach.go! radbox'
+    url: https://www.youtube.com/watch?v=lWwP0Vw0HuE
+  - display: 'Polygo: Fellbach.go! radbox'
+    url: http://www.mypolygo.de/mobilitaetsangebote/fellbach
+awards:
+  - name: Plan F Award 2022
+    description: 2. Platz Multimodalität & Nahmobilität
+    logo: /content-images/examples/awards/automatisiertes-fahrradparkhaus-fellbach-award-0.svg
+    logoCopyright: 'Urheberin: fair spaces'

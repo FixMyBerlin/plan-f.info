@@ -1,0 +1,84 @@
+title: Fahrradachse Innenstadt
+position: 1312
+measure: reduzierung-kfz-durchgangsverkehre
+relatedTopic: infrastruktur
+image:
+  image: /content-images/examples/fahrradachse-innenstadt.JPG
+  copyright: 'Fahrradachse in Neuss, Urheber: Norbert Jurczyk'
+shortDescription: Es wurden in der Innenstadt Fahrradstraßen eingerichtet, was
+  mit einer (tageszeitlich beschränkten) Komplettsperrung eines Teilstückes für
+  den Autoverkehr verbunden wurde.
+subcategory: Reduzierung Kfz-Durchgangsverkehr
+commune: Neuss
+countryState: Nordrhein-Westfalen
+spatialStructure: Überwiegend städtisch
+centrality: Sehr zentral
+period: Seit 07/2021
+population: 152731
+costs: 250000
+financiallyWeak: false
+beginnerFriendly: false
+description: >-
+  Am 1. August 2021 hat die Stadt Neuss einen Verkehrsversuch zur Stärkung des
+  Radverkehrs und der Aufenthaltsqualität in der Innenstadt gestartet. Im Rahmen
+  des neunmonatigen Verkehrsversuches wurden Straßen in Fahrradstraßen
+  umgewandelt sowie ein Teilstück temporär für den Kraftfahrzeugverkehr
+  gesperrt. Insbesondere die Sebastianusstraße wurde durch einen Künstler
+  umgestaltet und für den Autoverkehr ab 13 Uhr gesperrt. Die bisherigen
+  Parkstände wurden zudem reversibel mit Möbeln und Pflanzen umgestaltet.
+
+
+  Nach Abschluss des Verkehrsversuchs wurde nach Ratsbeschluss am 1. April 2022
+  auf der Sebastianusstraße und dem Glockhammer ein verkehrsberuhigter Bereich
+  eingerichtet. Die Zufahrt für Kraftfahrzeuge ist Montag bis Freitag zwischen 6
+  und 19 Uhr und am Samstag bis 13 Uhr erlaubt. Ein Stellplatz für Menschen mit
+  Behinderung, eine Lieferzone und Kurzzeitstellplätze wurden wieder
+  eingerichtet. Die vorhandene E-Ladesäule ist derzeit wieder im Betrieb und
+  soll langfristig zu einer E-Bike-Ladestation umgewandelt werden. Derzeit
+  vorhandene Pflanzkübel und Möblierungen werden zukünftig durch langfristig vor
+  Ort bleibende Produkte ersetzt.
+
+
+  Die Innenstadt-Fahrradachse bleibt Richtung Drususallee weiterhin
+  Fahrradstraße und erhält im Sommer 2022 eine begleitende, auffällige
+  Markierung. Zur Aufklärung über die bestehenden Verkehrsregeln werden
+  gleichzeitig Informationstransparente errichtet.
+goals: |
+  - Mehr Personen fahren Fahrrad
+  - Fahrrad steigt in der Wahrnehmung / Statussymbol
+  - Reduktion privater Autoverkehr (sogenannter MIV)
+  - Flächengerechtigkeit
+  - Schulwegsicherung
+localChallenges: Hohe Belastung durch den Autoverkehr (MIV)
+particularities: |-
+  - Beteiligung
+  - Verkehrsversuch oder Modellvorhaben
+  - Quick-Win
+results: "Sehr starke Spaltung in Befürworter\\*innen und Gegner*innen.
+  Haupterkenntnis: Kommunikation ist der Schlüssel zum Erfolg. Diese wurde schon
+  intensiv betrieben, hätte aber noch besser gemacht werden können."
+challenges: 'Schaffung der entsprechenden Infrastruktur für die Fahrradstraßen
+  im Versuchszeitraum nur eingeschränkt möglich. Nach Abschluss des Versuches
+  sind hohe Investitionen notwendig. '
+communication: 'Über die gängige Kommunikation hinaus: Politische Diskussion mit
+  großer Öffentlichkeitsbeteiligung; Zoom-Konferenzen mit Anwohnenden und
+  Interessierten; wöchentlicher Info-Stand vor Ort in der Mittagspause;
+  wöchentliche Online-Sprechstunde.'
+funding: '- Eigenmittel: 100 Prozent'
+personnelExpenses: Ungefähr 1.000 Stunden
+authorities: Amt für Verkehrsangelegenheiten; Amt für Stadtplanung; Tiefbaumanagement
+stakeholders: Rat, politische Vertreter\*innen, Allgemeiner Deutscher
+  Fahrradclub (ADFC), Geschäftstreibende
+relatedOffice: Norbert Jurczyk, norbert.jurczyk@stadt.neuss.de
+sources: |+
+  Stadt Neuss, Plan F Award
+
+notes: ''
+links:
+  - display: 'Stadt Neuss: Maßnahmen des Mobilitätskonzepts'
+    url: https://neuss-mobil.de/massnahmen/
+awards:
+  - name: Plan F Award 2022
+    description: Platz 1 Verkehrsberuhigung
+    logo: /content-images/examples/awards/fahrradachse-innenstadt-award-0.svg
+    logoCopyright: 'Urheberin: fair spaces'

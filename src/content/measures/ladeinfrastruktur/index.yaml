@@ -1,0 +1,18 @@
+name: Ladeinfrastruktur
+position: 556
+topic: services
+shortDescription: Durch die Förderung von E-Bike-Ladeinfrastruktur und die
+  Bereitstellung von Lademöglichkeiten für E-Fahrrädern in Kommunen wird die
+  Nutzung von E-Bikes als umweltfreundliche Alternative zum Autoverkehr
+  erleichtert.
+description: Die Förderung von E-Bike-Ladeinfrastruktur in Kommunen ist ein
+  wichtiger Baustein für die Förderung der Elektromobilität im Bereich
+  Fahrradverkehr. Durch die Bereitstellung von Lademöglichkeiten für E-Fahrräder
+  werden Barrieren abgebaut und die Nutzung von E-Bikes als umweltfreundliche
+  Alternative zum Autoverkehr erleichtert. Diese sind bestenfalls mit Bike +
+  Ride Anlagen und mit Fahrradboxen zu verknüpfen.
+additionalResources: []
+guidelines:
+  - display: 'Infosheet: Ladestationen für Pedelecs'
+    url: https://rad.sh/wp-content/uploads/2021/06/RAD.SH-Infosheet-Nr-16-Ladestationen-fuer-Pedelecs.pdf
+fundings: []

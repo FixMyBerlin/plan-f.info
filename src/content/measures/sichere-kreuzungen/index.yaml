@@ -1,0 +1,34 @@
+name: Sichere Kreuzungen
+position: 333
+topic: infrastruktur
+shortDescription: Kreuzungen sind häufig Unfallschwerpunkte. Aus diesem Grund
+  sind sichere Kreuzungen für den Radverkehr ein zentraler Bestandteil einer
+  fahrradfreundlichen Infrastruktur.
+description: Kreuzungen sind häufig Unfallschwerpunkte. Aus diesem Grund sind
+  sichere Kreuzungen für den Radverkehr zentraler Bestandteil einer
+  fahrradfreundlichen Infrastruktur. Sie ermöglichen es Radfahrenden, Kreuzungen
+  sicher und ohne Verzögerungen zu überqueren, indem sie beispielsweise separate
+  Fahrradwege, Fahrradampeln oder Verkehrsinseln bieten. Es ist wichtig, dass
+  Sichtbeziehungen und getrennte Signalisierung von Rad- und Kfz-Verkehr an
+  kritischen Stellen geschaffen werden. Die Abbiegegeschwindigkeit ist zu
+  reduzieren und generell die Komplexität der Kreuzungen durch z. B. Herausnahme
+  von Abbiegebeziehungen. Dadurch werden Konflikte mit anderen
+  Verkehrsteilnehmenden minimiert und das Unfallrisiko für Radfahrende
+  reduziert.
+additionalResources:
+  - display: Verkehrssicherheit von Überquerungsstellen für Fußgänger und Radfahrer
+      über Straßenbahn- und Stadtbahnstrecken
+    url: https://bast.opus.hbz-nrw.de/opus45-bast/frontdoor/deliver/index/docId/2435/file/V-%c3%9cberquerungsstellen-FE82+0613-SB.pdf
+guidelines:
+  - display: Querungsstellen für die Nahmobilität - Hinweise für den Rad- und Fußverkehr
+    url: https://www.agfs-nrw.de/fileadmin/Service/Mediathek/Materialien%20der%20AGFS/Handlungsleitf%C3%A4den%20-%20Wissen%20f%C3%BCr%20Planer%20und%20Praktiker/Querungsstellen/AKQ_broschuere_2021_Loseblattsammlung_RZ_Einzels.pdf
+  - display: Die sichere ADFC-Kreuzung
+    url: https://bayern.adfc.de/artikel/die-sichere-adfc-kreuzung
+  - display: Sicher geradeaus! Sicherung des Radverkehrs vor abbiegenden
+      Kraftfahrzeugen.
+    url: http://www.plan-und-rat.de/Broschuere_Sicher%20geradeaus_150427.pdf
+  - display: Signale für den Radverkehr - Ein Leitfaden zur Radverkehrssignalisierung
+    url: https://www.stadt-muenster.de/fileadmin//user_upload/stadt-muenster/61_verkehrsplanung/pdf/signale_radverkehr.pdf
+fundings:
+  - display: Förderfibel Mobilitätsforum Bund
+    url: https://www.mobilitaetsforum.bund.de/SiteGlobals/Forms/Suche/Foerderfibel_Formular.html?queryResultId=null&pageNo=0

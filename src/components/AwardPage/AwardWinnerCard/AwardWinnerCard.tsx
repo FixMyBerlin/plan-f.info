@@ -1,20 +1,16 @@
-import React, { ReactNode } from 'react';
-import { FoldOut } from '../FoldOut/FoldOut';
-import { FotoCopyright } from '../FotoCopyright';
+import React, { type ReactNode } from 'react'
+
+import { FoldOut } from '../FoldOut/FoldOut'
+import { FotoCopyright } from '../FotoCopyright'
 
 type Props = {
-  children: ReactNode;
-  title: string;
-  media?: { src: any; copyright: string }[];
-  className?: string;
-};
+  children: ReactNode
+  title: string
+  media?: { src: any; copyright: string }[]
+  className?: string
+}
 
-export const AwardWinnerCard: React.FC<Props> = ({
-  children,
-  title,
-  media,
-  className,
-}) => {
+export const AwardWinnerCard: React.FC<Props> = ({ children, title, media, className }) => {
   return (
     <div className={className}>
       <FoldOut
@@ -23,10 +19,9 @@ export const AwardWinnerCard: React.FC<Props> = ({
       >
         <>
           {children}
-          {media?.length &&
-            media.map((m) => <FotoCopyright key={m.src} data={m} />)}
+          {media?.length && media.map((m, i) => <FotoCopyright key={i} data={m} />)}
         </>
       </FoldOut>
     </div>
-  );
-};
+  )
+}

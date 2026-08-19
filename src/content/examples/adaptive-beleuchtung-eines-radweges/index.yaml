@@ -1,0 +1,72 @@
+title: 'Adaptive Beleuchtung eines Radweges '
+position: 1199
+measure: beleuchtung
+image:
+  image: /content-images/examples/adaptive-beleuchtung-eines-radweges.JPG
+  copyright: 'Radweg mit Beleuchtung, Urheberin: Stadt Ibbenbüren '
+shortDescription: 'Eine außerorts gelegene Fahrradstraße wurde mit einem
+  innovativen Beleuchtungssystem ausgestattet, welches sich nur bei der Nutzung
+  einschaltet. '
+subcategory: Beleuchtung
+commune: Ibbenbüren
+countryState: 'Nordrhein-Westfalen '
+spatialStructure: Überwiegend städtisch
+centrality: Zentral
+period: '2019'
+population: 51888
+costs: 55800
+financiallyWeak: false
+beginnerFriendly: false
+description: >-
+  Die Stadt Ibbenbüren in Westfalen hat ihre ländlich geprägte Fahrradstraße
+  „Wieskebrook“ mit einem innovativen Beleuchtungssystem ausgestattet. Auf einer
+  Länge von 1,5 km sorgen 43 LED-Leuchten mit Bewegungssensoren und präziser
+  Leuchtensteuerung für eine moderne Ausleuchtung der Straße. Das sogenannte
+  „Lauflicht“-System sorgt dafür, dass die Beleuchtung nur dann voll
+  eingeschaltet wird, wenn auch tatsächlich Radfahrende oder andere
+  Verkehrsteilnehmende unterwegs sind. Für die Erkennung der Nutzenden sind 34
+  LED-Leuchten zusätzlich mit Sensoren und Bewegungsmeldern ausgestattet, welche
+  heranfahrende Radfahrende erkennen. Ein ausreichendes Grundlicht ist durch
+  eine kontinuierliche Beleuchtung mit rund 20 Prozent der Leistung gegeben.
+  Wenn das intelligente Licht Personen erkennt, steigt die Leistung in dem
+  Bereich, wo diese sich befinden, auf 100 Prozent an und sinkt wieder, sobald
+  sie diesen Bereich verlassen hat.  
+   
+  Ohne Verkehr und somit Bewegung liegt die Leistung dieser 18-Watt-Leuchten bei
+  lediglich 20 Prozent. Das sorgt für ausreichend Grundlicht. Nähert sich ein
+  Fahrrad oder ein sonstiges Gefährt, geht die Leistung auf 100 Prozent hoch –
+  und das abschnittweise, der Bewegungsrichtung entsprechend. Genauso fährt die
+  Leistung in jenen Bereichen wieder auf 20 Prozent Grundleistung herunter, die
+  der Passierende eben verlassen hat.  
+   
+  Das Einsparpotential durch die adaptive Beleuchtung ist enorm, gleichzeitig
+  wird die Sicherheit für den Radverkehr verbessert und Lichtverschmutzung
+  außerorts entgegengewirkt.
+goals: |-
+  - Sicherheit
+  - Überwindung weiter Distanzen 
+  - Reduktion privater Autoverkehr (sogenannter MIV) 
+  - Klima- und Umweltschutz
+localChallenges: |-
+  - Geteilte Planungszuständigkeiten 
+  - Topographie
+particularities: 'Nachhaltige Ressourcen '
+results: 'Über eine Strecke von 1,5 Kilometer wurde eine adaptive
+  Radwegebeleuchtung eingerichtet. '
+challenges: 'Keine Angabe '
+communication: Presse
+funding: 'Eigenmittel: 100 Prozent '
+personnelExpenses: Keine Angabe
+authorities: 'Fachdienst Tiefbau, Fachdienst bauliches FM  '
+stakeholders: Keine Angabe
+relatedOffice: |
+  Herr Borgmann, karl-ludwig.borgmann@ibbenbueren.de
+sources: |
+  Stadt Ibbenbüren, AGFK Bayern, WIR IN -Wochenzeitung im Kreis Steinfurt
+notes: ''
+links:
+  - display: 'IVZ Aktuell: Intelligente Radwegbeleuchtung '
+    url: "https://www.ivz-aktuell.de/articles/120543/ibbenbueren/blaulicht-sicherhe\
+      it/stadt-baut-intelligente-radwegbeleuchtung-aus?take=9&skip=0&mediaTypes\
+      =articles&mediaTypes=galleries&mediaTypes=videos&term=wieskebrook "
+awards: []

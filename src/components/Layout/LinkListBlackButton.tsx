@@ -1,28 +1,29 @@
-import { Transition } from '@headlessui/react';
-import { MinusIcon, PlusIcon } from '@heroicons/react/20/solid';
-import clsx from 'clsx';
-import React, { useState } from 'react';
-import { LinkButtonWithArrow } from '../TopicPage/LinkButtonWithArrow';
-import { H2, H3 } from '../Text';
-import { trackEvent } from '../matomo/trackEvent';
+import { Transition } from '@headlessui/react'
+import { MinusIcon, PlusIcon } from '@heroicons/react/20/solid'
+import clsx from 'clsx'
+import React, { useState } from 'react'
+
+import { trackEvent } from '../matomo/trackEvent'
+import { H2, H3 } from '../Text'
+import { LinkButtonWithArrow } from '../TopicPage/LinkButtonWithArrow'
 
 type Props = {
   links: readonly {
-    readonly url: string;
-    readonly display: string;
-  }[];
-  title: string;
-  titleMono?: boolean;
-  className?: string;
-};
+    readonly url: string
+    readonly display: string
+  }[]
+  title: string
+  titleMono?: boolean
+  className?: string
+}
 export const LinkListBlackButton: React.FC<Props> = ({
   links,
   title,
   className,
   titleMono = false,
 }) => {
-  const [isExpand, setIsExpand] = useState(false);
-  if (!links.length) return null;
+  const [isExpand, setIsExpand] = useState(false)
+  if (!links.length) return null
 
   const toggleExpanded = () => {
     setIsExpand((prev) => {
@@ -30,10 +31,10 @@ export const LinkListBlackButton: React.FC<Props> = ({
         category: `Show more "${title}" on ${window.location.pathname}`,
         action: prev ? 'Click show more' : 'Click show less',
         label: `List has ${links.length} items`,
-      });
-      return !prev;
-    });
-  };
+      })
+      return !prev
+    })
+  }
 
   if (links.length < 3)
     return (
@@ -51,7 +52,7 @@ export const LinkListBlackButton: React.FC<Props> = ({
           ))}
         </div>
       </div>
-    );
+    )
 
   return (
     <div className={clsx(className)}>
@@ -67,6 +68,7 @@ export const LinkListBlackButton: React.FC<Props> = ({
           </LinkButtonWithArrow>
         ))}
         <Transition
+          as="div"
           show={isExpand}
           enter="transition duration-100 ease-out"
           enterFrom="transform scale-95 opacity-0"
@@ -87,21 +89,15 @@ export const LinkListBlackButton: React.FC<Props> = ({
           ))}
         </Transition>
 
-        <button
-          className="flex items-center gap-2"
-          type="button"
-          onClick={() => toggleExpanded()}
-        >
+        <button className="flex items-center gap-2" type="button" onClick={() => toggleExpanded()}>
           {isExpand ? (
             <MinusIcon className="h-8 rounded-full border border-black p-1" />
           ) : (
             <PlusIcon className="h-8 rounded-full border border-black p-1" />
           )}
-          <p className="whitespace-nowrap">{`${
-            isExpand ? 'Weniger' : 'Mehr'
-          } anzeigen`}</p>
+          <p className="whitespace-nowrap">{`${isExpand ? 'Weniger' : 'Mehr'} anzeigen`}</p>
         </button>
       </div>
     </div>
-  );
-};
+  )
+}

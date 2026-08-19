@@ -1,0 +1,20 @@
+name: Gestaltungselemente
+position: 312
+topic: infrastruktur
+shortDescription: Gestaltungselementen wie Piktogrammen und Roteinfärbungen
+  haben die Radinfrastruktur optisch hervor und erhöhen die Sichtbarkeit für
+  alle Verkehrsteilnehmenden. Das verbessert die Sicherheit sowie die
+  Orientierung.
+description: Durch die Verwendung von Gestaltungselementen wie Piktogrammen und
+  Roteinfärbungen wird die Radinfrastruktur optisch hervorgehoben und für alle
+  Verkehrsteilnehmenden deutlicher erkennbar. Das verbessert die Sicherheit
+  sowie die Orientierung und kann Konflikte im Straßenverkehr reduzieren.
+  Zugleich wird die Sichtbarkeit des Radverkehrs im Raum erhöht und kann zur
+  Veränderung der Mobilitätskultur beitragen.
+additionalResources: []
+guidelines:
+  - display: 'Infosheet: Markierungslösungen im  Radverkehr'
+    url: https://rad.sh/wp-content/uploads/2020/07/RAD.SH-Infosheet-Nr-6-Markierung.pdf
+  - display: Markierungslösungen zur Sicherung des Radverkehrs
+    url: http://media.svk-kaulen.de/AGFK-Leitfaden_Markierungsl%C3%B6sungen_191125.pdf
+fundings: []

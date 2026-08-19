@@ -1,0 +1,14 @@
+title: PLACEHOLDER_TO_AVOID_TYPEERROR
+measure: anreize-fuer-den-umstieg-im-urlaub
+description: This is a placeholder to avoid Cannot query field
+  "author"/"contact" on type "STRAPI_COMMUNITY_ENTRY" when no Community Entry
+  exists with those fields. We filter out this entry in the FE
+  CommunityEntriesSection.tsx
+website:
+  - display: placeholder
+    url: placeholder
+subcategory: placeholder
+author: placeholderAutor
+contact: placeholderKontakt
+commune: placeholder
+countryState: placeholder

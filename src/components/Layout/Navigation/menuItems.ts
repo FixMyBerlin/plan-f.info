@@ -1,16 +1,15 @@
-import { wikiPath } from '~/components/utils';
+import { wikiPath } from '~/components/utils'
 
-export const menuItems = {
+export const menuItems: Record<string, string> = {
   Wissensspeicher: `/${wikiPath}/`,
   'Plan F Check': `/plan-f-check/`,
   'Weitere Angebote': '/weitere-angebote/',
   Artikel: '/artikel/',
   Über: '/ueber/',
   Award: '/award/plan-f-award-2022/',
-};
+}
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const menuItemsWithChildren = {
+export const menuItemsWithChildren: Record<string, Record<string, string>> = {
   Artikel: {
     'Alle Artikel': '',
     'Wie werde ich eine Fahrradfreundliche Kommune?':
@@ -31,4 +30,4 @@ export const menuItemsWithChildren = {
     'Plan F Audit': 'audits/',
     'Plan F E-Learning': 'e-learning/',
   },
-};
+}

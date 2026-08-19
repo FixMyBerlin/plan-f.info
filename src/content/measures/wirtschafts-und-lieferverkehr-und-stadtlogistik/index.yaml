@@ -1,0 +1,33 @@
+name: Wirtschafts- und Lieferverkehr und Stadtlogistik
+position: 771
+topic: wirtschaft
+shortDescription: Es gibt verschiedene Lösungen für den Wirtschafts- und
+  Lieferverkehr per Fahrrad. Hierbei können z. B. Lastenfahrräder oder
+  Fahrradanhänger zum Einsatz kommen. Die Kommune hat unterschiedliche
+  Möglichkeiten die Stadtlogistik per Fahrrad zu fördern.
+description: Die Nutzung von Fahrrädern als Transportmittel für den Transport
+  von Waren und Gütern innerhalb einer Stadt oder eines Stadtgebietes hat stark
+  zugenommen. Es gibt inzwischen verschiedene Lösungen für den Wirtschafts- und
+  Lieferverkehr per Fahrrad. Hierbei können z. B. Lastenfahrräder oder
+  Fahrradanhänger zum Einsatz kommen. Die Kommune hat unterschiedliche
+  Möglichkeiten die Stadtlogistik per Fahrrad zu fördern, z. B. in dem sie
+  Stellflächen zur Verfügung stellt und dies aktiv anbietet und unterstützt.
+additionalResources:
+  - display: Mikro-Depots im interkommunalen Verbund
+    url: https://www.ihk-krefeld.de/de/media/pdf/verkehr/final_ihk_studie_cityhubs_191104.pdf
+  - display: Liefern ohne Lasten. Wie Kommunen und Logistikwirtschaft den
+      städtischen Güterverkehr zukunftsfähig gestalten können.
+    url: https://www.agora-verkehrswende.de/fileadmin/Projekte/2019/Staedtischer-Gueterverkehr/Agora-Verkehrswende_Liefern-ohne-Lasten_1-1.pdf
+  - display: A Guide to Planning Cycle Logistics Hubs
+    url: https://cyclelogistics.eu/sites/default/files/downloads/Cyclelogistics%20Hub%20Guide%20A5%20English.pdf
+  - display: Den städtischen Lieferverkehr nachhaltig gestalten. Ein
+      Instrumentenkasten für Kommunen.
+    url: https://www.bund.net/fileadmin/user_upload_bund/publikationen/mobilitaet/mobilitaet_nachhaltiger_lieferverkehr_instrumentenkasten.pdf
+guidelines:
+  - display: Planung von Lastenradsumschlagsknoten
+    url: https://www.ilm.ovgu.de/inilm_media/Planungsleitfaden_Lastenrad-p-3858.pdf
+  - display: Potenziale für Lastenradtransporte in der Citylogistik
+    url: https://www.mobilitaetsforum.bund.de/DE/Themen/Wissenspool/Projekte/Projektbeispiele/Projekte/20838_radlast.html
+  - display: City-Logistik in Kommunen
+    url: https://broststiftung.ruhr/wp-content/uploads/2021/01/LogistikRuhrgebiet_Leitfaden_Web.pdf
+fundings: []

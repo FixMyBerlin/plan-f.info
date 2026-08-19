@@ -1,0 +1,44 @@
+name: Radschnellverbindungen, Radschnellwege und Premiumrouten
+position: 337
+topic: infrastruktur
+shortDescription: Radschnellverbindungen, Radschnellwege und Premiumrouten sind
+  spezielle Radwege, die besonders komfortable und schnelle Verbindungen für den
+  Radverkehr bieten. Sie bieten in der Regel einen getrennten Fahrbahnbereich
+  von der Straße.
+description: Radschnellverbindungen, Radschnellwege und Premiumrouten sind
+  spezielle Radwege, die besonders komfortable und schnelle Verbindungen für den
+  Radverkehr bieten. Sie schaffen nach besonderen Qualitätsstandards ausgebaute
+  und durchgängige Verbindungen, die den Radverkehr auf schnellen, direkten und
+  sicheren Wegen führen. Radschnellverbindungen, Radschnellwege und
+  Premiumrouten bieten in der Regel einen getrennten Fahrbereich von der
+  Kfz-Fahrbahn.
+additionalResources:
+  - display: Themenkarte Radschnellverbindungen
+    url: https://www.mobilitaetsforum.bund.de/DE/Themen/Wissenspool/Themenkarten/202211/202211_Themenkarte.html?nn=3890960
+  - display: Modulares System für Radschnellverbindungen
+    url: https://www.mobilitaetsforum.bund.de/DE/Themen/Wissenspool/Projekte/Projektbeispiele/Projekte/22936_modulares_system_fuer_radschnellverbindu.html?cms_submit=Senden&cms_templateQueryString=Modulares+System+f%C3%BCr+Radschnellverbindungen
+  - display: "Wayfinding for cycle highways: Assessing e-bike users' experiences
+      with wayfinding along a cycle highway in the Netherlands"
+    url: https://www.sciencedirect.com/science/article/pii/S0966692320301599
+  - display: Radschnellverbindungen in Hessen. Leitfaden Machbarkeitsuntersuchungen.
+    url: https://hessendrive.hessen.de/public/download-shares/ZAEXM5dGfobhameQhEAcxOKqwTURbVN9
+  - display: cycle highway mannual
+    url: https://cyclehighways.eu/
+  - display: Radschnellwege in Baden-Württemberg
+    url: https://www.aktivmobil-bw.de/radverkehr/radschnellverbindungen/faktenblaetter/.
+guidelines:
+  - display: 'Infosheet: Radschnellwege'
+    url: https://rad.sh/wp-content/uploads/2020/04/RAD.SH-Infosheet-Nr-2-Radschnellwege.pdf
+  - display: Radschnellverbindungen - Leitfaden zur Potenzialanalyse und
+      Nutzen-Kosten-Analyse
+    url: https://www.bast.de/DE/Publikationen/Medien/Dokumente/Rad-Schnellverbindungen.pdf?__blob=publicationFile&v=3
+  - display: Radschnellverbindungen in Hessen. Leitfaden Kostenschätzung.
+    url: https://hessendrive.hessen.de/public/download-shares/mmtcdaU4QR8zWBWK5r9bBO4zvB5dGL8a
+  - display: Radschnellverbindungen in Hessen. Leitfaden Nutzen-Kosten-Analyse.
+    url: https://hessendrive.hessen.de/public/download-shares/8XSs5EHjETHY8494pkR58doBZVXUaxHS
+  - display: Radschnellverbindungen in NRW Leitfaden für Planung Bau und Betrieb
+    url: https://www.radschnellwege.nrw/fileadmin/user_upload/downloads/Leitfaden_Radschnellverbindungen_in_NRW.pdf
+  - display: 'Radschnellwege Rheinland-Pfalz: Standards für Pendler-Radrouten und
+      Radschnellverbindungen Version 1.0'
+    url: https://radwanderland-fachportal.de/dokumente/upload/190604_Standards_PRR_und_RSV_003.pdf
+fundings: []

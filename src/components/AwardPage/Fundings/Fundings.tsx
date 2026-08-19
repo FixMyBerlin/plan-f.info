@@ -1,8 +1,11 @@
-import { StaticImage } from 'gatsby-plugin-image';
-import React from 'react';
-import { P } from '~/components/Text';
-import BMDVLogo from './assets/bmdv.svg';
-import FairSpacesLogo from './assets/fairspaces.svg';
+import React from 'react'
+
+import { P } from '~/components/Text'
+import { assetSrc } from '~/lib/assetSrc'
+
+import BMDVLogo from './assets/bmdv.svg?react'
+import FairSpacesLogo from './assets/fairspaces.svg?react'
+import FixMyCityLogo from './assets/FixMyCity.png'
 
 export const Fundings: React.FC = () => {
   return (
@@ -16,8 +19,8 @@ export const Fundings: React.FC = () => {
           <P>Ein Projekt von:</P>
           <div className="flex items-center gap-6 pb-4 md:gap-10">
             <FairSpacesLogo width={160} />
-            <StaticImage
-              src="./assets/FixMyCity.png"
+            <img
+              src={assetSrc(FixMyCityLogo)}
               className="w-[80px] overflow-hidden"
               alt="FixMyCity Logo"
             />
@@ -25,5 +28,5 @@ export const Fundings: React.FC = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

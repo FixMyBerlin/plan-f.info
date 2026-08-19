@@ -1,0 +1,108 @@
+title: Trafficpilot - Ride the Green Wave
+position: 1101
+measure: apps
+relatedTopic: governance
+image:
+  image: /content-images/examples/trafficpilot-ride-the-green-wave.png
+  copyright: 'Düsseldorf App Mockup, Urheberin: GEVAS software GmbH'
+shortDescription: 'Erstellung und Implikation einer App, die Nutzer*innen grüne
+  Wellen anzeigt und Prognosen von Ampelschaltung für Radfahrende ermöglicht. '
+subcategory: Apps
+commune: Düsseldorf
+countryState: Nordrhein-Westfalen
+spatialStructure: Überwiegend städtisch
+centrality: Sehr zentral
+period: '06/2017 - 06/2019 '
+population: 819477
+costs: 14800000
+financiallyWeak: false
+beginnerFriendly: false
+description: >-
+  Die Smartphone-App trafficpilot signalisiert Radfahrer\*innen visuell und
+  akustisch, mit welcher Geschwindigkeit die nächste 
+
+
+  Ampel ohne Halt passiert werden kann. Muss vor der Ampel gehalten werden, so
+  wird die verbleibende Wartezeit bis zum nächsten Grün angezeigt. 
+
+
+  Mit der trafficpilot-App ist Radfahren kraftsparender und folglich deutlich
+  entspannter, sodass in Düsseldorf zukünftig häufiger vom Pkw auf das Fahrrad
+  umgestiegen wird.  
+
+
+  Realisiert wurde der Service von Juni 2017 bis Juni 2019 im Rahmen des
+  Forschungsprojekts Kooperative Mobilität im digitalen Testfeld Düsseldorf
+  (KoMoD) durch die Projektpartner\*innen Landeshauptstadt Düsseldorf und GEVAS
+  software und anschließend in den Realbetrieb überführt. 
+
+
+  Trafficpilot benötigt keinerlei zusätzliche Aufrüstung der Düsseldorfer
+  Infrastruktur (wie z.B. Sensorik), sondern setzt allein auf den Online-Daten
+  des Verkehrssystemmanagements 
+
+
+  in Düsseldorf auf. Mit diesen Daten und Algorithmen aus dem Bereich der
+  Künstlichen Intelligenz werden die Schaltzeiten der Ampeln in der Zukunft
+  prognostiziert und anschließend an das Smartphone übertragen. Somit weiß das
+  Smartphone, mit welcher Geschwindigkeit der\*die Nutzer\*in die nächste Ampel
+  ohne Halt passieren kann. 
+
+
+  Seit Juli 2019 läuft die App im Realbetrieb in der Innenstadt von Düsseldorf
+  und steht für iOS- und Android-User\*innen kostenlos zur Verfügung. Zudem ist
+  der Service seit März 2020 im gesamten Stadtgebiet von Düsseldorf verfügbar.
+  Mittlerweile wurde das Angebot ebenfalls auf weitere Städte in Deutschland (z.
+  B. Frankfurt am Main und Kassel) und Österreich (z. B. Salzburg und Wien)
+  ausgeweitet. 
+
+
+  Weiterentwicklung des trafficpilots im Folgeprojekt „KoMoDnext –
+  Automatisiertes Fahren im digitalen Testfeld Düsseldorf“. An 4 ausgewählten
+  LSA wurde die kooperative Detektion für das Fahrrad entwickelt. Bei Nutzung
+  des trafficpilots wird der\*die Nutzer\*in an der LSA, ähnlich wie bei der
+  ÖPNV-Priorisierung, angemeldet und in Abhängigkeit des
+  Signalisierungszustandes der LSA kann die Freigabe kurz vor dem Eintreffen des
+  Fahrrades erfolgen und die Furt kann ohne Halt überquert werden. 
+
+
+  Fortführung der Raddetektion in dem neuen Förderprojekt KoKoSDUS (Konzeption
+  und Umsetzung kooperativer System in Düsseldorf). An 10 weiteren LSA soll die
+  Radanforderung mit neuen Anwendungsfällen implementiert und getestet
+  werden.  Neben der klassischen Anmeldung soll auch die Grünzeitverlängerung
+  sowie die Koordinierung mehrerer LSA erprobt und in den Realbetrieb übernommen
+  werden. Zusätzlich erhält der\*die Nutzer\*in eine Rückmeldung über die
+  erfolgreiche Anmeldung.
+goals: |-
+  - Komfort und Fahrspaß
+  - Mehr Personen fahren Fahrrad 
+  - Reduktion privater Autoverkehr
+  - Klima- und Umweltschutz
+localChallenges: Flächenkonflikte
+particularities: Keine spezifische Angabe
+results: Stadtweite Freischaltung der LSAs für die Prognoseermittlung des
+  Freigabezeitpunktes
+challenges: >-
+  Entwicklung der App und des Algorithmus zur Prognoseermittlung; 
+
+  Versorgung aller Knotenpunkte für die App bei unterschiedlichem Verständnis
+  der Radwegenutzung
+communication: 'Pressemitteilung, Abschlussveranstaltung des
+  Forschungsprojektes, Werbekampagne '
+funding: 'Bundesmittel: 66,7 Prozent (Bundesministerium für Digitales und
+  Verkehr: KoMoD) '
+personnelExpenses: 'Mittlerer bis hoher Aufwand für Entwicklung und Testfahrten;
+  Niedriger bis mittlerer Aufwand für Qualitätsanalyse '
+authorities: 'Landeshauptstadt Düsseldorf, Amt für Verkehrsmanagement '
+stakeholders: GEVAS software GmbH
+relatedOffice: |-
+  Alexander Denson 
+  Alexander.denson@duesseldorf.de
+sources: |-
+  trafficpilot 
+  Deutscher Fahrradpreis 2020
+notes: ''
+links:
+  - display: 'Traffic Pilot: Weniger Stop Mehr Go'
+    url: 'https://www.trafficpilot.eu '
+awards: []

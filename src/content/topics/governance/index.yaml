@@ -1,0 +1,34 @@
+name: Governance
+position: 10
+shortDescription: Politische, konzeptionelle und organisatorische Maßnahmen, z.
+  B. politische Entscheidungen, rechtliche Grundlagen, Finanzierung und
+  Förderungen, Verantwortlichkeiten und Organisationsstrukturen sowie Konzepte,
+  Beteiligung, Monitoring und Evaluation.
+description: >-
+  Das Handlungsfeld Governance schließt alle Maßnahmen der Radverkehrsförderung
+  ein, die sich auf einer politischen, konzeptionellen und organisatorischen
+  Ebene befinden. 
+
+  Dabei geht es sowohl um politische Entscheidungen, rechtliche Grundlagen,
+  Finanzierung und Verantwortlichkeiten in der Verwaltung als auch um Konzepte,
+  wie z. B. Radverkehrs- oder Stadtentwicklungskonzepte, Organisation und
+  Zusammenarbeit, Informationen und Beteiligung, Monitoring und Evaluation.
+
+
+  Um die Radmobilität in einem Gesamtsystem zu verbessern, ist es wichtig, dass
+  Kommunen auch das Thema Wohnen angehen und beispielsweise Stellplatzschlüssel
+  für Fahrräder einführen oder Abstellanlagen fördern. Auch die Förderung von
+  gemeinnützigen Institutionen und sozialem Engagement, welches einen Betrag zu
+  einer verbesserten Radmobilität leistet, sind gute Maßnahmen in dem
+  Handlungsfeld Governance.
+image:
+  image: /content-images/topics/governance.svg
+  copyright: ''
+additionalResources:
+  - display: 'InnoRADQuick Schnell, innovativ und gut fürs Klima: So gelingt der
+      fahrradfreundliche Umbau'
+    url: https://www.adfc.de/fileadmin/user_upload/Expertenbereich/InnoRAD-Projekt/adfc_innorad_quick_web.pdf
+guidelines:
+  - display: Der Weg zur Einsteigerkommune
+    url: https://rad.sh/wp-content/uploads/2020/02/Infosheet-1_-Der-Weg-zur-Einsteigerkommune.pdf
+fundings: []

@@ -1,20 +1,21 @@
-import React from 'react';
+import { HomeIcon } from '@heroicons/react/20/solid'
+import clsx from 'clsx'
+import React from 'react'
 
-import { HomeIcon } from '@heroicons/react/20/solid';
-import clsx from 'clsx';
-import { wikiColors } from '~/components/utils';
-import { Link } from '../core/links/Link';
+import { wikiColors } from '~/components/utils'
 
-type Props = { names?: string[]; prefix?: string };
+import { Link } from '../core/links/Link'
+
+type Props = { names?: string[]; prefix?: string }
 
 export const Breadcrumbs: React.FC<Props> = ({ names = [], prefix = './' }) => {
-  const n = names.length;
+  const n = names.length
   const wikiColorsArray = [
     wikiColors.root,
     wikiColors.topic,
     wikiColors.measure,
     wikiColors.example,
-  ]; // build array explicit as there are no gurantees on iterating order (with Object.values)
+  ] // build array explicit as there are no gurantees on iterating order (with Object.values)
 
   // const testLinkDisplays = [
   //   'Radverkehr in Schulen, Kinder- und Jugendclubs und Kindergärten',
@@ -22,17 +23,14 @@ export const Breadcrumbs: React.FC<Props> = ({ names = [], prefix = './' }) => {
   //   'Mon, AusflügeMobilitätsbildunFahrradkurse, Fahrradflotten, Ausflüg',
   //   'MobilitätsbildunFahrradkurse, Fahrradflotten, Ausflüge',
   // ];
-  const isLastItem = (key: number) => names.length - 1 === key;
+  const isLastItem = (key: number) => names.length - 1 === key
   return (
     <nav className="py-4" aria-label="Breadcrumb">
       <ol className="flex flex-wrap gap-2">
         <li>
           <div className="flex items-center">
             <Link href="/">
-              <HomeIcon
-                className="mb-2 mr-2 h-4 w-4 flex-shrink-0 sm:mb-0"
-                aria-hidden="true"
-              />
+              <HomeIcon className="mr-2 mb-2 h-4 w-4 flex-shrink-0 sm:mb-0" aria-hidden="true" />
               <span className="sr-only">Home</span>
             </Link>
           </div>
@@ -60,5 +58,5 @@ export const Breadcrumbs: React.FC<Props> = ({ names = [], prefix = './' }) => {
         ))}
       </ol>
     </nav>
-  );
-};
+  )
+}

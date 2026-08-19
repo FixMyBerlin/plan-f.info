@@ -1,0 +1,82 @@
+title: 'Fahrradservicestationen '
+position: 1065
+measure: reparaturservice
+relatedTopic: multimodalitaet-und-nahmobilitaet
+image:
+  image: /content-images/examples/fahrradservicestationen.jpg
+  copyright: 'Radservicestation an einer Tankstelle, Urheberin: Carolin Seidel'
+shortDescription: Aufbau von 50 Rad-Servicestation an zentralen Orten und allen
+  Tankstellen in der Stadt.
+subcategory: Reparaturservice
+commune: Gelsenkirchen
+countryState: Nordrhein-Westfalen
+spatialStructure: Überwiegend städtisch
+centrality: Sehr zentral
+period: Seit 2019
+population: 260126
+costs: 102000
+financiallyWeak: true
+beginnerFriendly: true
+description: >
+  Als Serviceverbesserung und damit Radfahrende unterwegs die Möglichkeit haben
+  kleine Reparaturen an ihren Fahrrädern zu erledigen, wurden insgesamt 50
+  Fahrrad-Servicestationen eingerichtet. Die kleinen Do-it-yourself-Stationen
+  bieten Werkzeuge, eine Luftpumpe und eine Fahrradhalterung.
+
+  Es wurden an fast sämtlichen Tankstellen im Gelsenkirchener Stadtgebiet sowie
+  an einigen weiteren Standorten insgesamt 50 Fahrrad-Servicestationen
+  eingerichtet. Hierzu wurde mit den Tankstellenbetreiber*innen eine
+  vertragliche Regelung getroffen. 
+
+  Die Servicestationen wurden mit Wartung ausgeschrieben, um den Standard halten
+  zu können. Beschaffung und Aufbau konnten nahezu in der Spanne eines Jahres
+  durchgeführt werden. 
+
+  Zudem wurde noch in dem Mängelmelder der Stadt Gelsenkirchen (Homepage und
+  App) der Punkt Fahrrad eingerichtet, sodass Schadensmeldungen unkompliziert
+  und direkt bei den zuständigen Stellen eingehen konnten.
+goals: |-
+  - Komfort und Fahrspaß
+  - Mehr Personen fahren Fahrrad
+  - Klima- und Umweltschutz
+  - Das Fahrradfahren durch (auffällige) Infrastruktur sichtbarer machen
+localChallenges: |-
+  - Finanzschwache Kommune
+  - Flächenkonflikte 
+  - Geteilte Planungszuständigkeiten
+particularities: |
+  - Inklusive Maßnahme (Erhöhung Zugänge / Gerechtigkeit)
+  - Einsteiger\*innenmaßnahme
+  - Quick-Win
+results: 'Eine große Akzeptanz in der Bevölkerung. Wichtig war die Einrichtung
+  der Schadensmeldung mit der Möglichkeit einer sofortigen Reparatur/Wartung der
+  Station durch den Partner (GAFÖG) vor Ort. '
+challenges: 'Die Erlaubnis zur Aufstellung an den unterschiedlichen Tankstellen
+  war teilweise schwieriger zu erhalten. Freie Betreiber*innen konnten souverän
+  entscheiden. Bei den Ketten mussten die Gesellschaften beteiligt werden, wobei
+  eine grundsätzliche positive Akzeptanz für das Projekt vorhanden war. '
+communication: Die Maßnahme wurde in der Presse, der Homepage sowie auf den
+  Social Media Kanälen veröffentlicht.
+funding: |-
+  102.000 Euro für 50 Stationen
+  - Eigenmittel: 100 Prozent
+personnelExpenses: Der Personelle Aufwand ist nicht genau abzuschätzen.
+authorities: 'Beteiligt waren die Referate: Verkehr (Planung und Aufbau), Recht
+  (Verträge für die Tankstellenbetreibenden), Öffentlichkeitsarbeit (Presse und
+  Social Media), Personal und Organisation (Ausschreibung und Vergabe),
+  Vermessung und Kataster (Integration der Standorte in den Geoatlas) und gkd-el
+  (Mängelmelder).'
+stakeholders: |
+  Caritas Betriebs- und Werkstätten GmbH. GAFÖG Arbeitsförderungsgesellschaft
+relatedOffice: Stefan Behrens, stefan.behrens@gelsenkirchen.de
+sources: |
+  Stadt Gelsenkirchen, Plan F Award
+notes: ''
+links:
+  - display: 'Stadt Gelsenkirche: Hilfe unterwegs'
+    url: https://www.gelsenkirchen.de/de/Infrastruktur/Verkehr/Radverkehr/Servicestationen.aspx
+awards:
+  - name: Plan F Award 2022
+    description: Platz 1 Service
+    logo: /content-images/examples/awards/fahrradservicestationen-award-0.svg
+    logoCopyright: 'Urheberin: fair spaces'

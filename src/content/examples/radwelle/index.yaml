@@ -1,0 +1,70 @@
+title: Radwelle
+position: 1110
+measure: verkehrsfluss
+image:
+  image: /content-images/examples/radwelle.JPG
+  copyright: 'Hinweisschild Radwelle, Urheberin: Stadt Oberhausen'
+shortDescription: 'Beschleunigung des Radverkehrs durch Einführung intelligenter
+  Lichtsignalanlage (LSA). Diese erkennen Radfahrende und schalten zeitnah auf
+  Grün.  '
+subcategory: Verkehrsfluss
+commune: Oberhausen
+countryState: 'Nordrhein-Westfalen '
+spatialStructure: Überwiegend städtisch
+centrality: 'Sehr zentral '
+period: '01/2017 – 06/2018 '
+population: 208752
+costs: 175000
+financiallyWeak: true
+beginnerFriendly: false
+description: >-
+  Mithilfe einer automatischen Detektion werden Radfahrende an Ampeln
+  (sogenannte Lichtsignalanlagen) in Oberhausen beschleunigt. Die Radfahrenden
+  werden beim Anfahren auf die Ampel frühzeitig erkannt und ein entsprechendes
+  Signalprogramm zur schnellen Grünschaltung initialisiert. Hierdurch wird die
+  Wartezeit erheblich reduziert und der Komfort für Radfahrende gesteigert.  
+   
+  Im besten Fall können Radfahrende die Signalanlage beim Eintreffen sogar ohne
+  Wartezeit passieren. Durch die Reduzierung der Wartezeiten wird auch die
+  Anzahl der Rotlichtverstöße reduziert und ein wichtiger Beitrag zur
+  Verbesserung der Verkehrssicherheit geleistet. Im Rahmen eines einzigartigen
+  Förderprojektes des Bundeswettbewerbs Klimaschutz im Radverkehr konnten 30
+  Ampeln mit der automatischen Detektion von Radfahrenden ausgestattet werden.
+goals: |-
+  - Sicherheit 
+  - Komfort und Fahrspaß 
+  - Fahrrad steigt in der Wahrnehmung / Statussymbol
+localChallenges: Finanzschwache Kommune
+particularities: |-
+  - Evaluation 
+  - Verkehrsversuch oder Modellvorhaben
+results: 'Einbau einer automatischen Detektion von Radfahrenden an 30 Ampeln zur
+  schnellen Grünschaltung. '
+challenges: 'Geeignete Standorte mit hohen Wartezeiten auf der Grundlage der
+  Analyse (GPS-Befahrung aller LSA-Standorte) für eine Umrüstung zu finden,
+  welche die eindeutige Erfassung des Radverkehrs vor der LSA und gleichzeitig
+  auch eine Verbesserung der Signalisierung beziehungsweise Verkürzung der
+  Wartezeiten ermöglichen. '
+communication: 'Das Projekt wird durch Marketingarbeit inklusive Wort-Bild-Marke
+  unterstützt. Es wurden Hinweisschilder aufgestellt und Werbematerialien
+  erstellt. Zudem wurde Pressearbeit und eine Eröffnungsveranstaltung
+  durchgeführt. '
+funding: >-
+  - Eigenmittel: 10 Prozent 
+
+  - Bundesmittel: 90 Prozent (Bundesministerium für Umwelt, Naturschutz und
+  nukleare Sicherheit:: Bundeswettbewerb Klimaschutz im Radverkehr)
+personnelExpenses: 'Keine Angabe '
+authorities: Bereich Mobilität
+stakeholders: 'Keine Angabe '
+relatedOffice: 'Jenny Wegmeyer, jenny.wegmeyer@oberhausen.de '
+sources: Stadt Oberhausen, Deutscher Fahrradpreis 2019
+notes: ''
+links:
+  - display: 'Projekt Radwelle '
+    url: 'www.radwelle.de '
+awards:
+  - name: Deutscher Fahrradpreis 2019
+    description: Platz 2 Infrastruktur
+    logo: /content-images/examples/awards/radwelle-award-0.svg
+    logoCopyright: 'Urheber: Deutscher Fahrradpreis'

@@ -1,2 +1,2 @@
-export * from './awardMedia.const';
-export * from './profiles.const';
+export * from './awardMedia.const'
+export * from './profiles.const'

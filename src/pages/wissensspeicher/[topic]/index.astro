@@ -1,0 +1,69 @@
+---
+import type { GetStaticPaths } from 'astro'
+import { Section } from '~/components/Layout/Section'
+import { LinkListBlackButton } from '~/components/Layout/LinkListBlackButton'
+import { PageIntro } from '~/components/Layout/PageIntro'
+import { WikiHero } from '~/components/Layout/WikiHero'
+import { H2, P } from '~/components/Text'
+import { CardMeasure } from '~/components/TopicPage/CardMeasure'
+import { CardWrapperTopicPage } from '~/components/TopicPage/CardWrapperTopicPage'
+import { wikiColors, wikiPath } from '~/components/utils'
+import { getSideNavTree, getSortedTopics, measuresForTopic } from '~/lib/content'
+import { renderMarkdown } from '~/lib/markdown'
+import Layout from '~/layouts/Layout.astro'
+
+export const getStaticPaths = (async () => {
+  const topics = await getSortedTopics()
+  return Promise.all(
+    topics.map(async (topic) => ({
+      params: { topic: topic.id },
+      props: { topic, measures: await measuresForTopic(topic.id) },
+    })),
+  )
+}) satisfies GetStaticPaths
+
+const { topic, measures } = Astro.props
+const sideNav = await getSideNavTree()
+const descriptionHTML = renderMarkdown(topic.data.description)
+---
+
+<Layout
+  title={topic.data.name}
+  description={topic.data.shortDescription}
+  bgColor={wikiColors.topic}
+  breadcrumbs={['Wissensspeicher', topic.data.name]}
+  sideNav={sideNav}
+>
+  <WikiHero
+    title={topic.data.name}
+    bgColor={wikiColors.topic}
+    breadcrumbNames={['Wissensspeicher', topic.data.name]}
+  />
+  <PageIntro className="-mb-10" image={topic.data.image.image} markdownHTML={descriptionHTML} />
+
+  <Section className="mb-12 grid gap-10 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
+    <LinkListBlackButton client:visible links={topic.data.guidelines} title="Leitfäden" />
+    <LinkListBlackButton client:visible links={topic.data.additionalResources} title="weitere Hinweise" />
+    <LinkListBlackButton client:visible links={topic.data.fundings} title="Fördermöglichkeiten" />
+  </Section>
+
+  <Section className="bg-green-500">
+    <H2>Maßnahmen im Handlungsfeld {topic.data.name}</H2>
+    <P>
+      Entdecken Sie die verschiedenen Maßnahmen, die zu diesem Handlungsfeld gehören, dort finden
+      Sie auch viele Praxisbeispiele
+    </P>
+    <CardWrapperTopicPage className="mt-12">
+      {
+        measures.map((measure) => (
+          <CardMeasure
+            title={measure.data.name}
+            link={`/${wikiPath}/${topic.id}/${measure.id}/`}
+          >
+            <p class="text-sm text-gray-700 md:text-base">{measure.data.shortDescription}</p>
+          </CardMeasure>
+        ))
+      }
+    </CardWrapperTopicPage>
+  </Section>
+</Layout>

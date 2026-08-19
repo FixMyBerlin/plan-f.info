@@ -1,9 +1,9 @@
-import React, { ReactNode } from 'react';
+import React, { type ReactNode } from 'react'
 
 type Props = {
-  value: number;
-  children: ReactNode;
-};
+  value: number
+  children: ReactNode
+}
 
 export const CountLI: React.FC<Props> = ({ value, children }) => {
   return (
@@ -13,5 +13,5 @@ export const CountLI: React.FC<Props> = ({ value, children }) => {
       </div>
       <p className="pl-8">{children}</p>
     </li>
-  );
-};
+  )
+}

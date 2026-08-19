@@ -1,0 +1,16 @@
+name: Bauliche Radwege
+position: 335
+topic: infrastruktur
+shortDescription: 'Bauliche Radwege sind baulich getrennte Wege im Seitenraum,
+  die speziell für den Radverkehr gebaut wurden und somit eine eigene Führung
+  abseits des Straßenverkehrs bieten. '
+description: 'Bauliche Radwege sind baulich getrennte Wege im Seitenraum, die
+  speziell für den Radverkehr gebaut wurden und somit eine eigene Führung
+  abseits des Straßenverkehrs bieten. '
+additionalResources:
+  - display: Führung des Radverkehrs an Landstraßen
+    url: https://bast.opus.hbz-nrw.de/opus45-bast/frontdoor/deliver/index/docId/2380/file/V330_barrierefrei.pdf
+guidelines: []
+fundings:
+  - display: Förderfibel Mobilitätsforum Bund
+    url: https://www.mobilitaetsforum.bund.de/SiteGlobals/Forms/Suche/Foerderfibel_Formular.html?queryResultId=null&pageNo=0

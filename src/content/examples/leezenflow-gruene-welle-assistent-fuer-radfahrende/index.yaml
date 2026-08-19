@@ -1,0 +1,118 @@
+title: 'Leezenflow - Grüne-Welle-Assistent für Radfahrende '
+position: 1249
+measure: verkehrsfluss
+image:
+  image: /content-images/examples/leezenflow-gruene-welle-assistent-fuer-radfahrende.jpg
+  copyright: 'Anzeigetafel mit Grünphase, Urheberin: Stadt Münster '
+shortDescription: 'Digitale Anzeigetafel, welche Radfahrenden anzeigt, wie lange
+  die Grün- oder Rotphase noch andauert. Dies ermöglicht die Anpassung der
+  Fahrtgeschwindigkeit und fördert Komfort und Verkehrsfluss.  '
+subcategory: Verkehrsfluss
+commune: Münster
+countryState: 'Nordrhein-Westfalen '
+spatialStructure: Überwiegend städtisch
+centrality: 'Sehr zentral '
+period: 'Prototyp (inkl. Evaluation): 05/2020 – 08/2021;  Weitere Leezenflows:
+  01/2022 – 06/2023 '
+population: 317713
+costs: 340000
+financiallyWeak: false
+beginnerFriendly: false
+description: >-
+  Wer mit dem Fahrrad auf eine Ampel zufährt und weiß, wann sie umschaltet, kann
+  die Geschwindigkeit anpassen, um komfortabel und im „Flow“ bei Grün
+  durchzufahren. Das ist die Idee hinter dem Grüne-Welle-Assistent Leezenflow:
+  Auf einer digitalen Anzeige ist anhand des Farbverlaufs bereits mehrere Meter
+  vor der nächsten Straßenkreuzung zu sehen, wie lange die aktuelle Ampelphase
+  noch andauert. Dadurch können Radfahrende die Geschwindigkeit individuell
+  anpassen und kommen flüssiger und sicherer ans Ziel. Der Leezenflow ist mit
+  der jeweiligen Fahrradampel verbunden und ändert die Länge des Farbverlaufs
+  dynamisch. Das System bietet nicht nur mehr Komfort, sondern führt im
+  Idealfall zu weniger Rotlichtverstößen. 
+   
+  Seit dem 17. Mai 2021 wird der Prototyp Leezenflow an der Kreuzung Hörstertor
+  auf Münsters Promenade getestet. Im Rahmen der Testphase führte das Institut
+  für Verkehrswissenschaft der WWU Münster im Auftrag der Stadt Münster eine
+  wissenschaftliche Evaluation durch. Diese bestand aus einer
+  Online-Bürger\*innen-Umfrage, an der 546 Personen teilgenommen haben, sowie
+  Verkehrsbeobachtungen und -messungen vor Ort. Das Ziel der Untersuchung war,
+  Aussagen darüber treffen zu können, inwiefern Leezenflow den Radverkehrsfluss
+  verbessert, die Verkehrssicherheit nicht beeinträchtigt und die
+  Radfahrer\*innen mit dem Prototypen zufrieden sind. 
+   
+  Insgesamt ist das Leezenflow-System positiv bewertet worden, so dass der
+  Ausschuss für Verkehr und Mobilität der Stadt Münster im Mai 2022 beschlossen
+  hat,  bis zu zehnweitere Leezenflow-Systeme an geplanten Velorouten
+  (Anbindungen an das Umlandgemeinden) zu installieren. Diese Geräte werden bis
+  zum Sommer 2023 in Betrieb genommen und durch eine weitere Untersuchung
+  begleitet.
+goals: |-
+  - Komfort und Fahrspaß
+  - Mehr Personen fahren Fahrrad 
+  - Fahrrad steigt in der Wahrnehmung / Statussymbol
+localChallenges: |-
+  - Flächenkonflikte
+  - Polyzentrale Struktur/Zersiedlung
+  - Viel (denkmalgeschütztes) Kopfsteinpflaster
+particularities: |-
+  - Evaluation
+  - Beteiligung
+  - Nachhaltige Ressourcen
+  - Verkehrsversuch oder Modellvorhaben
+results: 'Der Leezenflow erhöht den Komfort für Radfahrende und verbessert den
+  Verkehrsfluss. Die Bevölkerung nimmt den Leezenflow gut an, sodass die Stadt
+  Münster nun weitere Anzeigetafeln installiert. '
+challenges: >-
+  Die größte Herausforderung ist, zu erklären wie Leezenflow funktioniert. An
+  der aktuellen Teststelle dürfen wir keine Erklärschilder dauerhaft befestigen.
+  Auf der Homepage erklären wir das System, aber nicht vor Ort. 
+
+  Via twitter kritisierten Münsteraner „Fahrrad-Freaks“ immer mal wieder das
+  System, weil sie es nicht verstanden haben bzw. verstehen wollten und somit in
+  Frage stellten.
+communication: 'Diverse Pressemeldungen zu unterschiedlichen Etappen/Anlässen
+  (Weiterentwicklung vom MSHACK, Designvorstellung, Start Testphase, Evaluation
+  etc.), Pressetermin zum Start, Social Media in Verbindung mit den PMs + zu
+  diversen Anlässen, Berichterstattungen in „Fach“-Magazinen (auf Anfrage von
+  den Redaktionen), Smart City Navigator, Vorstellen des Systems auf
+  (Fach-)Tagungen und –Kongressen usw. '
+funding: >
+  Prototyp:
+
+  - Eigenmittel: 10 Prozent 
+
+  - Landesmittel: 10 Prozent (Land NRW: Förderprogramm Nahmobilität) 
+
+  - Bundesmittel: 80 Prozent (Stadt und Land) 
+
+
+  Weitere Leezenflows: 
+
+
+  - Eigenmittel: 17,5 Prozent 
+
+  - Landesmittel: 17,5 Prozent (Land NRW: Kofinanzierung Modellprojekte Smart
+  Cities (MPSC)) 
+
+  - Bundesmittel: 65 Prozent (Bundesministerium für Wohnen, Stadtentwicklung und
+  Bauwesen: Modellprojekte Smart Cities (MPSC)
+personnelExpenses: 'Relativ hoch, da es im Rahmen der Ampeltechnik ein relativ
+  innovatives Projekt außerhalb der geübten Wege war/ist. Der genaue Aufwand
+  kann nicht abgeschätzt werden. '
+authorities: 'Stabsstelle Smart City Münster und das Amt für Mobilität und
+  Tiefbauamt,  Stadtplanungsamt  Westfälische Wilhelms-Universität Münster,
+  Fachhochschule Münster (Münster School of Design) sowie bCyber GmbH und Code
+  for Münster '
+stakeholders: 'Westfälische Wilhelms-Universität Münster, Fachhochschule Münster
+  (Münster School of Design) sowie bCyber GmbH und Code for Münster '
+relatedOffice: Dr. Thomas Terstiege, TerstiegeT@stadt-muenster.de
+sources: Stadt Münster
+notes: 'Die Software-Seite des Leezenflows ist Open Source verfügbar.
+  Nachahmer-Kommunen haben die Möglichkeit, sich die gesamte Bauanleitung
+  herunterzuladen und die Geräte selbst nachzubauen (und zu verbessern), ohne um
+  „Erlaubnis“ zu fragen. Das Projekt Radbahn Berlin hat diese schon
+  übernommen.  '
+links:
+  - display: 'Smart City Münster: Leezenflow'
+    url: 'https://smartcity.ms/leezenflow/ '
+awards: []

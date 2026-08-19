@@ -1,19 +1,23 @@
-import clsx from 'clsx';
-import {
-  GatsbyImage,
-  IGatsbyImageData,
-  StaticImage,
-} from 'gatsby-plugin-image';
-import React, { ReactNode } from 'react';
-import { Link } from '../core/links/Link';
+import clsx from 'clsx'
+import React, { type ReactNode } from 'react'
+
+import { assetSrc } from '~/lib/assetSrc'
+
+import { Link } from '../core/links/Link'
+import PlaceholderImage from './assets/planf-placeholder.jpg'
 
 type Props = {
-  link: string | null;
-  image: IGatsbyImageData;
-  children: ReactNode;
-  className?: string;
-  title: string;
-};
+  link: string | null
+  /** Image URL, or undefined to show the placeholder. */
+  image?: string
+  children: ReactNode
+  className?: string
+  title: string
+}
+
+const cardImageClass =
+  'overflow-hidden sm:w-[300px] sm:shrink-0 sm:rounded-bl-3xl lg:w-[400px] xl:w-[450px]'
+
 export const CardCommunityEntry: React.FC<Props> = ({
   className,
   children,
@@ -23,15 +27,15 @@ export const CardCommunityEntry: React.FC<Props> = ({
 }) => {
   if (!link)
     return (
-      <div className="flex h-full flex-col gap-3 rounded-b-3xl bg-white sm:flex-row sm:gap-6 ">
-        <GatsbyImage
-          className="w-full overflow-hidden sm:h-72 sm:w-1/3 sm:shrink-0 sm:rounded-bl-3xl"
+      <div className="flex h-full flex-col gap-3 rounded-b-3xl bg-white sm:flex-row sm:gap-6">
+        <img
+          className="w-full overflow-hidden object-cover sm:h-72 sm:w-1/3 sm:shrink-0 sm:rounded-bl-3xl"
           alt=""
-          image={image}
+          src={image || assetSrc(PlaceholderImage)}
         />
         <div className="p-6 sm:pl-0">{children}</div>
       </div>
-    );
+    )
   return (
     <Link
       blank
@@ -42,25 +46,15 @@ export const CardCommunityEntry: React.FC<Props> = ({
       )}
       href={link}
     >
-      {image ? (
-        <GatsbyImage
-          className="overflow-hidden sm:w-[300px] sm:shrink-0 sm:rounded-bl-3xl lg:w-[400px] xl:w-[450px]"
-          alt=""
-          image={image}
-        />
-      ) : (
-        <StaticImage
-          src="./../CommunityEntries/assets/planf-placeholder.jpg"
-          className="overflow-hidden sm:w-[300px] sm:shrink-0 sm:rounded-bl-3xl lg:w-[400px] xl:w-[450px]"
-          alt=""
-        />
-      )}
+      <img
+        className={clsx(cardImageClass, 'object-cover')}
+        alt=""
+        src={image || assetSrc(PlaceholderImage)}
+      />
       <div className="p-6 sm:pl-0">
-        <h3 className="mb-3 text-lg font-bold text-black md:text-xl">
-          {title}
-        </h3>
+        <h3 className="mb-3 text-lg font-bold text-black md:text-xl">{title}</h3>
         {children}
       </div>
     </Link>
-  );
-};
+  )
+}

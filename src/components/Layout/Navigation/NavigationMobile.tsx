@@ -1,36 +1,25 @@
-import { Menu, Transition } from '@headlessui/react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/20/solid';
-import clsx from 'clsx';
-import React, { ReactNode } from 'react';
-import Logo from '~/components/Layout/assets/Logo.svg';
-import { SearchBar } from '~/components/SearchBar';
-import {
-  menuLinkActiveStyles,
-  menuLinkStylesDefault,
-} from '~/components/core/links';
-import { Link } from '../../core/links/Link';
-import { menuItems, menuItemsWithChildren } from './menuItems';
-import { NavigationMobileDisclosure } from './NavigationMobileDisclosure';
+import { Menu, Transition } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/20/solid'
+import clsx from 'clsx'
+import React, { type ReactNode } from 'react'
 
-type Props = { path: string; className?: string; children?: ReactNode };
+import { menuLinkActiveStyles, menuLinkStylesDefault } from '~/components/core/links'
+import Logo from '~/components/Layout/assets/Logo.svg?react'
+import { SearchBar } from '~/components/SearchBar'
+
+import { Link } from '../../core/links/Link'
+import { menuItems, menuItemsWithChildren } from './menuItems'
+import { NavigationMobileDisclosure } from './NavigationMobileDisclosure'
+
+type Props = { path: string; className?: string; children?: ReactNode }
 
 // base: 'simple' from https://tailwindui.com/components/application-ui/navigation/navbars
 
-export const NavigationMobile: React.FC<Props> = ({
-  children,
-  path,
-  className,
-}) => {
+export const NavigationMobile: React.FC<Props> = ({ children, path, className }) => {
   return (
     <Menu>
       {({ open }) => (
-        <nav
-          className={clsx(
-            className,
-            open ? 'z-30' : 'z-10 ',
-            'fixed w-full bg-green-500',
-          )}
-        >
+        <nav className={clsx(className, open ? 'z-30' : 'z-10 ', 'fixed w-full bg-green-500')}>
           <div className={clsx('z-30 mx-auto px-4 pb-2 sm:px-6 lg:px-8')}>
             <div className="flex h-16 justify-between">
               <Link className="flex flex-col justify-center" href="/">
@@ -73,34 +62,25 @@ export const NavigationMobile: React.FC<Props> = ({
                     {key in menuItemsWithChildren ? (
                       <NavigationMobileDisclosure
                         // Inner Menu Button
-                        button={
-                          <p className={clsx('whitespace-nowrap !text-sm')}>
-                            {key}
-                          </p>
-                        }
+                        button={<p className={clsx('whitespace-nowrap !text-sm')}>{key}</p>}
                       >
                         {/* children: Inner Menu Panel */}
                         {/* List of all children */}
-                        {Object.keys(menuItemsWithChildren[key]).map(
-                          (childKey) => (
-                            <Menu.Item
-                              key={menuItemsWithChildren[key][childKey]}
+                        {Object.keys(menuItemsWithChildren[key]).map((childKey) => (
+                          <Menu.Item key={menuItemsWithChildren[key][childKey]}>
+                            <Link
+                              href={`${menuItems[key]}${menuItemsWithChildren[key][childKey]}`}
+                              className={clsx(
+                                '!text-sm',
+                                path === `${menuItems[key]}${menuItemsWithChildren[key][childKey]}`
+                                  ? menuLinkActiveStyles
+                                  : menuLinkStylesDefault,
+                              )}
                             >
-                              <Link
-                                href={`${menuItems[key]}${menuItemsWithChildren[key][childKey]}`}
-                                className={clsx(
-                                  '!text-sm',
-                                  path ===
-                                    `${menuItems[key]}${menuItemsWithChildren[key][childKey]}`
-                                    ? menuLinkActiveStyles
-                                    : menuLinkStylesDefault,
-                                )}
-                              >
-                                {childKey}
-                              </Link>
-                            </Menu.Item>
-                          ),
-                        )}
+                              {childKey}
+                            </Link>
+                          </Menu.Item>
+                        ))}
                       </NavigationMobileDisclosure>
                     ) : (
                       <Link
@@ -123,5 +103,5 @@ export const NavigationMobile: React.FC<Props> = ({
         </nav>
       )}
     </Menu>
-  );
-};
+  )
+}

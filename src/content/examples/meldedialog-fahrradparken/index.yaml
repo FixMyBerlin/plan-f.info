@@ -1,0 +1,59 @@
+title: Meldedialog Fahrradparken
+position: 1107
+measure: information-austausch-und-beteiligung
+relatedTopic: infrastruktur
+image:
+  image: /content-images/examples/meldedialog-fahrradparken.png
+  copyright: 'Radbügel Aachen, Urheberin: Stadt Aachen'
+shortDescription: Online-Bedarfserfassung im Bereich Fahrradparken durch direkte
+  Beteiligung der Bürger*innen und beschleunigte Umsetzung der resultierenden
+  Planungen durch Datenanalyse und digitale Prüfverfahren.
+subcategory: Partizipation (Bürger*innen)
+commune: Aachen
+countryState: Nordrhein-Westfalen
+spatialStructure: Überwiegend städtisch
+centrality: Sehr zentral
+period: 2019-2020
+population: 249070
+costs: 12000
+financiallyWeak: false
+beginnerFriendly: true
+description: >
+  Bürger\*innen von Aachen konnten digital melden, wo sie im Bezirk Stellplätze
+  für ihr Fahrrad benötigen. Die Standorte werden geprüft und wenn möglich neue
+  Fahrradbügel umgesetzt. Die Stadt prüft aktuell alle Meldungen und setzt sie,
+  wenn möglich, um. 
+
+
+  Durch die Einbeziehung der Bürger\*innen mit dem Online-Meldedialog
+  Fahrradparken, sollen schnell und bedarfsgerecht Orte für neue Abstellanlagen
+  identifiziert werden. Schlaue digitale Prozesse verbinden so bessere
+  Beteiligung der Bürger*innen mit weniger Arbeit für die Verwaltung. Ziel der
+  Stadt ist es, im Rahmen des Radentscheides sichere Parkplätze für Radfahrende
+  zu schaffen. Die neuen Fahrradbügel werden vorrangig auf der Fahrbahn
+  errichtet, sodass der Ausbau nicht zu Lasten des Fußverkehrs geht.
+goals: |
+  - Komfort und Fahrspaß
+  - Mehr Personen fahren Fahrrad
+  - Fahrrad steigt in der Wahrnehmung / Statussymbol
+  - Klima- und Umweltschutz
+localChallenges: Flächenkonflikte
+particularities: |-
+  - Evaluation
+  - Beteiligung
+  - Einsteiger\*innenmaßnahme
+results: Von den 8.555 gemeldeten Fahrradbügel wurden bereits 1.000 umgesetzt
+  (Stand März 2023).
+challenges: Keine Herausforderungen der Konzeption
+communication: Pressemitteilung, Webseite, Social-Media
+funding: '- Eigenmittel: 100 Prozent'
+personnelExpenses: Keine Angabe
+authorities: Büro des Oberbürgermeisters, FB61, Datenschutzbeauftragter, FB13
+stakeholders: FixMyCity
+relatedOffice: Michael Pielen, Michael.Pielen@mail.aachen.de
+sources: Stadt Aachen, FixMyCity
+notes: Der Meldedialog wurde auch in Friedrichshain-Kreuzberg (Berlin) umgesetzt.
+links:
+  - display: Radbügel Aachen
+    url: https://radbuegel-aachen.de/meldungen/karte
+awards: []

@@ -1,0 +1,121 @@
+title: Citywise
+position: 1077
+measure: apps
+relatedTopic: governance
+image:
+  image: /content-images/examples/citywise.jpeg
+  copyright: 'Citywise App, Urheberin: Whysk GmbH'
+shortDescription: 'Entwickeln einer mobilen App für die lokale
+  Fahrrad-Community, wo Highlights und Gefahrstellen des lokalen
+  Radverkehrinfrastruktur miteinander und den Behörden geteilt werden können. '
+subcategory: Apps
+commune: München
+countryState: Bayern
+spatialStructure: Überwiegend städtisch
+centrality: Sehr zentral, zentral, peripher
+period: Seit 11/2019
+population: 1487708
+financiallyWeak: false
+beginnerFriendly: true
+description: >-
+  Citywise ist eine mobile App (Android und iOS) für die lokale
+  Fahrradcommunity, die zum Teilen von Highlights und Gefahren für Radfahrende
+  in der Kommune anregt. Citywise Nutzer\*innen profitieren von dem gesammelten
+  Wissen der Community und nutzen es, um die schönsten und sichersten Wege durch
+  die Stadt zu finden.  
+
+
+  Zur Zielgruppe von Citywise zählen Fahrrad-Berufspendler\*innen,
+  Gelegenheitsradfahrende und Fahrradtourist\*innen. Teilnehmenden Kommunen
+  bietet die App die Möglichkeit, mehr über die Beschaffenheit ihrer
+  Fahrradinfrastruktur aus Sicht der Bürger\*innen zu erfahren und diese
+  Erkenntnisse in ihre Planung einfließen zu lassen. 
+
+
+  Citywise legt ein starkes Augenmerk auf die einfache Handhabung: Um einen
+  Eintrag in Citywise zu teilen, muss lediglich ein Foto aufgenommen werden und
+  dieses einer von fünf Kategorien zugeordnet werden: Citystar (Highlight),
+  Gefahrstelle, Stellplatz, Radzubehör, Luftpumpe. Optional kann auch ein
+  Erklärungstext hinzugefügt werden.  
+
+
+  Die bayerische Landeshauptstadt sieht in der App ein gelungenes Angebot für
+  ihre Rad fahrenden Bürger\*innen. Bei Citywise steht der Open-Data-Grundsatz
+  im Vordergrund: Einträge aus der App werden über eine offene
+  Datenschnittstelle dauerhaft kostenfrei zur Verfügung gestellt. So können die
+  Verwaltung wie auch die Community die Daten für ihre Analysen verwenden. Die
+  App ist so konzipiert, dass Citywise mit geringen Kosten auch auf andere
+  Kommunen übertragbar ist.
+goals: |-
+  - Sicherheit 
+  - Komfort und Fahrspaß 
+  - Mehr Personen fahren Fahrrad 
+  - Fahrrad steigt in der Wahrnehmung / Statussymbol 
+  - Reduktion privater Autoverkehr (sogenannter MIV) 
+  - Klima- und Umweltschutz 
+  - Sonstiges: Radfahrer*innen eine Plattform zur Teilhabe geben
+localChallenges: Fehlende Transparenz, welche Maßnahmen von den Radfahrer\*innen
+  gewünscht werden
+particularities: |-
+  Evaluation
+  Beteiligung
+  Interkommunal
+  Quick-Win
+  Einsteiger\*innenmaßnahme
+results: Über 800 Nutzende, Über 300 geteilte Einträge (Stand Februar 2023).
+  Während des Einsatzes in München wurden die Einträge zur weiteren Bearbeitung
+  an die Fachbereiche weitergeleitet. Teilnahmeinteresse weiterer Kommunen ist
+  vorhanden.
+challenges: >-
+  - Durchführen von Öffentlichkeitsarbeit zum Vorstellen von Citywise unter den
+  Bürger*innen 
+
+  - Auswerten der User-Einträge zur Bewertung von Modernisierungsmaßnahmen an
+  der Radinfrastruktur
+communication: Bewerbung bei Twitter und Medienkanäle der Stadt
+funding: >-
+  Partnerprogramm mit monatlichen Gebühren in Abhängigkeit der Größe der
+  Kommune. Weitere Informationen unter: https://citywise.app/#/municipality  
+
+  - Eigenmittel: 50 Prozent
+
+  - Sonstige: 50 Prozent (Kommunalmittel der Stadt München)
+personnelExpenses: 20 Stunden
+authorities: IT-Referat München
+stakeholders: Whysk GmbH
+relatedOffice: |+
+  Martin Kummann 
+  martin@citywise.app 
+
+  Jennifer Sander
+  jennifer.sander@muenchen.de 
+
+sources: |-
+  Citywise 
+  Deutscher Fahrradpreis 2021
+notes: |-
+  Wir haben Konzepte, siehe u.a. 
+  https://muenchenunterwegs.de/information/daten-und-zahlen-zum-muenchner-radverkehr 
+
+  https://muenchenunterwegs.de/angebote/verkehrsmittel/fahrrad 
+
+   
+
+  Wir haben z.B. Radentscheid 
+  https://muenchenunterwegs.de/radentscheid 
+
+  Für das Gebiet, wo diese Maßnahme durchgeführt wurde, treffen mehrere Raumtypen zu.
+  Besiedlung: teilweise städtisch
+  Kreis: Städtischer Kreis, ländlicher Kreis mit Verdichtungsansätzen
+links:
+  - display: 'Citywise: App'
+    url: https://citywise.app
+  - display: 'Stadt München: Citywise'
+    url: https://muenchen.digital/blog/citywise-radfahren-in-muenchen/
+  - display: 'Citywise: Twitter Konto'
+    url: 'https://twitter.com/citywise_app '
+awards:
+  - name: ''
+    description: 'Gewinner Apps4Muc 2019 '
+    logo: ''
+    logoCopyright: ''

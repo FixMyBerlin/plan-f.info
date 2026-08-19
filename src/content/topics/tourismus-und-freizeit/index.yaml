@@ -1,0 +1,25 @@
+name: Tourismus und Freizeit
+position: 80
+shortDescription: Es gibt unterschiedliche kommunale Handlungsmöglichkeiten zur
+  Förderung der touristischen und Freizeitfahrradmobilität fördern, wie z. B.
+  touristische Infrastruktur, Services oder Informationen.
+description: Das Handlungsfeld Tourismus und Freizeit schließt unterschiedliche
+  kommunale Handlungsmöglichkeiten ein, welche die touristische und
+  Freizeitradmobilität fördern. Dazu gehören u. a. öffentliche Angebote wie
+  touristische Infrastruktur und Services, Informationen als auch
+  Fördermöglichkeiten für die Privatwirtschaft (z. B. Abstellanlagen oder
+  E-Ladestationen) oder Bike Parks.
+image:
+  image: /content-images/topics/tourismus-und-freizeit.svg
+  copyright: ''
+additionalResources:
+  - display: Digitalisierung im Radtourismus am Praxisbeispiel der
+      Römer-Lippe-Route. Übersicht digitaler Dienste und Empfehlungen für
+      Anwendungen im Radtourismus.
+    url: https://www.roemerlipperoute.de/fileadmin/user_upload/Digitalisierung_im_Radtourismus.pdf
+guidelines:
+  - display: 'Infosheet: Daten und Fakten zum  Fahrradtourismus'
+    url: https://rad.sh/wp-content/uploads/2021/01/RAD.SH-Infosheet-Nr-12-Fahrradtourismus.pdf
+fundings:
+  - display: Förderfibel Mobilitätsforum Bund
+    url: https://www.mobilitaetsforum.bund.de/SiteGlobals/Forms/Suche/Foerderfibel_Formular.html?queryResultId=null&pageNo=0

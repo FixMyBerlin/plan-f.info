@@ -1,1 +1,1 @@
-export const wikiPath = 'wissensspeicher';
+export const wikiPath = 'wissensspeicher'

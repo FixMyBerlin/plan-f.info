@@ -1,27 +1,24 @@
-import clsx from 'clsx';
-import React, { ReactNode } from 'react';
+import clsx from 'clsx'
+import React, { type ReactNode } from 'react'
 
 type Props = {
-  id?: string;
-  children: ReactNode;
-  className?: string;
-};
+  id?: string
+  children: ReactNode
+  className?: string
+}
 
-const leadingClassName = 'leading-[1.8] md:leading-[1.8]';
+const leadingClassName = 'leading-[1.8] md:leading-[1.8]'
 
 export const H1: React.FC<Props> = ({ id, className, children }) => {
   return (
     <h1
       id={id}
-      className={clsx(
-        'mb-5 text-3xl font-bold text-black md:mb-10 md:text-4xl',
-        className,
-      )}
+      className={clsx('mb-5 text-3xl font-bold text-black md:mb-10 md:text-4xl', className)}
     >
       {children}
     </h1>
-  );
-};
+  )
+}
 
 export const H2: React.FC<Props> = ({ id, className, children }) => {
   return (
@@ -34,8 +31,8 @@ export const H2: React.FC<Props> = ({ id, className, children }) => {
     >
       {children}
     </h2>
-  );
-};
+  )
+}
 
 export const H3: React.FC<Props> = ({ id, className, children }) => {
   return (
@@ -48,8 +45,8 @@ export const H3: React.FC<Props> = ({ id, className, children }) => {
     >
       {children}
     </h3>
-  );
-};
+  )
+}
 export const P: React.FC<Props> = ({ id, className, children }) => {
   return (
     <p
@@ -62,19 +59,12 @@ export const P: React.FC<Props> = ({ id, className, children }) => {
     >
       {children}
     </p>
-  );
-};
+  )
+}
 export const Caption: React.FC<Props> = ({ id, className, children }) => {
   return (
-    <figcaption
-      id={id}
-      className={clsx(
-        'mt-3 text-xs text-gray-400',
-        leadingClassName,
-        className,
-      )}
-    >
+    <figcaption id={id} className={clsx('mt-3 text-xs text-gray-400', leadingClassName, className)}>
       {children}
     </figcaption>
-  );
-};
+  )
+}

@@ -1,0 +1,50 @@
+---
+// Single shell page for all Plan F Check results. Netlify rewrites /plan-f-check/<answers>/
+// here (200, URL preserved); the island parses the answer string from window.location and
+// computes the result client-side. We embed the topic→measure→example tree (with the fields
+// the scoring/filter logic needs) built from the content collections.
+import {
+  PlanFCheckResultPage,
+  type ResultTopic,
+} from '~/components/PlanFCheck/PlanFCheckResultPage'
+import { getSortedExamples, getSortedMeasures, getSortedTopics } from '~/lib/content'
+import Layout from '~/layouts/Layout.astro'
+
+const [topics, measures, examples] = await Promise.all([
+  getSortedTopics(),
+  getSortedMeasures(),
+  getSortedExamples(),
+])
+
+const tree: ResultTopic[] = topics.map((t) => ({
+  name: t.data.name,
+  slug: t.id,
+  shortDescription: t.data.shortDescription,
+  image: { url: t.data.image.image },
+  measures: measures
+    .filter((m) => m.data.topic === t.id)
+    .map((m) => ({
+      name: m.data.name,
+      slug: m.id,
+      examples: examples
+        .filter((e) => e.data.measure === m.id)
+        .map((e) => ({
+          title: e.data.title,
+          shortDescription: e.data.shortDescription,
+          subcategory: e.data.subcategory ?? '',
+          slug: e.id,
+          financiallyWeak: e.data.financiallyWeak,
+          beginnerFriendly: e.data.beginnerFriendly,
+          population: e.data.population,
+          spatialStructure: e.data.spatialStructure,
+          countryState: e.data.countryState,
+          measure: { name: m.data.name, slug: m.id },
+          image: { src: e.data.image.image, copyright: e.data.image.copyright },
+        })),
+    })),
+}))
+---
+
+<Layout title="Plan F Check - Ergebnisse" noindex>
+  <PlanFCheckResultPage client:load topics={tree} />
+</Layout>

@@ -1,0 +1,17 @@
+name: Radfahrstreifen
+position: 336
+topic: infrastruktur
+shortDescription: Ein Radfahrstreifen ist ein Teil der Straße, der speziell für
+  den Radverkehr vorgesehen ist und durch Markierungen von der restlichen Straße
+  abgegrenzt ist. Der Kfz-Verkehr darf diese Markierung nicht überfahren.
+description: 'Ein Radfahrstreifen ist ein Teil der Straße, der speziell für den
+  Radverkehr vorgesehen ist und durch Markierungen von der Fahrbahn abgegrenzt
+  ist. Der Kfz-Verkehr darf diese Markierung nicht überfahren (durchgezogene
+  Linie). Jedoch sollten aufgrund des höheren Sicherheitsempfindens auf Straßen
+  mit hohen und mittleren Verkehrsaufkommen primär separate Radwege oder
+  geschützte Infrastrukturen umgesetzt werden. '
+additionalResources:
+  - display: Sicherheit und Nutzbarkeit markierter Radverkehrsführungen
+    url: https://www.udv.de/resource/blob/79848/e71c28f5c831cc59208d4a642f985703/59-sicherheit-und-nutzbarkeit-markierter-radverkehrsfuehrungen-data.pdf
+guidelines: []
+fundings: []

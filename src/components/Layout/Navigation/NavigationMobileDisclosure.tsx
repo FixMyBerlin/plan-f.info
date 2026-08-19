@@ -1,16 +1,13 @@
-import { Disclosure, Transition } from '@headlessui/react';
-import { MinusCircleIcon, PlusCircleIcon } from '@heroicons/react/20/solid';
-import React, { ReactNode } from 'react';
+import { Disclosure, Transition } from '@headlessui/react'
+import { MinusCircleIcon, PlusCircleIcon } from '@heroicons/react/20/solid'
+import React, { type ReactNode } from 'react'
 
 type Props = {
-  button: ReactNode;
-  children: ReactNode;
-};
+  button: ReactNode
+  children: ReactNode
+}
 
-export const NavigationMobileDisclosure: React.FC<Props> = ({
-  button,
-  children,
-}) => {
+export const NavigationMobileDisclosure: React.FC<Props> = ({ button, children }) => {
   return (
     <Disclosure>
       {({ open }) => (
@@ -40,5 +37,5 @@ export const NavigationMobileDisclosure: React.FC<Props> = ({
         </>
       )}
     </Disclosure>
-  );
-};
+  )
+}

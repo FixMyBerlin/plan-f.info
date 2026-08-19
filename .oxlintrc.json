@@ -1,0 +1,28 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "typescript", "import", "jsx-a11y"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn"
+  },
+  "env": {
+    "browser": true,
+    "es2024": true,
+    "node": true
+  },
+  "rules": {
+    "react/react-compiler": "error",
+    "react/react-in-jsx-scope": "off"
+  },
+  "overrides": [
+    {
+      "files": ["scripts/**/*.ts", "*.config.*"],
+      "env": { "node": true }
+    },
+    {
+      "files": ["src/components/PlanFCheck/PlanFCheckResultPage.tsx"],
+      "rules": { "react/react-compiler": "off" }
+    }
+  ],
+  "ignorePatterns": ["dist", ".astro", ".netlify", "node_modules", "public/search"]
+}

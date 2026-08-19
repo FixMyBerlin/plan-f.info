@@ -1,0 +1,35 @@
+name: Infrastruktur
+position: 30
+shortDescription: Maßnahmen zur Verbesserung von Radinfrastrukturanlagen
+  (fließender und ruhender Verkehr). Um die Nutzbarkeit für alle Zielgruppen zu
+  erhöhen, muss eine geeignete Radinfrastruktur so ausgelegt sein, dass sich
+  alle Personen sicher fühlen.
+description: Das Handlungsfeld Infrastruktur schließt alle Maßnahmen ein, die
+  der Verbesserung der Radinfrastrukturanlagen dienen. Dabei geht es sowohl um
+  den fließenden Radverkehr, z. B. Radwege, Einrichtung von Fahrradstraßen,
+  Brücken oder sichere Kreuzungen oder die Beschilderung des Fahrradnetzes, als
+  auch um Abstellanlagen für den ruhenden Verkehr. Um die Nutzbarkeit der
+  Radmobilität für alle Zielgruppen zu erhöhen, muss eine geeignete
+  Radinfrastruktur so ausgelegt sein, dass sich alle Personen sicher fühlen.
+  Infrastrukturen, um die Multimodalität zu fördern, sind im Handlungsfeld 6
+  „Multimodalität und Nahmobilität“ aufgeführt.
+image:
+  image: /content-images/topics/infrastruktur.svg
+  copyright: ''
+additionalResources:
+  - display: Fahrradstadt. Ein umfassender Werkzeugkasten für Städte und Gemeinden
+    url: https://www.fahrradverlag.de/b%C3%BCcher-1/verlagsprogramm/fahrradstadt/
+guidelines:
+  - display: So geht Verkehrswende – Infrastrukturelemente für den Radverkehr
+    url: https://www.adfc.de/fileadmin/user_upload/So_geht_Verkehrswende_klein-2.pdf
+  - display: Radverkehr in Schleswig-Holstein Musterlösungen für Radverkehrsanlagen
+    url: https://rad.sh/wp-content/uploads/2021/11/RADSHM1.pdf
+  - display: 'Infosheet: Einbahnstraßenöffnung für Radfahrende'
+    url: https://rad.sh/wp-content/uploads/2020/09/RAD.SH-Infosheet-Nr-8-%C3%96ffnung-von-Einbahnstra%C3%9Fen.pdf
+  - display: 'Infosheet: Umlaufsperren und Poller'
+    url: https://rad.sh/wp-content/uploads/2021/03/RAD.SH-Infosheet-Nr-14-Umlaufsperren-und-Draengelgitter.pdf
+  - display: Musterlösungen zu Radverkehrsanlagen in Baden-Württemberg
+    url: https://www.aktivmobil-bw.de/fileadmin/user_upload_fahrradlandbw/Downloads/Musterloesungen_RadNETZ.pdf
+fundings:
+  - display: Förderfibel Mobilitätsforum Bund
+    url: https://www.mobilitaetsforum.bund.de/SiteGlobals/Forms/Suche/Foerderfibel_Formular.html?queryResultId=null&pageNo=0

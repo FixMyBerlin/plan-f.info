@@ -1,15 +1,17 @@
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import React, { ReactNode } from 'react';
-import { Link } from '../core/links/Link';
+import React, { type ReactNode } from 'react'
+
+import { Link } from '../core/links/Link'
+
+export type CardImage = { src: string; copyright?: string }
 
 type Props = {
-  link: string;
-  image: any;
-  children: ReactNode;
-  title: string;
-  linkExternal?: boolean;
-  measure?: string;
-};
+  link: string
+  image?: CardImage
+  children: ReactNode
+  title: string
+  linkExternal?: boolean
+  measure?: string
+}
 export const CardExample: React.FC<Props> = ({
   children,
   link,
@@ -25,13 +27,9 @@ export const CardExample: React.FC<Props> = ({
       className="flex h-full flex-col rounded-b-3xl bg-white"
       href={link}
     >
-      {image && (
+      {image?.src && (
         <>
-          <GatsbyImage
-            className="h-52 w-full overflow-hidden"
-            alt=""
-            image={getImage(image.image.localFile as any)}
-          />
+          <img className="h-52 w-full overflow-hidden object-cover" alt="" src={image.src} />
           {image.copyright && (
             <p className="px-5 pt-2 text-right text-xs text-gray-400">
               Abbildung: {image.copyright}
@@ -40,12 +38,10 @@ export const CardExample: React.FC<Props> = ({
         </>
       )}
       <div className="p-6">
-        <h3 className="mb-3 text-lg font-bold text-black md:text-xl">
-          {title}
-        </h3>
-        {measure && <p className="uppercase text-purple-500 mb-3">{measure}</p>}
+        <h3 className="mb-3 text-lg font-bold text-black md:text-xl">{title}</h3>
+        {measure && <p className="mb-3 text-purple-500 uppercase">{measure}</p>}
         {children}
       </div>
     </Link>
-  );
-};
+  )
+}

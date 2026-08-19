@@ -1,2 +1,2 @@
-export * from './Profile';
-export * from './ProfileGrid';
+export * from './Profile'
+export * from './ProfileGrid'

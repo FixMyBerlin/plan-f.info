@@ -1,0 +1,59 @@
+title: Mängelerkennung Radwegweiser
+position: 1337
+measure: apps
+relatedTopic: infrastruktur
+image:
+  image: /content-images/examples/maengelerkennung-radwegweiser.jpg
+  copyright: 'Schadensmelder-Aufkleber, Urheberin: Gemeinde Adelsdorf'
+shortDescription: Erstellung von Aufklebern mit QR-Code, die zur Schadensmeldung
+  an Radwegweisern angebracht werden können.
+subcategory: Apps
+commune: Adelsdorf
+countryState: Bayern
+spatialStructure: Überwiegend städtisch
+centrality: Zentral
+period: 06–07/2022
+population: 9417
+costs: 250
+financiallyWeak: false
+beginnerFriendly: true
+description: >-
+  Radwegweiser werden nicht regelmäßig gewartet. Nicht erkannte Mängel führen
+  aber zu Fehlinformationen für die Radfahrenden. Aus diesem Grund wurde von der
+  Gemeinde Adelsdorf ein Meldesystem entwickelt. 
+
+
+  Jedem Radwegweiser ist eine Gemeindeschlüsselnummer zugeordnet. Daher wurden
+  für alle Radwegweiser Aufkleber angefertigt mit den letzten drei Stellen der
+  Nummer, z. B. 116. Zusätzlich wurden Aufkleber mit einem QR-Code angefertigt.
+  Beide Aufkleber werden auf jeden Radwegepfosten angebracht. Nach dem Scannen
+  der QR-Codes werden die Nutzenden durch ein Menü geführt, um den
+  Schaden/Mängel zu melden, bestenfalls mit Foto. Diese Meldung wird von der
+  Gemeinde entgegengenommen und an die entsprechende Dienststelle (Bauhof)
+  weitergeleitet, damit die Mängel schnellstmöglich behoben werden können.
+goals: Komfort und Fahrspaß
+localChallenges: Keine spezifische Angabe
+particularities: Einsteiger\*innenmaßnahme
+results: 'Die Haupterkenntnis ist, dass dieses System sowohl von der Verwaltung
+  als auch vom Bauhof gut organisiert sein muss. '
+challenges: Keine Herausforderungen
+communication: Social Media, Homepage der Gemeinde
+funding: |-
+  250 Euro für die Aufkleber
+  - Eigenmittel: 100 Prozent
+personnelExpenses: Ungefähr 40 Stunden
+authorities: Kommunale Entwicklung
+stakeholders: Keine Angabe
+relatedOffice: Gert de Groot, fahrrad@adelsdorf.de
+sources: |+
+  Gemeinde Adelsdorf, Plan F Award
+
+notes: ''
+links:
+  - display: 'Gemeinde Adelsdorf: Radeln rund um Adelsdorf'
+    url: https://www.adelsdorf.de/erleben/ausflugsziele/radeln-rund-um-adelsdorf
+awards:
+  - name: Plan F Award 2022
+    description: Platz 2 Service
+    logo: /content-images/examples/awards/maengelerkennung-radwegweiser-award-0.svg
+    logoCopyright: 'Urheberin: fair spaces'

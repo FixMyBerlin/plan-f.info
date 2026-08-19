@@ -1,5 +1,4 @@
-import React from 'react';
-import { MailLink } from '../core/links';
+import { MailLink } from '../core/links'
 
 const SendCommunityEntryLink = () => {
   return (
@@ -29,7 +28,7 @@ Hinweis: Mit dem Zusenden eines Bildes bestätigen Sie, dieses frei von Rechten 
     >
       Neuen Vorschlag einreichen
     </MailLink>
-  );
-};
+  )
+}
 
-export default SendCommunityEntryLink;
+export default SendCommunityEntryLink

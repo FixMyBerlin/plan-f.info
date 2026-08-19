@@ -1,24 +1,26 @@
-import { Link as GatsbyLink } from 'gatsby';
-import React, { forwardRef } from 'react';
-import { selectLinkStyle } from './styles';
+import React, { forwardRef } from 'react'
+
+import { selectLinkStyle } from './styles'
 
 export type LinkProps = {
-  href: string;
-  external?: boolean;
-  className?: string;
-  activeClassName?: string;
-  classNameOverwrites?: string;
+  href: string
+  external?: boolean
+  className?: string
+  activeClassName?: string
+  classNameOverwrites?: string
   /** @default `false` for internal links, @default `true` for external links */
-  blank?: boolean;
+  blank?: boolean
   /** @desc Style Link as Button */
-  button?: true | 'white' | 'black' | 'card';
-  children: React.ReactNode;
-} & Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'>;
+  button?: true | 'white' | 'black' | 'card'
+  children: React.ReactNode
+} & Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'>
 
-export const Link: React.FC<LinkProps> = forwardRef<
-  HTMLAnchorElement,
-  LinkProps
->(
+/**
+ * Replaces the Gatsby `<Link>`. Internal links are plain `<a>` tags (Astro handles
+ * routing). `activeClassName` is applied when the current pathname matches `href` —
+ * evaluated on the client, so it lights up inside hydrated islands (the navigation).
+ */
+export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
   (
     {
       href,
@@ -33,34 +35,34 @@ export const Link: React.FC<LinkProps> = forwardRef<
     },
     ref,
   ) => {
-    // external link
-    if (external || href.startsWith('http')) {
+    const isExternal = external || href.startsWith('http')
+    const baseClass = classNameOverwrites || selectLinkStyle(button, className)
+
+    if (isExternal) {
       return (
         <a
           ref={ref}
           href={href}
-          className={classNameOverwrites || selectLinkStyle(button, className)}
+          className={baseClass}
           rel="noopener noreferrer"
           {...{ target: blank === false ? undefined : '_blank' }}
           {...props}
         >
           {children}
         </a>
-      );
+      )
     }
 
+    const isActive =
+      typeof window !== 'undefined' && activeClassName != null && window.location.pathname === href
+    const finalClass = isActive ? `${baseClass} ${activeClassName}` : baseClass
+
     return (
-      <GatsbyLink
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        ref={ref}
-        to={href}
-        className={classNameOverwrites || selectLinkStyle(button, className)}
-        activeClassName={activeClassName}
-        {...props}
-      >
+      <a ref={ref} href={href} className={finalClass} {...props}>
         {children}
-      </GatsbyLink>
-    );
+      </a>
+    )
   },
-);
+)
+
+Link.displayName = 'Link'

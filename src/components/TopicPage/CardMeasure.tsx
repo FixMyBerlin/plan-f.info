@@ -1,14 +1,15 @@
-import clsx from 'clsx';
-import React, { ReactNode } from 'react';
-import { Link } from '../core/links/Link';
+import clsx from 'clsx'
+import React, { type ReactNode } from 'react'
+
+import { Link } from '../core/links/Link'
 
 type Props = {
-  link: string;
+  link: string
 
-  children: ReactNode;
-  className?: string;
-  title: string;
-};
+  children: ReactNode
+  className?: string
+  title: string
+}
 export const CardMeasure: React.FC<Props> = ({
   className,
   children,
@@ -30,5 +31,5 @@ export const CardMeasure: React.FC<Props> = ({
         {children}
       </div>
     </Link>
-  );
-};
+  )
+}

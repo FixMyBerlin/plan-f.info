@@ -1,3 +1,3 @@
-import { wikiPath } from './wikiPath.const';
+import { wikiPath } from './wikiPath.const'
 
-export const isWiki = (path: string) => path.startsWith(`/${wikiPath}/`);
+export const isWiki = (path: string) => path.startsWith(`/${wikiPath}/`)

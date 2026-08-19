@@ -1,0 +1,78 @@
+---
+// Ported from gatsby-browser.jsx `wrapPageElement` + src/components/Layout/Layout.tsx.
+// Wiki-specific props (breadcrumbs, sideNav, bgColor) are supplied by the
+// wissensspeicher routes; normal pages use the defaults.
+import '~/styles/global.css'
+import BaseHead from '~/components/Layout/BaseHead.astro'
+import { Breadcrumbs } from '~/components/Layout/Breadcrumbs'
+import { Footer } from '~/components/Layout/Footer'
+import { NavigationDesktopAndMobile } from '~/components/Layout/Navigation/NavigationDesktopAndMobile'
+import { ScrollTopLink } from '~/components/Layout/ScrollTopLink'
+import { SideNavigation, type SideNavTopic } from '~/components/Layout/Navigation/SideNavigation'
+
+type Props = {
+  title?: string
+  description?: string
+  image?: string
+  noindex?: boolean
+  article?: boolean
+  /** Background color class for the nav bar (wiki routes override this). */
+  bgColor?: string
+  /** Breadcrumb labels (wiki routes only). */
+  breadcrumbs?: string[]
+  /** Topic tree for the wiki side navigation (wiki routes only). */
+  sideNav?: SideNavTopic[]
+}
+
+const {
+  title,
+  description,
+  image,
+  noindex = false,
+  article = false,
+  bgColor = 'bg-green-500',
+  breadcrumbs,
+  sideNav,
+} = Astro.props
+
+const pathname = Astro.url.pathname
+const isWiki = pathname.startsWith('/wissensspeicher/')
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <BaseHead
+      title={title}
+      description={description}
+      image={image}
+      noindex={noindex}
+      article={article}
+    />
+  </head>
+  <body>
+    <div class="relative flex h-full flex-col overflow-x-hidden bg-gray-200">
+      <div class="relative mx-auto w-full max-w-[1366px] bg-white">
+        <ScrollTopLink client:idle />
+        <NavigationDesktopAndMobile client:load path={pathname} bgColor={bgColor}>
+          {isWiki && breadcrumbs && <Breadcrumbs names={breadcrumbs} />}
+        </NavigationDesktopAndMobile>
+        <div class="mx-auto w-full bg-white">
+          <div class="flex w-full flex-row">
+            {
+              isWiki && sideNav && (
+                <div>
+                  <SideNavigation client:load path={pathname} topics={sideNav} />
+                </div>
+              )
+            }
+            <div class="max-w-full flex-grow">
+              <main class="max-w-full"><slot /></main>
+              <Footer />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

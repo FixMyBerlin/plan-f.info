@@ -1,20 +1,19 @@
-import clsx from 'clsx';
-import React, { Fragment } from 'react';
-import { Fundings } from '~/components/AwardPage';
-import { Link } from '~/components/core/links/Link';
-import { menuItems, menuItemsWithChildren } from '../Navigation/menuItems';
-import LogoNegative from '../assets/LogoNegative.svg';
-import { FooterLinks } from './FooterLinks/FooterLinks';
-import { SocialMediaLinks } from './SocialMediaLinks/SocialMediaLinks';
+import clsx from 'clsx'
+import React, { Fragment } from 'react'
+
+import { Fundings } from '~/components/AwardPage'
+import { Link } from '~/components/core/links/Link'
+
+import LogoNegative from '../assets/LogoNegative.svg?react'
+import { menuItems, menuItemsWithChildren } from '../Navigation/menuItems'
+import { FooterLinks } from './FooterLinks/FooterLinks'
+import { SocialMediaLinks } from './SocialMediaLinks/SocialMediaLinks'
 
 export const Footer: React.FC = () => {
   return (
     <>
       <Fundings />
-      <footer
-        className="z-0 bg-black p-10 sm:px-12"
-        aria-labelledby="footer-heading"
-      >
+      <footer className="z-0 bg-black p-10 sm:px-12" aria-labelledby="footer-heading">
         <ul
           className={clsx(
             'grid grid-cols-2 gap-10 pb-6 text-sm text-gray-400 sm:grid-cols-3 md:flex md:flex-row md:justify-between',
@@ -26,7 +25,7 @@ export const Footer: React.FC = () => {
               {key === 'Wissensspeicher' ? (
                 <div className="flex flex-col gap-3">
                   {/* First Link: Wissensspeicher */}
-                  <p className="text-sm uppercase text-gray-400">{key}</p>
+                  <p className="text-sm text-gray-400 uppercase">{key}</p>
                   <Link href={menuItems[key]} className={clsx('!text-sm')}>
                     Handlungsfelder
                   </Link>
@@ -39,27 +38,25 @@ export const Footer: React.FC = () => {
                 <>
                   {key in menuItemsWithChildren ? (
                     <div className="flex flex-col gap-3">
-                      <p className="!text-sm uppercase !text-gray-400">{key}</p>
+                      <p className="!text-sm !text-gray-400 uppercase">{key}</p>
                       {/* List of all children */}
-                      {Object.keys(menuItemsWithChildren[key]).map(
-                        (childKey) => (
-                          <li
-                            className="max-w-[150px] list-none !truncate"
-                            key={menuItemsWithChildren[key][childKey]}
+                      {Object.keys(menuItemsWithChildren[key]).map((childKey) => (
+                        <li
+                          className="max-w-[150px] list-none !truncate"
+                          key={menuItemsWithChildren[key][childKey]}
+                        >
+                          <Link
+                            href={`${menuItems[key]}${menuItemsWithChildren[key][childKey]}`}
+                            className={clsx(' !text-sm')}
                           >
-                            <Link
-                              href={`${menuItems[key]}${menuItemsWithChildren[key][childKey]}`}
-                              className={clsx(' !text-sm')}
-                            >
-                              {childKey}
-                            </Link>
-                          </li>
-                        ),
-                      )}
+                            {childKey}
+                          </Link>
+                        </li>
+                      ))}
                     </div>
                   ) : (
                     <div className="flex flex-col gap-3">
-                      <p className="!text-sm uppercase !text-gray-400">{key}</p>
+                      <p className="!text-sm !text-gray-400 uppercase">{key}</p>
                       <Link href={menuItems[key]} className="!text-sm">
                         {key}
                         {key === 'Über' && ' Plan F / Presse'}
@@ -85,5 +82,5 @@ export const Footer: React.FC = () => {
         </div>
       </footer>
     </>
-  );
-};
+  )
+}

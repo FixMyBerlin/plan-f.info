@@ -1,0 +1,19 @@
+name: Verkehrsberuhigung
+position: 90
+shortDescription: Die Reduzierung des Kfz-Verkehrs durch beispielsweise
+  Geschwindigkeitsreduzierungen, Fahrverbote für Kfz oder die Reduzierung von
+  Kfz-Stellplätzen, trägt insgesamt zu einer Verbesserung der Fahrradmobilität
+  bei.
+description: Das Handlungsfeld Verkehrsberuhigung zeigt Maßnahmen auf, welche
+  durch die Reduzierung des Kfz-Verkehrs zu einer Verbesserung der Radmobilität
+  beitragen. Dazu gehören beispielsweise Geschwindigkeitsreduzierungen,
+  Beschränkungen für den motorisierten Verkehr oder die Reduzierung von
+  Kfz-Stellplätzen.
+image:
+  image: /content-images/topics/verkehrsberuhigung.svg
+  copyright: ''
+additionalResources: []
+guidelines: []
+fundings:
+  - display: Förderfibel Mobilitätsforum Bund
+    url: https://www.mobilitaetsforum.bund.de/SiteGlobals/Forms/Suche/Foerderfibel_Formular.html?queryResultId=null&pageNo=0

@@ -1,0 +1,103 @@
+title: 'Digitale Karte für das Regionale Radwegenetz '
+position: 1410
+measure: konzepte-und-organisation
+image:
+  image: /content-images/examples/digitale-karte-fuer-das-regionale-radwegenetz.png
+  copyright: 'Digitale Karte für das Regionale Radwegenetz, Urheber:
+    Regionalverband Ruhr 2023'
+shortDescription: 'Die Onlinekarte zeigt den Bedarfsplan 2019 sowie die
+  Umsetzungsprioritäten (2022) transparent auf.  '
+subcategory: Daten
+commune: Metropole Ruhr
+countryState: Nordrhein-Westfalen
+spatialStructure: 'Überwiegend städtisch '
+centrality: Sehr zentral
+period: Keine Angabe
+population: 5112050
+financiallyWeak: true
+beginnerFriendly: false
+description: >-
+  Mit dem Regionalen Radwegenetz hat der Regionalverband Ruhr ein
+  kategorisiertes und priorisiertes Netz mit – im Endausbau – einer Gesamtlänge
+  von über 1.800 Kilometern und 189 Verbindungen für die Metropole Ruhr
+  geschaffen. Gemeinsam mit den vier Kreisen, 53 Kommunen, zahlreichen
+  Institutionen und Verbänden wurde ein Bedarfsplan für das
+  Alltagsradverkehrsnetz in der Metropole Ruhr entwickelt. Erstmals in NRW wurde
+  ein Radverkehrsnetz in einer solchen Größenordnung mit 53 Städten
+  konzeptioniert. Prämisse bei der Netzplanung war es, unter weitestgehender
+  Nutzung des Bestandes eine Anbindung aller Städte und Gemeinden in einem
+  verbandsweiten Radverkehrsnetz sicherzustellen. Relevante Verbindungen über
+  die Grenzen des Verbandsgebietes hinaus werden ebenfalls berücksichtigt. Die
+  kommunale Binnenerschließung wird weiterhin in eigenen Radverkehrskonzeptionen
+  der Städte und Gemeinden behandelt.  
+
+
+  Ein weiterer elementarer Baustein ist das Umsetzungskonzept zur Realisierung
+  (2022). Aufbauend auf dem Regionalen Radwegenetz wurde auf Basis einer
+  Nutzwertanalyse eine kategorisierte Projekt-Priorisierung der Verbindungen
+  erarbeitet. Dazu wurde ein valides und nachvollziehbares Bewertungsschema
+  konzipiert und auf die 189 Verbindungen angewendet. Mit der vorliegenden
+  Bewertung soll der Ausbau der regionalen Radinfrastruktur vorangetrieben
+  werden und eine rasche Umsetzung durch eine Priorisierung aus regionaler Sicht
+  unter Berücksichtigung kommunalfachlicher Perspektiven abgeleitet werden. 
+
+
+  Die maßgeblichen Ergebnisse aus beiden Projekten stehen als Webanwendung zur
+  Verfügung. Sie zeigt den Bedarfsplan, die Ausbaustandards und die
+  Umsetzungsprioritäten. Nähere Informationen können in den Konzepten zur
+  Weiterentwicklung des Regionalen Radwegenetzes für den Alltagsradverkehr und
+  zum Umsetzungskonzept eingesehen werden
+  (https://www.rvr.ruhr/themen/mobilitaet/bedarfsplan-radwegenetz/).  
+
+
+  Die Webanwendung stellt den Planungsstand 2019 dar. Die Verbindungen befinden
+  sich daher teilweise noch im Ausbau und die Linienführungen können sich noch
+  ändern.
+goals: |-
+  - Sicherheit 
+  - Mehr Personen fahren Fahrrad 
+  - Fahrrad steigt in der Wahrnehmung / Statussymbol
+  - Reduktion privater Autoverkehr 
+  - Klima- und Umweltschutz 
+  - Transparenz, Vorstellung von Projektergebnissen
+localChallenges: |-
+  - Flächenkonflikte
+  - Geteilte Planungszuständigkeiten
+  - Polyzentrale Struktur
+  - Finanzschwache Kommune
+particularities: |-
+  - Evaluation
+  - Beteiligung
+  - Interkommunal
+  - Spezifische Zielgruppe: Pendler\*innen, Tourist\*innen
+results: 'Mit dem Regionalen Radwegenetz hat der Regionalverband Ruhr ein
+  kategorisiertes und priorisiertes Netz mit – im Endausbau – einer Gesamtlänge
+  von über 1.800 Kilometern und 189 Verbindungen für die Metropole Ruhr
+  geschaffen. Gemeinsam mit den vier Kreisen, 53 Kommunen, zahlreichen
+  Institutionen und Verbänden wurde ein Bedarfsplan für das
+  Alltagsradverkehrsnetz in der Metropole Ruhr entwickelt. '
+challenges: Keine Angabe
+communication: 'Über fachbezogene Arbeitskreise '
+funding: 'Eigenmittel: 100 Prozent'
+personnelExpenses: 'Abstimmung und technische Umsetzung zur Webanwendung: einen Tag.'
+authorities: 'Referat 9: Geoinformation und Raumbeobachtung '
+stakeholders: 'Kommunen und Kreise des Verbandsgebietes, Straßen.NRW,
+  Emschergenossenschaft / Lippeverband, Allgemeine Deutsche Fahrrad-Club (ADFC),
+  Verkehrs- und Wirtschaftsverbände, beide RVR-Tochtergesellschaften
+  (RuhrTourismus GmbH (RTG) und die Business Metropole Ruhr GmbH (BMR)),
+  Planersocietät, Planungsgruppe VIA, Planungskonsortium IB Berg & Partner, TRC
+  Transportation Research & Consulting GmbH '
+relatedOffice: 'Thomas Pott, pott@rvr.ruhr '
+sources: |-
+  - Regionalverband Ruhr 
+  - Geoportal Ruhr 
+  - Deutscher Fahrradpreis 2019
+notes: ''
+links:
+  - display: 'Regionalverband Ruhr: Geoportal Ruhr'
+    url: https://rrwn.geoportal.ruhr/
+awards:
+  - name: Deutscher Fahrradpreis 2019
+    description: 1. Platz Infrastruktur
+    logo: /content-images/examples/awards/digitale-karte-fuer-das-regionale-radwegenetz-award-0.svg
+    logoCopyright: 'Urheber: Deutscher Fahrradpreis'

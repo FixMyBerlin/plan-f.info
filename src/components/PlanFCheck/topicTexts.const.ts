@@ -1,6 +1,5 @@
-import { Topic } from './questions.const';
-
-export const topicTexts: Record<Topic, string> = {
+// Keyed by topic name; looked up dynamically by `topicTexts[topic.name]`, so an open map.
+export const topicTexts: Record<string, string> = {
   Governance:
     'Politische, konzeptionelle und organisatorische Maßnahmen, z. B. politische Entscheidungen, rechtliche Grundlagen, Finanzierung und Förderungen, Verantwortlichkeiten und Organisationsstrukturen sowie Konzepte, Beteiligung, Monitoring und Evaluation.',
   'Bildung und Trainings':
@@ -19,4 +18,4 @@ export const topicTexts: Record<Topic, string> = {
     'Es gibt unterschiedliche kommunale Handlungsmöglichkeiten zur Förderung der touristischen und Freizeitfahrradmobilität fördern, wie z. B. touristische Infrastruktur, Services oder Informationen.',
   Verkehrsberuhigung:
     'Die Reduzierung des Kfz-Verkehrs, durch beispielsweise Geschwindigkeitsreduzierungen, Fahrverbote für Kfz oder die Reduzierung von Kfz-Stellplätzen, trägt insgesamt zu einer Verbesserung der Fahrradmobilität bei.',
-};
+}

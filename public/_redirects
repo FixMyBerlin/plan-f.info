@@ -1,0 +1,11 @@
+# Legacy domain redirects (ported from the Gatsby site).
+https://www.planf.info/*     https://plan-f.info/:splat   301
+https://planf.info/*         https://plan-f.info/:splat   301
+https://www.planf.info       https://plan-f.info          301
+https://planf.info           https://plan-f.info          301
+
+# Plan F Check results: the questionnaire navigates to /plan-f-check/<22-char answers>/.
+# Real pages (/plan-f-check/ and /plan-f-check/fragebogen/) are served first; every other
+# /plan-f-check/* path is rewritten (200, URL preserved) to a single shell page that parses
+# the answer string client-side and computes the result entirely in the browser.
+/plan-f-check/*   /plan-f-check/result/index.html   200

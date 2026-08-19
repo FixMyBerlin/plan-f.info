@@ -1,11 +1,12 @@
-import React, { ReactNode } from 'react';
-import { Link } from '../core/links/Link';
+import React, { type ReactNode } from 'react'
+
+import { Link } from '../core/links/Link'
 
 type Props = {
-  link: string;
-  image: string;
-  children: ReactNode;
-};
+  link: string
+  image: string
+  children: ReactNode
+}
 export const CardTopicTitle: React.FC<Props> = ({ children, link, image }) => {
   return (
     <Link
@@ -22,5 +23,5 @@ export const CardTopicTitle: React.FC<Props> = ({ children, link, image }) => {
       )}
       <div className="overflow-hidden pl-4">{children}</div>
     </Link>
-  );
-};
+  )
+}

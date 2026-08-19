@@ -1,0 +1,61 @@
+name: Konzepte und Organisation
+position: 112
+topic: governance
+shortDescription: Gute Radverkehrsförderung braucht gute Konzepte und
+  Organisation, dazu ist z. B. die Erstellung von Konzepten und Plänen sowie die
+  interne Koordination und Organisation der Radverkehrsplanung und -förderung
+  wichtig.
+description: 'Gute Radverkehrsförderung braucht gute Konzepte und Organisation.
+  Einerseits sind klassische Maßnahmen, wie die Erstellung von Konzepten und
+  Plänen, z. B. Radverkehrskonzepte, sowie die interne Koordination und
+  Organisation der Radverkehrsplanung und -förderung wichtig. In einigen
+  Kommunen gibt es bereits Radverkehrsbeauftragte. Ein wichtiger Bestandteil der
+  Planung ist auch die Sammlung und Auswertung von Daten, um die Bedürfnisse der
+  Radfahrenden besser zu verstehen und die Effektivität der Maßnahmen zu
+  bewerten. Andererseits können Kommunen soziale Projekte, welche einen
+  wichtigen Beitrag zur Radverkehrsförderung leisten, unterstützen und soziales
+  Engagement in diesem Bereich fördern. Nicht zuletzt ist die Teilnahme an
+  Forschungs- oder Modellprojekten sinnvoll, um neue Ideen zu erproben und
+  passgenaue Lösungen zu finden. '
+additionalResources:
+  - display: E-Win - Effizienter Winterdienst auf Radverkehrsanlagen
+    url: https://tu-dresden.de/bu/verkehr/ivs/voeko/forschung/forschungsprojekte/e-win-effizienter-winterdienst-auf-radverkehrsanlagen-in-deutschen-staedten-am-beispiel-der-stadt-hamburg
+  - display: Praxis kommunale Verkehrswende
+    url: https://www.boell.de/sites/default/files/2020-02/Praxis-kommunale-Verkehrswende_kommentiebar.pdf
+  - display: 'Winterradeln: Innovationsimpulse für Maßnahmen in bayrischen Kommunen'
+    url: https://agfk-bayern.de/winterradeln-bleib-auf-dem-rad/
+  - display: Erschließung von Crowd Data und Verknüpfung mit Befragungsdaten im
+      Bereich Verkehr.
+    url: https://www.ssoar.info/ssoar/bitstream/handle/document/69880/ssoar-stadtfstatistik-2020-2-baur-Erschlieung_von_Crowd_Data_und.pdf?sequence=1&isAllowed=y&lnkname=ssoar-stadtfstatistik-2020-2-baur-Erschlieung_von_Crowd_Data_und.pdf
+  - display: Hochrechnungsverfahren für Kurzzeitzählungen im Radverkehr.
+    url: https://trid.trb.org/view/1931933
+  - display: Integrated Cycling Planning Guide
+    url: https://projects2014-2020.interregeurope.eu/fileadmin/user_upload/tx_tevprojects/library/file_1630597001.pdf
+  - display: Nahmobilität im Lebensraum Stadt
+    url: https://www.agfs-nrw.de/fileadmin/Mediathek/AGFS-Broschueren/Nahmobilitaet_Lebensraum_Stadt_2015_WEB.pdf
+  - display: Big Data im Radverkehr. Ergebnisbericht „Mit Smartphones generierte
+      Verhaltensdaten im Radverkehr“.
+    url: https://tud.qucosa.de/api/qucosa%3A29637/attachment/ATT-0/
+guidelines:
+  - display: Erstellung von kommunalen Radverkehrskonzepten
+    url: https://brandenburg.adfc.de/fileadmin/Gliederungen/Pedale/brandenburg/Publikationen/Leitfaden_Ausschreibung_Radverkehrskonzept_ADFC_Brandenburg.pdf
+  - display: 'Stadtexperimente: Von der Idee bis zur Umsetzung'
+    url: https://www.zukunftsnetz-mobilitaet.nrw.de/media/2022/5/16/db49cf12f84e697f50c9232a1cbb25d1/znm-leitfaden-stadtexperimente.pdf
+  - display: 'Infosheet: Radverkehrskonzepte'
+    url: https://rad.sh/wp-content/uploads/2021/04/RAD.SH-Infosheet-Nr-15-Radverkehrskonzepte.pdf
+  - display: 'Infosheet: Reinigung und Winterdienst'
+    url: https://rad.sh/wp-content/uploads/2020/12/RAD.SH-Infosheet-Nr-11-Reinigung-und-Winterdienst.pdf
+  - display: Machbarkeitsstudien für Radschnellverbindungen in Baden-Württemberg
+    url: https://www.aktivmobil-bw.de/fileadmin/user_upload_fahrradlandbw/1_Radverkehr_in_BW/i_Radschnellverbindungen/20190130_Leitfaden_MS_RSV_BW.pdf
+  - display: Planung von Lastenradumschlagsknoten
+    url: https://www.ilm.ovgu.de/inilm_media/Planungsleitfaden_Lastenrad-p-3858.pdf
+  - display: Daten zum Radverkehr in Städten und Gemeinden. Handbuch Kommunale
+      Radverkehrsberichte.
+    url: http://www.radverkehrsberichte.de/fileadmin/produkte/downloads/radverkehrsberichte/HandbuchRadverkehrsberichteTeamred.pdf
+  - display: Förderung des Rad- und Fußverkehrs. Ein Leitfaden für die kommunale
+      Praxis in kleineren und mittleren Kommunen
+    url: https://www.umweltbundesamt.de/sites/default/files/medien/publikation/long/1983.pdf
+  - display: Big Data im Radverkehr. Ein anwendungsorientierter Leitfaden zur
+      Nutzung von smartphone-generierten Radverkehrsdaten
+    url: https://docplayer.org/68375913-Angela-francke-sven-lissner-big-data-im-radverkehr-ein-anwendungsorientierter-leitfaden-zur-nutzung-von-smartphone-generierten-radverkehrsdaten.html
+fundings: []

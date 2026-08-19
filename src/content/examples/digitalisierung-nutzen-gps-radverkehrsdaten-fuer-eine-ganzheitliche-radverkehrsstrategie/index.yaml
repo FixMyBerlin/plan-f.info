@@ -1,0 +1,102 @@
+title: 'Digitalisierung nutzen: GPS-Radverkehrsdaten für eine ganzheitliche
+  Radverkehrsstrategie'
+position: 1235
+measure: konzepte-und-organisation
+relatedTopic: kommunikation-und-oeffentlichkeitsarbeit
+image:
+  image: /content-images/examples/digitalisierung-nutzen-gps-radverkehrsdaten-fuer-eine-ganzheitliche-radverkehrsstrategie.png
+  copyright: 'GPS-Radverkehrsdaten, Urheber: Bike Citizens '
+shortDescription: Eine App mit Navigationsfunktion und weiteren nützlichen
+  Features für die Bevölkerung. Die App hilft der Regionsverwaltung, den
+  Radverkehr besser zu verstehen und Schwachstellen zu identifizieren.
+subcategory: Daten
+commune: Hannover
+countryState: 'Niedersachsen '
+spatialStructure: Städtischer Kreis
+centrality: Sehr zentral
+period: 04/2019 – 12/2022
+population: 535932
+costs: 200000
+financiallyWeak: false
+beginnerFriendly: false
+description: >-
+  Die Region Hannover setzt seit April 2019 in der Radverkehrsplanung auf die
+  Möglichkeiten der Digitalisierung. Neben herkömmlichen Methoden zur
+  Radverkehrsdatenerhebung (Zählstellen, Befragungen etc.) werden seitdem auch
+  GPS-Radverkehrsdaten genutzt. Dies hat den Vorteil, dass Quellen und Ziele
+  jeder einzelnen Fahrt bekannt sind und mittels Hochrechnungen ein
+  Radverkehrsabbild für die gesamte Region erstellt werden kann. Die so
+  gewonnenen Daten dienen der Evaluation und dem zielgerichteten Ausbau des
+  Radverkehrsnetzes sowie zur Schwachstellenanalyse. 
+
+
+  Im ersten Schritt wurde die Fahrrad-App der Region Hannover den Menschen in
+  der Region kostenlos bereitgestellt und diese wurden aufgerufen, die App zu
+  nutzen, um der Region wertvolle 
+
+
+  Daten über das Radverkehrsverhalten zur Verfügung zu stellen (unter Einhaltung
+  der EU-DSGVO). 
+
+
+  In einem zweiten Schritt wurden durch verschiedene Aktionen eine breite
+  Nutzer\*innengruppen angesprochen und die Menschen motiviert ihre Wege noch
+  häufiger mit dem Rad zurückzulegen und gleichzeitig die Radfahrten häufiger
+  aufzuzeichnen. Aufgrund der COVID-19-Pandemie wurde von Massenveranstaltungen
+  abgesehen und Schwerpunktaktionen wurden gesetzt. Neben der Bewerbung von
+  Radtouren (Tour der Woche) und dem Regionsentdeckertag stand besonders die
+  appbasierte Bike Benefit Kampagne, ein Bonussystem mit spielerischem Ansatz im
+  Fokus. 
+
+
+  Auf Wunsch können alle Fahrten aufgezeichnet werden - dadurch wird eine
+  ständig aktualisierte "Heat-Map" erzeugt, die auf der Karte zeigt, welche Wege
+  oft und welche Wege weniger oft oder gar nicht gefahren werden. Die Heat-Map
+  kann auch über Social Media-Kanäle und andere Formate geteilt werden. Der
+  Algorithmus erkennt zudem, wenn die Fahrradfahrt beendet wird.
+goals: |-
+  - Komfort und Fahrspaß 
+  - Überwindung weiter Distanzen 
+  - Mehr Personen fahren Fahrrad 
+  - Fahrrad steigt in der Wahrnehmung / Statussymbol
+localChallenges: |-
+  - Flächenkonflikte
+  - Geteilte Planungszuständigkeiten
+particularities: |-
+  - Evaluation
+  - Interkommunal
+results: Die App hilft der Regionsverwaltung, den Radverkehr im Regionsgebiet
+  besser zu verstehen und Schwachstellen zu identifizieren. Damit kann das
+  Radwegenetz in der Region Hannover besser gemacht, Lücken geschlossen und
+  vielbefahrene Strecken perspektivisch ausgebaut werden. Mit der optionalen
+  Übertragung der individuellen (datenschutzkonform anonymisierten)
+  Verkehrsdaten kann dabei unterstützt werden, das Radwegenetz innerhalb der
+  Region zu verbessern.
+challenges: 'Bekanntmachung der App; Menschen dauerhaft motivieren, Daten zu
+  erfassen, um eine gute Datenbasis zu bekommen. '
+communication: Webseite, Social-Media, Presse, Plakate/Flyer, Radio, Veranstaltungen
+funding: >-
+  - Eigenmittel: 50 Prozent (Nach Ende der Förderung im Jahr 2020 Weiterführung
+  bis Ende 2022 mit Eigenmitteln)
+
+  - Bundesmittel: 50 Prozent
+personnelExpenses: Keine Angabe
+authorities: 'Fachbereich Verkehr, Team Kommunikation, Team Naherholung, Nutzung
+  auch durch Regionskommunen  '
+stakeholders: 'Bike Citizens '
+relatedOffice: 'Sina Wenning, sina.wenning@region-hannover.de '
+sources: Deutscher Fahrradpreis 2021, Stadt Hannover
+notes: Wurde noch bis Ende 2022 mit Eigenmitteln weitergeführt. Aktuell konnte
+  aufgrund der Insolvenz nicht verlängert werden. App besteht bisher noch und
+  wird ggf.verkauft. Dann müssen wir prüfen, ob eine weitere Zusammenarbeit
+  möglich ist.
+links:
+  - display: 'Stadt Hannover: Kostenlose Fahrrad-App'
+    url: https://www.hannover.de/Kultur-Freizeit/Naherholung/Natur-erleben/Radfahren/Kostenlose-Fahrrad-App
+  - display: 'Deutscher Fahrradpreis: Preisträger 2021'
+    url: https://www.der-deutsche-fahrradpreis.de/preistraeger-2021/
+awards:
+  - name: Deutscher Fahrradpreis 2021
+    description: 1. Platz Services
+    logo: /content-images/examples/awards/digitalisierung-nutzen-gps-radverkehrsdaten-fuer-eine-ganzheitliche-radverkehrsstrategie-award-0.svg
+    logoCopyright: 'Urheber: Deutscher Fahrradpreis'

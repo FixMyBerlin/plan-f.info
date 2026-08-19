@@ -1,0 +1,10 @@
+---
+import Layout from '~/layouts/Layout.astro'
+import { Fragebogen } from '~/components/PlanFCheck/Fragebogen'
+
+const title = 'Plan F Check - Fragebogen'
+---
+
+<Layout title={title} noindex>
+  <Fragebogen client:load />
+</Layout>

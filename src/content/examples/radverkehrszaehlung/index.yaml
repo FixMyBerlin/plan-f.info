@@ -1,0 +1,89 @@
+title: Radverkehrszählung
+position: 1409
+measure: monitoring-und-evaluation
+image:
+  image: /content-images/examples/radverkehrszaehlung.jpeg
+  copyright: 'Dauerzählstellen, Urheberin: Stadt Bielefeld'
+shortDescription: Installation von Dauerzählstellen im Stadtgebiet zur ganz- und
+  mehrjährigen Radverkehrszählungen zuzüglich temporärer Zählungen.
+subcategory: Fahrradzählungen
+commune: 'Stadt Bielefeld '
+countryState: 'Nordrhein-Westfalen '
+spatialStructure: Überwiegend städtisch
+centrality: Sehr zentral
+period: Seit 2019
+population: 334002
+costs: 130000
+financiallyWeak: true
+beginnerFriendly: false
+description: >-
+  Radverkehrszählungen sind ein wichtiges Instrument zur Optimierung und
+  Evaluation von Radverkehrsplanungen. Damit dienen die erhobenen Daten der
+  zielgerichteten Förderung des Radverkehrs. Seit dem Jahr 2019 führt die Stadt
+  Bielefeld temporäre Radverkehrszählungen im gesamten Stadtgebiet mit drei
+  mobilen Zählstellen durch. Diese ermöglichen es, die Auswirkungen von
+  kurzfristigen Veränderungen im Verkehrsfluss wie zum Beispiel durch Baustellen
+  oder Fertigstellungen neuer Radwege quantitativ zu beurteilen. Seit April 2021
+  wird darüber hinaus der Radverkehr an fünf Radhauptrouten innerhalb des
+  Stadtgebietes dauerhaft erfasst. Im Januar 2022 wurde eine weitere Zählstelle
+  am Stadtring in Brackwede in Betrieb genommen. Eine weitere Dauerzählstelle
+  erhebt seit der Fertigstellung des Jahnplatzes Anfang September 2022 den
+  dortigen Radverkehr und zeigt diesen über ein digitales Display in Echtzeit
+  an.  
+
+
+  Im Jahr 2022 konnten insgesamt knapp drei Millionen Radfahrende erfasst
+  werden, über eine Millionen davon am Zählstandort an der
+  Artur-Ladebeck-Straße. In der Fahrradstraße Ehlentruper Weg finden aktuell
+  Verkehrsversuche statt, für den die dortige Dauerzählstelle relevante
+  Erkenntnisse zum dortigen Mobilitätsverhalten liefert.  
+
+
+  Die Stadt Bielefeld plant die sukzessive Aufstockung der Dauerzählstellen im
+  Zuge der Umsetzung von Maßnahmen aus dem Radverkehrskonzept. Die dauerhafte
+  Radverkehrszählung erfolgt über in den Boden eingelassene Induktionsschleifen,
+  die eine Differenzierung von Radfahrenden und anderen Verkehrsteilnehmenden
+  ermöglichen. Ganz- und mehrjährige Zählungen haben gegenüber temporären
+  Zählungen den Vorteil, saisonale und wetterbedingte Einflüsse zu erfassen und
+  zu beurteilen.
+goals: |-
+  - Komfort und Fahrspaß 
+  - Mehr Personen fahren Fahrrad 
+  - Fahrrad steigt in der Wahrnehmung / Statussymbol 
+  - Reduktion privater Autoverkehr
+localChallenges: |-
+  - Finanzschwache Kommune 
+  - Flächenkonflikte
+  - Geteilte Planungszuständigkeiten
+  - Topographie
+particularities: >-
+  Kosten-Nutzen-Analyse 
+
+  Evaluation 
+
+  Beteiligung 
+
+  Spezifische Zielgruppe: Pendler\*innen, Schüler\*innen, Frauen,
+  Tourist\*innen
+results: >-
+  Sieben Dauerzählstellen, drei mobile Zählstellen, zwei Displays, eine
+  öffentlichkeitswirksame Website. 
+
+  Erste ganzjährige Zählungen im Jahr 2022, zweijährige Zähldauer im April 2023
+  erreicht.
+challenges: Allgemeine Standortwahl und schrittweise Installation der Zählstelle
+  am Jahnplatz während des dortigen Umbaus des Platzes.
+communication: 'Presse, Social Media, Internet '
+funding: |-
+  - Eigenmittel: 15 Prozent 
+  - Landesmittel: 85 Prozent (Förderrichtlinie Nahmobilität)
+personnelExpenses: '0,2 Stellen über zwei Jahre  '
+authorities: Amt für Verkehr
+stakeholders: 'Firma Eco-Counter '
+relatedOffice: 'Friederike Keller, friederike.keller@bielefeld.de '
+sources: Stadt Bielefeld, Amt für Verkehr
+notes: ''
+links:
+  - display: 'Stadt Bielefeld: Radverkehrszaehlung'
+    url: https://www.bielefeld.de/radverkehrszaehlung
+awards: []

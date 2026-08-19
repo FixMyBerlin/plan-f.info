@@ -1,33 +1,74 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-html {
-  @apply: h-full scroll-smooth bg-gray-200 antialiased text-gray-700;
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+/*
+  Brand theme ported 1:1 from the Gatsby project's tailwind.config.js.
+  The custom lime / green / purple scales are Plan F brand colors and MUST match
+  exactly; gray / red / rose / white / black use Tailwind's standard palette.
+*/
+@theme {
+  --font-sans: 'ApercuPro', Arial, sans-serif;
+  --font-mono: 'ApercuMonoPro', 'Courier New', monospace;
+
+  /* lime — default plan-f-grün is lime-300 (#CAFC79) */
+  --color-lime-50: #ffffff;
+  --color-lime-100: #ebfecd;
+  --color-lime-200: #e2fdb1;
+  --color-lime-300: #cafc79;
+  --color-lime-400: #b6fb46;
+  --color-lime-500: #a3fa15;
+  --color-lime-600: #87d605;
+  --color-lime-700: #67a504;
+  --color-lime-800: #487303;
+  --color-lime-900: #294101;
+
+  /* green — default plan-f-smaragd is green-100 / green-500 */
+  --color-green-50: #f6fefb;
+  --color-green-100: #c7fae5;
+  --color-green-200: #99f5cf;
+  --color-green-300: #6af0b9;
+  --color-green-400: #3ceca3;
+  --color-green-500: #16e08c;
+  --color-green-600: #11b06e;
+  --color-green-700: #0d8251;
+  --color-green-800: #085434;
+  --color-green-900: #042517;
+
+  /* purple — default plan-f-lila is purple-100 / purple-300 / purple-600 */
+  --color-purple-50: #f5ebff;
+  --color-purple-100: #e8d3ff;
+  --color-purple-200: #d7b3ff;
+  --color-purple-300: #ba7dff;
+  --color-purple-400: #a04cff;
+  --color-purple-500: #851aff;
+  --color-purple-600: #6c00e5;
+  --color-purple-700: #5400b2;
+  --color-purple-800: #3c0080;
+  --color-purple-900: #24004d;
 }
 
-body {
-  @apply flex h-full flex-col font-sans;
+/*
+  Disable the Typography plugin's anchor styling: the app always wraps links in the
+  styled <Link> component. Mirrors `typography.DEFAULT.css.a = false` from Gatsby.
+*/
+@layer base {
+  .prose :where(a):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
+    color: inherit;
+    text-decoration: inherit;
+    font-weight: inherit;
+  }
 }
 
-#__next {
-  @apply min-h-full;
-}
-
-.shadow-r {
-  box-shadow: 3px 3px 5px -2px #888;
-}
-
+/* Apercu Pro — self-hosted from /public/fonts */
 @font-face {
   font-family: 'ApercuMonoPro';
-  src: local(ApercuMonoPro-Regular),
-    url('fonts/apercu-mono-regular-pro/apercu-mono-regular-pro.woff2')
-      format('woff2'),
-    url('fonts/apercu-mono-regular-pro/apercu-mono-regular-pro.woff')
-      format('woff'),
-    url('fonts/apercu-mono-regular-pro/apercu-mono-regular-pro.ttf')
-      format('truetype');
-
+  src:
+    local(ApercuMonoPro-Regular),
+    url('/fonts/apercu-mono-regular-pro/apercu-mono-regular-pro.woff2') format('woff2'),
+    url('/fonts/apercu-mono-regular-pro/apercu-mono-regular-pro.woff') format('woff'),
+    url('/fonts/apercu-mono-regular-pro/apercu-mono-regular-pro.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-stretch: normal;
@@ -36,11 +77,11 @@ body {
 
 @font-face {
   font-family: ApercuPro;
-  src: local(ApercuPro-Regular),
-    url(fonts/apercu-regular-pro/apercu-regular-pro.woff2) format('woff2'),
-    url(fonts/apercu-regular-pro/apercu-regular-pro.woff) format('woff'),
-    url(fonts/apercu-regular-pro/apercu-regular-pro.ttf) format('truetype');
-
+  src:
+    local(ApercuPro-Regular),
+    url('/fonts/apercu-regular-pro/apercu-regular-pro.woff2') format('woff2'),
+    url('/fonts/apercu-regular-pro/apercu-regular-pro.woff') format('woff'),
+    url('/fonts/apercu-regular-pro/apercu-regular-pro.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-stretch: normal;
@@ -49,20 +90,32 @@ body {
 
 @font-face {
   font-family: ApercuPro;
-  src: local(ApercuPro-Bold),
-    url(fonts/apercu-bold-pro/apercu-bold-pro.woff2) format('woff2'),
-    url(fonts/apercu-bold-pro/apercu-bold-pro.woff) format('woff'),
-    url(fonts/apercu-bold-pro/apercu-bold-pro.ttf) format('truetype');
-
+  src:
+    local(ApercuPro-Bold),
+    url('/fonts/apercu-bold-pro/apercu-bold-pro.woff2') format('woff2'),
+    url('/fonts/apercu-bold-pro/apercu-bold-pro.woff') format('woff'),
+    url('/fonts/apercu-bold-pro/apercu-bold-pro.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-stretch: normal;
   font-display: swap;
 }
 
-@layer base {
-  #___gatsby,
-  #gatsby-focus-wrapper {
-    @apply h-full;
-  }
+/*
+  Base document styles (ported from global.css).
+  NOTE: the original set `height: 100%` on html/body, but a typo (`@apply:`) silently
+  disabled the html rule, so the page scrolled naturally. We deliberately do NOT constrain
+  html/body height — otherwise `overflow-x-hidden` on the layout root forces an internal
+  scroll container that clips the page. This matches plan-f.info's actual rendering.
+*/
+html {
+  @apply scroll-smooth bg-gray-200 text-gray-700 antialiased;
+}
+
+body {
+  @apply flex flex-col font-sans;
+}
+
+.shadow-r {
+  box-shadow: 3px 3px 5px -2px #888;
 }

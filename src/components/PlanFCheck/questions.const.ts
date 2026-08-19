@@ -7,7 +7,7 @@ export type Topic =
   | 'Multimodalität und Nahmobilität'
   | 'Wirtschaft'
   | 'Tourismus und Freizeit'
-  | 'Verkehrsberuhigung';
+  | 'Verkehrsberuhigung'
 
 export type Measure =
   | 'Verwaltung und Politik'
@@ -55,7 +55,7 @@ export type Measure =
   | 'Reduzierung Kfz-Durchgangsverkehre'
   | 'Geschwindigkeitsreduzierung'
   | 'Parkraummanagement'
-  | 'Reduzierung des innerstädtischen Kfz-Verkehrs';
+  | 'Reduzierung des innerstädtischen Kfz-Verkehrs'
 
 export type MeasureType =
   | 'Finanzierung'
@@ -95,30 +95,30 @@ export type MeasureType =
   | 'Lastenfahrräder (gebührenpflichtig/als Teil des ÖPNVs)'
   | 'Kostenfreie kommunale Lastenfahrräder'
   | 'Veranstaltungen und Beratungsangebote'
-  | 'Flächen zur Verfügung stellen';
+  | 'Flächen zur Verfügung stellen'
 
 export type Question = {
-  id: number;
-  question: string;
-  explanation: string;
-  topics: Topic[];
-  measures: Measure[];
-  measureTypes: MeasureType[];
-  weight: number;
-  options: { weight: number; text: string }[];
-};
+  id: number
+  question: string
+  explanation: string
+  topics: Topic[]
+  measures: Measure[]
+  measureTypes: MeasureType[]
+  weight: number
+  options: { weight: number; text: string }[]
+}
 
 type QuestionBlock = {
-  title: string;
-  questions: Question[];
-};
+  title: string
+  questions: Question[]
+}
 
 const defaultOptions = [
   { text: 'trifft gar nicht zu', weight: 0 },
   { text: 'trifft kaum zu', weight: 1 },
   { text: 'trifft größtenteils zu', weight: 2 },
   { text: 'trifft voll zu', weight: 3 },
-];
+]
 
 export const questionBlocks: QuestionBlock[] = [
   {
@@ -177,8 +177,7 @@ export const questionBlocks: QuestionBlock[] = [
 
       {
         id: 4,
-        question:
-          'Wie viel Geld wird jährlich pro Einwohner*in für den Radverkehr ausgegeben?',
+        question: 'Wie viel Geld wird jährlich pro Einwohner*in für den Radverkehr ausgegeben?',
         explanation: '',
         weight: 2,
         topics: ['Governance'],
@@ -234,10 +233,7 @@ export const questionBlocks: QuestionBlock[] = [
         explanation: '',
         weight: 3,
         topics: ['Governance'],
-        measures: [
-          'Konzepte und Organisation',
-          'Information, Austausch und Beteiligung',
-        ],
+        measures: ['Konzepte und Organisation', 'Information, Austausch und Beteiligung'],
         measureTypes: [
           'Koordination und Organisation Radverkehr',
           'Partizipation (Bürger*innen)',
@@ -254,8 +250,7 @@ export const questionBlocks: QuestionBlock[] = [
     questions: [
       {
         id: 8,
-        question:
-          'Es gibt ein durchgängiges, hochwertiges, komfortables und sicheres Fahrradnetz.',
+        question: 'Es gibt ein durchgängiges, hochwertiges, komfortables und sicheres Fahrradnetz.',
         explanation:
           'Mit Sicherheit meinen wir die objektive Sicherheit (Unfallzahlen) und wie es subjektiv wahrgenommen wird (hierzu zählen die Verkehrssicherheit und soziale Sicherheit).',
         weight: 3,
@@ -267,9 +262,7 @@ export const questionBlocks: QuestionBlock[] = [
           'Wirtschaftswege',
           'Touristische Wege und Freizeitwege',
         ],
-        measureTypes: [
-          'Netzmerkmale: Komfort, Netzwerk, Direktheit, Sicherheit, Attraktivität',
-        ],
+        measureTypes: ['Netzmerkmale: Komfort, Netzwerk, Direktheit, Sicherheit, Attraktivität'],
         options: defaultOptions,
       },
       {
@@ -307,8 +300,7 @@ export const questionBlocks: QuestionBlock[] = [
       },
       {
         id: 11,
-        question:
-          'Unter den Radfahrenden sind mehr Frauen und Kinder als Männer.',
+        question: 'Unter den Radfahrenden sind mehr Frauen und Kinder als Männer.',
         explanation:
           'Wenn mehr Frauen und Kinder Radfahren, kann das ein Zeichen von sicherer/sicher wahrgenommener Infrastruktur sein. Falls Sie hierzu keine Daten haben, dann tauschen Sie sich hierzu mit Kolleg*innen aus, die viel auf den Straßen Ihrer Kommune unterwegs sind. Mit Frauen meinen wir weiblich gelesene Personen und mit Männer männlich gelesene Personen.',
         weight: 3,
@@ -357,8 +349,7 @@ export const questionBlocks: QuestionBlock[] = [
       },
       {
         id: 13,
-        question:
-          'Es gibt ausreichend Fahrradabstellplätze für Radfahrende mit hoher Qualität.',
+        question: 'Es gibt ausreichend Fahrradabstellplätze für Radfahrende mit hoher Qualität.',
         explanation:
           'Hiermit meinen wir Abstellanlagen, die zulassen den Rahmen des Fahrrads abzuschließen und die auch für unterschiedliche Fahrradtypen funktionieren wie z. B. für Lastenfahrräder und Kinderfahrräder.',
         weight: 3,
@@ -383,11 +374,7 @@ export const questionBlocks: QuestionBlock[] = [
         explanation:
           'Kurierdienste können von der Kommune eingesetzt werden, um z. B. Personlausweise auszuliefern oder für die Beförderung von Personen eingesetzt werden (insbesondere interessant in großen Städten und z. B. in städtischen Senior*innenheimen).',
         weight: 2,
-        topics: [
-          'Services',
-          'Multimodalität und Nahmobilität',
-          'Tourismus und Freizeit',
-        ],
+        topics: ['Services', 'Multimodalität und Nahmobilität', 'Tourismus und Freizeit'],
         measures: [
           'Reparaturservice',
           'Fahrradverleihsysteme',
@@ -408,14 +395,11 @@ export const questionBlocks: QuestionBlock[] = [
       },
       {
         id: 15,
-        question:
-          'In Kitas, Schulen und Horts wird das Fahrradfahren gefördert.',
+        question: 'In Kitas, Schulen und Horts wird das Fahrradfahren gefördert.',
         explanation: '',
         weight: 3,
         topics: ['Bildung und Trainings'],
-        measures: [
-          'Radverkehr in Schulen, Kinder- und Jugendclubs und Kindergärten',
-        ],
+        measures: ['Radverkehr in Schulen, Kinder- und Jugendclubs und Kindergärten'],
         measureTypes: [
           'Mobilitätsbildung für Schüler*innen',
           'Fahrradkurse',
@@ -446,16 +430,8 @@ export const questionBlocks: QuestionBlock[] = [
           'Regelmäßig und umfassend werden Bürger*innen zu Radverkehrsvorhaben beteiligt und informiert.',
         explanation: '',
         weight: 3,
-        topics: [
-          'Governance',
-          'Kommunikation und Öffentlichkeitsarbeit',
-          'Tourismus und Freizeit',
-        ],
-        measures: [
-          'Konzepte und Organisation',
-          'Marketing und Kommunikation',
-          'Touren',
-        ],
+        topics: ['Governance', 'Kommunikation und Öffentlichkeitsarbeit', 'Tourismus und Freizeit'],
+        measures: ['Konzepte und Organisation', 'Marketing und Kommunikation', 'Touren'],
         measureTypes: [
           'Koordination und Organisation Radverkehr',
           'Kampagnen',
@@ -470,16 +446,8 @@ export const questionBlocks: QuestionBlock[] = [
           'Im Rahmen von Kampagnen oder Veranstaltungen wird regelmäßig über das Radverkehrsangebot informiert. ',
         explanation: '',
         weight: 1,
-        topics: [
-          'Governance',
-          'Kommunikation und Öffentlichkeitsarbeit',
-          'Tourismus und Freizeit',
-        ],
-        measures: [
-          'Konzepte und Organisation',
-          'Marketing und Kommunikation',
-          'Touren',
-        ],
+        topics: ['Governance', 'Kommunikation und Öffentlichkeitsarbeit', 'Tourismus und Freizeit'],
+        measures: ['Konzepte und Organisation', 'Marketing und Kommunikation', 'Touren'],
         measureTypes: [
           'Teilnahme Modell- und Forschungsprojekte',
           'Kampagnen',
@@ -494,11 +462,7 @@ export const questionBlocks: QuestionBlock[] = [
           'Die Wirtschaft, wie z. B. der Einzelhandel, wird ermutigt, sich an der Radverkehrsförderung zu beteiligen.',
         explanation: '',
         weight: 1,
-        topics: [
-          'Governance',
-          'Kommunikation und Öffentlichkeitsarbeit',
-          'Wirtschaft',
-        ],
+        topics: ['Governance', 'Kommunikation und Öffentlichkeitsarbeit', 'Wirtschaft'],
         measures: [
           'Information, Austausch und Beteiligung',
           'Marketing und Kommunikation',
@@ -520,10 +484,7 @@ export const questionBlocks: QuestionBlock[] = [
         explanation:
           'Wenn Sie sich hier unsicher sind, dann tauschen Sie sich hierzu mit Kolleg*innen aus.',
         weight: 3,
-        topics: [
-          'Kommunikation und Öffentlichkeitsarbeit',
-          'Tourismus und Freizeit',
-        ],
+        topics: ['Kommunikation und Öffentlichkeitsarbeit', 'Tourismus und Freizeit'],
         measures: [
           'Marketing und Kommunikation',
           'Kommunalverwaltung als Vorbild',
@@ -541,8 +502,6 @@ export const questionBlocks: QuestionBlock[] = [
       },
     ],
   },
-];
+]
 
-export const allQuestions = questionBlocks
-  .map((block) => block.questions)
-  .flat();
+export const allQuestions = questionBlocks.map((block) => block.questions).flat()

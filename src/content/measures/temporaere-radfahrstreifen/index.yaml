@@ -1,0 +1,22 @@
+name: Temporäre Radfahrstreifen
+position: 339
+topic: infrastruktur
+shortDescription: Temporäre Radfahrstreifen, auch als Pop-Up-Radwege bekannt,
+  sind temporäre Fahrradwege, die schnell und kostengünstig eingerichtet werden
+  können und in der Regel auf bestehenden Straßen oder Kfz-Fahrspuren angelegt
+  werden.
+description: Temporäre Radfahrstreifen, auch als Pop-Up-Radwege bekannt, sind
+  temporäre Fahrradwege, die schnell und kostengünstig eingerichtet werden
+  können. Sie werden in der Regel auf bestehenden Straßen oder Kfz-Fahrspuren
+  angelegt und bieten durch die Trennung vom Kfz-Verkehr eine sichere Verbindung
+  für Radfahrende, insbesondere in städtischen Gebieten. Sie sind eine einfache
+  und flexible Möglichkeit, den Radverkehr zu verbessern und können bei Bedarf
+  verstetigt, verändert oder wieder entfernt werden.
+additionalResources: []
+guidelines:
+  - display: Regelpläne zur temporären Einrichtung und Erweiterung von
+      Radverkehrsanlagen
+    url: https://www.berlin.de/sen/uvk/_assets/verkehr/verkehrsplanung/radverkehr/regelplaene_radverkehrsanlagen.pdf
+  - display: Sicherung des Fuß- und Radverkehrs bei temporären Verkehrsmaßnahmen
+    url: https://www.berlin.de/sen/uvk/verkehr/verkehrspolitik/verkehrssicherheit/projekte/sicher-radfahren-an-baustellen/
+fundings: []

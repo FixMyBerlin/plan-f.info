@@ -1,7 +1,7 @@
 export type FilterCategory = {
-  label: string;
-  options: Record<string, string>;
-};
+  label: string
+  options: Record<string, string>
+}
 export const filterCategories: Record<string, FilterCategory> = {
   financiallyWeak: {
     label: 'Finanzschwache Kommune',
@@ -35,8 +35,7 @@ export const filterCategories: Record<string, FilterCategory> = {
     label: 'Besiedlungstyp',
     options: {
       all: 'kein Filter',
-      'Überwiegend städtisch,Städtischer Kreis':
-        'Überwiegend städtisch, Städtischer Kreis',
+      'Überwiegend städtisch,Städtischer Kreis': 'Überwiegend städtisch, Städtischer Kreis',
       'Teilweise städtisch,Ländlicher Kreis mit Verdichtungsansätzen':
         'Teilweise städtisch, Ländlicher Kreis mit Verdichtungsansätzen',
       'Dünn besiedelter ländlicher Kreis,Überwiegend ländlich':
@@ -65,4 +64,4 @@ export const filterCategories: Record<string, FilterCategory> = {
       Thüringen: 'Thüringen',
     },
   },
-};
+}

@@ -1,19 +1,20 @@
-import { RadioGroup } from '@headlessui/react';
-import clsx from 'clsx';
-import React, { useState } from 'react';
-import { Content } from '../Layout';
-import { Section } from '../Layout/Section';
-import { H3 } from '../Text';
-import { Question } from './questions.const';
-import { InfoPopover } from '../ExamplePage/InfoPopover';
+import { RadioGroup } from '@headlessui/react'
+import clsx from 'clsx'
+import React, { useState } from 'react'
+
+import { InfoPopover } from '../ExamplePage/InfoPopover'
+import { Content } from '../Layout'
+import { Section } from '../Layout/Section'
+import { H3 } from '../Text'
+import type { Question } from './questions.const'
 
 type Props = {
-  question: Question;
-  setSurveyResult: any;
-  surveyResult: any;
-  className?: string;
-  isSubmit: boolean;
-};
+  question: Question
+  setSurveyResult: any
+  surveyResult: any
+  className?: string
+  isSubmit: boolean
+}
 
 export const QuestionItem: React.FC<Props> = ({
   question,
@@ -22,7 +23,7 @@ export const QuestionItem: React.FC<Props> = ({
   className,
   isSubmit,
 }) => {
-  const [questionResult, setQuestionResult] = useState(null);
+  const [questionResult, setQuestionResult] = useState(null)
 
   return (
     <Section
@@ -33,25 +34,23 @@ export const QuestionItem: React.FC<Props> = ({
       )}
     >
       <Content>
-        <div className="flex justify-between items-start mb-4 gap-4">
-          <H3 className="!mt-0 !md:mt-0">
+        <div className="mb-4 flex items-start justify-between gap-4">
+          <H3 className="!md:mt-0 !mt-0">
             {question.id + 1}. {question.question}
           </H3>
-          {question.explanation && (
-            <InfoPopover label={<p>{question.explanation}</p>} />
-          )}
+          {question.explanation && <InfoPopover label={<p>{question.explanation}</p>} />}
         </div>
         <RadioGroup
           value={questionResult}
           onChange={(x) => {
-            setQuestionResult(x);
-            const newSurveResult = [...surveyResult];
-            newSurveResult[question.id] = x;
-            setSurveyResult(newSurveResult);
-            console.log({ newSurveResult });
+            setQuestionResult(x)
+            const newSurveResult = [...surveyResult]
+            newSurveResult[question.id] = x
+            setSurveyResult(newSurveResult)
+            console.log({ newSurveResult })
           }}
         >
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:grid-cols-4">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
             {question.options.map((option, i) => (
               <RadioGroup.Option
                 key={option.text}
@@ -66,24 +65,20 @@ export const QuestionItem: React.FC<Props> = ({
                   )
                 }
               >
-                <RadioGroup.Label
-                  className="whitespace-nowrap text-xs md:text-sm"
-                  as="span"
-                >
+                <RadioGroup.Label className="text-xs whitespace-nowrap md:text-sm" as="span">
                   {option.text}
                 </RadioGroup.Label>
               </RadioGroup.Option>
             ))}
           </div>
           {isSubmit && questionResult === null && (
-            <p className="text-red-500 text-xs mt-4 pt-3">
-              * Das Beantworten aller Fragen ist verpflichtend, um den
-              Fragebogen abschließen zu können. Bitte wählen Sie eine Antwort
-              auf diese Frage!
+            <p className="mt-4 pt-3 text-xs text-red-500">
+              * Das Beantworten aller Fragen ist verpflichtend, um den Fragebogen abschließen zu
+              können. Bitte wählen Sie eine Antwort auf diese Frage!
             </p>
           )}
         </RadioGroup>
       </Content>
     </Section>
-  );
-};
+  )
+}

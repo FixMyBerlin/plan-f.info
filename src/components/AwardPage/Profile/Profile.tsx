@@ -1,12 +1,14 @@
-import clsx from 'clsx';
-import React from 'react';
-import { ProfileData } from 'src/types/ProfileData';
+import clsx from 'clsx'
+import React from 'react'
+import type { ProfileData } from 'src/types/ProfileData'
+
+import { assetSrc } from '~/lib/assetSrc'
 
 type Props = {
-  profile: ProfileData;
-  mirror?: boolean;
-  preload?: boolean;
-};
+  profile: ProfileData
+  mirror?: boolean
+  preload?: boolean
+}
 
 export const Profile: React.FC<Props> = ({
   profile: {
@@ -18,13 +20,13 @@ export const Profile: React.FC<Props> = ({
   preload = false,
 }) => {
   return (
-    <div className="h-fit-max overflow-y-auto overflow-x-hidden">
+    <div className="h-fit-max overflow-x-hidden overflow-y-auto">
       <img
         className={clsx(
           mirror ? 'float-right ml-4' : 'float-left mr-4',
           'h-24 w-24 rounded-full lg:h-40 lg:w-40',
         )}
-        src={src}
+        src={assetSrc(src)}
         alt={`profilfoto ${name}`}
         loading={preload ? 'eager' : 'lazy'}
       />
@@ -38,5 +40,5 @@ export const Profile: React.FC<Props> = ({
         )}
       </div>
     </div>
-  );
-};
+  )
+}

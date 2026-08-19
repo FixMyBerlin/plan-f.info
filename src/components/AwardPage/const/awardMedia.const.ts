@@ -1,25 +1,25 @@
-import g1 from '../assets/award/g1.jpg';
-import g2 from '../assets/award/g2.jpg';
-import g3 from '../assets/award/g3.jpg';
-import b1 from '../assets/award/b1.jpg';
-import b2 from '../assets/award/b2.jpg';
-import b3 from '../assets/award/b3.jpg';
-import i1 from '../assets/award/i1.jpg';
-import i12 from '../assets/award/i12.jpg';
-import i2 from '../assets/award/i2.png';
-import i3 from '../assets/award/i3.png';
-import k1 from '../assets/award/k1.png';
-import k2 from '../assets/award/k2.jpg';
-import k3 from '../assets/award/k3.jpg';
-import t1 from '../assets/award/t1.jpg';
-import t2 from '../assets/award/t2.jpg';
-import v1 from '../assets/award/v1.jpg';
-import v2 from '../assets/award/v2.jpg';
-import s1 from '../assets/award/s1.jpg';
-import s2 from '../assets/award/s2.jpg';
-import s3 from '../assets/award/s3.jpg';
-import m1 from '../assets/award/m1.jpg';
-import m2 from '../assets/award/m2.jpg';
+import b1 from '../assets/award/b1.jpg'
+import b2 from '../assets/award/b2.jpg'
+import b3 from '../assets/award/b3.jpg'
+import g1 from '../assets/award/g1.jpg'
+import g2 from '../assets/award/g2.jpg'
+import g3 from '../assets/award/g3.jpg'
+import i1 from '../assets/award/i1.jpg'
+import i2 from '../assets/award/i2.png'
+import i3 from '../assets/award/i3.png'
+import i12 from '../assets/award/i12.jpg'
+import k1 from '../assets/award/k1.png'
+import k2 from '../assets/award/k2.jpg'
+import k3 from '../assets/award/k3.jpg'
+import m1 from '../assets/award/m1.jpg'
+import m2 from '../assets/award/m2.jpg'
+import s1 from '../assets/award/s1.jpg'
+import s2 from '../assets/award/s2.jpg'
+import s3 from '../assets/award/s3.jpg'
+import t1 from '../assets/award/t1.jpg'
+import t2 from '../assets/award/t2.jpg'
+import v1 from '../assets/award/v1.jpg'
+import v2 from '../assets/award/v2.jpg'
 
 export const fotos = {
   g1: { src: g1, copyright: 'Zweckverband LANDFOLGE Garzweiler' },
@@ -44,4 +44,4 @@ export const fotos = {
   t2: { src: t2, copyright: 'Stadtverwaltung Erfurt' },
   v1: { src: v1, copyright: 'Norbert Jurczyk' },
   v2: { src: v2, copyright: 'Stadt Friesoythe' },
-};
+}

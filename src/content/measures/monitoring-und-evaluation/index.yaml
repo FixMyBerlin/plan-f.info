@@ -1,0 +1,38 @@
+name: Monitoring und Evaluation
+position: 114
+topic: governance
+shortDescription: Monitoring und Evaluation sind im Radverkehr ist wichtig, um
+  die Wirksamkeit und Effektivität von Radverkehrsmaßnahmen zu überwachen und zu
+  bewerten und Anpassungen vornehmen zu können und die Effektivität der
+  Radverkehrsförderung zu verbessern.
+description: >-
+  Monitoring und Evaluation sind im Radverkehr wichtig, um die Wirksamkeit und
+  Effektivität von Radverkehrsmaßnahmen zu überwachen und zu bewerten. Durch die
+  Sammlung und Auswertung von Daten über die Nutzung des Radverkehrs, die
+  Verkehrssicherheit und die Zufriedenheit der Radfahrenden kann man erkennen,
+  welche Maßnahmen erfolgreich sind und welche Verbesserungen noch notwendig
+  sind, um die Radverkehrsförderung an die tatsächlichen Bedürfnisse der
+  Radfahrenden anzupassen.
+
+
+  Monitoring ermöglicht es, die Entwicklung des Radverkehrs im Laufe der Zeit zu
+  verfolgen und zu beurteilen, ob die angestrebten Ziele erreicht werden.
+  Evaluation hingegen ermöglicht es, die Wirksamkeit von einzelnen Maßnahmen zu
+  beurteilen und entscheiden, ob diese Maßnahmen beibehalten, geändert oder
+  abgebrochen werden sollten.
+additionalResources:
+  - display: Evaluierung im Radverkehr - Praxishandbuch
+    url: https://www.bag.bund.de/SharedDocs/Downloads/DE/Foerderprogramme/Radverkehr/Praxishandbuch_Evaluierung_im_Radverkehr.pdf;jsessionid=5293B835773D88ED4B6E412135949DBA.live21304?__blob=publicationFile&v=1
+  - display: Sicheres Radfahren in einem gemeinsam genutzten Straßenraum.
+    url: https://bast.opus.hbz-nrw.de/opus45-bast/frontdoor/deliver/index/docId/2506/file/A44.pdf
+  - display: Erprobung Geschützter Radfahrstreifen und grün beschichteter Radfahr-
+      und Schutzstreifen
+    url: https://www.infravelo.de/assets/PDFs/gruenbeschichtungen-zwischenbericht-final-2021-03-29.pdf
+  - display: Mobilität in Deutschland
+    url: https://www.mobilitaet-in-deutschland.de/
+  - display: System repräsentativer Verkehrsbefragungen (SrV)
+    url: https://tu-dresden.de/bu/verkehr/ivs/srv
+  - display: Kommunale Radverkehrsberichte
+    url: http://www.radverkehrsberichte.de/
+guidelines: []
+fundings: []

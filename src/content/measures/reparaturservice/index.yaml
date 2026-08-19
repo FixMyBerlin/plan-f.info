@@ -1,0 +1,16 @@
+name: Reparaturservice
+position: 551
+topic: services
+shortDescription: Die Förderung von Reparaturservice-Angeboten, wie
+  Fahrradwerkstätten, Winterchecks oder Servicestationen sind wichtig, um die
+  Nutzbarkeit des Fahrrads zu erhöhen.
+description: Die Förderung von Reparaturservice-Angeboten, wie
+  Fahrradwerkstätten, Winterchecks oder Servicestationen sind wichtig, um die
+  Nutzbarkeit des Fahrrads zu erhöhen.
+additionalResources:
+  - display: 'Rad­-Check '
+    url: https://www.radkultur-bw.de/kommunen/radcheck
+guidelines:
+  - display: 'Infosheet: Fahrrad-Servicestationen'
+    url: https://rad.sh/wp-content/uploads/2021/10/RAD.SH-Infosheet-Nr-17-Fahrrad-Servicestationen.pdf
+fundings: []

@@ -1,0 +1,29 @@
+name: Rücksicht Rad- und Fußverkehr
+position: 665
+topic: multimodalitaet-und-nahmobilitaet
+shortDescription: In der Radverkehrsförderung gilt es auch andere Formen der
+  Nahmobilität, wie den Fußverkehr, mitzuberücksichtigen. Durch Maßnahmen,
+  welche gegenseitige Rücksichtnahme fördern, können Konflikte minimiert werden.
+description: 'In der Radverkehrsförderung gilt es, auch andere Formen der
+  Nahmobilität, wie den Fußverkehr, mitzuberücksichtigen. Durch Maßnahmen,
+  welche gegenseitige Rücksichtnahme fördern, können Konflikte minimiert werden.
+  Dazu gehören insbesondere Aufklärungsmaßnahmen wie z. B. Hinweise wie
+  "Radfahrende sind hier zu Gast" oder Geschwindigkeitsanzeigetafeln für den
+  Radverkehr. '
+additionalResources:
+  - display: Radverkehr in Fußgängerzonen. Endbericht für das Forschungsprojekt "Mit
+      dem Rad zum Einkauf in die Innenstadt - Konflikte und Potenziale bei der
+      Öffnung von Fußgängerzonen für den Radverkehr".
+    url: https://radsam-kampagne.de/wp-content/uploads/2019/09/190925_Endbericht-RadverkInFuzos_final.pdf
+guidelines:
+  - display: Fußgängerüberwege. Leitfaden zur Anlage und Ausstattung von
+      Fußgängerüberwegen in Baden-Württemberg
+    url: https://vm.baden-wuerttemberg.de/fileadmin/redaktion/m-mvi/intern/Dateien/Brosch%C3%BCren_Publikationen/Fussgaengerueberwege_Leitfaden_Anlage_Ausstattung_Brosch%C3%BCre_190215.pdf
+  - display: 'Infosheet: Querungshilfen für den  Fußverkehr'
+    url: https://rad.sh/wp-content/uploads/2020/10/RAD.SH-Infosheet-Nr-9-Querungshilfen-fuer-den-Fussverkehr.pdf
+  - display: Radfahrende und zu Fuß Gehende auf gemeinsamen und getrennten
+      selbstständigen Wegen
+    url: https://rad.sh/wp-content/uploads/2020/05/NRVP-Radfahrende-und-zu-Fu%C3%9F-Gehende-auf-gemeinsamen-oder-getrennten-Wegen.pdf
+  - display: Öffnung von Fußgängerzonen für den Radverkehr
+    url: https://radsam-kampagne.de/wp-content/uploads/2018/03/2018-03-07_Planungsleitfaden_Radsam_Kampagne.pdf
+fundings: []

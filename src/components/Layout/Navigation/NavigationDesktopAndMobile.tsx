@@ -1,18 +1,15 @@
-import React, { ReactNode } from 'react';
-import { NavigationDesktop } from './NavigationDesktop';
-import { NavigationMobile } from './NavigationMobile';
+import React, { type ReactNode } from 'react'
+
+import { NavigationDesktop } from './NavigationDesktop'
+import { NavigationMobile } from './NavigationMobile'
 
 type Props = {
-  path: string;
-  children?: ReactNode;
-  bgColor: string;
-};
+  path: string
+  children?: ReactNode
+  bgColor: string
+}
 
-export const NavigationDesktopAndMobile: React.FC<Props> = ({
-  path,
-  children,
-  bgColor,
-}) => {
+export const NavigationDesktopAndMobile: React.FC<Props> = ({ path, children, bgColor }) => {
   return (
     <>
       <div className="hidden w-full bg-gray-200 md:block">
@@ -24,5 +21,5 @@ export const NavigationDesktopAndMobile: React.FC<Props> = ({
         </NavigationMobile>
       </div>
     </>
-  );
-};
+  )
+}

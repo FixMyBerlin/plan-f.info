@@ -1,24 +1,24 @@
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
-import clsx from 'clsx';
-import React, { useState } from 'react';
-import Logo from '~/components/Layout/assets/Logo.svg';
-import {
-  menuLinkActiveStyles,
-  menuLinkStylesDefault,
-} from '~/components/core/links';
-import { wikiPath } from '~/components/utils';
-import { Link } from '../../core/links/Link';
-import { useTopicNavigationData } from './utils/useTopicNavigationData';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
+import clsx from 'clsx'
+import React, { useState } from 'react'
 
-type Props = { path: string };
+import { menuLinkActiveStyles, menuLinkStylesDefault } from '~/components/core/links'
+import Logo from '~/components/Layout/assets/Logo.svg?react'
+import { wikiPath } from '~/components/utils'
 
-export const sidePanelWidthClassName = 'w-72';
+import { Link } from '../../core/links/Link'
 
-export const SideNavigation: React.FC<Props> = ({ path }) => {
-  const basePath = `/${wikiPath}`;
-  const topicNavigationData = useTopicNavigationData();
+export type SideNavMeasure = { name: string; slug: string }
+export type SideNavTopic = { name: string; slug: string; measures: SideNavMeasure[] }
 
-  const [folded, setFolded] = useState(true);
+type Props = { path: string; topics: SideNavTopic[] }
+
+export const sidePanelWidthClassName = 'w-72'
+
+export const SideNavigation: React.FC<Props> = ({ path, topics }) => {
+  const basePath = `/${wikiPath}`
+
+  const [folded, setFolded] = useState(true)
   return (
     <>
       <div className="fixed z-20 h-screen">
@@ -35,11 +35,8 @@ export const SideNavigation: React.FC<Props> = ({ path }) => {
                   <Logo className="h-8 w-auto shrink-0" />
                 </Link>
               </li>
-              <div
-                style={{ scrollbarWidth: 'none' }}
-                className="overflow-y-auto"
-              >
-                {topicNavigationData.map((topic) => (
+              <div style={{ scrollbarWidth: 'none' }} className="overflow-y-auto">
+                {topics.map((topic) => (
                   <li key={topic.name} className="">
                     <Link
                       href={`${basePath}/${topic.slug}`}
@@ -60,9 +57,7 @@ export const SideNavigation: React.FC<Props> = ({ path }) => {
                               href={`${basePath}/${topic.slug}/${measure.slug}`}
                               className={clsx(
                                 'block pl-3.5 !text-sm',
-                                path.startsWith(
-                                  `${basePath}/${topic.slug}/${measure.slug}/`,
-                                )
+                                path.startsWith(`${basePath}/${topic.slug}/${measure.slug}/`)
                                   ? menuLinkActiveStyles
                                   : menuLinkStylesDefault,
                               )}
@@ -82,7 +77,7 @@ export const SideNavigation: React.FC<Props> = ({ path }) => {
 
           <div className="z-30 flex flex-col justify-center">
             <button
-              className="shadow-r rounded-br-lg rounded-tr-lg bg-gray-100 py-10"
+              className="shadow-r rounded-tr-lg rounded-br-lg bg-gray-100 py-10"
               type="button"
               onClick={() => setFolded(!folded)}
             >
@@ -97,12 +92,10 @@ export const SideNavigation: React.FC<Props> = ({ path }) => {
       </div>
       {/* div pushes main to the side */}
       {!folded ? (
-        <div
-          className={clsx(sidePanelWidthClassName, 'z-10 hidden xl:block')}
-        />
+        <div className={clsx(sidePanelWidthClassName, 'z-10 hidden xl:block')} />
       ) : (
         <div className="shadow-r hidden h-full w-[6px] bg-gray-100 xl:block" />
       )}
     </>
-  );
-};
+  )
+}

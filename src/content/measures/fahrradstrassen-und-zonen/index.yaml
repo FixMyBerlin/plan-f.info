@@ -1,0 +1,29 @@
+name: Fahrradstraßen und -zonen
+position: 332
+topic: infrastruktur
+shortDescription: In Fahrradstraßen und Fahrradzonen haben Radfahrende Vorrang.
+  Das bedeutet, sie dürfen nebeneinander fahren und der Kfz-Verkehr muss sich
+  der Geschwindigkeit der Radfahrenden anpassen.
+description: 'Fahrradstraßen sind Straßen, auf denen Radfahrende Vorrang haben.
+  Das bedeutet, sie dürfen nebeneinander fahren und der Kfz-Verkehr muss sich
+  der Geschwindigkeit der Radfahrenden anpassen. Fahrradzonen sind Abschnitte
+  von mehreren Straßen, auf denen der Radverkehr, ähnlich wie in den
+  Fahrradstraßen bevorzugt und Kfz-Verkehr begrenzt wird. In Fahrradstraßen und
+  Fahrradzonen ist der Kfz-Verkehr häufig ausschließlich als Anliegerverkehr
+  zugelassen. Es sollten Maßnahmen ergriffen werden, um die Durchgangsverkehre
+  zu reduzieren, wie z. B. Einbahnstraßen, Poller oder Diagonalsperren. '
+additionalResources:
+  - display: Themenkarte Fahrradstraßen
+    url: https://www.mobilitaetsforum.bund.de/DE/Themen/News-RADar/_texte/ThemenmonatDez22_Themenkarte_Fahrradstrassen.html
+  - display: Sicherheitsbewertung von Fahrradstraßen und der Öffnung von Einbahnstraßen
+    url: https://www.udv.de/resource/blob/79788/1544ec50b0d46fa8a3883b2c9ca2daeb/41-sicherheitsbewertung-von-fahrradstrassen-und-der-oeffnung-von-einbahnstrassen-data.pdf
+  - display: Straßenverkehrsordnungsrechtlicher Rahmen zur Anordnung von Fahrradstraßen.
+    url: https://www.bundestag.de/resource/blob/821844/814ed787b3c63eba44b944b8c68e19a6/WD-7-141-20-pdf-data.pdf
+guidelines:
+  - display: Fahrradstraßen – Leitfaden für die Praxis
+    url: https://www.bag.bund.de/SharedDocs/Downloads/DE/Foerderprogramme/Radverkehr/Leitfaden_Fahrradstrassen_02_07_2021.pdf?__blob=publicationFile&v=1
+  - display: 'Infosheet: Fahrradstraßen'
+    url: https://rad.sh/wp-content/uploads/2020/05/RAD-SH-Infosheet-Nr-4-Fahrradstrassen.pdf
+  - display: Umsetzung von Fahrradstraßen in Berlin
+    url: https://www.berlin.de/sen/uvk/_assets/verkehr/verkehrsplanung/radverkehr/berlin_leitfaden_fahrradstrassen.pdf
+fundings: []

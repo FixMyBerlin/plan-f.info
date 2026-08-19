@@ -1,0 +1,45 @@
+name: Verwaltung und Politik
+position: 111
+topic: governance
+shortDescription: Verkehrspolitische und kommunalpolitische Zielsetzungen zur
+  Radverkehrsförderung, Schaffung rechtlicher Grundlagen und Bereitstellung von
+  Finanzmitteln, damit die Verwaltung agieren und den Radverkehr in den Kommunen
+  effektiv fördern kann.
+description: 'Verwaltung und Politik sind zentrale Stakeholder für die
+  Radverkehrsförderung. Die Politik ist in der Verantwortung, rechtliche
+  Grundlagen zu schaffen und Finanzierungen bereitzustellen, damit die
+  Verwaltung agieren und den Radverkehr in den Kommunen effektiv fördern kann.
+  Darüber hinaus sind verkehrspolitische und kommunalpolitische Zielsetzungen
+  entscheidend sowie eine langfristig gedachte, nachhaltige Siedlungspolitik, um
+  Zersiedelung und dessen negativen Effekten auf klimaschonende Mobilität
+  entgegenzuwirken. Es braucht ausreichend Personal, Knowhow zu
+  Radverkehrsthemen sowie effiziente Strukturen. '
+additionalResources:
+  - display: Förderfibel Mobilitätsforum Bund
+    url: https://www.mobilitaetsforum.bund.de/SiteGlobals/Forms/Suche/Foerderfibel_Formular.html?queryResultId=null&pageNo=0
+  - display: Ohne Auto mobil - Stadt Oberursel
+    url: https://www.oberurselimdialog.de/mobilit%C3%A4tsberatung
+  - display: Fachbroschüre Destination Innenstadt
+    url: https://agfk-bayern.de/agfk-bayern-publikation-destination-innenstadt/
+  - display: Stellplatzsatzung Stadt Dortmund
+    url: https://www.dortmund.de/de/leben_in_dortmund/planen_bauen_wohnen/stadtplanungs_und_bauordnungsamt/stadtplanung/baurechtliche_satzungen/stellplatzsatzungen/index.html
+  - display: Programme zur finanziellen Förderung des Radwegebaus
+    url: https://repository.difu.de/jspui/handle/difu/281612
+  - display: Klimaschutz auf den (Rad-) Weg bringen. Fördermöglichkeiten für Kommunen.
+    url: https://orlis.difu.de/items/be6ddd86-4eba-4f0d-8fa3-6b1a788c3141
+  - display: Radverkehr in der Kommune
+    url: https://www.fahrradverlag.de/b%C3%BCcher-1/verlagsprogramm/handbuch-radverkehr/#cc-m-product-13982964035
+  - display: Forschungsprojekt KoRa - Zwischenergebnisse
+    url: https://difu.de/publikationen/2022/was-hemmt-die-umsetzung-der-kommunalen-radverkehrsplanung
+  - display: CROW kennisplatform
+    url: https://www.crow.nl/
+  - display: Kosteneffiziente Maßnahmen zur Förderung des Radverkehrs in Gemeinden
+    url: https://www.bmk.gv.at/dam/jcr:acab66d6-cc76-4fe7-80a1-84dcb358a11e/radverkehrsfoerderung.pdf
+  - display: Stellplatzverträge Stadt Aachen
+    url: https://serviceportal.aachen.de/suche/-/vr-bis-detail/dienstleistung/3136/show
+guidelines:
+  - display: Kommunale Stellplatzsatzungen. Leitfaden zur Musterstellplatzsatzung NRW.
+    url: https://www.staedtetag-nrw.de/files/nrw/docs/Publikationen/Weitere_Publikationen/handbuch-kommunale-stellplatzsatzungen-2017.pdf
+  - display: Anforderungsprofil Radverkehrsbeauftragte für Mitgliedkommunen AGFK Bayern
+    url: https://agfk-bayern.de/service/#533-425-informationspapiere
+fundings: []

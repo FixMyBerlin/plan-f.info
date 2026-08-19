@@ -1,0 +1,10 @@
+[build]
+command = "bun run build"
+publish = "dist"
+
+[build.environment]
+# Bun is preinstalled on Netlify; pin a recent version.
+BUN_VERSION = "1.3.14"
+
+# The @astrojs/netlify adapter wires up SSR/Keystatic functions automatically.
+# Public pages are prerendered to static HTML; /keystatic/* runs on-demand.

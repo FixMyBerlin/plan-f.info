@@ -1,0 +1,108 @@
+title: Sharing-Stationen für E-Scooter, E-Mopeds und Leihräder
+position: 1432
+measure: mobility-hubs-im-oeffentlichen-raum
+image:
+  image: /content-images/examples/sharing-stationen-fuer-e-scooter-e-mopeds-und-leihraeder.jpg
+  copyright: 'Urheberin: Connected Mobility Düsseldorf GmbH'
+shortDescription: Zwischen 2022 und 2023 entstanden 150 Sharing-Stationen als
+  zusammenhängendes Mikronetzwerk. Die Stationen werden digital überwacht und
+  gesteuert.
+subcategory: ''
+commune: Düsseldorf
+countryState: Nordrhein-Westfalen
+spatialStructure: Überwiegend städtisch
+centrality: Sehr zentral
+period: Konzeption, Planung, Gremienläufe und Umsetzung in den Jahren 2022 und 2023
+population: 654000
+costs: 2500
+financiallyWeak: false
+beginnerFriendly: true
+description: >-
+  Mit 150 markierten Parkflächen (Sharing-Stationen, Stand: 01.09.2023) für das
+  sichere und ordentliche Abstellen von Leih-Rädern, Leih-Scootern und
+  Leih-Mopeds haben die Landeshauptstadt Düsseldorf und ihre Unternehmung für
+  neue Mobilität, die Connected Mobility Düsseldorf GmbH, das bislang größte,
+  digital überwachte Netzwerk an Stationen in Deutschland geschaffen. Das
+  Parkchaos von E-Scootern und Co. ist in der gesamten Innenstadt und Kernstadt
+  beendet. Das Free-Floating ist stark eigenschränkt und gilt nur noch für die
+  Außenbereiche der Stadt.
+
+
+  Bislang deckt das engmaschige Netzwerk mit einer Stationsdichte von 32
+  Stationen pro Quadratkilometer flächendeckend die Stadtteile Altstadt,
+  Carlstadt und Stadtmitte ab. Der weitere Ausbau für das restliche Stadtgebiet
+  folgt, insbesondere an strategisch entscheidenden Orten. Dazu zählen besonders
+  die Stadtteilzentren sowie die Haltepunkte des öffentlichen
+  Personennahverkehrs und andere Orte öffentlichen Interesses, um inter- und
+  multimodale Wegeketten sowie den ÖPNV zu fördern.
+
+
+  Grundlage für die effiziente und wirksame Steuerung von E-Scootern und
+  ähnlichen Fahrzeugen ist eine moderne IT- und Datenbank-Architektur, der
+  sogenannte Shared-Mobility-Data-Hub. Dieser wird von der Stadttochter
+  Connected Mobility Düsseldorf GmbH (CMD) betrieben. Es liegen die notwendige
+  Datenverträge mit den jeweiligen Anbietern vor, sodass die gesamte Verkehrs-
+  und Parksituation von Zweirad-Leihfahrzeugen kontinuierlich überwacht und
+  gesteuert werden kann. Die Plattform erfasst, verwaltet und visualisiert Daten
+  der verschiedenen Mobilitätsformen. So können unter anderem Parkvorgänge
+  automatisiert überwacht werden. Unsachgemäßes Abstellen auf Brücken oder in
+  Rheinnähe wird verhindert. Die Auswertung der Daten liefert zudem wertvolle
+  Erkenntnisse für die Planung und den Betrieb des Mikronetzwerkes.
+
+
+  An den Sharing-Stationen gibt es Hinweise in Form eines Zusatzschildes auf die
+  begleitende Kommunikationskampagne und die neue Multi-Modalitäts-App des
+  Verkehrsunternehmens Rheinbahn. Diese heißt „Redy“ und ist eine
+  tiefen-integrierte MaaS-Lösung mit Zugang zu allen Shared-Mobility-Anbietern.
+goals: |+
+  - Sicherheit
+  - Komfort und Fahrspaß
+  - Reduktion Mobilitätsarmut
+  - Reduktion privater Autoverkehr (sogenannter MIV)
+  - Klima- und Umweltschutz
+  - Flächengerechtigkeit
+
+localChallenges: |-
+  - Flächenkonflikte
+  - Fehlende Konzepte
+particularities: >-
+  - Evaluation
+
+  - Beteiligung
+
+  - Spezifische Zielgruppe: Pendler\*innen, Tourist\*innen, alle Bürger\*innen
+  Düsseldorfs
+results: Aktuell besteht das Netzwerk aus rund 150 Sharing-Stationen. Bis 2030
+  wird es mehrere hundert Sharing-Stationen im gesamten Stadtgebiet geben, die
+  zusammen mit den parallel im Aufbau befindlichen Netzwerk an
+  Mobilitätsstationen ein leistungsstarkes Netzwerk an neuer, effizienter
+  Mobilität bieten.
+challenges: Akzeptanz der Stationen, bspw. aufgrund der Umwandlung von
+  Parkplätzen. Außerdem Akzeptanz der Sharing-Fahrzeuge im Allgemeinen (Sorge um
+  Ordnung und Sicherheit in der Stadt). Management und Digitalisierungsstrategie
+  zur Steuerung. Abstimmung und Koordination mit den verschiedenen
+  Sharing-Anbietern.
+communication: >-
+  Am Informations- und Fahrsicherheitstag konnten sich die Bürger\*innen über
+  das bestehende Netzwerk mit den aktuellen Standorten sowie den künftigen
+  Ausbau informieren.
+
+  Außerdem wird durch Pressemitteilungen, Online-Beiträge der CMD sowie weitere
+  Veranstaltungen auf die Projekte der Stadt zur Mobilitätswende aufmerksam
+  gemacht.
+funding: |
+  - Eigenmittel 
+  - Landesmittel
+personnelExpenses: Keine Angabe
+authorities: Amt für Verkehrsmanagement
+stakeholders: |-
+  Verwaltung
+  Connected Mobility Düsseldorf GmbH (CMD)
+  Rheinbahn AG
+relatedOffice: 'Ariane Kersting: kersting@mobildus.de'
+sources: Landeshauptstadt Düsseldorf
+notes: ''
+links:
+  - display: Sharing Stationen Düsseldorf
+    url: https://www.duesseldorf.de/aktuelles/news/detailansicht/newsdetail/meilenstein-100-sharing-stationen-1
+awards: []

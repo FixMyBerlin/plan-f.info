@@ -1,15 +1,16 @@
-import clsx from 'clsx';
-import React, { ReactNode } from 'react';
-import { H2, H3 } from '../Text';
+import clsx from 'clsx'
+import React, { type ReactNode } from 'react'
+
+import { H2, H3 } from '../Text'
 
 type Props = {
-  title?: string;
-  children?: ReactNode;
-  breadcrumbs?: ReactNode;
-  className?: string;
-  bgColor?: string;
-  subtitle?: string;
-};
+  title?: string
+  children?: ReactNode
+  breadcrumbs?: ReactNode
+  className?: string
+  bgColor?: string
+  subtitle?: string
+}
 
 export const Hero: React.FC<Props> = ({
   breadcrumbs,
@@ -36,5 +37,5 @@ export const Hero: React.FC<Props> = ({
         </div>
       )}
     </section>
-  );
-};
+  )
+}

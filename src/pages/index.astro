@@ -1,0 +1,123 @@
+---
+import { getCollection } from 'astro:content'
+import { Content } from '~/components/Layout'
+import { Section } from '~/components/Layout/Section'
+import { SearchBar } from '~/components/SearchBar'
+import ErklaervideoPlanF from '~/components/StartPage/assets/ErklaervideoPlanF.png'
+import { CardTopicTitle } from '~/components/StartPage/CardTopicTitle'
+import { CardWrapperTopicsLandingPage } from '~/components/StartPage/CardWrapperTopicsStartPage'
+import { type ExampleCard, RandomExamples } from '~/components/StartPage/RandomExamples'
+import { H2, H3, P } from '~/components/Text'
+import { LinkButtonWithArrow } from '~/components/TopicPage/LinkButtonWithArrow'
+import { wikiPath } from '~/components/utils'
+import { YouTubePreview } from '~/components/core/links/YouTubePreview'
+import { assetSrc } from '~/lib/assetSrc'
+import Layout from '~/layouts/Layout.astro'
+
+const title = 'Impulse für die kommunale Fahrradmobilität'
+
+// Topic cards (sorted by position), mirroring the Gatsby `TopicOverview` query.
+const topics = (await getCollection('topics')).sort((a, b) => a.data.position - b.data.position)
+
+// Example cards are randomized per visit by the <RandomExamples> island. To keep its embedded
+// props small (the home page is the most-visited), we pass a pool of one card per measure
+// (lowest position) rather than all ~122 examples; the island picks 3 at random from the pool.
+const measures = await getCollection('measures')
+const measureToTopic = new Map(measures.map((m) => [m.id, m.data.topic]))
+const cardByMeasure = new Map<string, ExampleCard>()
+for (const example of (await getCollection('examples')).sort(
+  (a, b) => a.data.position - b.data.position,
+)) {
+  if (cardByMeasure.has(example.data.measure)) continue
+  const topicSlug = measureToTopic.get(example.data.measure) ?? ''
+  cardByMeasure.set(example.data.measure, {
+    title: example.data.title,
+    shortDescription: example.data.shortDescription,
+    path: `/${[wikiPath, topicSlug, example.data.measure, example.id].join('/')}/`,
+    image: { src: example.data.image.image, copyright: example.data.image.copyright },
+  })
+}
+const examplePool = [...cardByMeasure.values()]
+---
+
+<Layout title={title}>
+  <Section
+    className="relative flex flex-col items-start justify-between gap-4 !bg-green-500 px-5 !pt-32 pb-8 md:flex-row-reverse md:pb-16 md:pl-8 lg:px-10"
+  >
+    <div class="flex w-full justify-end">
+      <LinkButtonWithArrow button="black" href="/ueber">Was ist Plan F</LinkButtonWithArrow>
+    </div>
+    <div class="flex-col justify-center gap-8 md:gap-16">
+      <div>
+        <H2>Plan F</H2>
+        <H3>{title}</H3>
+      </div>
+      <SearchBar client:load className="pb-12" />
+    </div>
+  </Section>
+
+  <Section className="-mt-6 !rounded-none bg-purple-300 pt-12 md:pt-16">
+    <H2>Handlungsfelder</H2>
+    <P>
+      Entdecken Sie die verschiedenen Handlungsfelder. Dort finden Sie Maßnahmen und deren
+      zugehörigen Praxisbeispiele
+    </P>
+    <CardWrapperTopicsLandingPage className="mt-10">
+      {
+        topics.map((topic) => (
+          <CardTopicTitle
+            link={`${wikiPath}/${topic.id}`}
+            image={topic.data.image.image}
+          >
+            <h3 class="text-lg font-bold text-black md:text-xl">{topic.data.name}</h3>
+          </CardTopicTitle>
+        ))
+      }
+    </CardWrapperTopicsLandingPage>
+  </Section>
+
+  <Section className="mb-12 !rounded-none bg-lime-300">
+    <H2>Praxisbeispiele</H2>
+    <P>
+      Tauchen Sie in unsere Praxisbeispiele ein und sehen Sie, was andere Kommunen bereits für
+      Maßnahmen umgesetzt haben.
+    </P>
+    <RandomExamples client:only="react" examples={examplePool} />
+  </Section>
+
+  <Section>
+    <Content>
+      <H2>Video: Was ist Plan F?</H2>
+      <YouTubePreview
+        link="https://youtu.be/FcD_Se-F5LY"
+        imageSrc={assetSrc(ErklaervideoPlanF)}
+        imageAlt="Video: Was ist Plan F?"
+      />
+    </Content>
+  </Section>
+
+  <Section>
+    <Content>
+      <H2>Plan F Award</H2>
+      <P>
+        Im Sommer 2022 haben sich Kommunen mit guten Praxisbeispielen auf den Plan F Award in den
+        verschiedenen Handlungsfeldern beworben. Unter den 66 Einreichungen hat unsere Jury die
+        besten drei Maßnahmen (maximal) pro Handlungsfeld ausgewählt. Insgesamt wurden 21 Projekte
+        gekürt und auf der Fahrradkommunalkonferenz 2022 in Aachen geehrt. Mehr zu dem Award hier:
+      </P>
+      <LinkButtonWithArrow
+        className="mt-8"
+        truncate={false}
+        button="black"
+        href="/award/plan-f-award-2022/"
+      >
+        Zur Plan F Award Seite
+      </LinkButtonWithArrow>
+      <P className="mt-20 md:mt-20">
+        Plan F ist ein gemeinsames Projekt von fair spaces und FixMyCity und wird vom
+        Bundesministerium für Digitales und Verkehr (BMDV) im Rahmen des Nationalen
+        Radverkehrsplan (NRVP) gefördert.
+      </P>
+    </Content>
+  </Section>
+</Layout>

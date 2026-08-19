@@ -1,0 +1,26 @@
+name: Wirtschaft
+position: 70
+shortDescription: Das Handlungsfeld Wirtschaft fokussiert auf Logistik mit dem
+  Rad und welche den Kundenverkehr im Einzelhandel adressieren und die
+  Radmobilität diesbezüglich fördern.
+description: >-
+  Wirtschafts- und Lieferverkehr macht einen großen Teil des Verkehrsaufkommens
+  aus. Stadtlogistikkonzepte können dazu beitragen, dass ein Teil der
+  Lieferfahrzeuge durch geeignete Fahrräder (z. B. Lastenräder) ersetzt wird. 
+
+
+  Das Handlungsfeld Wirtschaft integriert auch Maßnahmen, die den Kundenverkehr
+  im Einzelhandel adressieren und die Radmobilität diesbezüglich fördern (z. B.
+  durch bestimmte Vorgaben, wie z. B. Stellplatzschlüssel für Fahrräder).
+image:
+  image: /content-images/topics/wirtschaft.svg
+  copyright: ''
+additionalResources:
+  - display: Branchenstudie zur Fahrradwirtschaft in Deutschland 2019-2022
+    url: https://zukunft-fahrrad.org/wp-content/uploads/2023/06/Branchenstudie_zur_Fahrradwirtschaft_2023.pdf
+guidelines:
+  - display: 'Infosheet: Das Fahrrad als Wirtschaftsfaktor'
+    url: https://rad.sh/wp-content/uploads/2020/06/RAD-SH-Infosheet-Nr-5-Das-Fahrrad-als-Wirtschaftsfaktor.pdf
+fundings:
+  - display: Förderfibel Mobilitätsforum Bund
+    url: https://www.mobilitaetsforum.bund.de/SiteGlobals/Forms/Suche/Foerderfibel_Formular.html?queryResultId=null&pageNo=0

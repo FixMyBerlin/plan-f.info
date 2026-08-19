@@ -1,0 +1,77 @@
+---
+import { Content } from '~/components/Layout'
+import { Section } from '~/components/Layout/Section'
+import { WikiHero } from '~/components/Layout/WikiHero'
+import { H2, P } from '~/components/Text'
+import { CardTopic } from '~/components/WissensspeicherStartPage/CardTopic'
+import { CardWrapperWissensspeicherStartPage } from '~/components/WissensspeicherStartPage/CardWrapperWissensspeicherStartPage'
+import { wikiColors, wikiPath } from '~/components/utils'
+import { getSideNavTree, getSortedTopics } from '~/lib/content'
+import Layout from '~/layouts/Layout.astro'
+
+const title = 'Wissensspeicher'
+
+const topics = await getSortedTopics()
+const sideNav = await getSideNavTree()
+---
+
+<Layout
+  title={title}
+  bgColor={wikiColors.root}
+  breadcrumbs={['Wissensspeicher']}
+  sideNav={sideNav}
+>
+  <WikiHero
+    title={title}
+    bgColor={wikiColors.root}
+    breadcrumbNames={['Wissensspeicher']}
+  />
+  <Section>
+    <Content>
+      <P>
+        Das Herzstück von Plan F ist die Systematisierung von Praxisbeispielen, Leitfäden,
+        Fördermöglichkeiten und weitere Hinweise. Diese sind in dem Wissensspeicher strukturiert
+        aufbereitet.
+      </P>
+      <P>
+        Der Wissensspeicher ist einfach zu bedienen und schafft eine strukturierte Übersicht zu
+        Handlungsmöglichkeiten der kommunalen Radverkehrsförderung. Der Wissensspeicher ist nach
+        neun Handlungsfeldern gegliedert, welche verschiedene Maßnahmen und Praxisbeispiele
+        enthalten. Relevante Leitfäden, Fördermöglichkeiten, weitere Hinweise sind den
+        Handlungsfeldern und Maßnahmen zugeordnet.
+        <br />
+        Es ist möglich, sich durch die verschiedenen Handlungsfelder zu klicken, um die
+        verschiedenen Informationen zu erhalten. Darüber hinaus bietet die Suchfunktion einen
+        schnellen Zugang zu den Handlungsfeldern, verschiedenen Maßnahmen und Praxisbeispielen.
+      </P>
+      <P>
+        Für eine ganzheitliche Radverkehrsförderung ist es notwendig, Maßnahmen in verschiedenen
+        Handlungsfeldern umzusetzen. Ein schlauer und passgenauer Maßnahmenmix trägt dazu bei, den
+        Radverkehrsanteil in deutschen Kommunen zu steigern.
+      </P>
+    </Content>
+  </Section>
+
+  <Section className="bg-purple-300">
+    <H2>Handlungsfelder</H2>
+    <P>
+      Entdecken Sie die verschiedenen Handlungsfelder. Dort finden Sie Maßnahmen und deren
+      zugehörigen Praxisbeispiele
+    </P>
+    <CardWrapperWissensspeicherStartPage className="mt-10">
+      {
+        topics.map((topic) => (
+          <CardTopic
+            title={topic.data.name}
+            link={`/${wikiPath}/${topic.id}/`}
+            image={topic.data.image.image}
+          >
+            {topic.data.shortDescription && (
+              <p class="text-sm text-gray-700 md:text-base">{topic.data.shortDescription}</p>
+            )}
+          </CardTopic>
+        ))
+      }
+    </CardWrapperWissensspeicherStartPage>
+  </Section>
+</Layout>

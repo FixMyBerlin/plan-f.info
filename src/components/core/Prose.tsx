@@ -1,10 +1,10 @@
-import clsx from 'clsx';
-import React from 'react';
+import clsx from 'clsx'
+import React from 'react'
 
 type Props = {
-  markdownHTML: string;
-  className?: string;
-};
+  markdownHTML: string
+  className?: string
+}
 
 export const planFMarkdownProseClasses = clsx(
   'max-w-full', // We always wrap Prose in Section containers, which bring their own max-width
@@ -15,7 +15,7 @@ export const planFMarkdownProseClasses = clsx(
   'prose prose-sm md:prose-base', // responsive sizes
   'prose-h3:mt-1 prose-h1:mb-2 prose-h2:mb-2 prose-h2:mt-1 prose-h3:mb-2 prose-p:mb-2 prose-p:mt-1',
   'prose-li:m-0 prose-li:p-0',
-);
+)
 
 export const Prose: React.FC<Props> = ({ markdownHTML, className }) => {
   return (
@@ -24,8 +24,8 @@ export const Prose: React.FC<Props> = ({ markdownHTML, className }) => {
       // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{ __html: markdownHTML }}
     />
-  );
-};
+  )
+}
 
 // p & heading configuaretions if we would want to have prose styled like P / H1 / H2 / H3 Headings.tsx
 // 'prose-h1:text-3xl md:prose-h1:text-4xl', // h1 sizes

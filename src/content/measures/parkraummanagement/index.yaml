@@ -1,0 +1,23 @@
+name: Parkraummanagement
+position: 993
+topic: verkehrsberuhigung
+shortDescription: Parkraummanagement und eine Reduzierung der Anzahl von
+  Kfz-Parkplätzen sind wichtig, um die Flächengerechtigkeit zu fördern und Platz
+  für das Fahrrad zu schaffen.
+description: Parkraummanagement und eine Reduzierung der Anzahl von
+  Kfz-Parkplätzen sind wichtig, um die Aufteilung der Flächen stärker an den
+  tatsächlichen Bedarfen der Verkehrsträger auszurichten sowie Platz für das
+  Fahrrad zu schaffen. Durch die Umwidmung von Kfz-Parkplätzen können Kommunen
+  den Radverkehr fördern, indem mehr Platz für Radverkehrsanlagen für den
+  fließenden Verkehr sowie Abstellanlagen geschaffen wird. Regelmäßige
+  Kontrollen von ordnungswidrigem Parken sind wichtig, um zu gewährleisten, dass
+  Radverkehrsinfrastrukturen nicht durch Autos zugeparkt werden.
+additionalResources:
+  - display: Unfallrisiko Parken für Fußgänger und Radfahrer.
+    url: https://www.udv.de/resource/blob/74934/e2db07a131dc502c7c3ccbf35737dede/98-unfallrisiko-parken-fuer-fussgaenger-und-radfahrer-data.pdf
+  - display: Umdenken Umparken Umsteigen. 7 Leitthesen zur Zukunft des Parkens.
+    url: https://www.agfs-nrw.de/fileadmin/Events-Kampagnen/AGFS-Kongress/2020/7_Leitthesen.pdf
+guidelines:
+  - display: Festlegung der Gebühren für Bewohnerparkausweise
+    url: https://www.staedtetag-nrw.de/files/nrw/docs/Publikationen/Weitere_Publikationen/Hinweispapier-Festlegung-Gebuehren-Bewohnerparken-2022.pdf
+fundings: []

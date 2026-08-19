@@ -1,15 +1,14 @@
-import clsx from 'clsx';
-import React from 'react';
-import Logo from '~/components/Layout/assets/Logo.svg';
-import { SearchBar } from '~/components/SearchBar';
-import {
-  menuLinkActiveStyles,
-  menuLinkStylesDefault,
-} from '~/components/core/links';
-import { Link } from '../../core/links/Link';
-import { menuItems } from './menuItems';
+import clsx from 'clsx'
+import React from 'react'
 
-type Props = { path: string; className?: string };
+import { menuLinkActiveStyles, menuLinkStylesDefault } from '~/components/core/links'
+import Logo from '~/components/Layout/assets/Logo.svg?react'
+import { SearchBar } from '~/components/SearchBar'
+
+import { Link } from '../../core/links/Link'
+import { menuItems } from './menuItems'
+
+type Props = { path: string; className?: string }
 
 export const NavigationDesktop: React.FC<Props> = ({ path, className }) => {
   return (
@@ -29,9 +28,7 @@ export const NavigationDesktop: React.FC<Props> = ({ path, className }) => {
               href={menuItems[key]}
               className={clsx(
                 '!text-sm',
-                path.startsWith(menuItems[key])
-                  ? menuLinkActiveStyles
-                  : menuLinkStylesDefault,
+                path.startsWith(menuItems[key]) ? menuLinkActiveStyles : menuLinkStylesDefault,
               )}
             >
               {key}
@@ -41,5 +38,5 @@ export const NavigationDesktop: React.FC<Props> = ({ path, className }) => {
         <SearchBar className="!w-60" />
       </ul>
     </nav>
-  );
-};
+  )
+}

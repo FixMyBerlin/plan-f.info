@@ -1,22 +1,22 @@
-import { ProfileData } from '~/types/ProfileData';
-import aFrancke from '../assets/jury/a_francke.jpg';
-import aHerz from '../assets/jury/a_herz.jpg';
-import bWuhrl from '../assets/jury/b_wuhrl.jpg';
-import cKollert from '../assets/jury/c_kollert.jpg';
-import eRublack from '../assets/jury/e_rublack.jpg';
-import iSpape from '../assets/jury/i_spape.jpg';
-import jBaumann from '../assets/jury/j_baumann.jpg';
-import jWolff from '../assets/jury/j_wolff.jpg';
-import kStark from '../assets/jury/k_stark.jpg';
-import rPeters from '../assets/jury/r_peters.jpg';
-import sTsudome from '../assets/jury/s_tsudome.jpg';
-import tWeitermeier from '../assets/jury/t_weitemeier.jpg';
+import type { ProfileData } from '~/types/ProfileData'
+
+import aFrancke from '../assets/jury/a_francke.jpg'
+import aHerz from '../assets/jury/a_herz.jpg'
+import bWuhrl from '../assets/jury/b_wuhrl.jpg'
+import cKollert from '../assets/jury/c_kollert.jpg'
+import eRublack from '../assets/jury/e_rublack.jpg'
+import iSpape from '../assets/jury/i_spape.jpg'
+import jBaumann from '../assets/jury/j_baumann.jpg'
+import jWolff from '../assets/jury/j_wolff.jpg'
+import kStark from '../assets/jury/k_stark.jpg'
+import rPeters from '../assets/jury/r_peters.jpg'
+import sTsudome from '../assets/jury/s_tsudome.jpg'
+import tWeitermeier from '../assets/jury/t_weitemeier.jpg'
 
 export const jury: ProfileData[] = [
   {
     name: 'Prof. Dr. Angela Francke',
-    description:
-      'Professorin für Radverkehr und Nahmobilität an der Universität Kassel',
+    description: 'Professorin für Radverkehr und Nahmobilität an der Universität Kassel',
     quote:
       'Ich finde, jede Kommune sollte einen Plan F haben! Ich möchte gerne dabei unterstützen, dass dieser unkompliziert und schnell umgesetzt werden kann.',
     foto: {
@@ -118,7 +118,7 @@ export const jury: ProfileData[] = [
       src: bWuhrl,
     },
   },
-];
+]
 
 export const CEO: ProfileData = {
   name: 'Rebecca Peters',
@@ -129,4 +129,4 @@ export const CEO: ProfileData = {
     src: rPeters,
     attribution: 'ADFC/Deckbar',
   },
-};
+}

@@ -1,15 +1,16 @@
-import clsx from 'clsx';
-import React, { ReactNode } from 'react';
-import { Link } from '../core/links/Link';
+import clsx from 'clsx'
+import React, { type ReactNode } from 'react'
+
+import { Link } from '../core/links/Link'
 
 type Props = {
-  link: string;
-  image?: string;
-  children: ReactNode;
-  className?: string;
-  title: string;
-  linkExternal?: boolean;
-};
+  link: string
+  image?: string
+  children: ReactNode
+  className?: string
+  title: string
+  linkExternal?: boolean
+}
 export const CardTopic: React.FC<Props> = ({
   className,
   children,
@@ -36,11 +37,9 @@ export const CardTopic: React.FC<Props> = ({
         />
       )}
       <div>
-        <h3 className="text-black md:text-xl mb-2 text-lg font-bold">
-          {title}
-        </h3>
+        <h3 className="mb-2 text-lg font-bold text-black md:text-xl">{title}</h3>
         {children}
       </div>
     </Link>
-  );
-};
+  )
+}

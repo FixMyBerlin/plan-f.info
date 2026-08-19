@@ -1,0 +1,16 @@
+{
+  "name": "Plan F – Impulse für die kommunale Fahrradmobilität",
+  "short_name": "Plan F",
+  "start_url": "/",
+  "background_color": "white",
+  "theme_color": "#fff8e8",
+  "display": "minimal-ui",
+  "lang": "de-DE",
+  "icons": [
+    {
+      "src": "/planf_icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

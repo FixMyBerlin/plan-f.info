@@ -1,0 +1,7 @@
+# Require packages to be published at least 5 days before install (supply-chain posture).
+# Mirrors rsv-info.
+[install]
+minimumReleaseAge = 432000
+
+# @parcel/watcher builds from source; its prebuilt darwin/linux binaries are used instead,
+# so we do not need to trust its postinstall.

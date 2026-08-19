@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import clsx from 'clsx'
 
 // Usage: `<Section className={articleProseClasses}><Content>HTML</Content></Section>`
 export const articleProseClasses = clsx(
@@ -6,7 +6,7 @@ export const articleProseClasses = clsx(
   'prose max-w-none',
   // H2
   'prose-h2:mb-3 prose-h2:mt-6 prose-h2:font-mono prose-h2:text-xl prose-h2:font-normal prose-h2:text-black prose-h2:md:mb-6 prose-h2:md:mt-14 prose-h2:md:text-3xl',
-);
+)
 
 // Usage: `<Section className={articleProseClasses}><Content>HTML</Content></Section>`
 // equivalent to components in --> headings.ts / Link/styles.ts / Quotebox
@@ -31,4 +31,4 @@ export const planfProseClasses = clsx(
   'prose-blockquote:rounded-tr-[6rem] prose-blockquote:lg:rounded-tr-[10rem] prose-blockquote:rounded-tl-sm prose-blockquote:bg-purple-100 prose-blockquote:text-left prose-blockquote:mt-8 prose-blockquote:w-fit prose-blockquote:min-w-min prose-blockquote:rounded-b-[6rem] prose-blockquote:font-mono prose-blockquote:lg:rounded-b-[10rem] prose-blockquote:p-8 prose-blockquote:lg:p-16 prose-blockquote:not-italic prose-blockquote:border-l-0',
   // ul li
   'prose-ul:list-disc prose-ul:my-6 prose-li:text-sm prose-li:md:text-base prose-li:text-gray-700',
-);
+)
