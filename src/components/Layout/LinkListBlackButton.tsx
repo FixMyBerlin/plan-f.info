@@ -68,7 +68,6 @@ export const LinkListBlackButton: React.FC<Props> = ({
           </LinkButtonWithArrow>
         ))}
         <Transition
-          as="div"
           show={isExpand}
           enter="transition duration-100 ease-out"
           enterFrom="transform scale-95 opacity-0"
@@ -76,17 +75,18 @@ export const LinkListBlackButton: React.FC<Props> = ({
           leave="transition duration-75 ease-out"
           leaveFrom="transform scale-100 opacity-100"
           leaveTo="transform scale-95 opacity-0"
-          className="flex w-[250px] flex-col items-start gap-5"
         >
-          {links.slice(2).map((resource) => (
-            <LinkButtonWithArrow
-              className="w-full max-w-[250px] md:max-w-none"
-              href={resource.url}
-              key={resource.url}
-            >
-              {resource.display || resource.url}
-            </LinkButtonWithArrow>
-          ))}
+          <div className="flex w-[250px] flex-col items-start gap-5">
+            {links.slice(2).map((resource) => (
+              <LinkButtonWithArrow
+                className="w-full max-w-[250px] md:max-w-none"
+                href={resource.url}
+                key={resource.url}
+              >
+                {resource.display || resource.url}
+              </LinkButtonWithArrow>
+            ))}
+          </div>
         </Transition>
 
         <button className="flex items-center gap-2" type="button" onClick={() => toggleExpanded()}>

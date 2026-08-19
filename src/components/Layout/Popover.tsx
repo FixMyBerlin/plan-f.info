@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import { Button, Dialog, DialogTrigger, Popover as ReactAriaPopover } from 'react-aria-components'
 
 type Props = {

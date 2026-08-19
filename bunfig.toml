@@ -3,5 +3,8 @@
 [install]
 minimumReleaseAge = 432000
 
-# @parcel/watcher builds from source; its prebuilt darwin/linux binaries are used instead,
-# so we do not need to trust its postinstall.
+# Global virtual store — requires isolated linker. Reinstall after changing: rm -rf node_modules && bun install
+# Vite dev: server.fs.allow in astro.config.mjs (packages realpath into ~/.bun/install/cache/links/).
+# @see https://bun.com/docs/pm/global-store
+linker = "isolated"
+globalStore = true

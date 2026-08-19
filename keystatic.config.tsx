@@ -13,7 +13,7 @@ export default config({
   storage: {
     // https://keystatic.com/docs/github-mode#setting-up-git-hub-mode
     kind: KEYSTATIC_STORAGE_KIND,
-    repo: { owner: 'FixMyBerlin', name: 'plan-f-astro' },
+    repo: { owner: 'FixMyBerlin', name: 'plan-f.info' },
   },
   ui: {
     brand: {

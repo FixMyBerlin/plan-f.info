@@ -1,4 +1,5 @@
-import { defineCollection, z } from 'astro:content'
+import { z } from 'astro/zod'
+import { defineCollection } from 'astro:content'
 
 import { copyrightImageSchema, linksSchema } from './sharedFields.astro'
 import { basePath } from './topics.keystatic'

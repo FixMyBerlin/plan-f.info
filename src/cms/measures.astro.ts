@@ -1,4 +1,5 @@
-import { defineCollection, z } from 'astro:content'
+import { z } from 'astro/zod'
+import { defineCollection } from 'astro:content'
 
 import { basePath } from './measures.keystatic'
 import { linksSchema } from './sharedFields.astro'

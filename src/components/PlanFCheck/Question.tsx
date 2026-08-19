@@ -1,4 +1,4 @@
-import { RadioGroup } from '@headlessui/react'
+import { Radio, RadioGroup } from '@headlessui/react'
 import clsx from 'clsx'
 import React, { useState } from 'react'
 
@@ -52,23 +52,18 @@ export const QuestionItem: React.FC<Props> = ({
         >
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
             {question.options.map((option, i) => (
-              <RadioGroup.Option
+              <Radio
                 key={option.text}
                 value={i}
-                className={({ active, checked }) =>
-                  clsx(
-                    active ? 'ring-2 ring-purple-300 ring-offset-2' : '',
-                    checked
-                      ? 'bg-purple-200 hover:bg-purple-300'
-                      : 'ring-1 ring-inset ring-gray-300 bg-white text-gray-900 hover:bg-gray-100',
-                    'flex items-center justify-center rounded-md py-3 px-4 text-sm font-semibold sm:flex-1 hover:cursor-pointer',
-                  )
-                }
+                className={clsx(
+                  'flex items-center justify-center rounded-md px-4 py-3 text-sm font-semibold sm:flex-1 hover:cursor-pointer',
+                  'data-checked:bg-purple-200 data-checked:hover:bg-purple-300',
+                  'data-focus:ring-2 data-focus:ring-purple-300 data-focus:ring-offset-2',
+                  'not-data-checked:bg-white not-data-checked:text-gray-900 not-data-checked:ring-1 not-data-checked:ring-gray-300 not-data-checked:ring-inset not-data-checked:hover:bg-gray-100',
+                )}
               >
-                <RadioGroup.Label className="text-xs whitespace-nowrap md:text-sm" as="span">
-                  {option.text}
-                </RadioGroup.Label>
-              </RadioGroup.Option>
+                <span className="text-xs whitespace-nowrap md:text-sm">{option.text}</span>
+              </Radio>
             ))}
           </div>
           {isSubmit && questionResult === null && (

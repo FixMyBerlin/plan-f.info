@@ -1,4 +1,4 @@
-import { Menu, Transition } from '@headlessui/react'
+import { Menu, MenuButton, MenuItem, MenuItems, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/20/solid'
 import clsx from 'clsx'
 import React, { type ReactNode } from 'react'
@@ -18,7 +18,7 @@ type Props = { path: string; className?: string; children?: ReactNode }
 export const NavigationMobile: React.FC<Props> = ({ children, path, className }) => {
   return (
     <Menu>
-      {({ open }) => (
+      {({ open }: { open: boolean }) => (
         <nav className={clsx(className, open ? 'z-30' : 'z-10 ', 'fixed w-full bg-green-500')}>
           <div className={clsx('z-30 mx-auto px-4 pb-2 sm:px-6 lg:px-8')}>
             <div className="flex h-16 justify-between">
@@ -27,7 +27,7 @@ export const NavigationMobile: React.FC<Props> = ({ children, path, className })
               </Link>
               <div className="-mr-2 flex items-center">
                 {/* Mobile menu button */}
-                <Menu.Button className="inline-flex items-center justify-center">
+                <MenuButton className="inline-flex items-center justify-center">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XMarkIcon
@@ -40,7 +40,7 @@ export const NavigationMobile: React.FC<Props> = ({ children, path, className })
                       aria-hidden="true"
                     />
                   )}
-                </Menu.Button>
+                </MenuButton>
               </div>
             </div>
             {children}
@@ -53,12 +53,11 @@ export const NavigationMobile: React.FC<Props> = ({ children, path, className })
             leaveFrom="transform scale-100 opacity-100"
             leaveTo="transform scale-95 opacity-0"
           >
-            <Menu.Items>
+            <MenuItems>
               <div className="flex h-[90vh] flex-col divide-y overflow-y-auto border bg-white px-4 py-4 pb-[25vh] font-bold">
                 <SearchBar className="mb-4 w-full" />
                 {Object.keys(menuItems).map((key) => (
-                  // eslint-disable-next-line react/jsx-no-useless-fragment
-                  <Menu.Item key={key}>
+                  <MenuItem key={key}>
                     {key in menuItemsWithChildren ? (
                       <NavigationMobileDisclosure
                         // Inner Menu Button
@@ -67,7 +66,7 @@ export const NavigationMobile: React.FC<Props> = ({ children, path, className })
                         {/* children: Inner Menu Panel */}
                         {/* List of all children */}
                         {Object.keys(menuItemsWithChildren[key]).map((childKey) => (
-                          <Menu.Item key={menuItemsWithChildren[key][childKey]}>
+                          <MenuItem key={menuItemsWithChildren[key][childKey]}>
                             <Link
                               href={`${menuItems[key]}${menuItemsWithChildren[key][childKey]}`}
                               className={clsx(
@@ -79,7 +78,7 @@ export const NavigationMobile: React.FC<Props> = ({ children, path, className })
                             >
                               {childKey}
                             </Link>
-                          </Menu.Item>
+                          </MenuItem>
                         ))}
                       </NavigationMobileDisclosure>
                     ) : (
@@ -95,10 +94,10 @@ export const NavigationMobile: React.FC<Props> = ({ children, path, className })
                         {key}
                       </Link>
                     )}
-                  </Menu.Item>
+                  </MenuItem>
                 ))}
               </div>
-            </Menu.Items>
+            </MenuItems>
           </Transition>
         </nav>
       )}

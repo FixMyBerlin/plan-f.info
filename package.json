@@ -1,5 +1,5 @@
 {
-  "name": "plan-f-astro",
+  "name": "plan-f.info",
   "version": "0.1.0",
   "private": true,
   "description": "Static Astro rebuild of https://plan-f.info (replaces Gatsby + Strapi)",
@@ -43,6 +43,7 @@
     "marked": "^18.0.5",
     "nuqs": "^2.8.9",
     "react": "^19.2.3",
+    "react-aria-components": "^1.19.0",
     "react-dom": "^19.2.3",
     "tailwindcss": "^4.1.18",
     "yaml": "^2.9.0"
@@ -63,6 +64,7 @@
     "playwright": "^1.61.0",
     "pngjs": "^7.0.0",
     "typescript": "^5.9.3",
+    "vite": "^7.3.6",
     "vite-plugin-svgr": "^5.2.0"
   },
   "engines": {

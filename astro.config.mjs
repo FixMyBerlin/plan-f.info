@@ -1,3 +1,7 @@
+import { homedir } from 'node:os'
+import { join } from 'node:path'
+import { fileURLToPath } from 'node:url'
+
 import markdoc from '@astrojs/markdoc'
 import netlify from '@astrojs/netlify'
 import react from '@astrojs/react'
@@ -7,6 +11,8 @@ import tailwindcss from '@tailwindcss/vite'
 import { defineConfig, envField } from 'astro/config'
 import { loadEnv } from 'vite'
 import svgr from 'vite-plugin-svgr'
+
+const appRoot = fileURLToPath(new URL('.', import.meta.url))
 
 // ABOUT:
 // Settings are read from `.env` manually because Astro only exposes a subset by default.
@@ -53,6 +59,15 @@ export default defineConfig({
     // svgr handles `*.svg?react` imports (React components used inside .tsx islands).
     // Bare `*.svg` imports are left to Astro's native SVG component handling.
     plugins: [svgr(), tailwindcss()],
+    server: {
+      // Bun globalStore (bunfig.toml) symlinks realpath outside the project (~/.bun/install/cache/links/).
+      // Extend (not replace) Vite's default fs.allow — setting allow alone drops the project root.
+      // @see https://bun.com/docs/pm/global-store
+      // @see https://vite.dev/config/server-options.html#server-fs-allow
+      fs: {
+        allow: [appRoot, join(homedir(), '.bun/install/cache/links')],
+      },
+    },
   },
   env: {
     schema: {
