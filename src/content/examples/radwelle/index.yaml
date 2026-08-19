@@ -2,7 +2,7 @@ title: Radwelle
 position: 1110
 measure: verkehrsfluss
 image:
-  image: /content-images/examples/radwelle.JPG
+  image: ./radwelle.JPG
   copyright: 'Hinweisschild Radwelle, Urheberin: Stadt Oberhausen'
 shortDescription: 'Beschleunigung des Radverkehrs durch Einführung intelligenter
   Lichtsignalanlage (LSA). Diese erkennen Radfahrende und schalten zeitnah auf
@@ -66,5 +66,5 @@ links:
 awards:
   - name: Deutscher Fahrradpreis 2019
     description: Platz 2 Infrastruktur
-    logo: /content-images/examples/awards/radwelle-award-0.svg
+    logo: ./radwelle-award-0.svg
     logoCopyright: 'Urheber: Deutscher Fahrradpreis'

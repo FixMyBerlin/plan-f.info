@@ -4,7 +4,7 @@ description: "Die Stadt Köln wird in der Domumgebung eine neue Verkehrsführung
   umsetzen und unter anderem in der Trankgasse eine Fahrradstraße einrichten
   sowie die Fußgänger\\*innenzone am Dom erweitern. "
 image:
-  image: /content-images/community-entries/trankgasse-wird-zur-fahrradstrasse.png
+  image: ./trankgasse-wird-zur-fahrradstrasse.png
   copyright: 'Urheber: Fair Spaces'
 website:
   - display: Trankgasse wird zur Fahrradstraße

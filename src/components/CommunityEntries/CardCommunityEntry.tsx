@@ -1,15 +1,12 @@
 import clsx from 'clsx'
 import React, { type ReactNode } from 'react'
 
-import { assetSrc } from '~/lib/assetSrc'
-
 import { Link } from '../core/links/Link'
-import PlaceholderImage from './assets/planf-placeholder.jpg'
 
 type Props = {
   link: string | null
-  /** Image URL, or undefined to show the placeholder. */
-  image?: string
+  /** Optimized image URL from the Astro parent. */
+  image: string
   children: ReactNode
   className?: string
   title: string
@@ -31,7 +28,7 @@ export const CardCommunityEntry: React.FC<Props> = ({
         <img
           className="w-full overflow-hidden object-cover sm:h-72 sm:w-1/3 sm:shrink-0 sm:rounded-bl-3xl"
           alt=""
-          src={image || assetSrc(PlaceholderImage)}
+          src={image}
         />
         <div className="p-6 sm:pl-0">{children}</div>
       </div>
@@ -46,11 +43,7 @@ export const CardCommunityEntry: React.FC<Props> = ({
       )}
       href={link}
     >
-      <img
-        className={clsx(cardImageClass, 'object-cover')}
-        alt=""
-        src={image || assetSrc(PlaceholderImage)}
-      />
+      <img className={clsx(cardImageClass, 'object-cover')} alt="" src={image} />
       <div className="p-6 sm:pl-0">
         <h3 className="mb-3 text-lg font-bold text-black md:text-xl">{title}</h3>
         {children}

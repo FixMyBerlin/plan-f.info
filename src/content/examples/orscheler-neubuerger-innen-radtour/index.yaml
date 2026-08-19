@@ -3,7 +3,7 @@ position: 1121
 measure: marketing-und-kommunikation
 relatedTopic: bildung-und-trainings
 image:
-  image: /content-images/examples/orscheler-neubuerger-innen-radtour.JPG
+  image: ./orscheler-neubuerger-innen-radtour.JPG
   copyright: 'Fahrradtour, Urheber*in: Stadt Oberursel (Taunus)'
 shortDescription: Geführte Radtouren geben Neubürger*innen die Möglichkeiten den
   Radverkehr in der Stadt und andere Bewohner*innen besser kennenzulernen.
@@ -110,5 +110,5 @@ links:
 awards:
   - name: Plan F Award 2022
     description: Platz 2 Kommunikation und Öffentlichkeitsarbeit
-    logo: /content-images/examples/awards/orscheler-neubuerger-innen-radtour-award-0.svg
+    logo: ./orscheler-neubuerger-innen-radtour-award-0.svg
     logoCopyright: 'Urheberin: fair spaces'

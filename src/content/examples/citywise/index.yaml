@@ -3,7 +3,7 @@ position: 1077
 measure: apps
 relatedTopic: governance
 image:
-  image: /content-images/examples/citywise.jpeg
+  image: ./citywise.jpeg
   copyright: 'Citywise App, Urheberin: Whysk GmbH'
 shortDescription: 'Entwickeln einer mobilen App für die lokale
   Fahrrad-Community, wo Highlights und Gefahrstellen des lokalen

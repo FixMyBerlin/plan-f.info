@@ -29,7 +29,7 @@ docker run -d --name plan-f-pg -e POSTGRES_PASSWORD=planf -e POSTGRES_DB=planf -
 docker exec -i plan-f-pg psql -U postgres -d planf < ../plan-f-db-production.sql
 
 # 2. extract → Keystatic content + download images (from S3, still live)
-bun run import:sql        # writes src/content/** + public/content-images/**
+bun run import:sql        # writes src/content/** with images next to each index.yaml
 
 # 3. rebuild the search index, then build
 bun run build:search

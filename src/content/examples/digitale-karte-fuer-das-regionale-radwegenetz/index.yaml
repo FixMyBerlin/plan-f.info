@@ -2,7 +2,7 @@ title: 'Digitale Karte für das Regionale Radwegenetz '
 position: 1410
 measure: konzepte-und-organisation
 image:
-  image: /content-images/examples/digitale-karte-fuer-das-regionale-radwegenetz.png
+  image: ./digitale-karte-fuer-das-regionale-radwegenetz.png
   copyright: 'Digitale Karte für das Regionale Radwegenetz, Urheber:
     Regionalverband Ruhr 2023'
 shortDescription: 'Die Onlinekarte zeigt den Bedarfsplan 2019 sowie die
@@ -99,5 +99,5 @@ links:
 awards:
   - name: Deutscher Fahrradpreis 2019
     description: 1. Platz Infrastruktur
-    logo: /content-images/examples/awards/digitale-karte-fuer-das-regionale-radwegenetz-award-0.svg
+    logo: ./digitale-karte-fuer-das-regionale-radwegenetz-award-0.svg
     logoCopyright: 'Urheber: Deutscher Fahrradpreis'

@@ -6,7 +6,7 @@ description: ' „Car-Bike-Port“ für Cuxhaven: Insgesamt sechs Fahrradstände
   Abstellmöglichkeiten gut angenommen werden, sind weitere Anschaffungen
   möglich.'
 image:
-  image: /content-images/community-entries/car-bike-port.png
+  image: ./car-bike-port.png
   copyright: 'Urheberin: Stadt Cuxhaven'
 website:
   - display: 'Platz für zehn Fahrräder: „Car-Bike-Port“ passt in jede Pkw-Parklücke

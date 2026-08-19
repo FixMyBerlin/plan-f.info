@@ -3,7 +3,7 @@ position: 1306
 measure: radschnellverbindungen-radschnellwege-und-premiumrouten-1
 relatedTopic: tourismus-und-freizeit
 image:
-  image: /content-images/examples/waeller-all-een-weg.jpg
+  image: ./waeller-all-een-weg.jpg
   copyright: 'Baumelbank am Radschnellweg, Urheberin: Lina Braun'
 shortDescription: 'Errichtung eines vollständig barrierefrei zertifizierten
   Radweges, welcher eine direkte Verbindung zwischen zwei Verbandsgemeinden
@@ -98,5 +98,5 @@ links:
 awards:
   - name: Plan F Award 2022
     description: Platz 1 Infrastruktur sowie Gesamtsiegerin
-    logo: /content-images/examples/awards/waeller-all-een-weg-award-0.svg
+    logo: ./waeller-all-een-weg-award-0.svg
     logoCopyright: 'Urheberin: fair spaces'

@@ -6,7 +6,7 @@ description: 'stadtnavi ist eine Mobilitäts-App und basiert auf der
   wie z. B. öffentliche Verkehrsmittel, Fußwege, Radverkehr und PKW-Routing
   kombiniert. '
 image:
-  image: /content-images/community-entries/mobilitaetsapp-stadtnavi-herrenberg.png
+  image: ./mobilitaetsapp-stadtnavi-herrenberg.png
   copyright: 'Bild der App, Urheberin: Stadt Herrenberg'
 website:
   - display: 'Mobilikon: Mobilitätsapp: stadtnavi Herrenberg'

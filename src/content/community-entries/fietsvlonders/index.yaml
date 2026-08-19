@@ -5,7 +5,7 @@ description: 'Fahrradabstellanlagen auf Parklets: Können von den Anwohnenden
   Flyer mit Informationen. Nach 3 Monaten werden die Abstellanlagen auf dem
   Parkplatz fest installiert, außer es gibt ersthafte Einwände. '
 image:
-  image: /content-images/community-entries/fietsvlonders.png
+  image: ./fietsvlonders.png
   copyright: 'Urheberin: Stadt Den Haag'
 website:
   - display: 'Fietsvlonders: Ein Parklet mit Fahrradbügeln'

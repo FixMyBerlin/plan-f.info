@@ -3,7 +3,7 @@ position: 1411
 measure: gestaltungselemente
 relatedTopic: kommunikation-und-oeffentlichkeitsarbeit
 image:
-  image: /content-images/examples/piktogrammkette.JPG
+  image: ./piktogrammkette.JPG
   copyright: 'Fahrrad Piktogramm, Urheber: Carlo Müller-Hopp'
 shortDescription: 'Zur Verbesserung der subjektiven Sicherheit und Reduzierung
   von Konflikten setzt die Stadt Mainz Piktogrammketten ein. '
@@ -86,5 +86,5 @@ links:
 awards:
   - name: Deutscher Fahrradpreis 2017
     description: 'Deutscher Fahrradpreis 2017: Platz 1 Infrastruktur'
-    logo: /content-images/examples/awards/piktogrammkette-award-0.svg
+    logo: ./piktogrammkette-award-0.svg
     logoCopyright: 'Urheber: Deutscher Fahrradpreis'

@@ -10,6 +10,7 @@ import { CardWrapperTopicPage } from '~/components/TopicPage/CardWrapperTopicPag
 import { wikiColors, wikiPath } from '~/components/utils'
 import { getSideNavTree, getSortedTopics, measuresForTopic } from '~/lib/content'
 import { renderMarkdown } from '~/lib/markdown'
+import { optimizedSrc } from '~/lib/optimizeImage'
 import Layout from '~/layouts/Layout.astro'
 
 export const getStaticPaths = (async () => {
@@ -17,12 +18,16 @@ export const getStaticPaths = (async () => {
   return Promise.all(
     topics.map(async (topic) => ({
       params: { topic: topic.id },
-      props: { topic, measures: await measuresForTopic(topic.id) },
+      props: {
+        topic,
+        measures: await measuresForTopic(topic.id),
+        introImageSrc: await optimizedSrc(topic.data.image.image, 600),
+      },
     })),
   )
 }) satisfies GetStaticPaths
 
-const { topic, measures } = Astro.props
+const { topic, measures, introImageSrc } = Astro.props
 const sideNav = await getSideNavTree()
 const descriptionHTML = renderMarkdown(topic.data.description)
 ---
@@ -39,7 +44,7 @@ const descriptionHTML = renderMarkdown(topic.data.description)
     bgColor={wikiColors.topic}
     breadcrumbNames={['Wissensspeicher', topic.data.name]}
   />
-  <PageIntro className="-mb-10" image={topic.data.image.image} markdownHTML={descriptionHTML} />
+  <PageIntro className="-mb-10" image={introImageSrc} markdownHTML={descriptionHTML} />
 
   <Section className="mb-12 grid gap-10 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
     <LinkListBlackButton client:visible links={topic.data.guidelines} title="Leitfäden" />

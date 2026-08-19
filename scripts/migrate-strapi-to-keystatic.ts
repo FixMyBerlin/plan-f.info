@@ -19,7 +19,7 @@
  *   MIGRATION_INPUT=/path bun run migrate
  *   bun run migrate -- --dry-run          # parse + report only, write nothing
  *
- * After it finishes, run `bun run build:search` and commit src/content/ + public/content-images/.
+ * After it finishes, run `bun run build:search` and commit src/content/.
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
@@ -29,7 +29,6 @@ import { stringify as toYaml } from 'yaml'
 const INPUT = process.env.MIGRATION_INPUT ?? join(process.cwd(), 'migration-input')
 const DRY = process.argv.includes('--dry-run')
 const CONTENT = join(process.cwd(), 'src', 'content')
-const PUBLIC_IMG = join(process.cwd(), 'public', 'content-images')
 
 type Any = Record<string, any>
 const report = {
@@ -81,21 +80,21 @@ function loadType(file: string): Any[] {
 async function downloadImage(
   url: string | undefined,
   collection: string,
-  name: string,
+  slug: string,
+  localBaseName?: string,
 ): Promise<string> {
   if (!url) return ''
   const ext = (url.split('.').pop() ?? 'jpg').split('?')[0].slice(0, 5)
-  const fileName = `${name}.${ext}`
-  const dir = join(PUBLIC_IMG, collection)
-  const publicPath = `/content-images/${collection}/${fileName}`
-  if (DRY) return publicPath
+  const fileName = localBaseName ? `${localBaseName}.${ext}` : `${slug}.${ext}`
+  const dir = join(CONTENT, collection, slug)
+  if (DRY) return `./${fileName}`
   try {
     const res = await fetch(url)
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
     mkdirSync(dir, { recursive: true })
     writeFileSync(join(dir, fileName), Buffer.from(await res.arrayBuffer()))
     report.images++
-    return publicPath
+    return `./${fileName}`
   } catch (err) {
     console.warn(`[migrate] image failed (${url}): ${(err as Error).message}`)
     return ''
@@ -162,7 +161,8 @@ async function main() {
       const awardEntity = aw?.award?.data?.attributes ?? aw?.award ?? {}
       const logo = await downloadImage(
         mediaUrl(awardEntity?.logo?.image ?? awardEntity?.logo),
-        'examples/awards',
+        'examples',
+        slug,
         `${slug}-award-${i}`,
       )
       awards.push({
@@ -239,9 +239,7 @@ async function main() {
     console.warn(`[migrate] missing input files: ${report.missing.join(', ')}`)
   }
   if (!DRY) {
-    console.log(
-      '\nNext: `bun run build:search`, then commit src/content/ + public/content-images/.',
-    )
+    console.log('\nNext: `bun run build:search`, then commit src/content/.')
   }
 }
 

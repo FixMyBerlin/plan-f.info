@@ -5,7 +5,7 @@ description: 'Dieses Projekt begann mit einer dringenden Frage der Stadt
   und die Kommunikation über die Regeln des Fahrradparkens klarer gestaltet
   werden? Das Bewusstsein für Fahrradparkplätze stieg nach dem Projekt um 41 %.'
 image:
-  image: /content-images/community-entries/ausschilderung-und-sichtbarkeit-fahrradparken.png
+  image: ./ausschilderung-und-sichtbarkeit-fahrradparken.png
   copyright: 'Urheberin: Mijksenaar initiative'
 website:
   - display: Bicycle parking

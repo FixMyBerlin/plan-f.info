@@ -4,7 +4,7 @@ position: 1035
 measure: karten
 relatedTopic: tourismus-und-freizeit
 image:
-  image: /content-images/examples/serviceplus-fuer-radfahrende-im-oldenburger-land-gps-gestuetzte-services-per-qr-code.png
+  image: ./serviceplus-fuer-radfahrende-im-oldenburger-land-gps-gestuetzte-services-per-qr-code.png
   copyright: 'Plan F Bild, Urheberin: fair spaces'
 shortDescription: Einbindung GPS-gestützter QR-Codes auf Printprodukte die den
   Nutzenden Servicestationen in der Umgebung zeigen.

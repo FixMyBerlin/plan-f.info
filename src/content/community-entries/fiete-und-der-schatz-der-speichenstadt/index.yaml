@@ -3,7 +3,7 @@ measure: marketing-und-kommunikation
 description: Schatzsuche für Kinder durch Fahrrad-Erlebnis Parcour inkl.
   Hamburger Sehenswürdigkeiten durch die Stadt.
 image:
-  image: /content-images/community-entries/fiete-und-der-schatz-der-speichenstadt.png
+  image: ./fiete-und-der-schatz-der-speichenstadt.png
   copyright: 'Urheber: Fair Spaces '
 website:
   - display: Jurymappe Deutscher Fahrradpreis 2022

@@ -8,7 +8,7 @@ description: >+
 
 
 image:
-  image: /content-images/community-entries/kanalpromenade-muenster.png
+  image: ./kanalpromenade-muenster.png
   copyright: 'Urheberin: Stadt Münster '
 website:
   - display: Kanalpromenade

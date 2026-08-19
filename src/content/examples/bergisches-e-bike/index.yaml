@@ -3,7 +3,7 @@ position: 1066
 measure: fahrradverleihsysteme
 relatedTopic: infrastruktur
 image:
-  image: /content-images/examples/bergisches-e-bike.jpeg
+  image: ./bergisches-e-bike.jpeg
   copyright: 'E-Bikes, Urheber: Rheinisch Bergischer Kreis'
 shortDescription: Pedelec Verleihsystem mit 30 Stationen (davon 13 mit
   Lademöglichkeit) im suburbanen/ländlichen Raum.

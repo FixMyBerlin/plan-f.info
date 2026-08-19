@@ -3,7 +3,7 @@ position: 1182
 measure: fahrradnetz
 relatedTopic: governance
 image:
-  image: /content-images/examples/radnetz-owl.jpg
+  image: ./radnetz-owl.jpg
   copyright: 'Logo Radnetz OWL, Urheberin: OstWestfalenLippe GmbH '
 shortDescription: 'Entstehung eines regionalen Alltagsradwegenetzes in
   OstwestfalenLippe (OWL) und gemeinsamen Zielen für die Entwicklung eines
@@ -127,5 +127,5 @@ links:
 awards:
   - name: Deutscher Fahrradpreis 2022
     description: 'Platz 1 Infrastruktur '
-    logo: /content-images/examples/awards/radnetz-owl-award-0.svg
+    logo: ./radnetz-owl-award-0.svg
     logoCopyright: 'Urheheber: Deutscher Fahrradpreis'

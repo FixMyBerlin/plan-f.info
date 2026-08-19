@@ -13,7 +13,7 @@ description: >-
   im Einzelhandel adressieren und die Radmobilität diesbezüglich fördern (z. B.
   durch bestimmte Vorgaben, wie z. B. Stellplatzschlüssel für Fahrräder).
 image:
-  image: /content-images/topics/wirtschaft.svg
+  image: ./wirtschaft.svg
   copyright: ''
 additionalResources:
   - display: Branchenstudie zur Fahrradwirtschaft in Deutschland 2019-2022

@@ -2,7 +2,7 @@ title: Mit der App DB Rad+ aufs Rad steigen
 position: 1044
 measure: marketing-und-kommunikation
 image:
-  image: /content-images/examples/mit-der-app-db-rad-aufs-rad-steigen.jpeg
+  image: ./mit-der-app-db-rad-aufs-rad-steigen.jpeg
   copyright: 'DB Rad+ App, Urheberin: Deutsche Bahn'
 shortDescription: Radfahrende können mit der DB Rad+ App ein Kilometerguthaben
   erradeln. Dieses Guthaben kann bei lokalen Unternehmen gegen Prämien oder
@@ -82,5 +82,5 @@ links:
 awards:
   - name: Plan F Award 2022
     description: Platz 3 Kommunikation und Öffentlichkeitsarbeit
-    logo: /content-images/examples/awards/mit-der-app-db-rad-aufs-rad-steigen-award-0.svg
+    logo: ./mit-der-app-db-rad-aufs-rad-steigen-award-0.svg
     logoCopyright: 'Urheberin: fair spaces'

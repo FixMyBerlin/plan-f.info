@@ -5,7 +5,7 @@ description: Digitales Besucher\*innenlenkungssystem mit Bingo Spiel.
   Knotenpunkten. Es gibt geführte und individuelle Touren. Zusätzlich gibt es
   monatliche Gewinne unter allen Teilnehmenden.
 image:
-  image: /content-images/community-entries/radler-bingo.png
+  image: ./radler-bingo.png
   copyright: 'Urheber: Bad Zwischenahner Touristik GmbH'
 website:
   - display: Radler-Bingo in Bad Zwischenahn

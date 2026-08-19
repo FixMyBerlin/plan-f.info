@@ -3,7 +3,7 @@ position: 1345
 measure: kombination-fahrrad-und-oe-pnv
 relatedTopic: infrastruktur
 image:
-  image: /content-images/examples/automatisiertes-fahrradparkhaus-fellbach.jpeg
+  image: ./automatisiertes-fahrradparkhaus-fellbach.jpeg
   copyright: 'Vollautomatisiertes Fahrradparkhauses, Urheber: Jan Potente'
 shortDescription: Bau und Betrieb eines vollautomatisierten Fahrradparkhauses
   inklusive Entwicklung Prototyp App-Zugang.
@@ -121,5 +121,5 @@ links:
 awards:
   - name: Plan F Award 2022
     description: 2. Platz Multimodalität & Nahmobilität
-    logo: /content-images/examples/awards/automatisiertes-fahrradparkhaus-fellbach-award-0.svg
+    logo: ./automatisiertes-fahrradparkhaus-fellbach-award-0.svg
     logoCopyright: 'Urheberin: fair spaces'

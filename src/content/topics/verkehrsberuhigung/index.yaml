@@ -10,7 +10,7 @@ description: Das Handlungsfeld Verkehrsberuhigung zeigt Maßnahmen auf, welche
   Beschränkungen für den motorisierten Verkehr oder die Reduzierung von
   Kfz-Stellplätzen.
 image:
-  image: /content-images/topics/verkehrsberuhigung.svg
+  image: ./verkehrsberuhigung.svg
   copyright: ''
 additionalResources: []
 guidelines: []

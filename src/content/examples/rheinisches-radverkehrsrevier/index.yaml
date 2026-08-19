@@ -3,7 +3,7 @@ position: 1258
 measure: konzepte-und-organisation
 relatedTopic: infrastruktur
 image:
-  image: /content-images/examples/rheinisches-radverkehrsrevier.png
+  image: ./rheinisches-radverkehrsrevier.png
   copyright: 'Radverkehrskonzept Karte, Urheberin: LANDFOLGE Garzweiler'
 shortDescription: In der Projektphase 1 „Gesamtregionales Radverkehrskonzept“
   wurde ein revierweites Konzept für den Radverkehr als Grundlage für die
@@ -105,5 +105,5 @@ links:
 awards:
   - name: Plan F Award 2022
     description: 1. Platz Governance
-    logo: /content-images/examples/awards/rheinisches-radverkehrsrevier-award-0.svg
+    logo: ./rheinisches-radverkehrsrevier-award-0.svg
     logoCopyright: 'Urheberin: fair spaces'

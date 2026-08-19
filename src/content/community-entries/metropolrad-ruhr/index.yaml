@@ -4,7 +4,7 @@ description: Regionales Fahrraverleihsystem im Ruhrgebiet - Kooperation mit
   Verkehrsunternehmen und Universitäten als Ankerkunden. Operativer Betrieb
   durch die Nextbike GmbH.
 image:
-  image: /content-images/community-entries/metropolrad-ruhr.png
+  image: ./metropolrad-ruhr.png
   copyright: 'Urheberin: TIER Mobility SE'
 website:
   - display: Fahrradverleih im Ruhrgebiet

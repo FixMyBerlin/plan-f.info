@@ -5,7 +5,7 @@ description: Die Stadt Grenoble beauftragte ein Grafikbüro mit der Gestaltung
   bietet geschützte Radwege für bestehende und künftige Radfahrer\*innen, mit
   dem Ziel, die Fahrradnutzung zu verdreifachen.
 image:
-  image: /content-images/community-entries/design-fahrradmarke.png
+  image: ./design-fahrradmarke.png
   copyright: 'Urheber: d’obleudesign'
 website:
   - display: Chronovélo Branding

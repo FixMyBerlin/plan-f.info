@@ -5,7 +5,7 @@ description: Das bestehende Bikesharing-System in Kiel wird im Zeitraum von 2021
   entsteht in einem regionalen Zusammenschluss ein attraktives Angebot, das
   multimodales Verkehrsverhalten für breite Teile der Bevölkerung ermöglicht.
 image:
-  image: /content-images/community-entries/ausweitung-des-bikesharing-systems-sprottenflotte-in-der-kielregion.png
+  image: ./ausweitung-des-bikesharing-systems-sprottenflotte-in-der-kielregion.png
   copyright: 'Urheber: KielRegion'
 website:
   - display: SprottenFlotte

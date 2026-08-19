@@ -2,7 +2,7 @@ title: 'Pop-Up-Radwege in Berlin '
 position: 1079
 measure: temporaere-radfahrstreifen
 image:
-  image: /content-images/examples/pop-up-radwege-in-berlin.jpg
+  image: ./pop-up-radwege-in-berlin.jpg
   copyright: 'Danziger Straße, Urheberin: SenUMVK'
 shortDescription: 'Pop-up-Bike-Lanes beschleunigen die Einrichtung von
   geschützten Radverkehrsanlagen. '
@@ -84,5 +84,5 @@ links:
 awards:
   - name: Deutscher Fahrradpreis 2021
     description: 1. Platz Infrastruktur
-    logo: /content-images/examples/awards/pop-up-radwege-in-berlin-award-0.svg
+    logo: ./pop-up-radwege-in-berlin-award-0.svg
     logoCopyright: 'Urheber: Deutscher Fahrradpreis'

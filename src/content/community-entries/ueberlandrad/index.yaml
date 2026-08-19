@@ -3,7 +3,7 @@ measure: ''
 description: Drei elek­trische Lastenräder stehen an Stationen im Mühlenkreis
   zum Abholen bereit.
 image:
-  image: /content-images/community-entries/ueberlandrad.png
+  image: ./ueberlandrad.png
   copyright: 'Urheber: Bundesinstitut für Bau-, Stadt- und Raumforschung (BBSR)'
 website:
   - display: milla.bike – Das freie Lastenrad im Mühlenkreis Minden-Lübbecke

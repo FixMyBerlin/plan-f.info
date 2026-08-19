@@ -4,7 +4,7 @@ description: 'Kreissportbund führt Fahrradangebote für Kinder und Jugendliche
   durch. Zusätzlich werden Fortbildungen für Lehrkräfte an Grundschulen
   angeboten. '
 image:
-  image: /content-images/community-entries/fahrradangebote-fuer-kinder-und-jugendliche-euskirchen.png
+  image: ./fahrradangebote-fuer-kinder-und-jugendliche-euskirchen.png
   copyright: 'Urheber: KreisSportBund Euskirchen e.V.'
 website:
   - display: Fahrrad- und Inlinertraining

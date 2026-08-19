@@ -4,7 +4,7 @@ description: Zunächst Entwicklung eines Radweges unter dem U-Bahn Viadukt (ca. 
   Kilometer), der auch Mobilitätsstationen und z. B. Cafes inkludiert. Bis Ende
   2022 soll zunächst ein Reallabor auf einem Teilstück eröffnet werden.
 image:
-  image: /content-images/community-entries/radbahn-berlin.png
+  image: ./radbahn-berlin.png
   copyright: 'Urheber: Paper Planes e.V. '
 website:
   - display: Jurymappe Deutscher Fahrradpreis 2022

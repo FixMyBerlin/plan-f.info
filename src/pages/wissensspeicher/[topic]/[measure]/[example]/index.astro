@@ -1,5 +1,6 @@
 ---
 import type { GetStaticPaths } from 'astro'
+import { Picture } from 'astro:assets'
 import {
   CommunityEntriesSection,
   type CommunityEntryItem,
@@ -17,6 +18,7 @@ import { wikiColors } from '~/components/utils'
 import { getCollection } from 'astro:content'
 import { examplesForMeasure, getSideNavTree, getSortedExamples } from '~/lib/content'
 import { renderMarkdown } from '~/lib/markdown'
+import { optimizedAwardLogo, optimizedPlaceholder, optimizedSrc } from '~/lib/optimizeImage'
 import Layout from '~/layouts/Layout.astro'
 
 export const getStaticPaths = (async () => {
@@ -44,10 +46,17 @@ export const getStaticPaths = (async () => {
         (c) => c.data.measure === example.data.measure,
       )
 
+      const awards = await Promise.all(
+        example.data.awards.map(async (award) => ({
+          ...award,
+          logoSrc: award.logo ? await optimizedAwardLogo(award.logo) : undefined,
+        })),
+      )
+
       return {
         params: { topic: topicSlug, measure: example.data.measure, example: example.id },
         props: {
-          example,
+          example: { ...example, data: { ...example.data, awards } },
           measureName: measure?.data.name ?? '',
           topicName: topic?.data.name ?? '',
           pagination: { pos, prevSlug, nextSlug, total: slugList.length },
@@ -75,17 +84,22 @@ const steckbrief: { key: string; label: string; value: string; withInfo?: boolea
 
 const costsFormatted = d.costs !== undefined ? Number(d.costs).toLocaleString('de-DE') : undefined
 
-const communityEntryItems: CommunityEntryItem[] = communityEntries.map((entry) => ({
-  title: entry.data.title,
-  url: entry.data.website?.[0]?.url,
-  image: entry.data.image
-    ? { src: entry.data.image.image, copyright: entry.data.image.copyright }
-    : undefined,
-  commune: entry.data.commune,
-  countryState: entry.data.countryState,
-  subcategory: entry.data.subcategory,
-  descriptionHTML: renderMarkdown(entry.data.description),
-}))
+const communityEntryItems: CommunityEntryItem[] = await Promise.all(
+  communityEntries.map(async (entry) => ({
+    title: entry.data.title,
+    url: entry.data.website?.[0]?.url,
+    image: {
+      src: entry.data.image
+        ? await optimizedSrc(entry.data.image.image, 800)
+        : await optimizedPlaceholder(800),
+      copyright: entry.data.image?.copyright,
+    },
+    commune: entry.data.commune,
+    countryState: entry.data.countryState,
+    subcategory: entry.data.subcategory,
+    descriptionHTML: renderMarkdown(entry.data.description),
+  })),
+)
 ---
 
 <Layout
@@ -116,7 +130,14 @@ const communityEntryItems: CommunityEntryItem[] = communityEntries.map((entry) =
       {
         d.image?.image && (
           <ImageWithCopyright className="mt-8" copyright={d.image.copyright}>
-            <img src={d.image.image} alt="Titelbild" />
+            <Picture
+              src={d.image.image}
+              widths={[390, 800, 1280]}
+              formats={['avif']}
+              fallbackFormat="webp"
+              alt="Titelbild"
+              class="h-52 w-full object-cover"
+            />
           </ImageWithCopyright>
         )
       }
@@ -207,9 +228,9 @@ const communityEntryItems: CommunityEntryItem[] = communityEntries.map((entry) =
             <H2>Auszeichnungen</H2>
             {d.awards.map((award) => (
               <div class="mt-8 flex gap-3 md:gap-6">
-                {award.logo && (
+                {award.logo && award.logoSrc && (
                   <ImageWithCopyright copyright={award.logoCopyright}>
-                    <img src={award.logo} alt={award.name} />
+                    <img src={award.logoSrc} alt={award.name} />
                   </ImageWithCopyright>
                 )}
                 <div class="flex flex-col justify-start">

@@ -4,7 +4,7 @@ description: 'Entwicklung und pilothafte Umsetzung von Fahrradträgern im
   Linienbus. Nach erfolgreicher Pilotphase auf einer Linie wurden die
   Fahrradträger bei weiteren Linien eingeführt. '
 image:
-  image: /content-images/community-entries/fahrrad2go-fahrradmitnahme-im-bus-leicht-gemacht.png
+  image: ./fahrrad2go-fahrradmitnahme-im-bus-leicht-gemacht.png
   copyright: 'Urheber: Fair Spaces '
 website:
   - display: 'Fahrradmitnahme im öffentlichen Verkehr: Fahrrad2Go'

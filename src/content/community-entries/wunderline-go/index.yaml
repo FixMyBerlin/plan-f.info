@@ -5,7 +5,7 @@ description: 'Die WunderlineGO-App ist ein konkretes Produkt, das im Rahmen
   dem man für die Nutzung öffentlicher Verkehrsmittel werben kann. 15 Orte haben
   dafür spezifische Touren entwickelt, die jeweils am Bahnhof starten. '
 image:
-  image: /content-images/community-entries/wunderline-go.png
+  image: ./wunderline-go.png
   copyright: 'Urheber: Bundesinstitut für Bau-, Stadt- und Raumforschung (BBSR)'
 website:
   - display: Netzwerk Anschlussmobilität/Wunderline inkl. WunderlineGO-App

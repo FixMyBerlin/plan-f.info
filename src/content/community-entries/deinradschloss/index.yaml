@@ -3,7 +3,7 @@ measure: fahrradparken
 description: 'Realisierung eines regionalen Radabstellsystems in 15 Kommunen,
   nutzbar mit einer Anmeldung. '
 image:
-  image: /content-images/community-entries/deinradschloss.png
+  image: ./deinradschloss.png
   copyright: 'Urheberin: Kienzler Stadtmobiliar GmbH'
 website:
   - display: "DeinRadschloss: So funktioniert's "

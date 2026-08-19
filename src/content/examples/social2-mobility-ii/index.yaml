@@ -3,7 +3,7 @@ position: 1298
 measure: konzepte-und-organisation
 relatedTopic: bildung-und-trainings
 image:
-  image: /content-images/examples/social2-mobility-ii.jpg
+  image: ./social2-mobility-ii.jpg
   copyright: 'Fahrradfahrende Menschen, Urheberin: Franziska Henkel'
 shortDescription: Das Projekt zielt darauf ab, das Fahrrad zu einem
   kostengünstigen, zuverlässigen und sicheren Alltagsbegleiter für Personen mit
@@ -95,5 +95,5 @@ links:
 awards:
   - name: Plan F Award 2022
     description: 3. Platz Governance
-    logo: /content-images/examples/awards/social2-mobility-ii-award-0.svg
+    logo: ./social2-mobility-ii-award-0.svg
     logoCopyright: 'Urheberin: fair spaces'

@@ -1,4 +1,5 @@
 ---
+import { Picture } from 'astro:assets'
 import { Content, Hero } from '~/components/Layout'
 import { ImageWithCopyright } from '~/components/Layout/ImageWithCopyright'
 import { Section } from '~/components/Layout/Section'
@@ -6,7 +7,6 @@ import { LinkButtonWithArrow } from '~/components/TopicPage/LinkButtonWithArrow'
 import { articleProseClasses } from '~/components/core/articleProseClasses'
 import { MailLink } from '~/components/core/links'
 import ELearning from '~/components/WeitereAngebotePages/assets/E-Learning.jpg'
-import { assetSrc } from '~/lib/assetSrc'
 import Layout from '~/layouts/Layout.astro'
 
 const title = 'E-Learning'
@@ -75,10 +75,13 @@ Adresse:
         anmelden mit Betreff “Online Termin und Datum des Termins”.
       </p>
       <ImageWithCopyright copyright="Abbildung: Lernplattform Plan F">
-        <img
-          src={assetSrc(ELearning)}
-          class="mt-6 w-full overflow-hidden"
+        <Picture
+          src={ELearning}
+          widths={[800, 1280]}
+          formats={['avif']}
+          fallbackFormat="webp"
           alt="Abbildung: Lernplattform Plan F"
+          class="mt-6 w-full overflow-hidden"
         />
       </ImageWithCopyright>
     </Content>

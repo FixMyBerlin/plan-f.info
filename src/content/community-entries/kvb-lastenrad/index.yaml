@@ -4,7 +4,7 @@ description: 'Das KVB-Lastenrad ist ein zweijähriges Pilotprojekt in drei Köln
   Stadtteilen, mit dem Erfahrungen zum stufenweisen Aufbau eines dauerhaften
   KVB-Lastenradverleihsystems gesammelt werden sollen. '
 image:
-  image: /content-images/community-entries/kvb-lastenrad.png
+  image: ./kvb-lastenrad.png
   copyright: 'Urheberin: KVB'
 website:
   - display: Bewegt viel – auch fürs Klima! Das KVB-Lastenrad.

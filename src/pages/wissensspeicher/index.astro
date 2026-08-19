@@ -7,12 +7,19 @@ import { CardTopic } from '~/components/WissensspeicherStartPage/CardTopic'
 import { CardWrapperWissensspeicherStartPage } from '~/components/WissensspeicherStartPage/CardWrapperWissensspeicherStartPage'
 import { wikiColors, wikiPath } from '~/components/utils'
 import { getSideNavTree, getSortedTopics } from '~/lib/content'
+import { optimizedSrc } from '~/lib/optimizeImage'
 import Layout from '~/layouts/Layout.astro'
 
 const title = 'Wissensspeicher'
 
 const topics = await getSortedTopics()
 const sideNav = await getSideNavTree()
+const topicCards = await Promise.all(
+  topics.map(async (topic) => ({
+    topic,
+    imageSrc: await optimizedSrc(topic.data.image.image, 300),
+  })),
+)
 ---
 
 <Layout
@@ -60,11 +67,11 @@ const sideNav = await getSideNavTree()
     </P>
     <CardWrapperWissensspeicherStartPage className="mt-10">
       {
-        topics.map((topic) => (
+        topicCards.map(({ topic, imageSrc }) => (
           <CardTopic
             title={topic.data.name}
             link={`/${wikiPath}/${topic.id}/`}
-            image={topic.data.image.image}
+            image={imageSrc}
           >
             {topic.data.shortDescription && (
               <p class="text-sm text-gray-700 md:text-base">{topic.data.shortDescription}</p>

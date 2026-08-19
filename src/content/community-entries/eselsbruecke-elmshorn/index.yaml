@@ -3,7 +3,7 @@ measure: radschnellverbindungen-radschnellwege-und-premiumrouten-1
 description: '18 Teilprojekte an einer Fahrradroute durch die Stadt, darunter
   z.B. Abstellmöglichkeiten, Serviceangebote, Brückenbau.  '
 image:
-  image: /content-images/community-entries/eselsbruecke-elmshorn.png
+  image: ./eselsbruecke-elmshorn.png
   copyright: 'Urheberin: Stadt Elmshorn'
 website:
   - display: Eselsbrücke

@@ -2,7 +2,7 @@ title: 'Leezenflow - Grüne-Welle-Assistent für Radfahrende '
 position: 1249
 measure: verkehrsfluss
 image:
-  image: /content-images/examples/leezenflow-gruene-welle-assistent-fuer-radfahrende.jpg
+  image: ./leezenflow-gruene-welle-assistent-fuer-radfahrende.jpg
   copyright: 'Anzeigetafel mit Grünphase, Urheberin: Stadt Münster '
 shortDescription: 'Digitale Anzeigetafel, welche Radfahrenden anzeigt, wie lange
   die Grün- oder Rotphase noch andauert. Dies ermöglicht die Anpassung der

@@ -3,7 +3,7 @@ position: 1065
 measure: reparaturservice
 relatedTopic: multimodalitaet-und-nahmobilitaet
 image:
-  image: /content-images/examples/fahrradservicestationen.jpg
+  image: ./fahrradservicestationen.jpg
   copyright: 'Radservicestation an einer Tankstelle, Urheberin: Carolin Seidel'
 shortDescription: Aufbau von 50 Rad-Servicestation an zentralen Orten und allen
   Tankstellen in der Stadt.
@@ -78,5 +78,5 @@ links:
 awards:
   - name: Plan F Award 2022
     description: Platz 1 Service
-    logo: /content-images/examples/awards/fahrradservicestationen-award-0.svg
+    logo: ./fahrradservicestationen-award-0.svg
     logoCopyright: 'Urheberin: fair spaces'

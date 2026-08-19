@@ -3,7 +3,7 @@ position: 1042
 measure: radverkehr-in-schulen-kinder-und-jugendclubs-und-kindergaerten
 relatedTopic: kommunikation-und-oeffentlichkeitsarbeit
 image:
-  image: /content-images/examples/bike-to-school-landkreis-und-stadt-osnabrueck.JPG
+  image: ./bike-to-school-landkreis-und-stadt-osnabrueck.JPG
   copyright: 'Pressefoto bike to school, Urheber: Landkreis Osnabrück'
 shortDescription: App-basierte Aktion, bei der Schüler*innen und Schulpersonal
   zum Radfahren motiviert werden.
@@ -100,5 +100,5 @@ links:
 awards:
   - name: Plan F Award 2022
     description: Platz 1 im Handlungsfeld Bildung und Trainings
-    logo: /content-images/examples/awards/bike-to-school-landkreis-und-stadt-osnabrueck-award-0.svg
+    logo: ./bike-to-school-landkreis-und-stadt-osnabrueck-award-0.svg
     logoCopyright: 'Urheberin: fair spaces'

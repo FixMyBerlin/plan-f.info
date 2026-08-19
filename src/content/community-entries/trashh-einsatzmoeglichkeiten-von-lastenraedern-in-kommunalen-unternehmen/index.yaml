@@ -3,7 +3,7 @@ measure: konzepte-und-organisation
 description: Untersuchung von Einsatzmöglichkeiten für Lastenrädern in
   kommunalen Unternehmen am Beispiel der Stadtreinigung Hamburg.
 image:
-  image: /content-images/community-entries/trashh-einsatzmoeglichkeiten-von-lastenraedern-in-kommunalen-unternehmen.png
+  image: ./trashh-einsatzmoeglichkeiten-von-lastenraedern-in-kommunalen-unternehmen.png
   copyright: 'Urheber: DLR'
 website:
   - display: Abgasfreie Abfallentsorgung

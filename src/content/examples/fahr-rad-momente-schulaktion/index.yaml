@@ -3,7 +3,7 @@ position: 1301
 measure: radverkehr-in-schulen-kinder-und-jugendclubs-und-kindergaerten
 relatedTopic: kommunikation-und-oeffentlichkeitsarbeit
 image:
-  image: /content-images/examples/fahr-rad-momente-schulaktion.jpeg
+  image: ./fahr-rad-momente-schulaktion.jpeg
   copyright: 'Schulaktion, Urheberin: Stadt Bad Honnef'
 shortDescription: 'Zur Stärkung des Radverkehrs mit Schüler*innen über
   Erfahrungen austauschen und gemeinsame Aktionen durchführen. '
@@ -88,5 +88,5 @@ links:
 awards:
   - name: Plan F Award 2022
     description: '2. Platz Bildung und Trainings '
-    logo: /content-images/examples/awards/fahr-rad-momente-schulaktion-award-0.svg
+    logo: ./fahr-rad-momente-schulaktion-award-0.svg
     logoCopyright: 'Urheberin: fair spaces'

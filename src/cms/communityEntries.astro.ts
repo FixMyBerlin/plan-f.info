@@ -7,16 +7,17 @@ import { yamlFolderLoader } from './utils/loader'
 
 export const astroCommunityEntriesDefinition = defineCollection({
   loader: yamlFolderLoader(basePath),
-  schema: z.object({
-    title: z.string(),
-    measure: z.string(),
-    description: z.string().optional().default(''),
-    image: copyrightImageSchema.optional(),
-    website: linksSchema.optional().default([]),
-    subcategory: z.string().optional().default(''),
-    author: z.string().optional().default(''),
-    contact: z.string().optional().default(''),
-    commune: z.string(),
-    countryState: z.string(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      measure: z.string(),
+      description: z.string().optional().default(''),
+      image: copyrightImageSchema(image).optional(),
+      website: linksSchema.optional().default([]),
+      subcategory: z.string().optional().default(''),
+      author: z.string().optional().default(''),
+      contact: z.string().optional().default(''),
+      commune: z.string(),
+      countryState: z.string(),
+    }),
 })

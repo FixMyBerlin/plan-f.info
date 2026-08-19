@@ -2,7 +2,7 @@ title: Fahrrad-Schnitzeljagd
 position: 1346
 measure: anreize-fuer-den-umstieg-im-urlaub
 image:
-  image: /content-images/examples/fahrrad-schnitzeljagd.jpg
+  image: ./fahrrad-schnitzeljagd.jpg
   copyright: 'Teilnehmende der Schnitzeljagt, Urheberin: Gemeinde Morsbach'
 shortDescription: Mit der Fahrrad-Schnitzeljagd möchte die Gemeinde Morsbach die
   Aktion STADTRADELN unterstützen und Anreize schaffen, die gefahrenen Kilometer
@@ -110,5 +110,5 @@ links:
 awards:
   - name: Plan F Award 2022
     description: Platz 1 Tourismus und Freizeitverkehr
-    logo: /content-images/examples/awards/fahrrad-schnitzeljagd-award-0.svg
+    logo: ./fahrrad-schnitzeljagd-award-0.svg
     logoCopyright: 'Urheberin: fair spaces'

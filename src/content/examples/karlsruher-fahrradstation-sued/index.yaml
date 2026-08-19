@@ -3,7 +3,7 @@ position: 1045
 measure: fahrradparken
 relatedTopic: multimodalitaet-und-nahmobilitaet
 image:
-  image: /content-images/examples/karlsruher-fahrradstation-sued.jpg
+  image: ./karlsruher-fahrradstation-sued.jpg
   copyright: 'Fahrradparkhaus, Urheberin: Karlsruher Fächer GmbH '
 shortDescription: 'Das ehemalige Kfz-Parkhaus am Karlsruher Hauptbahnhof wird zu
   einer Fahrradstation umgestaltet, welche witterungs- und diebstahlsichere
@@ -73,7 +73,7 @@ links:
 awards:
   - name: Deutscher Fahrradpreis 2020
     description: '1. Platz Infrastruktur '
-    logo: /content-images/examples/awards/karlsruher-fahrradstation-sued-award-0.svg
+    logo: ./karlsruher-fahrradstation-sued-award-0.svg
     logoCopyright: 'Urheber: Deutscher Fahrradpreis'
   - name: ''
     description: Beispielhaftes Bauen, Architektenkammer BaWü 2012-2018

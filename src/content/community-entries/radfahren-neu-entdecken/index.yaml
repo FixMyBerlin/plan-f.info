@@ -6,7 +6,7 @@ description: "Mit „Radfahren neu entdecken“ unterstützen Kommunen Ihre
   täglichen Gebrauch von Pedelecs, E-Bike und Lastenrad ausgiebig für 2 Wochen
   zu testen.  "
 image:
-  image: /content-images/community-entries/radfahren-neu-entdecken.png
+  image: ./radfahren-neu-entdecken.png
   copyright: 'Urheberin: Corinna Spitzbarth'
 website:
   - display: Lastenräder und Pedelecs im Alltag testen

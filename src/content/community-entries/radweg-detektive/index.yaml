@@ -5,7 +5,7 @@ description: "Die Radweg-Detektive an weiterführenden Schulen haben das Ziel,
   lernen, die Probleme im Stadtverkehr zu erforschen und Lösungsmöglichkeiten zu
   erarbeiten. "
 image:
-  image: /content-images/community-entries/radweg-detektive.png
+  image: ./radweg-detektive.png
   copyright: 'Urheberin: VRS GmbH'
 website:
   - display: Fußgängerchecks und Schul- und Radweg-Detektive – Beispiele für

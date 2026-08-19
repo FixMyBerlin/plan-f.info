@@ -5,7 +5,7 @@ description: 'Plakative und witzige Werbekampagne für das Fahrradfahren "nur ma
   gleichzeitig das Fahrradfahren mit einem attraktiven Lebensgefühl in
   Verbindung bringen. '
 image:
-  image: /content-images/community-entries/kampagne-oberhachingen-steigt-auf.png
+  image: ./kampagne-oberhachingen-steigt-auf.png
   copyright: 'Urheberin: Gemeinde Oberhaching '
 website:
   - display: Oberhaching steigt auf!

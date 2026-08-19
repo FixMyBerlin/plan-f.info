@@ -8,7 +8,7 @@ description: >+
 
 
 image:
-  image: /content-images/community-entries/gemeinnuetziges-projekt-zur-fahrradwegpflege.png
+  image: ./gemeinnuetziges-projekt-zur-fahrradwegpflege.png
   copyright: 'Urheber: Fair Spaces '
 website:
   - display: Projekt Fahrradwegpflege Volksverein Mönchengladbach

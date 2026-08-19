@@ -4,7 +4,7 @@ position: 1235
 measure: konzepte-und-organisation
 relatedTopic: kommunikation-und-oeffentlichkeitsarbeit
 image:
-  image: /content-images/examples/digitalisierung-nutzen-gps-radverkehrsdaten-fuer-eine-ganzheitliche-radverkehrsstrategie.png
+  image: ./digitalisierung-nutzen-gps-radverkehrsdaten-fuer-eine-ganzheitliche-radverkehrsstrategie.png
   copyright: 'GPS-Radverkehrsdaten, Urheber: Bike Citizens '
 shortDescription: Eine App mit Navigationsfunktion und weiteren nützlichen
   Features für die Bevölkerung. Die App hilft der Regionsverwaltung, den
@@ -98,5 +98,5 @@ links:
 awards:
   - name: Deutscher Fahrradpreis 2021
     description: 1. Platz Services
-    logo: /content-images/examples/awards/digitalisierung-nutzen-gps-radverkehrsdaten-fuer-eine-ganzheitliche-radverkehrsstrategie-award-0.svg
+    logo: ./digitalisierung-nutzen-gps-radverkehrsdaten-fuer-eine-ganzheitliche-radverkehrsstrategie-award-0.svg
     logoCopyright: 'Urheber: Deutscher Fahrradpreis'

@@ -4,7 +4,7 @@ description: 'Malaktion in Schulen zur Verkehrssicherheit sowie Schilderkampagne
   mit Comic-Zeichnungen von gefährlichen Situationen, um auf diese aufmerksam zu
   machen. '
 image:
-  image: /content-images/community-entries/gemeinsam-mit-ruecksicht.png
+  image: ./gemeinsam-mit-ruecksicht.png
   copyright: 'Urheberin: Stadt Lindenau'
 website:
   - display: 'Mobilität & Wirtschaft: Kampagnen '

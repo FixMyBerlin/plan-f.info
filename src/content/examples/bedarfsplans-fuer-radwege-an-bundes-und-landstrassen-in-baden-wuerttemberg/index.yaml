@@ -2,7 +2,7 @@ title: Bedarfsplan für Radwege an Bundes- und Landstraßen in Baden-Württember
 position: 1437
 measure: fahrradnetz
 image:
-  image: /content-images/examples/bedarfsplans-fuer-radwege-an-bundes-und-landstrassen-in-baden-wuerttemberg.jpg
+  image: ./bedarfsplans-fuer-radwege-an-bundes-und-landstrassen-in-baden-wuerttemberg.jpg
   copyright: 'Urheber: Ministerium für Verkehr, Baden-Württemberg'
 shortDescription: Einheitliche Bewertung und Priorisierung von Neu- und
   Ausbaumaßnahmen straßenbegleitender Radwege
@@ -90,5 +90,5 @@ links:
 awards:
   - name: Deutscher Fahrradpreis 2023
     description: Platz 3 Kategorie Infrastruktur
-    logo: /content-images/examples/awards/bedarfsplans-fuer-radwege-an-bundes-und-landstrassen-in-baden-wuerttemberg-award-0.svg
+    logo: ./bedarfsplans-fuer-radwege-an-bundes-und-landstrassen-in-baden-wuerttemberg-award-0.svg
     logoCopyright: 'Urheber: Deutscher Fahrradpreis'

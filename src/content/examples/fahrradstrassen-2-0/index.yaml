@@ -2,7 +2,7 @@ title: 'Fahrradstraßen 2.0 '
 position: 1080
 measure: fahrradstrassen-und-zonen
 image:
-  image: /content-images/examples/fahrradstrassen-2-0.jpg
+  image: ./fahrradstrassen-2-0.jpg
   copyright: 'Fahrradstraße Münster, Urheberin: Carolin Kruse'
 shortDescription: 'Die Stadt Münster setzt neue Standards Für Fahrradstraßen und
   verteilt damit den Verkehrsraum mit hoher Dynamik neu mit hohem Mehrwert für
@@ -87,5 +87,5 @@ links:
 awards:
   - name: Deutscher Fahrradpreis 2021
     description: 'Platz 2 Infrastruktur '
-    logo: /content-images/examples/awards/fahrradstrassen-2-0-award-0.svg
+    logo: ./fahrradstrassen-2-0-award-0.svg
     logoCopyright: 'Urheber: Deutscher Fahrradpreis'

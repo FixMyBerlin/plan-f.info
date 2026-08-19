@@ -3,7 +3,7 @@ position: 1337
 measure: apps
 relatedTopic: infrastruktur
 image:
-  image: /content-images/examples/maengelerkennung-radwegweiser.jpg
+  image: ./maengelerkennung-radwegweiser.jpg
   copyright: 'Schadensmelder-Aufkleber, Urheberin: Gemeinde Adelsdorf'
 shortDescription: Erstellung von Aufklebern mit QR-Code, die zur Schadensmeldung
   an Radwegweisern angebracht werden können.
@@ -55,5 +55,5 @@ links:
 awards:
   - name: Plan F Award 2022
     description: Platz 2 Service
-    logo: /content-images/examples/awards/maengelerkennung-radwegweiser-award-0.svg
+    logo: ./maengelerkennung-radwegweiser-award-0.svg
     logoCopyright: 'Urheberin: fair spaces'

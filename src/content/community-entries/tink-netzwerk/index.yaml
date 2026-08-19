@@ -5,7 +5,7 @@ description: Bildung eines TINK-Netzwerks aus Kommunen, welche bereits über ein
   wollen, damit diese voneinander lernen und sich gegenseitig unterstützen
   können.
 image:
-  image: /content-images/community-entries/tink-netzwerk.png
+  image: ./tink-netzwerk.png
   copyright: 'Netzwerktreffen mit Lastenfahrrädern, Urheber: TINK Netzwerk'
 website:
   - display: TINK Netzwerk - Wir vernetzen die Verkehrswende

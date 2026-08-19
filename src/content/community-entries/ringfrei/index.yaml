@@ -4,7 +4,7 @@ description: 2015 gegründetes Aktionsbündnis, das für deutlich gesteigerte
   Radverkehrssicherheit auf den Kölner Innenstadtringen kämpft, mit
   verschiedenen Erfolgen, teilweise auch in Zusammenarbeit mit der Stadt Köln.
 image:
-  image: /content-images/community-entries/ringfrei.png
+  image: ./ringfrei.png
   copyright: 'Urheber: #RingFrei'
 website:
   - display: 'Aktuelle Neuigkeiten rund um #RingeRadeln…'

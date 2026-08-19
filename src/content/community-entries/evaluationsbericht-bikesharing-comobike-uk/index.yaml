@@ -7,7 +7,7 @@ description: >+
   neuer Radfahrer. 
 
 image:
-  image: /content-images/community-entries/evaluationsbericht-bikesharing-comobike-uk.png
+  image: ./evaluationsbericht-bikesharing-comobike-uk.png
   copyright: 'Urheber: CoMoUK '
 website:
   - display: SHARED BIKES Overview and benefits

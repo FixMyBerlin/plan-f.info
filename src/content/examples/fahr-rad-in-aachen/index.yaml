@@ -2,7 +2,7 @@ title: FahrRad in Aachen
 position: 1117
 measure: radverkehr-in-schulen-kinder-und-jugendclubs-und-kindergaerten
 image:
-  image: /content-images/examples/fahr-rad-in-aachen.jpeg
+  image: ./fahr-rad-in-aachen.jpeg
   copyright: 'Grundschüler*innen Fahrradtraining, Urheberin: Stadt Aachen'
 shortDescription: 'Die Stadt Aachen bietet im Rahmen der städtischen Kampagen
   „FahrRad in Aachen“  umfangreiche Mobilitäts- und Verkehrserziehung inklusive
@@ -90,5 +90,5 @@ links:
 awards:
   - name: Plan F Award 2022
     description: 3. Platz Bildung und Trainings
-    logo: /content-images/examples/awards/fahr-rad-in-aachen-award-0.svg
+    logo: ./fahr-rad-in-aachen-award-0.svg
     logoCopyright: 'Urheberin: fair spaces'

@@ -13,7 +13,7 @@ function builtPageUrls(distDir = join(process.cwd(), 'dist')): string[] {
   const walk = (dir: string, base: string) => {
     for (const entry of readdirSync(dir, { withFileTypes: true })) {
       if (entry.isDirectory()) {
-        if (entry.name === '_astro' || entry.name === 'content-images') continue
+        if (entry.name === '_astro') continue
         walk(join(dir, entry.name), `${base}${entry.name}/`)
       } else if (entry.name === 'index.html') {
         urls.push(base || '/')

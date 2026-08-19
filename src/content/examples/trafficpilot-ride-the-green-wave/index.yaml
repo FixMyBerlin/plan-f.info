@@ -3,7 +3,7 @@ position: 1101
 measure: apps
 relatedTopic: governance
 image:
-  image: /content-images/examples/trafficpilot-ride-the-green-wave.png
+  image: ./trafficpilot-ride-the-green-wave.png
   copyright: 'Düsseldorf App Mockup, Urheberin: GEVAS software GmbH'
 shortDescription: 'Erstellung und Implikation einer App, die Nutzer*innen grüne
   Wellen anzeigt und Prognosen von Ampelschaltung für Radfahrende ermöglicht. '

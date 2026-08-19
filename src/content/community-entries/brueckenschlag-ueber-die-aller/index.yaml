@@ -3,7 +3,7 @@ measure: bauliche-radwege
 description: An neu gebaute Zugbrücke wurden Radwege drangehängt und somit eine
   neue Radroute geschaffen, die Fahrtzeiten deutlich reduziert.
 image:
-  image: /content-images/community-entries/brueckenschlag-ueber-die-aller.png
+  image: ./brueckenschlag-ueber-die-aller.png
   copyright: 'Urheber: Fair Spaces '
 website:
   - display: Brückenschlag - Verden verbindet

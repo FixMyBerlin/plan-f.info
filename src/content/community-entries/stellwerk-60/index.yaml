@@ -5,7 +5,7 @@ description: 'Autofreies Quartier in Köln Nippes mit Mobilitätsangeboten:
   Fahrradparken, Carsharing, E-Lastenräder, Mobilitätsstation, Quartiersgarage,
   gute ÖPNV-Anbindung.'
 image:
-  image: /content-images/community-entries/stellwerk-60.png
+  image: ./stellwerk-60.png
   copyright: 'Urheber: VCD Verkehrsclub Deutschland e.V.'
 website:
   - display: Stellwerk 60 in Köln

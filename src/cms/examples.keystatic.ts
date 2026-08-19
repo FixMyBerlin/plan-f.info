@@ -62,8 +62,8 @@ export const keystaticExamplesConfig = collection({
         description: markdownText('Beschreibung'),
         logo: fields.image({
           label: 'Logo',
-          directory: 'public/content-images/examples/awards',
-          publicPath: '/content-images/examples/awards/',
+          directory: 'src/content/examples/{slug}',
+          publicPath: './',
         }),
         logoCopyright: fields.text({ label: 'Logo Copyright' }),
       }),

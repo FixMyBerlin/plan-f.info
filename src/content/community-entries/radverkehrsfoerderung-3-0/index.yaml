@@ -5,7 +5,7 @@ description: 'RVF 3.0 steht für Radverkehrsförderung 3.0, barrierefrei
   Prof. Dr. Pez (Leuphana Universität Lüneburg) und Dr. Antje Seidel
   (Kulturgeografin) in Kooperation mit dem Landkreis Lüneburg hervor. '
 image:
-  image: /content-images/community-entries/radverkehrsfoerderung-3-0.png
+  image: ./radverkehrsfoerderung-3-0.png
   copyright: 'Urheber: Landkreis Lüneburg'
 website:
   - display: Radverkehrsförderung 3.0

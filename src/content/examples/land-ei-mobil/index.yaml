@@ -3,7 +3,7 @@ position: 1186
 measure: bike-und-ride
 relatedTopic: infrastruktur
 image:
-  image: /content-images/examples/land-ei-mobil.png
+  image: ./land-ei-mobil.png
   copyright: 'Bild Plan F, Urheberin: fair spaces'
 shortDescription: Preiswertes ÖPNV Ticket in der Region sowie die zu buchbare
   Option zur Nutzung von Pedelecs, den EiBikes.

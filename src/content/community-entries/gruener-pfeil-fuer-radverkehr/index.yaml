@@ -3,7 +3,7 @@ measure: verkehrsfluss
 description: 'In Dortmund gibt es den Grünpfeil nun auch exklusiv für den
   Radverkehr, zunächst an 24 ausgewählten Ampeln im Stadtgebiet. '
 image:
-  image: /content-images/community-entries/gruener-pfeil-fuer-radverkehr.png
+  image: ./gruener-pfeil-fuer-radverkehr.png
   copyright: 'Urheberin: Stadt Dortmund'
 website:
   - display: 'Grünpfeil exklusiv für Radfahrende: 24 Ampeln im Stadtgebiet erhalten

@@ -1,6 +1,6 @@
 /**
  * Imports the Strapi v4 production content from a restored Postgres database into Keystatic
- * content files (src/content/**) + downloads images to public/content-images/**.
+ * content files (src/content/**) with images co-located next to each entry's index.yaml.
  *
  * The production Strapi is offline, so we restore its pg_dump into a throwaway Postgres
  * (via Docker) and read the relational tables directly. Strapi v4 splits content across:
@@ -15,7 +15,7 @@
  *   docker exec -i plan-f-pg psql -U postgres -d planf < ../plan-f-db-production.sql
  *
  * Run:  bun run import:sql        (set PG_URL to override the connection string)
- * Then: bun run build:search  &&  commit src/content/ + public/content-images/
+ * Then: bun run build:search  &&  commit src/content/
  */
 import { existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
@@ -26,7 +26,6 @@ import { stringify as toYaml } from 'yaml'
 const PG_URL = process.env.PG_URL ?? 'postgres://postgres:planf@localhost:55432/planf'
 const ROOT = process.cwd()
 const CONTENT = join(ROOT, 'src', 'content')
-const PUBLIC_IMG = join(ROOT, 'public', 'content-images')
 
 const client = new Client({ connectionString: PG_URL })
 const report = {
@@ -105,20 +104,20 @@ async function copyrightImage(table: string, entityId: number, field: string) {
 async function downloadImage(
   file: { url: string; ext: string } | undefined,
   collection: string,
-  name: string,
+  slug: string,
+  localBaseName?: string,
 ): Promise<string> {
   if (!file?.url) return ''
   const ext = (file.ext || `.${file.url.split('.').pop()}`).replace(/^\.?/, '.')
-  const fileName = `${name}${ext}`
-  const dir = join(PUBLIC_IMG, collection)
-  const publicPath = `/content-images/${collection}/${fileName}`
+  const fileName = localBaseName ? `${localBaseName}${ext}` : `${slug}${ext}`
+  const dir = join(CONTENT, collection, slug)
   try {
     const res = await fetch(file.url)
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
     mkdirSync(dir, { recursive: true })
     writeFileSync(join(dir, fileName), Buffer.from(await res.arrayBuffer()))
     report.images++
-    return publicPath
+    return `./${fileName}`
   } catch (err) {
     report.imageFails++
     console.warn(`[import] image failed (${file.url}): ${(err as Error).message}`)
@@ -142,7 +141,6 @@ function resetCollection(collection: string) {
 async function main() {
   await client.connect()
   for (const c of ['topics', 'measures', 'examples', 'community-entries']) resetCollection(c)
-  if (existsSync(PUBLIC_IMG)) rmSync(PUBLIC_IMG, { recursive: true, force: true })
 
   // id → slug maps for relation resolution
   const topicSlug = new Map<number, string>()
@@ -236,7 +234,7 @@ async function main() {
       awards.push({
         name: str(award?.name),
         description: str(desc),
-        logo: await downloadImage(logoCi?.file, 'examples/awards', `${slug}-award-${i}`),
+        logo: await downloadImage(logoCi?.file, 'examples', slug, `${slug}-award-${i}`),
         logoCopyright: str(logoCi?.copyright),
       })
     }
@@ -312,7 +310,7 @@ async function main() {
   await client.end()
   console.log('\n=== Import report ===')
   console.log(report)
-  console.log('\nNext: `bun run build:search`, then commit src/content/ + public/content-images/.')
+  console.log('\nNext: `bun run build:search`, then commit src/content/.')
 }
 
 /** Topic image is stored directly on the entity (not via a copyright-image component). */

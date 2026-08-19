@@ -2,7 +2,7 @@ title: Radverkehrszählung
 position: 1409
 measure: monitoring-und-evaluation
 image:
-  image: /content-images/examples/radverkehrszaehlung.jpeg
+  image: ./radverkehrszaehlung.jpeg
   copyright: 'Dauerzählstellen, Urheberin: Stadt Bielefeld'
 shortDescription: Installation von Dauerzählstellen im Stadtgebiet zur ganz- und
   mehrjährigen Radverkehrszählungen zuzüglich temporärer Zählungen.
@@ -56,15 +56,11 @@ localChallenges: |-
   - Flächenkonflikte
   - Geteilte Planungszuständigkeiten
   - Topographie
-particularities: >-
+particularities: |-
   Kosten-Nutzen-Analyse 
-
   Evaluation 
-
   Beteiligung 
-
-  Spezifische Zielgruppe: Pendler\*innen, Schüler\*innen, Frauen,
-  Tourist\*innen
+  Spezifische Zielgruppe: Pendler\*innen, Schüler\*innen, Frauen, Tourist\*innen
 results: >-
   Sieben Dauerzählstellen, drei mobile Zählstellen, zwei Displays, eine
   öffentlichkeitswirksame Website. 

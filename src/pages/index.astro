@@ -11,13 +11,19 @@ import { H2, H3, P } from '~/components/Text'
 import { LinkButtonWithArrow } from '~/components/TopicPage/LinkButtonWithArrow'
 import { wikiPath } from '~/components/utils'
 import { YouTubePreview } from '~/components/core/links/YouTubePreview'
-import { assetSrc } from '~/lib/assetSrc'
+import { optimizedSrc } from '~/lib/optimizeImage'
 import Layout from '~/layouts/Layout.astro'
 
 const title = 'Impulse für die kommunale Fahrradmobilität'
 
 // Topic cards (sorted by position), mirroring the Gatsby `TopicOverview` query.
 const topics = (await getCollection('topics')).sort((a, b) => a.data.position - b.data.position)
+const topicCards = await Promise.all(
+  topics.map(async (topic) => ({
+    topic,
+    imageSrc: await optimizedSrc(topic.data.image.image, 200),
+  })),
+)
 
 // Example cards are randomized per visit by the <RandomExamples> island. To keep its embedded
 // props small (the home page is the most-visited), we pass a pool of one card per measure
@@ -34,10 +40,15 @@ for (const example of (await getCollection('examples')).sort(
     title: example.data.title,
     shortDescription: example.data.shortDescription,
     path: `/${[wikiPath, topicSlug, example.data.measure, example.id].join('/')}/`,
-    image: { src: example.data.image.image, copyright: example.data.image.copyright },
+    image: {
+      src: await optimizedSrc(example.data.image.image, 800),
+      copyright: example.data.image.copyright,
+    },
   })
 }
 const examplePool = [...cardByMeasure.values()]
+
+const youtubePreviewSrc = await optimizedSrc(ErklaervideoPlanF, 800)
 ---
 
 <Layout title={title}>
@@ -64,11 +75,8 @@ const examplePool = [...cardByMeasure.values()]
     </P>
     <CardWrapperTopicsLandingPage className="mt-10">
       {
-        topics.map((topic) => (
-          <CardTopicTitle
-            link={`${wikiPath}/${topic.id}`}
-            image={topic.data.image.image}
-          >
+        topicCards.map(({ topic, imageSrc }) => (
+          <CardTopicTitle link={`${wikiPath}/${topic.id}`} image={imageSrc}>
             <h3 class="text-lg font-bold text-black md:text-xl">{topic.data.name}</h3>
           </CardTopicTitle>
         ))
@@ -90,7 +98,7 @@ const examplePool = [...cardByMeasure.values()]
       <H2>Video: Was ist Plan F?</H2>
       <YouTubePreview
         link="https://youtu.be/FcD_Se-F5LY"
-        imageSrc={assetSrc(ErklaervideoPlanF)}
+        imageSrc={youtubePreviewSrc}
         imageAlt="Video: Was ist Plan F?"
       />
     </Content>

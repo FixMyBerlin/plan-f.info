@@ -3,7 +3,7 @@ position: 1347
 measure: touristische-wege-und-freizeitwege
 relatedTopic: infrastruktur
 image:
-  image: /content-images/examples/erfurter-radring.png
+  image: ./erfurter-radring.png
   copyright: 'Wegweiser Erfurter Radring, Urheberin: Stadtverwaltung Erfurt'
 shortDescription: Es wurde eine neue Freizeitroute geschaffen, die der
   einheimischen Bevölkerung neue Blickwinkel auf ihre Stadt eröffnet und
@@ -89,5 +89,5 @@ links:
 awards:
   - name: Plan F Award 2022
     description: Platz 2 Tourismus und Freizeit
-    logo: /content-images/examples/awards/erfurter-radring-award-0.svg
+    logo: ./erfurter-radring-award-0.svg
     logoCopyright: 'Urheberin: fair spaces'

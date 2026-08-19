@@ -8,6 +8,7 @@ import {
   type ResultTopic,
 } from '~/components/PlanFCheck/PlanFCheckResultPage'
 import { getSortedExamples, getSortedMeasures, getSortedTopics } from '~/lib/content'
+import { optimizedSrc } from '~/lib/optimizeImage'
 import Layout from '~/layouts/Layout.astro'
 
 const [topics, measures, examples] = await Promise.all([
@@ -16,33 +17,42 @@ const [topics, measures, examples] = await Promise.all([
   getSortedExamples(),
 ])
 
-const tree: ResultTopic[] = topics.map((t) => ({
-  name: t.data.name,
-  slug: t.id,
-  shortDescription: t.data.shortDescription,
-  image: { url: t.data.image.image },
-  measures: measures
-    .filter((m) => m.data.topic === t.id)
-    .map((m) => ({
-      name: m.data.name,
-      slug: m.id,
-      examples: examples
-        .filter((e) => e.data.measure === m.id)
-        .map((e) => ({
-          title: e.data.title,
-          shortDescription: e.data.shortDescription,
-          subcategory: e.data.subcategory ?? '',
-          slug: e.id,
-          financiallyWeak: e.data.financiallyWeak,
-          beginnerFriendly: e.data.beginnerFriendly,
-          population: e.data.population,
-          spatialStructure: e.data.spatialStructure,
-          countryState: e.data.countryState,
-          measure: { name: m.data.name, slug: m.id },
-          image: { src: e.data.image.image, copyright: e.data.image.copyright },
+const tree: ResultTopic[] = await Promise.all(
+  topics.map(async (t) => ({
+    name: t.data.name,
+    slug: t.id,
+    shortDescription: t.data.shortDescription,
+    image: { url: await optimizedSrc(t.data.image.image, 200) },
+    measures: await Promise.all(
+      measures
+        .filter((m) => m.data.topic === t.id)
+        .map(async (m) => ({
+          name: m.data.name,
+          slug: m.id,
+          examples: await Promise.all(
+            examples
+              .filter((e) => e.data.measure === m.id)
+              .map(async (e) => ({
+                title: e.data.title,
+                shortDescription: e.data.shortDescription,
+                subcategory: e.data.subcategory ?? '',
+                slug: e.id,
+                financiallyWeak: e.data.financiallyWeak,
+                beginnerFriendly: e.data.beginnerFriendly,
+                population: e.data.population,
+                spatialStructure: e.data.spatialStructure,
+                countryState: e.data.countryState,
+                measure: { name: m.data.name, slug: m.id },
+                image: {
+                  src: await optimizedSrc(e.data.image.image, 800),
+                  copyright: e.data.image.copyright,
+                },
+              })),
+          ),
         })),
-    })),
-}))
+    ),
+  })),
+)
 ---
 
 <Layout title="Plan F Check - Ergebnisse" noindex>

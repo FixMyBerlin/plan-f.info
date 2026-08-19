@@ -3,7 +3,7 @@ position: 1005
 measure: sichere-kreuzungen
 relatedTopic: verkehrsberuhigung
 image:
-  image: /content-images/examples/rueck-und-umbau-freilaufender-rechtsabbieger.png
+  image: ./rueck-und-umbau-freilaufender-rechtsabbieger.png
   copyright: 'Sperrung des freien Rechtsabbiegers, Urheberin: Stadt Köln'
 shortDescription: Alle freilaufenden Rechtsabbieger in der Stadt Köln werden
   nach einem Baukastensystem rück- und umgebaut, um die Verkehrssicherheit
@@ -78,5 +78,5 @@ links:
 awards:
   - name: Plan F Award 2022
     description: Platz 2 Infrastruktur
-    logo: /content-images/examples/awards/rueck-und-umbau-freilaufender-rechtsabbieger-award-0.svg
+    logo: ./rueck-und-umbau-freilaufender-rechtsabbieger-award-0.svg
     logoCopyright: 'Urheberin: fair spaces'

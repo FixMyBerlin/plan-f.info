@@ -5,7 +5,7 @@ description: 'Mobilitätsangebote: attraktives Fuß- und Radwegenetz,
   ÖPNV-Anbindung, Tempo-30-Zonen, Carsharing, E-Carpooling, Bikesharing,
   E-Lastenräder, E-Scooter, Quartiersgaragen.'
 image:
-  image: /content-images/community-entries/lincoln-siedlung-darmstadt-mobilitaetskonzept-und-mobilitaetsberatung.png
+  image: ./lincoln-siedlung-darmstadt-mobilitaetskonzept-und-mobilitaetsberatung.png
   copyright: 'Urheberin: Stadt Darmstadt'
 website:
   - display: 'Lincoln-Siedlung: Mobilität'

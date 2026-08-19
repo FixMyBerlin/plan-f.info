@@ -5,7 +5,7 @@ description: 'Die Stadt Würzburg hat in Eigenproduktion einen Radhaltebügel na
   aufgestellt. Die Rad fahrende Bürgerschaft war zur Rückmeldung aufgerufen, um
   dem Prototypen den letzten Feinschliff zu geben. '
 image:
-  image: /content-images/community-entries/radhaltebuegel.png
+  image: ./radhaltebuegel.png
   copyright: 'Urheberin: AGFK Bayern'
 website:
   - display: Stadt Würzburg gibt seinen Radfahrern halt

@@ -4,7 +4,7 @@ description: 'Das Konzept des "Chaucidou" ist eine Premiere in der Gironde
   außerhalb von Ortschaften: Autofahrer\*innen werden dazu angehalten, nach den
   Radfahrer\*innen und mit geringerer Geschwindigkeit zu fahren. '
 image:
-  image: /content-images/community-entries/chaucidou.jpg
+  image: ./chaucidou.jpg
   copyright: 'Urheber: Jonathan Hock '
 website:
   - display: Artikel der Lokalpresse

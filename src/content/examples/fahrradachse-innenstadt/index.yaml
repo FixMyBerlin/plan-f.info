@@ -3,7 +3,7 @@ position: 1312
 measure: reduzierung-kfz-durchgangsverkehre
 relatedTopic: infrastruktur
 image:
-  image: /content-images/examples/fahrradachse-innenstadt.JPG
+  image: ./fahrradachse-innenstadt.JPG
   copyright: 'Fahrradachse in Neuss, Urheber: Norbert Jurczyk'
 shortDescription: Es wurden in der Innenstadt Fahrradstraßen eingerichtet, was
   mit einer (tageszeitlich beschränkten) Komplettsperrung eines Teilstückes für
@@ -80,5 +80,5 @@ links:
 awards:
   - name: Plan F Award 2022
     description: Platz 1 Verkehrsberuhigung
-    logo: /content-images/examples/awards/fahrradachse-innenstadt-award-0.svg
+    logo: ./fahrradachse-innenstadt-award-0.svg
     logoCopyright: 'Urheberin: fair spaces'

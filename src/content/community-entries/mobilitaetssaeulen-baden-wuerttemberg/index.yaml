@@ -5,7 +5,7 @@ description: 'Die Mobilitätssäulen sind auffällige und wiedererkennbare
   Verkehrsträgern. Sie werden an Orten aufgestellt, an denen mindestens drei
   Verkehrsmittel des Umweltverbundes zusammenkommen. '
 image:
-  image: /content-images/community-entries/mobilitaetssaeulen-baden-wuerttemberg.png
+  image: ./mobilitaetssaeulen-baden-wuerttemberg.png
   copyright: 'Urheber: Bundesinstitut für Bau-, Stadt- und Raumforschung (BBSR)'
 website:
   - display: 'Mobilikon: Mobilitätssäulen für Baden-Württemberg'

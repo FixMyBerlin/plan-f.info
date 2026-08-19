@@ -4,7 +4,7 @@ description: Bau einer 11 km langen und grenzüberschreitenden Radroute, mit
   Vorrangschaltung, LED-Beleuchtung, Rast- und Abstellplätze, Ladestationen
   sowie einem Fahrradladen.
 image:
-  image: /content-images/community-entries/europaradbahn-kleve-krankenburg-grenzenlos-fietsen.png
+  image: ./europaradbahn-kleve-krankenburg-grenzenlos-fietsen.png
   copyright: 'Urheber: Fair Spaces '
 website:
   - display: Die Autobahn für Radfahrer

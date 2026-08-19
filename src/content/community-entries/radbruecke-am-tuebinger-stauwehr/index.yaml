@@ -3,7 +3,7 @@ measure: fahrradbruecken-und-unterfuehrungen
 description: "Auf zwei Spuren geht es nun für die Radfahrer\\*innen auf einer
   Länge von 85 Metern und einer Breite von vier Metern am Stauwehr vorbei. "
 image:
-  image: /content-images/community-entries/radbruecke-am-tuebinger-stauwehr.png
+  image: ./radbruecke-am-tuebinger-stauwehr.png
   copyright: 'Urheberin: Reutlinger General-Anzeiger Verlags-GmbH & Co. KG'
 website:
   - display: Radbrücke Ost

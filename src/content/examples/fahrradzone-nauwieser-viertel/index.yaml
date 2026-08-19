@@ -2,7 +2,7 @@ title: 'Fahrradzone Nauwieser Viertel '
 position: 1052
 measure: fahrradstrassen-und-zonen
 image:
-  image: /content-images/examples/fahrradzone-nauwieser-viertel.jpg
+  image: ./fahrradzone-nauwieser-viertel.jpg
   copyright: 'Fahrradstraße, Urheber: Visit Saarbrücken '
 shortDescription: 'Ausbau des städtischen Radverkehrsnetzes, Einführung und
   Erprobung des neuen Instruments Fahrradzone. '
@@ -88,5 +88,5 @@ links:
 awards:
   - name: Deutscher Fahrradpreis 2022
     description: '3. Platz Infrastruktur '
-    logo: /content-images/examples/awards/fahrradzone-nauwieser-viertel-award-0.svg
+    logo: ./fahrradzone-nauwieser-viertel-award-0.svg
     logoCopyright: 'Urheheber: Deutscher Fahrradpreis'

@@ -1,11 +1,11 @@
 ---
+import { Picture } from 'astro:assets'
 import { Content, Hero } from '~/components/Layout'
 import { ImageWithCopyright } from '~/components/Layout/ImageWithCopyright'
 import { Section } from '~/components/Layout/Section'
 import { articleProseClasses } from '~/components/core/articleProseClasses'
 import { MailLink } from '~/components/core/links'
 import PlanfAudit from '~/components/WeitereAngebotePages/assets/planf-audit.jpg'
-import { assetSrc } from '~/lib/assetSrc'
 import Layout from '~/layouts/Layout.astro'
 
 const title = 'Plan F Audit'
@@ -40,7 +40,13 @@ const title = 'Plan F Audit'
         className="mt-8"
         copyright="Präsentation Plan F Audit in Wallmerod, Urheberin: Carolin Kruse"
       >
-        <img src={assetSrc(PlanfAudit)} alt="Audit: Carolin Kruse" />
+        <Picture
+          src={PlanfAudit}
+          widths={[800, 1280]}
+          formats={['avif']}
+          fallbackFormat="webp"
+          alt="Audit: Carolin Kruse"
+        />
       </ImageWithCopyright>
     </Content>
   </Section>

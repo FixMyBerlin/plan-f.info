@@ -2,7 +2,7 @@ title: Kommunikation rund um den Radentscheid Aachen
 position: 1336
 measure: marketing-und-kommunikation
 image:
-  image: /content-images/examples/kommunikation-rund-um-den-radentscheid-aachen.jpg
+  image: ./kommunikation-rund-um-den-radentscheid-aachen.jpg
   copyright: 'Jahresveranstaltung Radentscheid 2022, Urheberin: Daniela Rüdel'
 shortDescription: Umfangreiche Kommunikationsstrategie der Stadt Aachen rund um den Radentscheid.
 subcategory: Kampagne
@@ -103,5 +103,5 @@ links:
 awards:
   - name: Plan F Award 2022
     description: Platz 1 Kommunikation und Öffentlichkeitsarbeit, Platz 2 Gesamtwertung
-    logo: /content-images/examples/awards/kommunikation-rund-um-den-radentscheid-aachen-award-0.svg
+    logo: ./kommunikation-rund-um-den-radentscheid-aachen-award-0.svg
     logoCopyright: 'Urheberin: fair spaces'

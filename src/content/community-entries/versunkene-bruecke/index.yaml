@@ -4,7 +4,7 @@ description: Bau einer Brückenunterführung die einen zentralen Knotenpunkt fü
   Rad und Fuß unterläuft und somit auch für den geplanten Radschnellweg den
   Übergang der 4 spurigen Straße vermeidet.
 image:
-  image: /content-images/community-entries/versunkene-bruecke.png
+  image: ./versunkene-bruecke.png
   copyright: 'Urheberin: kubaai'
 website:
   - display: Versunkene Brücke

@@ -5,7 +5,7 @@ description: 'Planung eines Neubaugebietes mit Mobilitätsangeboten der Stadt
   insgesamt 250 neue Wohnungen entstehen. Umgesetzt werden Ideen aus dem
   Landeswettbewerb von 2013. '
 image:
-  image: /content-images/community-entries/wohnen-und-leben-am-mueggenberg.png
+  image: ./wohnen-und-leben-am-mueggenberg.png
   copyright: 'Urheberin: Arnsberger Wohnungsbaugenossenschaft eG'
 website:
   - display: Die Wohnhöfe Am Müggenberg

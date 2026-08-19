@@ -10,7 +10,7 @@ export type CommunityEntryItem = {
   title: string
   /** Website URL, if any. */
   url?: string
-  image?: { src: string; copyright?: string }
+  image: { src: string; copyright?: string }
   commune: string
   countryState: string
   subcategory?: string
@@ -44,7 +44,7 @@ export const CommunityEntriesSection: React.FC<Props> = ({ communityEntries }) =
               key={entry.title}
               title={entry.title}
               link={entry.url || null}
-              image={entry.image?.src}
+              image={entry.image.src}
             >
               <div className="flex flex-col gap-2">
                 <p className="text-sm text-gray-700 uppercase md:text-base">

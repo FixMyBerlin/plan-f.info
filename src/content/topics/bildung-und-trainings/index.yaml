@@ -19,7 +19,7 @@ description: >-
   Vermittlung der Vorteile des Radfahrens sowohl für Jugendliche als auch für
   ältere Menschen.
 image:
-  image: /content-images/topics/bildung-und-trainings.svg
+  image: ./bildung-und-trainings.svg
   copyright: ''
 additionalResources: []
 guidelines: []

@@ -3,7 +3,7 @@ position: 1307
 measure: geschwindigkeitsreduzierung
 relatedTopic: governance
 image:
-  image: /content-images/examples/ausbau-der-innenstadt-und-erstellung-radverkehrskonzept.jpg
+  image: ./ausbau-der-innenstadt-und-erstellung-radverkehrskonzept.jpg
   copyright: 'Friesoyther Begegnungszone, Urheberin: Stadt Friesoythe'
 shortDescription: Verbesserung der Aufenthaltsqualität durch den Ausbau der
   Innenstadt im Zuge der Stadtsanierung und Erstellung eines
@@ -122,5 +122,5 @@ links:
 awards:
   - name: Plan F Award 2022
     description: Platz 2 Verkehrsberuhigung
-    logo: /content-images/examples/awards/ausbau-der-innenstadt-und-erstellung-radverkehrskonzept-award-0.svg
+    logo: ./ausbau-der-innenstadt-und-erstellung-radverkehrskonzept-award-0.svg
     logoCopyright: 'Urheberin: fair spaces'

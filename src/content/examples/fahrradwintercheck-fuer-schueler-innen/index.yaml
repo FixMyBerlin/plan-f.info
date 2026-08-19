@@ -3,7 +3,7 @@ position: 1206
 measure: reparaturservice
 relatedTopic: bildung-und-trainings
 image:
-  image: /content-images/examples/fahrradwintercheck-fuer-schueler-innen.jpg
+  image: ./fahrradwintercheck-fuer-schueler-innen.jpg
   copyright: 'Aktion Fahrradwinter-Check an der Karl-Salzmann-Mittelschule,
     Urheberin: E. Sari'
 shortDescription: Landkreis erstattet bis zu zehn weiterführenden Schulen

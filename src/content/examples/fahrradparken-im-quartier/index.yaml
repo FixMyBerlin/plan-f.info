@@ -3,7 +3,7 @@ title: 'Fahrradparken im Quartier - Leitfaden und Förderprogramm zur Nachrüstu
 position: 1305
 measure: verwaltung-und-politik
 image:
-  image: /content-images/examples/fahrradparken-im-quartier.png
+  image: ./fahrradparken-im-quartier.png
   copyright: 'Fahrradbox, Urheber: Tony Schröter'
 shortDescription: 'Es wurde ein Leitfaden erstellt, der Empfehlungen für die
   Planung von Fahrradabstellanlagen auf privaten Flächen gibt und
@@ -85,5 +85,5 @@ links:
 awards:
   - name: Plan F Award 2022
     description: 2. Platz Governance
-    logo: /content-images/examples/awards/fahrradparken-im-quartier-award-0.svg
+    logo: ./fahrradparken-im-quartier-award-0.svg
     logoCopyright: 'Urheberin: fair spaces'

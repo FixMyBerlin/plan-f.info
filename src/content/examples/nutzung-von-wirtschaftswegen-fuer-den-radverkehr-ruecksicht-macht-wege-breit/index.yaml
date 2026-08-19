@@ -3,7 +3,7 @@ position: 1225
 measure: wirtschaftswege
 relatedTopic: kommunikation-und-oeffentlichkeitsarbeit
 image:
-  image: /content-images/examples/nutzung-von-wirtschaftswegen-fuer-den-radverkehr-ruecksicht-macht-wege-breit.jpg
+  image: ./nutzung-von-wirtschaftswegen-fuer-den-radverkehr-ruecksicht-macht-wege-breit.jpg
   copyright: 'Grafik der Beschilderung, Urheber: Landkreis Göttingen '
 shortDescription: Fast 80 Prozent des Radroutennetzes im Kreisgebiet führen über
   Wirtschaftswege. Schilder weisen auf gegenseitige Rücksichtnahme von
@@ -117,5 +117,5 @@ links:
 awards:
   - name: Deutscher Fahrradpreis 2021
     description: 'Platz 2 Kommunikation '
-    logo: /content-images/examples/awards/nutzung-von-wirtschaftswegen-fuer-den-radverkehr-ruecksicht-macht-wege-breit-award-0.svg
+    logo: ./nutzung-von-wirtschaftswegen-fuer-den-radverkehr-ruecksicht-macht-wege-breit-award-0.svg
     logoCopyright: 'Urheber: Deutscher Fahrradpreis'

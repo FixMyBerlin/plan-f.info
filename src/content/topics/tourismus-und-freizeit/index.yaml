@@ -10,7 +10,7 @@ description: Das Handlungsfeld Tourismus und Freizeit schließt unterschiedliche
   Fördermöglichkeiten für die Privatwirtschaft (z. B. Abstellanlagen oder
   E-Ladestationen) oder Bike Parks.
 image:
-  image: /content-images/topics/tourismus-und-freizeit.svg
+  image: ./tourismus-und-freizeit.svg
   copyright: ''
 additionalResources:
   - display: Digitalisierung im Radtourismus am Praxisbeispiel der

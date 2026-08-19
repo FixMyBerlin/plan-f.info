@@ -6,7 +6,7 @@ description: In diesem neuen Wiener Stadtteil wurde von Anfang an ein
   geschaffen, attraktive Radwege, Sharing Angebote und insgesamt kurze Wege im
   Quartier.
 image:
-  image: /content-images/community-entries/seestadt-aspern.png
+  image: ./seestadt-aspern.png
   copyright: 'Urheberin: Wien 3420 aspern Development AG'
 website:
   - display: Mobilität - Die Seestadt bewegt.

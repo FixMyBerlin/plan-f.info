@@ -3,7 +3,7 @@ position: 1339
 measure: fahrradverleihsysteme
 relatedTopic: kommunikation-und-oeffentlichkeitsarbeit
 image:
-  image: /content-images/examples/klara-kaufunger-lastenradverleih.jpg
+  image: ./klara-kaufunger-lastenradverleih.jpg
   copyright: 'Rikscha, Urheberin: Gemeinde Kaufungen'
 shortDescription: Etablierung eines flächendeckenden E-Lastenradverleihsystems
   in der Gemeinde Kaufungen
@@ -126,5 +126,5 @@ links:
 awards:
   - name: Plan F Award 2022
     description: Platz 3 Services
-    logo: /content-images/examples/awards/klara-kaufunger-lastenradverleih-award-0.svg
+    logo: ./klara-kaufunger-lastenradverleih-award-0.svg
     logoCopyright: 'Urheberin: fair spaces'

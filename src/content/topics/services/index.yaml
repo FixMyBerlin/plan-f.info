@@ -9,7 +9,7 @@ description: Radverkehrsbezogene Serviceangebote, wie Reparaturstationen sowie
   Ampelschaltung), sind wichtige Bausteine, um den Radverkehr zu fördern und
   zugänglicher zu gestalten.
 image:
-  image: /content-images/topics/services.svg
+  image: ./services.svg
   copyright: ''
 additionalResources: []
 guidelines: []

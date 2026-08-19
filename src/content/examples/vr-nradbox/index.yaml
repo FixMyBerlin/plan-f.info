@@ -3,7 +3,7 @@ position: 1313
 measure: bike-und-ride
 relatedTopic: infrastruktur
 image:
-  image: /content-images/examples/vr-nradbox.jpg
+  image: ./vr-nradbox.jpg
   copyright: 'VRN Radbox, Urheber*in: VRN GmbH'
 shortDescription: Errichtung sicherer Fahrradabstellanlagen an geeigneten
   Standorten im Verkehrsverbund Rhein-Neckar (VRN).
@@ -112,5 +112,5 @@ links:
 awards:
   - name: Plan F Award 2022
     description: Platz 2 Multimodalität & Nahmobilität
-    logo: /content-images/examples/awards/vr-nradbox-award-0.svg
+    logo: ./vr-nradbox-award-0.svg
     logoCopyright: 'Urheberin: fair spaces'

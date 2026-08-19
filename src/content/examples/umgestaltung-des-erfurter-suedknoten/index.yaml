@@ -2,7 +2,7 @@ title: 'Umgestaltung des Erfurter Südknoten '
 position: 1315
 measure: fahrradbruecken-und-unterfuehrungen
 image:
-  image: /content-images/examples/umgestaltung-des-erfurter-suedknoten.png
+  image: ./umgestaltung-des-erfurter-suedknoten.png
   copyright: 'Brücke Gestaltung, Urheberin: Stadtverwaltung Erfurt '
 shortDescription: 'Neubau einer barrierefreien Brücke und die Umgestaltung des
   Knotens mit der Einrichtung von Radinfrastruktur. '
@@ -127,5 +127,5 @@ links:
 awards:
   - name: Plan F Award 2022
     description: 3. Platz Infrastruktur
-    logo: /content-images/examples/awards/umgestaltung-des-erfurter-suedknoten-award-0.svg
+    logo: ./umgestaltung-des-erfurter-suedknoten-award-0.svg
     logoCopyright: 'Urheberin: fair spaces'

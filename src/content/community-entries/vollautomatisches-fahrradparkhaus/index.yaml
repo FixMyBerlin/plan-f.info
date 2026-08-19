@@ -4,7 +4,7 @@ description: Bau eines mehrgeschossigen vollautomatischen Fahrradparkhaus für
   122 Fahrrädern. Glasbau soll nach neuesten Standards entstehen, mit
   Vogelschutz und dezenter Beleuchtung.
 image:
-  image: /content-images/community-entries/vollautomatisches-fahrradparkhaus.png
+  image: ./vollautomatisches-fahrradparkhaus.png
   copyright: 'Urheberin: Stadt Heilbronn'
 website:
   - display: Fahrradparkhaus "radhaus"

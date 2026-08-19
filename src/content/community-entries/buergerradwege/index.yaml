@@ -5,7 +5,7 @@ description: 'Um Radwege auch dann verwirklichen zu können, wenn es auf dem
   Nordrhein-Westfalen auf den Einsatz lokaler Bauunternehmen in Kooperation mit
   den beteiligten Kreisen, Kommunen. '
 image:
-  image: /content-images/community-entries/buergerradwege.png
+  image: ./buergerradwege.png
   copyright: 'Urheber: Landesbetrieb Straßenbau Nordrhein-Westfalen'
 website:
   - display: 'Unbürokratisch zum Ziel: Die Bürgerradwege in NRW'

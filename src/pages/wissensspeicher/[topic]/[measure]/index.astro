@@ -20,6 +20,7 @@ import {
   getSortedTopics,
 } from '~/lib/content'
 import { renderMarkdown } from '~/lib/markdown'
+import { optimizedPlaceholder, optimizedSrc } from '~/lib/optimizeImage'
 import Layout from '~/layouts/Layout.astro'
 
 export const getStaticPaths = (async () => {
@@ -44,17 +45,32 @@ const sideNav = await getSideNavTree()
 const topicName = topic?.data.name ?? ''
 const descriptionHTML = renderMarkdown(measure.data.description)
 
-const communityEntryItems: CommunityEntryItem[] = communityEntries.map((entry) => ({
-  title: entry.data.title,
-  url: entry.data.website?.[0]?.url,
-  image: entry.data.image
-    ? { src: entry.data.image.image, copyright: entry.data.image.copyright }
-    : undefined,
-  commune: entry.data.commune,
-  countryState: entry.data.countryState,
-  subcategory: entry.data.subcategory,
-  descriptionHTML: renderMarkdown(entry.data.description),
-}))
+const exampleCards = await Promise.all(
+  examples.map(async (example) => ({
+    example,
+    image: {
+      src: await optimizedSrc(example.data.image.image, 800),
+      copyright: example.data.image.copyright,
+    },
+  })),
+)
+
+const communityEntryItems: CommunityEntryItem[] = await Promise.all(
+  communityEntries.map(async (entry) => ({
+    title: entry.data.title,
+    url: entry.data.website?.[0]?.url,
+    image: {
+      src: entry.data.image
+        ? await optimizedSrc(entry.data.image.image, 800)
+        : await optimizedPlaceholder(800),
+      copyright: entry.data.image?.copyright,
+    },
+    commune: entry.data.commune,
+    countryState: entry.data.countryState,
+    subcategory: entry.data.subcategory,
+    descriptionHTML: renderMarkdown(entry.data.description),
+  })),
+)
 ---
 
 <Layout
@@ -85,11 +101,11 @@ const communityEntryItems: CommunityEntryItem[] = communityEntries.map((entry) =
     </P>
     <CardWrapperMeasurePage className="mt-12">
       {
-        examples.map((example) => (
+        exampleCards.map(({ example, image }) => (
           <CardExample
             title={example.data.title}
             link={`/${wikiPath}/${measure.data.topic}/${measure.id}/${example.id}/`}
-            image={{ src: example.data.image.image, copyright: example.data.image.copyright }}
+            image={image}
           >
             <div>
               <p class="text-sm text-gray-700 md:text-base">{example.data.shortDescription}</p>

@@ -18,16 +18,15 @@ export const linksField = (label: string) =>
 
 /**
  * Strapi `image.copyright-image` component → image + required copyright string.
- * Images are written to `public/content-images/<collectionDir>/` so the stored value is a
- * ready-to-use public URL (`/content-images/<collectionDir>/…`) for rendering and search.
+ * Images are co-located with each entry's `index.yaml` so Astro's `image()` helper can resolve them.
  */
 export const copyrightImage = (label: string, isRequired: boolean, collectionDir: string) =>
   fields.object(
     {
       image: fields.image({
         label: 'Bild',
-        directory: `public/content-images/${collectionDir}`,
-        publicPath: `/content-images/${collectionDir}/`,
+        directory: `src/content/${collectionDir}/{slug}`,
+        publicPath: './',
         validation: { isRequired },
       }),
       copyright: fields.text({ label: 'Copyright', validation: { isRequired } }),
