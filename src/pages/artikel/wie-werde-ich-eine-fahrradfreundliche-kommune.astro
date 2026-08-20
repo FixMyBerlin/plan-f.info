@@ -72,11 +72,14 @@ const topicCards = await Promise.all(
     <H2>Systematisierung</H2>
     <Picture
       src={Systematisierung}
+      width={2000}
       widths={[800, 1280, 2000]}
+      sizes="(min-width: 1366px) 1366px, 100vw"
       formats={['avif']}
       fallbackFormat="webp"
       alt="Plan F Systematisierung"
-      class="-mx-4 w-full overflow-hidden"
+      class="-mx-4 h-auto w-full overflow-hidden"
+      pictureAttributes={{ class: '-mx-4 block w-full' }}
     />
     <Caption>Urheber: Fair Spaces</Caption>
   </Section>

@@ -77,11 +77,14 @@ Adresse:
       <ImageWithCopyright copyright="Abbildung: Lernplattform Plan F">
         <Picture
           src={ELearning}
+          width={1280}
           widths={[800, 1280]}
+          sizes="(min-width: 768px) 48rem, 100vw"
           formats={['avif']}
           fallbackFormat="webp"
           alt="Abbildung: Lernplattform Plan F"
-          class="mt-6 w-full overflow-hidden"
+          class="mt-6 h-auto w-full overflow-hidden"
+          pictureAttributes={{ class: 'mt-6 block w-full' }}
         />
       </ImageWithCopyright>
     </Content>

@@ -132,11 +132,14 @@ const communityEntryItems: CommunityEntryItem[] = await Promise.all(
           <ImageWithCopyright className="mt-8" copyright={d.image.copyright}>
             <Picture
               src={d.image.image}
+              width={1280}
               widths={[390, 800, 1280]}
+              sizes="(min-width: 1366px) 1216px, 100vw"
               formats={['avif']}
               fallbackFormat="webp"
               alt="Titelbild"
-              class="h-52 w-full object-cover"
+              class="h-auto w-full"
+              pictureAttributes={{ class: 'block w-full' }}
             />
           </ImageWithCopyright>
         )

@@ -45,11 +45,14 @@ const manualPdf = '/PlanF-Handbuch_2023.pdf'
       <ImageWithCopyright copyright="Plan F Handbuch">
         <Picture
           src={MockUpHandbuch}
+          width={1280}
           widths={[800, 1280]}
+          sizes="(min-width: 768px) 48rem, 100vw"
           formats={['avif']}
           fallbackFormat="webp"
           alt="Plan F Handbuch"
-          class="mt-12 w-full overflow-hidden"
+          class="mt-12 h-auto w-full overflow-hidden"
+          pictureAttributes={{ class: 'mt-12 block w-full' }}
         />
       </ImageWithCopyright>
     </Content>
