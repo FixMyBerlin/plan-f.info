@@ -59,6 +59,11 @@ export default defineConfig({
     // svgr handles `*.svg?react` imports (React components used inside .tsx islands).
     // Bare `*.svg` imports are left to Astro's native SVG component handling.
     plugins: [svgr(), tailwindcss()],
+    // Search lazily `import()`s lunr. Without include, Vite 504s "Outdated Optimize Dep"
+    // on first search and the SearchBar swallows that as "no results".
+    optimizeDeps: {
+      include: ['lunr', 'lunr-languages/lunr.stemmer.support.js', 'lunr-languages/lunr.de.js'],
+    },
     server: {
       // Bun globalStore (bunfig.toml) symlinks realpath outside the project (~/.bun/install/cache/links/).
       // Extend (not replace) Vite's default fs.allow — setting allow alone drops the project root.

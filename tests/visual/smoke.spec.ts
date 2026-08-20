@@ -28,17 +28,15 @@ test.describe('smoke: structure & behavior', () => {
     }
   })
 
-  test('client-side Lunr search runs (shows a result panel)', async ({
+  test('client-side Lunr search finds umlaut queries (Osnabrück)', async ({
     page,
     baseURL,
   }, testInfo) => {
     test.skip(testInfo.project.name !== 'desktop', 'desktop only')
     await page.goto(`${baseURL}/`, { waitUntil: 'networkidle' })
     const input = page.getByPlaceholder('Suche im Wissensspeicher').first()
-    await input.fill('Radweg')
-    // The Lunr index loads and a result header appears (content is empty until the dump is
-    // imported, so it reads "Keine Ergebnisse…", which still proves the search pipeline works).
-    await expect(page.getByText(/Ergebnis|Ergebnisse/).first()).toBeVisible({ timeout: 10_000 })
+    await input.fill('Osnabrück')
+    await expect(page.getByText(/bike to school/i).first()).toBeVisible({ timeout: 10_000 })
   })
 
   test('mobile menu opens', async ({ page, baseURL }, testInfo) => {

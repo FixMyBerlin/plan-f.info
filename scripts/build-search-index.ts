@@ -20,6 +20,8 @@ import lunrDe from 'lunr-languages/lunr.de.js'
 import lunrStemmerSupport from 'lunr-languages/lunr.stemmer.support.js'
 import { parse as parseYaml } from 'yaml'
 
+import { withUmlautTransliteration } from '../src/lib/searchGerman'
+
 lunrStemmerSupport(lunr)
 lunrDe(lunr)
 
@@ -57,6 +59,7 @@ type IndexDoc = {
   type: Type
   title: string
   commune: string
+  slug: string
   body: string
 }
 type SearchDoc = { id: string; type: Type; title: string; path: string }
@@ -79,9 +82,10 @@ function main() {
     indexDocs.push({
       id,
       type: 'topic',
-      title: clip(t.name),
+      title: withUmlautTransliteration(clip(t.name)),
       commune: '',
-      body: clip(t.description),
+      slug,
+      body: withUmlautTransliteration(clip(t.description)),
     })
   }
 
@@ -101,9 +105,10 @@ function main() {
     indexDocs.push({
       id,
       type: 'measure',
-      title: clip(m.name),
+      title: withUmlautTransliteration(clip(m.name)),
       commune: '',
-      body: clip(m.description),
+      slug,
+      body: withUmlautTransliteration(clip(m.description)),
     })
   }
 
@@ -126,11 +131,21 @@ function main() {
     indexDocs.push({
       id,
       type: 'example',
-      title: clip(e.title),
-      commune: clip(e.commune),
-      // Secondary body fields searched at low weight (subcategory, goals, …).
-      body: [e.subcategory, e.goals, e.particularities, e.awards, e.localChallenges]
+      title: withUmlautTransliteration(clip(e.title)),
+      commune: withUmlautTransliteration(clip(e.commune)),
+      slug,
+      // Secondary body fields searched at low weight (description, subcategory, goals, …).
+      body: [
+        e.shortDescription,
+        e.description,
+        e.subcategory,
+        e.goals,
+        e.particularities,
+        e.awards,
+        e.localChallenges,
+      ]
         .map(clip)
+        .map(withUmlautTransliteration)
         .join(' \n '),
     })
   }
@@ -141,6 +156,7 @@ function main() {
     this.ref('id')
     this.field('title', { boost: 100 })
     this.field('commune', { boost: 10 })
+    this.field('slug', { boost: 8 })
     this.field('body', { boost: 1 })
     this.metadataWhitelist = []
     for (const doc of indexDocs) this.add(doc)
